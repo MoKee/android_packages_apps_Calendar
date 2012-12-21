@@ -39,6 +39,7 @@ import java.util.regex.Pattern;
 import android.util.Lunar;
 
 
+
 /*
  * The MenuSpinnerAdapter defines the look of the ActionBar's pull down menu
  * for small screen layouts. The pull down menu replaces the tabs uses for big screen layouts
@@ -189,7 +190,7 @@ public class CalendarViewAdapter extends BaseAdapter {
             switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate());
+                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 case ViewType.WEEK:
@@ -197,17 +198,19 @@ public class CalendarViewAdapter extends BaseAdapter {
                         weekDay.setVisibility(View.VISIBLE);
                         weekDay.setText(buildWeekNum());
                     } else {
-                        weekDay.setVisibility(View.GONE);
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(false));
                     }
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.MONTH:
-                    weekDay.setVisibility(View.GONE);
+                    weekDay.setVisibility(View.VISIBLE);
+                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(true));
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.AGENDA:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek());
+                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 default:
@@ -355,7 +358,8 @@ public class CalendarViewAdapter extends BaseAdapter {
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR, mTimeZone).toString();
         return date;
     }
-    private String buildLunarDate(){
+	
+    private String buildLunarDate(boolean isFull){
         List<String> list = new ArrayList<String>();
         Calendar cal = Calendar.getInstance();
         String date = DateUtils.formatDateRange(mContext, mFormatter, mMilliTime, mMilliTime,
@@ -367,7 +371,7 @@ public class CalendarViewAdapter extends BaseAdapter {
          }
         cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));
         Lunar lunar = new Lunar(cal, mContext);
-        return lunar.toString();
+        return isFull == true ? lunar.toString():lunar.toString().substring(0, 4);
     }
 
     private String buildMonthYearDate() {
