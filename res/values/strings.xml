@@ -643,5 +643,4 @@
 
     <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
     <string name="do_not_check">Do NOT check -></string>
-    
 </resources>
