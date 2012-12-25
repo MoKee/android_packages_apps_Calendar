@@ -19,6 +19,7 @@ package com.android.calendar;
 import com.android.calendar.CalendarController.ViewType;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Handler;
 import android.text.format.DateUtils;
 import android.text.format.Time;
@@ -186,11 +187,14 @@ public class CalendarViewAdapter extends BaseAdapter {
             }
             TextView weekDay = (TextView) v.findViewById(R.id.top_button_weekday);
             TextView date = (TextView) v.findViewById(R.id.top_button_date);
-
-            switch (mCurrentMainView) {
+            
+            Resources res = mContext.getResources();
+            String strCountry = res.getConfiguration().locale.getCountry();
+            if(strCountry.equals("CN") || strCountry.equals("TW")){
+                switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(true));
+                    weekDay.setText(buildDayOfWeek()+buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 case ViewType.WEEK:
@@ -199,24 +203,59 @@ public class CalendarViewAdapter extends BaseAdapter {
                         weekDay.setText(buildWeekNum());
                     } else {
                         weekDay.setVisibility(View.VISIBLE);
-                        weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(false));
+                        weekDay.setText(buildDayOfWeek()+buildLunarDate(false));
                     }
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.MONTH:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(false));
+                    weekDay.setText(buildDayOfWeek()+buildLunarDate(false));
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.AGENDA:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+"  "+buildLunarDate(true));
+                    weekDay.setText(buildDayOfWeek()+buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 default:
                     v = null;
                     break;
+                }
             }
+            else
+            {
+                switch (mCurrentMainView) {
+                case ViewType.DAY:
+                    weekDay.setVisibility(View.VISIBLE);
+                    weekDay.setText(buildDayOfWeek());
+                    date.setText(buildFullDate());
+                    break;
+                case ViewType.WEEK:
+                    if (Utils.getShowWeekNumber(mContext)) {
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildWeekNum());
+                    } else {
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                    }
+                    date.setText(buildMonthYearDate());
+                    break;
+                case ViewType.MONTH:
+                    weekDay.setVisibility(View.VISIBLE);
+                    weekDay.setText(buildDayOfWeek());
+                    date.setText(buildMonthYearDate());
+                    break;
+                case ViewType.AGENDA:
+                    weekDay.setVisibility(View.VISIBLE);
+                    weekDay.setText(buildDayOfWeek());
+                    date.setText(buildFullDate());
+                    break;
+                default:
+                    v = null;
+                    break;
+                }
+            }
+            
         } else {
             if (convertView == null || ((Integer) convertView.getTag()).intValue()
                     != R.layout.actionbar_pulldown_menu_top_button_no_date) {
@@ -371,7 +410,7 @@ public class CalendarViewAdapter extends BaseAdapter {
          }
         cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));
         Lunar lunar = new Lunar(cal, mContext);
-        return isFull == true ? lunar.toString():lunar.toString().substring(0, 4);
+        return isFull == true ? "   "+lunar.toString():"   "+lunar.toString().substring(0, 4);
     }
 
     private String buildMonthYearDate() {
