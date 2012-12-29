@@ -30,7 +30,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.format.DateUtils;
 import android.text.format.Time;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
