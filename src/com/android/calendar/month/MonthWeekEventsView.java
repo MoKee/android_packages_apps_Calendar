@@ -738,7 +738,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 Lunar lunar = new Lunar(calendar, this.getContext());
             	String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day, getContext());
             	String fullchinadatestr = lunar.toString();            			
-            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, getContext());
+            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar, getContext());
             	Paint mLunarFestivalPant = new Paint(mLunarPaint);
             	mLunarFestivalPant.setColor(Color.RED);
             	if (SolarTermStr.length() == 0) {
