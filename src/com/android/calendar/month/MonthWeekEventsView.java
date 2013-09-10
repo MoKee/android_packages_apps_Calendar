@@ -729,7 +729,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
             //在繁体和简体情况下显示农历日期
             Resources res = getContext().getResources();
             String strCountry = res.getConfiguration().locale.getCountry();
-            if(strCountry.equals("CN")||strCountry.equals("TW")){
+            if(strCountry.equals("CN") || strCountry.equals("TW")) {
                 Calendar calendar = Calendar.getInstance();
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
@@ -737,35 +737,26 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar, this.getContext());
             	String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day, getContext());
-            	if(SolarTermStr.length()==0)
-            	{
+            	String fullchinadatestr = lunar.toString();            			
+            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, getContext());
+            	if (SolarTermStr.length() == 0) {
             		String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day, getContext());
-            		if(SolarHoliDayStr.length()==0)
-                	{
-            			String fullchinadatestr = lunar.toString();            			
-            			String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr,getContext());
-            			if(LunarFestivalStr.length()!=0)
-            			{
+            		if (SolarHoliDayStr.length() == 0) {
+            			if (LunarFestivalStr.length() != 0) {
             				Paint mLunarFestivalPant = new Paint(mLunarPaint);
             				mLunarFestivalPant.setColor(Color.RED);
-                            canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
+            				canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
+            			} else {
+                			temp = fullchinadatestr.substring(fullchinadatestr.length() - 2, fullchinadatestr.length());
+            				canvas.drawText(temp, x, y + lunarTextHeight - 5, mLunarPaint);
             			}
-            			else
-            			{
-                			temp = fullchinadatestr.substring(fullchinadatestr.length()-2, fullchinadatestr.length());
-                            canvas.drawText(temp, x, y + lunarTextHeight - 5, mLunarPaint);
-            			}
-                	}
-            		else
-            		{
+                	} else {
             			Paint mSolarPant = new Paint(mLunarPaint);
             			mSolarPant.setColor(Color.RED);
             			canvas.drawText(SolarHoliDayStr, x, y + lunarTextHeight - 5, mSolarPant);
             		}
-            	}
-            	else
-            	{
-            		canvas.drawText(SolarTermStr, x, y + lunarTextHeight - 5, mLunarPaint);
+            	} else {
+            		canvas.drawText(LunarFestivalStr == null ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarPaint);
             	}
 
             }
