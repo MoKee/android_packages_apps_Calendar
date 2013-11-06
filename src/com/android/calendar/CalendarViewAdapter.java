@@ -187,10 +187,10 @@ public class CalendarViewAdapter extends BaseAdapter {
             }
             TextView weekDay = (TextView) v.findViewById(R.id.top_button_weekday);
             TextView date = (TextView) v.findViewById(R.id.top_button_date);
-            
+
             Resources res = mContext.getResources();
             String strCountry = res.getConfiguration().locale.getCountry();
-            if(strCountry.equals("CN") || strCountry.equals("TW")){
+            if(strCountry.equals("CN") || strCountry.equals("TW")) {
                 switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
@@ -222,8 +222,7 @@ public class CalendarViewAdapter extends BaseAdapter {
                     break;
                 }
             }
-            else
-            {
+            else {
                 switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
@@ -396,15 +395,15 @@ public class CalendarViewAdapter extends BaseAdapter {
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR, mTimeZone).toString();
         return date;
     }
-	
-    private String buildLunarDate(boolean isFull){
+
+    private String buildLunarDate(boolean isFull) {
         List<String> list = new ArrayList<String>();
         Calendar cal = Calendar.getInstance();
         String date = DateUtils.formatDateRange(mContext, mFormatter, mMilliTime, mMilliTime,
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR, mTimeZone).toString();
         Pattern p = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
         Matcher m = p.matcher(date);
-        while(m.find()){
+        while(m.find()) {
             list.add(m.group());
          }
         cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));

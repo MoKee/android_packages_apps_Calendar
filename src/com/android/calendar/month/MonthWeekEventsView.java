@@ -725,7 +725,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
             }
             x = computeDayLeftPosition(i - offset) - (SIDE_PADDING_MONTH_NUMBER);
             canvas.drawText(mDayNumbers[i], x, y, mMonthNumPaint);
-            
+
             //在繁体和简体情况下显示农历日期
             Resources res = getContext().getResources();
             String strCountry = res.getConfiguration().locale.getCountry();
@@ -760,7 +760,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
             	}
 
             }
-            
+
             if (isBold) {
                 mMonthNumPaint.setFakeBoldText(isBold = false);
             }
