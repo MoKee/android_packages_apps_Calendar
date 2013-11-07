@@ -19,7 +19,8 @@ package com.android.calendar;
 import com.android.calendar.CalendarController.ViewType;
 
 import android.content.Context;
-import android.content.res.Resources;
+import android.mokee.util.Lunar;
+import android.mokee.util.MoKeeUtils;
 import android.os.Handler;
 import android.text.format.DateUtils;
 import android.text.format.Time;
@@ -37,7 +38,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import android.util.Lunar;
 
 
 
@@ -188,9 +188,7 @@ public class CalendarViewAdapter extends BaseAdapter {
             TextView weekDay = (TextView) v.findViewById(R.id.top_button_weekday);
             TextView date = (TextView) v.findViewById(R.id.top_button_date);
 
-            Resources res = mContext.getResources();
-            String strCountry = res.getConfiguration().locale.getCountry();
-            if(strCountry.equals("CN") || strCountry.equals("TW")) {
+            if (MoKeeUtils.isChineseLanguage()) {
                 switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
@@ -407,7 +405,7 @@ public class CalendarViewAdapter extends BaseAdapter {
             list.add(m.group());
          }
         cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));
-        Lunar lunar = new Lunar(cal, mContext);
+        Lunar lunar = new Lunar(cal);
         return isFull == true ? "   "+lunar.toString():"   "+lunar.toString().substring(0, 4);
     }
 

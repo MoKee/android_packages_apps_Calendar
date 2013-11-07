@@ -27,6 +27,11 @@ import android.app.Service;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.mokee.util.Lunar;
+import android.mokee.util.LunarFestival;
+import android.mokee.util.MoKeeUtils;
+import android.mokee.util.SolarHoliDay;
+import android.mokee.util.SolarTerm;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -54,11 +59,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-
-import android.util.Lunar;
-import android.util.LunarFestival;
-import android.util.SolarHoliDay;
-import android.util.SolarTerm;
 
 public class MonthWeekEventsView extends SimpleWeekView {
 
@@ -726,23 +726,20 @@ public class MonthWeekEventsView extends SimpleWeekView {
             x = computeDayLeftPosition(i - offset) - (SIDE_PADDING_MONTH_NUMBER);
             canvas.drawText(mDayNumbers[i], x, y, mMonthNumPaint);
 
-            //在繁体和简体情况下显示农历日期
-            Resources res = getContext().getResources();
-            String strCountry = res.getConfiguration().locale.getCountry();
-            if(strCountry.equals("CN") || strCountry.equals("TW")) {
+            if (MoKeeUtils.isChineseLanguage()) {
                 Calendar calendar = Calendar.getInstance();
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
                 int day = Integer.parseInt(mDayNumbers[i]);
                 calendar.set(year, month, day);
-                Lunar lunar = new Lunar(calendar, this.getContext());
-            	String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day, getContext());
+                Lunar lunar = new Lunar(calendar);
+            	String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
             	String fullchinadatestr = lunar.toString();            			
-            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar, getContext());
+            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
             	Paint mLunarFestivalPant = new Paint(mLunarPaint);
             	mLunarFestivalPant.setColor(Color.RED);
             	if (SolarTermStr.length() == 0) {
-            		String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day, getContext());
+            		String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day);
             		if (SolarHoliDayStr.length() == 0) {
             			if (LunarFestivalStr.length() != 0) {
             				canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
