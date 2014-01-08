@@ -71,7 +71,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
 
     /* NOTE: these are not constants, and may be multiplied by a scale factor */
     private static int TEXT_SIZE_MONTH_NUMBER = 32;
-    private static int TEXT_SIZE_LUNAR_NUMBER = 16;
+    private static int TEXT_SIZE_LUNAR_NUMBER = 17;
     private static int TEXT_SIZE_EVENT = 12;
     private static int TEXT_SIZE_EVENT_TITLE = 14;
     private static int TEXT_SIZE_MORE_EVENTS = 12;
@@ -755,9 +755,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
             	} else {
             		canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
             	}
-
             }
-
             if (isBold) {
                 mMonthNumPaint.setFakeBoldText(isBold = false);
             }

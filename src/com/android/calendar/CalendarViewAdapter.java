@@ -40,7 +40,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-
 /*
  * The MenuSpinnerAdapter defines the look of the ActionBar's pull down menu
  * for small screen layouts. The pull down menu replaces the tabs uses for big screen layouts
@@ -192,7 +191,7 @@ public class CalendarViewAdapter extends BaseAdapter {
                 switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+buildLunarDate(true));
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 case ViewType.WEEK:
@@ -201,55 +200,54 @@ public class CalendarViewAdapter extends BaseAdapter {
                         weekDay.setText(buildWeekNum());
                     } else {
                         weekDay.setVisibility(View.VISIBLE);
-                        weekDay.setText(buildDayOfWeek()+buildLunarDate(false));
+                        weekDay.setText(buildDayOfWeek() + buildLunarDate(false));
                     }
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.MONTH:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+buildLunarDate(false));
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(false));
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.AGENDA:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek()+buildLunarDate(true));
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 default:
                     v = null;
                     break;
                 }
-            }
-            else {
+            } else {
                 switch (mCurrentMainView) {
-                case ViewType.DAY:
-                    weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek());
-                    date.setText(buildFullDate());
-                    break;
-                case ViewType.WEEK:
-                    if (Utils.getShowWeekNumber(mContext)) {
-                        weekDay.setVisibility(View.VISIBLE);
-                        weekDay.setText(buildWeekNum());
-                    } else {
+                    case ViewType.DAY:
                         weekDay.setVisibility(View.VISIBLE);
                         weekDay.setText(buildDayOfWeek());
-                    }
-                    date.setText(buildMonthYearDate());
-                    break;
-                case ViewType.MONTH:
-                    weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek());
-                    date.setText(buildMonthYearDate());
-                    break;
-                case ViewType.AGENDA:
-                    weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek());
-                    date.setText(buildFullDate());
-                    break;
-                default:
-                    v = null;
-                    break;
+                        date.setText(buildFullDate());
+                        break;
+                    case ViewType.WEEK:
+                        if (Utils.getShowWeekNumber(mContext)) {
+                            weekDay.setVisibility(View.VISIBLE);
+                            weekDay.setText(buildWeekNum());
+                        } else {
+                            weekDay.setVisibility(View.VISIBLE);
+                            weekDay.setText(buildDayOfWeek());
+                        }
+                        date.setText(buildMonthYearDate());
+                        break;
+                    case ViewType.MONTH:
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                        date.setText(buildMonthYearDate());
+                        break;
+                    case ViewType.AGENDA:
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                        date.setText(buildFullDate());
+                        break;
+                    default:
+                        v = null;
+                        break;
                 }
             }
         } else {
