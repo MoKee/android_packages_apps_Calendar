@@ -27,10 +27,16 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.mokee.util.Lunar;
+import android.mokee.util.LunarFestival;
+import android.mokee.util.MoKeeUtils;
+import android.mokee.util.SolarHoliDay;
+import android.mokee.util.SolarTerm;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.text.format.DateUtils;
 import android.text.format.Time;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -38,6 +44,8 @@ import com.android.calendar.AllInOneActivity;
 import com.android.calendar.EventInfoActivity;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
+
+import java.util.Calendar;
 
 /**
  * Simple widget to show next upcoming calendar event.
@@ -139,7 +147,35 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
             final String date = Utils.formatDateRange(context, millis, millis,
                     DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE
                             | DateUtils.FORMAT_NO_YEAR);
-            views.setTextViewText(R.id.day_of_week, dayOfWeek);
+            //Show lunar on the calendar header for Chinese language
+            String lunarstr = "";
+            if (MoKeeUtils.isChineseLanguage()) {
+                    Calendar calendar = Calendar.getInstance();
+                    Lunar lunar = new Lunar(calendar);
+                    String fullchinadatestr = lunar.toString();
+                    String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
+                    int year = calendar.get(Calendar.YEAR);
+                    int month = calendar.get(Calendar.MONTH);
+                    int day = calendar.get(Calendar.DAY_OF_MONTH);
+                    String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
+                    if (SolarTermStr.length() == 0) {
+                            String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day);
+                            if (SolarHoliDayStr.length() == 0) {
+                                    if (LunarFestivalStr.length() != 0) {
+                                            lunarstr = LunarFestivalStr;
+                                    } else {
+                                            lunarstr = fullchinadatestr.substring(fullchinadatestr.length() - 4, fullchinadatestr.length());
+                                    }
+                            } else {
+                                    lunarstr = SolarHoliDayStr;
+                            }
+                    } else {
+                            lunarstr = TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr;
+                    }
+                    lunarstr = " " + lunarstr;
+            }
+
+            views.setTextViewText(R.id.day_of_week, dayOfWeek + lunarstr);
             views.setTextViewText(R.id.date, date);
             // Attach to list of events
             views.setRemoteAdapter(appWidgetId, R.id.events_list, updateIntent);

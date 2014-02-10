@@ -21,6 +21,11 @@ import com.android.calendar.Utils;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.mokee.util.Lunar;
+import android.mokee.util.LunarFestival;
+import android.mokee.util.MoKeeUtils;
+import android.mokee.util.SolarHoliDay;
+import android.mokee.util.SolarTerm;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
@@ -29,9 +34,12 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class CalendarAppWidgetModel {
     private static final String TAG = CalendarAppWidgetModel.class.getSimpleName();
@@ -416,7 +424,47 @@ class CalendarAppWidgetModel {
             flags |= DateUtils.FORMAT_SHOW_WEEKDAY;
             label = Utils.formatDateRange(mContext, millis, millis, flags);
         }
-        return new DayInfo(julianDay, label);
+        //Show lunar in DayInfo for Chinese language
+        String lunarstr = "";
+        if (MoKeeUtils.isChineseLanguage()) {
+            List<String> list = new ArrayList<String>();
+            Calendar cal = Calendar.getInstance();
+            String date = Utils.formatDateRange(mContext, millis, millis, DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR);
+            Pattern p = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+            Matcher m = p.matcher(date);
+            while(m.find()) {
+                list.add(m.group());
+            }
+            int year = Integer.parseInt(list.get(0));
+            int month = Integer.parseInt(list.get(2)) - 1;
+            int day = Integer.parseInt(list.get(4));
+            cal.set(year, month, day);
+            Lunar lunar = new Lunar(cal);
+            String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
+            String fullchinadatestr = lunar.toString();
+            String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
+            if (SolarTermStr.length() == 0) {
+                String SolarHoliDayStr = SolarHoliDay.getSolarHoliDay(month, day);
+                if (SolarHoliDayStr.length() == 0) {
+                    if (LunarFestivalStr.length() != 0) {
+                        lunarstr = LunarFestivalStr;
+                    } else {
+                        lunarstr = fullchinadatestr.substring(fullchinadatestr.length() - 4, fullchinadatestr.length());
+                    }
+                } else {
+                    lunarstr = SolarHoliDayStr;
+                }
+            } else {
+                lunarstr = TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr;
+            }
+            if (julianDay == mTodayJulianDay + 1) {
+                lunarstr = " " + lunarstr;
+            } else {
+                lunarstr = " " + lunarstr;
+            }
+        }
+
+        return new DayInfo(julianDay, label + lunarstr);
     }
 
     @Override
