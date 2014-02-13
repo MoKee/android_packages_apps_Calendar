@@ -14,12 +14,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="preferences_alerts_custom_snooze_delay_title">Spørg efter udsættelse ved påmindelse</string>
-    <string name="preferences_alerts_custom_snooze_delay_summary_on">Spørg efter udsættelse ved hver påmindelse</string>
-    <string name="preferences_alerts_custom_snooze_delay_summary_off">Brug altid standard-udsættelsen</string>
-    <string name="snooze_delay_dialog_title">Sæt udsættelse</string>
-    <string name="preferences_default_snooze_delay_title">Tid for standard-udsættelse</string>
-    <string name="preferences_default_snooze_delay_dialog">Standard-udsættelse</string>
-    <string name="default_start_title">Standardvisning</string>
-    <string name="default_start_last">Tidl. anvendt visning</string>
+    <string name="preferences_alerts_custom_snooze_delay_title">Recordatorios</string>
+    <string name="preferences_alerts_custom_snooze_delay_summary_on">Entrugar pol intervalu de tiempu ente recordatorios en cada recordatoriu</string>
+    <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre l\'intervalu de tiempu ente recordatorios por defeutu</string>
+    <string name="snooze_delay_dialog_title">Intervalu de tiempu</string>
+    <string name="preferences_default_snooze_delay_title">Intervalu ente recordatorios</string>
+    <string name="preferences_default_snooze_delay_dialog">Intervalu ente recordatorios por defeutu</string>
 </resources>
