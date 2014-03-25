@@ -345,8 +345,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         }
 
         if (viewType == -1 || viewType > ViewType.MAX_VALUE) {
-            //viewType = Utils.getViewTypeFromIntentAndSharedPref(this);
-        	viewType = ViewType.MONTH;
+            viewType = Utils.getViewTypeFromIntentAndSharedPref(this);
         }
         mTimeZone = Utils.getTimeZone(this, mHomeTimeUpdater);
         Time t = new Time(mTimeZone);
