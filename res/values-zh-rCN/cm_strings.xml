@@ -20,4 +20,6 @@
     <string name="snooze_delay_dialog_title">设定暂停提醒的重复时间</string>
     <string name="preferences_default_snooze_delay_title">默认暂停提醒时长</string>
     <string name="preferences_default_snooze_delay_dialog">默认暂停提醒时长</string>
+    <string name="default_start_title">默认视图</string>
+    <string name="default_start_last">最近使用的视图</string>
 </resources>
