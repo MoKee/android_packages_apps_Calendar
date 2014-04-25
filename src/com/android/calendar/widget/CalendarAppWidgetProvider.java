@@ -27,11 +27,6 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.mokee.util.Lunar;
-import android.mokee.util.LunarFestival;
-import android.mokee.util.MoKeeUtils;
-import android.mokee.util.SolarHoliDay;
-import android.mokee.util.SolarTerm;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.text.format.DateUtils;
@@ -44,6 +39,12 @@ import com.android.calendar.AllInOneActivity;
 import com.android.calendar.EventInfoActivity;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
+
+import org.mokee.util.Lunar;
+import org.mokee.util.LunarFestival;
+import org.mokee.util.MoKeeUtils;
+import org.mokee.util.SolarHoliDay;
+import org.mokee.util.SolarTerm;
 
 import java.util.Calendar;
 

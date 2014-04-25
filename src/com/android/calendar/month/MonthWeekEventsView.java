@@ -20,6 +20,12 @@ import com.android.calendar.Event;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
 
+import org.mokee.util.Lunar;
+import org.mokee.util.LunarFestival;
+import org.mokee.util.MoKeeUtils;
+import org.mokee.util.SolarHoliDay;
+import org.mokee.util.SolarTerm;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
@@ -27,11 +33,6 @@ import android.app.Service;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.mokee.util.Lunar;
-import android.mokee.util.LunarFestival;
-import android.mokee.util.MoKeeUtils;
-import android.mokee.util.SolarHoliDay;
-import android.mokee.util.SolarTerm;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
