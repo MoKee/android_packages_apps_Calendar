@@ -176,7 +176,6 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
     private AllInOneMenuExtensionsInterface mExtensions = ExtensionsFactory
             .getAllInOneMenuExtensions();
-
     private final AnimatorListener mSlideAnimationDoneListener = new AnimatorListener() {
 
         @Override
