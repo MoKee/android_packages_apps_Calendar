@@ -47,6 +47,7 @@ import android.text.format.Time;
 import android.widget.Toast;
 
 import com.android.calendar.alerts.AlertReceiver;
+import com.android.calendar.event.EventViewUtils;
 import com.android.timezonepicker.TimeZoneInfo;
 import com.android.timezonepicker.TimeZonePickerDialog;
 import com.android.timezonepicker.TimeZonePickerDialog.OnTimeZoneSetListener;
@@ -62,6 +63,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     private static final String FRAG_TAG_TIME_ZONE_PICKER = "TimeZonePicker";
 
     // Preference keys
+    public static final String KEY_DEFAULT_START = "preferences_default_start";
     public static final String KEY_HIDE_DECLINED = "preferences_hide_declined";
     public static final String KEY_WEEK_START_DAY = "preferences_week_start_day";
     public static final String KEY_SHOW_WEEK_NUM = "preferences_show_week_num";
@@ -82,6 +84,10 @@ public class GeneralPreferences extends PreferenceFragment implements
     public static final int NO_REMINDER = -1;
     public static final String NO_REMINDER_STRING = "-1";
     public static final int REMINDER_DEFAULT_TIME = 10; // in minutes
+
+    public static final String KEY_USE_CUSTOM_SNOOZE_DELAY = "preferences_custom_snooze_delay";
+    public static final String KEY_DEFAULT_SNOOZE_DELAY = "preferences_default_snooze_delay";
+    public static final int SNOOZE_DELAY_DEFAULT_TIME = 5; // in minutes
 
     public static final String KEY_DEFAULT_CELL_HEIGHT = "preferences_default_cell_height";
     public static final String KEY_VERSION = "preferences_version";
@@ -110,6 +116,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     static final String KEY_HOME_TZ = "preferences_home_tz";
 
     // Default preference values
+    public static final String DEFAULT_DEFAULT_START = "-2";
     public static final int DEFAULT_START_VIEW = CalendarController.ViewType.WEEK;
     public static final int DEFAULT_DETAILED_VIEW = CalendarController.ViewType.DAY;
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
@@ -126,6 +133,8 @@ public class GeneralPreferences extends PreferenceFragment implements
     TimeZonePickerUtils mTzPickerUtils;
     ListPreference mWeekStart;
     ListPreference mDefaultReminder;
+    ListPreference mSnoozeDelay;
+    ListPreference mDefaultStart;
 
     private String mTimeZoneId;
 
@@ -182,8 +191,17 @@ public class GeneralPreferences extends PreferenceFragment implements
         mWeekStart = (ListPreference) preferenceScreen.findPreference(KEY_WEEK_START_DAY);
         mDefaultReminder = (ListPreference) preferenceScreen.findPreference(KEY_DEFAULT_REMINDER);
         mHomeTZ = preferenceScreen.findPreference(KEY_HOME_TZ);
+
+        mDefaultStart = (ListPreference) preferenceScreen.findPreference(KEY_DEFAULT_START);
+        mDefaultStart.setOnPreferenceChangeListener(this);
+
+        mSnoozeDelay = (ListPreference) preferenceScreen.findPreference(KEY_DEFAULT_SNOOZE_DELAY);
+        buildSnoozeDelayEntries();
+
         mWeekStart.setSummary(mWeekStart.getEntry());
         mDefaultReminder.setSummary(mDefaultReminder.getEntry());
+        mSnoozeDelay.setSummary(mSnoozeDelay.getEntry());
+        mDefaultStart.setSummary(mDefaultStart.getEntry());
 
         // This triggers an asynchronous call to the provider to refresh the data in shared pref
         mTimeZoneId = Utils.getTimeZone(activity, null);
@@ -263,6 +281,7 @@ public class GeneralPreferences extends PreferenceFragment implements
         mHomeTZ.setOnPreferenceChangeListener(listener);
         mWeekStart.setOnPreferenceChangeListener(listener);
         mDefaultReminder.setOnPreferenceChangeListener(listener);
+        mSnoozeDelay.setOnPreferenceChangeListener(listener);
         mRingtone.setOnPreferenceChangeListener(listener);
         mHideDeclined.setOnPreferenceChangeListener(listener);
         mVibrate.setOnPreferenceChangeListener(listener);
@@ -324,6 +343,9 @@ public class GeneralPreferences extends PreferenceFragment implements
         } else if (preference == mDefaultReminder) {
             mDefaultReminder.setValue((String) newValue);
             mDefaultReminder.setSummary(mDefaultReminder.getEntry());
+        } else if (preference == mSnoozeDelay) {
+            mSnoozeDelay.setValue((String) newValue);
+            mSnoozeDelay.setSummary(mSnoozeDelay.getEntry());
         } else if (preference == mRingtone) {
             if (newValue instanceof String) {
                 Utils.setRingTonePreference(activity, (String) newValue);
@@ -333,6 +355,10 @@ public class GeneralPreferences extends PreferenceFragment implements
             return true;
         } else if (preference == mVibrate) {
             mVibrate.setChecked((Boolean) newValue);
+            return true;
+        } else if (preference == mDefaultStart) {
+            int i = mDefaultStart.findIndexOfValue((String) newValue);
+            mDefaultStart.setSummary(mDefaultStart.getEntries()[i]);
             return true;
         } else {
             return true;
@@ -400,6 +426,18 @@ public class GeneralPreferences extends PreferenceFragment implements
         }
     }
 
+    private void buildSnoozeDelayEntries() {
+        final CharSequence[] values = mSnoozeDelay.getEntryValues();
+        final int count = values.length;
+        final CharSequence[] entries = new CharSequence[count];
+
+        for (int i = 0; i < count; i++) {
+            int value = Integer.parseInt(values[i].toString());
+            entries[i] = EventViewUtils.constructReminderLabel(getActivity(), value, false);
+        }
+
+        mSnoozeDelay.setEntries(entries);
+    }
 
     @Override
     public boolean onPreferenceTreeClick(

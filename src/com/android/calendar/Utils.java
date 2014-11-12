@@ -234,9 +234,17 @@ public class Utils {
             }
         }
 
-        // Default to the last view
-        return prefs.getInt(
-                GeneralPreferences.KEY_START_VIEW, GeneralPreferences.DEFAULT_START_VIEW);
+        // Check if the user wants the last view or the default startup view
+        int defaultStart = Integer.valueOf(prefs.getString(GeneralPreferences.KEY_DEFAULT_START,
+                GeneralPreferences.DEFAULT_DEFAULT_START));
+        if (defaultStart == -2) {
+            // Return the last view used
+            return prefs.getInt(
+                    GeneralPreferences.KEY_START_VIEW, GeneralPreferences.DEFAULT_START_VIEW);
+        } else {
+            // Return the default view
+            return defaultStart;
+        }
     }
 
     /**
@@ -698,6 +706,21 @@ public class Utils {
     public static int getDaysPerWeek(Context context) {
         final SharedPreferences prefs = GeneralPreferences.getSharedPreferences(context);
         return prefs.getInt(GeneralPreferences.KEY_DAYS_PER_WEEK, 7);
+    }
+
+    public static boolean useCustomSnoozeDelay(Context context) {
+        final SharedPreferences prefs = GeneralPreferences.getSharedPreferences(context);
+        return prefs.getBoolean(GeneralPreferences.KEY_USE_CUSTOM_SNOOZE_DELAY, false);
+    }
+
+    public static long getDefaultSnoozeDelayMs(Context context) {
+        final SharedPreferences prefs = GeneralPreferences.getSharedPreferences(context);
+        final String value = prefs.getString(GeneralPreferences.KEY_DEFAULT_SNOOZE_DELAY, null);
+        final long intValue = value != null
+                ? Long.valueOf(value)
+                : GeneralPreferences.SNOOZE_DELAY_DEFAULT_TIME;
+
+        return intValue * 60L * 1000L; // min -> ms
     }
 
     /**

@@ -26,6 +26,7 @@
        version was using a shared user ID with the provider.
     -->
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
     <uses-permission android:name="android.permission.INTERNET" />
@@ -155,6 +156,14 @@
             <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
         </activity>
 
+        <activity android:name="DeleteEventsActivity"
+            android:parentActivityName="com.android.calendar.AllInOneActivity"
+            android:theme="@style/CalendarTheme.WithActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.calendar.AllInOneActivity" />
+        </activity>
+
         <provider android:name=".CalendarRecentSuggestionsProvider"
             android:exported="false"
             android:authorities="com.android.calendar.CalendarRecentSuggestionsProvider" />
@@ -166,6 +175,9 @@
         <activity android:name=".alerts.QuickResponseActivity" android:launchMode="singleInstance"
              android:theme="@android:style/Theme.Holo.Dialog" android:excludeFromRecents="true"
              android:label="@string/quick_response_dialog_title" />
+
+        <activity android:name=".alerts.SnoozeDelayActivity" android:launchMode="singleInstance"
+             android:theme="@android:style/Theme.Holo.Dialog" android:excludeFromRecents="true" />
 
         <receiver android:name=".alerts.AlertReceiver">
             <intent-filter>
