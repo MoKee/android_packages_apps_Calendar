@@ -733,28 +733,28 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 int day = Integer.parseInt(mDayNumbers[i]);
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
-            	String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
-            	String fullchinadatestr = lunar.toString();            			
-            	String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
-            	Paint mLunarFestivalPant = new Paint(mLunarPaint);
-            	mLunarFestivalPant.setColor(Color.RED);
-            	if (SolarTermStr.length() == 0) {
-            		String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day);
-            		if (SolarHoliDayStr.length() == 0) {
-            			if (LunarFestivalStr.length() != 0) {
-            				canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
-            			} else {
-                			temp = fullchinadatestr.substring(fullchinadatestr.length() - 2, fullchinadatestr.length());
-            				canvas.drawText(temp, x, y + lunarTextHeight - 5, mLunarPaint);
-            			}
-                	} else {
-            			Paint mSolarPant = new Paint(mLunarPaint);
-            			mSolarPant.setColor(Color.RED);
-            			canvas.drawText(SolarHoliDayStr, x, y + lunarTextHeight - 5, mSolarPant);
-            		}
-            	} else {
-            		canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
-            	}
+                String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
+                String fullchinadatestr = lunar.toString();            			
+                String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
+                Paint mLunarFestivalPant = new Paint(mLunarPaint);
+                mLunarFestivalPant.setColor(Color.RED);
+                if (SolarTermStr.length() == 0) {
+                    String SolarHoliDayStr=SolarHoliDay.getSolarHoliDay(month, day);
+                    if (SolarHoliDayStr.length() == 0) {
+                        if (LunarFestivalStr.length() != 0) {
+                            canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
+                        } else {
+                            temp = fullchinadatestr.substring(fullchinadatestr.length() - 2, fullchinadatestr.length());
+                            canvas.drawText(temp, x, y + lunarTextHeight - 5, mLunarPaint);
+                        }
+                    } else {
+                        Paint mSolarPant = new Paint(mLunarPaint);
+                        mSolarPant.setColor(Color.RED);
+                        canvas.drawText(SolarHoliDayStr, x, y + lunarTextHeight - 5, mSolarPant);
+                    }
+                } else {
+                    canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
+                }
             }
             if (isBold) {
                 mMonthNumPaint.setFakeBoldText(isBold = false);
