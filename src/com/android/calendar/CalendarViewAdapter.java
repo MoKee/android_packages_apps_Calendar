@@ -186,7 +186,7 @@ public class CalendarViewAdapter extends BaseAdapter {
             TextView weekDay = (TextView) v.findViewById(R.id.top_button_weekday);
             TextView date = (TextView) v.findViewById(R.id.top_button_date);
 
-            if (MoKeeUtils.isChineseLanguage(false)) {
+            if (MoKeeUtils.isSupportLanguage(false)) {
                 switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);

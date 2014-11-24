@@ -726,7 +726,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
             x = computeDayLeftPosition(i - offset) - (SIDE_PADDING_MONTH_NUMBER);
             canvas.drawText(mDayNumbers[i], x, y, mMonthNumPaint);
 
-            if (MoKeeUtils.isChineseLanguage(false)) {
+            if (MoKeeUtils.isSupportLanguage(false)) {
                 Calendar calendar = Calendar.getInstance();
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
