@@ -60,6 +60,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
+import android.util.DisplayMetrics;
+
 public class MonthWeekEventsView extends SimpleWeekView {
 
     private static final String TAG = "MonthView";
@@ -71,7 +73,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
 
     /* NOTE: these are not constants, and may be multiplied by a scale factor */
     private static int TEXT_SIZE_MONTH_NUMBER = 32;
-    private static int TEXT_SIZE_LUNAR_NUMBER = 17;
+    private static int TEXT_SIZE_LUNAR_NUMBER = 10;
     private static int TEXT_SIZE_EVENT = 12;
     private static int TEXT_SIZE_EVENT_TITLE = 14;
     private static int TEXT_SIZE_MORE_EVENTS = 12;
@@ -403,6 +405,9 @@ public class MonthWeekEventsView extends SimpleWeekView {
         loadColors(getContext());
         // TODO modify paint properties depending on isMini
 
+        DisplayMetrics dm = this.getResources().getDisplayMetrics();
+        int LUNAR_NUMBER_SIZE = (int) (TEXT_SIZE_LUNAR_NUMBER* dm.density);
+
         mMonthNumPaint = new Paint();
         mMonthNumPaint.setFakeBoldText(false);
         mMonthNumPaint.setAntiAlias(true);
@@ -412,7 +417,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
         mMonthNumPaint.setTextAlign(Align.RIGHT);
         mMonthNumPaint.setTypeface(Typeface.DEFAULT);
         mLunarPaint = new Paint(mMonthNumPaint);
-        mLunarPaint.setTextSize(TEXT_SIZE_LUNAR_NUMBER);
+        mLunarPaint.setTextSize(LUNAR_NUMBER_SIZE);
 
         mMonthNumAscentHeight = (int) (-mMonthNumPaint.ascent() + 0.5f);
         mMonthNumHeight = (int) (mMonthNumPaint.descent() - mMonthNumPaint.ascent() + 0.5f);
