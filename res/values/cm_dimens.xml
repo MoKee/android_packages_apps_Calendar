@@ -15,13 +15,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <color name="year_view_month_title_color">#FF139BEA</color>
-    <color name="year_view_month_click_color">#3CBDBDBD</color>
-    <color name="year_view_current_month_bg_color">#FFDAEFF8</color>
-    <color name="year_view_current_day_color">#FFFFFFFF</color>
-
-    <color name="fab_theme_color">#da4336</color>
-    <color name="fab_theme_color_dark">#ffc33c33</color>
-    <color name="fab_theme_color_accent">#0288d1</color>
-    <color name="floating_action_button_icon_color">#ffffff</color>
+    <!-- Floating action button -->
+    <dimen name="floating_action_button_height">56dp</dimen>
+    <dimen name="floating_action_button_width">56dp</dimen>
+    <dimen name="floating_action_button_radius">28dp</dimen>
+    <dimen name="floating_action_button_translation_z">2dp</dimen>
+    <dimen name="floating_action_button_margin_right">16dp</dimen>
+    <dimen name="floating_action_button_margin_bottom">16dp</dimen>
 </resources>
