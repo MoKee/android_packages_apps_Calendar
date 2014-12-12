@@ -30,14 +30,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.util.TimeZone;
 
 /*
  * The MenuSpinnerAdapter defines the look of the ActionBar's pull down menu
@@ -69,6 +71,7 @@ public class CalendarViewAdapter extends BaseAdapter {
     public static final int WEEK_BUTTON_INDEX = 1;
     public static final int MONTH_BUTTON_INDEX = 2;
     public static final int AGENDA_BUTTON_INDEX = 3;
+    public static final int YEAR_BUTTON_INDEX = 4;
 
     // The current selected event's time, used to calculate the date and day of the week
     // for the buttons.
@@ -213,6 +216,10 @@ public class CalendarViewAdapter extends BaseAdapter {
                     weekDay.setText(buildDayOfWeek() + buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
+                case ViewType.YEAR:
+                    weekDay.setVisibility(View.GONE);
+                    date.setText(buildYearDate());
+                    break;
                 default:
                     v = null;
                     break;
@@ -244,6 +251,10 @@ public class CalendarViewAdapter extends BaseAdapter {
                         weekDay.setText(buildDayOfWeek());
                         date.setText(buildFullDate());
                         break;
+                    case ViewType.YEAR:
+                        weekDay.setVisibility(View.GONE);
+                        date.setText(buildYearDate());
+                        break;
                     default:
                         v = null;
                         break;
@@ -270,6 +281,9 @@ public class CalendarViewAdapter extends BaseAdapter {
                     break;
                 case ViewType.MONTH:
                     title.setText(mButtonNames [MONTH_BUTTON_INDEX]);
+                    break;
+                case ViewType.YEAR:
+                    title.setText(mButtonNames [YEAR_BUTTON_INDEX]);
                     break;
                 case ViewType.AGENDA:
                     title.setText(mButtonNames [AGENDA_BUTTON_INDEX]);
@@ -326,6 +340,12 @@ public class CalendarViewAdapter extends BaseAdapter {
                 viewType.setText(mButtonNames [AGENDA_BUTTON_INDEX]);
                 if (mShowDate) {
                     date.setText(buildMonthDayDate());
+                }
+                break;
+            case YEAR_BUTTON_INDEX:
+                viewType.setText(mButtonNames [YEAR_BUTTON_INDEX]);
+                if (mShowDate) {
+                    date.setText(buildYearDate());
                 }
                 break;
             default:
@@ -389,6 +409,12 @@ public class CalendarViewAdapter extends BaseAdapter {
         String date = DateUtils.formatDateRange(mContext, mFormatter, mMilliTime, mMilliTime,
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR, mTimeZone).toString();
         return date;
+    }
+
+    private String buildYearDate() {
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
+        yearFormat.setTimeZone(TimeZone.getTimeZone(mTimeZone));
+        return yearFormat.format(new Date(mMilliTime));
     }
 
     private String buildLunarDate(boolean isFull) {

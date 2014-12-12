@@ -29,6 +29,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         android-opt-datetimepicker \
         android-opt-timezonepicker \
         android-support-v4 \
+        android-support-v13 \
         calendar-common
 
 # Uncomment the following line to build against the current SDK
