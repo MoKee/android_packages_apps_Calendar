@@ -163,10 +163,6 @@
         <item name="android:textColor">@color/calendar_date_range_color</item>
     </style>
 
-    <style name="CalendarTheme" parent="android:Theme.Material.Light">
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
-
     <style name="CalendarTheme.WithActionBar" parent="android:Theme.Material.Light">
         <item name="android:windowNoTitle">false</item>
         <item name="android:windowActionBar">true</item>
@@ -174,13 +170,9 @@
         <item name="android:actionBarStyle">@style/CalendarActionBarStyle</item>
         <item name="android:endYear">2036</item>
         <item name="android:startYear">1970</item>
-        <item name="android:colorPrimary">@color/calendar_theme_color</item>
-        <item name="android:colorPrimaryDark">@color/calendar_theme_color_dark</item>
-        <item name="android:colorAccent">@color/calendar_theme_color</item>
-        <item name="android:navigationBarColor">@color/calendar_theme_color_dark</item>
     </style>
 
-    <style name="CalendarActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.Solid">
+    <style name="CalendarActionBarStyle" parent="android:style/Widget.Material.Light.ActionBar">
         <item name="android:displayOptions">showCustom</item>
     </style>
 
