@@ -427,9 +427,9 @@ public class CalendarViewAdapter extends BaseAdapter {
         while(m.find()) {
             list.add(m.group());
          }
-        cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));
+        cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1, Integer.parseInt(list.get(5)));
         Lunar lunar = new Lunar(cal);
-        return isFull == true ? "   "+lunar.toString():"   "+lunar.toString().substring(0, 4);
+        return isFull == true ? "   " + lunar.toString() : "   " + lunar.toString().substring(0, 4);
     }
 
     private String buildMonthYearDate() {
