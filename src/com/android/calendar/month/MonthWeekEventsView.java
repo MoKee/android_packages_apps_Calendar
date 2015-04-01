@@ -126,8 +126,6 @@ public class MonthWeekEventsView extends SimpleWeekView {
     // events being drawn on each day. The code will expand this if necessary.
     protected FloatRef mEventOutlines = new FloatRef(10 * 4 * 4 * 7);
 
-
-
     protected static StringBuilder mStringBuilder = new StringBuilder(50);
     // TODO recreate formatter when locale changes
     protected static Formatter mFormatter = new Formatter(mStringBuilder, Locale.getDefault());
