@@ -48,6 +48,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.drawable.LayerDrawable;
+import android.mokee.utils.MoKeeUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -84,6 +85,7 @@ import com.android.calendar.agenda.AgendaFragment;
 import com.android.calendar.month.MonthByWeekFragment;
 import com.android.calendar.selectcalendars.SelectVisibleCalendarsFragment;
 import com.android.calendar.year.YearViewPagerFragment;
+import com.mokee.cloud.misc.FetchChineseHolidayTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -329,6 +331,14 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             setTheme(R.style.CalendarTheme_WithActionBarWallpaper);
         }
         super.onCreate(icicle);
+
+        // Fetch Cloud Chinese Holiday
+        SharedPreferences mCalendarPref = getSharedPreferences("ChineseHoliday", MODE_PRIVATE);
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(this) && !mCalendarPref.getBoolean("has" + year, false)) {
+            new FetchChineseHolidayTask(mCalendarPref, ((CalendarApplication) getApplicationContext()).getQueue() , year).execute();
+        }
 
         if (icicle != null && icicle.containsKey(BUNDLE_KEY_CHECK_ACCOUNTS)) {
             mCheckForAccounts = icicle.getBoolean(BUNDLE_KEY_CHECK_ACCOUNTS);

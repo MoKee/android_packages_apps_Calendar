@@ -16,9 +16,15 @@
 
 package com.android.calendar;
 
+import com.mokee.volley.RequestQueue;
+import com.mokee.volley.toolbox.Volley;
+
 import android.app.Application;
 
 public class CalendarApplication extends Application {
+
+    private RequestQueue mRequestQueue;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -36,5 +42,12 @@ public class CalendarApplication extends Application {
 
         // Initialize the registry mapping some custom behavior.
         ExtensionsFactory.init(getAssets());
+
+        mRequestQueue = Volley.newRequestQueue(this);
     }
+
+    public RequestQueue getQueue() {
+        return mRequestQueue;
+    }
+
 }
