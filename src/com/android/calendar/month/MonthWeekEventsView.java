@@ -736,7 +736,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
                 int day = Integer.parseInt(mDayNumbers[i]);
-                boolean isHoliday = ChineseCalendar.isChineseHoliday(mCalendarPref, year, month + 1, day);
+                boolean isHoliday = ChineseCalendar.isChineseHolidayOrWorkday(mCalendarPref, year, month + 1, day);
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
                 String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
