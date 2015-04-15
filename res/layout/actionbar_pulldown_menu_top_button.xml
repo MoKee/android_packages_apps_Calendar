@@ -19,8 +19,8 @@
     android:layout_width="wrap_content"
     android:layout_height="48dip"
     android:gravity="center_vertical"
-    android:paddingRight="8dip"
-    android:paddingLeft="12dip">
+    android:paddingEnd="8dip"
+    android:paddingStart="12dip">
 
     <TextView android:id="@+id/top_button_weekday"
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:layout_marginTop="-2dip"
         android:layout_marginBottom="-8dip"
         android:textColor="@color/calendar_view_switch_menu_text_color"
-        android:gravity="left" />
+        android:gravity="start" />
 
     <TextView android:id="@+id/top_button_date"
         android:layout_width="wrap_content"
@@ -39,6 +39,6 @@
         android:singleLine="true"
         android:textSize="@dimen/action_bar_date_text_size"
         android:textColor="@color/calendar_view_switch_menu_text_color"
-        android:gravity="left" />
+        android:gravity="start" />
 </LinearLayout>
 
