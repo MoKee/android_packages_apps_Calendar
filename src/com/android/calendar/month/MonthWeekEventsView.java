@@ -19,7 +19,7 @@ package com.android.calendar.month;
 import com.android.calendar.Event;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
-import com.mokee.cloud.ChineseCalendar;
+import com.mokee.cloud.calendar.ChineseCalendar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
