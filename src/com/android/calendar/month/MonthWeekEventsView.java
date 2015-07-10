@@ -740,16 +740,16 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 boolean isHoliday = ChineseCalendarUtils.isChineseHolidayOrWorkday(mCalendarPref, year, month + 1, day);
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
-                String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
+                String SolarTermStr = SolarTerm.getSolarTermInfo(year, month, day);
                 String fullchinadatestr = lunar.toString();
-                String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
+                String LunarFestivalStr = LunarFestival.getLunarFestivalInfo(fullchinadatestr, lunar);
                 Paint mLunarFestivalPant = new Paint(mLunarPaint);
                 mLunarFestivalPant.setColor(Color.RED);
                 if (TextUtils.isEmpty(SolarTermStr)) {
-                    String SolarFestivalStr = SolarFestival.getSolarFestival(month, day);
-                    SolarFestivalStr = TextUtils.isEmpty(SolarFestivalStr) ? SpecificFestival.getSpecificFestivalInfo(month, calendar.get(Calendar.DAY_OF_WEEK - 1), calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH)) : SolarFestivalStr;
+                    String SolarFestivalStr = SolarFestival.getSolarFestivalInfo(month, day);
+                    SolarFestivalStr = TextUtils.isEmpty(SolarFestivalStr) ? SpecificFestival.getSpecificFestivalInfo(month + 1, calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH), calendar.get(Calendar.DAY_OF_WEEK) - 1) : SolarFestivalStr;
                     if (TextUtils.isEmpty(SolarFestivalStr)) {
-                        if (TextUtils.isEmpty(LunarFestivalStr)) {
+                        if (!TextUtils.isEmpty(LunarFestivalStr)) {
                             canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
                         } else {
                             temp = fullchinadatestr.substring(fullchinadatestr.length() - 2, fullchinadatestr.length());
