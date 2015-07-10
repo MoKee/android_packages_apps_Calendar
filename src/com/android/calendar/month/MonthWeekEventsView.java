@@ -19,7 +19,7 @@ package com.android.calendar.month;
 import com.android.calendar.Event;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
-import com.mokee.cloud.calendar.ChineseCalendar;
+import com.mokee.cloud.calendar.ChineseCalendarUtils;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -39,7 +39,8 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.mokee.lunar.Lunar;
 import android.mokee.lunar.LunarFestival;
-import android.mokee.lunar.SolarHoliDay;
+import android.mokee.lunar.SolarFestival;
+import android.mokee.lunar.SpecificFestival;
 import android.mokee.lunar.SolarTerm;
 import android.mokee.utils.MoKeeUtils;
 import android.provider.CalendarContract.Attendees;
@@ -736,7 +737,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
                 int day = Integer.parseInt(mDayNumbers[i]);
-                boolean isHoliday = ChineseCalendar.isChineseHolidayOrWorkday(mCalendarPref, year, month + 1, day);
+                boolean isHoliday = ChineseCalendarUtils.isChineseHolidayOrWorkday(mCalendarPref, year, month + 1, day);
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
                 String SolarTermStr = SolarTerm.getSolarTermStr(year, month, day);
@@ -744,10 +745,11 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 String LunarFestivalStr = LunarFestival.getLunarFestival(fullchinadatestr, lunar);
                 Paint mLunarFestivalPant = new Paint(mLunarPaint);
                 mLunarFestivalPant.setColor(Color.RED);
-                if (SolarTermStr.length() == 0) {
-                    String SolarHoliDayStr = SolarHoliDay.getSolarHoliDay(month, day);
-                    if (SolarHoliDayStr.length() == 0) {
-                        if (LunarFestivalStr.length() != 0) {
+                if (TextUtils.isEmpty(SolarTermStr)) {
+                    String SolarFestivalStr = SolarFestival.getSolarFestival(month, day);
+                    SolarFestivalStr = TextUtils.isEmpty(SolarFestivalStr) ? SpecificFestival.getSpecificFestivalInfo(month, calendar.get(Calendar.DAY_OF_WEEK - 1), calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH)) : SolarFestivalStr;
+                    if (TextUtils.isEmpty(SolarFestivalStr)) {
+                        if (TextUtils.isEmpty(LunarFestivalStr)) {
                             canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);
                         } else {
                             temp = fullchinadatestr.substring(fullchinadatestr.length() - 2, fullchinadatestr.length());
@@ -756,7 +758,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                     } else {
                         Paint mSolarPant = new Paint(mLunarPaint);
                         mSolarPant.setColor(Color.RED);
-                        canvas.drawText(SolarHoliDayStr, x, y + lunarTextHeight - 5, mSolarPant);
+                        canvas.drawText(SolarFestivalStr, x, y + lunarTextHeight - 5, mSolarPant);
                     }
                 } else {
                     canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
