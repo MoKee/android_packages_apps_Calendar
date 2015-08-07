@@ -20,6 +20,8 @@ import com.android.calendar.Event;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
 import com.mokee.cloud.calendar.ChineseCalendarUtils;
+import com.mokee.cloud.calendar.Lunar;
+import com.mokee.cloud.calendar.SolarFestival;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,11 +39,6 @@ import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.mokee.lunar.Lunar;
-import android.mokee.lunar.LunarFestival;
-import android.mokee.lunar.SolarFestival;
-import android.mokee.lunar.SpecificFestival;
-import android.mokee.lunar.SolarTerm;
 import android.mokee.utils.MoKeeUtils;
 import android.provider.CalendarContract.Attendees;
 import android.text.TextPaint;
@@ -741,14 +738,14 @@ public class MonthWeekEventsView extends SimpleWeekView {
 
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
-                String SolarTermStr = SolarTerm.getSolarTermInfo(year, month, day);
                 String fullchinadatestr = lunar.toString();
-                String LunarFestivalStr = LunarFestival.getLunarFestivalInfo(fullchinadatestr, lunar);
+                String SolarTermStr = Lunar.getSolarTermInfo(year, month, day);
+                String LunarFestivalStr = Lunar.getLunarFestivalInfo(fullchinadatestr, lunar);
                 Paint mLunarFestivalPant = new Paint(mLunarPaint);
                 mLunarFestivalPant.setColor(Color.RED);
                 if (TextUtils.isEmpty(SolarTermStr)) {
                     String SolarFestivalStr = SolarFestival.getSolarFestivalInfo(month, day);
-                    SolarFestivalStr = TextUtils.isEmpty(SolarFestivalStr) ? SpecificFestival.getSpecificFestivalInfo(month + 1, calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH), calendar.get(Calendar.DAY_OF_WEEK) - 1) : SolarFestivalStr;
+                    SolarFestivalStr = TextUtils.isEmpty(SolarFestivalStr) ? SolarFestival.getSpecificSolarFestivalInfo(month + 1, calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH), calendar.get(Calendar.DAY_OF_WEEK) - 1) : SolarFestivalStr;
                     if (TextUtils.isEmpty(SolarFestivalStr)) {
                         if (!TextUtils.isEmpty(LunarFestivalStr)) {
                             canvas.drawText(LunarFestivalStr, x, y + lunarTextHeight - 5, mLunarFestivalPant);

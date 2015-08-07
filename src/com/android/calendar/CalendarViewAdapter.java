@@ -17,9 +17,9 @@
 package com.android.calendar;
 
 import com.android.calendar.CalendarController.ViewType;
+import com.mokee.cloud.calendar.Lunar;
 
 import android.content.Context;
-import android.mokee.lunar.Lunar;
 import android.mokee.utils.MoKeeUtils;
 import android.os.Handler;
 import android.text.format.DateUtils;
