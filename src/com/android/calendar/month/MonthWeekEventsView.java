@@ -732,12 +732,13 @@ public class MonthWeekEventsView extends SimpleWeekView {
             x = computeDayLeftPosition(i - offset) - (SIDE_PADDING_MONTH_NUMBER);
             canvas.drawText(mDayNumbers[i], x, y, mMonthNumPaint);
             if (MoKeeUtils.isSupportLanguage(false)) {
-                SharedPreferences mCalendarPref = getContext().getSharedPreferences("ChineseHoliday", Context.MODE_PRIVATE);
+                SharedPreferences mHolidayPref = getContext().getSharedPreferences("ChineseHoliday", Context.MODE_PRIVATE);
+                SharedPreferences mWorkdayPref = getContext().getSharedPreferences("ChineseWorkday", Context.MODE_PRIVATE);
                 Calendar calendar = Calendar.getInstance();
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
                 int day = Integer.parseInt(mDayNumbers[i]);
-                boolean isHoliday = ChineseCalendarUtils.isChineseHolidayOrWorkday(mCalendarPref, year, month + 1, day);
+
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
                 String SolarTermStr = SolarTerm.getSolarTermInfo(year, month, day);
@@ -763,8 +764,15 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 } else {
                     canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
                 }
-                if (isHoliday && MoKeeUtils.isSupportLanguage(true)) {
-                    canvas.drawText("休" , computeDayLeftPosition(i - offset - 1) + (SIDE_PADDING_MONTH_NUMBER) * 2.5f, y - 5, mLunarFestivalPant);
+                if (MoKeeUtils.isSupportLanguage(true)) {
+                    boolean isHoliday = !mHolidayPref.getBoolean("has" + year, false) ? false : ChineseCalendarUtils.isChineseHolidayOrWorkday(mHolidayPref, year, month + 1, day);
+                    boolean isWorkday = !mWorkdayPref.getBoolean("has" + year, false) ? false : ChineseCalendarUtils.isChineseHolidayOrWorkday(mWorkdayPref, year, month + 1, day);
+                    if (isHoliday) {
+                        canvas.drawText("休" , computeDayLeftPosition(i - offset - 1) + (SIDE_PADDING_MONTH_NUMBER) * 2.5f, y - 5, mLunarFestivalPant);
+                    }
+                    if (isWorkday) {
+                        canvas.drawText("班" , computeDayLeftPosition(i - offset - 1) + (SIDE_PADDING_MONTH_NUMBER) * 2.5f, y - 5, mLunarFestivalPant);
+                    }
                 }
             }
             if (isBold) {

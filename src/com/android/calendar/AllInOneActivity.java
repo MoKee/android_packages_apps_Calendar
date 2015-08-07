@@ -86,6 +86,7 @@ import com.android.calendar.month.MonthByWeekFragment;
 import com.android.calendar.selectcalendars.SelectVisibleCalendarsFragment;
 import com.android.calendar.year.YearViewPagerFragment;
 import com.mokee.cloud.misc.FetchChineseHolidayTask;
+import com.mokee.cloud.misc.FetchChineseWorkdayTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -332,12 +333,18 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         }
         super.onCreate(icicle);
 
-        // Fetch Cloud Chinese Holiday
-        SharedPreferences mCalendarPref = getSharedPreferences("ChineseHoliday", MODE_PRIVATE);
+        // Fetch Cloud Chinese holiday and workday
+        SharedPreferences mHolidayPref = getSharedPreferences("ChineseHoliday", MODE_PRIVATE);
+        SharedPreferences mWorkDayPref = getSharedPreferences("ChineseWorkday", MODE_PRIVATE);
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
-        if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(this) && !mCalendarPref.getBoolean("has" + year, false)) {
-            new FetchChineseHolidayTask(mCalendarPref, ((CalendarApplication) getApplicationContext()).getQueue() , year).execute();
+        if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(this)) {
+            if (!mHolidayPref.getBoolean("has" + year, false)) {
+                new FetchChineseHolidayTask(mHolidayPref, ((CalendarApplication) getApplicationContext()).getQueue() , year).execute();
+            }
+            if (!mWorkDayPref.getBoolean("has" + year, false)) {
+                new FetchChineseWorkdayTask(mWorkDayPref, ((CalendarApplication) getApplicationContext()).getQueue() , year).execute();
+            }
         }
 
         if (icicle != null && icicle.containsKey(BUNDLE_KEY_CHECK_ACCOUNTS)) {
