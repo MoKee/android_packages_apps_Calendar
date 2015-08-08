@@ -761,8 +761,13 @@ public class MonthWeekEventsView extends SimpleWeekView {
                         canvas.drawText(SolarFestivalStr, x, y + lunarTextHeight - 5, mSolarPant);
                     }
                 } else {
-                    if (isEaster) mLunarPaint.setColor(Color.RED);
-                    canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
+                    if (isEaster) {
+                        Paint mEasterPant = new Paint(mLunarPaint);
+                        mEasterPant.setColor(Color.RED);
+                        canvas.drawText(SolarTermStr, x, y + lunarTextHeight - 5, mEasterPant);
+                    } else {
+                        canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
+                    }
                 }
                 if (MoKeeUtils.isSupportLanguage(true)) {
                     boolean isHoliday = !mHolidayPref.getBoolean("has" + year, false) ? false : ChineseCalendarUtils.isChineseHolidayOrWorkday(mHolidayPref, year, month + 1, day);
