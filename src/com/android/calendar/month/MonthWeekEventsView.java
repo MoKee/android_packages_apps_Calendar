@@ -739,7 +739,9 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
                 String fullchinadatestr = lunar.toString();
-                String SolarTermStr = Lunar.getSolarTermInfo(year, month, day);
+                
+                boolean isEaster = SolarFestival.isEaster(year, month + 1, day);
+                String SolarTermStr = isEaster ? Resources.getSystem().getConfiguration().locale.getCountry().equals("CN") ? "复活节" : "復活節" : Lunar.getSolarTermInfo(year, month, day);
                 String LunarFestivalStr = Lunar.getLunarFestivalInfo(fullchinadatestr, lunar);
                 Paint mLunarFestivalPant = new Paint(mLunarPaint);
                 mLunarFestivalPant.setColor(Color.RED);
@@ -759,6 +761,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                         canvas.drawText(SolarFestivalStr, x, y + lunarTextHeight - 5, mSolarPant);
                     }
                 } else {
+                    if (isEaster) mLunarPaint.setColor(Color.RED);
                     canvas.drawText(TextUtils.isEmpty(LunarFestivalStr) ? SolarTermStr : LunarFestivalStr, x, y + lunarTextHeight - 5, TextUtils.isEmpty(LunarFestivalStr) ? mLunarPaint : mLunarFestivalPant);
                 }
                 if (MoKeeUtils.isSupportLanguage(true)) {
