@@ -117,7 +117,7 @@ public class GeneralPreferences extends PreferenceFragment implements
 
     // Default preference values
     public static final String DEFAULT_DEFAULT_START = "-2";
-    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.WEEK;
+    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.MONTH;
     public static final int DEFAULT_DETAILED_VIEW = CalendarController.ViewType.DAY;
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
     // This should match the XML file.
