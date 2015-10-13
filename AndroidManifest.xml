@@ -238,6 +238,13 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".DataUpgradeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
         <service android:name=".alerts.AlertService" />
 
         <service android:name=".alerts.DismissAlarmsService" />
