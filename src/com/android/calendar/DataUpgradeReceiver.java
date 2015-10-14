@@ -32,8 +32,8 @@ public class DataUpgradeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // Fetch Cloud Chinese holiday and workday
-        SharedPreferences mHolidayPref = context.getSharedPreferences("ChineseHoliday", Context.MODE_WORLD_READABLE);
-        SharedPreferences mWorkDayPref = context.getSharedPreferences("ChineseWorkday", Context.MODE_WORLD_READABLE);
+        SharedPreferences mHolidayPref = context.getSharedPreferences("chinese_holiday", Context.MODE_WORLD_READABLE);
+        SharedPreferences mWorkDayPref = context.getSharedPreferences("chinese_workday", Context.MODE_WORLD_READABLE);
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
         if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(context)) {

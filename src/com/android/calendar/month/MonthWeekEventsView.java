@@ -729,8 +729,8 @@ public class MonthWeekEventsView extends SimpleWeekView {
             x = computeDayLeftPosition(i - offset) - (SIDE_PADDING_MONTH_NUMBER);
             canvas.drawText(mDayNumbers[i], x, y, mMonthNumPaint);
             if (MoKeeUtils.isSupportLanguage(false)) {
-                SharedPreferences mHolidayPref = getContext().getSharedPreferences("ChineseHoliday", Context.MODE_PRIVATE);
-                SharedPreferences mWorkdayPref = getContext().getSharedPreferences("ChineseWorkday", Context.MODE_PRIVATE);
+                SharedPreferences mHolidayPref = getContext().getSharedPreferences("chinese_holiday", Context.MODE_PRIVATE);
+                SharedPreferences mWorkdayPref = getContext().getSharedPreferences("chinese_workday", Context.MODE_PRIVATE);
                 Calendar calendar = Calendar.getInstance();
                 int year = Integer.parseInt(mYearNumbers[i]);
                 int month = Integer.parseInt(mMonthNumbers[i]);
