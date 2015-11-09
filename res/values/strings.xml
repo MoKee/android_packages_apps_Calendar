@@ -752,4 +752,22 @@
 
     <!-- Do Not Translate.  Sender identity for global notification synchronization. -->
     <string name="notification_sender_id"></string>
+
+    <!-- Delete Events related -->
+    <string name="events_delete">Delete events</string>
+    <string name="action_select_all">Select all</string>
+    <string name="action_select_none">Deselect all</string>
+    <string name="action_delete">Done</string>
+    <string name="all_events">All events</string>
+    <string name="no_events">No events available</string>
+    <string name="evt_del_dlg_title">Delete events?</string>
+    <string name="evt_del_dlg_msg_selected">Selected events will be deleted</string>
+    <string name="evt_del_dlg_msg_all">All events will be deleted</string>
+    <string name="no_events_selected">No events selected</string>
+
+  <plurals name="events_selected">
+    <item quantity="zero">No events selected</item>
+    <item quantity="one">%1$d event selected</item>
+    <item quantity="other">%1$d events selected</item>
+ </plurals>
 </resources>
