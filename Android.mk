@@ -31,6 +31,9 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         android-support-v4 \
         android-support-v13 \
         calendar-common \
+        libOkHttp \
+        libOkHttp-UrlConnection \
+        libOkIO \
         org.apache.http.legacy \
         volley
 

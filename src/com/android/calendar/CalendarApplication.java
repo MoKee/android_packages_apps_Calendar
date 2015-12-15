@@ -17,6 +17,7 @@
 
 package com.android.calendar;
 
+import com.android.calendar.misc.OkHttpStack;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
@@ -44,7 +45,7 @@ public class CalendarApplication extends Application {
         // Initialize the registry mapping some custom behavior.
         ExtensionsFactory.init(getAssets());
 
-        mRequestQueue = Volley.newRequestQueue(this);
+        mRequestQueue = Volley.newRequestQueue(this, new OkHttpStack());
     }
 
     public RequestQueue getQueue() {
