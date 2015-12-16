@@ -34,8 +34,9 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         libOkHttp \
         libOkHttp-UrlConnection \
         libOkIO \
-        org.apache.http.legacy \
         volley
+
+LOCAL_JAVA_LIBRARIES := org.apache.http.legacy
 
 # Uncomment the following line to build against the current SDK
 # This is required for building an unbundled app.
