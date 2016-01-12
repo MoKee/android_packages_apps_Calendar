@@ -49,7 +49,8 @@
     <string name="repeats_label">Repetition</string>
     <!-- Title of event when no explicit title is specified by the user -->
     <string name="no_title_label">(No title)</string>
-
+    <!-- No google map in phone -->
+    <string name="no_map">The phone can not find the map</string>
     <!-- Reminder format strings -->
     <plurals name="Nminutes">
         <!-- This is the label for a 1-minute reminder. -->
