@@ -16,7 +16,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- This is the label underneath the icon for Calendar -->
     <string name="app_label">Calendar</string>
-
+    <!-- on permission of read_calendar -->
+    <string name="on_permission_read_calendar">You have disabled a required permission.</string>
     <!-- Shared Labels. These labels are shared among the activities. -->
     <skip/>
     <!-- This is the label for the title or name of an event -->
