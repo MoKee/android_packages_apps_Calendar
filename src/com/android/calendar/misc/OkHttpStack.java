@@ -21,8 +21,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.android.volley.toolbox.HurlStack;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.OkUrlFactory;
+import com.android.okhttp.OkHttpClient;
+import com.android.okhttp.OkUrlFactory;
 
 public class OkHttpStack extends HurlStack {
 

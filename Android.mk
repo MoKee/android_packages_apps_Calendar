@@ -31,12 +31,9 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         android-support-v4 \
         android-support-v13 \
         calendar-common \
-        libOkHttp \
-        libOkHttp-UrlConnection \
-        libOkIO \
         volley
 
-LOCAL_JAVA_LIBRARIES := org.apache.http.legacy
+LOCAL_JAVA_LIBRARIES := org.apache.http.legacy okhttp
 
 # Uncomment the following line to build against the current SDK
 # This is required for building an unbundled app.
