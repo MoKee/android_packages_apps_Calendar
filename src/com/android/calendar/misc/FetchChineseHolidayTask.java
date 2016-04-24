@@ -54,7 +54,7 @@ public class FetchChineseHolidayTask extends AsyncTask<Void, Void, Void> impleme
     }
 
     private void fetchChineseHoliday(SharedPreferences mPrefs, RequestQueue mQueue) {
-        String url = URI.create("http://cloud.mokeedev.com/calendar/ChineseHolidays.php")
+        String url = URI.create("http://cloud.mokeedev.com/calendar/cnHolidays")
                 .toASCIIString();
         ChineseCalendarRequest holidayRequest = new ChineseCalendarRequest(Request.Method.POST, url,
                 this, this);
