@@ -737,7 +737,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
 
                 calendar.set(year, month, day);
                 Lunar lunar = new Lunar(calendar);
-                String fullLunarInfoStr = lunar.toString();
+                String fullLunarInfoStr = lunar.getFullLunarString();
                 
                 boolean isEaster = SolarFestival.isEaster(year, month + 1, day);
                 String SolarTermStr = isEaster ? Resources.getSystem().getConfiguration().locale.getCountry().equals("CN") ? "复活节" : "復活節" : Lunar.getSolarTermInfo(year, month, day);
