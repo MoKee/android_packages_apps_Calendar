@@ -21,6 +21,8 @@ LOCAL_SRC_FILES := $(call all-java-files-under,$(src_dirs))
 #        libchips \
 #        calendar-common
 
+LOCAL_JAVA_LIBRARIES := mokee-cloud org.apache.http.legacy okhttp
+
 # unbundled
 LOCAL_STATIC_JAVA_LIBRARIES := \
         android-common \
@@ -30,7 +32,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
         android-opt-timezonepicker \
         android-support-v4 \
         android-support-v13 \
-        calendar-common
+        calendar-common \
+        volley
 
 LOCAL_SDK_VERSION := current
 
