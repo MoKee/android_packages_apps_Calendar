@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (C) 2013-2016 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -443,7 +444,14 @@ public class SimpleDayPickerFragment extends ListFragment implements OnScrollLis
             mFirstDayOfMonth.set(mTempTime);
             mFirstDayOfMonth.monthDay = 1;
             millis = mFirstDayOfMonth.normalize(true);
-            setMonthDisplayed(mFirstDayOfMonth, true);
+            Time now = new Time();
+            now.set(System.currentTimeMillis());
+            if (mFirstDayOfMonth.month == mSelectedDay.month
+                    && now.month == mSelectedDay.month) {
+                setMonthDisplayed(mSelectedDay, true);
+            } else {
+                setMonthDisplayed(mFirstDayOfMonth, true);
+            }
             position = Utils.getWeeksSinceEpochFromJulianDay(
                     Time.getJulianDay(millis, mFirstDayOfMonth.gmtoff), mFirstDayOfWeek);
 
