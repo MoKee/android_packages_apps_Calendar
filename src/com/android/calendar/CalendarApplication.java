@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007 The Android Open Source Project
+ * Copyright (C) 2013-2016 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +17,16 @@
 
 package com.android.calendar;
 
+import com.android.calendar.misc.OkHttpStack;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import android.app.Application;
 
 public class CalendarApplication extends Application {
+
+    private RequestQueue mRequestQueue;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -36,5 +44,12 @@ public class CalendarApplication extends Application {
 
         // Initialize the registry mapping some custom behavior.
         ExtensionsFactory.init(getAssets());
+
+        mRequestQueue = Volley.newRequestQueue(this, new OkHttpStack());
     }
+
+    public RequestQueue getQueue() {
+        return mRequestQueue;
+    }
+
 }

@@ -15,8 +15,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <color name="widget_title">#ff5199EA</color>
+    <color name="event_title">#ffffffff</color>
     <color name="event_content_title">#dd000000</color>
     <color name="event_content_text">#89000000</color>
+    <color name="event_list_line">#26000000</color>
 
     <color name="year_view_month_title_color">#FF139BEA</color>
     <color name="year_view_month_click_color">#3CBDBDBD</color>

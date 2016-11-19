@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007 The Android Open Source Project
+ * Copyright (C) 2013-2016 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,7 +121,7 @@ public class GeneralPreferences extends PreferenceFragment implements
 
     // Default preference values
     public static final String DEFAULT_DEFAULT_START = "-2";
-    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.WEEK;
+    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.MONTH;
     public static final int DEFAULT_DETAILED_VIEW = CalendarController.ViewType.DAY;
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
     // This should match the XML file.
