@@ -734,9 +734,6 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
         }
         HOURS_MARGIN = HOURS_LEFT_MARGIN + HOURS_RIGHT_MARGIN;
         DAY_HEADER_HEIGHT = mNumDays == 1 ? ONE_DAY_HEADER_HEIGHT : MULTI_DAY_HEADER_HEIGHT;
-        if (LunarUtils.showLunar(mContext) && mNumDays != 1) {
-            DAY_HEADER_HEIGHT = (int) (DAY_HEADER_HEIGHT + DAY_HEADER_FONT_SIZE + 2);
-        }
 
         mCurrentTimeLine = mResources.getDrawable(R.drawable.timeline_indicator_holo_light);
         mCurrentTimeAnimateLine = mResources
@@ -2567,9 +2564,6 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
         String dateNumStr = String.valueOf(dateNum);
         if (mNumDays > 1) {
             float y = DAY_HEADER_HEIGHT - DAY_HEADER_BOTTOM_MARGIN;
-            if (LunarUtils.showLunar(mContext)) {
-                y -= DATE_HEADER_FONT_SIZE + 2;
-            }
 
             // Draw day of the month
             x = computeDayLeftPosition(day + 1) - DAY_HEADER_RIGHT_MARGIN;
@@ -2580,31 +2574,10 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
             canvas.drawText(dateNumStr, x, y, p);
 
             // Draw day of the week
-            int dateX = (int) (x - p.measureText(" " + dateNumStr));
+            x -= p.measureText(" " + dateNumStr);
             p.setTextSize(DAY_HEADER_FONT_SIZE);
             p.setTypeface(Typeface.DEFAULT);
-            canvas.drawText(dayStr, dateX, y, p);
-
-            // To show the lunar info.
-            if (LunarUtils.showLunar(mContext)) {
-                // adjust the year and month
-                int month = mBaseDate.month;
-                int year = mBaseDate.year;
-                if (dateNum > mMonthLength || dateNum < mFirstVisibleDate) {
-                    ++month;
-                    if (month > 11) {
-                        month = 0;
-                        year = year + 1;
-                    }
-                }
-
-                String lunarInfo = LunarUtils.get(mContext, year, month, dateNum,
-                        LunarUtils.FORMAT_LUNAR_SHORT | LunarUtils.FORMAT_ONE_FESTIVAL,
-                        false, null);
-                if (!TextUtils.isEmpty(lunarInfo)) {
-                    canvas.drawText(lunarInfo, x, y + DAY_HEADER_FONT_SIZE + 2, p);
-                }
-            }
+            canvas.drawText(dayStr, x, y, p);
         } else {
             float y = ONE_DAY_HEADER_HEIGHT - DAY_HEADER_ONE_DAY_BOTTOM_MARGIN;
             p.setTextAlign(Align.LEFT);
