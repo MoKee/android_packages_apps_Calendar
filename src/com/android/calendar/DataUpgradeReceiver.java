@@ -38,10 +38,10 @@ public class DataUpgradeReceiver extends BroadcastReceiver {
         int year = cal.get(Calendar.YEAR);
         if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(context)) {
             if (!mHolidayPref.getBoolean("has" + year, false)) {
-                new FetchChineseHolidayTask(mHolidayPref, ((CalendarApplication) context.getApplicationContext()).getQueue(), year).execute();
+                new FetchChineseHolidayTask(context, mHolidayPref, ((CalendarApplication) context.getApplicationContext()).getQueue(), year).execute();
             }
             if (!mWorkDayPref.getBoolean("has" + year, false)) {
-                new FetchChineseWorkdayTask(mWorkDayPref, ((CalendarApplication) context.getApplicationContext()).getQueue(), year).execute();
+                new FetchChineseWorkdayTask(context, mWorkDayPref, ((CalendarApplication) context.getApplicationContext()).getQueue(), year).execute();
             }
         }
     }
