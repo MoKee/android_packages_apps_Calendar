@@ -22,9 +22,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
+import android.provider.CalendarContract.Alarm;
 
 import com.android.calendar.requests.ChineseCalendarRequest;
 import com.android.volley.DefaultRetryPolicy;
@@ -39,9 +43,11 @@ public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> impleme
 
     private SharedPreferences mPrefs;
     private RequestQueue mQueue;
+    private Context mContext;
     private String mYear;
 
-    public FetchChineseWorkdayTask(SharedPreferences prefs, RequestQueue queue, int year) {
+    public FetchChineseWorkdayTask(Context context, SharedPreferences prefs, RequestQueue queue, int year) {
+        mContext = context;
         mPrefs = prefs;
         mQueue = queue;
         mYear = String.valueOf(year);
@@ -49,11 +55,11 @@ public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> impleme
 
     @Override
     protected Void doInBackground(Void... voids) {
-        fetchChineseHoliday(mPrefs, mQueue);
+        fetchChineseHoliday(mQueue);
         return null;
     }
 
-    private void fetchChineseHoliday(SharedPreferences mPrefs, RequestQueue mQueue) {
+    private void fetchChineseHoliday(RequestQueue mQueue) {
         String url = URI.create("http://cloud.mokeedev.com/calendar/cnWorkdays")
                 .toASCIIString();
         ChineseCalendarRequest workdayRequest = new ChineseCalendarRequest(Request.Method.POST, url,
@@ -75,8 +81,13 @@ public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> impleme
             JSONArray month = holidayYear.getJSONArray("month");
             JSONArray days = holidayYear.getJSONArray("day");
             Editor editor = mPrefs.edit();
+            ContentResolver contentResolver = mContext.getContentResolver();
             for (int i = 0; i < month.length(); i++) {
                 for (String day : days.getString(i).split(",")) {
+                    ContentValues values = new ContentValues();
+                    values.put(Alarm.DATE, mYear + "-" + month.getString(i) + "-" + day);
+                    values.put(Alarm.STATE, 1);
+                    contentResolver.insert(Alarm.CONTENT_FILTER_WORKDAY_URI, values);
                     editor.putBoolean(mYear + "-" + month.getString(i) + "-" + day, true);
                 }
             }
