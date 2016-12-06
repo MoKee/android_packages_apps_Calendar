@@ -95,6 +95,8 @@ import com.android.timezonepicker.TimeZoneInfo;
 import com.android.timezonepicker.TimeZonePickerDialog;
 import com.android.timezonepicker.TimeZonePickerUtils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Formatter;
@@ -612,7 +614,14 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
             rpd = new RecurrencePickerDialog();
             rpd.setArguments(b);
             rpd.setOnRecurrenceSetListener(EditEventView.this);
-            rpd.show(fm, FRAG_TAG_RECUR_PICKER);
+            Class clazz = rpd.getClass();
+            try {
+                Method m = clazz.getMethod("showAllowingStateLoss",
+                        FragmentManager.class, String.class);
+                m.invoke(rpd, fm, FRAG_TAG_RECUR_PICKER);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
             return;
         }
 
