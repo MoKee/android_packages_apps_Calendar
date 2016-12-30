@@ -754,7 +754,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
                 LunarUtils.get(getContext(), year, month, monthDay,
                         LunarUtils.FORMAT_LUNAR_SHORT | LunarUtils.FORMAT_MULTI_FESTIVAL, false,
                         infos);
-                boolean isChineseFestival =LunarUtils.isChineseFestival(year, month, monthDay);
+                boolean isChineseFestival = LunarUtils.isChineseFestival(year, month, monthDay);
                 if (infos.size() > 0) {
                     float originalTextSize = mMonthNumPaint.getTextSize();
                     mMonthNumPaint.setTextSize(TEXT_SIZE_LUNAR);
@@ -776,12 +776,12 @@ public class MonthWeekEventsView extends SimpleWeekView {
                             infoY = y + (mMonthNumHeight + LUNAR_PADDING_LUNAR) * (num + 1);
                         }
 
-                        if(isChineseFestival){
+                        if (isChineseFestival) {
                             mMonthNumPaint.setColor(getContext().getResources()
                                     .getColor(R.color.green));
                         }
                         canvas.drawText(info, infoX, infoY, mMonthNumPaint);
-                        num = num + 1;
+                        ++num;
                         mMonthNumPaint.setColor(defalutColor);
                     }
 

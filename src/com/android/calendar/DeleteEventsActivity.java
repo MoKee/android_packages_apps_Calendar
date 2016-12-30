@@ -74,7 +74,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DeleteEventsActivity extends ListActivity
-    implements LoaderManager.LoaderCallbacks<Cursor>, OnMenuItemClickListener {
+        implements LoaderManager.LoaderCallbacks<Cursor>, OnMenuItemClickListener {
 
     private static final String TAG = "DeleteEvents";
     private static final boolean DEBUG = false;
@@ -497,7 +497,7 @@ public class DeleteEventsActivity extends ListActivity
 
     private void selectAll() {
         mSelectedMap.clear();
-        for (Long event : mEventList){
+        for (Long event : mEventList) {
             mSelectedMap.put(event, event);
         }
 

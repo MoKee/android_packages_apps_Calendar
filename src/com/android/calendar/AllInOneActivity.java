@@ -1477,7 +1477,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
         MenuItem delEventsMenu = mOptionsMenu.findItem(R.id.action_delete_events);
         if (delEventsMenu != null) {
-            if ((cursor == null) || (cursor.getCount() == 0)) {
+            if (cursor == null || cursor.getCount() == 0) {
                 delEventsMenu.setEnabled(false);
             } else {
                 delEventsMenu.setEnabled(true);
@@ -1487,7 +1487,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
     @Override
     public void onLoaderReset(Loader<Cursor> arg0) {
-        // Do nothing.
+        // Do nothing
         return;
     }
 }

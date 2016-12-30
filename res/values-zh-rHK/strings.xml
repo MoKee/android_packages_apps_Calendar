@@ -277,16 +277,4 @@
     <item quantity="other" msgid="8779598489398048259">"<xliff:g id="EVENT_COUNT">%d</xliff:g>的活動"</item>
   </plurals>
     <string name="acessibility_recurrence_choose_end_date_description" msgid="5899029840837836711">"更改結束日期"</string>
-
-    <!-- Delete Events related -->
-    <string name="menu_delete_events">刪除活動</string>
-    <string name="action_select_all">全部選擇</string>
-    <string name="action_select_none">取消全選</string>
-    <string name="action_delete">刪除</string>
-    <string name="all_events">所有活動</string>
-    <string name="no_events">沒有可用的活動</string>
-    <string name="evt_del_dlg_title">刪除活動嗎？</string>
-    <string name="evt_del_dlg_msg_selected">將刪除已選取的活動</string>
-    <string name="evt_del_dlg_msg_all">將刪除所有活動</string>
-    <string name="no_events_selected">沒有已選取的活動</string>
 </resources>

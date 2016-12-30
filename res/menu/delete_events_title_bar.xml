@@ -35,8 +35,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:showAsAction="always"
         android:icon="@drawable/ic_menu_trash_holo_light"
         android:title="@string/action_delete"
-        android:visible="true">
-    </item>
+        android:visible="true" />
     <item android:id="@+id/select_all_check"
           android:title="@string/action_select_all"
           android:showAsAction="never"

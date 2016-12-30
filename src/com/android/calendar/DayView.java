@@ -2566,12 +2566,11 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
         // Draw day of the month
         String dateNumStr = String.valueOf(dateNum);
         if (mNumDays > 1) {
-            float y = -1;
+            float y = DAY_HEADER_HEIGHT - DAY_HEADER_BOTTOM_MARGIN;
             if (LunarUtils.showLunar(mContext)) {
-                y = DAY_HEADER_HEIGHT - DAY_HEADER_BOTTOM_MARGIN - DATE_HEADER_FONT_SIZE - 2;
-            } else {
-                y = DAY_HEADER_HEIGHT - DAY_HEADER_BOTTOM_MARGIN;
+                y -= DATE_HEADER_FONT_SIZE + 2;
             }
+
             // Draw day of the month
             x = computeDayLeftPosition(day + 1) - DAY_HEADER_RIGHT_MARGIN;
             p.setTextAlign(Align.RIGHT);
@@ -2592,7 +2591,7 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
                 int month = mBaseDate.month;
                 int year = mBaseDate.year;
                 if (dateNum > mMonthLength || dateNum < mFirstVisibleDate) {
-                    month = month + 1;
+                    ++month;
                     if (month > 11) {
                         month = 0;
                         year = year + 1;

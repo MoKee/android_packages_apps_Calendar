@@ -58,6 +58,7 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
     float ydpi;
     int nWidth;
     int nHeight;
+
     /**
      * {@inheritDoc}
      */
@@ -161,7 +162,7 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
             views.setRemoteAdapter(appWidgetId, R.id.events_list, updateIntent);
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.events_list);
 
-            if(mIntent.getAction().equals(ACTION_EVENTSCHANGED)){
+            if (mIntent.getAction().equals(ACTION_EVENTSCHANGED)) {
                 int eventTag = mIntent.getIntExtra(CalendarAppWidgetService.EVENT_TAG,
                         CalendarAppWidgetService.DEFAULT_EVENT);
                 if (eventTag == CalendarAppWidgetService.NO_EVENT) {
@@ -171,9 +172,9 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
                     Intent launchCalendarIntent = CalendarAppWidgetProvider
                             .getLaunchFillInIntent(context, 0, 0, 0, false);
                     PendingIntent launchCalendarPendingIntent = PendingIntent.getActivity(
-                            context, 0 , launchCalendarIntent, 0);
+                            context, 0, launchCalendarIntent, 0);
                     views.setOnClickPendingIntent(R.id.event_no,launchCalendarPendingIntent);
-                } else if(eventTag == CalendarAppWidgetService.HAVE_EVENT) {
+                } else if (eventTag == CalendarAppWidgetService.HAVE_EVENT) {
                     views.setViewVisibility(R.id.events_list, View.VISIBLE);
                     views.setViewVisibility(R.id.event_no, View.GONE);
                     views.setViewVisibility(R.id.list_bottom,View.VISIBLE);
@@ -181,7 +182,7 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
                 appWidgetManager.updateAppWidget(appWidgetId,views);
             }
 
-            if(mIntent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_OPTIONS_CHANGED)) {
+            if (mIntent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_OPTIONS_CHANGED)) {
                 int mSizeChangedAppId = -1;
                 Bundle extras = mIntent.getExtras();
                 if (extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID)

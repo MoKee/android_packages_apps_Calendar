@@ -29,7 +29,6 @@
     <string name="date_time_fmt" msgid="1642972650061946484">"<xliff:g id="DATE">%s</xliff:g>，<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
     <string name="repeats_label" msgid="7414023871434593196">"重复"</string>
     <string name="no_title_label" msgid="302177118061368042">"（无标题）"</string>
-    <string name="no_map">手机里没有找到地图</string>
   <plurals name="Nminutes">
     <item quantity="one" msgid="4871052965772159239">"1 分钟"</item>
     <item quantity="other" msgid="5644461630927544936">"<xliff:g id="COUNT">%d</xliff:g> 分钟"</item>
@@ -278,21 +277,4 @@
     <item quantity="other" msgid="8779598489398048259">"重复<xliff:g id="EVENT_COUNT">%d</xliff:g>次"</item>
   </plurals>
     <string name="acessibility_recurrence_choose_end_date_description" msgid="5899029840837836711">"更改结束日期"</string>
-
-    <!-- Delete Events related -->
-    <string name="events_delete">删除事件</string>
-    <string name="action_select_all">全选</string>
-    <string name="action_select_none">取消全选</string>
-    <string name="action_delete">完成</string>
-    <string name="all_events">所有事件</string>
-    <string name="no_events">没有可用的事件</string>
-    <string name="evt_del_dlg_title">删除事件？</string>
-    <string name="evt_del_dlg_msg_selected">将删除选中的事件</string>
-    <string name="evt_del_dlg_msg_all">所有事件都将被删除</string>
-    <string name="no_events_selected">没有事件被选中</string>
-
-  <plurals name="events_selected">
-    <item quantity="zero">没有选择事件</item>
-    <item quantity="other">已选择 %1$d</item>
-  </plurals>
 </resources>
