@@ -33,12 +33,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <item
         android:id="@+id/action_select_all"
         android:title="@string/action_select_all"
-        android:visible="false">
-    </item>
+        android:visible="false" />
     <item
         android:id="@+id/action_select_none"
         android:title="@string/action_select_none"
-        android:visible="false">
-    </item>
+        android:visible="false" />
 
 </menu>

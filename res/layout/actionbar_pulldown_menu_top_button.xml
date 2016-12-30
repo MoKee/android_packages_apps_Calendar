@@ -18,8 +18,8 @@
     android:layout_width="wrap_content"
     android:layout_height="48dip"
     android:gravity="center_vertical"
-    android:paddingEnd="8dip"
-    android:paddingStart="12dip">
+    android:paddingEnd="8dp"
+    android:paddingStart="12dp">
 
     <TextView android:id="@+id/top_button_weekday"
         android:layout_width="wrap_content"
@@ -36,9 +36,9 @@
     <TextView android:id="@+id/top_button_lunar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-2dip"
-        android:layout_marginBottom="-8dip"
-        android:layout_marginStart="8dip"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="-8dp"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@id/top_button_weekday"
         android:singleLine="true"
         android:textSize="12sp"
@@ -55,3 +55,4 @@
         android:textColor="@color/calendar_view_switch_menu_text_color"
         android:gravity="start" />
 </RelativeLayout>
+

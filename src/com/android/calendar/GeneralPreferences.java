@@ -386,14 +386,14 @@ public class GeneralPreferences extends PreferenceFragment implements
         return null;
     }
 
-    public void updateWeekStartDayDb(String value){
-        ContentResolver contentResolver =getActivity().getContentResolver();
-        Cursor cursor=contentResolver.query(START_DAY_URI, null, null, null, null);
-        ContentValues contentValues=new ContentValues();
+    public void updateWeekStartDayDb(String value) {
+        ContentResolver contentResolver = getActivity().getContentResolver();
+        Cursor cursor = contentResolver.query(START_DAY_URI, null, null, null, null);
+        ContentValues contentValues = new ContentValues();
         contentValues.put(START_DAY, value);
-        if(cursor != null && cursor.moveToFirst()){
+        if (cursor != null && cursor.moveToFirst()) {
             contentResolver.update(START_DAY_URI, contentValues, null, null);
-        }else{
+        } else {
             contentResolver.insert(START_DAY_URI, contentValues);
         }
     }

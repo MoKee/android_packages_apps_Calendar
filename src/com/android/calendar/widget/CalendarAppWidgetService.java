@@ -52,6 +52,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CalendarAppWidgetService extends RemoteViewsService {
     private static final String TAG = "CalendarWidget";
+
     public static final int DEFAULT_EVENT = 0;
     public static final int NO_EVENT = 0;
     public static final int HAVE_EVENT = 1;
@@ -226,12 +227,13 @@ public class CalendarAppWidgetService extends RemoteViewsService {
             if (mModel.mRowInfos.size() == 0) {
                 return null;
             }
+
             RowInfo rowInfo = mModel.mRowInfos.get(position);
             if (rowInfo.mType == RowInfo.TYPE_DAY) {
                 RemoteViews views = new RemoteViews(mContext.getPackageName(),
                         R.layout.appwidget_day);
                 DayInfo dayInfo = mModel.mDayInfos.get(rowInfo.mIndex);
-                //don't display this first list item line
+                // Don't display the first list item line
                 if (position == 0) {
                     views.setViewVisibility(R.id.list_line, View.GONE);
                 } else {
@@ -501,10 +503,9 @@ public class CalendarAppWidgetService extends RemoteViewsService {
                     mModel = buildAppWidgetModel(mContext, matrixCursor, tz);
                     Intent intent = new Intent(CalendarAppWidgetProvider.ACTION_EVENTSCHANGED);
                     if (mModel.mEventInfos.isEmpty() || mModel.mRowInfos.isEmpty()) {
-                        intent.putExtra(EVENT_TAG,NO_EVENT);
-                    }
-                    else {
-                        intent.putExtra(EVENT_TAG,HAVE_EVENT);
+                        intent.putExtra(EVENT_TAG, NO_EVENT);
+                    } else {
+                        intent.putExtra(EVENT_TAG, HAVE_EVENT);
                     }
                     mContext.sendBroadcast(intent);
                 } finally {

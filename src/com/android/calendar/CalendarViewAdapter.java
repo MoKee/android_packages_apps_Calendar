@@ -514,6 +514,5 @@ public class CalendarViewAdapter extends BaseAdapter {
                     to.get(Calendar.DAY_OF_MONTH));
         }
     }
-
 }
 

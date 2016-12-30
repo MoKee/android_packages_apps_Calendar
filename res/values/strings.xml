@@ -16,8 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- This is the label underneath the icon for Calendar -->
     <string name="app_label">Calendar</string>
-    <!-- on permission of read_calendar -->
-    <string name="on_permission_read_calendar">You have disabled a required permission.</string>
+
     <!-- Shared Labels. These labels are shared among the activities. -->
     <skip/>
     <!-- This is the label for the title or name of an event -->
@@ -50,8 +49,7 @@
     <string name="repeats_label">Repetition</string>
     <!-- Title of event when no explicit title is specified by the user -->
     <string name="no_title_label">(No title)</string>
-    <!-- No google map in phone -->
-    <string name="no_map">The phone can not find the map</string>
+
     <!-- Reminder format strings -->
     <plurals name="Nminutes">
         <!-- This is the label for a 1-minute reminder. -->
@@ -695,8 +693,6 @@
     <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
     <string name="do_not_check">Do NOT check -></string>
 
-    <string name="qingming">qing ming</string>
-
     <!-- Dialog title for recurrence picker for configuring a repeating event[CHAR LIMIT=20] -->
     <string name="recurrence_dialog_title">Repeat</string>
     <!-- Dialog title for recurrence picker when one-time event is selected [CHAR LIMIT=20] -->
@@ -754,22 +750,4 @@
 
     <!-- Do Not Translate.  Sender identity for global notification synchronization. -->
     <string name="notification_sender_id"></string>
-
-    <!-- Delete Events related -->
-    <string name="events_delete">Delete events</string>
-    <string name="action_select_all">Select all</string>
-    <string name="action_select_none">Deselect all</string>
-    <string name="action_delete">Done</string>
-    <string name="all_events">All events</string>
-    <string name="no_events">No events available</string>
-    <string name="evt_del_dlg_title">Delete events?</string>
-    <string name="evt_del_dlg_msg_selected">Selected events will be deleted</string>
-    <string name="evt_del_dlg_msg_all">All events will be deleted</string>
-    <string name="no_events_selected">No events selected</string>
-
-  <plurals name="events_selected">
-    <item quantity="zero">No events selected</item>
-    <item quantity="one">%1$d event selected</item>
-    <item quantity="other">%1$d events selected</item>
- </plurals>
 </resources>
