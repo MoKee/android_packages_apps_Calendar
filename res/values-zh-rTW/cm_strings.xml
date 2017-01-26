@@ -37,7 +37,7 @@
   <string name="action_delete">完成</string>
   <string name="all_events">所有事件</string>
   <string name="no_events">沒有可用的事件</string>
-  <string name="evt_del_dlg_title">是否刪除事件？</string>
+  <string name="evt_del_dlg_title">刪除事件？</string>
   <string name="evt_del_dlg_msg_selected">將刪除已選取的事件</string>
   <string name="evt_del_dlg_msg_all">將刪除所有事件</string>
   <string name="no_events_selected">沒有已選取的事件</string>
@@ -47,7 +47,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">傳送事件至：</string>
   <string name="cal_export_event_sdcard_title">匯出至 SD 卡</string>
-  <string name="cal_export_succ_msg">成功匯出活動：%1s 個</string>
+  <string name="cal_export_succ_msg">成功匯出事件：%1s 個</string>
   <string name="cal_import_menu_title">匯入事件</string>
   <string name="cal_nothing_to_import">沒有可匯入的事件</string>
   <string name="cal_import_error_msg">匯入失敗</string>
