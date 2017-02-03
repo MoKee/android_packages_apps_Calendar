@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Snoozeduur vragen</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Duur vragen bij het snoozen van een herinnering</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Lengte vragen tijdens het snoozen van een herinnering</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Altijd de standaardduur gebruiken</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Snoozeduur instellen</string>
