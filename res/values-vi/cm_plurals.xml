@@ -15,4 +15,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <plurals name="events_selected">
+    <item quantity="other">%1$d sự kiện đã chọn</item>
+  </plurals>
+  <plurals name="select_events_to_share">
+    <item quantity="other">Chọn sự kiện để chia sẻ</item>
+  </plurals>
+</resources>
