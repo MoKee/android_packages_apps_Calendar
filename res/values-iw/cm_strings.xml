@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">הושבתה הרשאה נדרשת.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">אין יישומי מפה מותקנים</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">חלה תקלה בזמן שיתוף האירוע</string>
   <string name="share_label">שתף</string>
@@ -44,6 +46,12 @@
   <string name="evt_del_dlg_msg_selected">האירועים שנבחרו יימחקו</string>
   <string name="evt_del_dlg_msg_all">כל האירועים יימחקו</string>
   <string name="no_events_selected">לא נבחרו אירועים</string>
+  <plurals name="events_selected">
+    <item quantity="one">אירוע %1$d נבחר</item>
+    <item quantity="two">%1$d אירועים נבחרו</item>
+    <item quantity="many">%1$d אירועים נבחרו</item>
+    <item quantity="other">%1$d אירועים נבחרו</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">תצוגת ברירת מחדל</string>
   <string name="default_start_last">תצוגה קודמת</string>
@@ -55,6 +63,8 @@
   <string name="buttons_list_4">שנה</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">שלח אירוע אל:</string>
+  <string name="cal_export_event_sdcard_title">ייצוא לכרטיס זיכרון</string>
+  <string name="cal_export_succ_msg">אירוע ייוצא בהצלחה: %1s</string>
   <string name="cal_import_menu_title">ייבוא אירוע</string>
   <string name="cal_nothing_to_import">לא נמצאו פריטים לייבוא</string>
   <string name="cal_import_error_msg">ייבוא ללוח השנה נכשל</string>

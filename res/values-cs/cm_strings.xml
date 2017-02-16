@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Zakázali jste požadovaná oprávnění.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Žádné mapy nenalezeny.</string>
+  <string name="no_map">Nemáte nainstalovanou žádnou aplikaci pro mapy</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Došlo k problémům při sdílení události</string>
   <string name="share_label">Sdílet</string>
@@ -63,7 +63,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Odeslat událost:</string>
   <string name="cal_export_event_sdcard_title">Exportovat na SD kartu</string>
-  <string name="cal_export_succ_msg">Událost úspěšně exportována: %1s</string>
+  <string name="cal_export_succ_msg">Událost byla úspěšně exportována: %1s</string>
   <string name="cal_import_menu_title">Importovat událost</string>
   <string name="cal_nothing_to_import">Není co importovat</string>
   <string name="cal_import_error_msg">Importování do kalendáře se nezdařilo</string>

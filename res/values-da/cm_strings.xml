@@ -19,7 +19,6 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Du har deaktiveret en påkrævet tilladelse.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Ingen kort blev fundet.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Der opstod problemer ved deling af begivenhed</string>
   <string name="share_label">Del</string>
@@ -62,7 +61,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Send begivenhed til:</string>
   <string name="cal_export_event_sdcard_title">Eksportér til SD-kort</string>
-  <string name="cal_export_succ_msg">Begivenhed blev eksporteret: %1s</string>
+  <string name="cal_export_succ_msg">Begivenhed eksporteret med succes: %1s</string>
   <string name="cal_import_menu_title">Importér begivenhed</string>
   <string name="cal_nothing_to_import">Intet at importere</string>
   <string name="cal_import_error_msg">Import til kalenderen mislykkedes</string>

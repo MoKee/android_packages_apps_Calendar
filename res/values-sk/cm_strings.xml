@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Zakázali ste požadované oprávnenia.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Nenašli sa žiadne mapy.</string>
+  <string name="no_map">Nie je nainštalovaná žiadna aplikácia Máp</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Vyskytli sa problémy pri zdieľaní udalosti</string>
   <string name="share_label">Zdieľať</string>
@@ -62,8 +62,8 @@
   <string name="buttons_list_4">Rok</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Poslať udalosť do:</string>
-  <string name="cal_export_event_sdcard_title">Exportovať na SD kartu</string>
-  <string name="cal_export_succ_msg">Udalosť úspešne exportovaná: %1s</string>
+  <string name="cal_export_event_sdcard_title">Exportovať na kartu SD</string>
+  <string name="cal_export_succ_msg">Udalosť sa úspešne exportovala: %1s</string>
   <string name="cal_import_menu_title">Importovať udalosť</string>
   <string name="cal_nothing_to_import">Nič na importovanie</string>
   <string name="cal_import_error_msg">Importovanie do kalendára zlyhalo</string>

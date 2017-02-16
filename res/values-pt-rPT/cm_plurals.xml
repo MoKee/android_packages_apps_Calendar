@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="select_events_to_share">
-    <item quantity="one">Selecione um evento para partilhar</item>
-    <item quantity="other">Selecione os eventos a partilhar</item>
+    <item quantity="one">Selecione um evento a partilhar</item>
+    <item quantity="other">Selecione eventos a partilhar</item>
   </plurals>
 </resources>

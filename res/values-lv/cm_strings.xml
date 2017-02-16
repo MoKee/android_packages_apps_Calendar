@@ -54,6 +54,8 @@
   <string name="buttons_list_3">Darba kārtība</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Nosūtīt notikumu uz:</string>
+  <string name="cal_export_event_sdcard_title">Eksportēt uz SD karti</string>
+  <string name="cal_export_succ_msg">Notikums veiksmīgi eksportēts: %1s</string>
   <string name="cal_import_menu_title">Importēt notikumu</string>
   <string name="cal_nothing_to_import">Nav ko importēt</string>
   <string name="cal_import_error_msg">Importēšana uz kalendāru neizdevās</string>

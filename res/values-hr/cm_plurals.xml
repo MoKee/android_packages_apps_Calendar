@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="select_events_to_share">
-    <item quantity="one">Odaberite događaj za dijeljenje</item>
-    <item quantity="few">Odaberite događaje za dijeljenje</item>
-    <item quantity="other">Odaberite događaje za dijeljenje</item>
+    <item quantity="one">Označi događaj za podijeliti</item>
+    <item quantity="few">Označi događaje za podijeliti</item>
+    <item quantity="other">Označi događaje za podijeliti</item>
   </plurals>
 </resources>

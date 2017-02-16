@@ -50,6 +50,8 @@
   <!-- Strings for buttons in drop down menu -->
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ইভেণ্ট ইয়ালৈ প্ৰেৰণ কৰক:</string>
+  <string name="cal_export_event_sdcard_title">SD কাৰ্ডলৈ ৰপ্তানি কৰা</string>
+  <string name="cal_export_succ_msg">ইভেণ্ট সফলতাৰে ৰপ্তানি কৰা হ\'ল: %1s</string>
   <string name="cal_import_menu_title">ইভেণ্ট আমদানি কৰক</string>
   <string name="cal_nothing_to_import">আমদানি কৰিবলৈ একো নাই</string>
   <string name="cal_import_error_msg">কেলেণ্ডাৰলৈ আমদানি কৰি আছে</string>

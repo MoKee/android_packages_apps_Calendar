@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Έχετε απενεργοποιήσει μια απαιτούμενη άδεια.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Δεν υπάρχει καμιά εγκατεστημένη εφαρμογή χαρτών</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Αντιμετωπίστηκε πρόβλημα κατά την κοινή χρήση του συμβάντος</string>
   <string name="share_label">Κοινή χρήση</string>
@@ -44,6 +46,10 @@
   <string name="evt_del_dlg_msg_selected">Τα επιλεγμένα συμβάντα θα διαγραφούν</string>
   <string name="evt_del_dlg_msg_all">Όλα τα συμβάντα θα διαγραφούν</string>
   <string name="no_events_selected">Δεν επιλέχθηκαν συμβάντα</string>
+  <plurals name="events_selected">
+    <item quantity="one">Επιλέχθηκε %1$d συμβάν</item>
+    <item quantity="other">Επιλέχθηκαν %1$d συμβάντα</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Προεπιλεγμένη προβολή</string>
   <string name="default_start_last">Τελευταία χρησιμοποιημένη προβολή</string>
@@ -55,6 +61,8 @@
   <string name="buttons_list_4">Έτος</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Αποστολή συμβάντος προς:</string>
+  <string name="cal_export_event_sdcard_title">Εξαγωγή στην κάρτα SD</string>
+  <string name="cal_export_succ_msg">Επιτυχής εξαγωγή του συμβάντος: %1s</string>
   <string name="cal_import_menu_title">Εισαγωγή συμβάντος</string>
   <string name="cal_nothing_to_import">Τίποτα για εισαγωγή</string>
   <string name="cal_import_error_msg">Αποτυχία εισαγωγής στο ημερολόγιο</string>

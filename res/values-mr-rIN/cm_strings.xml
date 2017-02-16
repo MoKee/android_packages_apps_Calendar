@@ -54,6 +54,8 @@
   <string name="buttons_list_3">अजेंडा</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">इव्हेंट्स याकडे पाठवा:</string>
+  <string name="cal_export_event_sdcard_title">SD कार्डला निर्यात करा</string>
+  <string name="cal_export_succ_msg">इव्हेंट यशस्वीरित्या निर्यात केली: %1s</string>
   <string name="cal_import_menu_title">इव्हेंट आयात करा</string>
   <string name="cal_nothing_to_import">आयात करण्यासाठी काहीही नाही</string>
   <string name="cal_import_error_msg">दिनदर्शिकेला आयात करणे अपयशी झाले</string>

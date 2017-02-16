@@ -55,6 +55,8 @@
   <string name="buttons_list_4">Jaar</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Stuur gebeurtenis:</string>
+  <string name="cal_export_event_sdcard_title">Uitvoer na SD kaart</string>
+  <string name="cal_export_succ_msg">Gebeurtenis suksesvol uitgevoer: %1s</string>
   <string name="cal_import_menu_title">Voer \'n gebeurtenis in</string>
   <string name="cal_nothing_to_import">Niks om in te voer nie</string>
   <string name="cal_import_error_msg">Invoering na kalender het misluk</string>

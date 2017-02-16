@@ -55,6 +55,8 @@
   <string name="buttons_list_4">ปี</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ส่งกิจกรรมไปยัง:</string>
+  <string name="cal_export_event_sdcard_title">ส่งออกไปยัง SD การ์ด</string>
+  <string name="cal_export_succ_msg">ส่งออกกิจกรรมเรียบร้อยแล้ว: %1s</string>
   <string name="cal_import_menu_title">นำเข้ากิจกรรม</string>
   <string name="cal_nothing_to_import">ไม่มีสิ่งใดนำเข้า</string>
   <string name="cal_import_error_msg">การนำเข้าในปฏิทินล้มเหลว</string>

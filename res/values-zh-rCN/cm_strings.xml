@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
-  <string name="on_permission_read_calendar">您拒绝了一项必须的权限请求。</string>
+  <string name="on_permission_read_calendar">您拒绝了一项必需的权限。</string>
   <!-- No maps found in phone -->
-  <string name="no_map">手机里没有找到地图</string>
+  <string name="no_map">没有已安装的地图应用</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">分享事件时出现问题</string>
   <string name="share_label">分享</string>

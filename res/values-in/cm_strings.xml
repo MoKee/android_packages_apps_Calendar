@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Anda telah menonaktifkan izin yang diperlukan.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Tidak ada peta ditemukan.</string>
+  <string name="no_map">Tidak ada aplikasi peta yang terpasang</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Masalah ditemukan saat berbagi acara</string>
   <string name="share_label">Bagikan</string>

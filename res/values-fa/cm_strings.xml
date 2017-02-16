@@ -54,6 +54,8 @@
   <string name="buttons_list_3">دستور کار</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ارسال رویداد به:</string>
+  <string name="cal_export_event_sdcard_title">صدور به کارت حافظه</string>
+  <string name="cal_export_succ_msg">رویداد با موفقیت صادر شد: %1s</string>
   <string name="cal_import_menu_title">وارد کردن رویداد</string>
   <string name="cal_nothing_to_import">چیزی برای وارد کردن وجود ندارد</string>
   <string name="cal_import_error_msg">واردسازی به تقویم ناموفق بود</string>

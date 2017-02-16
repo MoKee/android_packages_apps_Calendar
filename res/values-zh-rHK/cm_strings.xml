@@ -55,6 +55,8 @@
   <string name="buttons_list_4">年</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">傳送活動至：</string>
+  <string name="cal_export_event_sdcard_title">匯出至 SD 卡</string>
+  <string name="cal_export_succ_msg">成功匯出活動：%1s 個</string>
   <string name="cal_import_menu_title">匯入活動</string>
   <string name="cal_nothing_to_import">沒有可匯入的活動</string>
   <string name="cal_import_error_msg">匯入至日曆失敗</string>

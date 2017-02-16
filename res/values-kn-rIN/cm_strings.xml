@@ -54,6 +54,8 @@
   <string name="buttons_list_3">ಕಾರ್ಯಸೂಚಿ</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ಘಟನೆಯನ್ನು ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು:</string>
+  <string name="cal_export_event_sdcard_title">SD ಕಾರ್ಡ್‍ಗೆ ರಫ್ತುಮಾಡಿ</string>
+  <string name="cal_export_succ_msg">ಘಟನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ರಫ್ತುಮಾಡಲಾಗಿದೆ: %1s</string>
   <string name="cal_import_menu_title">ಘಟನೆ ಆಮದುಮಾಡಿ</string>
   <string name="cal_nothing_to_import">ಆಮದುಮಾಡಲು ಏನೂ ಇಲ್ಲ</string>
   <string name="cal_import_error_msg">ಕ್ಯಾಲೆಂಡರ್‍ಗೆ ಆಮದುಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>

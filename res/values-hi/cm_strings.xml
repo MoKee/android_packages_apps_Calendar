@@ -54,6 +54,8 @@
   <string name="buttons_list_3">कार्यसूची</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">घटना को यहाँ भेजें:</string>
+  <string name="cal_export_event_sdcard_title">एसडी कार्ड में निर्यात करें</string>
+  <string name="cal_export_succ_msg">घटना सफलतापूर्वत निर्यात हो गई: %1s</string>
   <string name="cal_import_menu_title">घटना को आयात करें</string>
   <string name="cal_nothing_to_import">आयात करने के लिए कुछ भी नहीं है</string>
   <string name="cal_import_error_msg">कैलेंडर में आयात विफल हुआ</string>

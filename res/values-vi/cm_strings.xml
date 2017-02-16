@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Bạn đã tắt quyền được yêu cầu.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Không có ứng dụng bản đồ đã cài đặt nào</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Có vấn đề xảy ra khi chia sẻ sự kiện</string>
   <string name="share_label">Chia sẻ</string>
@@ -44,6 +46,9 @@
   <string name="evt_del_dlg_msg_selected">Sự kiện đã chọn sẽ bị xóa</string>
   <string name="evt_del_dlg_msg_all">Tất cả sự kiện sẽ bị xóa</string>
   <string name="no_events_selected">Không có sự kiện nào được chọn</string>
+  <plurals name="events_selected">
+    <item quantity="other">%1$d sự kiện đã chọn</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Chế độ xem mặc định</string>
   <string name="default_start_last">Chế độ xem đã dùng trước đó</string>
@@ -55,6 +60,8 @@
   <string name="buttons_list_4">Năm</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Gửi sự kiện đến:</string>
+  <string name="cal_export_event_sdcard_title">Xuất ra thẻ nhớ</string>
+  <string name="cal_export_succ_msg">Đã xuất sự kiện thành công: %1s</string>
   <string name="cal_import_menu_title">Nhập sự kiện</string>
   <string name="cal_nothing_to_import">Không có gì để nhập</string>
   <string name="cal_import_error_msg">Nhập vào lịch thất bại</string>

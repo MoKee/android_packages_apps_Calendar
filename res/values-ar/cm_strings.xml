@@ -55,6 +55,8 @@
   <string name="buttons_list_4">السنة</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">إرسال الحدث إلى:</string>
+  <string name="cal_export_event_sdcard_title">التصدير إلى بطاقة الذاكرة SD</string>
+  <string name="cal_export_succ_msg">تم تصدير الحدث بنجاح: %1s</string>
   <string name="cal_import_menu_title">استيراد الحدث</string>
   <string name="cal_nothing_to_import">لا شيء لاستيراده</string>
   <string name="cal_import_error_msg">فشل الاستيراد إلى التقويم</string>

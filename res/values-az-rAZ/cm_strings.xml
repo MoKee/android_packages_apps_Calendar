@@ -54,6 +54,8 @@
   <string name="buttons_list_3">Gündəlik</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Tədbiri göndər:</string>
+  <string name="cal_export_event_sdcard_title">SD karda köçür</string>
+  <string name="cal_export_succ_msg">Tədbir uğurla köçürüldü: %1s</string>
   <string name="cal_import_menu_title">Tədbir al</string>
   <string name="cal_nothing_to_import">Alınacaq heçnə yoxdur</string>
   <string name="cal_import_error_msg">Təqvimə alma uğursuz oldu</string>
