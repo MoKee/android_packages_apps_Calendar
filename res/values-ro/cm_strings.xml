@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Ați dezactivat o permisiune necesară.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Nu există nicio aplicație de hărţi instalată</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Au fost întâmpinate probleme în partajarea evenimentului</string>
   <string name="share_label">Distribuire</string>
@@ -44,6 +46,11 @@
   <string name="evt_del_dlg_msg_selected">Evenimente selectate vor fi șterse</string>
   <string name="evt_del_dlg_msg_all">Toate evenimentele vor fi șterse</string>
   <string name="no_events_selected">Nu sunt evenimente selectate</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d eveniment selectat</item>
+    <item quantity="few">%1$d (de) evenimente selectate</item>
+    <item quantity="other">%1$d (de) evenimente selectate</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Vizualizare implicită</string>
   <string name="default_start_last">Vizualizarea folosită anterior</string>
@@ -52,8 +59,11 @@
   <string name="buttons_list_1">Săptămână</string>
   <string name="buttons_list_2">Lună</string>
   <string name="buttons_list_3">Agendă</string>
+  <string name="buttons_list_4">An</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Trimite eveniment către:</string>
+  <string name="cal_export_event_sdcard_title">Exportă pe cardul SD</string>
+  <string name="cal_export_succ_msg">Eveniment exportat cu succes: %1s</string>
   <string name="cal_import_menu_title">Importă eveniment</string>
   <string name="cal_nothing_to_import">Nimic de importat</string>
   <string name="cal_import_error_msg">Importul în calendar a eșuat</string>

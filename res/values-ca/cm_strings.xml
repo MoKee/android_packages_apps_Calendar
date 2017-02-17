@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Has deshabilitat el permís requerit.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">No s\'han trobat mapes.</string>
+  <string name="no_map">No hi ha cap aplicació de mapes instal·lada</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Han sorgit problemes en compartir l\'esdeveniment</string>
   <string name="share_label">Comparteix</string>

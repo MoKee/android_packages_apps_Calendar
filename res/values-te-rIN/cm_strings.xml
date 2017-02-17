@@ -54,6 +54,8 @@
   <string name="buttons_list_3">విషయ పట్టిక</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">వీరికి ఈవెంట్ ను పంపుము:</string>
+  <string name="cal_export_event_sdcard_title">SD కార్డుకు ఎగుమతి చేయండి</string>
+  <string name="cal_export_succ_msg">ఈవెంట్ విజయవంతంగా ఎగుమతి చేయబడింది: %1s</string>
   <string name="cal_import_menu_title">ఈవెంటును దిగుమతి చేసుకొనుము</string>
   <string name="cal_nothing_to_import">దిగుమతి చేయడానికి ఏమీ లేదు</string>
   <string name="cal_import_error_msg">క్యాలెండరుకు దిగుమతి చేసుకోవడం విఫలమయింది</string>

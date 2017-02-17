@@ -19,7 +19,6 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Onemogućili ste potrebno dopuštenje.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Nema pronađenih karti.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Nastali su problemi pri dijeljenju događaja</string>
   <string name="share_label">Dijeli</string>

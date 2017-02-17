@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Hai disattivato un permesso richiesto.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Nessuna mappa trovata.</string>
+  <string name="no_map">Nessun\'app mappe installata</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Impossibile condividere l\'evento</string>
   <string name="share_label">Condividi</string>
@@ -61,8 +61,8 @@
   <string name="buttons_list_4">Anno</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Invia evento a:</string>
-  <string name="cal_export_event_sdcard_title">Esporta su scheda sd</string>
-  <string name="cal_export_succ_msg">Evento esportato con successo : %1s</string>
+  <string name="cal_export_event_sdcard_title">Esporta su scheda SD</string>
+  <string name="cal_export_succ_msg">Evento esportato con successo: %1s</string>
   <string name="cal_import_menu_title">Importa evento</string>
   <string name="cal_nothing_to_import">Nulla da importare</string>
   <string name="cal_import_error_msg">Importazione nel calendario non riuscita</string>

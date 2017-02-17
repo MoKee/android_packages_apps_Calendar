@@ -19,7 +19,6 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Beharrezkoa den baimen bat desgaitu duzu.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Ez da maparik aurkitu.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Arazoak aurkitu dira gertaera partekatzean</string>
   <string name="share_label">Partekatu</string>
@@ -62,7 +61,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Bidali gertaera honi:</string>
   <string name="cal_export_event_sdcard_title">Esportatu SD txartelera</string>
-  <string name="cal_export_succ_msg">Gertaera ondo esportatu da : %1s</string>
+  <string name="cal_export_succ_msg">Gertaera ondo esportatu da: %1s</string>
   <string name="cal_import_menu_title">Inportatu gertaera</string>
   <string name="cal_nothing_to_import">Ez dago ezer inportatzeko</string>
   <string name="cal_import_error_msg">Huts egin du egutegira inportatzeak</string>

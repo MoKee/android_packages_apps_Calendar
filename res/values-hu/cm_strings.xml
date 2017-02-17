@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Letiltott egy szükséges engedélyt.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Nincs telepítve térkép program</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problémák merültek fel az esemény megosztása közben</string>
   <string name="share_label">Megosztás</string>
@@ -44,6 +46,10 @@
   <string name="evt_del_dlg_msg_selected">A kijelölt események törlésre kerülnek</string>
   <string name="evt_del_dlg_msg_all">Minden esemény törlésre kerül</string>
   <string name="no_events_selected">Nincs kijelölt esemény</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d esemény kiválasztva</item>
+    <item quantity="other">%1$d esemény kiválasztva</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Alapértelmezett nézet</string>
   <string name="default_start_last">Korábban használt nézet</string>
@@ -55,6 +61,8 @@
   <string name="buttons_list_4">Év</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Esemény küldése:</string>
+  <string name="cal_export_event_sdcard_title">Exportálás az SD kártyára</string>
+  <string name="cal_export_succ_msg">Sikeresen exportált esemény: %1s</string>
   <string name="cal_import_menu_title">Esemény importálása</string>
   <string name="cal_nothing_to_import">Nincs mit importálni</string>
   <string name="cal_import_error_msg">Naptár importálása sikertelen</string>

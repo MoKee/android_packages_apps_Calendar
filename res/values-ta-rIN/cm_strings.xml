@@ -54,6 +54,8 @@
   <string name="buttons_list_3">நிகழ்ச்சி விவரம்</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">நிகழ்வை இங்கே அனுப்புக:</string>
+  <string name="cal_export_event_sdcard_title">SD அட்டைக்கு ஏற்றுமதிசெய்</string>
+  <string name="cal_export_succ_msg">நிகழ்வு வெற்றிகரமாக ஏற்றுமதிசெய்யப்பட்டது: %1s</string>
   <string name="cal_import_menu_title">நிகழ்வை இறக்குமதிசெய்</string>
   <string name="cal_nothing_to_import">இறக்குமதிசெய்ய ஒன்றுமில்லை</string>
   <string name="cal_import_error_msg">நாள்காட்டிக்கு இறக்குமதிசெய்தல் தோல்வியுற்றது</string>

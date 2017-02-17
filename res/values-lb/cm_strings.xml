@@ -55,6 +55,8 @@
   <string name="buttons_list_4">Joer</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Rendezvous schécken un:</string>
+  <string name="cal_export_event_sdcard_title">Op d\'SD-Kaart exportéieren</string>
+  <string name="cal_export_succ_msg">Rendezvous erfollegräich exportéiert: %1s</string>
   <string name="cal_import_menu_title">Rendezvous importéieren</string>
   <string name="cal_nothing_to_import">Näischt z\'importéieren do</string>
   <string name="cal_import_error_msg">Importéieren an de Kalenner feelgeschloen</string>

@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Du har deaktivert en nødvendig tillatelse.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Ingen kart ble funnet.</string>
+  <string name="no_map">Det er ingen kart-app installert</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problemer oppstod ved deling av hendelse</string>
   <string name="share_label">Del</string>
@@ -62,7 +62,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Send hendelse til:</string>
   <string name="cal_export_event_sdcard_title">Eksporter til SD-kort</string>
-  <string name="cal_export_succ_msg">Hendelse ble eksportert vellykket : %1s</string>
+  <string name="cal_export_succ_msg">Hendelsen ble eksportert: %1s</string>
   <string name="cal_import_menu_title">Importer hendelse</string>
   <string name="cal_nothing_to_import">Ingenting å importere</string>
   <string name="cal_import_error_msg">Importering til kalenderen mislyktes</string>

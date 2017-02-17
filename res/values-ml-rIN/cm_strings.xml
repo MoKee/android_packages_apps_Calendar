@@ -54,6 +54,8 @@
   <string name="buttons_list_3">അജൻഡ</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ഇവന്റ് അയയ്ക്കുക:</string>
+  <string name="cal_export_event_sdcard_title">SD കാർഡിലേക്ക് എക്സ്പോർട്ടുചെയ്യുക</string>
+  <string name="cal_export_succ_msg">ഇവന്റ് വിജയകരമായി എക്സ്പോർട്ട് ചെയ്തു: %1s</string>
   <string name="cal_import_menu_title">ഇവന്റ് ഇറക്കുമതിചെയ്യുക</string>
   <string name="cal_nothing_to_import">ഇറക്കുമതി ചെയ്യാന്‍ ഒന്നുമില്ല</string>
   <string name="cal_import_error_msg">കലണ്ടറിലേക്ക് ഇറക്കുമതി‌ ചെയ്യുന്നത് പരാജയപ്പെട്ടു</string>

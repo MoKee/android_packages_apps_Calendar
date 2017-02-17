@@ -54,6 +54,8 @@
   <string name="buttons_list_3">Darbotvarkė</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Siųsti įvykį į:</string>
+  <string name="cal_export_event_sdcard_title">Eksportuoti į SD kortelę</string>
+  <string name="cal_export_succ_msg">Įvykis sėkmingai eksportuotas: %1s</string>
   <string name="cal_import_menu_title">Importuoti įvykį</string>
   <string name="cal_nothing_to_import">Nėra nieko importuoti</string>
   <string name="cal_import_error_msg">Importavimas į kalendorių nepavyko</string>

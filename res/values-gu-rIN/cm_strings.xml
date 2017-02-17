@@ -54,6 +54,8 @@
   <string name="buttons_list_3">એજેંડા</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ઇવેન્ટ અહીં મોકલો:</string>
+  <string name="cal_export_event_sdcard_title">SD કાર્ડમાં નિકાસ કરો</string>
+  <string name="cal_export_succ_msg">ઇવેન્ટ સફળતાપૂર્વક નિકાસ થઈ: %1s</string>
   <string name="cal_import_menu_title">ઇવેન્ટ આયાત કરો</string>
   <string name="cal_nothing_to_import">કંઇ આયાત કરવાનું નથી</string>
   <string name="cal_import_error_msg">કૅલેન્ડરમાં આયાત કરવું નિષ્ફળ</string>

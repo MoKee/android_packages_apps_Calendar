@@ -50,6 +50,8 @@
   <!-- Strings for buttons in drop down menu -->
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ଇଭେଣ୍ଟ ଏଠାକୁ ପଠାନ୍ତୁ:</string>
+  <string name="cal_export_event_sdcard_title">SD କାର୍ଡକୁ ରପ୍ତାନୀ କରନ୍ତୁ</string>
+  <string name="cal_export_succ_msg">କାୟଯ୍ର୍କ୍ରମ ସଫଳତାର ସହିତ ରପ୍ତାନୀ ହୋଇ୍ଛି %1s</string>
   <string name="cal_import_menu_title">ଇଭେଣ୍ଟ ଆମଦାନି କରନ୍ତୁ</string>
   <string name="cal_nothing_to_import">ଆମଦାନି କରିବା ପାଇଁ କିଛି ନାହିଁ</string>
   <string name="cal_import_error_msg">କ୍ୟାଲେଣ୍ଡରରେ ଆମଦାନି ବିଫଳ ହୋଇଛି</string>

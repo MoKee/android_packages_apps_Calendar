@@ -55,6 +55,8 @@
   <string name="buttons_list_4">Aasta</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Saada sündmused:</string>
+  <string name="cal_export_event_sdcard_title">Ekspordi SD kaardile</string>
+  <string name="cal_export_succ_msg">Sündmus eksporditud edukalt: %1s</string>
   <string name="cal_import_menu_title">Impordi sündmus</string>
   <string name="cal_nothing_to_import">Midagi pole importida</string>
   <string name="cal_import_error_msg">Importimine kalendrisse nurjus</string>

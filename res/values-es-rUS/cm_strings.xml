@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Has desactivado un permiso requerido.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Sin aplicación de mapas instalada</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Hubo problemas al compartir el evento</string>
   <string name="share_label">Compartir</string>
@@ -44,6 +46,10 @@
   <string name="evt_del_dlg_msg_selected">Los eventos seleccionados serán eliminados</string>
   <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
   <string name="no_events_selected">No hay eventos seleccionados</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d evento seleccionado</item>
+    <item quantity="other">%1$d eventos seleccionados</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Vista predeterminada</string>
   <string name="default_start_last">Vista utlizada previamente</string>
@@ -55,6 +61,8 @@
   <string name="buttons_list_4">Año</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Enviar evento a:</string>
+  <string name="cal_export_event_sdcard_title">Exportar a tarjeta SD</string>
+  <string name="cal_export_succ_msg">Evento exportado correctamente: %1s</string>
   <string name="cal_import_menu_title">Importar evento</string>
   <string name="cal_nothing_to_import">Nada para importar</string>
   <string name="cal_import_error_msg">Error al importar al calendario</string>

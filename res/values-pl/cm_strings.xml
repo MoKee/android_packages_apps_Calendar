@@ -17,9 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
-  <string name="on_permission_read_calendar">Wyłączono wymagane uprawnienie.</string>
+  <string name="on_permission_read_calendar">Wyłączyłeś wymagane uprawnienie.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Nie znaleziono map.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Napotkano problemy podczas udostępniania wydarzenia</string>
   <string name="share_label">Udostępnij</string>

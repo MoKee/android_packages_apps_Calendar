@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Онемогућили сте потребну дозволу.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Нема инсталиране апликације за мапе</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Проблем настао при дељењу догађаја</string>
   <string name="share_label">Дели</string>
@@ -44,6 +46,11 @@
   <string name="evt_del_dlg_msg_selected">Изабрани догађаји ће бити избрисани</string>
   <string name="evt_del_dlg_msg_all">Сви догађаји ће бити избрисани</string>
   <string name="no_events_selected">Нема изабраних догађаја</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d догађај изабран</item>
+    <item quantity="few">%1$d догађаја изабрана</item>
+    <item quantity="other">%1$d догађаја изабрана</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Подразумевани преглед</string>
   <string name="default_start_last">Претходно коришћен преглед</string>
@@ -55,6 +62,8 @@
   <string name="buttons_list_4">Година</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Пошаљи догађај на:</string>
+  <string name="cal_export_event_sdcard_title">Извоз на SD картицу</string>
+  <string name="cal_export_succ_msg">Догађај послат успешно: %1s</string>
   <string name="cal_import_menu_title">Увези догађај</string>
   <string name="cal_nothing_to_import">Ништа за увоз</string>
   <string name="cal_import_error_msg">Увоз у календар неуспешан</string>

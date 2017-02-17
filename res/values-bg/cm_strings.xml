@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Вие сте забранили необходимото разрешение.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Не са открити карти.</string>
+  <string name="no_map">Няма инсталирано приложението за карти</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Възникнаха проблеми при споделянето на събитие</string>
   <string name="share_label">Споделяне</string>
@@ -61,8 +61,8 @@
   <string name="buttons_list_4">Година</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Изпрати събитие на:</string>
-  <string name="cal_export_event_sdcard_title">Експортиране в SD картата</string>
-  <string name="cal_export_succ_msg">Събитието е експортирано успешно : %1s</string>
+  <string name="cal_export_event_sdcard_title">Експортиране в картата памет</string>
+  <string name="cal_export_succ_msg">Събитието е експортирано успешно: %1s</string>
   <string name="cal_import_menu_title">Импортиране на събитие</string>
   <string name="cal_nothing_to_import">Няма нищо за импортиране</string>
   <string name="cal_import_error_msg">Импортирането на календара е неуспешно</string>

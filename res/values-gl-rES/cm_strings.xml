@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Desativou un permiso necesario.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Os mapas non foron encontrados.</string>
+  <string name="no_map">Non hai ningunha aplicación de mapas instalada</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Atopáronse problemas ao compartir a actividade</string>
   <string name="share_label">Compartir</string>
@@ -61,7 +61,7 @@
   <string name="buttons_list_4">Ano</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Enviar cita a:</string>
-  <string name="cal_export_event_sdcard_title">Exportar á sdcard</string>
+  <string name="cal_export_event_sdcard_title">Exportar á tarxecta SD</string>
   <string name="cal_export_succ_msg">Actividade exportada correctamente: %1s</string>
   <string name="cal_import_menu_title">Importar actividade</string>
   <string name="cal_nothing_to_import">Nada para importar</string>

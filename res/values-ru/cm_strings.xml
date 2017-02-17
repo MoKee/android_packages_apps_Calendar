@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Отключено требуемое для работы разрешение.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Нет установленных карт.</string>
+  <string name="no_map">Приложение для работы с картами не установлено</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Не удалось отправить событие</string>
   <string name="share_label">Отправить</string>
