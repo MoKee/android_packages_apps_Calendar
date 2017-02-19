@@ -59,6 +59,7 @@
   <string name="buttons_list_1">Тиждень</string>
   <string name="buttons_list_2">Місяць</string>
   <string name="buttons_list_3">Порядок денний</string>
+  <string name="buttons_list_4">Рік</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Надіслати подію:</string>
   <string name="cal_export_event_sdcard_title">Експортувати до SD-карти</string>
