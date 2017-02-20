@@ -16,9 +16,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">請求提醒貪睡延遲</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">請求提醒重響延遲</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">每當暫停提醒時請求延後延遲</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">每當暫停提醒時請求重響延遲</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">一律使用預設重響延遲</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">設定重響延遲</string>
