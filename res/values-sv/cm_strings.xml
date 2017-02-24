@@ -44,6 +44,10 @@
   <string name="evt_del_dlg_msg_selected">Valda händelser kommer tas bort</string>
   <string name="evt_del_dlg_msg_all">Alla händelser kommer tas bort</string>
   <string name="no_events_selected">Inga händelser valda</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d händelse markerad</item>
+    <item quantity="other">%1$d händelser markerade</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Standardvisning</string>
   <string name="default_start_last">Tidigare använd vy</string>
