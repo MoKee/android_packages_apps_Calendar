@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">필요한 권한이 비활성화되어 있습니다.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">설치된 지도 앱이 없습니다</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">일정을 공유하는 도중에 문제가 발생했습니다</string>
   <string name="share_label">공유</string>
@@ -44,6 +46,9 @@
   <string name="evt_del_dlg_msg_selected">선택된 일정이 삭제될 것입니다</string>
   <string name="evt_del_dlg_msg_all">모든 일정이 삭제될 것입니다</string>
   <string name="no_events_selected">선택된 일정이 없습니다</string>
+  <plurals name="events_selected">
+    <item quantity="other">%1$d개의 일정이 선택됨</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">기본 보기</string>
   <string name="default_start_last">이전에 사용한 보기</string>
@@ -51,7 +56,7 @@
   <string name="buttons_list_0">일</string>
   <string name="buttons_list_1">주</string>
   <string name="buttons_list_2">월</string>
-  <string name="buttons_list_3">일정목록</string>
+  <string name="buttons_list_3">일정 목록</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">일정 보내기:</string>
   <string name="cal_export_event_sdcard_title">SD 카드로 내보내기</string>
