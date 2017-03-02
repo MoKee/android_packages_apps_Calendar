@@ -19,6 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Beharrezkoa den baimen bat desgaitu duzu.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Ez dago mapa aplikaziorik instalatuta</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Arazoak aurkitu dira gertaera partekatzean</string>
   <string name="share_label">Partekatu</string>

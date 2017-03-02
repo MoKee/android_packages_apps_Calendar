@@ -31,9 +31,9 @@
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Встановити повторне нагадування</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Час повторного нагадування за умовчуванням</string>
+  <string name="preferences_default_snooze_delay_title">Час повторного нагадування за замовчуванням</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Повторне нагадування за умовчуванням</string>
+  <string name="preferences_default_snooze_delay_dialog">Повторне нагадування за замовчуванням</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
   <string name="events_delete">Видалити події</string>

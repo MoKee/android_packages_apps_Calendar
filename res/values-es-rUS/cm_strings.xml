@@ -36,13 +36,13 @@
   <string name="preferences_default_snooze_delay_dialog">Intervalo de recordatorio predeterminado</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
-  <string name="events_delete">Eliminar eventos</string>
+  <string name="events_delete">Borrar eventos</string>
   <string name="action_select_all">Seleccionar todo</string>
   <string name="action_select_none">Deseleccionar todo</string>
   <string name="action_delete">OK</string>
   <string name="all_events">Todos los eventos</string>
   <string name="no_events">No hay eventos disponibles</string>
-  <string name="evt_del_dlg_title">¿Eliminar eventos?</string>
+  <string name="evt_del_dlg_title">¿Borrar eventos?</string>
   <string name="evt_del_dlg_msg_selected">Los eventos seleccionados serán eliminados</string>
   <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
   <string name="no_events_selected">No hay eventos seleccionados</string>
