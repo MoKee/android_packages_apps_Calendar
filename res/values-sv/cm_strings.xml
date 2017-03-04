@@ -18,6 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
   <!-- No maps found in phone -->
+  <string name="no_map">Det finns ingen kartapp installerad</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problem att dela händelse</string>
   <string name="share_label">Dela</string>

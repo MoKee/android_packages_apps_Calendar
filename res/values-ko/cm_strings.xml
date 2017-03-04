@@ -57,6 +57,7 @@
   <string name="buttons_list_1">주</string>
   <string name="buttons_list_2">월</string>
   <string name="buttons_list_3">일정 목록</string>
+  <string name="buttons_list_4">연도</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">일정 보내기:</string>
   <string name="cal_export_event_sdcard_title">SD 카드로 내보내기</string>
