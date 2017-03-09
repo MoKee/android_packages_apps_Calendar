@@ -37,8 +37,8 @@
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
   <string name="events_delete">Apagar eventos</string>
-  <string name="action_select_all">Marcar todos</string>
-  <string name="action_select_none">Desmarcar todos</string>
+  <string name="action_select_all">Selecionar tudo</string>
+  <string name="action_select_none">Desmarcar tudo</string>
   <string name="action_delete">Concluído</string>
   <string name="all_events">Todos os eventos</string>
   <string name="no_events">Não há eventos disponíveis</string>

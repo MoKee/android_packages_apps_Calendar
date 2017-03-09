@@ -19,6 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Vous avez désactivé une autorisation requise.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Aucune application de cartographie n\'est installée</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problèmes rencontrés lors du partage de l\'événement</string>
   <string name="share_label">Partager</string>
