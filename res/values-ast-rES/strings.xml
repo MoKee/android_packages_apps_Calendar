@@ -204,6 +204,7 @@
   <!-- A menu item for deleting an event -->
   <!-- The button label for saving an event -->
   <!-- The button label for discarding changes to an event -->
+  <string name="discard_label">Encaboxar</string>
   <!-- Button labels on expanded notification reminders: -->
   <!-- The button label for making the reminder alarms go away temporarily.
          The reminder alarms will fire off again in 5 minutes. -->
@@ -278,6 +279,7 @@
   <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->
   <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->
   <!-- Settings check box label to enable or disable notifications -->
+  <string name="preferences_alerts_title">Avisos</string>
   <!-- Settings dialog label that specifies when the phone should vibrate -->
   <!-- The old value for enabling vibration. used only for migrating -->
   <!-- Title of ringtone selector dialog -->

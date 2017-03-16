@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
-  <string name="on_permission_read_calendar">Você desativou uma permissão necessária.</string>
+  <string name="on_permission_read_calendar">Você desativou uma permissão requerida.</string>
   <!-- No maps found in phone -->
   <string name="no_map">Não há aplicativo de mapas instalado</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
