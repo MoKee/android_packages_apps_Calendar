@@ -32,6 +32,7 @@
   <!-- Delete events -->
   <string name="events_delete">Desaniciar eventos</string>
   <string name="action_select_all">Esbillar too</string>
+  <string name="action_select_none">Nun esbillar nada</string>
   <string name="action_delete">Fecho</string>
   <string name="all_events">Tolos eventos</string>
   <string name="no_events">Nun hai eventos disponibles</string>
