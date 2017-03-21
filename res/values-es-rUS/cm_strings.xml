@@ -51,7 +51,7 @@
     <item quantity="other">%1$d eventos seleccionados</item>
   </plurals>
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Vista predeterminada</string>
+  <string name="default_start_title">Vista predefinida</string>
   <string name="default_start_last">Vista utlizada previamente</string>
   <!-- Strings for buttons in drop down menu -->
   <string name="buttons_list_0">Día</string>
