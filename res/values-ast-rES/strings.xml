@@ -125,6 +125,7 @@
          a new event -->
   <!-- Create event dialog -->
   <!-- Create event dialog save button [CHAR LIMIT=10] -->
+  <string name="create_event_dialog_save">Guardar</string>
   <!-- The alert toast is not actually being displayed for some reason. -->
   <!-- the title of the alert/notification activity -->
   <!-- Notification window messages: -->
