@@ -15,4 +15,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <plurals name="select_events_to_share">
+    <item quantity="one">Esbilla un eventu pa compartir</item>
+    <item quantity="other">Esbilla los eventos pa compartir</item>
+  </plurals>
+</resources>

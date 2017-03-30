@@ -17,12 +17,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
-  <string name="on_permission_read_calendar">הושבתה הרשאה נדרשת.</string>
+  <string name="on_permission_read_calendar">השבתת הרשאה נדרשת.</string>
   <!-- No maps found in phone -->
   <string name="no_map">אין יישומי מפות מותקנים</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">חלה תקלה בזמן שיתוף האירוע</string>
-  <string name="share_label">שתף</string>
+  <string name="share_label">שיתוף</string>
   <!-- Check box label for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_title">שאל לכמה זמן לדחות את התזכורת</string>
   <!-- Summaries for using custom snooze delays -->
