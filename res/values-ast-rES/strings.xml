@@ -99,6 +99,7 @@
   <!-- Message displayed to user when an account with Calendars is not being auto-synced
         [CHAR LIMIT=120]-->
   <!-- Label on button that takes user to the Accounts and Sync settings page [CHAR LIMIT=60] -->
+  <string name="accounts">Cuentes y sincronización</string>
   <!-- Select Synced Calendars activity -->
   <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
   <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->
@@ -106,6 +107,7 @@
   <!-- The title of the screen where the user edits an event [CHAR LIMIT=17] -->
   <!-- Default value of What field (as a hint to the user) [CHAR LIMIT=15] -->
   <!-- Default value of Where field (as a hint to the user)[CHAR LIMIT=15] -->
+  <string name="hint_where">"Allugamientu"</string>
   <!-- Default value of Description field (as a hint to the user) [CHAR LIMIT=15]-->
   <!-- Default value of Attendees/Guests field (as a hint to the user) [CHAR LIMIT=10] -->
   <!-- Toast message displayed when a new event is created -->
@@ -270,6 +272,7 @@
   <!-- This the title of a menu for "About Calendar" Preferences.
          Pressing the menu item lets user to view the current settings
          [CHAR LIMIT=30] -->
+  <string name="menu_about_preferences">Tocante al Calendariu</string>
   <!-- This is the title of the screen for setting user preferences. -->
   <string name="preferences_title">"Axustes"</string>
   <!-- This is the title of a section in the Settings screen for settings
@@ -288,6 +291,7 @@
   <!-- Settings dialog label that specifies when the phone should vibrate -->
   <!-- The old value for enabling vibration. used only for migrating -->
   <!-- Title of ringtone selector dialog -->
+  <string name="preferences_alerts_ringtone_title">Soníu</string>
   <!-- Title of check box label to enable or disable pop-up notifications -->
   <!-- List item label for setting the default number of reminder minutes -->
   <!-- Title of dialog for setting the default number of reminder minutes -->
@@ -299,6 +303,7 @@
   <!-- DO NOT TRANSLATE -->
   <!-- Title of the settings item to show week number in week view [CHAR LIMIT=40] -->
   <!-- This is the title of a section in the Settings screen for "About" this application -->
+  <string name="preferences_about_title">Tocante a</string>
   <!-- Build version of the application -->
   <!-- Widget -->
   <!-- Title for calendar gadget when displayed in list of all other gadgets -->
