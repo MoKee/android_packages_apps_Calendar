@@ -15,4 +15,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <plurals name="events_selected">
+    <item quantity="one">%1$d eveniment i zgjedhur</item>
+    <item quantity="other">%1$d evenimentë të zgjedhur</item>
+  </plurals>
+  <plurals name="select_events_to_share">
+    <item quantity="one">Zgjidh një eveniment për ta ndarë</item>
+    <item quantity="other">Zgjidh evenimentet për t\'i ndarë</item>
+  </plurals>
+</resources>

@@ -20,7 +20,7 @@
          [CHAR LIMIT=10]
     -->
   <string-array name="reminder_methods_labels">
-    <item>Notificación</item>
+    <item>Avisu</item>
     <item>Corréu</item>
     <item>SMS</item>
     <item>Alarma</item>
@@ -56,7 +56,7 @@
          [CHAR LIMIT=12]
     -->
   <string-array name="preferences_default_reminder_labels">
-    <item>Nengún</item>
+    <item>None</item>
     <item>0 minutos</item>
     <item>1 minutu</item>
     <item>5 minutos</item>
@@ -75,29 +75,17 @@
     <item>1 selmana</item>
   </string-array>
   <string-array name="preferences_week_start_day_labels">
-    <item>Rexón predeterminada</item>
+    <item>Locale default</item>
     <item>Sábadu</item>
     <item>Domingu</item>
     <item>Llunes</item>
   </string-array>
   <string-array name="availability">
-    <item>Ocupáu</item>
+    <item>Busy</item>
     <item>Disponible</item>
     <item>Provisional</item>
   </string-array>
   <!-- This maps reminder_methods_labels to internal constants. -->
-  <string-array name="visibility">
-    <item>Predetermináu</item>
-    <item>Priváu</item>
-    <item>Públicu</item>
-  </string-array>
-  <string-array name="ordinal_labels">
-    <item>primeru</item>
-    <item>segundu</item>
-    <item>terceru</item>
-    <item>cuartu</item>
-    <item>postreru</item>
-  </string-array>
   <!-- Invitation responses -->
   <string-array name="response_labels1">
     <item>Ensin rempuesta</item>
@@ -111,7 +99,7 @@
     -->
   <string-array name="delete_repeating_labels">
     <item>Namái esti eventu</item>
-    <item>Esti y otros eventos postreros</item>
+    <item>Esti y eventos futuros</item>
     <item>Tolos eventos</item>
   </string-array>
   <!-- DO NOT TRANSLATE These values need to correspond to the indices
@@ -124,7 +112,7 @@
          was created on the phone until that event has been synced to the server.
      -->
   <string-array name="delete_repeating_labels_no_selected">
-    <item>Esti y otros eventos postreros</item>
+    <item>Esti y eventos futuros</item>
     <item>Tolos eventos</item>
   </string-array>
   <!-- The corresponding array indices are defined in EventInfoActivity.java -->
@@ -134,7 +122,7 @@
     <!-- The choice for responding to only one instance of a repeating event -->
     <item>Namái esti eventu</item>
     <!-- The choice for responding to all instances of a repeating event -->
-    <item>Tolos eventos de la serie</item>
+    <item>All events in the series</item>
   </string-array>
   <!-- Strings for buttons in drop down menu -->
   <string-array name="buttons_list">
@@ -152,10 +140,10 @@
   </string-array>
   <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
   <string-array name="recurrence_freq">
-    <item>REPETIR CALDÍA</item>
-    <item>REPETIR TOLES SELMANES</item>
-    <item>REPETIR TOLOS MESES</item>
-    <item>REPETIR AÑALMENTE</item>
+    <item>REPITIR CALDÍA</item>
+    <item>REPITIR SELMANALMENTE</item>
+    <item>REPITIR MENSUALMENTE</item>
+    <item>REPITIR AÑALMENTE</item>
   </string-array>
   <!-- The following sets of strings describe a monthly recurring event, which will repeat
          on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or

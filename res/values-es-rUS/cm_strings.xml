@@ -19,25 +19,25 @@
   <string name="preferences_alerts_custom_snooze_delay_title">Preguntar por intervalo de repetición de recordatorio</string>
   <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Preguntar por el intervalo de repeteción en cada recordatorio</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre el intervalo de recordatorios predeterminado</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre el intervalo de recordatorios predefinido</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Ajustar intervalo de recordatorio</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Intervalo de recordatorio predeterminado</string>
+  <string name="preferences_default_snooze_delay_title">Intervalo de recordatorio predefinido</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Intervalo de recordatorio predeterminado</string>
+  <string name="preferences_default_snooze_delay_dialog">Intervalo de recordatorio predefinido</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Vista predeterminada</string>
+  <string name="default_start_title">Vista predefinida</string>
   <string name="default_start_last">Vista utlizada previamente</string>
   <!-- Delete Events related -->
-  <string name="events_delete">Eliminar eventos</string>
-  <string name="action_select_all">Seleccionar todo</string>
-  <string name="action_select_none">Deseleccionar todo</string>
+  <string name="events_delete">Borrar eventos</string>
+  <string name="action_select_all">Marcar todo</string>
+  <string name="action_select_none">Desmarcar todo</string>
   <string name="action_delete">OK</string>
   <string name="all_events">Todos los eventos</string>
   <string name="no_events">No hay eventos disponibles</string>
-  <string name="evt_del_dlg_title">¿Eliminar eventos?</string>
+  <string name="evt_del_dlg_title">¿Borrar eventos?</string>
   <string name="evt_del_dlg_msg_selected">Los eventos seleccionados serán eliminados</string>
   <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
   <string name="no_events_selected">No hay eventos seleccionados</string>
