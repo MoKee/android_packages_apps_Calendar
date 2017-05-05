@@ -60,4 +60,5 @@
   <string name="buttons_list_1">주</string>
   <string name="buttons_list_2">월</string>
   <string name="buttons_list_3">일정목록</string>
+  <string name="buttons_list_4">연도</string>
 </resources>
