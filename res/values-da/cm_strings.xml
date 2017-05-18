@@ -19,6 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Du har deaktiveret en påkrævet tilladelse.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Der er ikke installeret en kort-app</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Der opstod problemer ved deling af begivenhed</string>
   <string name="share_label">Del</string>
