@@ -323,6 +323,7 @@
   <!-- Preference label for quiet hours start time [CHAR LIMIT = 25]-->
   <!-- Preference label for quiet hours end time [CHAR LIMIT = 25]-->
   <!-- Preferences used for debugging purposes [CHAR LIMIT = 30]-->
+  <string name="preferences_debug_category">Depuración</string>
   <!-- Send a copy of the database to developers for debugging [CHAR LIMIT="NONE"] -->
   <!-- Displayed in email address autocomplete list when searching for contacts
          in corporate directories. Example:  "Searching bigcompany.com..." [CHAR LIMIT=64] -->

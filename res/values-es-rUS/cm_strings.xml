@@ -41,11 +41,11 @@
   <string name="action_select_none">Desmarcar todo</string>
   <string name="action_delete">OK</string>
   <string name="all_events">Todos los eventos</string>
-  <string name="no_events">No hay eventos disponibles</string>
+  <string name="no_events">Sin eventos disponibles</string>
   <string name="evt_del_dlg_title">¿Borrar eventos?</string>
   <string name="evt_del_dlg_msg_selected">Los eventos seleccionados serán eliminados</string>
   <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
-  <string name="no_events_selected">No hay eventos seleccionados</string>
+  <string name="no_events_selected">Sin eventos seleccionados</string>
   <plurals name="events_selected">
     <item quantity="one">%1$d evento seleccionado</item>
     <item quantity="other">%1$d eventos seleccionados</item>

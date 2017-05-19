@@ -62,6 +62,7 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Unviar eventu a:</string>
   <string name="cal_import_menu_title">Importar eventu</string>
+  <string name="cal_nothing_to_import">Nada pa importar</string>
   <string name="cal_import_error_msg">Fallu al importar al calendariu</string>
   <string name="cal_pick_ics">Escueyi\'l ficheru pa importar</string>
 </resources>
