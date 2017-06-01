@@ -112,7 +112,7 @@
          was created on the phone until that event has been synced to the server.
      -->
   <string-array name="delete_repeating_labels_no_selected">
-    <item>Esti y eventos futuros</item>
+    <item>This &amp; future events</item>
     <item>Tolos eventos</item>
   </string-array>
   <!-- The corresponding array indices are defined in EventInfoActivity.java -->
