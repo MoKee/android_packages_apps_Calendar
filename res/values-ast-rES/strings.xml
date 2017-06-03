@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- This is the label underneath the icon for Calendar -->
+  <string name="app_label">Calendariu</string>
   <!-- Shared Labels. These labels are shared among the activities. -->
   <!-- This is the label for the title or name of an event -->
   <!-- This is the label for the location of an event -->
@@ -283,6 +284,7 @@
   <!-- Settings week start label to start week on specific day-->
   <!-- Title of popup for week start day setting-->
   <!-- DO NOT TRANSLATE -->
+  <string name="preferences_week_start_day_default">-1</string>
   <!-- Title of the settings item to clear the recent search history [CHAR LIMIT=40] -->
   <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->
   <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->
@@ -301,6 +303,7 @@
         zone does [CHAR LIMIT = 60]-->
   <!-- Settings title for selecting a 'home' time zone to display Calendar in [CHAR LIMIT = 18] -->
   <!-- DO NOT TRANSLATE -->
+  <string name="preferences_home_tz_default">America/Los_Angeles</string>
   <!-- Title of the settings item to show week number in week view [CHAR LIMIT=40] -->
   <!-- This is the title of a section in the Settings screen for "About" this application -->
   <string name="preferences_about_title">Tocante a</string>
@@ -314,6 +317,7 @@
   <!-- Text to show on gadget when an event is currently in progress -->
   <!-- Text to show on gadget when an all-day event is in progress -->
   <!-- DO NOT TRANSLATE -->
+  <string name="tardis">TARDIS</string>
   <!-- Experimental settings [CHAR LIMIT = 30]-->
   <!-- Reminders settings [CHAR LIMIT = 30]-->
   <!-- Preference label for when to skip reminders [CHAR LIMIT = 25] -->

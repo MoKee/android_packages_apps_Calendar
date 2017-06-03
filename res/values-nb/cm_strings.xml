@@ -24,9 +24,9 @@
   <string name="error_generating_ics">Problemer oppstod ved deling av hendelse</string>
   <string name="share_label">Del</string>
   <!-- Check box label for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_title">Be om påminnelse for snooze forsinkelse</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Be om påminnelse for slumre-forsinkelse</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Be om snooze forsinkelse når påminnelser settes på pause</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Be om slumringsforsinkelse når påminnelser settes på pause</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Bruk alltid standard snooze forsinkelse</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Angi snooze forsinkelse</string>
