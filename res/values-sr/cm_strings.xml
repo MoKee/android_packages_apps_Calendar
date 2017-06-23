@@ -19,41 +19,41 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Онемогућили сте потребну дозволу.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Нема инсталиране апликације за мапе</string>
+  <string name="no_map">Апликација за рад са мапама није инсталирана.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
-  <string name="error_generating_ics">Проблем настао при дељењу догађаја</string>
+  <string name="error_generating_ics">Дошло је до грешке при дељењу догађаја.</string>
   <string name="share_label">Дели</string>
   <!-- Check box label for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_title">Питај за подсећање одлагања</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Питај за време одлагања подсетника</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Питај за привремено прекидање одлагања кад дрема</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Увек користи подразумевано одлагање</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Ручно уносите време при одлагању подсетника.</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Користите подразумеване вредности.</string>
   <!-- Title of custom snooze delay dialog -->
-  <string name="snooze_delay_dialog_title">Подеси кашњење одлагања</string>
+  <string name="snooze_delay_dialog_title">Време одлагања</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Подразумевано време кашњења одлагања</string>
+  <string name="preferences_default_snooze_delay_title">Подразумевано време одлагања</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Подразумевано кашњење одлагања</string>
+  <string name="preferences_default_snooze_delay_dialog">Подразумевано време одлагања</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
   <string name="events_delete">Избриши догађаје</string>
   <string name="action_select_all">Изабери све</string>
-  <string name="action_select_none">Поништи избор свега</string>
+  <string name="action_select_none">Поништи све</string>
   <string name="action_delete">Готово</string>
   <string name="all_events">Сви догађаји</string>
-  <string name="no_events">Нема доступних догађаја</string>
-  <string name="evt_del_dlg_title">Избриши догађаје?</string>
-  <string name="evt_del_dlg_msg_selected">Изабрани догађаји ће бити избрисани</string>
-  <string name="evt_del_dlg_msg_all">Сви догађаји ће бити избрисани</string>
-  <string name="no_events_selected">Нема изабраних догађаја</string>
+  <string name="no_events">Нема догађаја.</string>
+  <string name="evt_del_dlg_title">Брисање догађаја</string>
+  <string name="evt_del_dlg_msg_selected">Изабрани догађаји ће бити избрисани.</string>
+  <string name="evt_del_dlg_msg_all">Сви догађаји ће бити избрисани.</string>
+  <string name="no_events_selected">Нема изабраних догађаја.</string>
   <plurals name="events_selected">
-    <item quantity="one">%1$d догађај изабран</item>
-    <item quantity="few">%1$d догађаја изабрана</item>
-    <item quantity="other">%1$d догађаја изабрана</item>
+    <item quantity="one">Изабран је %1$d догађај</item>
+    <item quantity="few">Изабрана су %1$d догађаја</item>
+    <item quantity="other">Изабрано је %1$d догађаја</item>
   </plurals>
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Подразумевани преглед</string>
-  <string name="default_start_last">Претходно коришћен преглед</string>
+  <string name="default_start_title">Подразумевани приказ</string>
+  <string name="default_start_last">Претходни приказ</string>
   <!-- Strings for buttons in drop down menu -->
   <string name="buttons_list_0">Дан</string>
   <string name="buttons_list_1">Недеља</string>
@@ -61,11 +61,11 @@
   <string name="buttons_list_3">Распоред</string>
   <string name="buttons_list_4">Година</string>
   <!-- Sharing calendar event -->
-  <string name="cal_share_intent_title">Пошаљи догађај на:</string>
+  <string name="cal_share_intent_title">Пошаљи догађај:</string>
   <string name="cal_export_event_sdcard_title">Извоз на SD картицу</string>
-  <string name="cal_export_succ_msg">Догађај послат успешно: %1s</string>
-  <string name="cal_import_menu_title">Увези догађај</string>
-  <string name="cal_nothing_to_import">Ништа за увоз</string>
-  <string name="cal_import_error_msg">Увоз у календар неуспешан</string>
-  <string name="cal_pick_ics">Изабери фајл за увоз</string>
+  <string name="cal_export_succ_msg">Догађај је извезен: %1s</string>
+  <string name="cal_import_menu_title">Увоз догађаја</string>
+  <string name="cal_nothing_to_import">Ништа за увоз.</string>
+  <string name="cal_import_error_msg">Не могу да увезем у календар.</string>
+  <string name="cal_pick_ics">Изаберите датотеку за увоз</string>
 </resources>
