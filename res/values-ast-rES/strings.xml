@@ -36,10 +36,24 @@
          of not repeating). -->
   <!-- Title of event when no explicit title is specified by the user -->
   <!-- Reminder format strings -->
+  <plurals name="Nminutes">
+    <!-- This is the label for a 1-minute reminder. -->
+    <item quantity="one">1 minutu</item>
+    <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> minutos</item>
+  </plurals>
   <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
          This is the number of minutes displayed for a calendar reminder.  For example,
          a reminder of 10 minutes would be displayed as '10 mins'.  The translation
          should use the shortest acceptable abbreviation to save space. -->
+  <plurals name="Nmins">
+    <!-- This is the label for a 1-minute reminder. -->
+    <item quantity="one">1 min</item>
+    <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> mins</item>
+  </plurals>
   <!-- This is the number of hours displayed for a calendar reminder.  For example,
          a reminder of 1 hour would be displayed as '1 hour'.  The translation
          should use the shortest acceptable abbreviation of 'hour' to save space. -->
@@ -298,6 +312,7 @@
   <!-- List item label for setting the default number of reminder minutes -->
   <!-- Title of dialog for setting the default number of reminder minutes -->
   <!-- Default value for the number of reminder minutes -->
+  <string name="preferences_default_reminder_default">10</string>
   <!-- Settings check box label to keep Calendar in a fixed 'home' time zone [CHAR LIMIT = 18] -->
   <!-- Settings description of what setting Calendar to use a fixed 'home' time
         zone does [CHAR LIMIT = 60]-->
