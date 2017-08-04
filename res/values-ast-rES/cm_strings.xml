@@ -61,6 +61,8 @@
   <string name="buttons_list_4">Añu</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Unviar eventu a:</string>
+  <string name="cal_export_event_sdcard_title">Esportar a la tarxeta SD</string>
+  <string name="cal_export_succ_msg">Eventu esportáu con ésitu: %1s</string>
   <string name="cal_import_menu_title">Importar eventu</string>
   <string name="cal_nothing_to_import">Nada pa importar</string>
   <string name="cal_import_error_msg">Fallu al importar al calendariu</string>
