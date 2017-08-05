@@ -122,7 +122,7 @@
     <!-- The choice for responding to only one instance of a repeating event -->
     <item>Namái esti eventu</item>
     <!-- The choice for responding to all instances of a repeating event -->
-    <item>All events in the series</item>
+    <item>Tolos eventos de la serie</item>
   </string-array>
   <!-- Strings for buttons in drop down menu -->
   <string-array name="buttons_list">
