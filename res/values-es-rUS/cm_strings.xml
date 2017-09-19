@@ -66,5 +66,5 @@
   <string name="cal_import_menu_title">Importar evento</string>
   <string name="cal_nothing_to_import">Nada para importar</string>
   <string name="cal_import_error_msg">Error al importar al calendario</string>
-  <string name="cal_pick_ics">Seleccionar archivo para importar</string>
+  <string name="cal_pick_ics">Seleccionar archivo a importar</string>
 </resources>
