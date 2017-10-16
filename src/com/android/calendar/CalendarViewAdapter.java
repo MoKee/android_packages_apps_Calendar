@@ -236,7 +236,7 @@ public class CalendarViewAdapter extends BaseAdapter {
                     } else {
                         weekDay.setVisibility(View.GONE);
                     }
-                    date.setText(buildMonthYearDate());
+                    date.setText(buildWeekDate());
                     break;
                 case ViewType.MONTH:
                     weekDay.setVisibility(View.GONE);
