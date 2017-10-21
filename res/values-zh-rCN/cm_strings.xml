@@ -66,4 +66,6 @@
   <string name="cal_nothing_to_import">没有可供导入的事件</string>
   <string name="cal_import_error_msg">导入到日历失败</string>
   <string name="cal_pick_ics">选择要导入的文件</string>
+  <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year"><xliff:g id="number">%1$d</xliff:g> 周的 <xliff:g id="year">%2$s</xliff:g> 周</string>
 </resources>

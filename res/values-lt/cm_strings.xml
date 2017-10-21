@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">Nėra nieko importuoti</string>
   <string name="cal_import_error_msg">Importavimas į kalendorių nepavyko</string>
   <string name="cal_pick_ics">Pasirinkite failą importuoti</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

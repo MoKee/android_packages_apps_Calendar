@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">چیزی برای وارد کردن وجود ندارد</string>
   <string name="cal_import_error_msg">واردسازی به تقویم ناموفق بود</string>
   <string name="cal_pick_ics">فایل را برای وارد کردن انتخاب کنید</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

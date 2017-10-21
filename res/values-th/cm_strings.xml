@@ -61,4 +61,5 @@
   <string name="cal_nothing_to_import">ไม่มีสิ่งใดนำเข้า</string>
   <string name="cal_import_error_msg">การนำเข้าในปฏิทินล้มเหลว</string>
   <string name="cal_pick_ics">เลือกไฟล์ที่จะนำเข้า</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">आयात करण्यासाठी काहीही नाही</string>
   <string name="cal_import_error_msg">दिनदर्शिकेला आयात करणे अपयशी झाले</string>
   <string name="cal_pick_ics">आयात करण्यासाठी फाइल निवडा</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

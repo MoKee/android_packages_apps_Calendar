@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">ಆಮದುಮಾಡಲು ಏನೂ ಇಲ್ಲ</string>
   <string name="cal_import_error_msg">ಕ್ಯಾಲೆಂಡರ್‍ಗೆ ಆಮದುಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
   <string name="cal_pick_ics">ಆಮದುಮಾಡಲು ಕಡತವನ್ನು ಆರಿಸಿ</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

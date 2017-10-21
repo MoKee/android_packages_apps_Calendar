@@ -56,4 +56,5 @@
   <string name="cal_nothing_to_import">আমদানি কৰিবলৈ একো নাই</string>
   <string name="cal_import_error_msg">কেলেণ্ডাৰলৈ আমদানি কৰি আছে</string>
   <string name="cal_pick_ics">আমদানি কৰিবলৈ ফাইলটো চয়ন কৰক</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

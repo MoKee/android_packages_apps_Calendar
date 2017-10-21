@@ -68,4 +68,5 @@
   <string name="cal_nothing_to_import">Nič na importovanie</string>
   <string name="cal_import_error_msg">Importovanie do kalendára zlyhalo</string>
   <string name="cal_pick_ics">Vybrať súbor na importovanie</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

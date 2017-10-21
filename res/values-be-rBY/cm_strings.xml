@@ -59,4 +59,5 @@
   <string name="cal_nothing_to_import">Няма чаго імпартаваць</string>
   <string name="cal_import_error_msg">Не атрымалася выканаць імпарт у каляндар</string>
   <string name="cal_pick_ics">Выбраць файл для імпарту</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

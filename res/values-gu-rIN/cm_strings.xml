@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">કંઇ આયાત કરવાનું નથી</string>
   <string name="cal_import_error_msg">કૅલેન્ડરમાં આયાત કરવું નિષ્ફળ</string>
   <string name="cal_pick_ics">આયાત કરવા ફાઇલ લો</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

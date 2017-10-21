@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">आयात करने के लिए कुछ भी नहीं है</string>
   <string name="cal_import_error_msg">कैलेंडर में आयात विफल हुआ</string>
   <string name="cal_pick_ics">आयात के लिए फ़ाइल चुनें</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

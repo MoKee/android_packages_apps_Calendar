@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Ingenting å importere</string>
   <string name="cal_import_error_msg">Importering til kalenderen mislyktes</string>
   <string name="cal_pick_ics">Velg fil som skal importeres</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Ez dago ezer inportatzeko</string>
   <string name="cal_import_error_msg">Huts egin du egutegira inportatzeak</string>
   <string name="cal_pick_ics">Hautatu fitxategia inportatzeko</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>
