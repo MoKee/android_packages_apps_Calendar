@@ -68,4 +68,6 @@
   <string name="cal_nothing_to_import">Ништа за увоз.</string>
   <string name="cal_import_error_msg">Не могу да увезем у календар.</string>
   <string name="cal_pick_ics">Изаберите датотеку за увоз</string>
+  <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">недеља <xliff:g id="number">%1$d</xliff:g> од <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

@@ -61,4 +61,5 @@
   <string name="cal_nothing_to_import">沒有可匯入的活動</string>
   <string name="cal_import_error_msg">匯入至日曆失敗</string>
   <string name="cal_pick_ics">選擇要匯入的檔案</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

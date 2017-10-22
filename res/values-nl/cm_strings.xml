@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Niets te importeren</string>
   <string name="cal_import_error_msg">Importeren naar agenda mislukt</string>
   <string name="cal_pick_ics">Kies bestand om te importeren</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

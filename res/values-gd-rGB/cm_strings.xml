@@ -61,4 +61,5 @@
   <string name="cal_nothing_to_import">Chan eil dad ri ion-phortadh</string>
   <string name="cal_import_error_msg">Dh’fhàillig ion-phortadh a’ mhìosachain</string>
   <string name="cal_pick_ics">Tagh faidhle airson ion-phortadh</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

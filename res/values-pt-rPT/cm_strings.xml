@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Nada a importar</string>
   <string name="cal_import_error_msg">Importação para o calendário falhou</string>
   <string name="cal_pick_ics">Escolher ficheiro a importar</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

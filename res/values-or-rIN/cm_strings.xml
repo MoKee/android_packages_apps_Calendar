@@ -56,4 +56,5 @@
   <string name="cal_nothing_to_import">ଆମଦାନି କରିବା ପାଇଁ କିଛି ନାହିଁ</string>
   <string name="cal_import_error_msg">କ୍ୟାଲେଣ୍ଡରରେ ଆମଦାନି ବିଫଳ ହୋଇଛି</string>
   <string name="cal_pick_ics">ଆମଦାନି କରିବା ପାଇଁ ଫାଇଲ୍‍ ଧରନ୍ତୁ</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

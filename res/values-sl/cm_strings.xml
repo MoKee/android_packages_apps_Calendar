@@ -69,4 +69,6 @@
   <string name="cal_nothing_to_import">Ničesar ni za uvoziti</string>
   <string name="cal_import_error_msg">Uvoz v koledar je spodletel</string>
   <string name="cal_pick_ics">Izberite datoteko za uvoz</string>
+  <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">teden <xliff:g id="number">%1$d</xliff:g> v <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

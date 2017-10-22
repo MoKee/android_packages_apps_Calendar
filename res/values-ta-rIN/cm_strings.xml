@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">இறக்குமதிசெய்ய ஒன்றுமில்லை</string>
   <string name="cal_import_error_msg">நாள்காட்டிக்கு இறக்குமதிசெய்தல் தோல்வியுற்றது</string>
   <string name="cal_pick_ics">இறக்குமதிசெய்ய கோப்பை எடுக்கவும்</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

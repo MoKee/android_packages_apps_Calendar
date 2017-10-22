@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">Alınacaq heçnə yoxdur</string>
   <string name="cal_import_error_msg">Təqvimə alma uğursuz oldu</string>
   <string name="cal_pick_ics">Alınacaq faylı seçin</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

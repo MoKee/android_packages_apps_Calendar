@@ -69,4 +69,5 @@
   <string name="cal_nothing_to_import">לא נמצאו פריטים לייבוא</string>
   <string name="cal_import_error_msg">ייבוא ללוח השנה נכשל</string>
   <string name="cal_pick_ics">בחר קובץ לייבוא</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

@@ -61,4 +61,5 @@
   <string name="cal_nothing_to_import">Midagi pole importida</string>
   <string name="cal_import_error_msg">Importimine kalendrisse nurjus</string>
   <string name="cal_pick_ics">Vali fail mida importida</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

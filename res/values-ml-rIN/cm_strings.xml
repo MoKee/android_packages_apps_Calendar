@@ -60,4 +60,5 @@
   <string name="cal_nothing_to_import">ഇറക്കുമതി ചെയ്യാന്‍ ഒന്നുമില്ല</string>
   <string name="cal_import_error_msg">കലണ്ടറിലേക്ക് ഇറക്കുമതി‌ ചെയ്യുന്നത് പരാജയപ്പെട്ടു</string>
   <string name="cal_pick_ics">ഇറക്കുമതി ചെയ്യേണ്ട ഫയൽ തിരഞ്ഞെടുക്കുക</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

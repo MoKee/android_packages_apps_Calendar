@@ -66,4 +66,5 @@
   <string name="cal_nothing_to_import">インポートする予定がありません</string>
   <string name="cal_import_error_msg">カレンダーにインポートできませんでした</string>
   <string name="cal_pick_ics">インポートするファイルを選択</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

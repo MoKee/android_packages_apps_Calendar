@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Res per importar</string>
   <string name="cal_import_error_msg">La importació al calendari ha fallat</string>
   <string name="cal_pick_ics">Tria el fitxer que vols importar</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>

@@ -67,4 +67,5 @@
   <string name="cal_nothing_to_import">Asgjë për të importuar</string>
   <string name="cal_import_error_msg">Importimi në kalendar dështoi</string>
   <string name="cal_pick_ics">Zgjidh skedarin për ta importuar</string>
+  <!-- String defining format for displaying week of the year -->
 </resources>
