@@ -204,7 +204,7 @@ public class CalendarViewAdapter extends BaseAdapter {
                             weekDay.setText(mContext.getString(R.string.week_of_year,
                                     weekNum, buildYearDate()));
                         } else {
-                            weekDay.setText(buildYearDate() + buildLunarInfo(false));
+                            weekDay.setText(buildYearDate());
                         }
                         date.setText(buildWeekDate());
                         break;
