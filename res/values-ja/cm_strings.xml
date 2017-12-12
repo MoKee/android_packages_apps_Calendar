@@ -67,4 +67,5 @@
   <string name="cal_import_error_msg">カレンダーにインポートできませんでした</string>
   <string name="cal_pick_ics">インポートするファイルを選択</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year"><xliff:g id="year">%2$s</xliff:g>の第<xliff:g id="number">%1$d</xliff:g>週</string>
 </resources>
