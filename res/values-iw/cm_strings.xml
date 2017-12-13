@@ -70,4 +70,5 @@
   <string name="cal_import_error_msg">ייבוא ללוח השנה נכשל</string>
   <string name="cal_pick_ics">בחר קובץ לייבוא</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">שבוע <xliff:g id="number">%1$d</xliff:g> של שנת <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

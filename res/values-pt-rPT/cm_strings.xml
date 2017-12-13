@@ -51,7 +51,7 @@
     <item quantity="other">%1$d eventos selecionados</item>
   </plurals>
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Modo de exibição</string>
+  <string name="default_start_title">Vista predefinida</string>
   <string name="default_start_last">Modo utilizado anteriormente</string>
   <!-- Strings for buttons in drop down menu -->
   <string name="buttons_list_0">Dia</string>
@@ -68,4 +68,5 @@
   <string name="cal_import_error_msg">Importação para o calendário falhou</string>
   <string name="cal_pick_ics">Escolher ficheiro a importar</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">semana <xliff:g id="number">%1$d</xliff:g> de <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

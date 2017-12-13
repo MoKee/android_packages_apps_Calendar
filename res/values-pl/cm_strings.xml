@@ -69,4 +69,5 @@
   <string name="cal_import_error_msg">Importowanie do kalendarza nie powiodło się</string>
   <string name="cal_pick_ics">Wybierz plik do zaimportowania</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year"><xliff:g id="number">%1$d</xliff:g> tydzień <xliff:g id="year">%2$s</xliff:g> roku</string>
 </resources>

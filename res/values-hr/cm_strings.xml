@@ -19,6 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Onemogućili ste potrebno dopuštenje.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Nema instalirane aplikacije karte</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Nastali su problemi pri dijeljenju događaja</string>
   <string name="share_label">Dijeli</string>
@@ -68,4 +69,5 @@
   <string name="cal_import_error_msg">Uvoz u kalendar nije uspio</string>
   <string name="cal_pick_ics">Odaberite datoteku za uvoz</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">tjedan <xliff:g id="number">%1$d</xliff:g> <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

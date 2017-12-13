@@ -19,7 +19,7 @@
   <!-- read_calendar permission -->
   <string name="on_permission_read_calendar">Sie haben eine erforderliche Berechtigung deaktiviert.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Es sind keine Karten-Apps instaliert</string>
+  <string name="no_map">Es sind keine Karten-Apps installiert</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Beim Teilen des Termins ist ein Problem aufgetreten.</string>
   <string name="share_label">Teilen</string>
@@ -68,4 +68,5 @@
   <string name="cal_import_error_msg">Importieren in den Kalender fehlgeschlagen</string>
   <string name="cal_pick_ics">Datei zum Importieren auswählen</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">Kalenderwoche <xliff:g id="number">%1$d</xliff:g>, <xliff:g id="year">%2$s</xliff:g></string>
 </resources>

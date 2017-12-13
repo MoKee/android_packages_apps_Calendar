@@ -69,4 +69,5 @@
   <string name="cal_import_error_msg">Importul în calendar a eșuat</string>
   <string name="cal_pick_ics">Alege fișierul de importat</string>
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">săptămâna <xliff:g id="number">%1$d</xliff:g> a <xliff:g id="year">%2$s</xliff:g></string>
 </resources>
