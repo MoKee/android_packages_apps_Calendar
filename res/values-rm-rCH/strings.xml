@@ -23,11 +23,9 @@
   <!-- This is the label for the timezone of an event [CHAR LIMIT=30] -->
   <!-- This is the label for the Guests/Attendees of an event -->
   <!-- Text to show when an event starts on the current day -->
-  <string name="today">Heddiw</string>
   <!-- Text to show when an event starts on the next day -->
   <!-- Text for an event starting on the current day with a start and end time.
          For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
-  <string name="today_at_time_fmt">"Heddiw am <xliff:g id="time_interval">%s</xliff:g>"</string>
   <!-- Text for an event starting on the next day with a start and end time.
          For ex, "Tomorrow at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
   <!-- Format string for a date and time description.  For ex:
@@ -48,15 +46,6 @@
          a reminder of 2 days would be displayed as '2 days'.  The translation
          should use the shortest acceptable abbreviation of 'day' to save space. -->
   <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->
-  <plurals name="weekN">
-    <item quantity="zero">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-    <item quantity="one">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-    <item quantity="two">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-    <item quantity="few">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-    <item quantity="many">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-    <!-- Label for displaying week of the year for all week values [CHAR LIMIT=16] -->
-    <item quantity="other">WYTHNOS <xliff:g id="count">%d</xliff:g></item>
-  </plurals>
   <!-- Menu items: -->
   <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
@@ -83,7 +72,6 @@
   <!-- This is a label on a menu item. Pressing this menu
          item takes the user to the current day (today) in whatever view
          (Day view, Week view, Agenda view, Month view) they are currently in. -->
-  <string name="goto_today">"Heddiw"</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to see the list of calendars that he is viewing and to then add
          or remove selected calendars. -->
@@ -138,7 +126,6 @@
   <!-- Create event dialog save button [CHAR LIMIT=10] -->
   <!-- The alert toast is not actually being displayed for some reason. -->
   <!-- the title of the alert/notification activity -->
-  <string name="alert_title">Hysbysiadau Calendr</string>
   <!-- Notification window messages: -->
   <!-- Event info/edit screen labels:-->
   <!-- This is the title of the screen used to view the details of an event -->
@@ -148,12 +135,10 @@
   <!-- Events have a start date/time and an end date/time. The display shows
          the start and end times like 'From start date To end date'. This is the
          label before the 'end date'. -->
-  <string name="edit_event_to_label">Hyd at</string>
   <!-- Events have a start date/time and an end date/time. The display shows
          the start and end times like 'From start date To end date'. This is the
          label before the 'start date'. -->
   <!-- Check box label that specifies if this is an all-day event -->
-  <string name="edit_event_all_day_label">Trwy\'r dydd</string>
   <!-- Label for choosing one of the calendars -->
   <!-- Menu item to show all choices [CHAR LIMIT=22]-->
   <!-- Label for the event description -->
@@ -164,7 +149,6 @@
   <!-- Label for the list of reminders for an event [CHAR LIMIT=20] -->
   <!-- Title of alert shown if the user tries to create an event and has no calendars -->
   <!-- Body of alert shown if the user tries to create an event and has no calendars. Users can start adding an account here. [CHAR LIMIT=NONE] -->
-  <string name="no_calendars_found">Cyn ychwanegu digwyddiad, rhaid ychwanegu o leiaf un cyfrif calendr i dy ddyfais a gwneud calendr yn weledol. Cyffyrdda Ychwanegu Cyfrif i ychwanegu cyfrif. (Os wyt ti newydd ychwanegu gyfrif, arhosa iddo orffen cysoni a cheisio eto.) Neu cyffyrdda Diddymu a sicrhau bod o leiaf un calendr yn weledol.</string>
   <!-- Body of dialog prompting the user to create an account.[CHAR LIMIT=NONE] -->
   <!-- Title of a button shown when there is no account available and the system prompt a user to add one. [CHAR LIMIT=none] -->
   <!-- View Event -->
@@ -182,7 +166,6 @@
   <!-- Response for whether attending an event - accepted [CHAR LIMIT=10]-->
   <!-- Response for whether attending an event - tentative [CHAR LIMIT=10]-->
   <!-- Response for whether attending an event - declined [CHAR LIMIT=10]-->
-  <string name="response_no">Na</string>
   <!-- Label for emailing attendees -->
   <!-- Label for emailing the organizer (when there are no attendees) -->
   <!-- This is shown in the popup picker when emailing attendees -->
@@ -205,11 +188,8 @@
   <!-- Reminders label [CHAR LIMIT=15]-->
   <!-- Agenda View strings -->
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
-  <string name="agenda_today">HEDDIW, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
-  <string name="agenda_yesterday">DDOE, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
-  <string name="agenda_tomorrow">Yfory, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown while the calendar events are being loading to the screen. -->
   <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
   <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->
@@ -298,7 +278,6 @@
   <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->
   <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->
   <!-- Settings check box label to enable or disable notifications -->
-  <string name="preferences_alerts_title">Hysbysiadau</string>
   <!-- Settings dialog label that specifies when the phone should vibrate -->
   <!-- The old value for enabling vibration. used only for migrating -->
   <!-- Title of ringtone selector dialog -->
@@ -319,7 +298,6 @@
   <!-- Shown in month view next to event icon when additional events exist for that day, but no
         room remaining -->
   <!-- Caption to show on gadget when there are no upcoming calendar events -->
-  <string name="gadget_no_events">Dim digwyddiadau calendr</string>
   <!-- Text to show on gadget when an event is currently in progress -->
   <!-- Text to show on gadget when an all-day event is in progress -->
   <!-- DO NOT TRANSLATE -->
@@ -357,7 +335,6 @@
   <!-- Select the way you are visible for the event (busy/free) [CHAR LIMIT = NONE]-->
   <!-- Set the event as private/public/default [CHAR LIMIT = NONE]-->
   <!-- Calendar notification [CHAR LIMIT = NONE]-->
-  <string name="acessibility_cal_notification">Hysbysiad Calendr</string>
   <!-- Calendar notification snooze button [CHAR LIMIT = NONE]-->
   <!-- Calendar notification email button [CHAR LIMIT = NONE]-->
   <!-- A "new event" hint for the user when selecting a specific hour in the day view [CHAR LIMIT = 30]-->

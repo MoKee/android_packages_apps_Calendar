@@ -17,9 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
-  <string name="on_permission_read_calendar">Оневозможивте потребна дозвола.</string>
   <!-- No maps found in phone -->
-  <string name="no_map">Не е инсталирана апликација за мапи</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <!-- Check box label for using custom snooze delays -->
   <!-- Summaries for using custom snooze delays -->
@@ -28,13 +26,8 @@
   <!-- Title of dialog for setting the default snooze delay -->
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
-  <plurals name="events_selected">
-    <item quantity="one">%1$d настан е избран</item>
-    <item quantity="other">%1$d настани се избрани</item>
-  </plurals>
   <!-- Label values for the default start page preference. -->
   <!-- Strings for buttons in drop down menu -->
   <!-- Sharing calendar event -->
   <!-- String defining format for displaying week of the year -->
-  <string name="week_of_year">недела <xliff:g id="number">%1$d</xliff:g> од <xliff:g id="year">%2$s</xliff:g></string>
 </resources>
