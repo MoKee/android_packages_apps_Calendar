@@ -41,7 +41,8 @@
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="18"></uses-sdk>
 
     <application android:name="CalendarApplication"
-            android:label="@string/app_label" android:icon="@mipmap/ic_launcher_calendar"
+            android:label="@string/app_label" 
+            android:icon="@mipmap/ic_launcher"
             android:taskAffinity="android.task.calendar"
             android:hardwareAccelerated="true"
             android:backupAgent="com.android.calendar.CalendarBackupAgent"
