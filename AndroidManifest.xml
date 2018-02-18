@@ -42,7 +42,7 @@
 
     <application android:name="CalendarApplication"
             android:label="@string/app_label"
-            android:icon="@mipmap/ic_launcher_calendar"
+            android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_calendar_round"
             android:taskAffinity="android.task.calendar"
             android:hardwareAccelerated="true"
