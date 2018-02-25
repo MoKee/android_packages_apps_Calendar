@@ -209,6 +209,7 @@
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
   <string name="agenda_yesterday">DDOE, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
+  <string name="agenda_tomorrow">Yfory, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown while the calendar events are being loading to the screen. -->
   <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
   <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->
@@ -318,6 +319,7 @@
   <!-- Shown in month view next to event icon when additional events exist for that day, but no
         room remaining -->
   <!-- Caption to show on gadget when there are no upcoming calendar events -->
+  <string name="gadget_no_events">Dim digwyddiadau calendr</string>
   <!-- Text to show on gadget when an event is currently in progress -->
   <!-- Text to show on gadget when an all-day event is in progress -->
   <!-- DO NOT TRANSLATE -->
