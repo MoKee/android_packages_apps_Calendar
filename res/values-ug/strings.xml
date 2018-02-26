@@ -288,7 +288,6 @@
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
   <string name="agenda_yesterday">تۈنۈگۈن، <xliff:g id="DATE">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
-  <string name="agenda_tomorrow">ئەتە، <xliff:g id="DATE">%1$s</xliff:g></string>
   <!-- This is shown while the calendar events are being loading to the screen. -->
   <string name="loading">يۈكلەۋاتىدۇ…</string>
   <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
@@ -451,7 +450,6 @@
   <!-- Shown in month view next to event icon when additional events exist for that day, but no
         room remaining -->
   <!-- Caption to show on gadget when there are no upcoming calendar events -->
-  <string name="gadget_no_events">يېقىندا ھېچقانداق يىلنامە پائالىيىتى يوق</string>
   <!-- Text to show on gadget when an event is currently in progress -->
   <!-- Text to show on gadget when an all-day event is in progress -->
   <!-- DO NOT TRANSLATE -->
