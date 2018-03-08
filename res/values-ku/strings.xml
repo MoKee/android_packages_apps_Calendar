@@ -95,7 +95,6 @@
   <!-- Menu items: -->
   <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
-  <string name="calendar_refresh">"بووژاندنەوە"</string>
   <!-- This is a label on a context menu item. Pressing this menu item displays the
          Agenda view. -->
   <!-- This is a label on a context menu item. Pressing this menu item displays the
@@ -324,6 +323,7 @@
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
   <string name="agenda_yesterday">دوێنێ, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
+  <string name="agenda_tomorrow">بەیانی, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown while the calendar events are being loading to the screen. -->
   <string name="loading">خوێندنەوە\u2026</string>
   <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
@@ -505,6 +505,7 @@
     <item quantity="other">+<xliff:g id="number">%d</xliff:g></item>
   </plurals>
   <!-- Caption to show on gadget when there are no upcoming calendar events -->
+  <string name="gadget_no_events">هیچ ڕووداوێکی ڕۆژژمێر لە داهاتوودا نیە</string>
   <!-- Text to show on gadget when an event is currently in progress -->
   <!-- Text to show on gadget when an all-day event is in progress -->
   <!-- DO NOT TRANSLATE -->
