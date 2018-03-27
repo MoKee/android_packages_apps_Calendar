@@ -46,11 +46,6 @@
   <string name="evt_del_dlg_msg_selected">Vybrané události budou odstraněny</string>
   <string name="evt_del_dlg_msg_all">Všechny události budou odstraněny</string>
   <string name="no_events_selected">Nejsou vybrané žádné události</string>
-  <plurals name="events_selected">
-    <item quantity="one">Vybrána %1$d událost</item>
-    <item quantity="few">Vybrány %1$d události</item>
-    <item quantity="other">Vybráno %1$d událostí</item>
-  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Výchozí zobrazení</string>
   <string name="default_start_last">Předchozí použité zobrazení</string>

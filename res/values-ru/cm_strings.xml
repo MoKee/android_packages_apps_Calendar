@@ -49,6 +49,7 @@
   <plurals name="events_selected">
     <item quantity="one">Выбрано %1$d событие</item>
     <item quantity="few">Выбраны %1$d события</item>
+    <item quantity="many">Выбрано %1$d событий</item>
     <item quantity="other">Выбраны %1$d событий</item>
   </plurals>
   <!-- Label values for the default start page preference. -->
