@@ -49,6 +49,7 @@
   <plurals name="events_selected">
     <item quantity="one">Vybraná %1$d udalosť</item>
     <item quantity="few">Vybrané %1$d udalosti</item>
+    <item quantity="many">Vybratých %1$d udalostí</item>
     <item quantity="other">Vybratých %1$d udalostí</item>
   </plurals>
   <!-- Label values for the default start page preference. -->

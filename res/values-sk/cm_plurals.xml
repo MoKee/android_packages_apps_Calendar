@@ -19,6 +19,7 @@
   <plurals name="select_events_to_share">
     <item quantity="one">Vyberte udalosť na zdieľanie</item>
     <item quantity="few">Vyberte udalosti na zdieľanie</item>
+    <item quantity="many">Vyberte udalosti na zdieľanie</item>
     <item quantity="other">Vyberte udalosti na zdieľanie</item>
   </plurals>
 </resources>

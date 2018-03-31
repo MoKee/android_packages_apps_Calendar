@@ -15,10 +15,4 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <plurals name="select_events_to_share">
-    <item quantity="one">Pasirinkite įvyki, kad bendrintumėte</item>
-    <item quantity="few">Pasirinkite įvykius, kad bendrintumėte</item>
-    <item quantity="other">Pasirinkite įvykių, kad bendrintumėte</item>
-  </plurals>
-</resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>

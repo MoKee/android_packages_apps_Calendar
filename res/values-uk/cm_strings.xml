@@ -46,11 +46,6 @@
   <string name="evt_del_dlg_msg_selected">Обрані події будуть видалені</string>
   <string name="evt_del_dlg_msg_all">Всі події будуть видалені</string>
   <string name="no_events_selected">Немає вибраних подій</string>
-  <plurals name="events_selected">
-    <item quantity="one">Обрана %1$d подія</item>
-    <item quantity="few">Обрано %1$d події</item>
-    <item quantity="other">Обрано %1$d подій</item>
-  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Типовий вигляд</string>
   <string name="default_start_last">Попередній вигляд</string>
