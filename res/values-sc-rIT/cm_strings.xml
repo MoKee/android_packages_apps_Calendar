@@ -17,8 +17,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">As disabilitadu un\'autorizatzione netzessària.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Non bi sunt aplicatziones pro sas mapas installadas</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="share_label">Cumpartzi</string>
   <!-- Check box label for using custom snooze delays -->
   <!-- Summaries for using custom snooze delays -->
   <!-- Title of custom snooze delay dialog -->
@@ -26,8 +29,18 @@
   <!-- Title of dialog for setting the default snooze delay -->
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Delete events -->
+  <string name="action_delete">Fatu</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d eventu ischertadu</item>
+    <item quantity="other">%1$d eventos ischertados</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Die</string>
+  <string name="buttons_list_1">Chida</string>
+  <string name="buttons_list_2">Mese</string>
+  <string name="buttons_list_4">Annu</string>
   <!-- Sharing calendar event -->
   <!-- String defining format for displaying week of the year -->
+  <string name="week_of_year">chida <xliff:g id="number">%1$d</xliff:g> de <xliff:g id="year">%2$s</xliff:g></string>
 </resources>
