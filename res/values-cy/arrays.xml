@@ -21,9 +21,9 @@
     -->
   <string-array name="reminder_methods_labels">
     <item>Hysbysiad</item>
-    <item>Email</item>
+    <item>Ebost</item>
     <item>SMS</item>
-    <item>Alarm</item>
+    <item>Larwm</item>
   </string-array>
   <!-- This maps reminder_methods_labels to internal constants. -->
   <!-- Choices for the "Reminder minutes" spinner.
@@ -34,22 +34,22 @@
          [CHAR LIMIT=15]
     -->
   <string-array name="reminder_minutes_labels">
-    <item>0 minutes</item>
-    <item>1 minute</item>
-    <item>5 minutes</item>
-    <item>10 minutes</item>
-    <item>15 minutes</item>
-    <item>20 minutes</item>
-    <item>25 minutes</item>
-    <item>30 minutes</item>
-    <item>45 minutes</item>
-    <item>1 hour</item>
-    <item>2 hours</item>
-    <item>3 hours</item>
-    <item>12 hours</item>
-    <item>24 hours</item>
+    <item>0 munudau</item>
+    <item>1 munud</item>
+    <item>5 munud</item>
+    <item>10 munud</item>
+    <item>15 munud</item>
+    <item>20 munud</item>
+    <item>25 munud</item>
+    <item>30 munud</item>
+    <item>45 munud</item>
+    <item>1 awr</item>
+    <item>2 awr</item>
+    <item>3 awr</item>
+    <item>12 awr</item>
+    <item>24 awr</item>
     <item>2 ddiwrnod</item>
-    <item>1 week</item>
+    <item>1 wythnos</item>
   </string-array>
   <!-- Choices for the "Reminder minutes" spinner in the settings.
          These must be kept in sync with the preferences_default_reminder_values array.
@@ -57,22 +57,22 @@
     -->
   <string-array name="preferences_default_reminder_labels">
     <item>Dim</item>
-    <item>0 minutes</item>
-    <item>1 minute</item>
-    <item>5 minutes</item>
-    <item>10 minutes</item>
-    <item>15 minutes</item>
-    <item>20 minutes</item>
-    <item>25 minutes</item>
-    <item>30 minutes</item>
-    <item>45 minutes</item>
-    <item>1 hour</item>
-    <item>2 hours</item>
-    <item>3 hours</item>
-    <item>12 hours</item>
-    <item>24 hours</item>
+    <item>0 munudau</item>
+    <item>1 munud</item>
+    <item>5 munud</item>
+    <item>10 munud</item>
+    <item>15 munud</item>
+    <item>20 munud</item>
+    <item>25 munud</item>
+    <item>30 munud</item>
+    <item>45 munud</item>
+    <item>1 awr</item>
+    <item>2 awr</item>
+    <item>3 awr</item>
+    <item>12 awr</item>
+    <item>24 awr</item>
     <item>2 ddiwrnod</item>
-    <item>1 week</item>
+    <item>1 wythnos</item>
   </string-array>
   <string-array name="preferences_week_start_day_labels">
     <item>Locale rhagosodedig</item>
@@ -80,18 +80,40 @@
     <item>Dydd Sul</item>
     <item>Dydd Llun</item>
   </string-array>
+  <string-array name="availability">
+    <item>Yn brysur</item>
+    <item>Ar gael</item>
+    <item>Efallai</item>
+  </string-array>
   <!-- This maps reminder_methods_labels to internal constants. -->
+  <string-array name="visibility">
+    <item>Rhagosodiad</item>
+    <item>Preifat</item>
+    <item>Cyhoeddus</item>
+  </string-array>
+  <string-array name="ordinal_labels">
+    <item>cyntaf</item>
+    <item>ail</item>
+    <item>trydydd</item>
+    <item>pedwerydd</item>
+    <item>olaf</item>
+  </string-array>
   <!-- Invitation responses -->
   <string-array name="response_labels1">
-    <item>No response</item>
-    <item>Yes</item>
-    <item>Maybe</item>
+    <item>Dim ymateb</item>
+    <item>Ie</item>
+    <item>Efallai</item>
     <item>Na</item>
   </string-array>
   <!-- The corresponding indices are defined in DeleteEventHelper.java -->
   <!-- This is a list of choices displayed when the user deletes an event.
          It only is shown when deleting a recurring event.
     -->
+  <string-array name="delete_repeating_labels">
+    <item>Dim ond y digwyddiad hwn</item>
+    <item>Hwn a digwyddiadau yn y dyfodol</item>
+    <item>Pob digwyddiad</item>
+  </string-array>
   <!-- DO NOT TRANSLATE These values need to correspond to the indices
          defined in DeleteEventHelper.java-->
   <!-- The corresponding indices are defined in DeleteEventHelper.java -->
@@ -101,12 +123,40 @@
          code where you can't delete one instance of a repeating event that
          was created on the phone until that event has been synced to the server.
      -->
+  <string-array name="delete_repeating_labels_no_selected">
+    <item>Hwn a digwyddiadau yn y dyfodol</item>
+    <item>Pob digwyddiad</item>
+  </string-array>
   <!-- The corresponding array indices are defined in EventInfoActivity.java -->
   <!-- The list of choices displayed in a dialog box when the user wants to
     respond to an invitation that repeats. -->
+  <string-array name="change_response_labels">
+    <!-- The choice for responding to only one instance of a repeating event -->
+    <item>Dim ond y digwyddiad hwn</item>
+    <!-- The choice for responding to all instances of a repeating event -->
+    <item>Pob digwyddiad yn y gyfres</item>
+  </string-array>
   <!-- Strings for buttons in drop down menu -->
+  <string-array name="buttons_list">
+    <item>Diwrnod</item>
+    <item>Wythnos</item>
+    <item>Mis</item>
+    <item>Agenda</item>
+  </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
+  <string-array name="preferences_skip_reminders_labels">
+    <!-- Default choice -->
+    <item>Dim ond os gwrthodwyd</item>
+    <!-- Second option, for skipping reminders to events not yet responded to. -->
+    <item>Os gwrthodwyd neu heb ymateb</item>
+  </string-array>
   <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
+  <string-array name="recurrence_freq">
+    <item>AILADRODD YN DDYDDIOL</item>
+    <item>AILADRODD YN WYTHNOSOL</item>
+    <item>AILADRODD YN FISOL</item>
+    <item>AILADRODD YN FLYNYDDOL</item>
+  </string-array>
   <!-- The following sets of strings describe a monthly recurring event, which will repeat
          on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
          the last Sunday. These are set up like this to resolve any gender-matching issues
