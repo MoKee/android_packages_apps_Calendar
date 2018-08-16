@@ -372,7 +372,7 @@
   <string name="snooze_all_label">"Hepian y cwbl"</string>
   <!-- The button label for dismissing all the current reminder alarms. This
          causes them to disappear from the notification screen. -->
-  <string name="dismiss_all_label">"Diddymu'r cwbl"</string>
+  <string name="dismiss_all_label">"Wfftio'r cwbl"</string>
   <!-- The button label for making the reminder alarms go away temporarily
          and re-fire in 5 minutes. [CHAR LIMIT=12]-->
   <string name="snooze_label">"Hepian (5 mun.)"</string>
