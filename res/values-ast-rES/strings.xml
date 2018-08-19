@@ -155,10 +155,10 @@
   <!-- not Synced or visible status message -->
   <!-- Synced status message displayed when the given calendar is stored/synced on the device
         [CHAR LIMIT=60] -->
-  <string name="synced"> sincronizáu</string>
+  <string name="synced"> sincronizóse</string>
   <!-- Not synced status message displayed when the given calendar is not stored/synced on the
         device [CHAR LIMIT=60] -->
-  <string name="not_synced"> non sincronizáu</string>
+  <string name="not_synced"> nun se sincronizó</string>
   <!-- Message displayed to user when an account with Calendars is not being auto-synced
         [CHAR LIMIT=120]-->
   <string name="acct_not_synced">Esta cuenta nun ta sincronizándose polo que los
