@@ -41,7 +41,7 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
-        setupPurchaseThankYou()
+//        setupPurchaseThankYou()
         setupCustomizeColors()
         setupUseEnglish()
         setupManageEventTypes()
@@ -105,12 +105,12 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupPurchaseThankYou() {
-        settings_purchase_thank_you_holder.beVisibleIf(config.appRunCount > 10 && !isThankYouInstalled())
-        settings_purchase_thank_you_holder.setOnClickListener {
-            launchPurchaseThankYouIntent()
-        }
-    }
+//    private fun setupPurchaseThankYou() {
+//        settings_purchase_thank_you_holder.beVisibleIf(config.appRunCount > 10 && !isThankYouInstalled())
+//        settings_purchase_thank_you_holder.setOnClickListener {
+//            launchPurchaseThankYouIntent()
+//        }
+//    }
 
     private fun setupCustomizeColors() {
         settings_customize_colors_holder.setOnClickListener {
