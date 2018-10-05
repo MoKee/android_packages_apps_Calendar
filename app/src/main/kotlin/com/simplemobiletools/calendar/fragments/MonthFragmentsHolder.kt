@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.fragments
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,11 +65,11 @@ class MonthFragmentsHolder : MyFragmentHolder(), NavigationListener {
                         (activity as? MainActivity)?.toggleGoToTodayVisibility(shouldGoToTodayBeVisible)
                         isGoToTodayVisible = shouldGoToTodayBeVisible
                     }
+                    updateActionBarTitle()
                 }
             })
             currentItem = defaultMonthlyPage
         }
-        updateActionBarTitle()
     }
 
     private fun getMonths(code: String): List<String> {
@@ -106,7 +107,10 @@ class MonthFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun shouldGoToTodayBeVisible() = currentDayCode.getMonthCode() != todayDayCode.getMonthCode()
 
     override fun updateActionBarTitle() {
-        (activity as? MainActivity)?.updateActionBarTitle(getString(R.string.app_launcher_name))
+        var title = DateUtils.formatDateTime(context,
+                Formatter.getDateTimeFromCode(currentDayCode).millis,
+                DateUtils.FORMAT_SHOW_YEAR or DateUtils.FORMAT_NO_MONTH_DAY)
+        (activity as? MainActivity)?.updateActionBarTitle(title)
     }
 
     override fun getNewEventDayCode() = if (shouldGoToTodayBeVisible()) currentDayCode else todayDayCode

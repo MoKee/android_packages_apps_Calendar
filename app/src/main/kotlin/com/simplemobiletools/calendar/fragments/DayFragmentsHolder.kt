@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.fragments
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,11 +66,11 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
                         (activity as? MainActivity)?.toggleGoToTodayVisibility(shouldGoToTodayBeVisible)
                         isGoToTodayVisible = shouldGoToTodayBeVisible
                     }
+                    updateActionBarTitle()
                 }
             })
             currentItem = defaultDailyPage
         }
-        updateActionBarTitle()
     }
 
     private fun getDays(code: String): List<String> {
@@ -106,7 +107,10 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun shouldGoToTodayBeVisible() = currentDayCode != todayDayCode
 
     override fun updateActionBarTitle() {
-        (activity as MainActivity).updateActionBarTitle(getString(R.string.app_launcher_name))
+        var title = DateUtils.formatDateTime(context,
+                Formatter.getDateTimeFromCode(currentDayCode).millis,
+                DateUtils.FORMAT_SHOW_WEEKDAY or DateUtils.FORMAT_SHOW_DATE)
+        (activity as? MainActivity)?.updateActionBarTitle(title)
     }
 
     override fun getNewEventDayCode() = currentDayCode
