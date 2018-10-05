@@ -1,11 +1,15 @@
 package com.simplemobiletools.calendar.fragments
 
 import android.graphics.drawable.ColorDrawable
+import android.mokee.utils.MoKeeUtils
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.text.TextUtils
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.activities.MainActivity
 import com.simplemobiletools.calendar.adapters.MyMonthPagerAdapter
@@ -14,10 +18,12 @@ import com.simplemobiletools.calendar.extensions.getMonthCode
 import com.simplemobiletools.calendar.helpers.DAY_CODE
 import com.simplemobiletools.calendar.helpers.Formatter
 import com.simplemobiletools.calendar.interfaces.NavigationListener
+import com.simplemobiletools.commons.extensions.updateActionBarSubtitle
 import com.simplemobiletools.commons.extensions.updateActionBarTitle
 import com.simplemobiletools.commons.views.MyViewPager
 import kotlinx.android.synthetic.main.fragment_months_holder.view.*
 import org.joda.time.DateTime
+import java.util.*
 
 class MonthFragmentsHolder : MyFragmentHolder(), NavigationListener {
     private val PREFILLED_MONTHS = 251
@@ -64,11 +70,11 @@ class MonthFragmentsHolder : MyFragmentHolder(), NavigationListener {
                         (activity as? MainActivity)?.toggleGoToTodayVisibility(shouldGoToTodayBeVisible)
                         isGoToTodayVisible = shouldGoToTodayBeVisible
                     }
+                    updateActionBarTitle()
                 }
             })
             currentItem = defaultMonthlyPage
         }
-        updateActionBarTitle()
     }
 
     private fun getMonths(code: String): List<String> {
@@ -106,7 +112,22 @@ class MonthFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun shouldGoToTodayBeVisible() = currentDayCode.getMonthCode() != todayDayCode.getMonthCode()
 
     override fun updateActionBarTitle() {
-        (activity as? MainActivity)?.updateActionBarTitle(getString(R.string.app_launcher_name))
+        var title = DateUtils.formatDateTime(context,
+                Formatter.getDateTimeFromCode(currentDayCode).millis,
+                DateUtils.FORMAT_SHOW_YEAR or DateUtils.FORMAT_NO_MONTH_DAY)
+        (activity as? MainActivity)?.updateActionBarTitle(title)
+        if (MoKeeUtils.isSupportLanguage(false)) {
+            var mCalendar = Calendar.getInstance()
+            mCalendar.time = Formatter.getDateTimeFromCode(currentDayCode).toDate()
+            var mChineseCalendarInfo = ChineseCalendar(mCalendar).chineseCalendarInfo
+            var subTitle = mChineseCalendarInfo.lunarYearMonth
+            if (!mChineseCalendarInfo.lunarYearMonth.contains(mChineseCalendarInfo.lunarNextMonthYear)) {
+                subTitle += " - " + mChineseCalendarInfo.lunarNextMonthYear + mChineseCalendarInfo.lunarNextMonth
+            } else {
+                subTitle += " - " + mChineseCalendarInfo.lunarNextMonth
+            }
+            (activity as? MainActivity)?.updateActionBarSubtitle(subTitle)
+        }
     }
 
     override fun getNewEventDayCode() = if (shouldGoToTodayBeVisible()) currentDayCode else todayDayCode

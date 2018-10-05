@@ -1,11 +1,14 @@
 package com.simplemobiletools.calendar.fragments
 
 import android.graphics.drawable.ColorDrawable
+import android.mokee.utils.MoKeeUtils
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.activities.MainActivity
 import com.simplemobiletools.calendar.adapters.MyDayPagerAdapter
@@ -13,6 +16,7 @@ import com.simplemobiletools.calendar.extensions.config
 import com.simplemobiletools.calendar.helpers.DAY_CODE
 import com.simplemobiletools.calendar.helpers.Formatter
 import com.simplemobiletools.calendar.interfaces.NavigationListener
+import com.simplemobiletools.commons.extensions.updateActionBarSubtitle
 import com.simplemobiletools.commons.extensions.updateActionBarTitle
 import com.simplemobiletools.commons.views.MyViewPager
 import kotlinx.android.synthetic.main.fragment_days_holder.view.*
@@ -65,11 +69,11 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
                         (activity as? MainActivity)?.toggleGoToTodayVisibility(shouldGoToTodayBeVisible)
                         isGoToTodayVisible = shouldGoToTodayBeVisible
                     }
+                    updateActionBarTitle()
                 }
             })
             currentItem = defaultDailyPage
         }
-        updateActionBarTitle()
     }
 
     private fun getDays(code: String): List<String> {
@@ -106,7 +110,16 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun shouldGoToTodayBeVisible() = currentDayCode != todayDayCode
 
     override fun updateActionBarTitle() {
-        (activity as MainActivity).updateActionBarTitle(getString(R.string.app_launcher_name))
+        var title = DateUtils.formatDateTime(context,
+                Formatter.getDateTimeFromCode(currentDayCode).millis,
+                DateUtils.FORMAT_SHOW_WEEKDAY or DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_YEAR)
+        (activity as? MainActivity)?.updateActionBarTitle(title)
+        if (MoKeeUtils.isSupportLanguage(false)) {
+            var mCalendar = Calendar.getInstance()
+            mCalendar.time = Formatter.getDateTimeFromCode(currentDayCode).toDate()
+            var mChineseCalendarInfo = ChineseCalendar(mCalendar).chineseCalendarInfo
+            (activity as? MainActivity)?.updateActionBarSubtitle(mChineseCalendarInfo.lunarDate)
+        }
     }
 
     override fun getNewEventDayCode() = currentDayCode
