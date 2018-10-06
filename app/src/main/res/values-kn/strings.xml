@@ -5,6 +5,8 @@
   <!-- Widget titles -->
   <!-- Event -->
   <!-- Event Repetition -->
+  <string name="repeat">ಪುನರಾವರ್ತನೆ</string>
+  <string name="every_day">ಪ್ರತಿದಿನ</string>
   <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
   <!-- used in repetition, like "Every first Sunday" -->
   <!-- Birthdays -->

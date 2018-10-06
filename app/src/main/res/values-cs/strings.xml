@@ -95,7 +95,7 @@
   <string name="filename_without_ics">Název souboru (bez .ics)</string>
   <!-- Event details -->
   <string name="title">Název</string>
-  <string name="location">Místo</string>
+  <string name="location">Poloha</string>
   <string name="description">Popis</string>
   <string name="all_day">Celý den</string>
   <!-- Weekly view -->
@@ -133,18 +133,18 @@
   <string name="caldav_sync">CalDAV synchronizace</string>
   <string name="event_lists">Seznamy událostí</string>
   <string name="display_past_events">Zobrazit minulé události</string>
-  <string name="replace_description_with_location">Nahradit popis udalosti lokací</string>
-  <string name="delete_all_events">Smazat všechny události</string>
+  <string name="replace_description_with_location">Nahradit popis události s polohou</string>
+  <string name="delete_all_events">Vymazat všechny události</string>
   <string name="delete_all_events_confirmation">Opravdu chcete smazat všechny události? Typy událostí a ostatní nastavení zůstanou neporušené.</string>
   <string name="show_a_grid">Zobrazit mřížku</string>
   <string name="loop_reminders">Připomínat až do vypnutí</string>
-  <string name="dim_past_events">Smazat minulé události</string>
+  <string name="dim_past_events">Ztlumit minulé události</string>
   <string name="events">Události</string>
-  <string name="reminder_stream">Zvuk upomínky</string>
+  <string name="reminder_stream">Zvukový kanál používaný připomínkami</string>
   <string name="system_stream">Systémový</string>
-  <string name="alarm_stream">Budík</string>
-  <string name="notification_stream">Notifikace</string>
-  <string name="ring_stream">Zvonek</string>
+  <string name="alarm_stream">Výstražný</string>
+  <string name="notification_stream">Oznamovací</string>
+  <string name="ring_stream">Vyzváněcí</string>
   <!-- CalDAV sync -->
   <string name="select_caldav_calendars">Vybrat kalendáře k synchronizaci</string>
   <string name="manage_synced_calendars">Správa synchronizovaných kalendářů</string>
@@ -165,17 +165,17 @@
   <string name="saturday_alt">Sobota</string>
   <string name="sunday_alt">Neděle</string>
   <!-- List widget config example events -->
-  <string name="sample_title_1">cvičení</string>
+  <string name="sample_title_1">Cvičení</string>
   <string name="sample_title_2">Schůzka s Janem</string>
-  <string name="sample_description_2">v restauraci</string>
-  <string name="sample_title_3">knihovna</string>
+  <string name="sample_description_2">V zahradě Rockstone</string>
+  <string name="sample_title_3">Knihovna</string>
   <string name="sample_title_4">Oběd s Marií</string>
-  <string name="sample_description_4">ve městě</string>
-  <string name="sample_title_5">na kafe</string>
+  <string name="sample_description_4">Ve městě</string>
+  <string name="sample_title_5">Káva</string>
   <!-- FAQ -->
   <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
   <!-- Short description has to have less than 80 chars -->
-  <string name="app_short_description">Jednoduchý kalendář s událostmi, přizpůsobitelné widgety a žádné reklamy.</string>
+  <string name="app_short_description">Jednoduchý kalendář s událostmi, přizpůsobitelným widgetem a bez reklam.</string>
   <string name="app_long_description">
         Jednoduchý kalendář s volitelnou synchronizací CalDAV. Můžete snadno vytvářet opakující se události a nastavovat připomenutí, můžete také zobrazovat čísla týdnů.
 
@@ -183,9 +183,9 @@
 
         Neobsahuje žádné reklamy ani zbytečná oprávnění. Je plně OpenSource, umožňuje měnit barvy.
 
-        Povolení úložiště je potřeba pouze pro export nebo import událostí ze souborů .ics.
+        Oprávnění úložiště je potřeba pouze pro export nebo import událostí ze souborů .ics.
 
-        Povolení kontaktů se používá pouze při importu narozenin a výročí.
+        Oprávnění kontaktů se používá pouze při importu narozenin a výročí.
 
         Tato aplikace je součástí větší sady aplikací. Tyto a další aplikace najdete na https://www.simplemobiletools.com
     </string>

@@ -53,23 +53,28 @@
   <string name="repeat">重复</string>
   <string name="repeat_on">重复于</string>
   <string name="every_day">每天</string>
+  <string name="selected_days">在选定的日期</string>
   <string name="the_same_day">同一天</string>
   <string name="the_last_day">最后一天</string>
   <string name="repeat_on_the_same_day_monthly">每个月的同一天重复</string>
   <string name="repeat_on_the_last_day_monthly">每个月的最后一天重复</string>
   <string name="repeat_on_the_same_day_yearly">每年的同一天重复</string>
+  <string name="repeat_every_m">每隔.... 重复</string>
   <string name="every_m">每</string>
   <string name="first_m">第一</string>
   <string name="second_m">第二</string>
   <string name="third_m">第三</string>
   <string name="fourth_m">第四</string>
+  <string name="last_m">最后</string>
   <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
   <!-- used in repetition, like "Every first Sunday" -->
+  <string name="repeat_every_f">每隔.... 重复</string>
   <string name="every_f">每</string>
   <string name="first_f">第一</string>
   <string name="second_f">第二</string>
   <string name="third_f">第三</string>
   <string name="fourth_f">第四</string>
+  <string name="last_f">最后</string>
   <!-- Birthdays -->
   <string name="birthdays">生日</string>
   <string name="add_birthdays">添加联系人生日</string>
@@ -77,6 +82,7 @@
   <string name="birthdays_added">生日添加成功</string>
   <!-- Anniversaries -->
   <string name="anniversaries">纪念日</string>
+  <string name="add_anniversaries">添加联系人周年纪念日</string>
   <string name="no_anniversaries">没有纪念日</string>
   <string name="anniversaries_added">成功添加纪念日</string>
   <!-- Event Reminders -->
@@ -110,6 +116,7 @@
   <string name="regular_event">普通活动</string>
   <string name="cannot_delete_default_type">默认的活动类型不能删除</string>
   <string name="select_event_type">选择一个活动类型</string>
+  <string name="move_events_into_default">将受影响的活动移动到默认活动类型中</string>
   <string name="remove_affected_events">永久移除受影响的活动</string>
   <string name="unsync_caldav_calendar">要删除 CalDAV 日历, 请将其取消同步</string>
   <!-- Holidays -->
@@ -117,20 +124,30 @@
   <string name="add_holidays">添加节假日</string>
   <string name="national_holidays">国庆假期</string>
   <string name="religious_holidays">宗教节日</string>
+  <string name="holidays_imported_successfully">节假日信息导入成功</string>
   <string name="importing_some_holidays_failed">部分活动导入失败</string>
   <string name="importing_holidays_failed">导入节假日失败</string>
   <!-- Settings -->
   <string name="manage_event_types">管理活动类型</string>
+  <string name="start_day_at">开始日期</string>
+  <string name="end_day_at">结束日期</string>
   <string name="week_numbers">显示周数</string>
   <string name="vibrate">在提醒时振动</string>
   <string name="reminder_sound">提醒声音</string>
+  <string name="no_ringtone_picker">没有找到能设置提示音的应用</string>
   <string name="no_ringtone_selected">无</string>
   <string name="day_end_before_start">结束日不能早于开始日</string>
   <string name="caldav_sync">CalDAV 同步</string>
   <string name="event_lists">活动列表</string>
+  <string name="display_past_events">显示已结束的活动</string>
+  <string name="replace_description_with_location">活动记录本地化</string>
   <string name="delete_all_events">删除所有活动</string>
+  <string name="delete_all_events_confirmation">确定删除所有活动吗？</string>
   <string name="show_a_grid">显示网格</string>
+  <string name="loop_reminders">除非主动取消否则重复提醒</string>
+  <string name="dim_past_events">已结束的活动变淡</string>
   <string name="events">活动</string>
+  <string name="reminder_stream">提示音</string>
   <string name="system_stream">系统</string>
   <string name="alarm_stream">闹钟</string>
   <string name="notification_stream">通知</string>
@@ -161,13 +178,23 @@
   <string name="sunday_alt">周日</string>
   <!-- List widget config example events -->
   <string name="sample_title_1">锻炼</string>
+  <string name="sample_description_1">腿部训练日</string>
+  <string name="sample_title_2">与约翰会面</string>
+  <string name="sample_description_2">在摇石花园</string>
   <string name="sample_title_3">媒体库</string>
+  <string name="sample_title_4">与玛丽共进午餐</string>
+  <string name="sample_description_4">在广场</string>
+  <string name="sample_title_5">咖啡时间</string>
   <!-- FAQ -->
   <string name="faq_1_title">如何通过“添加节假日”按钮删除已导入的节假日？</string>
+  <string name="faq_1_text">以这种方式创建的节假日活动会被添加到新事件类型中去。您可以进入设置-&gt; 管理活动类型，
+        长按给定的活动类型并通过选择回收站删除它。</string>
   <string name="faq_2_title">我可以与 Google 日历或其他支持 CalDAV 的服务进行同步吗？</string>
   <string name="faq_2_text">可以。只需要在应用设置中打开 \"CalDAV 同步\" 并选择你要同步的日历。但你需要一些第三方程序来处理设备和服务器间的同步。
         如果你同步的是 Google 日历，则官方的日历应用便可完成。其它日历则需要第三方同步工具，比如 DAVdroid。</string>
   <string name="faq_3_title">我可以看见提示，但没有听到声音。我应该做什么？</string>
+  <string name="faq_3_text">不仅仅是显示实际的提醒， 而且播放提示音也受到系统的巨大影响。如果您听不到任何声音，请尝试使用应用程序设置，
+        按 \"提示音\" 选项，并将其更改为其他值。如果仍然没有任何声音，检查您的声音设置，确认是否设置了静音。</string>
   <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
   <!-- Short description has to have less than 80 chars -->
   <string name="app_short_description">一个有活动功能、可定制小部件，而且没有广告的简单的日历应用。</string>
