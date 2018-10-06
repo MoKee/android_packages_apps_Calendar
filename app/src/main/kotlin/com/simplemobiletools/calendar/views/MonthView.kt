@@ -4,11 +4,13 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
+import android.mokee.utils.MoKeeUtils
 import android.text.TextPaint
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.SparseIntArray
 import android.view.View
+import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.extensions.config
 import com.simplemobiletools.calendar.extensions.seconds
@@ -23,6 +25,7 @@ import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.moveLastItemToFront
 import org.joda.time.DateTime
 import org.joda.time.Days
+import java.util.*
 
 // used in the Monthly view fragment, 1 view per screen
 class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(context, attrs, defStyle) {
@@ -138,11 +141,22 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                     val xPos = x * dayWidth + horizontalOffset
                     val yPos = y * dayHeight + verticalOffset
                     val xPosCenter = xPos + dayWidth / 2
+                    var xPosLeft = xPos + dayWidth / 6
+                    var isCN = MoKeeUtils.isSupportLanguage(false)
                     if (day.isToday) {
-                        canvas.drawCircle(xPosCenter, yPos + paint.textSize * 0.7f, paint.textSize * 0.75f, getCirclePaint(day))
+                        canvas.drawCircle(if (isCN) xPosLeft else xPosCenter, yPos + paint.textSize * 0.65f, paint.textSize * 0.65f, getCirclePaint(day))
                     }
-
-                    canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
+                    if (isCN) {
+                        canvas.drawText(day.value.toString(), xPosLeft, yPos + paint.textSize, getTextPaint(day))
+                        var dateTime = Formatter.getDateTimeFromCode(day.code)
+                        var cal = Calendar.getInstance();
+                        cal.set(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth)
+                        var chineseCalendarInfo = ChineseCalendar(cal).chineseCalendarInfo
+                        var suggestDay = if (TextUtils.isEmpty(chineseCalendarInfo.solarTerm)) chineseCalendarInfo.lunarDay else chineseCalendarInfo.solarTerm
+                        canvas.drawText(suggestDay, xPos + dayWidth * 0.7f, yPos + paint.textSize, getColoredPaint(textColor))
+                    } else {
+                        canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
+                    }
                     dayVerticalOffsets.put(day.indexOnMonthView, (verticalOffset + paint.textSize * 2).toInt())
                 }
                 curId++
