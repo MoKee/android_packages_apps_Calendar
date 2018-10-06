@@ -41,6 +41,13 @@
   <string name="forever">Állandóan</string>
   <string name="event_is_repeatable">Az esemény ismételhető</string>
   <string name="selection_contains_repetition">A kijelölés ismétlődő eseményeket tartalmaz</string>
+  <string name="delete_one_only">Csak a kiválasztott eseményt törölje</string>
+  <string name="delete_future_occurrences">Ezt és a jövőbéli eseményeket törölje</string>
+  <string name="delete_all_occurrences">Az összes eseményt törölje</string>
+  <string name="update_one_only">Csak a kiválasztott eseményt frissítse</string>
+  <string name="update_all_occurrences">Az összes eseményt frissítse</string>
+  <string name="repeat_till_date">Ismétlés egy időpontig</string>
+  <string name="stop_repeating_after_x">Állítsa le az ismétlést x esemény után</string>
   <string name="repeat_forever">Folyamatos ismétlés</string>
   <string name="times">alkalommal</string>
   <string name="repeat">Ismétlődés</string>
@@ -76,16 +83,32 @@
   <!-- Anniversaries -->
   <string name="anniversaries">Évfordulók</string>
   <string name="add_anniversaries">Évforduló hozzáadása a névjegyekből</string>
+  <string name="no_anniversaries">Nem található egyetlen évforduló sem</string>
+  <string name="anniversaries_added">Évforduló sikeresen hozzáadásra került</string>
   <!-- Event Reminders -->
   <string name="reminder">Emlékeztető</string>
   <string name="before">korábban</string>
+  <string name="add_another_reminder">Másik emlékeztető hozzáadása</string>
+  <string name="event_reminders">Eseményemlékeztetők</string>
   <!-- Export / Import -->
+  <string name="import_events">Események importálása</string>
+  <string name="export_events">Események exportálása</string>
+  <string name="import_events_from_ics">Események importálása .ics fájlból</string>
+  <string name="export_events_to_ics">Események exportálása .ics fájlba</string>
+  <string name="default_event_type">Alapértelmezett eseménytípus</string>
+  <string name="export_past_events_too">A már elmúlt eseményeket is exportálja</string>
+  <string name="include_event_types">Az eseménytípusokat is tartalmazza</string>
+  <string name="filename_without_ics">Fájlnév ( .ics nélkül )</string>
+  <string name="override_event_types">Írja felül a fájlban az eseménytípusokat</string>
   <!-- Event details -->
   <string name="title">Név</string>
   <string name="location">Hely</string>
   <string name="description">Leírás</string>
+  <string name="all_day">Egész napos</string>
   <!-- Weekly view -->
+  <string name="week">Heti</string>
   <!-- Event types -->
+  <string name="event_types">Eseménytípusok</string>
   <string name="add_new_type">Új típus hozzáadása</string>
   <string name="edit_type">A típus szerkesztése</string>
   <string name="type_already_exists">Már létezik ilyen nevű típus</string>
@@ -93,28 +116,52 @@
   <string name="regular_event">Rendszeres esemény</string>
   <string name="cannot_delete_default_type">Alapértelmezett eseménytípus nem törölhető</string>
   <string name="select_event_type">Válassza ki az esemény típusát</string>
+  <string name="move_events_into_default">Az érintett események áthelyezése az alapértelmezett eseménytípusba</string>
+  <string name="remove_affected_events">Az érintett események végleges eltávolítása</string>
+  <string name="unsync_caldav_calendar">A CalDAV naptár eltávolításához meg kell szüntetnie a szinkronizálást</string>
   <!-- Holidays -->
   <string name="holidays">Ünnepek</string>
   <string name="add_holidays">Ünnepek hozzáadása</string>
   <string name="national_holidays">Nemzeti ünnepek</string>
   <string name="religious_holidays">Vallási ünnepek</string>
+  <string name="holidays_imported_successfully">Az Ünnepek sikeresen importálásra kerültek az \"Ünnepek\" eseménytípusba</string>
+  <string name="importing_some_holidays_failed">Egyes események importálása meghiúsult</string>
+  <string name="importing_holidays_failed">Az Ünnepek importálása meghiúsult</string>
   <!-- Settings -->
+  <string name="manage_event_types">Eseménytípusok kezelése</string>
+  <string name="start_day_at">A kezdés napja:</string>
+  <string name="end_day_at">A befejezés napja:</string>
   <string name="week_numbers">Hetek sorszámának mutatása</string>
   <string name="vibrate">Emlékeztetőnél rezgés</string>
   <string name="reminder_sound">Az Emlékeztető dallama</string>
+  <string name="no_ringtone_picker">Nem található olyan alkalmazás, amely beállíthatja a csengőhangot</string>
   <string name="no_ringtone_selected">Nincs</string>
+  <string name="day_end_before_start">A zárónap nem lehet a kezdőnap előtt</string>
+  <string name="caldav_sync">CalDAV szinkronizáció</string>
   <string name="event_lists">Eseménylista</string>
+  <string name="display_past_events">Múltbéli események megjelenítése</string>
+  <string name="replace_description_with_location">Az esemény leírásának felülírása a tartózkodási-helyadatokkal</string>
+  <string name="delete_all_events">Az összes esemény törlése</string>
+  <string name="delete_all_events_confirmation">Bizonyos benne, hogy az összes eseményt törli? Az eseménytípusok és egyéb beállítások érintetlenek maradnak.</string>
   <string name="show_a_grid">A rács megjelenítése</string>
+  <string name="loop_reminders">Az emlékeztetők ismétlése elutasításig</string>
+  <string name="dim_past_events">A múltbeli események halványítása</string>
   <string name="events">Események</string>
+  <string name="reminder_stream">Emlékeztetők által használt hangadatfolyam</string>
   <string name="system_stream">Rendszer</string>
   <string name="alarm_stream">Ébresztő</string>
   <string name="notification_stream">Értesítés</string>
   <string name="ring_stream">Csengés</string>
+  <string name="use_last_event_reminders">A legutolsó eseményemlékeztető használata alapértelmezettként az új eseményekhez</string>
   <string name="default_reminder_1">Alapértelmezett emlékeztető 1</string>
   <string name="default_reminder_2">Alapértelmezett emlékeztető 2</string>
   <string name="default_reminder_3">Alapértelmezett emlékeztető 3</string>
   <!-- CalDAV sync -->
+  <string name="caldav">CalDAV</string>
+  <string name="select_caldav_calendars">Válassza ki a szinkronizálandó naptárakat</string>
+  <string name="manage_synced_calendars">Szinkronizált naptárak kezelése</string>
   <string name="store_locally_only">Csak helyben tárolja</string>
+  <string name="refresh_caldav_calendars">CalDAV naptárak frissítése</string>
   <string name="refreshing">Frissítés…</string>
   <string name="refreshing_complete">A frissítés befejeződött</string>
   <string name="editing_calendar_failed">Sikertelen naptárszerkesztés</string>
@@ -139,19 +186,28 @@
   <string name="sample_description_4">a Plázában</string>
   <string name="sample_title_5">Kávézás</string>
   <!-- FAQ -->
+  <string name="faq_1_title">Hogyan lehet eltávolítani azokat az ünnepeket, amelyeket az \"Ünnepek hozzáadása\" gomb segítségével importált?</string>
+  <string name="faq_1_text">Az így létrehozott ünnepeket egy új típusba illeszti be, az úgynevezett \"Ünnepek\"-be. Bemehet a Beállításokba -&gt; Eseménytípusok kezelése menübe,
+        hosszan nyomja meg az adott eseménytípust, és törölje azt a Lomtár kiválasztásával.</string>
+  <string name="faq_2_title">Tudom szinkronizálni az eseményeimet a Google Naptár vagy másik szolgáltatás segítségével, CalDAV támogatással?</string>
+  <string name="faq_2_text">Igen, csak kapcsolja be a \"CalDAV szinkronizációt\" az alkalmazás beállításaiban, és válassza ki a szinkronizálni kívánt naptárakat. Azonban szüksége lesz egy harmadik féltől származó alkalmazásra, amely kezeli a szinkronizálást a készülék és a szerverek között.
+        Ha Google naptárat szeretne szinkronizálni, a hivatalos Naptáralkalmazás végrehajtja a feladatot. Más naptárakhoz szüksége lesz  harmadik fél szinkronizálási adapterére, például a DAVdroidra.</string>
+  <string name="faq_3_title">Látom a vizuális emlékeztetőket, de nem hallok hangot. Mit tegyek?</string>
+  <string name="faq_3_text">A rendszer nem csak a tényleges emlékeztető-megjelenítésre, de a hangokra is óriási hatással van. Ha nem hall semmilyen hangot, próbáljon belépni az alkalmazás beállításaiba,
+        nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
   <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
   <!-- Short description has to have less than 80 chars -->
-  <string name="app_short_description">Egy egyszerű naptár bejegyzésekkel, widget-tel és reklámok nélkül.</string>
+  <string name="app_short_description">Egy egyszerű naptár bejegyzésekkel, kisalkalmazással és reklámok nélkül.</string>
   <string name="app_long_description">
         Egy egyszerű naptár, CalDAV integráció lehetőségével. Könnyedén lehet ismétlődő eseményeket és emlékeztetőket felvenni, és a hetek sorszámait is mutatja.
 
-        Egy 4x4-es átméretezhető widget-et is biztosít, aminek beállíthatod a színét, az alfáját és a háttérszínét is.
+        Egy 4x4-es átméretezhető kisalkalmazást is biztosít, aminek beállíthatod a színét, az alfáját és a háttérszínét is.
 
         Nincsenek reklámok, és nem igényel szükségtelen engedélyeket. A forráskódja teljesen nyílt, és sötét téma is beállítható.
 
-        The Storage permission is needed only for exporting or importing events from .ics files.
+        Hozzáférés a tárhelyhez csak az .ics fájlokból származó események exportálásához vagy importálásához szükséges.
 
-        The Contacts permission is used only at importing contact birthdays and anniversaries.
+        Hozzáférés a névjegyekhez csak a születésnapok és az évfordulók importálásakor kerül felhasználásra.
 
         Ez az alkalmazás egy nagyobb alkalmazás-sorozat része. A továbbiak itt találhatók: https://www.simplemobiletools.com
     </string>
