@@ -45,6 +45,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private var smallPadding = 0
     private var maxEventsPerDay = 0
     private var horizontalOffset = 0
+    private var dayVerticalOffset = 0
     private var showWeekNumbers = false
     private var dimPastEvents = true
     private var allEvents = ArrayList<MonthViewEvent>()
@@ -62,7 +63,8 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         dimPastEvents = context.config.dimPastEvents
 
         smallPadding = resources.displayMetrics.density.toInt()
-        val normalTextSize = resources.getDimensionPixelSize(R.dimen.normal_text_size)
+        val normalTextSize = (resources.getDimensionPixelSize(R.dimen.normal_text_size) * 0.85f).toInt()
+        dayVerticalOffset = (resources.getDimensionPixelSize(R.dimen.normal_text_size) * 0.2f).toInt()
         weekDaysLetterHeight = normalTextSize * 2
 
         paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -137,7 +139,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                 val day = days.getOrNull(curId)
                 if (day != null) {
                     dayVerticalOffsets.put(day.indexOnMonthView, dayVerticalOffsets[day.indexOnMonthView] + weekDaysLetterHeight)
-                    val verticalOffset = dayVerticalOffsets[day.indexOnMonthView]
+                    val verticalOffset = dayVerticalOffsets[day.indexOnMonthView] + dayVerticalOffset
                     val xPos = x * dayWidth + horizontalOffset
                     val yPos = y * dayHeight + verticalOffset
                     val xPosCenter = xPos + dayWidth / 2
@@ -153,7 +155,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                         cal.set(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth)
                         var chineseCalendarInfo = ChineseCalendar(cal).chineseCalendarInfo
                         var suggestDay = if (TextUtils.isEmpty(chineseCalendarInfo.solarTerm)) chineseCalendarInfo.lunarDay else chineseCalendarInfo.solarTerm
-                        canvas.drawText(suggestDay, xPos + dayWidth * 0.7f, yPos + paint.textSize, getColoredPaint(textColor))
+                        canvas.drawText(suggestDay, xPos + dayWidth * 0.7f, yPos + paint.textSize, getLunarTextPaint(day))
                     } else {
                         canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
                     }
@@ -226,7 +228,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun drawEvent(event: MonthViewEvent, canvas: Canvas) {
         val verticalOffset = dayVerticalOffsets[event.startDayIndex]
         val xPos = event.startDayIndex % 7 * dayWidth + horizontalOffset
-        val yPos = (event.startDayIndex / 7) * dayHeight
+        val yPos = (event.startDayIndex / 7) * dayHeight + (dayVerticalOffset * 1.5).toInt()
         val xPosCenter = xPos + dayWidth / 2
 
         if (verticalOffset - eventTitleHeight * 2 > dayHeight) {
@@ -272,6 +274,15 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             paintColor = primaryColor.getContrastColor()
         }
 
+        if (!startDay.isThisMonth) {
+            paintColor = paintColor.adjustAlpha(LOW_ALPHA)
+        }
+
+        return getColoredPaint(paintColor)
+    }
+
+    private fun getLunarTextPaint(startDay: DayMonthly): Paint {
+        var paintColor = textColor
         if (!startDay.isThisMonth) {
             paintColor = paintColor.adjustAlpha(LOW_ALPHA)
         }
