@@ -157,7 +157,7 @@
   <string name="default_reminder_2">Напоминание по умолчанию 2</string>
   <string name="default_reminder_3">Напоминание по умолчанию 3</string>
   <!-- CalDAV sync -->
-  <string name="caldav">CalDAV</string>
+  <string name="caldav">Синхронизация CalDAV</string>
   <string name="select_caldav_calendars">Выберите календари для синхронизации</string>
   <string name="manage_synced_calendars">Управление календарями для синхронизации</string>
   <string name="store_locally_only">Хранить только локально</string>
