@@ -158,4 +158,9 @@ class Config(context: Context) : BaseConfig(context) {
     var defaultReminder3: Int
         get() = prefs.getInt(DEFAULT_REMINDER_3, REMINDER_OFF)
         set(defaultReminder3) = prefs.edit().putInt(DEFAULT_REMINDER_3, defaultReminder3).apply()
+
+    var lastUpdateTime: Long
+        get() = prefs.getLong(LAST_UPDATE_TIME, 0)
+        set(lastUpdateCheck) = prefs.edit().putLong(LAST_UPDATE_TIME, lastUpdateCheck).apply()
+
 }

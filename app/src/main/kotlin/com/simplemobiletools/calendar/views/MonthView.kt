@@ -13,16 +13,16 @@ import android.view.View
 import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.extensions.config
+import com.simplemobiletools.calendar.extensions.getWHSharedPrefs
 import com.simplemobiletools.calendar.extensions.seconds
+import com.simplemobiletools.calendar.helpers.FLAG_HOLIDAY
+import com.simplemobiletools.calendar.helpers.FLAG_WORKDAY
 import com.simplemobiletools.calendar.helpers.Formatter
 import com.simplemobiletools.calendar.helpers.LOW_ALPHA
 import com.simplemobiletools.calendar.models.DayMonthly
 import com.simplemobiletools.calendar.models.Event
 import com.simplemobiletools.calendar.models.MonthViewEvent
-import com.simplemobiletools.commons.extensions.adjustAlpha
-import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
-import com.simplemobiletools.commons.extensions.getContrastColor
-import com.simplemobiletools.commons.extensions.moveLastItemToFront
+import com.simplemobiletools.commons.extensions.*
 import org.joda.time.DateTime
 import org.joda.time.Days
 import java.util.*
@@ -144,6 +144,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                     val yPos = y * dayHeight + verticalOffset
                     val xPosCenter = xPos + dayWidth / 2
                     var xPosLeft = xPos + dayWidth / 6
+                    var xPosRight = xPos + dayWidth * 0.85f
                     var isCN = MoKeeUtils.isSupportLanguage(false)
                     if (day.isToday) {
                         canvas.drawCircle(if (isCN) xPosLeft else xPosCenter, yPos + paint.textSize * 0.65f, paint.textSize * 0.65f, getCirclePaint(day))
@@ -155,7 +156,13 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                         cal.set(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth)
                         var chineseCalendarInfo = ChineseCalendar(cal).chineseCalendarInfo
                         var suggestDay = if (TextUtils.isEmpty(chineseCalendarInfo.solarTerm)) chineseCalendarInfo.lunarDay else chineseCalendarInfo.solarTerm
-                        canvas.drawText(suggestDay, xPos + dayWidth * 0.7f, yPos + paint.textSize, getLunarTextPaint(day))
+                        canvas.drawText(suggestDay, xPosCenter, yPos + paint.textSize, getLunarTextPaint(day))
+                        var date = dateTime.year.toString() + "-" + dateTime.monthOfYear + "-" + dateTime.dayOfMonth
+                        var flag = context.getWHSharedPrefs().getInt(date, 0)
+                        if (flag == FLAG_HOLIDAY) {
+                            canvas.drawText( "休", xPosRight, yPos + paint.textSize, getWHTextPaint(day))
+                        } else if (flag == FLAG_WORKDAY)
+                            canvas.drawText( "班", xPosRight, yPos + paint.textSize, getWHTextPaint(day))
                     } else {
                         canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
                     }
@@ -274,6 +281,15 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             paintColor = primaryColor.getContrastColor()
         }
 
+        if (!startDay.isThisMonth) {
+            paintColor = paintColor.adjustAlpha(LOW_ALPHA)
+        }
+
+        return getColoredPaint(paintColor)
+    }
+
+    private fun getWHTextPaint(startDay: DayMonthly): Paint {
+        var paintColor = primaryColor
         if (!startDay.isThisMonth) {
             paintColor = paintColor.adjustAlpha(LOW_ALPHA)
         }

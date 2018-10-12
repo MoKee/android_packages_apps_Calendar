@@ -4,18 +4,17 @@ import android.accounts.Account
 import android.annotation.SuppressLint
 import android.app.*
 import android.appwidget.AppWidgetManager
-import android.content.ComponentName
-import android.content.ContentResolver
-import android.content.Context
-import android.content.Intent
+import android.content.*
 import android.content.res.Resources
 import android.database.ContentObserver
 import android.media.AudioAttributes
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
+import android.provider.CalendarContract.Alarm
 import android.support.v4.app.AlarmManagerCompat
 import android.support.v4.app.NotificationCompat
+import android.text.format.DateUtils
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +27,7 @@ import com.simplemobiletools.calendar.activities.SnoozeReminderActivity
 import com.simplemobiletools.calendar.helpers.*
 import com.simplemobiletools.calendar.helpers.Formatter
 import com.simplemobiletools.calendar.models.*
+import com.simplemobiletools.calendar.net.OkHttpRestClient
 import com.simplemobiletools.calendar.receivers.CalDAVSyncReceiver
 import com.simplemobiletools.calendar.receivers.NotificationReceiver
 import com.simplemobiletools.calendar.services.SnoozeService
@@ -36,9 +36,14 @@ import com.simplemobiletools.commons.helpers.SILENT
 import com.simplemobiletools.commons.helpers.WEEK_SECONDS
 import com.simplemobiletools.commons.helpers.YEAR_SECONDS
 import com.simplemobiletools.commons.helpers.isOreoPlus
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.Response
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import org.joda.time.LocalDate
+import org.json.JSONObject
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -458,3 +463,62 @@ fun Context.handleEventDeleting(eventIds: List<Int>, timestamps: List<Int>, acti
         }
     }
 }
+
+fun Context.fetchWorkdayAndHoliday() {
+    loadWorkdayAndHoliday()
+    if (3 * DateUtils.DAY_IN_MILLIS + config.lastUpdateTime < System.currentTimeMillis()) {
+        OkHttpRestClient.post("cnWorkdayAndHoliday",  object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+            }
+
+            @Throws(IOException::class)
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    var jsonObject = JSONObject(response.body()?.string())
+                    var yearInfo = jsonObject.getJSONObject("YEAR")
+                    var yearKeys = yearInfo.keys()
+                    while (yearKeys.hasNext()) {
+                        var yearName = yearKeys.next();
+                        insertDayInfoToDB(yearInfo, yearName, "WORKDAY", Alarm.CONTENT_FILTER_WORKDAY_URI)
+                        insertDayInfoToDB(yearInfo, yearName, "HOLIDAY", Alarm.CONTENT_FILTER_HOLIDAY_URI)
+                    }
+                    config.lastUpdateTime = jsonObject.getLong("TIMESTAMP")
+                }
+            }
+        });
+    }
+}
+
+fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: String, uri: Uri) {
+    var monthInfo = yearInfo.getJSONObject(yearName).getJSONObject(type)
+    var monthKeys = monthInfo.keys()
+    while (monthKeys.hasNext()) {
+        var monthName = monthKeys.next()
+        var dayInfo = monthInfo.getJSONArray(monthName);
+        for (i in 0.. (dayInfo.length() - 1)) {
+            var date = yearName + "-" + monthName + "-" + dayInfo.getInt(i)
+            var dayValues = ContentValues().apply {
+                put(Alarm.DATE, date)
+                put(Alarm.STATE, true)
+            }
+            contentResolver.insert(uri, dayValues)
+        }
+    }
+}
+
+fun Context.loadWorkdayAndHoliday() {
+    getDayInfoFromDB(Alarm.CONTENT_FILTER_WORKDAY_URI, FLAG_WORKDAY)
+    getDayInfoFromDB(Alarm.CONTENT_FILTER_HOLIDAY_URI, FLAG_HOLIDAY)
+}
+
+fun Context.getDayInfoFromDB(uri: Uri, flag: Int) {
+    var cursor = contentResolver.query(uri.buildUpon().build(),
+            arrayOf(Alarm.DATE, Alarm.STATE), null, null, null)
+
+    while(cursor.moveToNext()) {
+        getWHSharedPrefs().edit().putInt(cursor.getString(cursor.getColumnIndexOrThrow(Alarm.DATE)), flag).apply()
+    }
+    cursor.close();
+}
+
+fun Context.getWHSharedPrefs() = getSharedPreferences(PREFS_WH_KEY, Context.MODE_PRIVATE)

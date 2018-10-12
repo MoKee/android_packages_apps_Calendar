@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo
 import android.database.ContentObserver
 import android.database.Cursor
 import android.graphics.drawable.ColorDrawable
+import android.mokee.utils.MoKeeUtils
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -68,6 +69,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // fetch workday and holiday info
+        shouldRequestPermission();
+
         appLaunched(BuildConfig.APPLICATION_ID)
 
         // just get a reference to the database to make sure it is created properly
@@ -847,4 +852,17 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
+
+    private fun shouldRequestPermission() {
+        if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(this)) {
+            handlePermission(arrayOf(PERMISSION_READ_CALENDAR, PERMISSION_WRITE_CALENDAR)) {
+                if (it) {
+                    fetchWorkdayAndHoliday();
+                } else {
+                    toast(R.string.no_calendar_permission)
+                }
+            }
+        }
+    }
+
 }

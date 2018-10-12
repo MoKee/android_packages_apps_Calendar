@@ -63,6 +63,12 @@ const val DEFAULT_REMINDER_1 = "default_reminder_1"
 const val DEFAULT_REMINDER_2 = "default_reminder_2"
 const val DEFAULT_REMINDER_3 = "default_reminder_3"
 
+const val LAST_UPDATE_TIME = "last_update_time"
+const val BASE_URL = "https://cloud.mokeedev.com/calendar/"
+const val FLAG_WORKDAY = 1
+const val FLAG_HOLIDAY = 2
+const val PREFS_WH_KEY = "WHPrefs"
+
 // repeat_rule for monthly and yearly repetition
 const val REPEAT_SAME_DAY = 1                           // i.e. 25th every month, or 3rd june (if yearly repetition)
 const val REPEAT_ORDER_WEEKDAY_USE_LAST = 2             // i.e. every last sunday. 4th if a month has 4 sundays, 5th if 5 (or last sunday in june, if yearly)
