@@ -465,7 +465,6 @@ fun Context.handleEventDeleting(eventIds: List<Int>, timestamps: List<Int>, acti
 }
 
 fun Context.fetchWorkdayAndHoliday() {
-    loadWorkdayAndHoliday()
     if (3 * DateUtils.DAY_IN_MILLIS + config.lastUpdateTime < System.currentTimeMillis()) {
         OkHttpRestClient.post("cnWorkdayAndHoliday",  object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -474,13 +473,14 @@ fun Context.fetchWorkdayAndHoliday() {
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
                 if (response.isSuccessful) {
+                    getWHSharedPrefs().edit().clear().apply()
                     var jsonObject = JSONObject(response.body()?.string())
                     var yearInfo = jsonObject.getJSONObject("YEAR")
                     var yearKeys = yearInfo.keys()
                     while (yearKeys.hasNext()) {
                         var yearName = yearKeys.next();
-                        insertDayInfoToDB(yearInfo, yearName, "WORKDAY", Alarm.CONTENT_FILTER_WORKDAY_URI)
-                        insertDayInfoToDB(yearInfo, yearName, "HOLIDAY", Alarm.CONTENT_FILTER_HOLIDAY_URI)
+                        insertDayInfoToDB(yearInfo, yearName, "WORKDAY", Alarm.CONTENT_FILTER_WORKDAY_URI, FLAG_WORKDAY)
+                        insertDayInfoToDB(yearInfo, yearName, "HOLIDAY", Alarm.CONTENT_FILTER_HOLIDAY_URI, FLAG_HOLIDAY)
                     }
                     config.lastUpdateTime = jsonObject.getLong("TIMESTAMP")
                 }
@@ -489,7 +489,7 @@ fun Context.fetchWorkdayAndHoliday() {
     }
 }
 
-fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: String, uri: Uri) {
+fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: String, uri: Uri, flag: Int) {
     var monthInfo = yearInfo.getJSONObject(yearName).getJSONObject(type)
     var monthKeys = monthInfo.keys()
     while (monthKeys.hasNext()) {
@@ -502,23 +502,9 @@ fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: Str
                 put(Alarm.STATE, true)
             }
             contentResolver.insert(uri, dayValues)
+            getWHSharedPrefs().edit().putInt(date, flag).apply()
         }
     }
-}
-
-fun Context.loadWorkdayAndHoliday() {
-    getDayInfoFromDB(Alarm.CONTENT_FILTER_WORKDAY_URI, FLAG_WORKDAY)
-    getDayInfoFromDB(Alarm.CONTENT_FILTER_HOLIDAY_URI, FLAG_HOLIDAY)
-}
-
-fun Context.getDayInfoFromDB(uri: Uri, flag: Int) {
-    var cursor = contentResolver.query(uri.buildUpon().build(),
-            arrayOf(Alarm.DATE, Alarm.STATE), null, null, null)
-
-    while(cursor.moveToNext()) {
-        getWHSharedPrefs().edit().putInt(cursor.getString(cursor.getColumnIndexOrThrow(Alarm.DATE)), flag).apply()
-    }
-    cursor.close();
 }
 
 fun Context.getWHSharedPrefs() = getSharedPreferences(PREFS_WH_KEY, Context.MODE_PRIVATE)
