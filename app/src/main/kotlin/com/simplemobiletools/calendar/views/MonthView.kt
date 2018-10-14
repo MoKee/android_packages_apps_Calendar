@@ -1,10 +1,9 @@
 package com.simplemobiletools.calendar.views
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.RectF
+import android.graphics.*
 import android.mokee.utils.MoKeeUtils
+import android.support.v4.content.ContextCompat
 import android.text.TextPaint
 import android.text.TextUtils
 import android.util.AttributeSet
@@ -53,6 +52,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private var dayLetters = ArrayList<String>()
     private var days = ArrayList<DayMonthly>()
     private var dayVerticalOffsets = SparseIntArray()
+    private var isCN = false
 
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
 
@@ -63,14 +63,16 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         dimPastEvents = context.config.dimPastEvents
 
         smallPadding = resources.displayMetrics.density.toInt()
-        val normalTextSize = (resources.getDimensionPixelSize(R.dimen.normal_text_size) * 0.85f).toInt()
-        dayVerticalOffset = (resources.getDimensionPixelSize(R.dimen.normal_text_size) * 0.2f).toInt()
+        val normalTextSize = resources.getDimensionPixelSize(R.dimen.normal_text_size)
+        dayVerticalOffset = (resources.getDimensionPixelSize(R.dimen.normal_text_size) * 0.15f).toInt()
         weekDaysLetterHeight = normalTextSize * 2
+
+        isCN = MoKeeUtils.isSupportLanguage(false)
 
         paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = textColor
             textSize = normalTextSize.toFloat()
-            textAlign = Paint.Align.CENTER
+            textAlign = if (isCN) Paint.Align.LEFT else Paint.Align.CENTER
         }
 
         gridPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -139,15 +141,20 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                 val day = days.getOrNull(curId)
                 if (day != null) {
                     dayVerticalOffsets.put(day.indexOnMonthView, dayVerticalOffsets[day.indexOnMonthView] + weekDaysLetterHeight)
-                    val verticalOffset = dayVerticalOffsets[day.indexOnMonthView] + dayVerticalOffset
+                    val verticalOffset = dayVerticalOffsets[day.indexOnMonthView]
                     val xPos = x * dayWidth + horizontalOffset
                     val yPos = y * dayHeight + verticalOffset
                     val xPosCenter = xPos + dayWidth / 2
-                    var xPosLeft = xPos + dayWidth / 6
-                    var xPosRight = xPos + dayWidth * 0.85f
-                    var isCN = MoKeeUtils.isSupportLanguage(false)
+                    var xPosLeft = xPosCenter - dayWidth / 3
+                    var xPosRight = xPosCenter - dayWidth / 16
                     if (day.isToday) {
-                        canvas.drawCircle(if (isCN) xPosLeft else xPosCenter, yPos + paint.textSize * 0.65f, paint.textSize * 0.65f, getCirclePaint(day))
+                        var xPosCircle = 0f
+                        if (day.value.toString().length > 1) {
+                            xPosCircle = xPosLeft + paint.textSize / 1.75f
+                        } else {
+                            xPosCircle = xPosLeft + paint.textSize / 3.5f
+                        }
+                        canvas.drawCircle(if (isCN) xPosCircle else xPosCenter, yPos + paint.textSize * 0.65f, paint.textSize * 0.65f, getCirclePaint(day))
                     }
                     if (isCN) {
                         canvas.drawText(day.value.toString(), xPosLeft, yPos + paint.textSize, getTextPaint(day))
@@ -156,13 +163,20 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                         cal.set(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth)
                         var chineseCalendarInfo = ChineseCalendar(cal).chineseCalendarInfo
                         var suggestDay = if (TextUtils.isEmpty(chineseCalendarInfo.solarTerm)) chineseCalendarInfo.lunarDay else chineseCalendarInfo.solarTerm
-                        canvas.drawText(suggestDay, xPosCenter, yPos + paint.textSize, getLunarTextPaint(day))
+                        canvas.drawText(suggestDay, xPosRight, yPos + paint.textSize, getLunarTextPaint(day))
                         var date = dateTime.year.toString() + "-" + dateTime.monthOfYear + "-" + dateTime.dayOfMonth
                         var flag = context.getWHSharedPrefs().getInt(date, 0)
+
+                        val whPath = Path()
+                        whPath.moveTo(xPos + dayWidth - 20, yPos)
+                        whPath.lineTo(xPos + dayWidth, yPos + 20)
+                        whPath.lineTo(xPos + dayWidth, yPos)
+                        whPath.close()
                         if (flag == FLAG_HOLIDAY) {
-                            canvas.drawText( "休", xPosRight, yPos + paint.textSize, getWHTextPaint(day))
-                        } else if (flag == FLAG_WORKDAY)
-                            canvas.drawText( "班", xPosRight, yPos + paint.textSize, getWHTextPaint(day))
+                            canvas.drawPath(whPath, getColoredPaint(ContextCompat.getColor(context, android.R.color.holo_orange_dark)))
+                        } else if (flag == FLAG_WORKDAY) {
+                            canvas.drawPath(whPath, getColoredPaint(ContextCompat.getColor(context, android.R.color.darker_gray)))
+                        }
                     } else {
                         canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
                     }
@@ -195,10 +209,11 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun addWeekDayLetters(canvas: Canvas) {
         for (i in 0..6) {
             val xPos = horizontalOffset + (i + 1) * dayWidth - dayWidth / 2
-            var weekDayLetterPaint = paint
+            var weekDayLetterPaint = Paint(paint)
             if (i == currDayOfWeek) {
-                weekDayLetterPaint = getColoredPaint(primaryColor)
+                weekDayLetterPaint = Paint(getColoredPaint(primaryColor))
             }
+            weekDayLetterPaint.textAlign = Paint.Align.CENTER
             canvas.drawText(dayLetters[i], xPos, weekDaysLetterHeight * 0.7f, weekDayLetterPaint)
         }
     }
@@ -235,7 +250,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun drawEvent(event: MonthViewEvent, canvas: Canvas) {
         val verticalOffset = dayVerticalOffsets[event.startDayIndex]
         val xPos = event.startDayIndex % 7 * dayWidth + horizontalOffset
-        val yPos = (event.startDayIndex / 7) * dayHeight + (dayVerticalOffset * 1.5).toInt()
+        val yPos = (event.startDayIndex / 7) * dayHeight + dayVerticalOffset
         val xPosCenter = xPos + dayWidth / 2
 
         if (verticalOffset - eventTitleHeight * 2 > dayHeight) {
@@ -281,15 +296,6 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             paintColor = primaryColor.getContrastColor()
         }
 
-        if (!startDay.isThisMonth) {
-            paintColor = paintColor.adjustAlpha(LOW_ALPHA)
-        }
-
-        return getColoredPaint(paintColor)
-    }
-
-    private fun getWHTextPaint(startDay: DayMonthly): Paint {
-        var paintColor = primaryColor
         if (!startDay.isThisMonth) {
             paintColor = paintColor.adjustAlpha(LOW_ALPHA)
         }
