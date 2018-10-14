@@ -66,4 +66,5 @@
   <string name="holiday_ukraine">Ukrayna</string>
   <string name="holiday_unitedkingdom">Birleşik krallık</string>
   <string name="holiday_unitedstates">Birleşik devletler</string>
+  <string name="no_calendar_permission">Takvim izni gerekiyor</string>
 </resources>
