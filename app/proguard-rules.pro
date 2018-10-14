@@ -1,1 +1,3 @@
 -keep class com.simplemobiletools.calendar.models.** { *; }
+-dontwarn okhttp3.**
+-dontwarn okio.**
