@@ -104,7 +104,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(replaceDescription) = prefs.edit().putBoolean(REPLACE_DESCRIPTION, replaceDescription).apply()
 
     var showGrid: Boolean
-        get() = prefs.getBoolean(SHOW_GRID, false)
+        get() = prefs.getBoolean(SHOW_GRID, true)
         set(showGrid) = prefs.edit().putBoolean(SHOW_GRID, showGrid).apply()
 
     var loopReminders: Boolean
