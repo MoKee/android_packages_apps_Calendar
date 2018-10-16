@@ -583,8 +583,11 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         val bundle = Bundle()
         bundle.putString(DAY_CODE, Formatter.getDayCodeFromDateTime(dateTime))
         fragment.arguments = bundle
-        supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        try {
+            supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        } catch (e: Exception) {
+        }
     }
 
     private fun getThisWeekDateTime(): String {
@@ -700,7 +703,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
 //    private fun launchAbout() {
-//        val licenses = LICENSE_JODA or LICENSE_STETHO or LICENSE_LEAK_CANARY
+//        val licenses = LICENSE_JODA or LICENSE_STETHO
 //
 //        val faqItems = arrayListOf(
 //                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
