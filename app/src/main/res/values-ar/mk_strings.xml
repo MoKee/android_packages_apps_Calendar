@@ -66,4 +66,5 @@
   <string name="holiday_ukraine">أوكرانيا</string>
   <string name="holiday_unitedkingdom">المملكة المتحدة</string>
   <string name="holiday_unitedstates">الولايات المتحدة</string>
+  <string name="no_calendar_permission">مطلوب أذونات التقويم</string>
 </resources>
