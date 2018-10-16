@@ -6,11 +6,11 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.NotificationManagerCompat
 import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import androidx.core.app.NotificationManagerCompat
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.dialogs.*
 import com.simplemobiletools.calendar.extensions.*
@@ -243,6 +243,7 @@ class EventActivity : SimpleActivity() {
 
     private fun setupNewEvent() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+        event_title.requestFocus()
         updateActionBarTitle(getString(R.string.new_event))
         val isLastCaldavCalendarOK = config.caldavSync && config.getSyncedCalendarIdsAsList().contains(config.lastUsedCaldavCalendarId.toString())
         mEventCalendarId = if (isLastCaldavCalendarOK) config.lastUsedCaldavCalendarId else STORED_LOCALLY_ONLY
@@ -863,10 +864,7 @@ class EventActivity : SimpleActivity() {
         val datepicker = DatePickerDialog(this, mDialogTheme, startDateSetListener, mEventStartDateTime.year, mEventStartDateTime.monthOfYear - 1,
                 mEventStartDateTime.dayOfMonth)
 
-        if (isLollipopPlus()) {
-            datepicker.datePicker.firstDayOfWeek = if (config.isSundayFirst) Calendar.SUNDAY else Calendar.MONDAY
-        }
-
+        datepicker.datePicker.firstDayOfWeek = if (config.isSundayFirst) Calendar.SUNDAY else Calendar.MONDAY
         datepicker.show()
     }
 
@@ -881,10 +879,7 @@ class EventActivity : SimpleActivity() {
         val datepicker = DatePickerDialog(this, mDialogTheme, endDateSetListener, mEventEndDateTime.year, mEventEndDateTime.monthOfYear - 1,
                 mEventEndDateTime.dayOfMonth)
 
-        if (isLollipopPlus()) {
-            datepicker.datePicker.firstDayOfWeek = if (config.isSundayFirst) Calendar.SUNDAY else Calendar.MONDAY
-        }
-
+        datepicker.datePicker.firstDayOfWeek = if (config.isSundayFirst) Calendar.SUNDAY else Calendar.MONDAY
         datepicker.show()
     }
 

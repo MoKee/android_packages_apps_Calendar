@@ -3,7 +3,7 @@ package com.simplemobiletools.calendar.fragments
 import android.graphics.drawable.ColorDrawable
 import android.mokee.utils.MoKeeUtils
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import android.text.TextUtils
 import android.text.format.DateUtils
 import android.view.LayoutInflater

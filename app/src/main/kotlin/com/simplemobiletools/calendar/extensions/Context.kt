@@ -12,14 +12,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.CalendarContract.Alarm
-import android.support.v4.app.AlarmManagerCompat
-import android.support.v4.app.NotificationCompat
 import android.text.format.DateUtils
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.app.AlarmManagerCompat
+import androidx.core.app.NotificationCompat
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.activities.EventActivity
 import com.simplemobiletools.calendar.activities.SimpleActivity
