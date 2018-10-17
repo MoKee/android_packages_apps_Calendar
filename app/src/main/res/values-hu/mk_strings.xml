@@ -66,4 +66,5 @@
   <string name="holiday_ukraine">Ukrajna</string>
   <string name="holiday_unitedkingdom">Egyesült Királyság</string>
   <string name="holiday_unitedstates">Amerikai Egyesült Államok</string>
+  <string name="no_calendar_permission">Naptár-hozzáférés szükséges</string>
 </resources>
