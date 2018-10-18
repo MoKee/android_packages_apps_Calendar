@@ -3,12 +3,12 @@ package com.simplemobiletools.calendar.views
 import android.content.Context
 import android.graphics.*
 import android.mokee.utils.MoKeeUtils
-import android.support.v4.content.ContextCompat
 import android.text.TextPaint
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.SparseIntArray
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.extensions.config
