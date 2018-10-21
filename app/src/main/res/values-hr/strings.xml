@@ -149,6 +149,7 @@
   <string name="reminder_stream">Audio izlazni kanal za podsjetnike</string>
   <string name="system_stream">Sustav</string>
   <string name="notification_stream">Obavijest</string>
+  <string name="ring_stream">Zvono</string>
   <!-- CalDAV sync -->
   <string name="select_caldav_calendars">Odaberi kalendare za sinkronizaciju</string>
   <string name="manage_synced_calendars">Upravljanje sinkroniziranim kalendarima</string>

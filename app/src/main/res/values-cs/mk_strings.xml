@@ -66,4 +66,5 @@
   <string name="holiday_ukraine">Ukrajina</string>
   <string name="holiday_unitedkingdom">Velká Británie</string>
   <string name="holiday_unitedstates">Spojené státy</string>
+  <string name="no_calendar_permission">Jsou vyžadována oprávnění kalendáře</string>
 </resources>

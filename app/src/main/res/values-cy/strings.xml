@@ -15,6 +15,7 @@
   <!-- Event types -->
   <!-- Holidays -->
   <!-- Settings -->
+  <string name="ring_stream">Canu</string>
   <!-- CalDAV sync -->
   <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
   <!-- used in repetition, like "Every last Sunday" -->
