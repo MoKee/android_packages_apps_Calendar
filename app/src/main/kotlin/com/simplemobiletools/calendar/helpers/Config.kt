@@ -76,6 +76,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
         set(size) = prefs.edit().putInt(FONT_SIZE, size).apply()
 
+    var listWidgetViewToOpen: Int
+        get() = prefs.getInt(LIST_WIDGET_VIEW_TO_OPEN, DAILY_VIEW)
+        set(viewToOpenFromListWidget) = prefs.edit().putInt(LIST_WIDGET_VIEW_TO_OPEN, viewToOpenFromListWidget).apply()
+
     var caldavSync: Boolean
         get() = prefs.getBoolean(CALDAV_SYNC, false)
         set(caldavSync) {
