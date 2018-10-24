@@ -138,7 +138,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         search_placeholder_2.setTextColor(config.textColor)
         calendar_fab.setColors(config.textColor, getAdjustedPrimaryColor(), config.backgroundColor)
         search_holder.background = ColorDrawable(config.backgroundColor)
-        swipe_refresh_layout.isEnabled = config.caldavSync && config.pullToRefresh
+        checkSwipeRefreshAvailability()
     }
 
     override fun onPause() {
@@ -194,6 +194,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     override fun onBackPressed() {
         swipe_refresh_layout.isRefreshing = false
+        checkSwipeRefreshAvailability()
         if (currentFragments.size > 1) {
             removeTopFragment()
         } else {
@@ -542,6 +543,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun updateView(view: Int) {
         calendar_fab.beVisibleIf(view != YEARLY_VIEW)
         config.storedView = view
+        checkSwipeRefreshAvailability()
         updateViewPager()
         if (goToTodayButton?.isVisible == true) {
             shouldGoToTodayBeVisible = false
@@ -752,6 +754,13 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         } else {
             search_placeholder.beVisible()
             search_results_list.beGone()
+        }
+    }
+
+    private fun checkSwipeRefreshAvailability() {
+        swipe_refresh_layout.isEnabled = config.caldavSync && config.pullToRefresh && config.storedView != WEEKLY_VIEW
+        if (!swipe_refresh_layout.isEnabled) {
+            swipe_refresh_layout.isRefreshing = false
         }
     }
 
