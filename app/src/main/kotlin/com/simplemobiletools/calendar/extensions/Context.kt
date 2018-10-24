@@ -90,7 +90,7 @@ fun Context.scheduleNextEventReminder(event: Event, dbHelper: DBHelper, activity
 
     val now = getNowSeconds()
     val reminderSeconds = event.getReminders().reversed().map { it * 60 }
-    dbHelper.getEvents(now, now + YEAR, event.id) {
+    dbHelper.getEvents(now, now + YEAR, event.id, false) {
         if (it.isNotEmpty()) {
             for (curEvent in it) {
                 for (curReminder in reminderSeconds) {
@@ -149,11 +149,6 @@ fun Context.getRepetitionText(seconds: Int) = when (seconds) {
             else -> resources.getQuantityString(R.plurals.days, seconds / DAY, seconds / DAY)
         }
     }
-}
-
-fun Context.getFilteredEvents(events: List<Event>): ArrayList<Event> {
-    val displayEventTypes = config.displayEventTypes
-    return events.filter { displayEventTypes.contains(it.eventType.toString()) } as ArrayList<Event>
 }
 
 fun Context.notifyRunningEvents() {

@@ -138,7 +138,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         search_placeholder_2.setTextColor(config.textColor)
         calendar_fab.setColors(config.textColor, getAdjustedPrimaryColor(), config.backgroundColor)
         search_holder.background = ColorDrawable(config.backgroundColor)
-        swipe_refresh_layout.isEnabled = config.caldavSync
+        swipe_refresh_layout.isEnabled = config.caldavSync && config.pullToRefresh
     }
 
     override fun onPause() {
@@ -193,6 +193,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     override fun onBackPressed() {
+        swipe_refresh_layout.isRefreshing = false
         if (currentFragments.size > 1) {
             removeTopFragment()
         } else {
@@ -349,6 +350,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun showFilterDialog() {
         FilterEventTypesDialog(this) {
             refreshViewPager()
+            updateWidgets()
         }
     }
 

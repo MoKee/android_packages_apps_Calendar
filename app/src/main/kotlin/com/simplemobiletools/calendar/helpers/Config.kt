@@ -167,4 +167,8 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getLong(LAST_UPDATE_TIME, 0)
         set(lastUpdateCheck) = prefs.edit().putLong(LAST_UPDATE_TIME, lastUpdateCheck).apply()
 
+    var pullToRefresh: Boolean
+        get() = prefs.getBoolean(PULL_TO_REFRESH, false)
+        set(pullToRefresh) = prefs.edit().putBoolean(PULL_TO_REFRESH, pullToRefresh).apply()
+
 }

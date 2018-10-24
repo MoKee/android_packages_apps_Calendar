@@ -320,15 +320,11 @@ class DBHelper private constructor(val context: Context) : SQLiteOpenHelper(cont
     }
 
     fun updateEventType(eventType: EventType): Int {
-        return if (eventType.caldavCalendarId != 0) {
-            if (CalDAVHandler(context).updateCalDAVCalendar(eventType)) {
-                updateLocalEventType(eventType)
-            } else {
-                -1
-            }
-        } else {
-            updateLocalEventType(eventType)
+        if (eventType.caldavCalendarId != 0) {
+            CalDAVHandler(context).updateCalDAVCalendar(eventType)
         }
+
+        return updateLocalEventType(eventType)
     }
 
     fun updateLocalEventType(eventType: EventType): Int {
@@ -606,7 +602,7 @@ class DBHelper private constructor(val context: Context) : SQLiteOpenHelper(cont
         val selectionArgs = arrayOf(eventTypeId.toString())
         val cursor = getEventsCursor(selection, selectionArgs)
         val events = fillEvents(cursor)
-        val eventIDs = Array(events.size, { i -> (events[i].id.toString()) })
+        val eventIDs = Array(events.size) { i -> (events[i].id.toString()) }
         deleteEvents(eventIDs, true)
     }
 
@@ -681,37 +677,59 @@ class DBHelper private constructor(val context: Context) : SQLiteOpenHelper(cont
         }.start()
     }
 
-    fun getEvents(fromTS: Int, toTS: Int, eventId: Int = -1, callback: (events: ArrayList<Event>) -> Unit) {
+    fun getEvents(fromTS: Int, toTS: Int, eventId: Int = -1, applyTypeFilter: Boolean = false, callback: (events: ArrayList<Event>) -> Unit) {
         Thread {
-            getEventsInBackground(fromTS, toTS, eventId, callback)
+            getEventsInBackground(fromTS, toTS, eventId, applyTypeFilter, callback)
         }.start()
     }
 
-    fun getEventsInBackground(fromTS: Int, toTS: Int, eventId: Int = -1, callback: (events: ArrayList<Event>) -> Unit) {
-        val events = ArrayList<Event>()
+    fun getEventsInBackground(fromTS: Int, toTS: Int, eventId: Int = -1, applyTypeFilter: Boolean, callback: (events: ArrayList<Event>) -> Unit) {
+        var events = ArrayList<Event>()
 
         var selection = "$COL_START_TS <= ? AND $COL_END_TS >= ? AND $COL_REPEAT_INTERVAL IS NULL AND $COL_START_TS != 0"
         if (eventId != -1)
             selection += " AND $MAIN_TABLE_NAME.$COL_ID = $eventId"
+
+        if (applyTypeFilter) {
+            val displayEventTypes = context.config.displayEventTypes
+            if (displayEventTypes.isNotEmpty()) {
+                val types = displayEventTypes.joinToString(",", "(", ")")
+                selection += " AND $COL_EVENT_TYPE IN $types"
+            }
+        }
+
         val selectionArgs = arrayOf(toTS.toString(), fromTS.toString())
         val cursor = getEventsCursor(selection, selectionArgs)
         events.addAll(fillEvents(cursor))
 
-        events.addAll(getRepeatableEventsFor(fromTS, toTS, eventId))
+        events.addAll(getRepeatableEventsFor(fromTS, toTS, eventId, applyTypeFilter))
 
-        events.addAll(getAllDayEvents(fromTS, eventId))
+        events.addAll(getAllDayEvents(fromTS, eventId, applyTypeFilter))
 
-        val filtered = events.distinct().filterNot { it.ignoreEventOccurrences.contains(Formatter.getDayCodeFromTS(it.startTS).toInt()) } as ArrayList<Event>
-        callback(filtered)
+        events = events
+                .asSequence()
+                .distinct()
+                .filterNot { it.ignoreEventOccurrences.contains(Formatter.getDayCodeFromTS(it.startTS).toInt()) }
+                .toMutableList() as ArrayList<Event>
+        callback(events)
     }
 
-    fun getRepeatableEventsFor(fromTS: Int, toTS: Int, eventId: Int = -1): List<Event> {
+    fun getRepeatableEventsFor(fromTS: Int, toTS: Int, eventId: Int = -1, applyTypeFilter: Boolean = false): List<Event> {
         val newEvents = ArrayList<Event>()
 
         // get repeatable events
         var selection = "$COL_REPEAT_INTERVAL != 0 AND $COL_START_TS <= $toTS AND $COL_START_TS != 0"
         if (eventId != -1)
             selection += " AND $MAIN_TABLE_NAME.$COL_ID = $eventId"
+
+        if (applyTypeFilter) {
+            val displayEventTypes = context.config.displayEventTypes
+            if (displayEventTypes.isNotEmpty()) {
+                val types = displayEventTypes.joinToString(",", "(", ")")
+                selection += " AND $COL_EVENT_TYPE IN $types"
+            }
+        }
+
         val events = getEvents(selection)
         val startTimes = SparseIntArray(events.size)
         events.forEach {
@@ -792,11 +810,19 @@ class DBHelper private constructor(val context: Context) : SQLiteOpenHelper(cont
         return events
     }
 
-    private fun getAllDayEvents(fromTS: Int, eventId: Int = -1): List<Event> {
+    private fun getAllDayEvents(fromTS: Int, eventId: Int = -1, applyTypeFilter: Boolean = false): List<Event> {
         val events = ArrayList<Event>()
         var selection = "($COL_FLAGS & $FLAG_ALL_DAY) != 0"
         if (eventId != -1)
             selection += " AND $MAIN_TABLE_NAME.$COL_ID = $eventId"
+
+        if (applyTypeFilter) {
+            val displayEventTypes = context.config.displayEventTypes
+            if (displayEventTypes.isNotEmpty()) {
+                val types = displayEventTypes.joinToString(",", "(", ")")
+                selection += " AND $COL_EVENT_TYPE IN $types"
+            }
+        }
 
         val dayCode = Formatter.getDayCodeFromTS(fromTS)
         val cursor = getEventsCursor(selection)
@@ -959,7 +985,7 @@ class DBHelper private constructor(val context: Context) : SQLiteOpenHelper(cont
     }
 
     fun getEventTypesSync(): ArrayList<EventType> {
-        val eventTypes = ArrayList<EventType>(4)
+        val eventTypes = ArrayList<EventType>()
         val cols = arrayOf(COL_TYPE_ID, COL_TYPE_TITLE, COL_TYPE_COLOR, COL_TYPE_CALDAV_CALENDAR_ID, COL_TYPE_CALDAV_DISPLAY_NAME, COL_TYPE_CALDAV_EMAIL)
         var cursor: Cursor? = null
         try {
