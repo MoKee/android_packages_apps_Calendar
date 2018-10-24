@@ -156,6 +156,8 @@
   <string name="default_reminder_1">預設提醒1</string>
   <string name="default_reminder_2">預設提醒2</string>
   <string name="default_reminder_3">預設提醒3</string>
+  <string name="view_to_open_from_widget">從事件清單小工具開啟的視圖</string>
+  <string name="last_view">最後視圖</string>
   <!-- CalDAV sync -->
   <string name="caldav">CalDAV</string>
   <string name="select_caldav_calendars">選擇行事曆來同步</string>

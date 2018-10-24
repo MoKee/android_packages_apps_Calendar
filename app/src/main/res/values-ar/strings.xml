@@ -156,6 +156,8 @@
   <string name="default_reminder_1">التذكير الافتراضي 1</string>
   <string name="default_reminder_2">التذكير الافتراضي 2</string>
   <string name="default_reminder_3">التذكير الافتراضي 3</string>
+  <string name="view_to_open_from_widget">عرض لتفتح من أداة قائمة الأحداث</string>
+  <string name="last_view">العرض الأخير</string>
   <!-- CalDAV sync -->
   <string name="caldav">CalDAV</string>
   <string name="select_caldav_calendars">حدد التقويمات للمزامنة</string>

@@ -156,6 +156,8 @@
   <string name="default_reminder_1">默认提醒 1</string>
   <string name="default_reminder_2">默认提醒 2</string>
   <string name="default_reminder_3">默认提醒 3</string>
+  <string name="view_to_open_from_widget">打开来自日程列表部件的视图</string>
+  <string name="last_view">最后视图</string>
   <!-- CalDAV sync -->
   <string name="caldav">CalDAV</string>
   <string name="select_caldav_calendars">选择要同步的日历</string>

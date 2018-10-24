@@ -66,4 +66,5 @@
   <string name="holiday_ukraine">乌克兰</string>
   <string name="holiday_unitedkingdom">英国</string>
   <string name="holiday_unitedstates">美国</string>
+  <string name="no_calendar_permission">请授予日历权限</string>
 </resources>
