@@ -112,7 +112,7 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun updateActionBarTitle() {
         var title = DateUtils.formatDateTime(context,
                 Formatter.getDateTimeFromCode(currentDayCode).millis,
-                DateUtils.FORMAT_SHOW_WEEKDAY or DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_YEAR)
+                DateUtils.FORMAT_SHOW_WEEKDAY or DateUtils.FORMAT_SHOW_DATE)
         (activity as? MainActivity)?.updateActionBarTitle(title)
         if (MoKeeUtils.isSupportLanguage(false)) {
             var mCalendar = Calendar.getInstance()
