@@ -34,6 +34,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private var paint: Paint
     private var eventTitlePaint: TextPaint
     private var gridPaint: Paint
+    private var config = context.config
     private var dayWidth = 0f
     private var dayHeight = 0f
     private var primaryColor = 0
@@ -58,9 +59,9 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
 
     init {
         primaryColor = context.getAdjustedPrimaryColor()
-        textColor = context.config.textColor
-        showWeekNumbers = context.config.showWeekNumbers
-        dimPastEvents = context.config.dimPastEvents
+        textColor = config.textColor
+        showWeekNumbers = config.showWeekNumbers
+        dimPastEvents = config.dimPastEvents
 
         smallPadding = resources.displayMetrics.density.toInt()
         val normalTextSize = resources.getDimensionPixelSize(R.dimen.normal_text_size)
@@ -93,7 +94,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
 
     fun updateDays(newDays: ArrayList<DayMonthly>) {
         days = newDays
-        showWeekNumbers = context.config.showWeekNumbers
+        showWeekNumbers = config.showWeekNumbers
         horizontalOffset = if (showWeekNumbers) eventTitleHeight * 2 else 0
         initWeekDayLetters()
         setupCurrentDayOfWeekIndex()
@@ -118,7 +119,8 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             }
         }
 
-        allEvents = allEvents.sortedWith(compareBy({ -it.daysCnt }, { !it.isAllDay }, { it.startTS }, { it.startDayIndex }, { it.title })).toMutableList() as ArrayList<MonthViewEvent>
+        allEvents = allEvents.asSequence().sortedWith(compareBy({ -it.daysCnt }, { !it.isAllDay }, { it.startTS }, { it.startDayIndex }, { it.title }))
+                .toMutableList() as ArrayList<MonthViewEvent>
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -126,7 +128,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         dayVerticalOffsets.clear()
         measureDaySize(canvas)
 
-        if (context.config.showGrid) {
+        if (config.showGrid) {
             drawGrid(canvas)
         }
 
@@ -186,7 +188,9 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             }
         }
 
-        drawEvents(canvas)
+        for (event in allEvents) {
+            drawEvent(event, canvas)
+        }
     }
 
     private fun drawGrid(canvas: Canvas) {
@@ -226,7 +230,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             val weekDays = days.subList(i * 7, i * 7 + 7)
             weekNumberPaint.color = if (weekDays.any { it.isToday }) primaryColor else textColor
 
-            // fourth day of the week matters
+            // fourth day of the week determines the week of the year number
             val weekOfYear = days.getOrNull(i * 7 + 3)?.weekOfYear ?: 1
             val id = "$weekOfYear:"
             val yPos = i * dayHeight + weekDaysLetterHeight
@@ -239,12 +243,6 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         dayHeight = (canvas.height - weekDaysLetterHeight) / ROW_COUNT.toFloat()
         val availableHeightForEvents = dayHeight.toInt() - weekDaysLetterHeight
         maxEventsPerDay = availableHeightForEvents / eventTitleHeight
-    }
-
-    private fun drawEvents(canvas: Canvas) {
-        for (event in allEvents) {
-            drawEvent(event, canvas)
-        }
     }
 
     private fun drawEvent(event: MonthViewEvent, canvas: Canvas) {
@@ -350,7 +348,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
 
     private fun initWeekDayLetters() {
         dayLetters = context.resources.getStringArray(R.array.week_day_letters).toMutableList() as ArrayList<String>
-        if (context.config.isSundayFirst) {
+        if (config.isSundayFirst) {
             dayLetters.moveLastItemToFront()
         }
     }
@@ -362,7 +360,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         }
 
         currDayOfWeek = DateTime().dayOfWeek
-        if (context.config.isSundayFirst) {
+        if (config.isSundayFirst) {
             currDayOfWeek %= 7
         } else {
             currDayOfWeek--

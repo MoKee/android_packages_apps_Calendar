@@ -3,12 +3,12 @@ package com.simplemobiletools.calendar.fragments
 import android.graphics.drawable.ColorDrawable
 import android.mokee.utils.MoKeeUtils
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
 import android.text.TextUtils
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
 import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.R
 import com.simplemobiletools.calendar.activities.MainActivity
