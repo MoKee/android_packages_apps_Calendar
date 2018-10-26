@@ -580,9 +580,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         bundle.putString(DAY_CODE, Formatter.getDayCodeFromDateTime(dateTime))
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
-        resetActionBarTitle()
+        currentFragments.last().apply {
+            updateActionBarTitle()
+        }
         calendar_fab.beVisible()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun openDayFromMonthly(dateTime: DateTime) {
@@ -597,7 +598,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         fragment.arguments = bundle
         try {
             supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
         } catch (e: Exception) {
         }
     }
@@ -627,7 +627,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             updateActionBarTitle()
         }
         calendar_fab.beGoneIf(currentFragments.size == 1 && config.storedView == YEARLY_VIEW)
-        supportActionBar?.setDisplayHomeAsUpEnabled(currentFragments.size > 1)
     }
 
     private fun refreshViewPager() {

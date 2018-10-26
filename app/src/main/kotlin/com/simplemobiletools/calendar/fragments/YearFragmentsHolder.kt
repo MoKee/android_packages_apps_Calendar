@@ -11,6 +11,7 @@ import com.simplemobiletools.calendar.activities.MainActivity
 import com.simplemobiletools.calendar.adapters.MyYearPagerAdapter
 import com.simplemobiletools.calendar.extensions.config
 import com.simplemobiletools.calendar.helpers.Formatter
+import com.simplemobiletools.commons.extensions.updateActionBarSubtitle
 import com.simplemobiletools.commons.extensions.updateActionBarTitle
 import com.simplemobiletools.commons.views.MyViewPager
 import kotlinx.android.synthetic.main.fragment_years_holder.view.*
@@ -63,7 +64,8 @@ class YearFragmentsHolder : MyFragmentHolder() {
                     }
 
                     if (position < years.size) {
-                        (activity as? MainActivity)?.updateActionBarTitle("${getString(R.string.app_launcher_name)} - ${years[position]}")
+                        (activity as? MainActivity)?.updateActionBarTitle("${years[position]}")
+                        (activity as? MainActivity)?.updateActionBarSubtitle("")
                     }
                 }
             })
@@ -90,7 +92,8 @@ class YearFragmentsHolder : MyFragmentHolder() {
     override fun shouldGoToTodayBeVisible() = currentYear != todayYear
 
     override fun updateActionBarTitle() {
-        (activity as? MainActivity)?.updateActionBarTitle("${getString(R.string.app_launcher_name)} - $currentYear")
+        (activity as? MainActivity)?.updateActionBarTitle("${currentYear}")
+        (activity as? MainActivity)?.updateActionBarSubtitle("")
     }
 
     override fun getNewEventDayCode() = Formatter.getTodayCode()
