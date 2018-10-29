@@ -41,6 +41,15 @@
   <string name="forever">V nedolged</string>
   <string name="event_is_repeatable">Dogodek je ponovljiv</string>
   <string name="selection_contains_repetition">Izbor vsebuje ponavljajoče se dogodke</string>
+  <string name="delete_one_only">Izbriši samo izbrane dogodke</string>
+  <string name="delete_future_occurrences">Izbriši ta in nadaljne dogodke</string>
+  <string name="delete_all_occurrences">Izbriši vse dogodke</string>
+  <string name="update_one_only">Posodobi samo izbrane dogodke</string>
+  <string name="update_all_occurrences">Posodobi vse dogodke</string>
+  <string name="repeat_till_date">Ponovi do datuma</string>
+  <string name="stop_repeating_after_x">Ne ponovi po x dogodkih</string>
+  <string name="repeat_forever">Ponavljaj v nedogled</string>
+  <string name="times">krat</string>
   <string name="repeat">Ponovi</string>
   <string name="repeat_on">Ponavljanje vključeno</string>
   <string name="every_day">Vsak dan</string>
@@ -107,12 +116,24 @@
   <string name="regular_event">Redni dogodek</string>
   <string name="cannot_delete_default_type">Privzete vrste dogodka ni mogoče izbrisati</string>
   <string name="select_event_type">Izberite vrsto dogodka</string>
+  <string name="move_events_into_default">Premakniti ujemajoče dogodke v privzeto vrsto dogodka</string>
+  <string name="remove_affected_events">Trajno odstrani ujemajoče dogodke</string>
+  <string name="unsync_caldav_calendar">Za odstranitev CalDAV koledarja, ga najprej odsinhronizirajte</string>
   <!-- Holidays -->
   <string name="holidays">Prazniki</string>
   <string name="add_holidays">Dodajanje praznikov</string>
   <string name="national_holidays">Državni prazniki</string>
   <string name="religious_holidays">Verski prazniki</string>
+  <string name="holidays_imported_successfully">Prazniki uspešno uvoženi v vrsto dogodka \"Prazniki\"</string>
+  <string name="importing_some_holidays_failed">Uvažanje nekaterih vnosov ni uspelo</string>
+  <string name="importing_holidays_failed">Uvažanje praznikov ni uspelo</string>
   <!-- Settings -->
+  <string name="manage_event_types">Upravljanje vrste dogodkov</string>
+  <string name="start_day_at">Začni dan na</string>
+  <string name="end_day_at">Končaj dan na</string>
+  <string name="week_numbers">Pokaži številko tedna</string>
+  <string name="vibrate">Ob obvestilu vibriraj</string>
+  <string name="reminder_sound">Zvok opomnika</string>
   <string name="no_ringtone_selected">Brez</string>
   <string name="system_stream">Sistem</string>
   <string name="alarm_stream">Budilka</string>

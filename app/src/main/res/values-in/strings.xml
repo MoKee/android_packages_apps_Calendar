@@ -5,6 +5,9 @@
   <!-- Widget titles -->
   <!-- Event -->
   <!-- Event Repetition -->
+  <string name="months_raw">bulan</string>
+  <string name="years_raw">tahun</string>
+  <string name="repeat_till">Ulangi sampai</string>
   <string name="forever">Selamanya</string>
   <string name="repeat">Ulangi</string>
   <string name="every_day">Setiap hari</string>
