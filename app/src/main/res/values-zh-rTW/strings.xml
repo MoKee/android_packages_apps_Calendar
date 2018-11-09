@@ -201,7 +201,7 @@
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">一個有活動功能和可自訂的小工具，且沒有廣告的簡易行事曆。</string>
-    <string name="app_long_description">一個有CalDAV同步選項的簡易行事曆。你可以輕鬆建立週期活動和設置提醒，也能顯示週數。
+    <string name="app_long_description">        一個有CalDAV同步選項的簡易行事曆。你可以輕鬆建立週期活動和設置提醒，也能顯示週數。
 
         含有月曆和活動列表的小工具，你可以自訂文字顏色，以及背景顏色和透明度。
 
@@ -211,7 +211,8 @@
 
         聯絡人權限只是用來匯入聯絡人生日和紀念日。
 
-        這程式只是一系列眾多應用程式的其中一項，你可以在這發現更多 https://www.simplemobiletools.com</string>
+        這程式只是一系列眾多應用程式的其中一項，你可以在這發現更多 https://www.simplemobiletools.com
+    </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
