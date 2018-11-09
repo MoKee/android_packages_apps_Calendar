@@ -156,6 +156,7 @@
     <string name="default_reminder_1">Výchozí připomenutí 1</string>
     <string name="default_reminder_2">Výchozí připomenutí 2</string>
     <string name="default_reminder_3">Výchozí připomenutí 3</string>
+    <string name="view_to_open_from_widget">Otevřít náhled po kliknutí na widget se seznamem událostí</string>
     <string name="last_view">Poslední náhled</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
@@ -200,7 +201,7 @@
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Jednoduchý kalendář s událostmi, přizpůsobitelným widgetem a bez reklam.</string>
-    <string name="app_long_description">Jednoduchý kalendář s volitelnou synchronizací CalDAV. Můžete snadno vytvářet opakující se události a nastavovat připomenutí, můžete také zobrazovat čísla týdnů.
+    <string name="app_long_description">        Jednoduchý kalendář s volitelnou synchronizací CalDAV. Můžete snadno vytvářet opakující se události a nastavovat připomenutí, můžete také zobrazovat čísla týdnů.
 
         Obsahuje přizpůsobitelný widget 4x4, kde můžete měnit barvu textu, stejně jako průhlednost a barvu pozadí.
 
@@ -210,7 +211,8 @@
 
         Oprávnění kontaktů se používá pouze při importu narozenin a výročí.
 
-        Tato aplikace je součástí větší sady aplikací. Tyto a další aplikace najdete na https://www.simplemobiletools.com</string>
+        Tato aplikace je součástí větší sady aplikací. Tyto a další aplikace najdete na https://www.simplemobiletools.com
+    </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
