@@ -43,7 +43,6 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
-//        setupPurchaseThankYou()
         setupCustomizeColors()
         setupUseEnglish()
         setupManageEventTypes()
@@ -109,13 +108,6 @@ class SettingsActivity : SimpleActivity() {
             it.setTextColor(adjustedPrimaryColor)
         }
     }
-
-//    private fun setupPurchaseThankYou() {
-//        settings_purchase_thank_you_holder.beVisibleIf(config.appRunCount > 10 && !isThankYouInstalled())
-//        settings_purchase_thank_you_holder.setOnClickListener {
-//            launchPurchaseThankYouIntent()
-//        }
-//    }
 
     private fun setupCustomizeColors() {
         settings_customize_colors_holder.setOnClickListener {

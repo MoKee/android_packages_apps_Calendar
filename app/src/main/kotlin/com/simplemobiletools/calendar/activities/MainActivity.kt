@@ -19,7 +19,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
 import com.simplemobiletools.calendar.BuildConfig
 import com.simplemobiletools.calendar.R
-import com.simplemobiletools.calendar.R.id.*
 import com.simplemobiletools.calendar.adapters.EventListAdapter
 import com.simplemobiletools.calendar.dialogs.ExportEventsDialog
 import com.simplemobiletools.calendar.dialogs.FilterEventTypesDialog
@@ -714,7 +713,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
 //    private fun launchAbout() {
-//        val licenses = LICENSE_JODA or LICENSE_STETHO
+//        val licenses = LICENSE_JODA
 //
 //        val faqItems = arrayListOf(
 //                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
