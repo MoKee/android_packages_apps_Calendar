@@ -167,7 +167,7 @@ class EventActivity : SimpleActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.save -> saveEvent()
+            R.id.save -> saveCurrentEvent()
             R.id.delete -> deleteEvent()
             R.id.duplicate -> duplicateEvent()
             R.id.share -> shareEvent()
@@ -647,17 +647,21 @@ class EventActivity : SimpleActivity() {
         } else {
             event_caldav_calendar_email.text = currentCalendar.accountName
 
-            val calendarColor = dbHelper.getEventTypeWithCalDAVCalendarId(currentCalendar.id)?.color ?: currentCalendar.color
-            event_caldav_calendar_color.setFillWithStroke(calendarColor, config.backgroundColor)
+            Thread {
+                val calendarColor = dbHelper.getEventTypeWithCalDAVCalendarId(currentCalendar.id)?.color ?: currentCalendar.color
+                runOnUiThread {
+                    event_caldav_calendar_color.setFillWithStroke(calendarColor, config.backgroundColor)
 
-            event_caldav_calendar_name.apply {
-                text = currentCalendar.displayName
-                setPadding(paddingLeft, paddingTop, paddingRight, resources.getDimension(R.dimen.tiny_margin).toInt())
-            }
+                    event_caldav_calendar_name.apply {
+                        text = currentCalendar.displayName
+                        setPadding(paddingLeft, paddingTop, paddingRight, resources.getDimension(R.dimen.tiny_margin).toInt())
+                    }
 
-            event_caldav_calendar_holder.apply {
-                setPadding(paddingLeft, 0, paddingRight, 0)
-            }
+                    event_caldav_calendar_holder.apply {
+                        setPadding(paddingLeft, 0, paddingRight, 0)
+                    }
+                }
+            }.start()
         }
     }
 
@@ -673,12 +677,16 @@ class EventActivity : SimpleActivity() {
 
     private fun deleteEvent() {
         DeleteEventDialog(this, arrayListOf(mEvent.id!!), mEvent.repeatInterval > 0) {
-            when (it) {
-                DELETE_SELECTED_OCCURRENCE -> dbHelper.addEventRepeatException(mEvent.id!!, mEventOccurrenceTS, true)
-                DELETE_FUTURE_OCCURRENCES -> dbHelper.addEventRepeatLimit(mEvent.id!!, mEventOccurrenceTS)
-                DELETE_ALL_OCCURRENCES -> dbHelper.deleteEvents(arrayOf(mEvent.id.toString()), true)
-            }
-            finish()
+            Thread {
+                when (it) {
+                    DELETE_SELECTED_OCCURRENCE -> dbHelper.addEventRepeatException(mEvent.id!!, mEventOccurrenceTS, true)
+                    DELETE_FUTURE_OCCURRENCES -> dbHelper.addEventRepeatLimit(mEvent.id!!, mEventOccurrenceTS)
+                    DELETE_ALL_OCCURRENCES -> dbHelper.deleteEvents(arrayOf(mEvent.id.toString()), true)
+                }
+                runOnUiThread {
+                    finish()
+                }
+            }.start()
         }
     }
 
@@ -690,6 +698,12 @@ class EventActivity : SimpleActivity() {
             startActivity(this)
         }
         finish()
+    }
+
+    private fun saveCurrentEvent() {
+        Thread {
+            saveEvent()
+        }.start()
     }
 
     private fun saveEvent() {
@@ -752,8 +766,6 @@ class EventActivity : SimpleActivity() {
             repeatLimit = if (repeatInterval == 0) 0 else mRepeatLimit
             repeatRule = mRepeatRule
             eventType = newEventType
-            offset = getCurrentOffset()
-            isDstIncluded = TimeZone.getDefault().inDaylightTime(Date())
             lastUpdated = System.currentTimeMillis()
             source = newSource
             location = event_location.value
@@ -765,13 +777,11 @@ class EventActivity : SimpleActivity() {
             mEvent.id = 0
         }
 
-        Thread {
-            storeEvent(wasRepeatable)
-        }.start()
+        storeEvent(wasRepeatable)
     }
 
     private fun storeEvent(wasRepeatable: Boolean) {
-        if (mEvent.id == 0L) {
+        if (mEvent.id == 0L || mEvent.id == null) {
             dbHelper.insert(mEvent, true, this) {
                 if (DateTime.now().isAfter(mEventStartDateTime.millis)) {
                     if (mEvent.repeatInterval == 0 && mEvent.getReminders().isNotEmpty()) {
