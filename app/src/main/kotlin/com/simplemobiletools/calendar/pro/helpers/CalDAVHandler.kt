@@ -26,12 +26,12 @@ class CalDAVHandler(val context: Context) {
     fun refreshCalendars(activity: SimpleActivity? = null, callback: () -> Unit) {
         val calDAVCalendars = getCalDAVCalendars(activity, context.config.caldavSyncedCalendarIDs)
         for (calendar in calDAVCalendars) {
-            val localEventType = context.dbHelper.getEventTypeWithCalDAVCalendarId(calendar.id) ?: continue
+            val localEventType = EventTypesHelper().getEventTypeWithCalDAVCalendarId(context, calendar.id) ?: continue
             localEventType.apply {
                 title = calendar.displayName
                 caldavDisplayName = calendar.displayName
                 caldavEmail = calendar.accountName
-                context.dbHelper.updateLocalEventType(this)
+                EventTypesHelper().insertOrUpdateEventTypeSync(context, this)
             }
 
             CalDAVHandler(context).fetchCalDAVCalendarEvents(calendar.id, localEventType.id!!, activity)
@@ -202,8 +202,8 @@ class CalDAVHandler(val context: Context) {
                     val source = "$CALDAV-$calendarId"
                     val repeatRule = Parser().parseRepeatInterval(rrule, startTS)
                     val event = Event(null, startTS, endTS, title, location, description, reminders.getOrElse(0) { -1 },
-                            reminders.getOrElse(1) { -1 }, reminders.getOrElse(2) { -1 }, repeatRule.repeatInterval,
-                            importId, allDay, repeatRule.repeatLimit, repeatRule.repeatRule, eventTypeId, source = source)
+                            reminders.getOrElse(1) { -1 }, reminders.getOrElse(2) { -1 }, repeatRule.repeatInterval, repeatRule.repeatRule,
+                            repeatRule.repeatLimit, importId, allDay, eventTypeId, source = source)
 
                     if (event.getIsAllDay()) {
                         event.startTS = Formatter.getShiftedImportTimestamp(event.startTS)

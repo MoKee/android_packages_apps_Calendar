@@ -8,7 +8,7 @@ import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.dbHelper
+import com.simplemobiletools.calendar.pro.helpers.EventTypesHelper
 import com.simplemobiletools.calendar.pro.helpers.STORED_LOCALLY_ONLY
 import com.simplemobiletools.calendar.pro.models.CalDAVCalendar
 import com.simplemobiletools.commons.extensions.setFillWithStroke
@@ -26,9 +26,9 @@ class SelectEventCalendarDialog(val activity: Activity, val calendars: List<CalD
         val view = activity.layoutInflater.inflate(R.layout.dialog_select_radio_group, null) as ViewGroup
         radioGroup = view.dialog_radio_group
 
-        activity.dbHelper.getEventTypes {
+        Thread {
             calendars.forEach {
-                val localEventType = activity.dbHelper.getEventTypeWithCalDAVCalendarId(it.id)
+                val localEventType = EventTypesHelper().getEventTypeWithCalDAVCalendarId(activity, it.id)
                 if (localEventType != null) {
                     it.color = localEventType.color
                 }
@@ -42,7 +42,7 @@ class SelectEventCalendarDialog(val activity: Activity, val calendars: List<CalD
                 wasInit = true
                 activity.updateTextColors(view.dialog_radio_holder)
             }
-        }
+        }.start()
 
         dialog = AlertDialog.Builder(activity)
                 .create().apply {
