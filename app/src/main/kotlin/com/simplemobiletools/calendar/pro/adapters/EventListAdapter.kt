@@ -7,7 +7,7 @@ import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.dialogs.DeleteEventDialog
 import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.dbHelper
+import com.simplemobiletools.calendar.pro.extensions.eventsHelper
 import com.simplemobiletools.calendar.pro.extensions.handleEventDeleting
 import com.simplemobiletools.calendar.pro.extensions.shareEvents
 import com.simplemobiletools.calendar.pro.helpers.*
@@ -207,8 +207,8 @@ class EventListAdapter(activity: SimpleActivity, var listItems: ArrayList<ListIt
             listItems.removeAll(eventsToDelete)
 
             Thread {
-                val nonRepeatingEventIDs = eventsToDelete.filter { !it.isRepeatable }.map { it.id.toString() }.toTypedArray()
-                activity.dbHelper.deleteEvents(nonRepeatingEventIDs, true)
+                val nonRepeatingEventIDs = eventsToDelete.filter { !it.isRepeatable }.mapNotNull { it.id }.toMutableList()
+                activity.eventsHelper.deleteEvents(nonRepeatingEventIDs, true)
 
                 val repeatingEventIDs = eventsToDelete.filter { it.isRepeatable }.map { it.id }
                 activity.handleEventDeleting(repeatingEventIDs, timestamps, it)

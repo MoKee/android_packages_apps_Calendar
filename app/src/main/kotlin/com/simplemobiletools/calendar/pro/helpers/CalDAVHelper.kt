@@ -9,10 +9,7 @@ import android.provider.CalendarContract
 import android.provider.CalendarContract.Reminders
 import android.util.SparseIntArray
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
-import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.dbHelper
-import com.simplemobiletools.calendar.pro.extensions.refreshCalDAVCalendars
-import com.simplemobiletools.calendar.pro.extensions.scheduleCalDAVSync
+import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.models.CalDAVCalendar
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.EventType
@@ -22,19 +19,21 @@ import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_CALENDAR
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CalDAVHandler(val context: Context) {
+class CalDAVHelper(val context: Context) {
+    private val eventsHelper = context.eventsHelper
+
     fun refreshCalendars(activity: SimpleActivity? = null, callback: () -> Unit) {
         val calDAVCalendars = getCalDAVCalendars(activity, context.config.caldavSyncedCalendarIDs)
         for (calendar in calDAVCalendars) {
-            val localEventType = EventTypesHelper().getEventTypeWithCalDAVCalendarId(context, calendar.id) ?: continue
+            val localEventType = eventsHelper.getEventTypeWithCalDAVCalendarId(calendar.id) ?: continue
             localEventType.apply {
                 title = calendar.displayName
                 caldavDisplayName = calendar.displayName
                 caldavEmail = calendar.accountName
-                EventTypesHelper().insertOrUpdateEventTypeSync(context, this)
+                eventsHelper.insertOrUpdateEventTypeSync(this)
             }
 
-            CalDAVHandler(context).fetchCalDAVCalendarEvents(calendar.id, localEventType.id!!, activity)
+            fetchCalDAVCalendarEvents(calendar.id, localEventType.id!!, activity)
         }
         context.scheduleCalDAVSync(true)
         callback()
@@ -155,7 +154,7 @@ class CalDAVHandler(val context: Context) {
     private fun fetchCalDAVCalendarEvents(calendarId: Int, eventTypeId: Long, activity: SimpleActivity?) {
         val importIdsMap = HashMap<String, Event>()
         val fetchedEventIds = ArrayList<String>()
-        val existingEvents = context.dbHelper.getEventsFromCalDAVCalendar(calendarId)
+        val existingEvents = context.eventsDB.getEventsFromCalDAVCalendar("$CALDAV-$calendarId")
         existingEvents.forEach {
             importIdsMap[it.importId] = it
         }
@@ -226,22 +225,22 @@ class CalDAVHandler(val context: Context) {
 
                         if (existingEvent.hashCode() != event.hashCode() && title.isNotEmpty()) {
                             event.id = originalEventId
-                            context.dbHelper.update(event, false)
+                            eventsHelper.updateEvent(null, event, false)
                         }
                     } else {
                         // if the event is an exception from another events repeat rule, find the original parent event
                         if (originalInstanceTime != 0L) {
                             val parentImportId = "$source-$originalId"
-                            val parentEventId = context.dbHelper.getEventIdWithImportId(parentImportId)
-                            if (parentEventId != 0L) {
+                            val parentEventId = context.eventsDB.getEventIdWithImportId(parentImportId)
+                            if (parentEventId != null) {
                                 event.parentId = parentEventId
-                                context.dbHelper.addEventRepeatException(parentEventId, (originalInstanceTime / 1000).toInt(), false, event.importId)
+                                eventsHelper.addEventRepeatException(parentEventId, (originalInstanceTime / 1000).toInt(), false, event.importId)
                             }
                         }
 
                         if (title.isNotEmpty()) {
                             importIdsMap[event.importId] = event
-                            context.dbHelper.insert(event, false) {}
+                            eventsHelper.insertEvent(null, event, false)
                         }
                     }
                 } while (cursor.moveToNext())
@@ -252,17 +251,17 @@ class CalDAVHandler(val context: Context) {
             cursor?.close()
         }
 
-        val eventIdsToDelete = ArrayList<String>()
+        val eventIdsToDelete = ArrayList<Long>()
         importIdsMap.keys.filter { !fetchedEventIds.contains(it) }.forEach {
             val caldavEventId = it
             existingEvents.forEach {
                 if (it.importId == caldavEventId) {
-                    eventIdsToDelete.add(it.id.toString())
+                    eventIdsToDelete.add(it.id!!)
                 }
             }
         }
 
-        context.dbHelper.deleteEvents(eventIdsToDelete.toTypedArray(), false)
+        eventsHelper.deleteEvents(eventIdsToDelete.toMutableList(), false)
     }
 
     @SuppressLint("MissingPermission")
@@ -308,7 +307,7 @@ class CalDAVHandler(val context: Context) {
     }
 
     private fun setupCalDAVEventImportId(event: Event) {
-        context.dbHelper.updateEventImportIdAndSource(event.id!!, event.importId, "$CALDAV-${event.getCalDAVCalendarId()}")
+        context.eventsDB.updateEventImportIdAndSource(event.importId, "$CALDAV-${event.getCalDAVCalendarId()}", event.id!!)
     }
 
     private fun fillEventContentValues(event: Event): ContentValues {
@@ -359,9 +358,8 @@ class CalDAVHandler(val context: Context) {
     }
 
     fun deleteCalDAVCalendarEvents(calendarId: Long) {
-        val events = context.dbHelper.getCalDAVCalendarEvents(calendarId)
-        val eventIds = events.map { it.id.toString() }.toTypedArray()
-        context.dbHelper.deleteEvents(eventIds, false)
+        val eventIds = context.eventsDB.getCalDAVCalendarEvents("$CALDAV-$calendarId").toMutableList()
+        eventsHelper.deleteEvents(eventIds, false)
     }
 
     fun deleteCalDAVEvent(event: Event) {

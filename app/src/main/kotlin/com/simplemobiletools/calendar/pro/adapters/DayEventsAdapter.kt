@@ -7,7 +7,7 @@ import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.dialogs.DeleteEventDialog
 import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.dbHelper
+import com.simplemobiletools.calendar.pro.extensions.eventsHelper
 import com.simplemobiletools.calendar.pro.extensions.handleEventDeleting
 import com.simplemobiletools.calendar.pro.extensions.shareEvents
 import com.simplemobiletools.calendar.pro.helpers.Formatter
@@ -143,10 +143,10 @@ class DayEventsAdapter(activity: SimpleActivity, val events: ArrayList<Event>, r
             events.removeAll(eventsToDelete)
 
             Thread {
-                val nonRepeatingEventIDs = eventsToDelete.asSequence().filter { it.repeatInterval == 0 }.map { it.id.toString() }.toList().toTypedArray()
-                activity.dbHelper.deleteEvents(nonRepeatingEventIDs, true)
+                val nonRepeatingEventIDs = eventsToDelete.asSequence().filter { it.repeatInterval == 0 }.mapNotNull { it.id }.toMutableList()
+                activity.eventsHelper.deleteEvents(nonRepeatingEventIDs, true)
 
-                val repeatingEventIDs = eventsToDelete.asSequence().filter { it.repeatInterval != 0 }.map { it.id!! }.toList()
+                val repeatingEventIDs = eventsToDelete.asSequence().filter { it.repeatInterval != 0 }.mapNotNull { it.id }.toList()
                 activity.handleEventDeleting(repeatingEventIDs, timestamps, it)
                 activity.runOnUiThread {
                     removeSelectedItems(positions)

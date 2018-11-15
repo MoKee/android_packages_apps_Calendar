@@ -89,11 +89,11 @@ class SettingsActivity : SimpleActivity() {
     private fun checkPrimaryColor() {
         if (config.primaryColor != mStoredPrimaryColor) {
             Thread {
-                val eventTypes = EventTypesHelper().getEventTypesSync(this)
+                val eventTypes = eventsHelper.getEventTypesSync()
                 if (eventTypes.filter { it.caldavCalendarId == 0 }.size == 1) {
                     val eventType = eventTypes.first { it.caldavCalendarId == 0 }
                     eventType.color = config.primaryColor
-                    EventTypesHelper().insertOrUpdateEventTypeSync(applicationContext, eventType)
+                    eventsHelper.insertOrUpdateEventTypeSync(eventType)
                 }
             }.start()
         }
@@ -182,7 +182,7 @@ class SettingsActivity : SimpleActivity() {
 
             Thread {
                 config.getSyncedCalendarIdsAsList().forEach {
-                    CalDAVHandler(applicationContext).deleteCalDAVCalendarEvents(it.toLong())
+                    calDAVHelper.deleteCalDAVCalendarEvents(it.toLong())
                 }
                 eventTypesDB.deleteEventTypesWithCalendarId(config.getSyncedCalendarIdsAsList())
             }.start()
@@ -208,23 +208,23 @@ class SettingsActivity : SimpleActivity() {
 
             Thread {
                 if (newCalendarIds.isNotEmpty()) {
-                    val existingEventTypeNames = EventTypesHelper().getEventTypesSync(applicationContext).map { it.getDisplayTitle().toLowerCase() } as ArrayList<String>
+                    val existingEventTypeNames = eventsHelper.getEventTypesSync().map { it.getDisplayTitle().toLowerCase() } as ArrayList<String>
                     getSyncedCalDAVCalendars().forEach {
                         val calendarTitle = it.getFullTitle()
                         if (!existingEventTypeNames.contains(calendarTitle.toLowerCase())) {
                             val eventType = EventType(null, it.displayName, it.color, it.id, it.displayName, it.accountName)
                             existingEventTypeNames.add(calendarTitle.toLowerCase())
-                            EventTypesHelper().insertOrUpdateEventType(this, eventType)
+                            eventsHelper.insertOrUpdateEventType(this, eventType)
                         }
                     }
-                    CalDAVHandler(applicationContext).refreshCalendars(this) {}
+                    calDAVHelper.refreshCalendars(this) {}
                 }
 
                 val removedCalendarIds = oldCalendarIds.filter { !newCalendarIds.contains(it) }
                 removedCalendarIds.forEach {
-                    CalDAVHandler(applicationContext).deleteCalDAVCalendarEvents(it.toLong())
-                    EventTypesHelper().getEventTypeWithCalDAVCalendarId(applicationContext, it)?.apply {
-                        EventTypesHelper().deleteEventTypes(applicationContext, arrayListOf(this), true)
+                    calDAVHelper.deleteCalDAVCalendarEvents(it.toLong())
+                    eventsHelper.getEventTypeWithCalDAVCalendarId(it)?.apply {
+                        eventsHelper.deleteEventTypes(arrayListOf(this), true)
                     }
                 }
 
@@ -247,9 +247,7 @@ class SettingsActivity : SimpleActivity() {
     private fun setupDeleteAllEvents() {
         settings_delete_all_events_holder.setOnClickListener {
             ConfirmationDialog(this, messageId = R.string.delete_all_events_confirmation) {
-                Thread {
-                    dbHelper.deleteAllEvents()
-                }.start()
+                eventsHelper.deleteAllEvents()
             }
         }
     }

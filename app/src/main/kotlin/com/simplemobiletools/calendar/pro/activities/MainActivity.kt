@@ -117,7 +117,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             updateViewPager()
         }
 
-        EventTypesHelper().getEventTypes(this) {
+        eventsHelper.getEventTypes(this) {
             val newShouldFilterBeVisible = it.size > 1 || config.displayEventTypes.isEmpty()
             if (newShouldFilterBeVisible != mShouldFilterBeVisible) {
                 mShouldFilterBeVisible = newShouldFilterBeVisible
@@ -306,8 +306,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                 if (uri.path.startsWith("/events")) {
                     // intents like content://com.android.calendar/events/1756
                     val eventId = uri.lastPathSegment
-                    val id = dbHelper.getEventIdWithLastImportId(eventId)
-                    if (id != 0L) {
+                    val id = eventsDB.getEventIdWithLastImportId("%-$eventId")
+                    if (id != null) {
                         Intent(this, EventActivity::class.java).apply {
                             putExtra(EVENT_ID, id)
                             startActivity(this)
@@ -407,10 +407,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             toast(R.string.importing)
             Thread {
                 val holidays = getString(R.string.holidays)
-                var eventTypeId = EventTypesHelper().getEventTypeIdWithTitle(applicationContext, holidays)
+                var eventTypeId = eventsHelper.getEventTypeIdWithTitle(holidays)
                 if (eventTypeId == -1L) {
                     val eventType = EventType(null, holidays, resources.getColor(R.color.default_holidays_color))
-                    eventTypeId = EventTypesHelper().insertOrUpdateEventTypeSync(applicationContext, eventType)
+                    eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
                 }
 
                 val result = IcsImporter(this).importEvents(it as String, eventTypeId, 0, false)
@@ -486,7 +486,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             cursor = contentResolver.query(uri, projection, selection, selectionArgs, null)
             if (cursor?.moveToFirst() == true) {
                 val dateFormats = getDateFormats()
-                val existingEvents = if (birthdays) dbHelper.getBirthdays() else dbHelper.getAnniversaries()
+                val existingEvents = if (birthdays) eventsDB.getBirthdays() else eventsDB.getAnniversaries()
                 val importIDs = existingEvents.map { it.importId }
                 val eventTypeId = if (birthdays) getBirthdaysEventTypeId() else getAnniversariesEventTypeId()
 
@@ -510,7 +510,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                                     eventType = eventTypeId, source = source, lastUpdated = lastUpdated)
 
                             if (!importIDs.contains(contactId)) {
-                                dbHelper.insert(event, false) {
+                                eventsHelper.insertEvent(null, event, false) {
                                     eventsAdded++
                                 }
                             }
@@ -533,20 +533,20 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private fun getBirthdaysEventTypeId(): Long {
         val birthdays = getString(R.string.birthdays)
-        var eventTypeId = EventTypesHelper().getEventTypeIdWithTitle(applicationContext, birthdays)
+        var eventTypeId = eventsHelper.getEventTypeIdWithTitle(birthdays)
         if (eventTypeId == -1L) {
             val eventType = EventType(null, birthdays, resources.getColor(R.color.default_birthdays_color))
-            eventTypeId = EventTypesHelper().insertOrUpdateEventTypeSync(applicationContext, eventType)
+            eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
         }
         return eventTypeId
     }
 
     private fun getAnniversariesEventTypeId(): Long {
         val anniversaries = getString(R.string.anniversaries)
-        var eventTypeId = EventTypesHelper().getEventTypeIdWithTitle(applicationContext, anniversaries)
+        var eventTypeId = eventsHelper.getEventTypeIdWithTitle(anniversaries)
         if (eventTypeId == -1L) {
             val eventType = EventType(null, anniversaries, resources.getColor(R.color.default_anniversaries_color))
-            eventTypeId = EventTypesHelper().insertOrUpdateEventTypeSync(applicationContext, eventType)
+            eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
         }
         return eventTypeId
     }
@@ -742,23 +742,21 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         mLatestSearchQuery = text
         search_placeholder_2.beGoneIf(text.length >= 2)
         if (text.length >= 2) {
-            dbHelper.getEventsWithSearchQuery(text) { searchedText, events ->
+            eventsHelper.getEventsWithSearchQuery(text, this) { searchedText, events ->
                 if (searchedText == mLatestSearchQuery) {
-                    runOnUiThread {
-                        search_results_list.beVisibleIf(events.isNotEmpty())
-                        search_placeholder.beVisibleIf(events.isEmpty())
-                        val listItems = getEventListItems(events)
-                        val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list) {
-                            if (it is ListEvent) {
-                                Intent(applicationContext, EventActivity::class.java).apply {
-                                    putExtra(EVENT_ID, it.id)
-                                    startActivity(this)
-                                }
+                    search_results_list.beVisibleIf(events.isNotEmpty())
+                    search_placeholder.beVisibleIf(events.isEmpty())
+                    val listItems = getEventListItems(events)
+                    val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list) {
+                        if (it is ListEvent) {
+                            Intent(applicationContext, EventActivity::class.java).apply {
+                                putExtra(EVENT_ID, it.id)
+                                startActivity(this)
                             }
                         }
-
-                        search_results_list.adapter = eventsAdapter
                     }
+
+                    search_results_list.adapter = eventsAdapter
                 }
             }
         } else {

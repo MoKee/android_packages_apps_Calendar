@@ -1,5 +1,6 @@
 package com.simplemobiletools.calendar.pro.models
 
+import androidx.collection.LongSparseArray
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
@@ -27,7 +28,7 @@ data class Event(
         @ColumnInfo(name = "repeat_limit") var repeatLimit: Int = 0,
         @ColumnInfo(name = "import_id") var importId: String = "",
         @ColumnInfo(name = "flags") var flags: Int = 0,
-        @ColumnInfo(name = "event_type") var eventType: Long = DBHelper.REGULAR_EVENT_TYPE_ID,
+        @ColumnInfo(name = "event_type") var eventType: Long = REGULAR_EVENT_TYPE_ID,
         @ColumnInfo(name = "parent_id") var parentId: Long = 0,
         @ColumnInfo(name = "last_updated") var lastUpdated: Long = 0L,
         @ColumnInfo(name = "source") var source: String = SOURCE_SIMPLE_CALENDAR)
@@ -134,6 +135,15 @@ data class Event(
     }
 
     fun getCalDAVCalendarId() = if (source.startsWith(CALDAV)) (source.split("-").lastOrNull() ?: "0").toString().toInt() else 0
+
+    fun getEventRepetition() = EventRepetition(null, id!!, repeatInterval, repeatRule, repeatLimit)
+
+    // check if its the proper week, for events repeating every x weeks
+    fun isOnProperWeek(startTimes: LongSparseArray<Int>): Boolean {
+        val initialWeekOfYear = Formatter.getDateTimeFromTS(startTimes[id!!]!!).weekOfWeekyear
+        val currentWeekOfYear = Formatter.getDateTimeFromTS(startTS).weekOfWeekyear
+        return (currentWeekOfYear - initialWeekOfYear) % (repeatInterval / WEEK) == 0
+    }
 
     fun updateIsPastEvent() {
         val endTSToCheck = if (startTS < getNowSeconds() && getIsAllDay()) {

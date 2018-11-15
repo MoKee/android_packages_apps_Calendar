@@ -3,7 +3,8 @@ package com.simplemobiletools.calendar.pro.helpers
 import android.widget.Toast
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
-import com.simplemobiletools.calendar.pro.extensions.dbHelper
+import com.simplemobiletools.calendar.pro.extensions.eventsDB
+import com.simplemobiletools.calendar.pro.extensions.eventsHelper
 import com.simplemobiletools.calendar.pro.helpers.IcsImporter.ImportResult.*
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.EventType
@@ -28,21 +29,22 @@ class IcsImporter(val activity: SimpleActivity) {
     private var curRepeatInterval = 0
     private var curRepeatLimit = 0
     private var curRepeatRule = 0
-    private var curEventTypeId = DBHelper.REGULAR_EVENT_TYPE_ID
+    private var curEventTypeId = REGULAR_EVENT_TYPE_ID
     private var curLastModified = 0L
     private var curCategoryColor = -2
     private var isNotificationDescription = false
     private var isProperReminderAction = false
     private var isDescription = false
     private var curReminderTriggerMinutes = -1
+    private val eventsHelper = activity.eventsHelper
 
     private var eventsImported = 0
     private var eventsFailed = 0
 
     fun importEvents(path: String, defaultEventTypeId: Long, calDAVCalendarId: Int, overrideFileEventTypes: Boolean): ImportResult {
         try {
-            val eventTypes = EventTypesHelper().getEventTypesSync(activity)
-            val existingEvents = activity.dbHelper.getEventsWithImportIds()
+            val eventTypes = eventsHelper.getEventTypesSync()
+            val existingEvents = activity.eventsDB.getEventsWithImportIds().toMutableList() as ArrayList<Event>
             val eventsToInsert = ArrayList<Event>()
             var prevLine = ""
 
@@ -158,16 +160,16 @@ class IcsImporter(val activity: SimpleActivity) {
                             if (curRepeatExceptions.isEmpty()) {
                                 eventsToInsert.add(event)
                             } else {
-                                activity.dbHelper.insert(event, true) {
+                                eventsHelper.insertEvent(activity, event, true) {
                                     for (exceptionTS in curRepeatExceptions) {
-                                        activity.dbHelper.addEventRepeatException(it, exceptionTS, true)
+                                        eventsHelper.addEventRepeatException(it, exceptionTS, true)
                                     }
                                     existingEvents.add(event)
                                 }
                             }
                         } else {
                             event.id = eventToUpdate.id
-                            activity.dbHelper.update(event, true)
+                            eventsHelper.updateEvent(null, event, true)
                         }
                         eventsImported++
                         resetValues()
@@ -176,7 +178,7 @@ class IcsImporter(val activity: SimpleActivity) {
                 }
             }
 
-            activity.dbHelper.insertEvents(eventsToInsert, true)
+            eventsHelper.insertEvents(eventsToInsert, true)
         } catch (e: Exception) {
             activity.showErrorToast(e, Toast.LENGTH_LONG)
             eventsFailed++
@@ -223,11 +225,11 @@ class IcsImporter(val activity: SimpleActivity) {
             categories
         }
 
-        val eventId = EventTypesHelper().getEventTypeIdWithTitle(activity, eventTypeTitle)
+        val eventId = eventsHelper.getEventTypeIdWithTitle(eventTypeTitle)
         curEventTypeId = if (eventId == -1L) {
             val newTypeColor = if (curCategoryColor == -2) activity.resources.getColor(R.color.color_primary) else curCategoryColor
             val eventType = EventType(null, eventTypeTitle, newTypeColor)
-            EventTypesHelper().insertOrUpdateEventTypeSync(activity, eventType)
+            eventsHelper.insertOrUpdateEventTypeSync(eventType)
         } else {
             eventId
         }
@@ -254,7 +256,7 @@ class IcsImporter(val activity: SimpleActivity) {
         curRepeatInterval = 0
         curRepeatLimit = 0
         curRepeatRule = 0
-        curEventTypeId = DBHelper.REGULAR_EVENT_TYPE_ID
+        curEventTypeId = REGULAR_EVENT_TYPE_ID
         curLastModified = 0L
         curCategoryColor = -2
         isNotificationDescription = false

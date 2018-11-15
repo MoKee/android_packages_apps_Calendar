@@ -6,24 +6,24 @@ import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.eventTypesDB
-import com.simplemobiletools.calendar.pro.helpers.DBHelper
-import com.simplemobiletools.calendar.pro.helpers.EventTypesHelper
+import com.simplemobiletools.calendar.pro.extensions.eventsHelper
 import com.simplemobiletools.calendar.pro.helpers.IcsImporter
 import com.simplemobiletools.calendar.pro.helpers.IcsImporter.ImportResult.*
+import com.simplemobiletools.calendar.pro.helpers.REGULAR_EVENT_TYPE_ID
 import com.simplemobiletools.commons.extensions.setFillWithStroke
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
 import kotlinx.android.synthetic.main.dialog_import_events.view.*
 
 class ImportEventsDialog(val activity: SimpleActivity, val path: String, val callback: (refreshView: Boolean) -> Unit) {
-    var currEventTypeId = DBHelper.REGULAR_EVENT_TYPE_ID
+    var currEventTypeId = REGULAR_EVENT_TYPE_ID
     var currEventTypeCalDAVCalendarId = 0
     val config = activity.config
 
     init {
         Thread {
             if (activity.eventTypesDB.getEventTypeWithId(config.lastUsedLocalEventTypeId) == null) {
-                config.lastUsedLocalEventTypeId = DBHelper.REGULAR_EVENT_TYPE_ID
+                config.lastUsedLocalEventTypeId = REGULAR_EVENT_TYPE_ID
             }
             activity.runOnUiThread {
                 initDialog()
@@ -34,12 +34,12 @@ class ImportEventsDialog(val activity: SimpleActivity, val path: String, val cal
     private fun initDialog() {
         val isLastCaldavCalendarOK = config.caldavSync && config.getSyncedCalendarIdsAsList().contains(config.lastUsedCaldavCalendarId)
         currEventTypeId = if (isLastCaldavCalendarOK) {
-            val lastUsedCalDAVCalendar = EventTypesHelper().getEventTypeWithCalDAVCalendarId(activity, config.lastUsedCaldavCalendarId)
+            val lastUsedCalDAVCalendar = activity.eventsHelper.getEventTypeWithCalDAVCalendarId(config.lastUsedCaldavCalendarId)
             if (lastUsedCalDAVCalendar != null) {
                 currEventTypeCalDAVCalendarId = config.lastUsedCaldavCalendarId
                 lastUsedCalDAVCalendar.id!!
             } else {
-                DBHelper.REGULAR_EVENT_TYPE_ID
+                REGULAR_EVENT_TYPE_ID
             }
         } else {
             config.lastUsedLocalEventTypeId
