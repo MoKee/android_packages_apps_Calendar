@@ -27,8 +27,6 @@ import com.simplemobiletools.calendar.pro.activities.SnoozeReminderActivity
 import com.simplemobiletools.calendar.pro.databases.EventsDatabase
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
-import com.simplemobiletools.calendar.pro.interfaces.EventRepetitionExceptionsDao
-import com.simplemobiletools.calendar.pro.interfaces.EventRepetitionsDao
 import com.simplemobiletools.calendar.pro.interfaces.EventTypesDao
 import com.simplemobiletools.calendar.pro.interfaces.EventsDao
 import com.simplemobiletools.calendar.pro.models.*
@@ -54,11 +52,8 @@ import java.util.*
 val Context.config: Config get() = Config.newInstance(applicationContext)
 val Context.eventsDB: EventsDao get() = EventsDatabase.getInstance(applicationContext).EventsDao()
 val Context.eventTypesDB: EventTypesDao get() = EventsDatabase.getInstance(applicationContext).EventTypesDao()
-val Context.eventRepetitionsDB: EventRepetitionsDao get() = EventsDatabase.getInstance(applicationContext).EventRepetitionsDao()
-val Context.eventRepetitionExceptionsDB: EventRepetitionExceptionsDao get() = EventsDatabase.getInstance(applicationContext).EventRepetitionExceptionsDao()
 val Context.eventsHelper: EventsHelper get() = EventsHelper(this)
 val Context.calDAVHelper: CalDAVHelper get() = CalDAVHelper(this)
-val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
 
 fun Context.updateWidgets() {
     val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetMonthlyProvider::class.java))
@@ -85,13 +80,13 @@ fun Context.updateListWidget() {
 }
 
 fun Context.scheduleAllEvents() {
-    val events = dbHelper.getEventsAtReboot()
+    val events = eventsDB.getEventsAtReboot(getNowSeconds())
     events.forEach {
-        scheduleNextEventReminder(it, dbHelper)
+        scheduleNextEventReminder(it)
     }
 }
 
-fun Context.scheduleNextEventReminder(event: Event, dbHelper: DBHelper, activity: SimpleActivity? = null) {
+fun Context.scheduleNextEventReminder(event: Event, activity: SimpleActivity? = null) {
     if (event.getReminders().isEmpty()) {
         activity?.toast(R.string.saving)
         return
@@ -99,7 +94,7 @@ fun Context.scheduleNextEventReminder(event: Event, dbHelper: DBHelper, activity
 
     val now = getNowSeconds()
     val reminderSeconds = event.getReminders().reversed().map { it * 60 }
-    dbHelper.getEvents(now, now + YEAR, event.id!!, false) {
+    eventsHelper.getEvents(now, now + YEAR, event.id!!, false) {
         if (it.isNotEmpty()) {
             for (curEvent in it) {
                 for (curReminder in reminderSeconds) {
@@ -161,7 +156,7 @@ fun Context.getRepetitionText(seconds: Int) = when (seconds) {
 }
 
 fun Context.notifyRunningEvents() {
-    dbHelper.getRunningEvents().filter { it.getReminders().isNotEmpty() }.forEach {
+    eventsHelper.getRunningEvents().filter { it.getReminders().isNotEmpty() }.forEach {
         notifyEvent(it)
     }
 }
@@ -173,7 +168,7 @@ fun Context.notifyEvent(originalEvent: Event) {
     var eventStartTS = if (event.getIsAllDay()) Formatter.getDayStartTS(Formatter.getDayCodeFromTS(event.startTS)) else event.startTS
     // make sure refer to the proper repeatable event instance with "Tomorrow", or the specific date
     if (event.repeatInterval != 0 && eventStartTS - event.reminder1Minutes * 60 < currentSeconds) {
-        val events = dbHelper.getRepeatableEventsFor(currentSeconds - WEEK_SECONDS, currentSeconds + YEAR_SECONDS, event.id!!)
+        val events = eventsHelper.getRepeatableEventsFor(currentSeconds - WEEK_SECONDS, currentSeconds + YEAR_SECONDS, event.id!!)
         for (currEvent in events) {
             eventStartTS = if (currEvent.getIsAllDay()) Formatter.getDayStartTS(Formatter.getDayCodeFromTS(currEvent.startTS)) else currEvent.startTS
             if (eventStartTS - currEvent.reminder1Minutes * 60 > currentSeconds) {
@@ -305,7 +300,7 @@ fun Context.launchNewEventIntent(dayCode: String = Formatter.getTodayCode()) {
     }
 }
 
-fun Context.getNewEventTimestampFromCode(dayCode: String): Int {
+fun Context.getNewEventTimestampFromCode(dayCode: String): Long {
     val currHour = DateTime(System.currentTimeMillis(), DateTimeZone.getDefault()).hourOfDay
     val dateTime = Formatter.getLocalDateTimeFromCode(dayCode).withHourOfDay(currHour)
     val newDateTime = dateTime.plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)
@@ -446,11 +441,11 @@ fun Context.getEventListItems(events: List<Event>): ArrayList<ListItem> {
     return listItems
 }
 
-fun Context.handleEventDeleting(eventIds: List<Long>, timestamps: List<Int>, action: Int) {
+fun Context.handleEventDeleting(eventIds: List<Long>, timestamps: List<Long>, action: Int) {
     when (action) {
         DELETE_SELECTED_OCCURRENCE -> {
             eventIds.forEachIndexed { index, value ->
-                eventsHelper.addEventRepeatException(value, timestamps[index], true)
+                eventsHelper.addEventRepetitionException(value, timestamps[index], true)
             }
         }
         DELETE_FUTURE_OCCURRENCES -> {

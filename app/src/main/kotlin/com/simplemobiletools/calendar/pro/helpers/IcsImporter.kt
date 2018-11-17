@@ -17,17 +17,17 @@ class IcsImporter(val activity: SimpleActivity) {
         IMPORT_FAIL, IMPORT_OK, IMPORT_PARTIAL
     }
 
-    private var curStart = -1
-    private var curEnd = -1
+    private var curStart = -1L
+    private var curEnd = -1L
     private var curTitle = ""
     private var curLocation = ""
     private var curDescription = ""
     private var curImportId = ""
     private var curFlags = 0
     private var curReminderMinutes = ArrayList<Int>()
-    private var curRepeatExceptions = ArrayList<Int>()
+    private var curRepeatExceptions = ArrayList<String>()
     private var curRepeatInterval = 0
-    private var curRepeatLimit = 0
+    private var curRepeatLimit = 0L
     private var curRepeatRule = 0
     private var curEventTypeId = REGULAR_EVENT_TYPE_ID
     private var curLastModified = 0L
@@ -118,7 +118,7 @@ class IcsImporter(val activity: SimpleActivity) {
                             value = value.substring(0, value.length - 1)
                         }
 
-                        curRepeatExceptions.add(getTimestamp(value))
+                        curRepeatExceptions.add(Formatter.getDayCodeFromTS(getTimestamp(value)))
                     } else if (line.startsWith(LOCATION)) {
                         curLocation = getLocation(line.substring(LOCATION.length).replace("\\,", ","))
                     } else if (line == END_ALARM) {
@@ -126,11 +126,11 @@ class IcsImporter(val activity: SimpleActivity) {
                             curReminderMinutes.add(curReminderTriggerMinutes)
                         }
                     } else if (line == END_EVENT) {
-                        if (curStart != -1 && curEnd == -1) {
+                        if (curStart != -1L && curEnd == -1L) {
                             curEnd = curStart
                         }
 
-                        if (curTitle.isEmpty() || curStart == -1) {
+                        if (curTitle.isEmpty() || curStart == -1L) {
                             continue
                         }
 
@@ -141,9 +141,9 @@ class IcsImporter(val activity: SimpleActivity) {
 
                         val eventType = eventTypes.firstOrNull { it.id == curEventTypeId }
                         val source = if (calDAVCalendarId == 0 || eventType?.isSyncedEventType() == false) SOURCE_IMPORTED_ICS else "$CALDAV-$calDAVCalendarId"
-                        val event = Event(0, curStart, curEnd, curTitle, curLocation, curDescription, curReminderMinutes.getOrElse(0) { -1 },
+                        val event = Event(null, curStart, curEnd, curTitle, curLocation, curDescription, curReminderMinutes.getOrElse(0) { -1 },
                                 curReminderMinutes.getOrElse(1) { -1 }, curReminderMinutes.getOrElse(2) { -1 }, curRepeatInterval, curRepeatRule,
-                                curRepeatLimit, curImportId, curFlags, curEventTypeId, 0, curLastModified, source)
+                                curRepeatLimit, curRepeatExceptions, curImportId, curFlags, curEventTypeId, 0, curLastModified, source)
 
                         if (event.getIsAllDay() && curEnd > curStart) {
                             event.endTS -= DAY
@@ -157,16 +157,7 @@ class IcsImporter(val activity: SimpleActivity) {
                         }
 
                         if (eventToUpdate == null) {
-                            if (curRepeatExceptions.isEmpty()) {
-                                eventsToInsert.add(event)
-                            } else {
-                                eventsHelper.insertEvent(activity, event, true) {
-                                    for (exceptionTS in curRepeatExceptions) {
-                                        eventsHelper.addEventRepeatException(it, exceptionTS, true)
-                                    }
-                                    existingEvents.add(event)
-                                }
-                            }
+                            eventsToInsert.add(event)
                         } else {
                             event.id = eventToUpdate.id
                             eventsHelper.updateEvent(null, event, true)
@@ -191,10 +182,10 @@ class IcsImporter(val activity: SimpleActivity) {
         }
     }
 
-    private fun getTimestamp(fullString: String): Int {
+    private fun getTimestamp(fullString: String): Long {
         return try {
             if (fullString.startsWith(';')) {
-                val value = fullString.substring(fullString.lastIndexOf(':') + 1)
+                val value = fullString.substring(fullString.lastIndexOf(':') + 1).replace(" ", "")
                 if (!value.contains("T")) {
                     curFlags = curFlags or FLAG_ALL_DAY
                 }
@@ -244,8 +235,8 @@ class IcsImporter(val activity: SimpleActivity) {
     }
 
     private fun resetValues() {
-        curStart = -1
-        curEnd = -1
+        curStart = -1L
+        curEnd = -1L
         curTitle = ""
         curLocation = ""
         curDescription = ""
@@ -254,7 +245,7 @@ class IcsImporter(val activity: SimpleActivity) {
         curReminderMinutes = ArrayList()
         curRepeatExceptions = ArrayList()
         curRepeatInterval = 0
-        curRepeatLimit = 0
+        curRepeatLimit = 0L
         curRepeatRule = 0
         curEventTypeId = REGULAR_EVENT_TYPE_ID
         curLastModified = 0L

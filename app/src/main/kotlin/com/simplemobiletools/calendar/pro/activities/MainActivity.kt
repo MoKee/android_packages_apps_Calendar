@@ -47,13 +47,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
-    private val CALDAV_SYNC_DELAY = 1000L
-
     private var showCalDAVRefreshToast = false
     private var mShouldFilterBeVisible = false
     private var mIsSearchOpen = false
     private var mLatestSearchQuery = ""
-    private var mCalDAVSyncHandler = Handler()
     private var mSearchMenuItem: MenuItem? = null
     private var shouldGoToTodayBeVisible = false
     private var goToTodayButton: MenuItem? = null
@@ -150,7 +147,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     override fun onStop() {
         super.onStop()
-        mCalDAVSyncHandler.removeCallbacksAndMessages(null)
         contentResolver.unregisterContentObserver(calDAVSyncObserver)
         closeSearch()
     }
@@ -385,18 +381,20 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         override fun onChange(selfChange: Boolean) {
             super.onChange(selfChange)
             if (!selfChange) {
-                mCalDAVSyncHandler.removeCallbacksAndMessages(null)
-                mCalDAVSyncHandler.postDelayed({
-                    recheckCalDAVCalendars {
-                        refreshViewPager()
-                        if (showCalDAVRefreshToast) {
-                            toast(R.string.refreshing_complete)
-                        }
-                        runOnUiThread {
-                            swipe_refresh_layout.isRefreshing = false
-                        }
-                    }
-                }, CALDAV_SYNC_DELAY)
+                calDAVChanged()
+            }
+        }
+    }
+
+    private fun calDAVChanged() {
+        contentResolver.unregisterContentObserver(calDAVSyncObserver)
+        recheckCalDAVCalendars {
+            refreshViewPager()
+            if (showCalDAVRefreshToast) {
+                toast(R.string.refreshing_complete)
+            }
+            runOnUiThread {
+                swipe_refresh_layout.isRefreshing = false
             }
         }
     }
@@ -503,10 +501,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                                 date.year = 70
                             }
 
-                            val timestamp = (date.time / 1000).toInt()
+                            val timestamp = date.time / 1000L
                             val source = if (birthdays) SOURCE_CONTACT_BIRTHDAY else SOURCE_CONTACT_ANNIVERSARY
                             val lastUpdated = cursor.getLongValue(ContactsContract.CommonDataKinds.Event.CONTACT_LAST_UPDATED_TIMESTAMP)
-                            val event = Event(0, timestamp, timestamp, name, importId = contactId, flags = FLAG_ALL_DAY, repeatInterval = YEAR,
+                            val event = Event(null, timestamp, timestamp, name, importId = contactId, flags = FLAG_ALL_DAY, repeatInterval = YEAR,
                                     eventType = eventTypeId, source = source, lastUpdated = lastUpdated)
 
                             if (!importIDs.contains(contactId)) {
@@ -703,11 +701,11 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         FilePickerDialog(this, pickFile = false, showFAB = true) {
             ExportEventsDialog(this, it) { exportPastEvents, file, eventTypes ->
                 Thread {
-                    val events = dbHelper.getEventsToExport(exportPastEvents).filter { eventTypes.contains(it.eventType.toString()) }
+                    val events = eventsHelper.getEventsToExport(exportPastEvents, eventTypes)
                     if (events.isEmpty()) {
                         toast(R.string.no_entries_for_exporting)
                     } else {
-                        IcsExporter().exportEvents(this, file, events as ArrayList<Event>, true) {
+                        IcsExporter().exportEvents(this, file, events, true) {
                             toast(when (it) {
                                 IcsExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
                                 IcsExporter.ExportResult.EXPORT_PARTIAL -> R.string.exporting_some_entries_failed
@@ -779,7 +777,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun openDayAt(timestamp: Long) {
-        val dayCode = Formatter.getDayCodeFromTS((timestamp / 1000).toInt())
+        val dayCode = Formatter.getDayCodeFromTS(timestamp / 1000L)
         calendar_fab.beVisible()
         config.storedView = DAILY_VIEW
         updateViewPager(dayCode)

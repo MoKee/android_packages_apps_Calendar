@@ -183,8 +183,8 @@ class CalDAVHelper(val context: Context) {
                     val id = cursor.getLongValue(CalendarContract.Events._ID)
                     val title = cursor.getStringValue(CalendarContract.Events.TITLE) ?: ""
                     val description = cursor.getStringValue(CalendarContract.Events.DESCRIPTION) ?: ""
-                    val startTS = (cursor.getLongValue(CalendarContract.Events.DTSTART) / 1000).toInt()
-                    var endTS = (cursor.getLongValue(CalendarContract.Events.DTEND) / 1000).toInt()
+                    val startTS = cursor.getLongValue(CalendarContract.Events.DTSTART) / 1000L
+                    var endTS = cursor.getLongValue(CalendarContract.Events.DTEND) / 1000L
                     val allDay = cursor.getIntValue(CalendarContract.Events.ALL_DAY)
                     val rrule = cursor.getStringValue(CalendarContract.Events.RRULE) ?: ""
                     val location = cursor.getStringValue(CalendarContract.Events.EVENT_LOCATION) ?: ""
@@ -192,7 +192,7 @@ class CalDAVHelper(val context: Context) {
                     val originalInstanceTime = cursor.getLongValue(CalendarContract.Events.ORIGINAL_INSTANCE_TIME)
                     val reminders = getCalDAVEventReminders(id)
 
-                    if (endTS == 0) {
+                    if (endTS == 0L) {
                         val duration = cursor.getStringValue(CalendarContract.Events.DURATION) ?: ""
                         endTS = startTS + Parser().parseDurationSeconds(duration)
                     }
@@ -202,7 +202,7 @@ class CalDAVHelper(val context: Context) {
                     val repeatRule = Parser().parseRepeatInterval(rrule, startTS)
                     val event = Event(null, startTS, endTS, title, location, description, reminders.getOrElse(0) { -1 },
                             reminders.getOrElse(1) { -1 }, reminders.getOrElse(2) { -1 }, repeatRule.repeatInterval, repeatRule.repeatRule,
-                            repeatRule.repeatLimit, importId, allDay, eventTypeId, source = source)
+                            repeatRule.repeatLimit, ArrayList(), importId, allDay, eventTypeId, source = source)
 
                     if (event.getIsAllDay()) {
                         event.startTS = Formatter.getShiftedImportTimestamp(event.startTS)
@@ -213,6 +213,18 @@ class CalDAVHelper(val context: Context) {
                     }
 
                     fetchedEventIds.add(importId)
+
+                    // if the event is an exception from another events repeat rule, find the original parent event
+                    if (originalInstanceTime != 0L) {
+                        val parentImportId = "$source-$originalId"
+                        val parentEventId = context.eventsDB.getEventIdWithImportId(parentImportId)
+                        if (parentEventId != null) {
+                            event.parentId = parentEventId
+                            eventsHelper.addEventRepetitionException(parentEventId, originalInstanceTime / 1000L, false)
+                            continue
+                        }
+                    }
+
                     if (importIdsMap.containsKey(event.importId)) {
                         val existingEvent = importIdsMap[importId]
                         val originalEventId = existingEvent!!.id
@@ -221,6 +233,7 @@ class CalDAVHelper(val context: Context) {
                             this.id = null
                             color = 0
                             lastUpdated = 0L
+                            repetitionExceptions = ArrayList()
                         }
 
                         if (existingEvent.hashCode() != event.hashCode() && title.isNotEmpty()) {
@@ -228,16 +241,6 @@ class CalDAVHelper(val context: Context) {
                             eventsHelper.updateEvent(null, event, false)
                         }
                     } else {
-                        // if the event is an exception from another events repeat rule, find the original parent event
-                        if (originalInstanceTime != 0L) {
-                            val parentImportId = "$source-$originalId"
-                            val parentEventId = context.eventsDB.getEventIdWithImportId(parentImportId)
-                            if (parentEventId != null) {
-                                event.parentId = parentEventId
-                                eventsHelper.addEventRepeatException(parentEventId, (originalInstanceTime / 1000).toInt(), false, event.importId)
-                            }
-                        }
-
                         if (title.isNotEmpty()) {
                             importIdsMap[event.importId] = event
                             eventsHelper.insertEvent(null, event, false)
@@ -353,7 +356,7 @@ class CalDAVHelper(val context: Context) {
             val dur = Math.max(1, (event.endTS - event.startTS) / DAY)
             "P${dur}D"
         } else {
-            Parser().getDurationCode((event.endTS - event.startTS) / 60)
+            Parser().getDurationCode((event.endTS - event.startTS) / 60L)
         }
     }
 
@@ -373,7 +376,7 @@ class CalDAVHelper(val context: Context) {
     }
 
     @SuppressLint("MissingPermission")
-    fun insertEventRepeatException(event: Event, occurrenceTS: Int): Long {
+    fun insertEventRepeatException(event: Event, occurrenceTS: Long): Long {
         val uri = CalendarContract.Events.CONTENT_URI
         val values = fillEventRepeatExceptionValues(event, occurrenceTS)
         val newUri = context.contentResolver.insert(uri, values)
@@ -381,7 +384,7 @@ class CalDAVHelper(val context: Context) {
         return java.lang.Long.parseLong(newUri.lastPathSegment)
     }
 
-    private fun fillEventRepeatExceptionValues(event: Event, occurrenceTS: Int): ContentValues {
+    private fun fillEventRepeatExceptionValues(event: Event, occurrenceTS: Long): ContentValues {
         return ContentValues().apply {
             put(CalendarContract.Events.CALENDAR_ID, event.getCalDAVCalendarId())
             put(CalendarContract.Events.DTSTART, occurrenceTS)

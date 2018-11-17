@@ -2,18 +2,16 @@ package com.simplemobiletools.calendar.pro.helpers
 
 import android.app.Activity
 import android.content.Context
+import androidx.collection.LongSparseArray
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.models.Event
-import com.simplemobiletools.calendar.pro.models.EventRepetitionException
 import com.simplemobiletools.calendar.pro.models.EventType
-import java.util.*
 
 class EventsHelper(val context: Context) {
     private val config = context.config
     private val eventsDB = context.eventsDB
     private val eventTypesDB = context.eventTypesDB
-    private val eventRepetitionsDB = context.eventRepetitionsDB
 
     fun getEventTypes(activity: Activity, callback: (notes: ArrayList<EventType>) -> Unit) {
         Thread {
@@ -70,29 +68,16 @@ class EventsHelper(val context: Context) {
         eventTypesDB.deleteEventTypes(typesToDelete)
     }
 
-    fun getEventRepetitionIgnoredOccurrences(event: Event): ArrayList<String> {
-        return if (event.id == null || event.repeatInterval == 0) {
-            ArrayList()
-        } else {
-            context.eventRepetitionExceptionsDB.getEventRepetitionExceptions(event.id!!).toMutableList() as ArrayList<String>
-        }
-    }
-
     fun insertEvent(activity: SimpleActivity? = null, event: Event, addToCalDAV: Boolean, callback: ((id: Long) -> Unit)? = null) {
         if (event.startTS > event.endTS) {
             callback?.invoke(0)
             return
         }
 
-        val id = eventsDB.insertOrUpdate(event)
-        event.id = id
-
-        if (event.repeatInterval != 0 && event.parentId == 0L) {
-            eventRepetitionsDB.insertOrUpdate(event.getEventRepetition())
-        }
+        event.id = eventsDB.insertOrUpdate(event)
 
         context.updateWidgets()
-        //context.scheduleNextEventReminder(event, this, activity)
+        context.scheduleNextEventReminder(event, activity)
 
         if (addToCalDAV && event.source != SOURCE_SIMPLE_CALENDAR && config.caldavSync) {
             context.calDAVHelper.insertCalDAVEvent(event)
@@ -108,14 +93,9 @@ class EventsHelper(val context: Context) {
                     continue
                 }
 
-                val id = eventsDB.insertOrUpdate(event)
-                event.id = id
+                event.id = eventsDB.insertOrUpdate(event)
 
-                if (event.repeatInterval != 0 && event.parentId == 0L) {
-                    eventRepetitionsDB.insertOrUpdate(event.getEventRepetition())
-                }
-
-                //context.scheduleNextEventReminder(event, this)
+                context.scheduleNextEventReminder(event)
                 if (addToCalDAV && event.source != SOURCE_SIMPLE_CALENDAR && event.source != SOURCE_IMPORTED_ICS && config.caldavSync) {
                     context.calDAVHelper.insertCalDAVEvent(event)
                 }
@@ -125,17 +105,11 @@ class EventsHelper(val context: Context) {
         }
     }
 
-    fun updateEvent(activity: Activity? = null, event: Event, updateAtCalDAV: Boolean, callback: (() -> Unit)? = null) {
+    fun updateEvent(activity: SimpleActivity? = null, event: Event, updateAtCalDAV: Boolean, callback: (() -> Unit)? = null) {
         eventsDB.insertOrUpdate(event)
 
-        if (event.repeatInterval == 0) {
-            eventRepetitionsDB.deleteEventRepetitionsOfEvent(event.id!!)
-        } else {
-            eventRepetitionsDB.insertOrUpdate(event.getEventRepetition())
-        }
-
         context.updateWidgets()
-        //context.scheduleNextEventReminder(event, this, activity)
+        context.scheduleNextEventReminder(event, activity)
         if (updateAtCalDAV && event.source != SOURCE_SIMPLE_CALENDAR && config.caldavSync) {
             context.calDAVHelper.updateCalDAVEvent(event)
         }
@@ -181,9 +155,9 @@ class EventsHelper(val context: Context) {
         deleteEvents(eventIds, true)
     }
 
-    fun addEventRepeatLimit(eventId: Long, limitTS: Int) {
+    fun addEventRepeatLimit(eventId: Long, limitTS: Long) {
         val time = Formatter.getDateTimeFromTS(limitTS)
-        eventRepetitionsDB.updateEventRepetitionLimit(limitTS - time.hourOfDay, eventId)
+        eventsDB.updateEventRepetitionLimit(limitTS - time.hourOfDay, eventId)
 
         if (config.caldavSync) {
             val event = eventsDB.getEventWithId(eventId)
@@ -212,45 +186,207 @@ class EventsHelper(val context: Context) {
         }.start()
     }
 
-    fun addEventRepeatException(parentEventId: Long, occurrenceTS: Int, addToCalDAV: Boolean, childImportId: String? = null) {
-        fillExceptionValues(parentEventId, occurrenceTS, addToCalDAV, childImportId) {
-            context.eventRepetitionExceptionsDB.insert(it)
+    fun addEventRepetitionException(parentEventId: Long, occurrenceTS: Long, addToCalDAV: Boolean) {
+        Thread {
+            val parentEvent = eventsDB.getEventWithId(parentEventId) ?: return@Thread
+            var repetitionExceptions = parentEvent.repetitionExceptions
+            repetitionExceptions.add(Formatter.getDayCodeFromTS(occurrenceTS))
+            repetitionExceptions = repetitionExceptions.distinct().toMutableList() as ArrayList<String>
+            eventsDB.updateEventRepetitionExceptions(repetitionExceptions, parentEventId)
+            context.scheduleNextEventReminder(parentEvent)
 
-            val parentEvent = eventsDB.getEventWithId(parentEventId)
-            if (parentEvent != null) {
-                //context.scheduleNextEventReminder(parentEvent, this)
+            if (addToCalDAV && config.caldavSync) {
+                context.calDAVHelper.insertEventRepeatException(parentEvent, occurrenceTS)
             }
-        }
+        }.start()
     }
 
-    private fun fillExceptionValues(parentEventId: Long, occurrenceTS: Int, addToCalDAV: Boolean, childImportId: String?, callback: (eventRepetitionException: EventRepetitionException) -> Unit) {
-        val childEvent = eventsDB.getEventWithId(parentEventId) ?: return
+    fun getEvents(fromTS: Long, toTS: Long, eventId: Long = -1L, applyTypeFilter: Boolean = true, callback: (events: ArrayList<Event>) -> Unit) {
+        Thread {
+            getEventsSync(fromTS, toTS, eventId, applyTypeFilter, callback)
+        }.start()
+    }
 
-        childEvent.apply {
-            id = 0
-            parentId = parentEventId
-            startTS = 0
-            endTS = 0
-            if (childImportId != null) {
-                importId = childImportId
+    fun getEventsSync(fromTS: Long, toTS: Long, eventId: Long = -1L, applyTypeFilter: Boolean, callback: (events: ArrayList<Event>) -> Unit) {
+        var events = if (applyTypeFilter) {
+            val displayEventTypes = context.config.displayEventTypes
+            if (displayEventTypes.isEmpty()) {
+                callback(ArrayList())
+                return
+            } else {
+                eventsDB.getOneTimeEventsFromToWithTypes(toTS, fromTS, context.config.getDisplayEventTypessAsList()).toMutableList() as ArrayList<Event>
+            }
+        } else {
+            if (eventId == -1L) {
+                eventsDB.getOneTimeEventsFromTo(toTS, fromTS).toMutableList() as ArrayList<Event>
+            } else {
+                eventsDB.getOneTimeEventFromToWithId(eventId, toTS, fromTS).toMutableList() as ArrayList<Event>
             }
         }
 
-        insertEvent(null, childEvent, false) {
-            val childEventId = it
-            val eventRepetitionException = EventRepetitionException(null, Formatter.getDayCodeFromTS(occurrenceTS), parentEventId)
-            callback(eventRepetitionException)
+        events.addAll(getRepeatableEventsFor(fromTS, toTS, eventId, applyTypeFilter))
 
-            Thread {
-                if (addToCalDAV && config.caldavSync) {
-                    val parentEvent = eventsDB.getEventWithId(parentEventId)
-                    if (parentEvent != null) {
-                        val newId = context.calDAVHelper.insertEventRepeatException(parentEvent, occurrenceTS)
-                        val newImportId = "${parentEvent.source}-$newId"
-                        eventsDB.updateEventImportIdAndSource(newImportId, parentEvent.source, childEventId)
+        events = events
+                .asSequence()
+                .distinct()
+                .filterNot { it.repetitionExceptions.contains(Formatter.getDayCodeFromTS(it.startTS)) }
+                .toMutableList() as ArrayList<Event>
+
+        val eventTypeColors = LongSparseArray<Int>()
+        context.eventTypesDB.getEventTypes().forEach {
+            eventTypeColors.put(it.id!!, it.color)
+        }
+
+        events.forEach {
+            it.updateIsPastEvent()
+            it.color = eventTypeColors.get(it.eventType)!!
+        }
+
+        callback(events)
+    }
+
+    fun getRepeatableEventsFor(fromTS: Long, toTS: Long, eventId: Long = -1L, applyTypeFilter: Boolean = false): List<Event> {
+        val events = if (applyTypeFilter) {
+            val displayEventTypes = context.config.displayEventTypes
+            if (displayEventTypes.isEmpty()) {
+                return ArrayList()
+            } else {
+                eventsDB.getRepeatableEventsFromToWithTypes(toTS, context.config.getDisplayEventTypessAsList()).toMutableList() as ArrayList<Event>
+            }
+        } else {
+            if (eventId == -1L) {
+                eventsDB.getRepeatableEventsFromToWithTypes(toTS).toMutableList() as ArrayList<Event>
+            } else {
+                eventsDB.getRepeatableEventFromToWithId(eventId, toTS).toMutableList() as ArrayList<Event>
+            }
+        }
+
+        val startTimes = LongSparseArray<Long>()
+        val newEvents = ArrayList<Event>()
+        events.forEach {
+            startTimes.put(it.id!!, it.startTS)
+            if (it.repeatLimit >= 0) {
+                newEvents.addAll(getEventsRepeatingTillDateOrForever(fromTS, toTS, startTimes, it))
+            } else {
+                newEvents.addAll(getEventsRepeatingXTimes(fromTS, toTS, startTimes, it))
+            }
+        }
+
+        return newEvents
+    }
+
+    private fun getEventsRepeatingXTimes(fromTS: Long, toTS: Long, startTimes: LongSparseArray<Long>, event: Event): ArrayList<Event> {
+        val original = event.copy()
+        val events = ArrayList<Event>()
+        while (event.repeatLimit < 0 && event.startTS <= toTS) {
+            if (event.repeatInterval.isXWeeklyRepetition()) {
+                if (event.startTS.isTsOnProperDay(event)) {
+                    if (event.isOnProperWeek(startTimes)) {
+                        if (event.endTS >= fromTS) {
+                            event.copy().apply {
+                                updateIsPastEvent()
+                                color = event.color
+                                events.add(this)
+                            }
+                        }
+                        event.repeatLimit++
                     }
                 }
-            }.start()
+            } else {
+                if (event.endTS >= fromTS) {
+                    event.copy().apply {
+                        updateIsPastEvent()
+                        color = event.color
+                        events.add(this)
+                    }
+                } else if (event.getIsAllDay()) {
+                    val dayCode = Formatter.getDayCodeFromTS(fromTS)
+                    val endDayCode = Formatter.getDayCodeFromTS(event.endTS)
+                    if (dayCode == endDayCode) {
+                        event.copy().apply {
+                            updateIsPastEvent()
+                            color = event.color
+                            events.add(this)
+                        }
+                    }
+                }
+                event.repeatLimit++
+            }
+            event.addIntervalTime(original)
         }
+        return events
+    }
+
+    private fun getEventsRepeatingTillDateOrForever(fromTS: Long, toTS: Long, startTimes: LongSparseArray<Long>, event: Event): ArrayList<Event> {
+        val original = event.copy()
+        val events = ArrayList<Event>()
+        while (event.startTS <= toTS && (event.repeatLimit == 0L || event.repeatLimit >= event.startTS)) {
+            if (event.endTS >= fromTS) {
+                if (event.repeatInterval.isXWeeklyRepetition()) {
+                    if (event.startTS.isTsOnProperDay(event)) {
+                        if (event.isOnProperWeek(startTimes)) {
+                            event.copy().apply {
+                                updateIsPastEvent()
+                                color = event.color
+                                events.add(this)
+                            }
+                        }
+                    }
+                } else {
+                    event.copy().apply {
+                        updateIsPastEvent()
+                        color = event.color
+                        events.add(this)
+                    }
+                }
+            }
+
+            if (event.getIsAllDay()) {
+                if (event.repeatInterval.isXWeeklyRepetition()) {
+                    if (event.endTS >= toTS && event.startTS.isTsOnProperDay(event)) {
+                        if (event.isOnProperWeek(startTimes)) {
+                            event.copy().apply {
+                                updateIsPastEvent()
+                                color = event.color
+                                events.add(this)
+                            }
+                        }
+                    }
+                } else {
+                    val dayCode = Formatter.getDayCodeFromTS(fromTS)
+                    val endDayCode = Formatter.getDayCodeFromTS(event.endTS)
+                    if (dayCode == endDayCode) {
+                        event.copy().apply {
+                            updateIsPastEvent()
+                            color = event.color
+                            events.add(this)
+                        }
+                    }
+                }
+            }
+            event.addIntervalTime(original)
+        }
+        return events
+    }
+
+    fun getRunningEvents(): List<Event> {
+        val ts = getNowSeconds()
+        val events = eventsDB.getOneTimeEventsFromTo(ts, ts).toMutableList() as ArrayList<Event>
+        events.addAll(getRepeatableEventsFor(ts, ts))
+        return events
+    }
+
+    fun getEventsToExport(includePast: Boolean, eventTypes: ArrayList<Long>): ArrayList<Event> {
+        val currTS = getNowSeconds()
+        var events = ArrayList<Event>()
+        if (includePast) {
+            events.addAll(eventsDB.getAllEventsWithTypes(eventTypes))
+        } else {
+            events.addAll(eventsDB.getOneTimeFutureEventsWithTypes(currTS, eventTypes))
+            events.addAll(eventsDB.getRepeatableFutureEventsWithTypes(currTS, eventTypes))
+        }
+
+        events = events.distinctBy { it.id } as ArrayList<Event>
+        return events
     }
 }

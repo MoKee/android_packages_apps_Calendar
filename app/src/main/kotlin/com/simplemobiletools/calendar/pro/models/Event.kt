@@ -7,16 +7,15 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.simplemobiletools.calendar.pro.extensions.seconds
 import com.simplemobiletools.calendar.pro.helpers.*
-import com.simplemobiletools.commons.extensions.addBit
-import com.simplemobiletools.commons.extensions.removeBit
+import com.simplemobiletools.commons.extensions.addBitIf
 import org.joda.time.DateTime
 import java.io.Serializable
 
 @Entity(tableName = "events", indices = [(Index(value = ["id"], unique = true))])
 data class Event(
         @PrimaryKey(autoGenerate = true) var id: Long?,
-        @ColumnInfo(name = "start_ts") var startTS: Int = 0,
-        @ColumnInfo(name = "end_ts") var endTS: Int = 0,
+        @ColumnInfo(name = "start_ts") var startTS: Long = 0L,
+        @ColumnInfo(name = "end_ts") var endTS: Long = 0L,
         @ColumnInfo(name = "title") var title: String = "",
         @ColumnInfo(name = "location") var location: String = "",
         @ColumnInfo(name = "description") var description: String = "",
@@ -25,7 +24,8 @@ data class Event(
         @ColumnInfo(name = "reminder_3_minutes") var reminder3Minutes: Int = -1,
         @ColumnInfo(name = "repeat_interval") var repeatInterval: Int = 0,
         @ColumnInfo(name = "repeat_rule") var repeatRule: Int = 0,
-        @ColumnInfo(name = "repeat_limit") var repeatLimit: Int = 0,
+        @ColumnInfo(name = "repeat_limit") var repeatLimit: Long = 0L,
+        @ColumnInfo(name = "repetition_exceptions") var repetitionExceptions: ArrayList<String> = ArrayList(),
         @ColumnInfo(name = "import_id") var importId: String = "",
         @ColumnInfo(name = "flags") var flags: Int = 0,
         @ColumnInfo(name = "event_type") var eventType: Long = REGULAR_EVENT_TYPE_ID,
@@ -118,7 +118,7 @@ data class Event(
     fun getReminders() = setOf(reminder1Minutes, reminder2Minutes, reminder3Minutes).filter { it != REMINDER_OFF }
 
     // properly return the start time of all-day events as midnight
-    fun getEventStartTS(): Int {
+    fun getEventStartTS(): Long {
         return if (getIsAllDay()) {
             Formatter.getDateTimeFromTS(startTS).withTime(0, 0, 0, 0).seconds()
         } else {
@@ -136,10 +136,8 @@ data class Event(
 
     fun getCalDAVCalendarId() = if (source.startsWith(CALDAV)) (source.split("-").lastOrNull() ?: "0").toString().toInt() else 0
 
-    fun getEventRepetition() = EventRepetition(null, id!!, repeatInterval, repeatRule, repeatLimit)
-
     // check if its the proper week, for events repeating every x weeks
-    fun isOnProperWeek(startTimes: LongSparseArray<Int>): Boolean {
+    fun isOnProperWeek(startTimes: LongSparseArray<Long>): Boolean {
         val initialWeekOfYear = Formatter.getDateTimeFromTS(startTimes[id!!]!!).weekOfWeekyear
         val currentWeekOfYear = Formatter.getDateTimeFromTS(startTS).weekOfWeekyear
         return (currentWeekOfYear - initialWeekOfYear) % (repeatInterval / WEEK) == 0
@@ -157,11 +155,7 @@ data class Event(
     var isPastEvent: Boolean
         get() = flags and FLAG_IS_PAST_EVENT != 0
         set(isPastEvent) {
-            flags = if (isPastEvent) {
-                flags.addBit(FLAG_IS_PAST_EVENT)
-            } else {
-                flags.removeBit(FLAG_IS_PAST_EVENT)
-            }
+            flags = flags.addBitIf(isPastEvent, FLAG_IS_PAST_EVENT)
         }
 
     var color: Int = 0

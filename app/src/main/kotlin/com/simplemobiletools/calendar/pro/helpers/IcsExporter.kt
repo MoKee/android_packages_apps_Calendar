@@ -2,7 +2,6 @@ package com.simplemobiletools.calendar.pro.helpers
 
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.extensions.eventTypesDB
-import com.simplemobiletools.calendar.pro.extensions.eventsHelper
 import com.simplemobiletools.calendar.pro.helpers.IcsExporter.ExportResult.*
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
@@ -59,7 +58,7 @@ class IcsExporter {
                     Parser().getRepeatCode(event).let { if (it.isNotEmpty()) out.writeLn("$RRULE$it") }
 
                     fillReminders(event, out)
-                    fillIgnoredOccurrences(activity, event, out)
+                    fillIgnoredOccurrences(event, out)
 
                     eventsExported++
                     out.writeLn(END_EVENT)
@@ -86,14 +85,14 @@ class IcsExporter {
             out.apply {
                 writeLn(BEGIN_ALARM)
                 writeLn("$ACTION$DISPLAY")
-                writeLn("$TRIGGER-${Parser().getDurationCode(minutes)}")
+                writeLn("$TRIGGER-${Parser().getDurationCode(minutes.toLong())}")
                 writeLn(END_ALARM)
             }
         }
     }
 
-    private fun fillIgnoredOccurrences(activity: BaseSimpleActivity, event: Event, out: BufferedWriter) {
-        activity.eventsHelper.getEventRepetitionIgnoredOccurrences(event).forEach {
+    private fun fillIgnoredOccurrences(event: Event, out: BufferedWriter) {
+        event.repetitionExceptions.forEach {
             out.writeLn("$EXDATE:$it")
         }
     }
