@@ -52,7 +52,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:5.3.16.1'
+    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:5.3.17.2'
     implementation 'joda-time:joda-time:2.10.1'
     implementation 'androidx.multidex:multidex:2.0.0'
     compileOnly fileTree(include: ['*.jar'], dir: 'libs')
