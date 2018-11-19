@@ -39,7 +39,9 @@ class EventsHelper(val context: Context) {
         }
 
         val newId = eventTypesDB.insertOrUpdate(eventType)
-        config.addDisplayEventType(newId.toString())
+        if (eventType.id == null) {
+            config.addDisplayEventType(newId.toString())
+        }
         return newId
     }
 
@@ -126,6 +128,10 @@ class EventsHelper(val context: Context) {
     fun deleteEvent(id: Long, deleteFromCalDAV: Boolean) = deleteEvents(arrayListOf(id), deleteFromCalDAV)
 
     fun deleteEvents(ids: MutableList<Long>, deleteFromCalDAV: Boolean) {
+        if (ids.isEmpty()) {
+            return
+        }
+
         val eventsWithImportId = eventsDB.getEventsByIdsWithImportIds(ids)
         eventsDB.deleteEvents(ids)
 

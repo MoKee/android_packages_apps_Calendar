@@ -17,7 +17,7 @@
 package com.simplemobiletools.calendar.pro.net;
 
 import com.mokee.os.Build;
-import com.simplemobiletools.calendar.helpers.ConstantsKt;
+import com.simplemobiletools.calendar.pro.helpers.ConstantsKt;
 
 import okhttp3.Callback;
 import okhttp3.FormBody;
