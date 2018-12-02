@@ -5,6 +5,7 @@
     <!-- Widget titles -->
     <!-- Event -->
     <!-- Event Repetition -->
+    <string name="forever">Para sempre</string>
     <string name="repeat">Repetir</string>
     <string name="every_day">Todos os dias</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
