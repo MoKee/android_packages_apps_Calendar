@@ -6,7 +6,6 @@ import android.app.*
 import android.appwidget.AppWidgetManager
 import android.content.*
 import android.content.res.Resources
-import android.database.ContentObserver
 import android.media.AudioAttributes
 import android.net.Uri
 import android.os.Bundle
@@ -335,32 +334,6 @@ fun Context.scheduleCalDAVSync(activate: Boolean) {
     }
 }
 
-fun Context.syncCalDAVCalendars(activity: SimpleActivity?, calDAVSyncObserver: ContentObserver) {
-    Thread {
-        val uri = CalendarContract.Calendars.CONTENT_URI
-        contentResolver.unregisterContentObserver(calDAVSyncObserver)
-        contentResolver.registerContentObserver(uri, false, calDAVSyncObserver)
-        refreshCalDAVCalendars(activity, config.caldavSyncedCalendarIDs)
-    }.start()
-}
-
-fun Context.refreshCalDAVCalendars(activity: SimpleActivity?, ids: String) {
-    val uri = CalendarContract.Calendars.CONTENT_URI
-    val accounts = HashSet<Account>()
-    val calendars = calDAVHelper.getCalDAVCalendars(activity, ids)
-    calendars.forEach {
-        accounts.add(Account(it.accountName, it.accountType))
-    }
-
-    Bundle().apply {
-        putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true)
-        putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
-        accounts.forEach {
-            ContentResolver.requestSync(it, uri.authority, this)
-        }
-    }
-}
-
 fun Context.addDayNumber(rawTextColor: Int, day: DayMonthly, linearLayout: LinearLayout, dayLabelHeight: Int, callback: (Int) -> Unit) {
     var textColor = rawTextColor
     if (!day.isThisMonth)
@@ -503,3 +476,20 @@ fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: Str
 }
 
 fun Context.getWHSharedPrefs() = getSharedPreferences(PREFS_WH_KEY, Context.MODE_PRIVATE)
+
+fun Context.refreshCalDAVCalendars(activity: SimpleActivity?, ids: String) {
+    val uri = CalendarContract.Calendars.CONTENT_URI
+    val accounts = HashSet<Account>()
+    val calendars = calDAVHelper.getCalDAVCalendars(activity, ids)
+    calendars.forEach {
+        accounts.add(Account(it.accountName, it.accountType))
+    }
+
+    Bundle().apply {
+        putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true)
+        putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
+        accounts.forEach {
+            ContentResolver.requestSync(it, uri.authority, this)
+        }
+    }
+}
