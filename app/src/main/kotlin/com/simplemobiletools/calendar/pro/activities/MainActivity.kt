@@ -369,22 +369,20 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             toast(R.string.refreshing)
         }
 
-        syncCalDAVCalendars(this) {
-            calDAVHelper.refreshCalendars(this) {
+        syncCalDAVCalendars {
+            calDAVHelper.refreshCalendars(true) {
                 calDAVChanged()
             }
         }
     }
 
     private fun calDAVChanged() {
-        recheckCalDAVCalendars {
-            refreshViewPager()
-            if (showCalDAVRefreshToast) {
-                toast(R.string.refreshing_complete)
-            }
-            runOnUiThread {
-                swipe_refresh_layout.isRefreshing = false
-            }
+        refreshViewPager()
+        if (showCalDAVRefreshToast) {
+            toast(R.string.refreshing_complete)
+        }
+        runOnUiThread {
+            swipe_refresh_layout.isRefreshing = false
         }
     }
 
@@ -497,7 +495,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                                     eventType = eventTypeId, source = source, lastUpdated = lastUpdated)
 
                             if (!importIDs.contains(contactId)) {
-                                eventsHelper.insertEvent(null, event, false) {
+                                eventsHelper.insertEvent(event, false, false) {
                                     eventsAdded++
                                 }
                             }
