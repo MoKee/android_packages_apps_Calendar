@@ -11,6 +11,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">Гарчиг</string>
+    <string name="location">Байршил</string>
     <string name="description">Тайлбар</string>
     <!-- Weekly view -->
     <!-- Event types -->

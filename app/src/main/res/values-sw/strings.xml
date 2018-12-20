@@ -11,6 +11,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">Mada</string>
+    <string name="location">Eneo</string>
     <string name="description">Maelezo</string>
     <!-- Weekly view -->
     <!-- Event types -->

@@ -11,6 +11,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">ចំណង​ជើង</string>
+    <string name="location">ទីកន្លែង</string>
     <string name="description">ការ​ពិពណ៌នា</string>
     <!-- Weekly view -->
     <!-- Event types -->

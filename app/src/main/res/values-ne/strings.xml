@@ -11,6 +11,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">शीर्षक</string>
+    <string name="location">स्थान</string>
     <string name="description">वर्णन</string>
     <!-- Weekly view -->
     <!-- Event types -->
