@@ -11,6 +11,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">Isihloko</string>
+    <string name="location">Indawo</string>
     <string name="description">Incazelo</string>
     <!-- Weekly view -->
     <!-- Event types -->

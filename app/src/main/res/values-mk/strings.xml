@@ -18,6 +18,7 @@
     <!-- Settings -->
     <string name="no_ringtone_selected">Нема</string>
     <string name="system_stream">Систем</string>
+    <string name="alarm_stream">Аларм</string>
     <string name="ring_stream">Ѕвони</string>
     <!-- CalDAV sync -->
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->

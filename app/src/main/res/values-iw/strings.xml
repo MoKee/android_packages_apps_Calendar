@@ -55,6 +55,7 @@
     <string name="no_ringtone_selected">ללא</string>
     <string name="day_end_before_start">היום לא יכול להסתיים מוקדם משהוא מתחיל</string>
     <string name="system_stream">מערכת</string>
+    <string name="alarm_stream">שעון מעורר</string>
     <string name="ring_stream">צלצול</string>
     <!-- CalDAV sync -->
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->

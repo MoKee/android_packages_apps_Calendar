@@ -130,6 +130,7 @@
     <string name="event_lists">Listas de eventos</string>
     <string name="display_past_events">Mostrar eventos do pasado</string>
     <string name="system_stream">Sistema</string>
+    <string name="alarm_stream">Alarma</string>
     <string name="ring_stream">Soar</string>
     <!-- CalDAV sync -->
     <string name="select_caldav_calendars">Escolla calendarios a sincronizar</string>

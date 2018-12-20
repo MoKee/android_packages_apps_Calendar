@@ -13,6 +13,8 @@
     <!-- Event Reminders -->
     <!-- Export / Import -->
     <!-- Event details -->
+    <string name="title">ርዕስ</string>
+    <string name="location">አካባቢ</string>
     <string name="description">መግለጫ</string>
     <!-- Weekly view -->
     <!-- Event types -->
