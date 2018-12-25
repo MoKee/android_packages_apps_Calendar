@@ -709,20 +709,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
-//    private fun launchAbout() {
-//        val licenses = LICENSE_JODA
-//
-//        val faqItems = arrayListOf(
-//                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
-//                FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
-//                FAQItem(R.string.faq_4_title_commons, R.string.faq_4_text_commons),
-//                FAQItem(getString(R.string.faq_1_title), getString(R.string.faq_1_text)),
-//                FAQItem(getString(R.string.faq_2_title), getString(R.string.faq_2_text)),
-//                FAQItem(getString(R.string.faq_3_title), getString(R.string.faq_3_text)))
-//
-//        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
-//    }
-
     private fun searchQueryChanged(text: String) {
         mLatestSearchQuery = text
         search_placeholder_2.beGoneIf(text.length >= 2)
