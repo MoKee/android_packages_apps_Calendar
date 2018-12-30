@@ -39,7 +39,7 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
-        setupCustomizeColors()
+//        setupCustomizeColors()
         setupUseEnglish()
         setupManageEventTypes()
         setupHourFormat()
@@ -106,11 +106,11 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupCustomizeColors() {
-        settings_customize_colors_holder.setOnClickListener {
-            startCustomizationActivity()
-        }
-    }
+//    private fun setupCustomizeColors() {
+//        settings_customize_colors_holder.setOnClickListener {
+//            startCustomizationActivity()
+//        }
+//    }
 
     private fun setupUseEnglish() {
         settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
