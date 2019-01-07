@@ -67,6 +67,7 @@ const val DEFAULT_REMINDER_1 = "default_reminder_1"
 const val DEFAULT_REMINDER_2 = "default_reminder_2"
 const val DEFAULT_REMINDER_3 = "default_reminder_3"
 const val PULL_TO_REFRESH = "pull_to_refresh"
+const val LAST_VIBRATE_ON_REMINDER = "last_vibrate_on_reminder"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val BASE_URL = "https://cloud.mokeedev.com/calendar/"
