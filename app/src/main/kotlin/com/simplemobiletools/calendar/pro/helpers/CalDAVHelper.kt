@@ -178,8 +178,8 @@ class CalDAVHelper(val context: Context) {
                 CalendarContract.Events.DESCRIPTION,
                 CalendarContract.Events.DTSTART,
                 CalendarContract.Events.DTEND,
-                CalendarContract.Events.EVENT_TIMEZONE,
                 CalendarContract.Events.DURATION,
+                CalendarContract.Events.EXDATE,
                 CalendarContract.Events.ALL_DAY,
                 CalendarContract.Events.RRULE,
                 CalendarContract.Events.ORIGINAL_ID,
@@ -239,6 +239,15 @@ class CalDAVHelper(val context: Context) {
                             event.parentId = parentEvent.id!!
                             eventsHelper.insertEvent(event, false, false)
                             continue
+                        }
+                    }
+
+                    // some calendars add repeatable event exceptions with using the "exdate" field, not by creating a child event that is an exception
+                    val exdate = cursor.getStringValue(CalendarContract.Events.EXDATE)
+                    if (exdate != null) {
+                        val dates = exdate.split(",")
+                        dates.forEach {
+                            event.repetitionExceptions.add(it.substring(0, 8))
                         }
                     }
 
@@ -344,7 +353,7 @@ class CalDAVHelper(val context: Context) {
             put(CalendarContract.Events.DESCRIPTION, event.description)
             put(CalendarContract.Events.DTSTART, event.startTS * 1000L)
             put(CalendarContract.Events.ALL_DAY, if (event.getIsAllDay()) 1 else 0)
-            put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().toString())
+            put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().id.toString())
             put(CalendarContract.Events.EVENT_LOCATION, event.location)
             put(CalendarContract.Events.STATUS, CalendarContract.Events.STATUS_CONFIRMED)
 
@@ -414,8 +423,9 @@ class CalDAVHelper(val context: Context) {
             put(CalendarContract.Events.DTSTART, occurrenceTS)
             put(CalendarContract.Events.DTEND, occurrenceTS + (event.endTS - event.startTS))
             put(CalendarContract.Events.ORIGINAL_ID, event.getCalDAVEventId())
-            put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().toString())
+            put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().id.toString())
             put(CalendarContract.Events.ORIGINAL_INSTANCE_TIME, occurrenceTS * 1000L)
+            put(CalendarContract.Events.EXDATE, Formatter.getDayCodeFromTS(occurrenceTS))
         }
     }
 
