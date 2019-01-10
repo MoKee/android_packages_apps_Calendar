@@ -15,4 +15,30 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_argentina">Argentina</string>
+    <string name="holiday_australia">Australia</string>
+    <string name="holiday_belgium">Bélgica</string>
+    <string name="holiday_bolivia">Bolivia</string>
+    <string name="holiday_brazil">Brasil</string>
+    <string name="holiday_canada">Canadá</string>
+    <string name="holiday_china">China</string>
+    <string name="holiday_colombia">Colombia</string>
+    <string name="holiday_denmark">Dinamarca</string>
+    <string name="holiday_germany">Alemania</string>
+    <string name="holiday_estonia">Estonia</string>
+    <string name="holiday_spain">España</string>
+    <string name="holiday_ireland">Irlanda</string>
+    <string name="holiday_france">Francia</string>
+    <string name="holiday_southkorea">Corea del Sur</string>
+    <string name="holiday_greece">Grecia</string>
+    <string name="holiday_croatia">Croacia</string>
+    <string name="holiday_india">India</string>
+    <string name="holiday_indonesia">Indonesia</string>
+    <string name="holiday_iceland">Islandia</string>
+    <string name="holiday_italy">Italia</string>
+    <string name="holiday_latvia">Letonia</string>
+    <string name="holiday_lithuania">Lituania</string>
+    <string name="holiday_luxembourg">Luxemburgo</string>
+    <string name="holiday_macedonia">Macedonia</string>
+</resources>

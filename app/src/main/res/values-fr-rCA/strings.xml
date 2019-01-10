@@ -170,6 +170,7 @@
     <string name="syncing">Synchronisation…</string>
     <string name="synchronization_completed">Synchronisation terminée</string>
     <string name="select_a_different_caldav_color">Sélectionnez une couleur différente (peut être appliqué localement uniquement)</string>
+    <string name="insufficient_permissions">Vous n\'êtes pas autorisés à écrire dans le Calendrier sélectionné</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Lundi</string>

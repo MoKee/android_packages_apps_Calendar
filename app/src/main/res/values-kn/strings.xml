@@ -5,6 +5,7 @@
     <!-- Widget titles -->
     <!-- Event -->
     <!-- Event Repetition -->
+    <string name="forever">ಎಂದೆಂದಿಗೂ</string>
     <string name="repeat">ಪುನರಾವರ್ತನೆ</string>
     <string name="every_day">ಪ್ರತಿದಿನ</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
@@ -24,6 +25,7 @@
     <!-- Settings -->
     <string name="no_ringtone_selected">ಯಾವುದೂ ಇಲ್ಲ</string>
     <string name="system_stream">ವ್ಯವಸ್ಥೆ</string>
+    <string name="notification_stream">ಅಧಿಸೂಚನೆಗಳು</string>
     <string name="ring_stream">ರಿಂಗ್</string>
     <!-- CalDAV sync -->
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->

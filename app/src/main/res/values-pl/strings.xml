@@ -47,6 +47,7 @@
     <string name="update_one_only">Zaktualizuj tylko wybrane wystąpienia</string>
     <string name="update_all_occurrences">Zaktualizuj wszystkie wystąpienia</string>
     <string name="repeat_till_date">Powtarzaj do daty</string>
+    <string name="stop_repeating_after_x">Przestań powtarzać po x wystąpieniach</string>
     <string name="repeat_forever">Powtarzaj do końca świata</string>
     <string name="times">razy</string>
     <string name="repeat">Powtórz</string>
@@ -151,7 +152,14 @@
     <string name="alarm_stream">Budzik</string>
     <string name="notification_stream">Powiadomienie</string>
     <string name="ring_stream">Dzwonek</string>
+    <string name="use_last_event_reminders">Użyj przypomnień o ostatnich wydarzeniach jako domyślnych dla nowego wydarzenia</string>
+    <string name="default_reminder_1">Domyślne przypomnienie 1</string>
+    <string name="default_reminder_2">Domyślne przypomnienie 2</string>
+    <string name="default_reminder_3">Domyślne przypomnienie 3</string>
+    <string name="view_to_open_from_widget">Wyświetl, aby otworzyć z widżetu listy zdarzeń</string>
+    <string name="last_view">Ostatni widok</string>
     <!-- CalDAV sync -->
+    <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Wybierz kalendarze, które chcesz zsynchronizować</string>
     <string name="manage_synced_calendars">Zarządzaj zsynchronizowanymi kalendarzami</string>
     <string name="store_locally_only">Przechowuj lokalnie</string>
@@ -161,6 +169,8 @@
     <string name="editing_calendar_failed">Edytowanie kalendarza nie powiodło się</string>
     <string name="syncing">Synchronizowanie…</string>
     <string name="synchronization_completed">Synchronizacja zakończona</string>
+    <string name="select_a_different_caldav_color">Wybierz inny kolor (może być zastosowany tylko lokalnie)</string>
+    <string name="insufficient_permissions">Nie możesz pisać w wybranym kalendarzu</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Poniedziałek</string>
@@ -184,6 +194,9 @@
     <string name="faq_1_text">Święta dodane w ten sposób są wprowadzane do nowego typu wydarzeń - \'Święta\'. Usunąć je możesz, przechodząc do ustawień aplikacji, a następnie w sekcji \'Zarządzaj typami wydarzeń\' usunąć ową kategorię, klikając ikonę kosza.</string>
     <string name="faq_2_title">Czy mogę zsychronizować moje wydarzenia z Kalendarzem Google lub inną usługą wspierającą CalDAV?</string>
     <string name="faq_2_text">Tak. Wystarczy włączyć opcję \'Synchronizacja CalDAV\' w ustawieniach aplikacji i wybrać kalendarze do synchronizacji. Jeśli chcesz zsynchronizować wydarzenia z Kalendarzem Google, oficjalna aplikacja kalendarza powinna wystarczyć. W innych przypadkach potrzebna może być zewnętrzna aplikacja, np. DAVdroid.</string>
+    <string name="faq_3_title">Widzę przypomnienia wizualne, ale nie słyszę dźwięku. Co mogę zrobić?</string>
+    <string name="faq_3_text">Nie tylko wyświetlanie faktycznego przypomnienia, ale także odtwarzanie dźwięku ma duży wpływ na system. Jeśli nie słychać żadnego dźwięku, spróbuj przejść do ustawień aplikacji,
+         naciskając opcję \"Strumień audio używany przez przypomnienia\" i zmieniając ją na inną wartość. Jeśli nadal nie będzie działać, sprawdź ustawienia dźwięku, jeśli dany strumień nie jest wyciszony.        </string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Prosty kalendarz z wydarzeniami, widżetami i bez reklam.</string>
