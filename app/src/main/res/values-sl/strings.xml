@@ -191,6 +191,8 @@
     <string name="sample_title_5">Čas za kavo</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako lahko odstranim praznike, uvožene s pomočjo gumba \"Dodaj praznike\"?</string>
+    <string name="faq_1_text">Prazniki ustvarjeni na ta način, se vstavijo v novo vrsto dogodka, imenovano »Prazniki«. Lahko greste v nastavitve - &gt; Upravljanje tipov dogodkov, 
+       dolg pritisk na tip dogodka ga izbriše, tako da izberete koš.</string>
     <string name="faq_2_title">Ali lahko svoje dogodke usljajujem prek Google Koledarja ali druge storitve, ki podpira CalDAV?</string>
     <string name="faq_2_text">Da, v nastavitvah aplikacije preklopite \"Usklajevanje CalDAV\" in izberite koledarje, ki jih želite usklajevati. Vendar boste za to potrebovali dodatno aplikacijo, ki bo ravnala z usklajevanjem med napravo in strežniki. Če želite uskladiti Google Koledar, bo njihova uradna aplikacija Koledar opravila delo. Za druge koledarje boste potrebovali dodatno aplikacijo, na primer DAVdroid.</string>
     <string name="faq_3_title">Vidim vizualne opomnike, vendar ne slišim zvoka. Kaj lahko naredim?</string>
