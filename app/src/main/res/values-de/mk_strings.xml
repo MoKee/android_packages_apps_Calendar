@@ -15,4 +15,56 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">Algerien</string>
+    <string name="holiday_argentina">Argentinien</string>
+    <string name="holiday_australia">Australien</string>
+    <string name="holiday_belgium">Belgien</string>
+    <string name="holiday_bolivia">Bolivien</string>
+    <string name="holiday_brazil">Brasilien</string>
+    <string name="holiday_canada">Kanada</string>
+    <string name="holiday_china">China</string>
+    <string name="holiday_colombia">Kolumbien</string>
+    <string name="holiday_czech">Tschechien</string>
+    <string name="holiday_denmark">Dänemark</string>
+    <string name="holiday_germany">Deutschland</string>
+    <string name="holiday_estonia">Estland</string>
+    <string name="holiday_spain">Spanien</string>
+    <string name="holiday_ireland">Irland</string>
+    <string name="holiday_france">Frankreich</string>
+    <string name="holiday_southkorea">Südkorea</string>
+    <string name="holiday_greece">Griechenland</string>
+    <string name="holiday_croatia">Kroatien</string>
+    <string name="holiday_india">Indien</string>
+    <string name="holiday_indonesia">Indonesien</string>
+    <string name="holiday_iceland">Island</string>
+    <string name="holiday_italy">Italien</string>
+    <string name="holiday_latvia">Lettland</string>
+    <string name="holiday_lithuania">Litauen</string>
+    <string name="holiday_luxembourg">Luxemburg</string>
+    <string name="holiday_macedonia">Mazedonien</string>
+    <string name="holiday_malaysia">Malaysien</string>
+    <string name="holiday_hungary">Ungarn</string>
+    <string name="holiday_mexico">Mexiko</string>
+    <string name="holiday_netherlands">Niederlande</string>
+    <string name="holiday_japan">Japan</string>
+    <string name="holiday_norway">Norwegen</string>
+    <string name="holiday_austria">Österreich</string>
+    <string name="holiday_pakistan">Pakistan</string>
+    <string name="holiday_poland">Polen</string>
+    <string name="holiday_portugal">Portugal</string>
+    <string name="holiday_russia">Russland</string>
+    <string name="holiday_romania">Rumänien</string>
+    <string name="holiday_switzerland">Schweiz</string>
+    <string name="holiday_singapore">Singapur</string>
+    <string name="holiday_serbia">Serbien</string>
+    <string name="holiday_slovenia">Slowenien</string>
+    <string name="holiday_slovakia">Slowakei</string>
+    <string name="holiday_southafrica">Südafrika</string>
+    <string name="holiday_finland">Finnland</string>
+    <string name="holiday_sweden">Schweden</string>
+    <string name="holiday_ukraine">Ukraine</string>
+    <string name="holiday_unitedkingdom">Vereinigtes Königreich</string>
+    <string name="holiday_unitedstates">Vereinigte Staaten von Amerika</string>
+    <string name="no_calendar_permission">Kalender-Berechtigung ist erforderlich</string>
+</resources>

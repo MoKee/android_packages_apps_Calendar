@@ -5,6 +5,7 @@
     <!-- Widget titles -->
     <!-- Event -->
     <!-- Event Repetition -->
+    <string name="forever">Назавжди</string>
     <string name="repeat">Повторити</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every first Sunday" -->

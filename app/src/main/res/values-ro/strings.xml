@@ -4,12 +4,26 @@
     <string name="app_launcher_name">Calendar</string>
     <!-- Widget titles -->
     <!-- Event -->
+    <string name="event">Eveniment</string>
     <!-- Event Repetition -->
+    <string name="daily">Zilnic</string>
+    <string name="weekly">Săptămânal</string>
+    <string name="monthly">Lunar</string>
+    <string name="yearly">Anual</string>
+    <string name="weeks_raw">săptămâni</string>
+    <string name="months_raw">luni</string>
+    <string name="years_raw">ani</string>
     <string name="forever">Permanent</string>
     <string name="repeat">Repetă</string>
     <string name="every_day">Zilnic</string>
+    <string name="repeat_every_m">Repetare la fiecare</string>
+    <string name="first_m">primul</string>
+    <string name="second_m">secundă</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every first Sunday" -->
+    <string name="repeat_every_f">Repetare la fiecare</string>
+    <string name="first_f">primul</string>
+    <string name="second_f">secundă</string>
     <!-- Birthdays -->
     <!-- Anniversaries -->
     <!-- Event Reminders -->
@@ -19,11 +33,14 @@
     <string name="location">Locație</string>
     <string name="description">Descriere</string>
     <!-- Weekly view -->
+    <string name="week">Săptămână</string>
     <!-- Event types -->
     <string name="color">Culoare</string>
     <!-- Holidays -->
+    <string name="holidays">Sărbători</string>
     <!-- Settings -->
     <string name="no_ringtone_selected">Niciunul</string>
+    <string name="events">Evenimente</string>
     <string name="system_stream">Sistem</string>
     <string name="alarm_stream">Alarmă</string>
     <string name="notification_stream">Notificare</string>
@@ -32,6 +49,10 @@
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Luni</string>
+    <string name="tuesday_alt">Marţi</string>
+    <string name="wednesday_alt">Miercuri</string>
+    <string name="thursday_alt">Joi</string>
+    <string name="friday_alt">Vineri</string>
     <string name="saturday_alt">Sâmbătă</string>
     <string name="sunday_alt">Duminică</string>
     <!-- List widget config example events -->
