@@ -15,4 +15,38 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">アルジェリア</string>
+    <string name="holiday_argentina">アルゼンチン</string>
+    <string name="holiday_australia">オーストラリア</string>
+    <string name="holiday_belgium">ベルギー</string>
+    <string name="holiday_bolivia">ボリビア</string>
+    <string name="holiday_brazil">ブラジル</string>
+    <string name="holiday_canada">カナダ</string>
+    <string name="holiday_china">中国</string>
+    <string name="holiday_colombia">コロンビア</string>
+    <string name="holiday_czech">チェコ語</string>
+    <string name="holiday_denmark">デンマーク</string>
+    <string name="holiday_germany">ドイツ</string>
+    <string name="holiday_estonia">エストニア</string>
+    <string name="holiday_spain">スペイン</string>
+    <string name="holiday_ireland">アイルランド</string>
+    <string name="holiday_france">フランス</string>
+    <string name="holiday_norway">ノルウェー</string>
+    <string name="holiday_austria">オーストリア</string>
+    <string name="holiday_pakistan">パキスタン</string>
+    <string name="holiday_poland">ポーランド</string>
+    <string name="holiday_portugal">ポルトガル</string>
+    <string name="holiday_russia">ロシア</string>
+    <string name="holiday_romania">ルーマニア</string>
+    <string name="holiday_switzerland">スイス</string>
+    <string name="holiday_singapore">シンガポール</string>
+    <string name="holiday_serbia">セルビア</string>
+    <string name="holiday_slovenia">スロベニア</string>
+    <string name="holiday_slovakia">スロバキア</string>
+    <string name="holiday_finland">フィンランド</string>
+    <string name="holiday_sweden">スウェーデン</string>
+    <string name="holiday_ukraine">ウクライナ</string>
+    <string name="holiday_unitedkingdom">英国</string>
+    <string name="holiday_unitedstates">米国</string>
+</resources>
