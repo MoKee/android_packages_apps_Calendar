@@ -8,12 +8,13 @@
         style="@style/ArrowStyle"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/top_value"
         android:layout_alignTop="@+id/top_value"
-        android:paddingStart="@dimen/activity_margin"
-        android:paddingEnd="@dimen/activity_margin"
-        android:visibility="gone"
-        android:src="@drawable/ic_pointer_left"/>
+        android:layout_alignBottom="@+id/top_value"
+        android:autoMirrored="true"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:src="@drawable/ic_pointer_left"
+        android:visibility="gone"/>
 
     <com.simplemobiletools.commons.views.MyTextView
         android:id="@+id/top_value"
@@ -23,8 +24,8 @@
         android:layout_toStartOf="@+id/top_right_arrow"
         android:layout_toEndOf="@+id/top_left_arrow"
         android:gravity="center"
-        android:paddingBottom="@dimen/normal_margin"
         android:paddingTop="@dimen/normal_margin"
+        android:paddingBottom="@dimen/normal_margin"
         android:textSize="@dimen/month_text_size"
         android:visibility="gone"/>
 
@@ -33,12 +34,13 @@
         style="@style/ArrowStyle"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_alignTop="@+id/top_value"
         android:layout_alignBottom="@+id/top_value"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/top_value"
-        android:paddingStart="@dimen/activity_margin"
-        android:paddingEnd="@dimen/activity_margin"
-        android:visibility="gone"
-        android:src="@drawable/ic_pointer_right"/>
+        android:autoMirrored="true"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:src="@drawable/ic_pointer_right"
+        android:visibility="gone"/>
 
 </merge>
