@@ -70,6 +70,7 @@ const val PULL_TO_REFRESH = "pull_to_refresh"
 const val LAST_VIBRATE_ON_REMINDER = "last_vibrate_on_reminder"
 const val DEFAULT_START_TIME = "default_start_time"
 const val DEFAULT_DURATION = "default_duration"
+const val DEFAULT_EVENT_TYPE_ID = "default_event_type_id"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val BASE_URL = "https://cloud.mokeedev.com/calendar/"

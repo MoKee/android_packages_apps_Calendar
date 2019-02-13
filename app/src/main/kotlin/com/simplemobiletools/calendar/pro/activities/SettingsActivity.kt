@@ -1,11 +1,13 @@
 package com.simplemobiletools.calendar.pro.activities
 
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.res.Resources
 import android.media.AudioManager
 import android.os.Bundle
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.dialogs.SelectCalendarsDialog
+import com.simplemobiletools.calendar.pro.dialogs.SelectEventTypeDialog
 import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.models.EventType
@@ -21,6 +23,7 @@ import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_CALENDAR
 import com.simplemobiletools.commons.models.AlarmSound
 import com.simplemobiletools.commons.models.RadioItem
 import kotlinx.android.synthetic.main.activity_settings.*
+import org.joda.time.DateTime
 import java.util.*
 
 class SettingsActivity : SimpleActivity() {
@@ -58,6 +61,9 @@ class SettingsActivity : SimpleActivity() {
         setupSnoozeTime()
         setupCaldavSync()
         setupManageSyncedCalendars()
+        setupDefaultStartTime()
+        setupDefaultDuration()
+        setupDefaultEventType()
         setupPullToRefresh()
         setupDefaultReminder()
         setupDefaultReminder1()
@@ -71,8 +77,6 @@ class SettingsActivity : SimpleActivity() {
         updateTextColors(settings_holder)
         checkPrimaryColor()
         setupSectionColors()
-        setupDefaultStartTime()
-        setupDefaultDuration()
     }
 
     override fun onPause() {
@@ -86,6 +90,14 @@ class SettingsActivity : SimpleActivity() {
         config.defaultReminder1 = reminders.getOrElse(0) { REMINDER_OFF }
         config.defaultReminder2 = reminders.getOrElse(1) { REMINDER_OFF }
         config.defaultReminder3 = reminders.getOrElse(2) { REMINDER_OFF }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        if (requestCode == GET_RINGTONE_URI && resultCode == RESULT_OK && resultData != null) {
+            val newAlarmSound = storeNewYourAlarmSound(resultData)
+            updateReminderSound(newAlarmSound)
+        }
     }
 
     private fun checkPrimaryColor() {
@@ -187,6 +199,7 @@ class SettingsActivity : SimpleActivity() {
                     calDAVHelper.deleteCalDAVCalendarEvents(it.toLong())
                 }
                 eventTypesDB.deleteEventTypesWithCalendarId(config.getSyncedCalendarIdsAsList())
+                updateDefaultEventTypeText()
             }.start()
         }
     }
@@ -238,6 +251,7 @@ class SettingsActivity : SimpleActivity() {
                 }
 
                 eventTypesDB.deleteEventTypesWithCalendarId(removedCalendarIds)
+                updateDefaultEventTypeText()
             }.start()
         }
     }
@@ -544,38 +558,44 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        super.onActivityResult(requestCode, resultCode, resultData)
-        if (requestCode == GET_RINGTONE_URI && resultCode == RESULT_OK && resultData != null) {
-            val newAlarmSound = storeNewYourAlarmSound(resultData)
-            updateReminderSound(newAlarmSound)
-        }
-    }
-
     private fun setupDefaultStartTime() {
         updateDefaultStartTimeText()
-        settings_set_default_start_time_holder.setOnClickListener {
+        settings_default_start_time_holder.setOnClickListener {
+            val currentDefaultTime = if (config.defaultStartTime == -1) -1 else 0
             val items = ArrayList<RadioItem>()
             items.add(RadioItem(-1, getString(R.string.next_full_hour)))
-            (0..24).mapTo(items) { RadioItem(it, getHoursString(it)) }
+            items.add(RadioItem(0, getString(R.string.other_time)))
 
-            RadioGroupDialog(this@SettingsActivity, items, config.defaultStartTime) {
-                config.defaultStartTime = it as Int
-                updateDefaultStartTimeText()
+            RadioGroupDialog(this@SettingsActivity, items, currentDefaultTime) {
+                if (it as Int == -1) {
+                    config.defaultStartTime = it
+                    updateDefaultStartTimeText()
+                } else {
+                    val timeListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                        config.defaultStartTime = hourOfDay * 60 + minute
+                        updateDefaultStartTimeText()
+                    }
+
+                    val currentDateTime = DateTime.now()
+                    TimePickerDialog(this, getDialogTheme(), timeListener, currentDateTime.hourOfDay, currentDateTime.minuteOfHour, config.use24HourFormat).show()
+                }
             }
         }
     }
 
     private fun updateDefaultStartTimeText() {
-        settings_set_default_start_time.text = getHoursString(config.defaultStartTime)
         if (config.defaultStartTime == -1) {
-            settings_set_default_start_time.text = getString(R.string.next_full_hour)
+            settings_default_start_time.text = getString(R.string.next_full_hour)
+        } else {
+            val hours = config.defaultStartTime / 60
+            val minutes = config.defaultStartTime % 60
+            settings_default_start_time.text = String.format("%02d:%02d", hours, minutes)
         }
     }
 
     private fun setupDefaultDuration() {
         updateDefaultDurationText()
-        settings_set_default_duration_time_holder.setOnClickListener {
+        settings_default_duration_holder.setOnClickListener {
             CustomIntervalPickerDialog(this, config.defaultDuration * 60) {
                 val result = it / 60
                 config.defaultDuration = result
@@ -586,10 +606,42 @@ class SettingsActivity : SimpleActivity() {
 
     private fun updateDefaultDurationText() {
         val duration = config.defaultDuration
-        settings_set_default_duration_time.text = if (duration == 0) {
+        settings_default_duration.text = if (duration == 0) {
             "0 ${getString(R.string.minutes_raw)}"
         } else {
             getFormattedMinutes(duration, false)
+        }
+    }
+
+    private fun setupDefaultEventType() {
+        updateDefaultEventTypeText()
+        settings_default_event_type.text = getString(R.string.last_used_one)
+        settings_default_event_type_holder.setOnClickListener {
+            SelectEventTypeDialog(this, config.defaultEventTypeId, true, false, true) {
+                config.defaultEventTypeId = it.id!!
+                updateDefaultEventTypeText()
+            }
+        }
+    }
+
+    private fun updateDefaultEventTypeText() {
+        if (config.defaultEventTypeId == -1L) {
+            runOnUiThread {
+                settings_default_event_type.text = getString(R.string.last_used_one)
+            }
+        } else {
+            Thread {
+                val eventType = eventTypesDB.getEventTypeWithId(config.defaultEventTypeId)
+                if (eventType != null) {
+                    config.lastUsedCaldavCalendarId = eventType.caldavCalendarId
+                    runOnUiThread {
+                        settings_default_event_type.text = eventType.title
+                    }
+                } else {
+                    config.defaultEventTypeId = -1
+                    updateDefaultEventTypeText()
+                }
+            }.start()
         }
     }
 }
