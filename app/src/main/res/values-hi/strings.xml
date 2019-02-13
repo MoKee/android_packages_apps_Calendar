@@ -4,6 +4,7 @@
     <!-- Widget titles -->
     <!-- Event -->
     <!-- Event Repetition -->
+    <string name="forever">सदा के लिए</string>
     <string name="repeat">दोहराएं</string>
     <string name="every_day">प्रत्येक दिन</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
@@ -22,6 +23,9 @@
     <!-- Holidays -->
     <!-- Settings -->
     <string name="no_ringtone_selected">कुछ नहीं</string>
+    <string name="system_stream">प्रणाली</string>
+    <string name="alarm_stream">अलार्म</string>
+    <string name="notification_stream">अधिसूचना</string>
     <!-- CalDAV sync -->
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every last Sunday" -->
