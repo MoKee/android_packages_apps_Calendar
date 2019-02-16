@@ -15,4 +15,55 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">ಅಲ್ಜೀರಿಯಾ</string>
+    <string name="holiday_argentina">ಅರ್ಜೆಂಟಿನಾ</string>
+    <string name="holiday_australia">ಆಸ್ಟ್ರೇಲಿಯಾ</string>
+    <string name="holiday_belgium">ಬೆಲ್ಜಿಯಂ</string>
+    <string name="holiday_bolivia">ಬೊಲಿವಿಯಾ</string>
+    <string name="holiday_brazil">ಬ್ರೆಜಿಲ್</string>
+    <string name="holiday_canada">ಕೆನಡಾ</string>
+    <string name="holiday_china">ಚೀನಾ</string>
+    <string name="holiday_colombia">ಕೊಲಂಬಿಯಾ</string>
+    <string name="holiday_czech">ಜ಼ೆಕ್</string>
+    <string name="holiday_denmark">ಡೆನ್ಮಾರ್ಕ್</string>
+    <string name="holiday_germany">ಜರ್ಮನಿ</string>
+    <string name="holiday_estonia">ಇಸ್ಟೊನಿಯಾ</string>
+    <string name="holiday_spain">ಸ್ಪೇನ್</string>
+    <string name="holiday_ireland">ಐರ್ಲೆಂಡ್</string>
+    <string name="holiday_france">ಫ್ರಾನ್ಸ್</string>
+    <string name="holiday_southkorea">ದಕ್ಷಿಣ ಕೋರಿಯಾ</string>
+    <string name="holiday_greece">ಗ್ರೀಸ್</string>
+    <string name="holiday_croatia">ಕ್ರೋಯೆಶಿಯಾ</string>
+    <string name="holiday_india">ಭಾರತ</string>
+    <string name="holiday_indonesia">ಇಂಡೋನೆಷ್ಯಾ</string>
+    <string name="holiday_iceland">ಐಸ್‌ಲ್ಯಾಂಡ್‌</string>
+    <string name="holiday_italy">ಇಟಲಿ</string>
+    <string name="holiday_latvia">ಲಾಟ್ವಿಯಾ</string>
+    <string name="holiday_lithuania">ಲಿಥುವಾನಿಯಾ</string>
+    <string name="holiday_luxembourg">ಲಕ್ಸೆಂಬರ್ಗ್</string>
+    <string name="holiday_macedonia">ಮಕೆಡೊನಿಯಾ</string>
+    <string name="holiday_malaysia">ಮಲೇಶಿಯ</string>
+    <string name="holiday_hungary">ಹಂಗೇರಿ</string>
+    <string name="holiday_mexico">ಮೆಕ್ಸಿಕೋ</string>
+    <string name="holiday_netherlands">ನೆದರ್ಲೆಂಡ್ಸ್</string>
+    <string name="holiday_japan">ಜಪಾನ್</string>
+    <string name="holiday_norway">ನಾರ್ವೆ</string>
+    <string name="holiday_austria">ಆಸ್ಟ್ರಿಯಾ</string>
+    <string name="holiday_pakistan">ಪಾಕಿಸ್ತಾನ್‌</string>
+    <string name="holiday_poland">ಪೋಲೆಂಡ್</string>
+    <string name="holiday_portugal">ಪೋರ್ಚುಗಲ್</string>
+    <string name="holiday_russia">ರಷ್ಯಾ</string>
+    <string name="holiday_romania">ರೊಮಾನಿಯಾ</string>
+    <string name="holiday_switzerland">ಸ್ವಿಟ್ಜರ್ಲೆಂಡ್</string>
+    <string name="holiday_singapore">ಸಿಂಗಾಪುರ</string>
+    <string name="holiday_serbia">ಸರ್ಬಿಯಾ</string>
+    <string name="holiday_slovenia">ಸ್ಲೋವೆನಿಯಾ</string>
+    <string name="holiday_slovakia">ಸ್ಲೊವಾಕಿಯಾ</string>
+    <string name="holiday_southafrica">ದಕ್ಷಿಣ ಆಫ್ರಿಕಾ</string>
+    <string name="holiday_finland">ಫಿನ್ಲೆಂಡ್</string>
+    <string name="holiday_sweden">ಸ್ವೀಡನ್</string>
+    <string name="holiday_ukraine">ಉಕ್ರೇನ್</string>
+    <string name="holiday_unitedkingdom">ಯುನೈಟೆಡ್ ಕಿಂಗ್‌ಡಂ</string>
+    <string name="holiday_unitedstates">ಸಂಯುಕ್ತ ರಾಷ್ಟ್ರಗಳು</string>
+</resources>

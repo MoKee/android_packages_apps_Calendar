@@ -151,7 +151,6 @@
     <string name="alarm_stream">Alarm</string>
     <string name="notification_stream">Notificatie</string>
     <string name="ring_stream">Beltoon</string>
-    <string name="use_last_event_reminders">Ingestelde herinneringen bij laatste afspraak als standaard voor nieuwe afspraken gebruiken</string>
     <string name="default_reminder_1">Standaardherinnering 1</string>
     <string name="default_reminder_2">Standaardherinnering 2</string>
     <string name="default_reminder_3">Standaardherinnering 3</string>

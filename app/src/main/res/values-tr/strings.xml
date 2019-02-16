@@ -152,12 +152,18 @@
     <string name="alarm_stream">Alarm</string>
     <string name="notification_stream">Bildirim</string>
     <string name="ring_stream">Zil sesi</string>
-    <string name="use_last_event_reminders">Yeni etkinlik için son etkinliklerin hatırlatıcılarını varsayılan olarak kullan</string>
+    <string name="use_last_event_reminders">Yeni etkinliklerde son etkinliklerin hatırlatıcılarını varsayılan olarak kullanın</string>
     <string name="default_reminder_1">Varsayılan hatırlatıcı 1</string>
     <string name="default_reminder_2">Varsayılan hatırlatıcı 2</string>
     <string name="default_reminder_3">Varsayılan hatırlatıcı 3</string>
     <string name="view_to_open_from_widget">Görüntülemek için etkinlik listesi widgetini açın</string>
     <string name="last_view">Son görünüm</string>
+    <string name="new_events">Yeni etkinlikler</string>
+    <string name="default_start_time">Varsayılan başlangıç ​​zamanı</string>
+    <string name="next_full_hour">Gelecek tam saat</string>
+    <string name="default_duration">Varsayılan süre</string>
+    <string name="last_used_one">Son kullanılan</string>
+    <string name="other_time">Diğer zaman</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>

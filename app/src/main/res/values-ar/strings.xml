@@ -158,6 +158,12 @@
     <string name="default_reminder_3">التذكير الافتراضي 3</string>
     <string name="view_to_open_from_widget">عرض لتفتح من أداة قائمة الأحداث</string>
     <string name="last_view">العرض الأخير</string>
+    <string name="new_events">حدث جديد</string>
+    <string name="default_start_time">وقت البدء الافتراضي</string>
+    <string name="next_full_hour">الساعة الكاملة التالية</string>
+    <string name="default_duration">المدة الافتراضية</string>
+    <string name="last_used_one">اخر واحد مستخدم</string>
+    <string name="other_time">وقت آخر</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">حدد التقويمات للمزامنة</string>

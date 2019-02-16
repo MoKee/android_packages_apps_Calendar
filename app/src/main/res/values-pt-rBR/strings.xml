@@ -152,7 +152,6 @@
     <string name="alarm_stream">Alarme</string>
     <string name="notification_stream">Notificação</string>
     <string name="ring_stream">Toque</string>
-    <string name="use_last_event_reminders">Usar os lembretes dos últimos eventos como o padrão para novo evento</string>
     <string name="default_reminder_1">Lembrete padrão 1</string>
     <string name="default_reminder_2">Lembrete padrão 2</string>
     <string name="default_reminder_3">Lembrete padrão 3</string>
