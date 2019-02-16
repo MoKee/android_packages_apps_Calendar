@@ -158,6 +158,12 @@
     <string name="default_reminder_3">Alapértelmezett emlékeztető 3</string>
     <string name="view_to_open_from_widget">Megtekintés az eseménylista-kisalkalmazás megnyitásához</string>
     <string name="last_view">Legutóbbi nézet</string>
+    <string name="new_events">Új események</string>
+    <string name="default_start_time">Alapértelmezett kezdőidőpont</string>
+    <string name="next_full_hour">A következő teljes óra</string>
+    <string name="default_duration">Alapértelmezett időtartam</string>
+    <string name="last_used_one">A legutóbb használt</string>
+    <string name="other_time">Egyéb időtartam</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Válassza ki a szinkronizálandó naptárakat</string>

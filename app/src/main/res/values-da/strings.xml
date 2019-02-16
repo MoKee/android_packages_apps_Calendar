@@ -147,7 +147,6 @@
     <string name="events">Begivenheder</string>
     <string name="reminder_stream">Audio stream anvendt af påmindelser</string>
     <string name="notification_stream">Notifikation</string>
-    <string name="use_last_event_reminders">Brug den sidst opsatte påmindelse som standard for påmindelser</string>
     <string name="default_reminder_1">Påmindelse 1</string>
     <string name="default_reminder_2">Påmindelse 2</string>
     <string name="default_reminder_3">Påmindelse 3</string>

@@ -152,7 +152,6 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Notificación</string>
     <string name="ring_stream">Ring</string>
-    <string name="use_last_event_reminders">Reusar último recordatorio para nuevos eventos</string>
     <string name="default_reminder_1">Recordatorio 1</string>
     <string name="default_reminder_2">Recordatorio 2</string>
     <string name="default_reminder_3">Recordatorio 3</string>
