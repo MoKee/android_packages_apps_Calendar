@@ -152,11 +152,18 @@
     <string name="alarm_stream">Allarme</string>
     <string name="notification_stream">Notitica</string>
     <string name="ring_stream">Squillo</string>
+    <string name="use_last_event_reminders">Utilizza l\'ultimo promemoria come predefinito per nuovi eventi</string>
     <string name="default_reminder_1">Promemoria predefinito 1</string>
     <string name="default_reminder_2">Promemoria predefinito 2</string>
     <string name="default_reminder_3">Promemoria predefinito 3</string>
     <string name="view_to_open_from_widget">Vista da aprire dalla lista degli eventi del widget</string>
     <string name="last_view">Ultima vista</string>
+    <string name="new_events">Nuovi eventi</string>
+    <string name="default_start_time">Data d\'inizio predefinita</string>
+    <string name="next_full_hour">Prossima intera ora</string>
+    <string name="default_duration">Durata predefinita</string>
+    <string name="last_used_one">Usato l\'ultima volta</string>
+    <string name="other_time">Altra volta</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleziona un calendario da sincronizzare</string>
