@@ -58,20 +58,70 @@
     <string name="the_last_day">ಕೊನೆ ದಿನ</string>
     <string name="repeat_on_the_same_day_monthly">ಪ್ರತಿ ಮಾಸದಲ್ಲಿ ಅದೇ ದಿನ ಪುನರಾವರ್ತಿಸು</string>
     <string name="repeat_on_the_last_day_monthly">ಪ್ರತಿ ಮಾಸದಲ್ಲಿ ಕೊನೆ ದಿನ ಪುನರಾವರ್ತಿಸು</string>
+    <string name="repeat_on_the_same_day_yearly">ಪ್ರತಿ ಮಾಸದಲ್ಲಿ ಅದೇ ದಿನ ಪುನರಾವರ್ತಿಸು</string>
+    <string name="repeat_every_m">ಎಂದೆಂದಿಗೂ ಪುನರಾವರ್ತಿಸು</string>
+    <string name="every_m">ಪ್ರತಿ</string>
+    <string name="first_m">ಪ್ರಥಮ</string>
+    <string name="second_m">ದ್ವಿತೀಯ</string>
+    <string name="third_m">ತೃತೀಯ</string>
+    <string name="fourth_m">ನಾಲ್ಕನೇ</string>
+    <string name="last_m">ಕೊನೆಯ</string>
     <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
     <!-- used in repetition, like "Every first Sunday" -->
+    <string name="repeat_every_f">ಎಂದೆಂದಿಗೂ ಪುನರಾವರ್ತಿಸು</string>
+    <string name="every_f">ಪ್ರತಿ</string>
+    <string name="first_f">ಪ್ರಥಮ</string>
+    <string name="second_f">ದ್ವಿತೀಯ</string>
+    <string name="third_f">ತೃತೀಯ</string>
+    <string name="fourth_f">ನಾಲ್ಕನೇ</string>
+    <string name="last_f">ಕೊನೆಯ</string>
     <!-- Birthdays -->
+    <string name="birthdays">ಜನ್ಮದಿನಗಳು</string>
+    <string name="add_birthdays">ಸಂಪರ್ಕ ಜನ್ಮದಿನಗಳನ್ನು ಸೇರಿಸು</string>
+    <string name="no_birthdays">ಯಾವುದೇ ಜನ್ಮದಿನಗಳು ಕಂಡುಬಂದಿಲ್ಲ</string>
+    <string name="birthdays_added">ಜನ್ಮದಿನಗಳು ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲ್ಪಟ್ಟಿವೆ</string>
     <!-- Anniversaries -->
+    <string name="anniversaries">ವಾರ್ಷಿಕೋತ್ಸವಗಳು</string>
+    <string name="add_anniversaries">ಸಂಪರ್ಕ ವಾರ್ಷೀಕೋತ್ಸವಗಳನ್ನು ಸೇರಿಸಿ</string>
+    <string name="no_anniversaries">ಯಾವುದೇ ವಾರ್ಷಿಕೋತ್ಸವಗಳು ಕಂಡುಬಂದಿಲ್ಲ</string>
+    <string name="anniversaries_added">ವಾರ್ಷಿಕೋತ್ಸವಗಳು ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲ್ಪಟ್ಟಿವೆ</string>
     <!-- Event Reminders -->
+    <string name="reminder">ಜ್ಞಾಪನೆ</string>
+    <string name="before">ಮೊದಲ</string>
+    <string name="add_another_reminder">ಮತ್ತೊಂದು ಜ್ಞಾಪನೆ ಸೇರಿಸು</string>
+    <string name="event_reminders">ಕಾರ್ಯಕ್ರಮ ಜ್ಞಾಪನೆಗಳು</string>
     <!-- Export / Import -->
+    <string name="import_events">ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳು</string>
+    <string name="export_events">ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ರಫ್ತು ಮಾಡು</string>
+    <string name="import_events_from_ics">.ics ಕಡತದಿಂದ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಮದಿಸು</string>
+    <string name="export_events_to_ics">.ics ಕಡತದಿಂದ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ರಫ್ತು ಮಾಡು</string>
+    <string name="default_event_type">ಪೂರ್ವನಿಯೋಜಿತ ಕಾರ್ಯಕ್ರಮ ಮಾದರಿ</string>
+    <string name="export_past_events_too">ಭೂತ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಕೂಡ ರಫ್ತು ಮಾಡು</string>
+    <string name="include_event_types">ಕಾರ್ಯಕ್ರಮಗಳ ಮಾದರಿಗಳನ್ನು ಸೇರಿಸು</string>
+    <string name="filename_without_ics">ಕಡತದ ಹೆಸರು (.ics ಹೊರತುಪಡಿಸಿ)</string>
+    <string name="override_event_types">ಕಡತದಲ್ಲಿಯ ಕಾರ್ಯಕ್ರಮಗಳ ಮಾದರಿಗಳನ್ನು ಅತಿಕ್ರಮಿಸು</string>
     <!-- Event details -->
     <string name="title">ಶೀರ್ಷಿಕೆ</string>
     <string name="location">ಸ್ಥಳ</string>
     <string name="description">ವಿವರಣೆ</string>
+    <string name="all_day">ಪೂರ್ಣ-ದಿನ</string>
     <!-- Weekly view -->
+    <string name="week">ವಾರ</string>
     <!-- Event types -->
+    <string name="event_types">ಕಾರ್ಯಕ್ರಮ ಮಾದರಿಗಳು</string>
+    <string name="add_new_type">ಹೊಸ ಮಾದರಿ ಸೇರಿಸು</string>
+    <string name="edit_type">ಮಾದರಿ ಪರಿಷ್ಕರಿಸು</string>
+    <string name="type_already_exists">ಈ ಶಿರ್ಷೀಕೆಯಲ್ಲಿ ಈಗಾಗಲೇ ಮಾದರಿ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ</string>
     <string name="color">ಬಣ್ಣ</string>
+    <string name="regular_event">ಸಾಮಾನ್ಯ ಕಾರ್ಯಕ್ರಮ</string>
+    <string name="cannot_delete_default_type">ಪೂರ್ವನಿಯೋಜಿತ ಕಾರ್ಯಕ್ರಮ ಮಾದರಿಯನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="select_event_type">ಕಾರ್ಯಕ್ರಮದ ಮಾದರಿಯನ್ನು ಆರಿಸು</string>
+    <string name="move_events_into_default">ಪರಿಣಮಿತ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಪೂರ್ವನಿಯೋಜಿತ ಕಾರ್ಯಕ್ರಮದ ಮಾದರಿಗಳಿಗೆ ವರ್ಗಾಯಿಸು</string>
+    <string name="remove_affected_events">ಪರಿಣಮಿತ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ತೆಗೆದುಹಾಕು</string>
+    <string name="unsync_caldav_calendar">CalDAV ಕ್ಯಾಲೆಂಡರ್ ತೆಗೆದುಹಾಕಲು ನೀವು ಇದನ್ನು ಏಕಕಾಲಿಕವಾಗಿರದಂತೆ ಮಾಡಬೇಕು</string>
     <!-- Holidays -->
+    <string name="holidays">ರಜೆದಿನಗಳು</string>
+    <string name="add_holidays">ರಜೆದಿನಗಳನ್ನು ಸೇರಿಸು</string>
     <string name="national_holidays">ರಾಷ್ಟ್ರೀಯ ರಜಾದಿನಗಳು</string>
     <string name="religious_holidays">ಧಾರ್ಮಿಕ ರಜಾದಿನಗಳು</string>
     <string name="holidays_imported_successfully">ರಜಾದಿನಗಳು ಯಶಸ್ವಿಯಾಗಿ \"ರಜಾದಿನಗಳು\" ಕಾರ್ಯಕ್ರಮದ ಮಾದರಿಯಲ್ಲಿ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲಾಗಿದೆ</string>
