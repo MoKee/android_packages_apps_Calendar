@@ -1,0 +1,4 @@
+{
+  "pushCert": "certificate version 0.1\npusher 2ECD2531 1551285112 +0800\npushee ssh://mokeedev.review:29418/MoKee/android_packages_apps_Calendar\nnonce 1551285111-20F6778D0610573A5BEFAA20DA1A48C07CCE8721\n\n0000000000000000000000000000000000000000 fb9e94ae75ce21513e71bf287e3524fe5d21337b refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQEcBAABAgAGBQJcdrt4AAoJEPIi9OYuzSUxvtsH/1Yric7Yje5TPHlo8dC14w00\nqKvAhUFYhk9oVuhWXdwyiH/unh3awTO1oASHSq7gROffTU5ywPn7rpq21oY8yknO\nvolMOxRVyedpK12brCXtrJAFrxXGK0aKCMrvSb5q13GSy5cbX0F+yYzrui6+Fw7x\nQUpTwrScRGgVkSB0XvMlhJbi11kEXB6S/phVRvA/p09ysh4C7bCXAQssqnXRNuvB\nbCjINsP3pxKu9CZ4Bog+cmJcJpb8KfVqOHVCjvwz1u+xtkCwsKvw0FFsYQELEkcP\nIri/ncxCh58FqKwmTW8Z7dSc4s0hkSWh3CdU8JI7eE+kp7ZUwz61ORCikcSebDY\u003d\n\u003dQh8c\n-----END PGP SIGNATURE-----\n",
+  "comments": []
+}
