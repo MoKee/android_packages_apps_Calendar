@@ -207,7 +207,7 @@
         الضغط على الخيار \"الصوت الذي يستخدمه التذكير\" وتغييره إلى قيمة مختلفة. إذا استمر عدم نجاح ذلك ، فتحقق من إعدادات الصوت ، إذا لم يتم كتم البث المحدد.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">تقويم بسيط مع الأحداث ، والأدات القابلة للتخصيص ولا يحتوي على إعلانات.</string>
+    <string name="app_short_description">تقويم غير متصل لأحداثك بدون إعلانات ، مع احترام خصوصيتك.</string>
     <string name="app_long_description">تقويم بسيط مع تزامن CalDAV اختياري. يمكنك بسهولة إنشاء أحداث متكررة وإعداد تذكيرات ، كما يمكن أيضًا عرض أرقام الأسبوع.
 
         يحتوي على العرض الشهري وأداة قائمة الحدث حيث يمكنك تخصيص لون النص، وكذلك ألفا ولون الخلفية.

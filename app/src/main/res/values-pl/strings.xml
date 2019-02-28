@@ -152,11 +152,16 @@
     <string name="alarm_stream">Budzik</string>
     <string name="notification_stream">Powiadomienie</string>
     <string name="ring_stream">Dzwonek</string>
+    <string name="use_last_event_reminders">Użyj przypomnień o ostatnich wydarzeniach jako domyślnych dla nowego wydarzenia</string>
     <string name="default_reminder_1">Domyślne przypomnienie 1</string>
     <string name="default_reminder_2">Domyślne przypomnienie 2</string>
     <string name="default_reminder_3">Domyślne przypomnienie 3</string>
     <string name="view_to_open_from_widget">Wyświetl, aby otworzyć z widżetu listy zdarzeń</string>
     <string name="last_view">Ostatni widok</string>
+    <string name="new_events">Nowe wydarzenia</string>
+    <string name="default_start_time">Domyślna godzina rozpoczęcia</string>
+    <string name="next_full_hour">Przy następnej pełnej godzinie</string>
+    <string name="default_duration">Domyślny czas trwania</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Wybierz kalendarze, które chcesz zsynchronizować</string>
@@ -198,7 +203,6 @@
          naciskając opcję \"Strumień audio używany przez przypomnienia\" i zmieniając ją na inną wartość. Jeśli nadal nie będzie działać, sprawdź ustawienia dźwięku, jeśli dany strumień nie jest wyciszony.        </string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Prosty kalendarz z wydarzeniami, widżetami i bez reklam.</string>
     <string name="app_long_description">       Prosty kalendarz z obsługą synchronizacji z Dyskiem Google. Dzięki niemu możesz z łatwością tworzyć wydarzenia i przypomnienia, które nigdy nie zaginą.
 
         Zawiera widżet 4x4 z możliwością ustawiania koloru tekstu i tła, a dla tego drugiego również stopień przezroczystości.

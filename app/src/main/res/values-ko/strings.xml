@@ -176,7 +176,6 @@
     <string name="faq_3_title">나는 시각적인 것은 남지만 듣는것은 남지 않습니다. 저는 어떻해야 하나요?</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">사용자 정의 위젯이 있는 심플한 캘린더입니다. 그리고 광고가 없습니다.</string>
     <string name="app_long_description">Google 동기화가 있는 심플한 캘린더입니다. 쉽게 반복 이벤트와 알림을 설정할 수 있으며, 주 번호도 표시할 수 있습니다.
 
         텍스트의 색상은 물론 배경의 투명도와 색상을 정할 수 있는, 크기 조절이 가능한 4x4 위젯이 포함되어 있습니다.

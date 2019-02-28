@@ -207,7 +207,6 @@
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un semplice calendario con eventi, widget personalizzabili e senza pubblicità.</string>
     <string name="app_long_description">Un semplice calendario con l\'opzione di sincronizzazione CalDAV. Puoi facilmente creare eventi ricorrenti ed impostare promemoria, mostra anche il numero di settimana.
 
         Contiene una vista mensile ed un widget con la lista degli eventi, con il colore del testo personalizzabile, come per la trasparenza ed il colore dello sfondo,

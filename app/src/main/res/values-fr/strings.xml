@@ -200,7 +200,6 @@
         en appuyant sur l\'option \"Flux audio utilisé par les rappels\" et en la modifiant. Si cela ne fonctionne toujours pas, vérifiez vos paramètres audio, si le flux particulier n’est pas mis en sourdine.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un calendrier simple avec événements, widget personnalisable, sans publicité.</string>
     <string name="app_long_description">Un calendrier hors ligne sans aucune autre intégration de calendrier. Vous pouvez aisément créer des événements récurrents et configurer des rappels, il est aussi possible d\'afficher les numéros de semaine.
 
         Contient un widget 4x4 redimensionnable où vous pouvez personnaliser la couleur du texte, ainsi que l\'alpha et la couleur de l\'arrière plan.

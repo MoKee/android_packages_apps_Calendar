@@ -200,7 +200,6 @@
         zmeniť zvolenú hodnotu. Ak to ešte stále nebude fungovať, skúste sa pozrieť do zvukových nastavení vášho systému, či daný kanál nie je stlmený.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Jednoduchý kalendár s udalosťami, upraviteľným widgetom a bez reklám.</string>
     <string name="app_long_description">Jednoduchý kalendár s možnosťou CalDAV synchronizácie. Viete si jednoducho vytvoriť opakujúce sa udalosti s pripomienkami, alebo zobraziť čísla týždňov.
 
         Obsahuje škálovateľné widgety s mesačným náhľadom alebo zoznamom udalostí, kde viete upraviť farbu textu, ako aj priehľadnosť a farbu pozadia.

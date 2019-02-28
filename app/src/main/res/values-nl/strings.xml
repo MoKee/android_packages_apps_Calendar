@@ -197,7 +197,6 @@
         \"Type geluiden voor herinneringen gebruiken\" aan. Als dat niet werkt, controleer dan bij de geluidsinstellingen van Android of het volume van dit geluidstype niet te laag is ingesteld.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Een simpele agenda met aan te passen widget en zonder advertenties.</string>
     <string name="app_long_description">Een simpele agenda met optionele CalDAV-synchronisatie. Creëer met gemak herhaalde afspraken met herinneringen. Kan weeknummers tonen.
 
         Heeft een 4x4 widget, waarbij grootte, achtergrond- en tekstkleuren zijn aan te passen.

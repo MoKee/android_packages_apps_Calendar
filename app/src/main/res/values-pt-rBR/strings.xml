@@ -200,7 +200,6 @@
 selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o seu valor. Se isso não funcionar, verifique as configurações, especialmente se o som não está mudo.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Um calendário para adicionar eventos, com um widget personalizável.</string>
     <string name="app_long_description">Um calendário que não possui qualquer tipo de integração. Pode-se adicionar eventos e lembretes recorrentes, e possui uma opção para mostrar o número da semana.
 
         Contém um widget 4x4, em que se pode personalizar a cor do texto, bem como a cor e o valor alfa do fundo.

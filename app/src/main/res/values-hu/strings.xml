@@ -207,7 +207,7 @@
         nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Egy egyszerű naptár bejegyzésekkel, kisalkalmazással és reklámok nélkül.</string>
+    <string name="app_short_description">Egy offline naptár reklámok nélkül az Ön eseményeinek, tiszteletben tartva az Ön magánszféráját.</string>
     <string name="app_long_description">Egy egyszerű naptár, CalDAV integráció lehetőségével. Könnyedén lehet ismétlődő eseményeket és emlékeztetőket felvenni, és a hetek sorszámait is mutatja.
 
         Egy 4x4-es átméretezhető kisalkalmazást is biztosít, aminek beállíthatod a színét, az alfáját és a háttérszínét is.

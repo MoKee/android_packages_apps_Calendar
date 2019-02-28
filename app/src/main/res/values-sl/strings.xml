@@ -157,6 +157,10 @@
     <string name="default_reminder_3">Privzeti opomnik 3</string>
     <string name="view_to_open_from_widget">Pogled, ki ga želite odpreti iz seznama pripomočkov</string>
     <string name="last_view">Zadnji pogled</string>
+    <string name="new_events">Novi dogodki</string>
+    <string name="default_start_time">Privzeti čas začetka</string>
+    <string name="default_duration">Privzeto trajanje</string>
+    <string name="other_time">Drugi čas</string>
     <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Izberite koledar za usklajevanje</string>
@@ -197,7 +201,6 @@
     <string name="faq_3_title">Vidim vizualne opomnike, vendar ne slišim zvoka. Kaj lahko naredim?</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Preprost koledar z dogodki, prilagodljivimi pripomočki in brez oglasov.</string>
     <string name="app_long_description">     Preprost koledar z izbirno sinhronizacijo CalDAV. Z lahkoto lahko ustvarite ponavljajoče se dogodke in nastavite opomnike, lahko prikazuje tudi stevilko tedna.
 
    Vsebuje mesečni pogled in gradnik seznama dogodkov, kjer lahko prilagodite barvo besedila, kot tudi barvo ozadja.

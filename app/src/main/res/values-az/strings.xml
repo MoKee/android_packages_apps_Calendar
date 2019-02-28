@@ -180,7 +180,6 @@
     <!-- FAQ -->
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Hadisələri, dəyişdirilən widgeti olan, reklam ehtiva etməyən sadə bir kalendar.</string>
     <string name="app_long_description">CalDAV sinxronizasiyalı sadə bir kalendar. Siz asanca təkrarlanan hadisələrinizi və xatırladıcılarınızı yarada bilərsiniz, hətta həftə nömrələrini də göstərə bilir.
 
         Aylıq görünüş və hadisə siyahısı widgeti ehtiva edir hansı ki, siz oradan yazı rəngini, həmçinin, alfanı və arxa plan rəngini dəyişdirə bilərsiniz.

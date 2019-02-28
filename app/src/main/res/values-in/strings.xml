@@ -200,7 +200,6 @@
         menekan opsi \"putar audio digunakan oleh pengingat\" dan mengubahnya ke nilai yang berbeda. Jika masih tidak berfungsi, periksa pengaturan suara Anda, jika aliran tertentu tidak dibisukan.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Secara offline, klik pada bagian ini untuk merekam kembali, dan kemudian kembali lagi.</string>
     <string name="app_long_description">Kalender sederhana dengan sinkronisasi CalDAV opsional. Anda dapat dengan mudah membuat acara berulang dan mengatur pengingat, juga dapat menampilkan angka minggu. 
 
         Berisi tampilan bulanan dan widget daftar acara tempat Anda dapat menyesuaikan warna teks, serta alfa dan warna latar belakang. 
