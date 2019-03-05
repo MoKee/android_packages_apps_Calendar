@@ -11,10 +11,8 @@
     <string name="simple_event_list">간단한 이벤트 목록</string>
     <string name="no_upcoming_events">다가올 이벤트가 없는 것 같습니다.</string>
     <string name="go_to_today">오늘로 이동</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">월별 달력</string>
     <string name="widget_list">일정 목록 달력</string>
-    <!-- Event -->
     <string name="event">이벤트</string>
     <string name="edit_event">이벤트 수정</string>
     <string name="new_event">새 이벤트</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">유형별 이벤트</string>
     <string name="please_fill_location">지도에 표시 될 위치를 입력 해 주십시오</string>
     <string name="public_event_notification_text">곧 이벤트가 열립니다.</string>
-    <!-- Event Repetition -->
     <string name="repetition">반복</string>
     <string name="no_repetition">반복 없음</string>
     <string name="daily">매일</string>
@@ -64,8 +61,6 @@
     <string name="third_m">세 번째</string>
     <string name="fourth_m">네 번째</string>
     <string name="last_m">마지막</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">매일 반복</string>
     <string name="every_f">매일</string>
     <string name="first_f">첫 번째</string>
@@ -73,22 +68,18 @@
     <string name="third_f">세 번째</string>
     <string name="fourth_f">네 번째</string>
     <string name="last_f">마지막</string>
-    <!-- Birthdays -->
     <string name="birthdays">생일</string>
     <string name="add_birthdays">연락처의 생일 추가</string>
     <string name="no_birthdays">조회된 생일이 없음</string>
     <string name="birthdays_added">생일 추가 완료</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">기념일</string>
     <string name="add_anniversaries">연락처의 기념일 추가</string>
     <string name="no_anniversaries">조회된 기념일 없음</string>
     <string name="anniversaries_added">기념일 추가 완료</string>
-    <!-- Event Reminders -->
     <string name="reminder">알림</string>
     <string name="before">전</string>
     <string name="add_another_reminder">다른 알림 추가</string>
     <string name="event_reminders">이벤트 알림</string>
-    <!-- Export / Import -->
     <string name="import_events">이벤트들 가져 오기</string>
     <string name="export_events">이벤트들 내보내기</string>
     <string name="import_events_from_ics">.ics 파일에서 이벤트들 가져오기</string>
@@ -97,14 +88,11 @@
     <string name="export_past_events_too">과거 이벤트들 내보내기</string>
     <string name="include_event_types">이벤트 유형 포함</string>
     <string name="filename_without_ics">파일이름 (.ics 없이)</string>
-    <!-- Event details -->
     <string name="title">제목</string>
     <string name="location">위치</string>
     <string name="description">설명</string>
     <string name="all_day">하루 종일</string>
-    <!-- Weekly view -->
     <string name="week">주</string>
-    <!-- Event types -->
     <string name="event_types">이벤트 유형</string>
     <string name="add_new_type">새로운 유형 추가</string>
     <string name="edit_type">유형 수정</string>
@@ -115,14 +103,12 @@
     <string name="select_event_type">이벤트 유형 선택</string>
     <string name="move_events_into_default">영향을 받는 이벤트들을 기본 유형으로 이동</string>
     <string name="remove_affected_events">영향을 받는 이벤트들을 영구적으로 제거</string>
-    <!-- Holidays -->
     <string name="holidays">공휴일</string>
     <string name="add_holidays">공휴일 추가</string>
     <string name="national_holidays">국경일</string>
     <string name="religious_holidays">종교 휴일</string>
     <string name="importing_some_holidays_failed">일부 이벤트를 가져오지 못했습니다</string>
     <string name="importing_holidays_failed">공휴일을 가져오는데 실패했습니다</string>
-    <!-- Settings -->
     <string name="manage_event_types">이벤트 유형 관리</string>
     <string name="start_day_at">시작 시간</string>
     <string name="end_day_at">종료 시간</string>
@@ -145,7 +131,6 @@
     <string name="default_reminder_2">기본 알림 2</string>
     <string name="default_reminder_3">기본 알림 3</string>
     <string name="last_view">마지막 견해</string>
-    <!-- CalDAV sync -->
     <string name="select_caldav_calendars">동기화 할 캘린더 선택</string>
     <string name="manage_synced_calendars">동기화된 캘린더 관리</string>
     <string name="store_locally_only">로컬에만 저장</string>
@@ -155,8 +140,6 @@
     <string name="editing_calendar_failed">변경 실패</string>
     <string name="syncing">동기화중…</string>
     <string name="synchronization_completed">동기화 완료</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">월요일</string>
     <string name="tuesday_alt">화요일</string>
     <string name="wednesday_alt">수요일</string>
@@ -164,18 +147,14 @@
     <string name="friday_alt">금요일</string>
     <string name="saturday_alt">토요일</string>
     <string name="sunday_alt">일요일</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">운동</string>
     <string name="sample_title_2">존과 회의</string>
     <string name="sample_title_3">보관함</string>
     <string name="sample_title_4">메리와 함께 점심</string>
     <string name="sample_description_4">광장에서</string>
     <string name="sample_title_5">커피타임</string>
-    <!-- FAQ -->
     <string name="faq_1_title">\"휴일 추가\" 버튼을 눌러 생긴 휴일을 어떻게 지울 수 있나요?</string>
     <string name="faq_3_title">나는 시각적인 것은 남지만 듣는것은 남지 않습니다. 저는 어떻해야 하나요?</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_long_description">Google 동기화가 있는 심플한 캘린더입니다. 쉽게 반복 이벤트와 알림을 설정할 수 있으며, 주 번호도 표시할 수 있습니다.
 
         텍스트의 색상은 물론 배경의 투명도와 색상을 정할 수 있는, 크기 조절이 가능한 4x4 위젯이 포함되어 있습니다.
@@ -187,8 +166,4 @@
         The Contacts permission is used only at importing contact birthdays and anniversaries.
 
         이 앱은 더 큰 시리즈의 앱들 중 하나입니다. 나머지는 https://www.simplemobiletools.com 에서 찾을 수 있습니다.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

@@ -11,10 +11,8 @@
     <string name="simple_event_list">Lista eventi semplice</string>
     <string name="no_upcoming_events">Sembra che tu non abbia nessun evento imminente.</string>
     <string name="go_to_today">Vai a oggi</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">Calendario mensile</string>
     <string name="widget_list">Lista eventi calendario</string>
-    <!-- Event -->
     <string name="event">Evento</string>
     <string name="edit_event">Modifica evento</string>
     <string name="new_event">Nuovo evento</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">Filtra eventi per tipologia</string>
     <string name="please_fill_location">Riempire la posizione per essere mostrata su una mappa</string>
     <string name="public_event_notification_text">Un evento è imminente</string>
-    <!-- Event Repetition -->
     <string name="repetition">Ripeti</string>
     <string name="no_repetition">Non ripetere</string>
     <string name="daily">Giornalmente</string>
@@ -66,8 +63,6 @@
     <string name="third_m">terzo</string>
     <string name="fourth_m">quarto</string>
     <string name="last_m">ultimo</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">Ripeti ogni</string>
     <string name="every_f">Tutti</string>
     <string name="first_f">primo</string>
@@ -75,22 +70,18 @@
     <string name="third_f">terzo</string>
     <string name="fourth_f">quarto</string>
     <string name="last_f">ultimo</string>
-    <!-- Birthdays -->
     <string name="birthdays">Compleanni</string>
     <string name="add_birthdays">Aggiungi compleanni contatti</string>
     <string name="no_birthdays">Nessun compleanno trovato</string>
     <string name="birthdays_added">Compleanni aggiunti con successo</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">Anniversari</string>
     <string name="add_anniversaries">Aggiungi anniversari contatti</string>
     <string name="no_anniversaries">Nessun anniversario trovato</string>
     <string name="anniversaries_added">Anniversari aggiunti con successo</string>
-    <!-- Event Reminders -->
     <string name="reminder">Promemoria</string>
     <string name="before">prima</string>
     <string name="add_another_reminder">Aggiungi un altro promemoria</string>
     <string name="event_reminders">Promemoria eventi</string>
-    <!-- Export / Import -->
     <string name="import_events">Importa eventi</string>
     <string name="export_events">Esporta eventi</string>
     <string name="import_events_from_ics">Importa eventi da un file .ics</string>
@@ -100,14 +91,11 @@
     <string name="include_event_types">Includi tipi evento</string>
     <string name="filename_without_ics">Nome file (senza .ics)</string>
     <string name="override_event_types">Sovrascrivi i tipi di eventi nel file</string>
-    <!-- Event details -->
     <string name="title">Titolo</string>
     <string name="location">Posizione</string>
     <string name="description">Descrizione</string>
     <string name="all_day">Tutto il giorno</string>
-    <!-- Weekly view -->
     <string name="week">Settimana</string>
-    <!-- Event types -->
     <string name="event_types">Tipi evento</string>
     <string name="add_new_type">Aggiungi nuovo tipo</string>
     <string name="edit_type">Modifica tipo</string>
@@ -119,7 +107,6 @@
     <string name="move_events_into_default">Muovi gli eventi segnati con il tipo di eventi predefinito</string>
     <string name="remove_affected_events">Rimuovi in maniera permanente gli eventi segnati</string>
     <string name="unsync_caldav_calendar">Per rimuovere un calendario CalDAV devi desincronizzarlo</string>
-    <!-- Holidays -->
     <string name="holidays">Feste</string>
     <string name="add_holidays">Aggiungi feste</string>
     <string name="national_holidays">Feste nazionali</string>
@@ -127,7 +114,6 @@
     <string name="holidays_imported_successfully">Le feste sono state importate nel tipo evento \"Feste\" con successo</string>
     <string name="importing_some_holidays_failed">Importo di alcuni eventi fallito</string>
     <string name="importing_holidays_failed">Importo delle feste fallito</string>
-    <!-- Settings -->
     <string name="manage_event_types">Gestisci tipi evento</string>
     <string name="start_day_at">Il giorno inizia alle</string>
     <string name="end_day_at">Il giorno finisce alle</string>
@@ -164,7 +150,6 @@
     <string name="default_duration">Durata predefinita</string>
     <string name="last_used_one">Usato l\'ultima volta</string>
     <string name="other_time">Altra volta</string>
-    <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleziona un calendario da sincronizzare</string>
     <string name="manage_synced_calendars">Gestisci i calendari sincronizzati</string>
@@ -177,8 +162,6 @@
     <string name="synchronization_completed">Sincronizzazione completata</string>
     <string name="select_a_different_caldav_color">Seleziona un colore differente (potrebbe essere applicato solamente in locale)</string>
     <string name="insufficient_permissions">Non si hanno i permessi per scrivere nel calendario selezionato</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Lunedì</string>
     <string name="tuesday_alt">Martedì</string>
     <string name="wednesday_alt">Mercoledì</string>
@@ -186,7 +169,6 @@
     <string name="friday_alt">Venerdì</string>
     <string name="saturday_alt">Sabato</string>
     <string name="sunday_alt">Domenica</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">Allenamento</string>
     <string name="sample_description_1">Gambe</string>
     <string name="sample_title_2">Incontro con Giovanni</string>
@@ -195,7 +177,6 @@
     <string name="sample_title_4">Pranzo con Maria</string>
     <string name="sample_description_4">Nel ristorante Magione</string>
     <string name="sample_title_5">Pausa caffè</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Come posso rimuovere i le festività importate tramite il pulsante \"Aggiungi festività\"?</string>
     <string name="faq_1_text">Le festività create in questo modo sono inseriti in eventi di tipo \"Festività\". Puoi andare in Impostazioni -&gt; Gestisci tipi di eventi,
         tenere premuto sul tipo desiderato ed eliminaro selezionando il cestino.</string>
@@ -205,8 +186,6 @@
     <string name="faq_3_title">Visualizzo i promemoria, ma non sento l\'audio. Cosa posso fare?</string>
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_long_description">Un semplice calendario con l\'opzione di sincronizzazione CalDAV. Puoi facilmente creare eventi ricorrenti ed impostare promemoria, mostra anche il numero di settimana.
 
         Contiene una vista mensile ed un widget con la lista degli eventi, con il colore del testo personalizzabile, come per la trasparenza ed il colore dello sfondo,
@@ -218,8 +197,4 @@
         Il permesso dei contatti è usato solamente per importare i compleanni e gli anniversari.
 
         Questa applicazione è solamente una di una serie. Puoi trovare le altre su https://www.simplemobiletools.com</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

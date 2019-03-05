@@ -9,10 +9,8 @@
     <string name="simple_event_list">Lista de eventos simple</string>
     <string name="no_upcoming_events">Semella que non ten ningún evento próximo.</string>
     <string name="go_to_today">Ir ao día de hoxe</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">Calendario mensual</string>
     <string name="widget_list">Lista de eventos do calendario</string>
-    <!-- Event -->
     <string name="event">Evento</string>
     <string name="edit_event">Editar evento</string>
     <string name="new_event">Novo evento</string>
@@ -21,7 +19,6 @@
     <string name="event_added">Evento engadido con éxito</string>
     <string name="event_updated">O evento foi actualizado correctamente</string>
     <string name="filter_events_by_type">Filtrar eventos por tipo</string>
-    <!-- Event Repetition -->
     <string name="repetition">Repetición</string>
     <string name="no_repetition">Sin repetición</string>
     <string name="daily">Diariamente</string>
@@ -57,8 +54,6 @@
     <string name="third_m">terceiro</string>
     <string name="fourth_m">cuarto</string>
     <string name="last_m">último</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">Repetir cada</string>
     <string name="every_f">Cada</string>
     <string name="first_f">primero</string>
@@ -66,22 +61,18 @@
     <string name="third_f">tercero</string>
     <string name="fourth_f">cuarto</string>
     <string name="last_f">último</string>
-    <!-- Birthdays -->
     <string name="birthdays">Cumpleanos</string>
     <string name="add_birthdays">Engadir cumpleanos de contactos</string>
     <string name="no_birthdays">Non se atoparon cumpleanos</string>
     <string name="birthdays_added">Engadíronse correctamente os cumpleanos</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">Aniversarios</string>
     <string name="add_anniversaries">Engadir aniversarios de contactos</string>
     <string name="no_anniversaries">Non se atoparon aniversarios</string>
     <string name="anniversaries_added">Engadíronse correctamente os aniversarios</string>
-    <!-- Event Reminders -->
     <string name="reminder">Recordatorio</string>
     <string name="before">antes</string>
     <string name="add_another_reminder">Engadir outro recordatorio</string>
     <string name="event_reminders">Recordatorios de eventos</string>
-    <!-- Export / Import -->
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="import_events_from_ics">Importar eventos desde un ficheiro .ics</string>
@@ -90,14 +81,11 @@
     <string name="export_past_events_too">Exportar tamén eventos pasados</string>
     <string name="include_event_types">Incluír tipos de eventos</string>
     <string name="filename_without_ics">Nome de ficheiro (sin .ics)</string>
-    <!-- Event details -->
     <string name="title">Título</string>
     <string name="location">Localización</string>
     <string name="description">Descrición</string>
     <string name="all_day">Todo o día</string>
-    <!-- Weekly view -->
     <string name="week">Semana</string>
-    <!-- Event types -->
     <string name="event_types">Tipos de eventos</string>
     <string name="add_new_type">Engadir un novo tipo de evento</string>
     <string name="edit_type">Editar tipo de evento</string>
@@ -109,14 +97,12 @@
     <string name="move_events_into_default">Mover os eventos afectados ao tipo de evento por omisión</string>
     <string name="remove_affected_events">Eliminar permanentemente os eventos afectadosPermanently remove affected events</string>
     <string name="unsync_caldav_calendar">Para eliminar un calendario CalDAV antes debe deixar de sincronizalo</string>
-    <!-- Holidays -->
     <string name="holidays">Festivo</string>
     <string name="add_holidays">Engadir días festivos</string>
     <string name="national_holidays">Festivo nacional</string>
     <string name="religious_holidays">Festas relixiosas</string>
     <string name="importing_some_holidays_failed">Fallou a importación de algúns eventos</string>
     <string name="importing_holidays_failed">Fallou a importación de días festivos</string>
-    <!-- Settings -->
     <string name="manage_event_types">Xestionar tipos de eventos</string>
     <string name="start_day_at">Na vista xeral o día comeza as</string>
     <string name="end_day_at">O día na vista semanal remata as</string>
@@ -132,7 +118,6 @@
     <string name="system_stream">Sistema</string>
     <string name="alarm_stream">Alarma</string>
     <string name="ring_stream">Soar</string>
-    <!-- CalDAV sync -->
     <string name="select_caldav_calendars">Escolla calendarios a sincronizar</string>
     <string name="manage_synced_calendars">Xestionar calendarios sincronizados</string>
     <string name="store_locally_only">Gardar só localmente</string>
@@ -142,8 +127,6 @@
     <string name="editing_calendar_failed">Fallou a edición do calendario</string>
     <string name="syncing">Sincronizando…</string>
     <string name="synchronization_completed">Sincronización completa</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terceira</string>
     <string name="wednesday_alt">Cuarta</string>
@@ -151,7 +134,6 @@
     <string name="friday_alt">Sexta</string>
     <string name="saturday_alt">Sábado</string>
     <string name="sunday_alt">Domingo</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">Exercicio</string>
     <string name="sample_description_1">Correr un pouco</string>
     <string name="sample_title_2">Reunión con Xan</string>
@@ -160,9 +142,6 @@
     <string name="sample_title_4">Xantar con Aira</string>
     <string name="sample_description_4">Na plaza</string>
     <string name="sample_title_5">Hora do café</string>
-    <!-- FAQ -->
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_long_description">Un calendario que funciona sin precisar sincronización CalDAV. Pode crear fácilmente eventos recurrentes e configurar recordatorios. También mostra o número de semana.
 
         Ten un widget 4x4 de tamaño variable no que pode personalizar a cor do texto, así como a transparencia e cor de fondo.
@@ -174,8 +153,4 @@
         O permiso aos Contactos só é preciso se quere importar os cumpleanos dos contactos.
 
         Esta aplicación é parte de unha serie máis grande de aplicativos. Puede atopar o resto en https://www.simplemobiletools.com</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

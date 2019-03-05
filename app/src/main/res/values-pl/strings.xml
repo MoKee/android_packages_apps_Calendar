@@ -11,10 +11,8 @@
     <string name="simple_event_list">Prosta lista wydarzeń</string>
     <string name="no_upcoming_events">Wygląda na to, że nie masz żadnych nadchodzących wydarzeń.</string>
     <string name="go_to_today">Przejdź do dnia dzisiejszego</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">Prosty kalendarz - widok miesięczny</string>
     <string name="widget_list">Prosty kalendarz - lista wydarzeń</string>
-    <!-- Event -->
     <string name="event">Wydarzenie</string>
     <string name="edit_event">Edytuj wydarzenie</string>
     <string name="new_event">Nowe wydarzenie</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">Filtruj wydarzenia według typu</string>
     <string name="please_fill_location">Wpisz lokalizację, która ma być pokazana na mapie</string>
     <string name="public_event_notification_text">Nadchodzi wydarzenie</string>
-    <!-- Event Repetition -->
     <string name="repetition">Powtórzenie</string>
     <string name="no_repetition">Brak powtórzenia</string>
     <string name="daily">Codziennie</string>
@@ -66,8 +63,6 @@
     <string name="third_m">trzeci(ą)</string>
     <string name="fourth_m">czwarty(ą)</string>
     <string name="last_m">ostatni(ą)</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">Powtarzaj w każdy(ą)</string>
     <string name="every_f">Każdy(ą)</string>
     <string name="first_f">pierwszy(ą)</string>
@@ -75,22 +70,18 @@
     <string name="third_f">trzeci(ą)</string>
     <string name="fourth_f">czwarty(ą)</string>
     <string name="last_f">ostatni(ą)</string>
-    <!-- Birthdays -->
     <string name="birthdays">Urodziny</string>
     <string name="add_birthdays">Dodaj urodziny kontaktów</string>
     <string name="no_birthdays">Nie znaleziono żadnych urodzin</string>
     <string name="birthdays_added">Urodziny zostały dodane</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">Rocznice</string>
     <string name="add_anniversaries">Dodaj rocznice kontaktów</string>
     <string name="no_anniversaries">Nie znaleziono żadnych rocznic</string>
     <string name="anniversaries_added">Rocznice zostały dodane</string>
-    <!-- Event Reminders -->
     <string name="reminder">Przypomnienie</string>
     <string name="before">przed</string>
     <string name="add_another_reminder">Dodaj inne przypomnienie</string>
     <string name="event_reminders">Przypomnienia</string>
-    <!-- Export / Import -->
     <string name="import_events">Importuj wydarzenia</string>
     <string name="export_events">Eksportuj wydarzenia</string>
     <string name="import_events_from_ics">Importuj wydarzenia z pliku .ics</string>
@@ -100,14 +91,11 @@
     <string name="include_event_types">Dołącz typy wydarzeń</string>
     <string name="filename_without_ics">Nazwa pliku (bez końcówki \".ics\")</string>
     <string name="override_event_types">Nadpisz typy wydarzeń w pliku</string>
-    <!-- Event details -->
     <string name="title">Tytuł</string>
     <string name="location">Lokalizacja</string>
     <string name="description">Opis</string>
     <string name="all_day">Całodniowe</string>
-    <!-- Weekly view -->
     <string name="week">Tydzień</string>
-    <!-- Event types -->
     <string name="event_types">Typy wydarzeń</string>
     <string name="add_new_type">Dodaj nowy typ</string>
     <string name="edit_type">Edytuj typ</string>
@@ -119,7 +107,6 @@
     <string name="move_events_into_default">Przenieś powiązane wydarzenia do domyślnego typu wydarzeń</string>
     <string name="remove_affected_events">Usuń powiązane wydarzenia</string>
     <string name="unsync_caldav_calendar">Aby usunąć kalendarz CalDAV, musisz wyłączyć jego synchronizację</string>
-    <!-- Holidays -->
     <string name="holidays">Święta</string>
     <string name="add_holidays">Dodaj święto</string>
     <string name="national_holidays">Święta państwowe</string>
@@ -127,7 +114,6 @@
     <string name="holidays_imported_successfully">Święta zostały pomyślnie zaimportowane do kategorii wydarzeń \"Święta\"</string>
     <string name="importing_some_holidays_failed">Importowanie niektórych świąt nie powiodło się</string>
     <string name="importing_holidays_failed">Importowanie świąt nie powiodło się</string>
-    <!-- Settings -->
     <string name="manage_event_types">Zarządzaj typami wydarzeń</string>
     <string name="start_day_at">Początek dnia</string>
     <string name="end_day_at">Koniec dnia</string>
@@ -162,7 +148,6 @@
     <string name="default_start_time">Domyślna godzina rozpoczęcia</string>
     <string name="next_full_hour">Przy następnej pełnej godzinie</string>
     <string name="default_duration">Domyślny czas trwania</string>
-    <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Wybierz kalendarze, które chcesz zsynchronizować</string>
     <string name="manage_synced_calendars">Zarządzaj zsynchronizowanymi kalendarzami</string>
@@ -175,8 +160,6 @@
     <string name="synchronization_completed">Synchronizacja zakończona</string>
     <string name="select_a_different_caldav_color">Wybierz inny kolor (może być zastosowany tylko lokalnie)</string>
     <string name="insufficient_permissions">Nie możesz pisać w wybranym kalendarzu</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Poniedziałek</string>
     <string name="tuesday_alt">Wtorek</string>
     <string name="wednesday_alt">Środę</string>
@@ -184,7 +167,6 @@
     <string name="friday_alt">Piątek</string>
     <string name="saturday_alt">Sobotę</string>
     <string name="sunday_alt">Niedzielę</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">Trening</string>
     <string name="sample_description_1">Dziś robimy nogi</string>
     <string name="sample_title_2">Spotkanie z Januszem</string>
@@ -193,7 +175,6 @@
     <string name="sample_title_4">Kolacja z ukochaną</string>
     <string name="sample_description_4">Przy blasku zachodzącego słońca</string>
     <string name="sample_title_5">Czas na kawę</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Jak mogę usunąć święta zaimportowane przez przycisk \'Dodaj święta\'?</string>
     <string name="faq_1_text">Święta dodane w ten sposób są wprowadzane do nowego typu wydarzeń - \'Święta\'. Usunąć je możesz, przechodząc do ustawień aplikacji, a następnie w sekcji \'Zarządzaj typami wydarzeń\' usunąć ową kategorię, klikając ikonę kosza.</string>
     <string name="faq_2_title">Czy mogę zsychronizować moje wydarzenia z Kalendarzem Google lub inną usługą wspierającą CalDAV?</string>
@@ -201,8 +182,6 @@
     <string name="faq_3_title">Widzę przypomnienia wizualne, ale nie słyszę dźwięku. Co mogę zrobić?</string>
     <string name="faq_3_text">Nie tylko wyświetlanie faktycznego przypomnienia, ale także odtwarzanie dźwięku ma duży wpływ na system. Jeśli nie słychać żadnego dźwięku, spróbuj przejść do ustawień aplikacji,
          naciskając opcję \"Strumień audio używany przez przypomnienia\" i zmieniając ją na inną wartość. Jeśli nadal nie będzie działać, sprawdź ustawienia dźwięku, jeśli dany strumień nie jest wyciszony.        </string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_long_description">       Prosty kalendarz z obsługą synchronizacji z Dyskiem Google. Dzięki niemu możesz z łatwością tworzyć wydarzenia i przypomnienia, które nigdy nie zaginą.
 
         Zawiera widżet 4x4 z możliwością ustawiania koloru tekstu i tła, a dla tego drugiego również stopień przezroczystości.
@@ -214,8 +193,4 @@
         Uprawnienia kontaktów są używane tylko do importowania urodzin.
 
         Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie https://www.simplemobiletools.com</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

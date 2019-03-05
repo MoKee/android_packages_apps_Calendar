@@ -11,10 +11,8 @@
     <string name="simple_event_list">Jednoduchý seznam událostí</string>
     <string name="no_upcoming_events">Nemáte žádné nadcházející události.</string>
     <string name="go_to_today">Přejít na dnešek</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">Měsíční kalendář</string>
     <string name="widget_list">Seznam událostí kalendáře</string>
-    <!-- Event -->
     <string name="event">Událost</string>
     <string name="edit_event">Upravit událost</string>
     <string name="new_event">Nová událost</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">Filtrovat události podle typu</string>
     <string name="please_fill_location">Vyplňte prosím místo, které se zobrazí na mapě</string>
     <string name="public_event_notification_text">Událost právě nastává</string>
-    <!-- Event Repetition -->
     <string name="repetition">Opakování</string>
     <string name="no_repetition">Neopakuje se</string>
     <string name="daily">Denně</string>
@@ -66,8 +63,6 @@
     <string name="third_m">třetí</string>
     <string name="fourth_m">čtvrtý</string>
     <string name="last_m">poslední</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">Opakovat každou</string>
     <string name="every_f">Každý</string>
     <string name="first_f">první</string>
@@ -75,22 +70,18 @@
     <string name="third_f">třetí</string>
     <string name="fourth_f">čtvrtou</string>
     <string name="last_f">poslední</string>
-    <!-- Birthdays -->
     <string name="birthdays">Narozeniny</string>
     <string name="add_birthdays">Přidat narozeniny z kontaktů</string>
     <string name="no_birthdays">Žádné narozeniny nebyly nalezeny</string>
     <string name="birthdays_added">Narozeniny byly úspěšně přidány</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">Výročí</string>
     <string name="add_anniversaries">Přidat výročí kontaktu</string>
     <string name="no_anniversaries">Žádné výročí nebylo nalezeno</string>
     <string name="anniversaries_added">Výročí bylo úspěšně přidáno</string>
-    <!-- Event Reminders -->
     <string name="reminder">Připomínka</string>
     <string name="before">před</string>
     <string name="add_another_reminder">Přidat další připomenutí</string>
     <string name="event_reminders">Připomínky událostí</string>
-    <!-- Export / Import -->
     <string name="import_events">Import událostí</string>
     <string name="export_events">Export událostí</string>
     <string name="import_events_from_ics">Importovat kalendář ze souboru .ics</string>
@@ -100,14 +91,11 @@
     <string name="include_event_types">Zahrnout typy událostí</string>
     <string name="filename_without_ics">Název souboru (bez .ics)</string>
     <string name="override_event_types">Přepsat typ události v souboru</string>
-    <!-- Event details -->
     <string name="title">Název</string>
     <string name="location">Poloha</string>
     <string name="description">Popis</string>
     <string name="all_day">Celý den</string>
-    <!-- Weekly view -->
     <string name="week">Týden</string>
-    <!-- Event types -->
     <string name="event_types">Typ události</string>
     <string name="add_new_type">Přidat nový typ</string>
     <string name="edit_type">Upravit typ</string>
@@ -119,7 +107,6 @@
     <string name="move_events_into_default">Přesunout vybrané události na výchozí typ události</string>
     <string name="remove_affected_events">Trvale odebrat vybrané události</string>
     <string name="unsync_caldav_calendar">Chcete-li odebrat kalendář CalDAV, musíte vypnout synchronizaci</string>
-    <!-- Holidays -->
     <string name="holidays">Svátky</string>
     <string name="add_holidays">Přidat svátek</string>
     <string name="national_holidays">Státní svátky</string>
@@ -127,7 +114,6 @@
     <string name="holidays_imported_successfully">Svátky byly úspěšně naimportovány do nového typu událostí \"Svátky\"</string>
     <string name="importing_some_holidays_failed">Import některých událostí se nezdařil</string>
     <string name="importing_holidays_failed">Import svátků se nezdařil</string>
-    <!-- Settings -->
     <string name="manage_event_types">Správa typů událostí</string>
     <string name="start_day_at">Počátek dne v</string>
     <string name="end_day_at">Konec dne v</string>
@@ -164,7 +150,6 @@
     <string name="default_duration">Výchozí doba trvání</string>
     <string name="last_used_one">Poslední použitá</string>
     <string name="other_time">Jiný čas</string>
-    <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Vybrat kalendáře k synchronizaci</string>
     <string name="manage_synced_calendars">Správa synchronizovaných kalendářů</string>
@@ -177,8 +162,6 @@
     <string name="synchronization_completed">Synchronizace dokončena</string>
     <string name="select_a_different_caldav_color">Zvolte jinou barvu (může být použita pouze lokálně)</string>
     <string name="insufficient_permissions">Nemáte povoleno psát ve vybraném kalendáři</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">Pondělí</string>
     <string name="tuesday_alt">Úterý</string>
     <string name="wednesday_alt">Středa</string>
@@ -186,7 +169,6 @@
     <string name="friday_alt">Pátek</string>
     <string name="saturday_alt">Sobota</string>
     <string name="sunday_alt">Neděle</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">Cvičení</string>
     <string name="sample_description_1">Leg day</string>
     <string name="sample_title_2">Schůzka s Janem</string>
@@ -195,7 +177,6 @@
     <string name="sample_title_4">Oběd s Marií</string>
     <string name="sample_description_4">Ve městě</string>
     <string name="sample_title_5">Káva</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Jak mohu odstranit svátky importované přes tlačítko \"Přidat svátek\"?</string>
     <string name="faq_1_text">Svátky vytvořené touto cestou jsou vloženy s novým typem události \"Svátky\". Odstranit jej můžete přes: Nastavení -&gt; Správa typů událostí -&gt;
         dlouze podržte daný typ události a stisknete tlačítko s ikonou koše pro odstranění.</string>
@@ -205,8 +186,6 @@
     <string name="faq_3_title">Vizuálně vidím připomínku, ale neslyším žádný zvuk. Co mám dělat?</string>
     <string name="faq_3_text">Nejenom zobrazování aktuální připomínky, ale i přehrávání zvuku je dost ovlivněno operačním systémem. Pokud neslyšíte žádný zvuk, zkuste jít do nastavení aplikace,
         vyberte: \"Zvuk upomínky\" a změňte na něco jiného. Pokud zvuk stále nefunguje, zkontrolujte zda není zvuk vypnut v nastavení vašeho systému.</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Offline kalendář pro vaše události, bez reklam a respektující vaše soukromí.</string>
     <string name="app_long_description">        Jednoduchý kalendář s volitelnou synchronizací CalDAV. Můžete snadno vytvářet opakující se události a nastavovat připomenutí, můžete také zobrazovat čísla týdnů.
 
@@ -220,8 +199,4 @@
 
         Tato aplikace je součástí větší sady aplikací. Tyto a další aplikace najdete na https://www.simplemobiletools.com
     </string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

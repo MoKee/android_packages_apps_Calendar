@@ -11,10 +11,8 @@
     <string name="simple_event_list">قائمة أحداث التقويم</string>
     <string name="no_upcoming_events">يبدو أنه لا يوجد لديك أي أحداث قادمة.</string>
     <string name="go_to_today">الذهاب إلى اليوم الحالي</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">تقويم شهري</string>
     <string name="widget_list">قائمة أحداث التقويم</string>
-    <!-- Event -->
     <string name="event">الحدث</string>
     <string name="edit_event">تحرير الحدث</string>
     <string name="new_event">حدث جديد</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">تصفية الأحداث حسب النوع</string>
     <string name="please_fill_location">يرجى ملء موقع ليتم عرضه على الخريطة</string>
     <string name="public_event_notification_text">حدث ما قادم</string>
-    <!-- Event Repetition -->
     <string name="repetition">التكرار</string>
     <string name="no_repetition">لا تكرار</string>
     <string name="daily">يومياً</string>
@@ -66,8 +63,6 @@
     <string name="third_m">الثالث</string>
     <string name="fourth_m">الرابع</string>
     <string name="last_m">الأخير</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">كرّر كل</string>
     <string name="every_f">كـُل</string>
     <string name="first_f">الأول</string>
@@ -75,22 +70,18 @@
     <string name="third_f">الثالث</string>
     <string name="fourth_f">الرابع</string>
     <string name="last_f">الأخير</string>
-    <!-- Birthdays -->
     <string name="birthdays">أعياد الميلاد</string>
     <string name="add_birthdays">أضف أعياد الميلاد</string>
     <string name="no_birthdays">لم يتم العثور على أعياد الميلاد</string>
     <string name="birthdays_added">تمت إضافة أعياد الميلاد بنجاح</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">الذكريات السنوية</string>
     <string name="add_anniversaries">إضافة الذكرى السنوية من جهات الاتصال</string>
     <string name="no_anniversaries">لم يتم العثور على أي ذكرى سنوية</string>
     <string name="anniversaries_added">تمت إضافة الذكرى السنوية بنجاح</string>
-    <!-- Event Reminders -->
     <string name="reminder">تذكير</string>
     <string name="before">قبل</string>
     <string name="add_another_reminder">إضافة تذكير آخر</string>
     <string name="event_reminders">تذكير الحدث</string>
-    <!-- Export / Import -->
     <string name="import_events">استيراد الأحداث</string>
     <string name="export_events">تصدير الأحداث</string>
     <string name="import_events_from_ics">إستيراد الاحداث من ملف.ics</string>
@@ -100,14 +91,11 @@
     <string name="include_event_types">تضمين أنواع الأحداث</string>
     <string name="filename_without_ics">اسم الملف (بدون .ics)</string>
     <string name="override_event_types">تجاوز أنواع الأحداث في الملف</string>
-    <!-- Event details -->
     <string name="title">العنوان</string>
     <string name="location">الموقع</string>
     <string name="description">الوصف</string>
     <string name="all_day">كل اليوم</string>
-    <!-- Weekly view -->
     <string name="week">أسبوع</string>
-    <!-- Event types -->
     <string name="event_types">أنواع الحدث</string>
     <string name="add_new_type">إضافة نوع جديد</string>
     <string name="edit_type">تحرير النوع</string>
@@ -119,7 +107,6 @@
     <string name="move_events_into_default">نقل الأحداث المتأثرة إلى نوع الحدث الافتراضي</string>
     <string name="remove_affected_events">إزالة الأحداث المتأثرة نهائياً</string>
     <string name="unsync_caldav_calendar">لإزالة تقويم CalDAV ، يتعين عليك عدم مزامنته</string>
-    <!-- Holidays -->
     <string name="holidays">العطلات</string>
     <string name="add_holidays">إضافة عطلة</string>
     <string name="national_holidays">الأعياد الوطنية</string>
@@ -127,7 +114,6 @@
     <string name="holidays_imported_successfully">العطل تم استيرادها بنجاح إلى نوع الحدث \"عطلة\"</string>
     <string name="importing_some_holidays_failed">فشل في استيراد بعض الأحداث</string>
     <string name="importing_holidays_failed">فشل في استيراد العطل</string>
-    <!-- Settings -->
     <string name="manage_event_types">إدارة أنواع الحدث</string>
     <string name="start_day_at">بدء اليوم في</string>
     <string name="end_day_at">نهاية اليوم في</string>
@@ -164,7 +150,6 @@
     <string name="default_duration">المدة الافتراضية</string>
     <string name="last_used_one">اخر واحد مستخدم</string>
     <string name="other_time">وقت آخر</string>
-    <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">حدد التقويمات للمزامنة</string>
     <string name="manage_synced_calendars">إدارة التقويمات المتزامنة</string>
@@ -177,8 +162,6 @@
     <string name="synchronization_completed">إكتمال المزامنة</string>
     <string name="select_a_different_caldav_color">تحديد لون مختلف (يمكن تطبيقها محلياً فقط)</string>
     <string name="insufficient_permissions">غير مسموح لك بالكتابة في التقويم المحدد</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">الاثنين</string>
     <string name="tuesday_alt">الثلاثاء</string>
     <string name="wednesday_alt">الأربعاء</string>
@@ -186,7 +169,6 @@
     <string name="friday_alt">الجمعة</string>
     <string name="saturday_alt">السبت</string>
     <string name="sunday_alt">الأحد</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">تمرين</string>
     <string name="sample_description_1">يوم المباراة</string>
     <string name="sample_title_2">المقابلة مع جون</string>
@@ -195,7 +177,6 @@
     <string name="sample_title_4">الغداء مع ماري</string>
     <string name="sample_description_4">في بلازا</string>
     <string name="sample_title_5">وقت القهوة</string>
-    <!-- FAQ -->
     <string name="faq_1_title">كيف يمكنني إزالة العطل المستوردة عبر زر \"إضافة أيام العطل\"؟</string>
     <string name="faq_1_text">يتم إدراج العطلات التي يتم إنشاؤها بهذه الطريقة في نوع حدث جديد يسمى \"العطلات\". يمكنك الذهاب في الإعدادات -&gt; إدارة أنواع الأحداث ،
         اضغط لفترة طويلة على نوع الحدث المحدد وحذفه عن طريق اختيار trashbin.</string>
@@ -205,8 +186,6 @@
     <string name="faq_3_title">أرى التذكيرات المرئية ، لكن لا أسمع صوتًا. ماذا افعل؟</string>
     <string name="faq_3_text">ليس فقط عرض التذكير الفعلي ، ولكن تشغيل الصوت يتأثر بشكل كبير بالنظام أيضًا. إذا لم تستطع سماع أي صوت ، فحاول الذهاب في إعدادات التطبيق ،
         الضغط على الخيار \"الصوت الذي يستخدمه التذكير\" وتغييره إلى قيمة مختلفة. إذا استمر عدم نجاح ذلك ، فتحقق من إعدادات الصوت ، إذا لم يتم كتم البث المحدد.</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">تقويم غير متصل لأحداثك بدون إعلانات ، مع احترام خصوصيتك.</string>
     <string name="app_long_description">تقويم بسيط مع تزامن CalDAV اختياري. يمكنك بسهولة إنشاء أحداث متكررة وإعداد تذكيرات ، كما يمكن أيضًا عرض أرقام الأسبوع.
 
@@ -219,8 +198,4 @@
         لا يتم استخدام إذن جهات الاتصال إلا عند استيراد أعياد الميلاد والاعياد السنوية.
 
         هذا التطبيق هو مجرد قطعة واحدة من سلسلة أكبر من التطبيقات. يمكنك العثور على البقية منهم على https://www.simplemobiletools.com</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>

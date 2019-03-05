@@ -11,10 +11,8 @@
     <string name="simple_event_list">活动列表</string>
     <string name="no_upcoming_events">好像你没有任何即将发生的事情。</string>
     <string name="go_to_today">转到今天</string>
-    <!-- Widget titles -->
     <string name="widget_monthly">月历</string>
     <string name="widget_list">日历活动列表</string>
-    <!-- Event -->
     <string name="event">活动</string>
     <string name="edit_event">编辑活动</string>
     <string name="new_event">新活动</string>
@@ -27,7 +25,6 @@
     <string name="filter_events_by_type">按类型筛选活动</string>
     <string name="please_fill_location">请输入要在地图上显示的位置</string>
     <string name="public_event_notification_text">一个活动即将到来</string>
-    <!-- Event Repetition -->
     <string name="repetition">重复</string>
     <string name="no_repetition">不重复</string>
     <string name="daily">每日</string>
@@ -66,8 +63,6 @@
     <string name="third_m">第三</string>
     <string name="fourth_m">第四</string>
     <string name="last_m">最后</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every first Sunday" -->
     <string name="repeat_every_f">每隔.... 重复</string>
     <string name="every_f">每</string>
     <string name="first_f">第一</string>
@@ -75,22 +70,18 @@
     <string name="third_f">第三</string>
     <string name="fourth_f">第四</string>
     <string name="last_f">最后</string>
-    <!-- Birthdays -->
     <string name="birthdays">生日</string>
     <string name="add_birthdays">添加联系人生日</string>
     <string name="no_birthdays">未找到生日</string>
     <string name="birthdays_added">生日添加成功</string>
-    <!-- Anniversaries -->
     <string name="anniversaries">纪念日</string>
     <string name="add_anniversaries">添加联系人周年纪念日</string>
     <string name="no_anniversaries">没有纪念日</string>
     <string name="anniversaries_added">成功添加纪念日</string>
-    <!-- Event Reminders -->
     <string name="reminder">提醒</string>
     <string name="before">前</string>
     <string name="add_another_reminder">增加另一个提醒</string>
     <string name="event_reminders">活动提醒</string>
-    <!-- Export / Import -->
     <string name="import_events">导入活动</string>
     <string name="export_events">导出活动</string>
     <string name="import_events_from_ics">从 .ics 文件导入活动</string>
@@ -100,14 +91,11 @@
     <string name="include_event_types">包含活动类型</string>
     <string name="filename_without_ics">文件名（不包含 .ics）</string>
     <string name="override_event_types">重写文件内的活动类型</string>
-    <!-- Event details -->
     <string name="title">标题</string>
     <string name="location">地址</string>
     <string name="description">描述</string>
     <string name="all_day">全天</string>
-    <!-- Weekly view -->
     <string name="week">周</string>
-    <!-- Event types -->
     <string name="event_types">活动类型</string>
     <string name="add_new_type">添加新的类型</string>
     <string name="edit_type">编辑类型</string>
@@ -119,7 +107,6 @@
     <string name="move_events_into_default">将受影响的活动移动到默认活动类型中</string>
     <string name="remove_affected_events">永久移除受影响的活动</string>
     <string name="unsync_caldav_calendar">要删除 CalDAV 日历, 请将其取消同步</string>
-    <!-- Holidays -->
     <string name="holidays">节假日</string>
     <string name="add_holidays">添加节假日</string>
     <string name="national_holidays">国庆假期</string>
@@ -127,7 +114,6 @@
     <string name="holidays_imported_successfully">节假日信息导入成功</string>
     <string name="importing_some_holidays_failed">部分活动导入失败</string>
     <string name="importing_holidays_failed">导入节假日失败</string>
-    <!-- Settings -->
     <string name="manage_event_types">管理活动类型</string>
     <string name="start_day_at">开始日期</string>
     <string name="end_day_at">结束日期</string>
@@ -164,7 +150,6 @@
     <string name="default_duration">默认持续时间</string>
     <string name="last_used_one">上次使用</string>
     <string name="other_time">其他时间</string>
-    <!-- CalDAV sync -->
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">选择要同步的日历</string>
     <string name="manage_synced_calendars">管理已同步的日历</string>
@@ -177,8 +162,6 @@
     <string name="synchronization_completed">同步已完成</string>
     <string name="select_a_different_caldav_color">选择其他颜色 (可能仅在本地应用)</string>
     <string name="insufficient_permissions">不允许您在所选的日历中写入</string>
-    <!-- alternative versions for some languages, use the same translations if you are not sure what this means -->
-    <!-- used in repetition, like "Every last Sunday" -->
     <string name="monday_alt">周一</string>
     <string name="tuesday_alt">周二</string>
     <string name="wednesday_alt">周三</string>
@@ -186,7 +169,6 @@
     <string name="friday_alt">周五</string>
     <string name="saturday_alt">周六</string>
     <string name="sunday_alt">周日</string>
-    <!-- List widget config example events -->
     <string name="sample_title_1">锻炼</string>
     <string name="sample_description_1">腿部训练日</string>
     <string name="sample_title_2">与约翰会面</string>
@@ -195,7 +177,6 @@
     <string name="sample_title_4">与玛丽共进午餐</string>
     <string name="sample_description_4">在广场</string>
     <string name="sample_title_5">咖啡时间</string>
-    <!-- FAQ -->
     <string name="faq_1_title">如何通过“添加节假日”按钮删除已导入的节假日？</string>
     <string name="faq_1_text">以这种方式创建的节假日活动会被添加到新事件类型中去。您可以进入设置-&gt; 管理活动类型，
         长按给定的活动类型并通过选择回收站删除它。</string>
@@ -205,8 +186,6 @@
     <string name="faq_3_title">我可以看见提示，但没有听到声音。我应该做什么？</string>
     <string name="faq_3_text">不仅仅是显示实际的提醒， 而且播放提示音也受到系统的巨大影响。如果您听不到任何声音，请尝试使用应用程序设置，
         按 \"提示音\" 选项，并将其更改为其他值。如果仍然没有任何声音，检查您的声音设置，确认是否设置了静音。</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">一个没有广告且无联网的活动日历, 尊重您的隐私。</string>
     <string name="app_long_description">一个简单的日历应用，包含 CalDAV 同步选项。可简单的创建可重复的事件并设置提醒。也可以显示周数。
 
@@ -219,8 +198,4 @@
         通讯录权限仅用于导入联系人的生日和纪念日。
 
         此应用是一系列应用中的其中一个，可在 https://www.simplemobiletools.com 找到其他应用</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->
 </resources>
