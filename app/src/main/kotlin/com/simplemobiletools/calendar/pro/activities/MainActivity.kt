@@ -160,6 +160,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             goToTodayButton = findItem(R.id.go_to_today)
             findItem(R.id.filter).isVisible = mShouldFilterBeVisible
             findItem(R.id.go_to_today).isVisible = shouldGoToTodayBeVisible && config.storedView != EVENTS_LIST_VIEW
+            findItem(R.id.go_to_date).isVisible = config.storedView != EVENTS_LIST_VIEW
         }
 
         setupSearch(menu)
@@ -178,6 +179,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         when (item.itemId) {
             R.id.change_view -> showViewDialog()
             R.id.go_to_today -> goToToday()
+            R.id.go_to_date -> showGoToDateDialog()
             R.id.filter -> showFilterDialog()
             R.id.refresh_caldav_calendars -> refreshCalDAVCalendars(true)
             R.id.add_holidays -> addHolidays()
@@ -343,6 +345,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private fun goToToday() {
         currentFragments.last().goToToday()
+    }
+
+    fun showGoToDateDialog() {
+        currentFragments.last().showGoToDateDialog()
     }
 
     private fun resetActionBarTitle() {

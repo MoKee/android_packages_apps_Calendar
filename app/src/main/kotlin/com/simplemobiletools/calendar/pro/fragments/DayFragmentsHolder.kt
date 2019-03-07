@@ -7,6 +7,8 @@ import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import androidx.appcompat.app.AlertDialog
 import androidx.viewpager.widget.ViewPager
 import com.mokee.cloud.calendar.ChineseCalendar
 import com.simplemobiletools.calendar.pro.R
@@ -16,6 +18,8 @@ import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.helpers.DAY_CODE
 import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.interfaces.NavigationListener
+import com.simplemobiletools.commons.extensions.getDialogTheme
+import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.updateActionBarSubtitle
 import com.simplemobiletools.commons.extensions.updateActionBarTitle
 import com.simplemobiletools.commons.views.MyViewPager
@@ -101,6 +105,30 @@ class DayFragmentsHolder : MyFragmentHolder(), NavigationListener {
     override fun goToToday() {
         currentDayCode = todayDayCode
         setupFragment()
+    }
+
+    override fun showGoToDateDialog() {
+        activity!!.setTheme(context!!.getDialogTheme())
+        val view = layoutInflater.inflate(R.layout.date_picker, null)
+        val datePicker = view.findViewById<DatePicker>(R.id.date_picker)
+
+        val dateTime = Formatter.getDateTimeFromCode(currentDayCode)
+        datePicker.init(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth, null)
+
+        AlertDialog.Builder(context!!)
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.ok) { dialog, which -> dateSelected(dateTime, datePicker) }
+                .create().apply {
+                    activity?.setupDialogStuff(view, this)
+                }
+    }
+
+    private fun dateSelected(dateTime: DateTime, datePicker: DatePicker) {
+        val month = datePicker.month + 1
+        val year = datePicker.year
+        val day = datePicker.dayOfMonth
+        val newDateTime = dateTime.withDate(year, month, day)
+        goToDateTime(newDateTime)
     }
 
     override fun refreshEvents() {
