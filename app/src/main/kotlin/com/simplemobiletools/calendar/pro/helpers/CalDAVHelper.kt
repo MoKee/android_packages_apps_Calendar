@@ -13,6 +13,7 @@ import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.models.CalDAVCalendar
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.EventType
+import com.simplemobiletools.calendar.pro.models.Reminder
 import com.simplemobiletools.calendar.pro.objects.States.isUpdatingCalDAV
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.PERMISSION_READ_CALENDAR
@@ -52,7 +53,7 @@ class CalDAVHelper(val context: Context) {
     }
 
     @SuppressLint("MissingPermission")
-    fun getCalDAVCalendars(ids: String, showToasts: Boolean): List<CalDAVCalendar> {
+    fun getCalDAVCalendars(ids: String, showToasts: Boolean): ArrayList<CalDAVCalendar> {
         val calendars = ArrayList<CalDAVCalendar>()
         if (!context.hasPermission(PERMISSION_WRITE_CALENDAR) || !context.hasPermission(PERMISSION_READ_CALENDAR)) {
             return calendars
@@ -72,7 +73,7 @@ class CalDAVHelper(val context: Context) {
         var cursor: Cursor? = null
         try {
             cursor = context.contentResolver.query(uri, projection, selection, null, null)
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 do {
                     val id = cursor.getIntValue(CalendarContract.Calendars._ID)
                     val displayName = cursor.getStringValue(CalendarContract.Calendars.CALENDAR_DISPLAY_NAME)
@@ -144,7 +145,7 @@ class CalDAVHelper(val context: Context) {
         var cursor: Cursor? = null
         try {
             cursor = context.contentResolver.query(uri, projection, selection, selectionArgs, null)
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 do {
                     val colorKey = cursor.getIntValue(CalendarContract.Colors.COLOR_KEY)
                     val color = cursor.getIntValue(CalendarContract.Colors.COLOR)
@@ -192,7 +193,7 @@ class CalDAVHelper(val context: Context) {
         var cursor: Cursor? = null
         try {
             cursor = context.contentResolver.query(uri, projection, selection, null, null)
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 do {
                     val id = cursor.getLongValue(CalendarContract.Events._ID)
                     val title = cursor.getStringValue(CalendarContract.Events.TITLE) ?: ""
@@ -211,12 +212,17 @@ class CalDAVHelper(val context: Context) {
                         endTS = startTS + Parser().parseDurationSeconds(duration)
                     }
 
+                    val reminder1 = reminders.getOrNull(0)
+                    val reminder2 = reminders.getOrNull(1)
+                    val reminder3 = reminders.getOrNull(2)
                     val importId = getCalDAVEventImportId(calendarId, id)
                     val source = "$CALDAV-$calendarId"
                     val repeatRule = Parser().parseRepeatInterval(rrule, startTS)
-                    val event = Event(null, startTS, endTS, title, location, description, reminders.getOrElse(0) { -1 },
-                            reminders.getOrElse(1) { -1 }, reminders.getOrElse(2) { -1 }, repeatRule.repeatInterval, repeatRule.repeatRule,
-                            repeatRule.repeatLimit, ArrayList(), importId, allDay, eventTypeId, source = source)
+                    val event = Event(null, startTS, endTS, title, location, description, reminder1?.minutes ?: REMINDER_OFF,
+                            reminder2?.minutes ?: REMINDER_OFF, reminder3?.minutes ?: REMINDER_OFF, reminder1?.type
+                            ?: REMINDER_NOTIFICATION, reminder2?.type ?: REMINDER_NOTIFICATION, reminder3?.type
+                            ?: REMINDER_NOTIFICATION, repeatRule.repeatInterval, repeatRule.repeatRule,
+                            repeatRule.repeatLimit, ArrayList(), ArrayList(), importId, allDay, eventTypeId, source = source)
 
                     if (event.getIsAllDay()) {
                         event.startTS = Formatter.getShiftedImportTimestamp(event.startTS)
@@ -341,9 +347,9 @@ class CalDAVHelper(val context: Context) {
         clearEventReminders(event)
         event.getReminders().forEach {
             val contentValues = ContentValues().apply {
-                put(Reminders.MINUTES, it)
+                put(Reminders.MINUTES, it.minutes)
+                put(Reminders.METHOD, if (it.type == REMINDER_EMAIL) Reminders.METHOD_EMAIL else Reminders.METHOD_ALERT)
                 put(Reminders.EVENT_ID, event.getCalDAVEventId())
-                put(Reminders.METHOD, Reminders.METHOD_ALERT)
             }
 
             try {
@@ -441,9 +447,8 @@ class CalDAVHelper(val context: Context) {
         }
     }
 
-    @SuppressLint("MissingPermission")
-    private fun getCalDAVEventReminders(eventId: Long): List<Int> {
-        val reminders = ArrayList<Int>()
+    private fun getCalDAVEventReminders(eventId: Long): List<Reminder> {
+        val reminders = ArrayList<Reminder>()
         val uri = CalendarContract.Reminders.CONTENT_URI
         val projection = arrayOf(
                 CalendarContract.Reminders.MINUTES,
@@ -452,19 +457,21 @@ class CalDAVHelper(val context: Context) {
         var cursor: Cursor? = null
         try {
             cursor = context.contentResolver.query(uri, projection, selection, null, null)
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 do {
                     val minutes = cursor.getIntValue(CalendarContract.Reminders.MINUTES)
                     val method = cursor.getIntValue(CalendarContract.Reminders.METHOD)
-                    if (method == CalendarContract.Reminders.METHOD_ALERT) {
-                        reminders.add(minutes)
+                    if (method == CalendarContract.Reminders.METHOD_ALERT || method == CalendarContract.Reminders.METHOD_EMAIL) {
+                        val type = if (method == CalendarContract.Reminders.METHOD_EMAIL) REMINDER_EMAIL else REMINDER_NOTIFICATION
+                        val reminder = Reminder(minutes, type)
+                        reminders.add(reminder)
                     }
                 } while (cursor.moveToNext())
             }
         } finally {
             cursor?.close()
         }
-        return reminders
+        return reminders.sortedBy { it.minutes }
     }
 
     private fun getCalDAVEventImportId(calendarId: Int, eventId: Long) = "$CALDAV-$calendarId-$eventId"

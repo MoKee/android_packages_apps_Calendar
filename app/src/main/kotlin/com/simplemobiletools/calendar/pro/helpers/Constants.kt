@@ -106,6 +106,8 @@ const val SUMMARY = "SUMMARY"
 const val DESCRIPTION = "DESCRIPTION:"
 const val UID = "UID:"
 const val ACTION = "ACTION:"
+const val ATTENDEE = "ATTENDEE:"
+const val MAILTO = "mailto:"
 const val TRIGGER = "TRIGGER:"
 const val RRULE = "RRULE:"
 const val CATEGORIES = "CATEGORIES:"
@@ -122,6 +124,7 @@ const val SEQUENCE = "SEQUENCE"
 const val CATEGORY_COLOR = "CATEGORY_COLOR:"
 
 const val DISPLAY = "DISPLAY"
+const val EMAIL = "EMAIL"
 const val FREQ = "FREQ"
 const val UNTIL = "UNTIL"
 const val COUNT = "COUNT"
@@ -156,5 +159,8 @@ const val SOURCE_CONTACT_ANNIVERSARY = "contact-anniversary"
 const val DELETE_SELECTED_OCCURRENCE = 0
 const val DELETE_FUTURE_OCCURRENCES = 1
 const val DELETE_ALL_OCCURRENCES = 2
+
+const val REMINDER_NOTIFICATION = 0
+const val REMINDER_EMAIL = 1
 
 fun getNowSeconds() = System.currentTimeMillis() / 1000L

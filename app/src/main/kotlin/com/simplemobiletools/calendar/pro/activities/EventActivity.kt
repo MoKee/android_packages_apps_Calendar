@@ -9,6 +9,7 @@ import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import android.widget.ImageView
 import androidx.core.app.NotificationManagerCompat
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.dialogs.*
@@ -18,12 +19,14 @@ import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.models.CalDAVCalendar
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.EventType
+import com.simplemobiletools.calendar.pro.models.Reminder
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import kotlinx.android.synthetic.main.activity_event.*
+import kotlinx.android.synthetic.main.activity_event.view.*
 import org.joda.time.DateTime
 import java.util.*
 import java.util.regex.Pattern
@@ -45,6 +48,9 @@ class EventActivity : SimpleActivity() {
     private var mReminder1Minutes = 0
     private var mReminder2Minutes = 0
     private var mReminder3Minutes = 0
+    private var mReminder1Type = REMINDER_NOTIFICATION
+    private var mReminder2Type = REMINDER_NOTIFICATION
+    private var mReminder3Type = REMINDER_NOTIFICATION
     private var mRepeatInterval = 0
     private var mRepeatLimit = 0L
     private var mRepeatRule = 0
@@ -146,10 +152,32 @@ class EventActivity : SimpleActivity() {
         event_reminder_2.setOnClickListener { showReminder2Dialog() }
         event_reminder_3.setOnClickListener { showReminder3Dialog() }
 
-        event_type_holder.setOnClickListener { showEventTypeDialog() }
+        event_reminder_1_type.setOnClickListener {
+            showReminderTypePicker(mReminder1Type) {
+                mReminder1Type = it
+                updateReminderTypeImage(event_reminder_1_type, Reminder(mReminder1Minutes, mReminder1Type))
+            }
+        }
 
-        if (mEvent.flags and FLAG_ALL_DAY != 0)
-            event_all_day.toggle()
+        event_reminder_2_type.setOnClickListener {
+            showReminderTypePicker(mReminder2Type) {
+                mReminder2Type = it
+                updateReminderTypeImage(event_reminder_2_type, Reminder(mReminder2Minutes, mReminder2Type))
+            }
+        }
+
+        event_reminder_3_type.setOnClickListener {
+            showReminderTypePicker(mReminder3Type) {
+                mReminder3Type = it
+                updateReminderTypeImage(event_reminder_3_type, Reminder(mReminder3Minutes, mReminder3Type))
+            }
+        }
+
+        event_type_holder.setOnClickListener { showEventTypeDialog() }
+        event_all_day.apply {
+            isChecked = mEvent.flags and FLAG_ALL_DAY != 0
+            jumpDrawablesToCurrentState()
+        }
 
         updateTextColors(event_scrollview)
         updateIconColors()
@@ -253,6 +281,9 @@ class EventActivity : SimpleActivity() {
         mReminder1Minutes = mEvent.reminder1Minutes
         mReminder2Minutes = mEvent.reminder2Minutes
         mReminder3Minutes = mEvent.reminder3Minutes
+        mReminder1Type = mEvent.reminder1Type
+        mReminder2Type = mEvent.reminder2Type
+        mReminder3Type = mEvent.reminder3Type
         mRepeatInterval = mEvent.repeatInterval
         mRepeatLimit = mEvent.repeatLimit
         mRepeatRule = mEvent.repeatRule
@@ -558,6 +589,7 @@ class EventActivity : SimpleActivity() {
         updateReminder1Text()
         updateReminder2Text()
         updateReminder3Text()
+        updateReminderTypeImages()
     }
 
     private fun updateReminder1Text() {
@@ -588,6 +620,29 @@ class EventActivity : SimpleActivity() {
                 alpha = 1f
             }
         }
+    }
+
+    private fun showReminderTypePicker(currentValue: Int, callback: (Int) -> Unit) {
+        val items = arrayListOf(
+                RadioItem(REMINDER_NOTIFICATION, getString(R.string.notification)),
+                RadioItem(REMINDER_EMAIL, getString(R.string.email))
+        )
+        RadioGroupDialog(this, items, currentValue) {
+            callback(it as Int)
+        }
+    }
+
+    private fun updateReminderTypeImages() {
+        updateReminderTypeImage(event_reminder_1_type, Reminder(mReminder1Minutes, mReminder1Type))
+        updateReminderTypeImage(event_reminder_2_type, Reminder(mReminder2Minutes, mReminder2Type))
+        updateReminderTypeImage(event_reminder_3_type, Reminder(mReminder3Minutes, mReminder3Type))
+    }
+
+    private fun updateReminderTypeImage(view: ImageView, reminder: Reminder) {
+        view.beVisibleIf(reminder.minutes != REMINDER_OFF && mEventCalendarId != STORED_LOCALLY_ONLY)
+        val drawable = if (reminder.type == REMINDER_NOTIFICATION) R.drawable.ic_bell else R.drawable.ic_email
+        val icon = resources.getColoredDrawableWithColor(drawable, config.textColor)
+        view.setImageDrawable(icon)
     }
 
     private fun updateRepetitionText() {
@@ -627,6 +682,7 @@ class EventActivity : SimpleActivity() {
                     mEventCalendarId = it
                     config.lastUsedCaldavCalendarId = it
                     updateCurrentCalendarInfo(getCalendarWithId(calendars, it))
+                    updateReminderTypeImages()
                 }
             }
         } else {
@@ -765,16 +821,26 @@ class EventActivity : SimpleActivity() {
             "$CALDAV-$mEventCalendarId"
         }
 
-        val reminders = sortedSetOf(mReminder1Minutes, mReminder2Minutes, mReminder3Minutes).filter { it != REMINDER_OFF }
-        val reminder1 = reminders.getOrElse(0) { REMINDER_OFF }
-        val reminder2 = reminders.getOrElse(1) { REMINDER_OFF }
-        val reminder3 = reminders.getOrElse(2) { REMINDER_OFF }
+        var reminders = arrayListOf(
+                Reminder(mReminder1Minutes, mReminder1Type),
+                Reminder(mReminder2Minutes, mReminder2Type),
+                Reminder(mReminder3Minutes, mReminder3Type)
+        )
+        reminders = reminders.filter { it.minutes != REMINDER_OFF }.sortedBy { it.minutes }.toMutableList() as ArrayList<Reminder>
+
+        val reminder1 = reminders.getOrNull(0) ?: Reminder(REMINDER_OFF, REMINDER_NOTIFICATION)
+        val reminder2 = reminders.getOrNull(1) ?: Reminder(REMINDER_OFF, REMINDER_NOTIFICATION)
+        val reminder3 = reminders.getOrNull(2) ?: Reminder(REMINDER_OFF, REMINDER_NOTIFICATION)
+
+        mReminder1Type = if (mEventCalendarId == STORED_LOCALLY_ONLY) REMINDER_NOTIFICATION else reminder1.type
+        mReminder2Type = if (mEventCalendarId == STORED_LOCALLY_ONLY) REMINDER_NOTIFICATION else reminder2.type
+        mReminder3Type = if (mEventCalendarId == STORED_LOCALLY_ONLY) REMINDER_NOTIFICATION else reminder3.type
 
         config.apply {
             if (usePreviousEventReminders) {
-                lastEventReminderMinutes1 = reminder1
-                lastEventReminderMinutes2 = reminder2
-                lastEventReminderMinutes3 = reminder3
+                lastEventReminderMinutes1 = reminder1.minutes
+                lastEventReminderMinutes2 = reminder2.minutes
+                lastEventReminderMinutes3 = reminder3.minutes
             }
         }
 
@@ -783,9 +849,12 @@ class EventActivity : SimpleActivity() {
             endTS = newEndTS
             title = newTitle
             description = event_description.value
-            reminder1Minutes = reminder1
-            reminder2Minutes = reminder2
-            reminder3Minutes = reminder3
+            reminder1Minutes = reminder1.minutes
+            reminder2Minutes = reminder2.minutes
+            reminder3Minutes = reminder3.minutes
+            reminder1Type = mReminder1Type
+            reminder2Type = mReminder2Type
+            reminder3Type = mReminder3Type
             repeatInterval = mRepeatInterval
             importId = newImportId
             flags = mEvent.flags.addBitIf(event_all_day.isChecked, FLAG_ALL_DAY)
@@ -810,7 +879,7 @@ class EventActivity : SimpleActivity() {
         if (mEvent.id == null || mEvent.id == null) {
             eventsHelper.insertEvent(mEvent, true, true) {
                 if (DateTime.now().isAfter(mEventStartDateTime.millis)) {
-                    if (mEvent.repeatInterval == 0 && mEvent.getReminders().isNotEmpty()) {
+                    if (mEvent.repeatInterval == 0 && mEvent.getReminders().any { it.type == REMINDER_NOTIFICATION }) {
                         notifyEvent(mEvent)
                     }
                 }
@@ -1014,5 +1083,8 @@ class EventActivity : SimpleActivity() {
         event_type_image.applyColorFilter(textColor)
         event_caldav_calendar_image.applyColorFilter(textColor)
         event_show_on_map.applyColorFilter(getAdjustedPrimaryColor())
+        event_reminder_1_type.applyColorFilter(textColor)
+        event_reminder_2_type.applyColorFilter(textColor)
+        event_reminder_3_type.applyColorFilter(textColor)
     }
 }
