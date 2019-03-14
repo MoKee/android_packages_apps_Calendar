@@ -22,12 +22,12 @@
     <string name="end_before_start">ಕಾರ್ಯಕ್ರಮವು ಪ್ರಾರಂಭಗೊಳ್ಳುವ ಮುನ್ನ ಮುಕ್ತಾಯಗೊಳ್ಳಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
     <string name="event_added">ಕಾರ್ಯಕ್ರಮವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲಾಗಿದೆ</string>
     <string name="event_updated">ಕಾರ್ಯಕ್ರಮವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ</string>
-    <string name="filter_events_by_type">ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಮಾದರಿಯಲ್ಲಿ ಶೋಧಿಸು</string>
-    <string name="please_fill_location">ನಕ್ಷೆಯಲ್ಲಿ ತೋರಿಸುವಂತೆ ಸ್ಥಳವನ್ನು ದಯಮಾಡಿ ಭರ್ತಿ ಮಾಡಿ</string>
+    <string name="filter_events_by_type">ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವಿಧಗಳಂತೆ ಶೋಧಿಸು</string>
+    <string name="please_fill_location">ದಯಮಾಡಿ ಸ್ಥಳವನ್ನು ನಕ್ಷೆಯಲ್ಲಿ ತೋರಿಸಲಾಗುವಂತೆ ಭರ್ತಿ ಮಾಡಿ</string>
     <string name="public_event_notification_text">ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮ</string>
     <string name="repetition">ಮರುಕಳಿಸು</string>
     <string name="no_repetition">ಮರುಕಳಿಸುವಿಕೆ ಇಲ್ಲ</string>
-    <string name="daily">ದಿನನಿತ್ಯ</string>
+    <string name="daily">ದೈನಿಕ</string>
     <string name="weekly">ವಾರಕ್ಕೆ</string>
     <string name="monthly">ಮಾಸಿಕ</string>
     <string name="yearly">ವಾರ್ಷಿಕ</string>
@@ -36,7 +36,7 @@
     <string name="years_raw">ವರುಷಗಳು</string>
     <string name="repeat_till">ಇಲ್ಲಿಯವರೆಗೆ ಪುನರಾವರ್ತಿಸು</string>
     <string name="forever">ಎಂದೆಂದಿಗೂ</string>
-    <string name="event_is_repeatable">ಕಾರ್ಯಕ್ರಮವು ಪುನರಾರ್ತಿತವಾಗಿದೆ</string>
+    <string name="event_is_repeatable">ಕಾರ್ಯಕ್ರಮವು ಪುನರಾವರ್ತಿತವಾಗಬಹುದಾಗಿದೆ</string>
     <string name="selection_contains_repetition">ಆಯ್ಕೆಯು ಪುನರಾವರ್ತಿತ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಒಳಗೊಂಡಿದೆ</string>
     <string name="delete_one_only">ಆಯ್ಕೆಮಾಡಿದ ಸಂಭವನೆಗಳನ್ನು ಮಾತ್ರ ಅಳಿಸು</string>
     <string name="delete_future_occurrences">ಇದನ್ನು ಮತ್ತು ಮುಂಬರುವ ಎಲ್ಲ ಸಂಭವನೆಗಳನ್ನು ಅಳಿಸು</string>

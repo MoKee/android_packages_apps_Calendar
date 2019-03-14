@@ -11,6 +11,7 @@
     <string name="simple_event_list">簡易活動列表</string>
     <string name="no_upcoming_events">你近期似乎沒有任何活動。</string>
     <string name="go_to_today">前往今天</string>
+    <string name="go_to_date">轉到日期</string>
     <string name="widget_monthly">月曆</string>
     <string name="widget_list">行事曆活動列表</string>
     <string name="event">活動</string>
@@ -82,6 +83,7 @@
     <string name="before">前</string>
     <string name="add_another_reminder">新增另一個提醒</string>
     <string name="event_reminders">活動提醒</string>
+    <string name="add_another_attendee">新增另一位參加者</string>
     <string name="import_events">匯入活動</string>
     <string name="export_events">匯出活動</string>
     <string name="import_events_from_ics">從.ics檔案匯入活動</string>
