@@ -3,19 +3,24 @@ package com.simplemobiletools.calendar.pro.activities
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
+import android.provider.ContactsContract
+import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.core.app.NotificationManagerCompat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.calendar.pro.R
+import com.simplemobiletools.calendar.pro.adapters.AutoCompleteTextViewAdapter
 import com.simplemobiletools.calendar.pro.dialogs.*
 import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
@@ -26,7 +31,6 @@ import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
-import com.simplemobiletools.commons.views.MyEditText
 import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_event.view.*
 import kotlinx.android.synthetic.main.item_attendee.view.*
@@ -53,9 +57,9 @@ class EventActivity : SimpleActivity() {
     private val EVENT_TYPE_ID = "EVENT_TYPE_ID"
     private val EVENT_CALENDAR_ID = "EVENT_CALENDAR_ID"
 
-    private var mReminder1Minutes = 0
-    private var mReminder2Minutes = 0
-    private var mReminder3Minutes = 0
+    private var mReminder1Minutes = REMINDER_OFF
+    private var mReminder2Minutes = REMINDER_OFF
+    private var mReminder3Minutes = REMINDER_OFF
     private var mReminder1Type = REMINDER_NOTIFICATION
     private var mReminder2Type = REMINDER_NOTIFICATION
     private var mReminder3Type = REMINDER_NOTIFICATION
@@ -67,8 +71,10 @@ class EventActivity : SimpleActivity() {
     private var mEventOccurrenceTS = 0L
     private var mEventCalendarId = STORED_LOCALLY_ONLY
     private var mWasActivityInitialized = false
+    private var mWasContactsPermissionChecked = false
     private var mAttendees = ArrayList<Attendee>()
-    private var mAttendeeViews = ArrayList<MyEditText>()
+    private var mAttendeeViews = ArrayList<EditText>()
+    private var mAvailableContacts = ArrayList<Attendee>()
 
     private lateinit var mEventStartDateTime: DateTime
     private lateinit var mEventEndDateTime: DateTime
@@ -81,6 +87,7 @@ class EventActivity : SimpleActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_cross)
         val intent = intent ?: return
         mDialogTheme = getDialogTheme()
+        mWasContactsPermissionChecked = hasPermission(PERMISSION_READ_CONTACTS)
 
         val eventId = intent.getLongExtra(EVENT_ID, 0L)
         Thread {
@@ -94,6 +101,7 @@ class EventActivity : SimpleActivity() {
             runOnUiThread {
                 gotEvent(savedInstanceState, localEventType, event)
             }
+            fillAvailableContacts()
         }.start()
     }
 
@@ -1111,6 +1119,25 @@ class EventActivity : SimpleActivity() {
         }
     }
 
+    private fun fillAvailableContacts() {
+        mAvailableContacts = getEmails()
+
+        val names = getNames()
+        mAvailableContacts.forEach {
+            val contactId = it.contactId
+            val contact = names.firstOrNull { it.contactId == contactId }
+            val name = contact?.name
+            if (name != null) {
+                it.name = name
+            }
+
+            val photoUri = contact?.photoUri
+            if (photoUri != null) {
+                it.photoUri = photoUri
+            }
+        }
+    }
+
     private fun updateAttendees() {
         mAttendees.forEach {
             addAttendee(it.getPublicName())
@@ -1131,8 +1158,13 @@ class EventActivity : SimpleActivity() {
         val attendeeHolder = layoutInflater.inflate(R.layout.item_attendee, event_attendees_holder, false) as RelativeLayout
         mAttendeeViews.add(attendeeHolder.event_attendee)
         attendeeHolder.event_attendee.onTextChangeListener {
-            if (value == null && mAttendeeViews.none { it.value.isEmpty() }) {
-                addAttendee()
+            if (mWasContactsPermissionChecked && value == null) {
+                checkNewAttendeeField(value)
+            } else {
+                handlePermission(PERMISSION_READ_CONTACTS) {
+                    checkNewAttendeeField(value)
+                    mWasContactsPermissionChecked = true
+                }
             }
         }
 
@@ -1141,15 +1173,93 @@ class EventActivity : SimpleActivity() {
         if (value != null) {
             attendeeHolder.event_attendee.setText(value)
         }
+
+        val adapter = AutoCompleteTextViewAdapter(this, mAvailableContacts)
+        attendeeHolder.event_attendee.setAdapter(adapter)
+    }
+
+    private fun checkNewAttendeeField(value: String?) {
+        if (value == null && mAttendeeViews.none { it.value.isEmpty() }) {
+            addAttendee()
+        }
     }
 
     private fun getAllAttendees(): String {
         val attendeeEmails = mAttendeeViews.map { it.value }.filter { it.isNotEmpty() }.toMutableList() as ArrayList<String>
         val attendees = ArrayList<Attendee>()
         attendeeEmails.mapTo(attendees) {
-            Attendee("", it, CalendarContract.Attendees.ATTENDEE_STATUS_INVITED)
+            Attendee(0, "", it, CalendarContract.Attendees.ATTENDEE_STATUS_INVITED, "")
         }
         return Gson().toJson(attendees)
+    }
+
+    private fun getNames(): List<Attendee> {
+        val contacts = ArrayList<Attendee>()
+        val uri = ContactsContract.Data.CONTENT_URI
+        val projection = arrayOf(
+                ContactsContract.Data.CONTACT_ID,
+                ContactsContract.CommonDataKinds.StructuredName.PREFIX,
+                ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME,
+                ContactsContract.CommonDataKinds.StructuredName.MIDDLE_NAME,
+                ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME,
+                ContactsContract.CommonDataKinds.StructuredName.SUFFIX,
+                ContactsContract.CommonDataKinds.StructuredName.PHOTO_THUMBNAIL_URI)
+
+        val selection = "${ContactsContract.Data.MIMETYPE} = ?"
+        val selectionArgs = arrayOf(ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
+
+        var cursor: Cursor? = null
+        try {
+            cursor = contentResolver.query(uri, projection, selection, selectionArgs, null)
+            if (cursor?.moveToFirst() == true) {
+                do {
+                    val id = cursor.getIntValue(ContactsContract.Data.CONTACT_ID)
+                    val prefix = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.PREFIX) ?: ""
+                    val firstName = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME) ?: ""
+                    val middleName = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.MIDDLE_NAME) ?: ""
+                    val surname = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME) ?: ""
+                    val suffix = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.SUFFIX) ?: ""
+                    val photoUri = cursor.getStringValue(ContactsContract.CommonDataKinds.StructuredName.PHOTO_THUMBNAIL_URI) ?: ""
+
+                    val names = arrayListOf(prefix, firstName, middleName, surname, suffix).filter { it.trim().isNotEmpty() }
+                    val fullName = TextUtils.join("", names)
+                    if (fullName.isNotEmpty() || photoUri.isNotEmpty()) {
+                        val contact = Attendee(id, fullName, "", 0, photoUri)
+                        contacts.add(contact)
+                    }
+                } while (cursor.moveToNext())
+            }
+        } catch (ignored: Exception) {
+        } finally {
+            cursor?.close()
+        }
+        return contacts
+    }
+
+    private fun getEmails(): ArrayList<Attendee> {
+        val contacts = ArrayList<Attendee>()
+        val uri = ContactsContract.CommonDataKinds.Email.CONTENT_URI
+        val projection = arrayOf(
+                ContactsContract.Data.CONTACT_ID,
+                ContactsContract.CommonDataKinds.Email.DATA
+        )
+
+        var cursor: Cursor? = null
+        try {
+            cursor = contentResolver.query(uri, projection, null, null, null)
+            if (cursor?.moveToFirst() == true) {
+                do {
+                    val id = cursor.getIntValue(ContactsContract.Data.CONTACT_ID)
+                    val email = cursor.getStringValue(ContactsContract.CommonDataKinds.Email.DATA) ?: continue
+                    val contact = Attendee(id, "", email, 0, "")
+                    contacts.add(contact)
+                } while (cursor.moveToNext())
+            }
+        } catch (ignored: Exception) {
+        } finally {
+            cursor?.close()
+        }
+        return contacts
     }
 
     private fun updateIconColors() {
