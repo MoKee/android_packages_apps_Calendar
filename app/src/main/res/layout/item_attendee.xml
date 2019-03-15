@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/event_attendee_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -21,4 +22,45 @@
         android:textCursorDrawable="@null"
         android:textSize="@dimen/bigger_text_size"/>
 
+    <RelativeLayout
+        android:id="@+id/event_contact_attendee"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_alignTop="@+id/event_attendee"
+        android:layout_alignBottom="@+id/event_attendee"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/event_contact_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/tiny_margin"
+            android:adjustViewBounds="true"/>
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/event_contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_toStartOf="@+id/event_contact_dismiss"
+            android:layout_toEndOf="@+id/event_contact_image"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="@dimen/bigger_text_size"
+            tools:text="Simple Mobile"/>
+
+        <ImageView
+            android:id="@+id/event_contact_dismiss"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:alpha="0.8"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/small_margin"
+            android:src="@drawable/ic_cross_big"/>
+
+    </RelativeLayout>
 </RelativeLayout>

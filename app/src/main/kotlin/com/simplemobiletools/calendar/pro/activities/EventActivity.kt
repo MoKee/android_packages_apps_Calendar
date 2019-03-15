@@ -4,6 +4,8 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.LayerDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
@@ -12,8 +14,9 @@ import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.WindowManager
-import android.widget.EditText
+import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.core.app.NotificationManagerCompat
@@ -31,6 +34,8 @@ import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
+import com.simplemobiletools.commons.views.MyAutoCompleteTextView
+import com.simplemobiletools.commons.views.MyTextView
 import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_event.view.*
 import kotlinx.android.synthetic.main.item_attendee.view.*
@@ -73,9 +78,11 @@ class EventActivity : SimpleActivity() {
     private var mWasActivityInitialized = false
     private var mWasContactsPermissionChecked = false
     private var mAttendees = ArrayList<Attendee>()
-    private var mAttendeeViews = ArrayList<EditText>()
+    private var mAttendeeAutoCompleteViews = ArrayList<MyAutoCompleteTextView>()
     private var mAvailableContacts = ArrayList<Attendee>()
+    private var mSelectedContacts = ArrayList<Attendee>()
 
+    private lateinit var mAttendeePlaceholder: Drawable
     private lateinit var mEventStartDateTime: DateTime
     private lateinit var mEventEndDateTime: DateTime
     private lateinit var mEvent: Event
@@ -88,6 +95,8 @@ class EventActivity : SimpleActivity() {
         val intent = intent ?: return
         mDialogTheme = getDialogTheme()
         mWasContactsPermissionChecked = hasPermission(PERMISSION_READ_CONTACTS)
+        mAttendeePlaceholder = resources.getDrawable(R.drawable.attendee_circular_background)
+        (mAttendeePlaceholder as LayerDrawable).findDrawableByLayerId(R.id.attendee_circular_background).applyColorFilter(config.primaryColor)
 
         val eventId = intent.getLongExtra(EVENT_ID, 0L)
         Thread {
@@ -1140,7 +1149,12 @@ class EventActivity : SimpleActivity() {
 
     private fun updateAttendees() {
         mAttendees.forEach {
-            addAttendee(it.getPublicName())
+            val attendee = it
+            val deviceContact = mAvailableContacts.firstOrNull { it.email.isNotEmpty() && it.email == attendee.email && it.photoUri.isNotEmpty() }
+            if (deviceContact != null) {
+                attendee.photoUri = deviceContact.photoUri
+            }
+            addAttendee(attendee)
         }
         addAttendee()
 
@@ -1154,42 +1168,84 @@ class EventActivity : SimpleActivity() {
         }
     }
 
-    private fun addAttendee(value: String? = null) {
+    private fun addAttendee(attendee: Attendee? = null) {
         val attendeeHolder = layoutInflater.inflate(R.layout.item_attendee, event_attendees_holder, false) as RelativeLayout
-        mAttendeeViews.add(attendeeHolder.event_attendee)
-        attendeeHolder.event_attendee.onTextChangeListener {
-            if (mWasContactsPermissionChecked && value == null) {
-                checkNewAttendeeField(value)
+        val autoCompleteView = attendeeHolder.event_attendee
+        val selectedAttendeeHolder = attendeeHolder.event_contact_attendee
+        val selectedAttendeeName = selectedAttendeeHolder.event_contact_name
+        val selectedAttendeeImage = attendeeHolder.event_contact_image
+        val selectedAttendeeDismiss = attendeeHolder.event_contact_dismiss
+
+        mAttendeeAutoCompleteViews.add(autoCompleteView)
+        autoCompleteView.onTextChangeListener {
+            if (mWasContactsPermissionChecked) {
+                checkNewAttendeeField()
             } else {
                 handlePermission(PERMISSION_READ_CONTACTS) {
-                    checkNewAttendeeField(value)
+                    checkNewAttendeeField()
                     mWasContactsPermissionChecked = true
                 }
             }
         }
 
         event_attendees_holder.addView(attendeeHolder)
-        attendeeHolder.event_attendee.setColors(config.textColor, getAdjustedPrimaryColor(), config.backgroundColor)
-        if (value != null) {
-            attendeeHolder.event_attendee.setText(value)
+
+        val textColor = config.textColor
+        autoCompleteView.setColors(textColor, getAdjustedPrimaryColor(), config.backgroundColor)
+        selectedAttendeeName.setColors(textColor, getAdjustedPrimaryColor(), config.backgroundColor)
+        selectedAttendeeDismiss.applyColorFilter(textColor)
+
+        selectedAttendeeDismiss.setOnClickListener {
+            attendeeHolder.beGone()
+            mSelectedContacts = mSelectedContacts.filter { it.contactId == selectedAttendeeDismiss.tag }.toMutableList() as ArrayList<Attendee>
         }
 
         val adapter = AutoCompleteTextViewAdapter(this, mAvailableContacts)
-        attendeeHolder.event_attendee.setAdapter(adapter)
+        autoCompleteView.setAdapter(adapter)
+        autoCompleteView.imeOptions = EditorInfo.IME_ACTION_NEXT
+        autoCompleteView.setOnItemClickListener { parent, view, position, id ->
+            val currAttendees = (autoCompleteView.adapter as AutoCompleteTextViewAdapter).resultList
+            val selectedAttendee = currAttendees[position]
+            addSelectedAttendee(selectedAttendee, autoCompleteView, selectedAttendeeHolder, selectedAttendeeImage, selectedAttendeeName, selectedAttendeeDismiss)
+        }
+
+        if (attendee != null) {
+            addSelectedAttendee(attendee, autoCompleteView, selectedAttendeeHolder, selectedAttendeeImage, selectedAttendeeName, selectedAttendeeDismiss)
+        }
     }
 
-    private fun checkNewAttendeeField(value: String?) {
-        if (value == null && mAttendeeViews.none { it.value.isEmpty() }) {
+    private fun addSelectedAttendee(attendee: Attendee, autoCompleteView: MyAutoCompleteTextView, selectedAttendeeHolder: RelativeLayout, selectedAttendeeImage: ImageView,
+                                    selectedAttendeeName: MyTextView, selectedAttendeeDismiss: ImageView) {
+        mSelectedContacts.add(attendee)
+
+        autoCompleteView.beGone()
+        autoCompleteView.focusSearch(View.FOCUS_DOWN)?.requestFocus()
+        selectedAttendeeName.text = attendee.getPublicName()
+        selectedAttendeeHolder.beVisible()
+        selectedAttendeeImage.beVisible()
+        attendee.updateImage(applicationContext, selectedAttendeeImage, mAttendeePlaceholder)
+        selectedAttendeeDismiss.beVisible()
+        selectedAttendeeDismiss.tag = attendee.contactId
+    }
+
+    private fun checkNewAttendeeField() {
+        if (mAttendeeAutoCompleteViews.none { it.isVisible() && it.value.isEmpty() }) {
             addAttendee()
         }
     }
 
     private fun getAllAttendees(): String {
-        val attendeeEmails = mAttendeeViews.map { it.value }.filter { it.isNotEmpty() }.toMutableList() as ArrayList<String>
-        val attendees = ArrayList<Attendee>()
-        attendeeEmails.mapTo(attendees) {
+        var attendees = ArrayList<Attendee>()
+        mSelectedContacts.forEach {
+            it.status = CalendarContract.Attendees.ATTENDEE_STATUS_INVITED
+            attendees.add(it)
+        }
+
+        val customEmails = mAttendeeAutoCompleteViews.filter { it.isVisible() }.map { it.value }.filter { it.isNotEmpty() }.toMutableList() as ArrayList<String>
+        customEmails.mapTo(attendees) {
             Attendee(0, "", it, CalendarContract.Attendees.ATTENDEE_STATUS_INVITED, "")
         }
+        attendees = attendees.distinctBy { it.email }.toMutableList() as ArrayList<Attendee>
         return Gson().toJson(attendees)
     }
 
