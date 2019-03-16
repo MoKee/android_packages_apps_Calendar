@@ -11,6 +11,7 @@
     <string name="simple_event_list">قائمة أحداث التقويم</string>
     <string name="no_upcoming_events">يبدو أنه لا يوجد لديك أي أحداث قادمة.</string>
     <string name="go_to_today">الذهاب إلى اليوم الحالي</string>
+    <string name="go_to_date">اذهب الى التاريخ</string>
     <string name="widget_monthly">تقويم شهري</string>
     <string name="widget_list">قائمة أحداث التقويم</string>
     <string name="event">الحدث</string>
@@ -82,6 +83,7 @@
     <string name="before">قبل</string>
     <string name="add_another_reminder">إضافة تذكير آخر</string>
     <string name="event_reminders">تذكير الحدث</string>
+    <string name="add_another_attendee">إضافة تذكير آخر</string>
     <string name="import_events">استيراد الأحداث</string>
     <string name="export_events">تصدير الأحداث</string>
     <string name="import_events_from_ics">إستيراد الاحداث من ملف.ics</string>

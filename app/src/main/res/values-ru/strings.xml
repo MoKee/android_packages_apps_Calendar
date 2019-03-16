@@ -11,6 +11,7 @@
     <string name="simple_event_list">Простой список событий</string>
     <string name="no_upcoming_events">Похоже, у вас нет предстоящих событий.</string>
     <string name="go_to_today">Сегодня</string>
+    <string name="go_to_date">Перейти к дате</string>
     <string name="widget_monthly">Календарь на месяц</string>
     <string name="widget_list">Календарь событий</string>
     <string name="event">Событие</string>
@@ -82,6 +83,7 @@
     <string name="before">до события</string>
     <string name="add_another_reminder">Добавить ещё одно напоминание</string>
     <string name="event_reminders">Напоминания о событиях</string>
+    <string name="add_another_attendee">Добавить другого участника</string>
     <string name="import_events">Импорт событий</string>
     <string name="export_events">Экспорт событий</string>
     <string name="import_events_from_ics">Импорт событий из файла .ics</string>

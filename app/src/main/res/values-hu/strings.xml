@@ -11,6 +11,7 @@
     <string name="simple_event_list">Egyszerű bejegyzéslista</string>
     <string name="no_upcoming_events">Úgy tűnik, nincs közelgő esemény.</string>
     <string name="go_to_today">Ugrás a mai napra</string>
+    <string name="go_to_date">Dátumhoz ugrás</string>
     <string name="widget_monthly">Havi naptár</string>
     <string name="widget_list">Bejegyzésnaptár</string>
     <string name="event">Bejegyzés</string>
@@ -82,6 +83,7 @@
     <string name="before">korábban</string>
     <string name="add_another_reminder">Másik emlékeztető hozzáadása</string>
     <string name="event_reminders">Eseményemlékeztetők</string>
+    <string name="add_another_attendee">Másik résztvevő hozzáadása</string>
     <string name="import_events">Események importálása</string>
     <string name="export_events">Események exportálása</string>
     <string name="import_events_from_ics">Események importálása .ics fájlból</string>

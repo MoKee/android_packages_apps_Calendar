@@ -11,6 +11,7 @@
     <string name="simple_event_list">Jednoduchý seznam událostí</string>
     <string name="no_upcoming_events">Nemáte žádné nadcházející události.</string>
     <string name="go_to_today">Přejít na dnešek</string>
+    <string name="go_to_date">Jít k datu</string>
     <string name="widget_monthly">Měsíční kalendář</string>
     <string name="widget_list">Seznam událostí kalendáře</string>
     <string name="event">Událost</string>
@@ -82,6 +83,7 @@
     <string name="before">před</string>
     <string name="add_another_reminder">Přidat další připomenutí</string>
     <string name="event_reminders">Připomínky událostí</string>
+    <string name="add_another_attendee">Přidat dalšího účastníka</string>
     <string name="import_events">Import událostí</string>
     <string name="export_events">Export událostí</string>
     <string name="import_events_from_ics">Importovat kalendář ze souboru .ics</string>

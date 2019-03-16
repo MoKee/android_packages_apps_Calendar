@@ -11,6 +11,7 @@
     <string name="simple_event_list">Basit etkinlik listesi</string>
     <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
     <string name="go_to_today">Bugüne git</string>
+    <string name="go_to_date">Tarihe git</string>
     <string name="widget_monthly">Aylık takvim</string>
     <string name="widget_list">Takvim etkinlik listesi</string>
     <string name="event">Durum</string>
@@ -185,6 +186,7 @@
     <string name="faq_3_title">Görsel hatırlatıcıları görüyorum ama ses duymuyorum. Ne yapabilirim?</string>
     <string name="faq_3_text">Sadece gerçek hatırlatmayı göstermekle kalmaz, aynı zamanda ses çalmak da sistemden çok etkilenir. Herhangi bir ses duyamıyorsanız, uygulama ayarlarına girmeyi deneyin.
         \"Hatırlatıcılar tarafından kullanılan ses akışı\" seçeneğine basmak ve bunu farklı bir değere değiştirmek. Eğer hala işe yaramazsa, ses akışı kapatılmamışsa ses ayarlarınızı kontrol edin.</string>
+    <string name="app_short_description">Gizliliğinize saygı duyuyorum ve reklamsız etkinlikleriniz için çevrimdışı bir takvim.</string>
     <string name="app_long_description">        İsteğe bağlı CalDAV senkronizasyonu ile basit bir takvim. Kolayca tekrarlanan etkinlikler oluşturabilir ve hatırlatıcılar ayarlayabilir, ayrıca hafta sayılarını görüntüleyebilirsiniz.
 
         Metnin renginin yanı sıra alfa ve arka plan rengini özelleştirebileceğiniz aylık görünüm ve etkinlik listesi widget\'ı içerir.
