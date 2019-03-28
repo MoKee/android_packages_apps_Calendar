@@ -873,6 +873,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_finland), "finland.ics")
             put(getString(R.string.holiday_sweden), "sweden.ics")
             put(getString(R.string.holiday_ukraine), "ukraine.ics")
+			put(getString(R.string.holiday_taiwan), "taiwan.ics")
             put(getString(R.string.holiday_unitedkingdom), "unitedkingdom.ics")
             put(getString(R.string.holiday_unitedstates), "unitedstates.ics")
 
