@@ -166,15 +166,4 @@
     <string name="sample_title_4">Lunch med Marie</string>
     <string name="sample_description_4">På stranden</string>
     <string name="sample_title_5">Kaffedags</string>
-    <string name="app_long_description">En enkel kalender med valfri CalDAV-synkronisering. Du kan enkelt skapa återkommande händelser och ställa in påminnelser. Den kan också visa veckonummer.
-
-        Har en widget med en månadsvy och en händelselista. Du kan anpassa widgetens textfärg, bakgrundsfärg och bakgrundsgenomskinlighet.
-
-        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
-
-        Lagringsbehörigheten behövs bara för att exportera eller importera händelser från .ics-filer.
-
-        Kontaktbehörigheten används bara för att importera kontakters födelsedagar och årsdagar.
-
-        Denna app är bara en del av en större serie appar. Du hittar resten av dem på https://www.simplemobiletools.com</string>
 </resources>

@@ -159,15 +159,4 @@
     <string name="sample_title_4">Meri ilə nahar</string>
     <string name="sample_description_4">Plazada</string>
     <string name="sample_title_5">Kofe vaxtı</string>
-    <string name="app_long_description">CalDAV sinxronizasiyalı sadə bir kalendar. Siz asanca təkrarlanan hadisələrinizi və xatırladıcılarınızı yarada bilərsiniz, hətta həftə nömrələrini də göstərə bilir.
-
-        Aylıq görünüş və hadisə siyahısı widgeti ehtiva edir hansı ki, siz oradan yazı rəngini, həmçinin, alfanı və arxa plan rəngini dəyişdirə bilərsiniz.
-
-        Lazımsız reklam və ya icazə mövcud deyil. Tamamilə açıqlisanslıdır, rəng dəyişmə parametrləri var.
-
-        Yaddaş icazəsi yalnız .ics faylından hadisələri çıxarmaq və ya daxil etmək üçün istifadə olunur.
-
-        Kontakt icazəsi yalnız kontakt ad günlərini və il dönümlərini daxil etmək üçün istifadə olunur.
-
-        Bu, böyük bir tətbiq seriyasının yalnız bir hissəsidir. Digər tətbiqləri buradan əldə edə bilərsiniz https://www.simplemobiletools.com</string>
 </resources>

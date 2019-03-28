@@ -182,15 +182,4 @@
     <string name="faq_3_title">Widzę przypomnienia wizualne, ale nie słyszę dźwięku. Co mogę zrobić?</string>
     <string name="faq_3_text">Nie tylko wyświetlanie faktycznego przypomnienia, ale także odtwarzanie dźwięku ma duży wpływ na system. Jeśli nie słychać żadnego dźwięku, spróbuj przejść do ustawień aplikacji,
          naciskając opcję \"Strumień audio używany przez przypomnienia\" i zmieniając ją na inną wartość. Jeśli nadal nie będzie działać, sprawdź ustawienia dźwięku, jeśli dany strumień nie jest wyciszony.        </string>
-    <string name="app_long_description">       Prosty kalendarz z obsługą synchronizacji z Dyskiem Google. Dzięki niemu możesz z łatwością tworzyć wydarzenia i przypomnienia, które nigdy nie zaginą.
-
-        Zawiera widżet 4x4 z możliwością ustawiania koloru tekstu i tła, a dla tego drugiego również stopień przezroczystości.
-
-        Nie zawiera żadnych żadnych reklam, nie potrzebuje masy uprawnień, jest w pełni otwartoźródłowy, kolory można dowolnie modyfikować.
-
-        Uprawniena pamięci są potrzebne tylko do eksportowania lub importowania wydarzeń z plików .ics.
-
-        Uprawnienia kontaktów są używane tylko do importowania urodzin.
-
-        Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie https://www.simplemobiletools.com</string>
 </resources>

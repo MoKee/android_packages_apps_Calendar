@@ -154,15 +154,4 @@
     <string name="faq_2_title">Ar galiu sinchronizuoti savo įvykius per Google Kalendorių, ar kitą paslaugą palaikančią CalDAV?</string>
     <string name="faq_2_text">Taip, tiesiog pasirinkite \"CalDAV sinchronizavimas\" programėlės nustatymuose ir pasirinkite kalendorius kuriuos norite sinchronizuoti. Tačiau Jums reikės trečiosios šalies programėlės palaikančios sinchronizavimą tarp įrenginio ir serverių.
         Jeigu norite sinchronizuoti Google kalendorių, jų oficiali kalendoriaus programėlė atliks šį darbą. Kitiems kalenoriams Jums reikės trečiosios šalies sinchronizavimo adapterio, pavyzdžiui DAVdroid.</string>
-    <string name="app_long_description">Paprastas kalendorius su CalDAV sinchronizacija. Galite lengvai kurti pasikartojančius įvykius ir nustatyti priminimus, kalendorius gali rodyti savaitės numerius.
-
-        Palaiko mėnesio peržiūrą ir įvykių sąrašo valdiklį, kuriame Jūs galite tinkinti teksto, pagrindinę ir fono spalvas.
-
-        Neturi reklamų ar nereikalingų leidimų. Programėlė visiškai atviro kodo, yra galimybė keisti spalvas.
-
-        Saugyklos leidimas reikalingas tik eksportuoti ir importuoti įvykius iš .ics bylų.
-
-        Kontaktų leidimas naudojamas tik importuoti kontaktų gimtadienius ir sukaktis.
-
-        Ši programėle yra viena iš keletos mūsų programėlių. Likusias Jūs galite rasti čia https://www.simplemobiletools.com</string>
 </resources>

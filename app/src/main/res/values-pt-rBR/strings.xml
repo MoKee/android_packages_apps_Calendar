@@ -179,15 +179,4 @@
     <string name="faq_3_title">Vejo os lembrete, mas não ouço áudio. O que posso fazer?</string>
     <string name="faq_3_text">A exibição do lembrete e o áudio são fortemente influenciados pelas configurações do sistema. Se você não consegue ouvir o som, verifique as configurações do aplicativo,
 selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o seu valor. Se isso não funcionar, verifique as configurações, especialmente se o som não está mudo.</string>
-    <string name="app_long_description">Um calendário que não possui qualquer tipo de integração. Pode-se adicionar eventos e lembretes recorrentes, e possui uma opção para mostrar o número da semana.
-
-        Contém um widget 4x4, em que se pode personalizar a cor do texto, bem como a cor e o valor alfa do fundo.
-
-        Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro, e é totalmente \'open source\'.
-
-        A permissão de armazenamento é necessária apenas para importar eventos dos arquivos .ics.
-
-        A permissão de Contatos é usada apenas na importação de aniversários e aniversários de contato.
-
-        Este aplicativo é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em https://www.simplemobiletools.com</string>
 </resources>

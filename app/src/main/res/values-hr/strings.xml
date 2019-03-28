@@ -169,15 +169,4 @@
     <string name="faq_3_title">Vidim vizualne podsjetnike, ali ne čujem zvuk. Što mogu učiniti</string>
     <string name="faq_3_text">Prikaz podsjetnika, ali i reprodukcija zvuka, jako ovise o Android sustavu. Ako ne čujete zvuk, pokušajte otići u postavke aplikacije,
         odaberite \"Audio izlazni kanal za podsjetnike\" te je promjenite na drugačiju vrijednost. Ako i dalje neće raditi, provjerite postavke zvuka, da odabrani kanal nije utišan.</string>
-    <string name="app_long_description">Jednostavan kalendar s dodatnom CalDAV sinkronizacijom. Možete jednostavno stvoriti ponavljajuće događaje i postaviti podsjetnike, također je moguće prikazati tjedne brojeve.
-
-        Sadrži mjesečni prikaz i widget s popisom događaja gdje možete prilagoditi boju teksta, kao i transparentnost te boju pozadine.
-
-        Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
-
-        Dopuštenje za pohranu podataka potrebna je samo za izvoz ili uvoz događaja iz .ics datoteka.
-
-        Dopuštenje za kontakte upotrebljava se samo pri uvozu rođendana i obljetnica kontakata.
-
-        Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na https://www.simplemobiletools.com</string>
 </resources>

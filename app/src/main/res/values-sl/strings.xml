@@ -180,15 +180,4 @@
     <string name="faq_2_title">Ali lahko svoje dogodke usljajujem prek Google Koledarja ali druge storitve, ki podpira CalDAV?</string>
     <string name="faq_2_text">Da, v nastavitvah aplikacije preklopite \"Usklajevanje CalDAV\" in izberite koledarje, ki jih želite usklajevati. Vendar boste za to potrebovali dodatno aplikacijo, ki bo ravnala z usklajevanjem med napravo in strežniki. Če želite uskladiti Google Koledar, bo njihova uradna aplikacija Koledar opravila delo. Za druge koledarje boste potrebovali dodatno aplikacijo, na primer DAVdroid.</string>
     <string name="faq_3_title">Vidim vizualne opomnike, vendar ne slišim zvoka. Kaj lahko naredim?</string>
-    <string name="app_long_description">     Preprost koledar z izbirno sinhronizacijo CalDAV. Z lahkoto lahko ustvarite ponavljajoče se dogodke in nastavite opomnike, lahko prikazuje tudi stevilko tedna.
-
-   Vsebuje mesečni pogled in gradnik seznama dogodkov, kjer lahko prilagodite barvo besedila, kot tudi barvo ozadja.
-
-   Ne vsebuje nobenih oglasov ali nepotrebnih dovoljenj. Je popolnoma odprt, zagotavlja prilagodljive barve.
-
-   Dovoljenje za shranjevanje je potrebno le za izvoz ali uvoz dogodkov iz .ics datotek.
-
-   Dovoljenje za stike se uporablja samo pri uvozu rojstnih dni in obletnic.
-
-   Ta aplikacija je samo en kos večje serije aplikacij. Druge najdete na https://www.simplemobiletools.com    </string>
 </resources>

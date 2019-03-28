@@ -84,6 +84,11 @@
     <string name="add_another_reminder">إضافة تذكير آخر</string>
     <string name="event_reminders">تذكير الحدث</string>
     <string name="add_another_attendee">إضافة تذكير آخر</string>
+    <string name="my_status">وضعي:</string>
+    <string name="going">ذاهب</string>
+    <string name="not_going">غير ذاهب</string>
+    <string name="maybe_going">ربما ذاهب</string>
+    <string name="invited">تمت دعوتهم</string>
     <string name="import_events">استيراد الأحداث</string>
     <string name="export_events">تصدير الأحداث</string>
     <string name="import_events_from_ics">إستيراد الاحداث من ملف.ics</string>
@@ -188,16 +193,5 @@
     <string name="faq_3_title">أرى التذكيرات المرئية ، لكن لا أسمع صوتًا. ماذا افعل؟</string>
     <string name="faq_3_text">ليس فقط عرض التذكير الفعلي ، ولكن تشغيل الصوت يتأثر بشكل كبير بالنظام أيضًا. إذا لم تستطع سماع أي صوت ، فحاول الذهاب في إعدادات التطبيق ،
         الضغط على الخيار \"الصوت الذي يستخدمه التذكير\" وتغييره إلى قيمة مختلفة. إذا استمر عدم نجاح ذلك ، فتحقق من إعدادات الصوت ، إذا لم يتم كتم البث المحدد.</string>
-    <string name="app_short_description">تقويم غير متصل لأحداثك بدون إعلانات ، مع احترام خصوصيتك.</string>
-    <string name="app_long_description">تقويم بسيط مع تزامن CalDAV اختياري. يمكنك بسهولة إنشاء أحداث متكررة وإعداد تذكيرات ، كما يمكن أيضًا عرض أرقام الأسبوع.
-
-        يحتوي على العرض الشهري وأداة قائمة الحدث حيث يمكنك تخصيص لون النص، وكذلك ألفا ولون الخلفية.
-
-        لا يحتوي على إعلانات أو أذونات غير ضرورية. انه مفتوح المصدر تماماً ، ويوفر ألوان قابلة للتخصيص.
-
-        هناك حاجة إلى إذن التخزين فقط لتصدير أو استيراد الأحداث من ملفات .ics.
-
-        لا يتم استخدام إذن جهات الاتصال إلا عند استيراد أعياد الميلاد والاعياد السنوية.
-
-        هذا التطبيق هو مجرد قطعة واحدة من سلسلة أكبر من التطبيقات. يمكنك العثور على البقية منهم على https://www.simplemobiletools.com</string>
+    <string name="app_short_description">تقويم غير متصل بدون إعلانات. منظم و مذكر بالمواعيد والأحداث وغيرها</string>
 </resources>

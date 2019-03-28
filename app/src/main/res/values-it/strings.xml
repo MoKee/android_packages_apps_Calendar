@@ -83,6 +83,7 @@
     <string name="before">prima</string>
     <string name="add_another_reminder">Aggiungi un altro promemoria</string>
     <string name="event_reminders">Promemoria eventi</string>
+    <string name="add_another_attendee">Aggiungi un altro partecipante</string>
     <string name="import_events">Importa eventi</string>
     <string name="export_events">Esporta eventi</string>
     <string name="import_events_from_ics">Importa eventi da un file .ics</string>
@@ -187,16 +188,4 @@
     <string name="faq_3_title">Visualizzo i promemoria, ma non sento l\'audio. Cosa posso fare?</string>
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
-    <string name="app_short_description">Un calendario offline per i tuoi eventi senza pubblicità, rispettando la tua privacy.</string>
-    <string name="app_long_description">Un semplice calendario con l\'opzione di sincronizzazione CalDAV. Puoi facilmente creare eventi ricorrenti ed impostare promemoria, mostra anche il numero di settimana.
-
-        Contiene una vista mensile ed un widget con la lista degli eventi, con il colore del testo personalizzabile, come per la trasparenza ed il colore dello sfondo,
-
-        Non contiene pubblicità o permessi non necessari. È completamente opensource, fornisce anche colori personalizzabili.
-
-        Il permesso di archiviazione è necesario solamente per esportare od importare venti da file .ics.
-
-        Il permesso dei contatti è usato solamente per importare i compleanni e gli anniversari.
-
-        Questa applicazione è solamente una di una serie. Puoi trovare le altre su https://www.simplemobiletools.com</string>
 </resources>

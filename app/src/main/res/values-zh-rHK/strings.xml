@@ -84,6 +84,11 @@
     <string name="add_another_reminder">新增另一個提醒</string>
     <string name="event_reminders">活動提醒</string>
     <string name="add_another_attendee">新增另一位參加者</string>
+    <string name="my_status">我的狀態：</string>
+    <string name="going">參加</string>
+    <string name="not_going">不會參加</string>
+    <string name="maybe_going">也許會參加</string>
+    <string name="invited">已邀請</string>
     <string name="import_events">匯入活動</string>
     <string name="export_events">匯出活動</string>
     <string name="import_events_from_ics">從.ics檔案匯入活動</string>
@@ -188,16 +193,5 @@
     <string name="faq_3_title">我看到了視覺的提醒，但沒聽到音效。我能怎麼辦?</string>
     <string name="faq_3_text">不只是顯示實際的提醒，播放音效也受到系統極大的影響。如果你聽不到任何聲音，試著到應用程式設定，
         按\"用於提醒的音源串流\"選項，然後更改成不同數值。如果還是沒有用，檢查你的音量設定，指定串流是不是靜音的。</string>
-    <string name="app_short_description">一個沒有廣告的離線日曆，尊重您的隱私</string>
-    <string name="app_long_description">一個有CalDAV同步選項的簡易行事曆。你可以輕鬆建立週期活動和設置提醒，也能顯示週數。
-
-        含有月曆和活動列表的小工具，你可以自訂文字顏色，以及背景顏色和透明度。
-
-        不包含廣告及非必要的權限，而且完全開放原始碼，並提供自訂顏色。
-
-        儲存空間權限只需要用來從.ics檔案匯出或匯入活動。
-
-        聯絡人權限只是用來匯入聯絡人生日和紀念日。
-
-        這程式只是一系列眾多應用程式的其中一項，你可以在這發現更多 https://www.simplemobiletools.com</string>
+    <string name="app_short_description">沒有廣告的離線日曆。組織活動、提醒約會和活動等</string>
 </resources>
