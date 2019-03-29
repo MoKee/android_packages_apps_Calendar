@@ -83,6 +83,12 @@
     <string name="before">önce</string>
     <string name="add_another_reminder">Başka hatırlatma ekle</string>
     <string name="event_reminders">Etkinlik hatırlatıcılar</string>
+    <string name="add_another_attendee">Başka bir katılımcı ekle</string>
+    <string name="my_status">Durumum:</string>
+    <string name="going">Katılıyorum</string>
+    <string name="not_going">Katılmıyorum</string>
+    <string name="maybe_going">Belki katılabilirim</string>
+    <string name="invited">Davet et</string>
     <string name="import_events">Etkinlikleri içe aktar</string>
     <string name="export_events">Etkinlikleri dışa aktar</string>
     <string name="import_events_from_ics">Etkinlikleri .ics dosyasından içe aktar</string>
@@ -186,17 +192,5 @@
     <string name="faq_3_title">Görsel hatırlatıcıları görüyorum ama ses duymuyorum. Ne yapabilirim?</string>
     <string name="faq_3_text">Sadece gerçek hatırlatmayı göstermekle kalmaz, aynı zamanda ses çalmak da sistemden çok etkilenir. Herhangi bir ses duyamıyorsanız, uygulama ayarlarına girmeyi deneyin.
         \"Hatırlatıcılar tarafından kullanılan ses akışı\" seçeneğine basmak ve bunu farklı bir değere değiştirmek. Eğer hala işe yaramazsa, ses akışı kapatılmamışsa ses ayarlarınızı kontrol edin.</string>
-    <string name="app_short_description">Gizliliğinize saygı duyuyorum ve reklamsız etkinlikleriniz için çevrimdışı bir takvim.</string>
-    <string name="app_long_description">        İsteğe bağlı CalDAV senkronizasyonu ile basit bir takvim. Kolayca tekrarlanan etkinlikler oluşturabilir ve hatırlatıcılar ayarlayabilir, ayrıca hafta sayılarını görüntüleyebilirsiniz.
-
-        Metnin renginin yanı sıra alfa ve arka plan rengini özelleştirebileceğiniz aylık görünüm ve etkinlik listesi widget\'ı içerir.
-
-        Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar.
-
-        Depolama izni yalnızca .ics dosyalarındaki etkinlikleri dışa veya içe aktarmak için gereklidir.
-
-        Kişiler izni yalnızca doğum günlerini ve yıldönümlerini içe aktarırken kullanılır.
-
-        Bu uygulama, daha büyük bir uygulama serisinden sadece bir parça. Geri kalanı http://www.simplemobiletools.com adresinde bulabilirsiniz
-    </string>
+    <string name="app_short_description">Reklamsız çevrimdışı takvim. Düzenleyici ve &amp; randevular, etkinlikler için hatırlatıcılar vb</string>
 </resources>

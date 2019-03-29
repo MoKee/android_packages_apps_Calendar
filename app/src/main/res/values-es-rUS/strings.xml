@@ -179,15 +179,4 @@
     <string name="faq_3_title">I see the visual reminders, but hear no audio. What can I do?</string>
     <string name="faq_3_text">Not just displaying the actual reminder, but playing the audio is hugely affected by the system too. If you can\'t hear any sound, try going in the app settings,
         pressing the \"Audio stream used by reminders\" option and changing it to a different value. If it still won\'t work, check your sound settings, if the particular stream isn\'t muted.</string>
-    <string name="app_long_description">Un simple calendario con sincronización opcional con CalDAV. Puedes crear fácilmente eventos que se repitan y configurar recordatorios, o que te muestre los días de la semana.
-
-        Contiene un widget 4x4 redimensionable donde puedes personalizar el color del texto, así como la transparencia y el color del fondo.
-
-        No contiene anuncios ni permisos innecesarios. Es completamente de código abierto, permite personalizar los colores.
-
-        El permiso de almacenamiento sólo se necesita para exportar o importar eventos desde archivos .ics.
-
-        El permiso de contactos se usa sólo para importar los cumpleaños de los contactos.
-
-        Esta aplicación es sólo una parte de una mayor serie de aplicaciones. Puede encontrar el resto en https://www.simplemobiletools.com</string>
 </resources>

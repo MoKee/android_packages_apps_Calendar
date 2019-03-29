@@ -11,6 +11,7 @@
     <string name="simple_event_list">活动列表</string>
     <string name="no_upcoming_events">好像你没有任何即将发生的事情。</string>
     <string name="go_to_today">转到今天</string>
+    <string name="go_to_date">转到日期</string>
     <string name="widget_monthly">月历</string>
     <string name="widget_list">日历活动列表</string>
     <string name="event">活动</string>
@@ -186,16 +187,4 @@
     <string name="faq_3_title">我可以看见提示，但没有听到声音。我应该做什么？</string>
     <string name="faq_3_text">不仅仅是显示实际的提醒， 而且播放提示音也受到系统的巨大影响。如果您听不到任何声音，请尝试使用应用程序设置，
         按 \"提示音\" 选项，并将其更改为其他值。如果仍然没有任何声音，检查您的声音设置，确认是否设置了静音。</string>
-    <string name="app_short_description">一个没有广告且无联网的活动日历, 尊重您的隐私。</string>
-    <string name="app_long_description">一个简单的日历应用，包含 CalDAV 同步选项。可简单的创建可重复的事件并设置提醒。也可以显示周数。
-
-        自带月视图和活动列表小工具，可以自定义文字颜色、背景和透明度。
-
-        没有广告和多余的权限。它是完全开源的，并提供可定制的颜色。
-
-        存储权限仅用于从 .ics 文件中导入或导出活动。
-
-        通讯录权限仅用于导入联系人的生日和纪念日。
-
-        此应用是一系列应用中的其中一个，可在 https://www.simplemobiletools.com 找到其他应用</string>
 </resources>

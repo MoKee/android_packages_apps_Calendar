@@ -142,15 +142,4 @@
     <string name="sample_title_4">Xantar con Aira</string>
     <string name="sample_description_4">Na plaza</string>
     <string name="sample_title_5">Hora do café</string>
-    <string name="app_long_description">Un calendario que funciona sin precisar sincronización CalDAV. Pode crear fácilmente eventos recurrentes e configurar recordatorios. También mostra o número de semana.
-
-        Ten un widget 4x4 de tamaño variable no que pode personalizar a cor do texto, así como a transparencia e cor de fondo.
-
-        Non contén anuncios ni permisos innecesarios. É totalmente de código abierto e tamén proporciona un decorado oscuro.
-
-        O permiso ao Almacenamento só é preciso para importar ficheiros .ics.
-
-        O permiso aos Contactos só é preciso se quere importar os cumpleanos dos contactos.
-
-        Esta aplicación é parte de unha serie máis grande de aplicativos. Puede atopar o resto en https://www.simplemobiletools.com</string>
 </resources>

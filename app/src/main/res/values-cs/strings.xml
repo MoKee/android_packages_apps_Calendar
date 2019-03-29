@@ -84,6 +84,11 @@
     <string name="add_another_reminder">Přidat další připomenutí</string>
     <string name="event_reminders">Připomínky událostí</string>
     <string name="add_another_attendee">Přidat dalšího účastníka</string>
+    <string name="my_status">Můj status:</string>
+    <string name="going">Přijdu</string>
+    <string name="not_going">Nepřijdu</string>
+    <string name="maybe_going">Možná přijdu</string>
+    <string name="invited">Pozván/a</string>
     <string name="import_events">Import událostí</string>
     <string name="export_events">Export událostí</string>
     <string name="import_events_from_ics">Importovat kalendář ze souboru .ics</string>
@@ -188,17 +193,5 @@
     <string name="faq_3_title">Vizuálně vidím připomínku, ale neslyším žádný zvuk. Co mám dělat?</string>
     <string name="faq_3_text">Nejenom zobrazování aktuální připomínky, ale i přehrávání zvuku je dost ovlivněno operačním systémem. Pokud neslyšíte žádný zvuk, zkuste jít do nastavení aplikace,
         vyberte: \"Zvuk upomínky\" a změňte na něco jiného. Pokud zvuk stále nefunguje, zkontrolujte zda není zvuk vypnut v nastavení vašeho systému.</string>
-    <string name="app_short_description">Offline kalendář pro vaše události, bez reklam a respektující vaše soukromí.</string>
-    <string name="app_long_description">        Jednoduchý kalendář s volitelnou synchronizací CalDAV. Můžete snadno vytvářet opakující se události a nastavovat připomenutí, můžete také zobrazovat čísla týdnů.
-
-        Obsahuje přizpůsobitelný widget 4x4, kde můžete měnit barvu textu, stejně jako průhlednost a barvu pozadí.
-
-        Neobsahuje žádné reklamy ani zbytečná oprávnění. Je plně OpenSource, umožňuje měnit barvy.
-
-        Oprávnění úložiště je potřeba pouze pro export nebo import událostí ze souborů .ics.
-
-        Oprávnění kontaktů se používá pouze při importu narozenin a výročí.
-
-        Tato aplikace je součástí větší sady aplikací. Tyto a další aplikace najdete na https://www.simplemobiletools.com
-    </string>
+    <string name="app_short_description">Offline kalendář bez reklam. Organizace &amp; připomenutí schůzek, událostí atd</string>
 </resources>

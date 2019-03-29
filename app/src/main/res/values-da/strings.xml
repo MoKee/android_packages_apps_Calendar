@@ -169,15 +169,4 @@
         Hvis du vil synkronisere en Googlekalender, kan deres officielle app klare det. For andre kalenderes vedkommende kan du bruge en 3. partsapp som for eksempel DAVdroid.</string>
     <string name="faq_3_title">Jeg kan se mine påmindelser, men der er ingen lyd på. Hvad kan jeg gøre ved det?</string>
     <string name="faq_3_text">Såvel visning af påmindelser som afspilning af lyd til dem, er afhængig af systemet. Hvis ikke du kan høre nogen lyd, kan du prøve at gå ind i appens indstillinger. Her kan du trykke på \"Audio-stream anvendt af påmindelser\"  og vælge en anden indstilling. Virker det stadig ikke skal du tjekke i dine lydindstillinger om lyden i det aktuelle valg er slået fra.</string>
-    <string name="app_long_description">En simpel kalender med mulighed for at synkronisere med CalDAV. Nem opsætning af gentagne begivenheder og af påmindelser.
-
-        Indeholder en skalerbar 4x4 widget med mulighed for at tilpasse tekstfarve samt alfa og farve på baggrunden.
-
-        Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
-
-        Adgang til at gemme er kun nødvendig i forbindelse med eksport til og import fra ics-filer.
-
-        Adgang til kontaktpersoner er nødvendig hvis du vil importere fødselsdage.
-
-        Denne app er en enkelt del af en større serie apps. Du kan finde dem alle på siden https://www.simplemobiletools.com</string>
 </resources>

@@ -179,15 +179,4 @@
     <string name="faq_3_title">Je vois les rappels visuels, mais n’entends aucun son. Que puis-je faire ?</string>
     <string name="faq_3_text">Pas seulement l\'affichage du rappel, mais la lecture de l\'audio est également énormément affectée par le système. Si vous n’entendez aucun son, essayez d’entrer dans les paramètres de l’application,
         en appuyant sur l\'option \"Flux audio utilisé par les rappels\" et en la modifiant. Si cela ne fonctionne toujours pas, vérifiez vos paramètres audio, si le flux particulier n’est pas mis en sourdine.</string>
-    <string name="app_long_description">Un calendrier hors ligne sans aucune autre intégration de calendrier. Vous pouvez aisément créer des événements récurrents et configurer des rappels, il est aussi possible d\'afficher les numéros de semaine.
-
-        Contient un widget 4x4 redimensionnable où vous pouvez personnaliser la couleur du texte, ainsi que l\'alpha et la couleur de l\'arrière plan.
-
-        Ne contient pas de publicités ou de permissions inutiles. Complètement opensource, fournit une personnalisation des couleurs.
-
-        La permission d\'accès au stockage est necéssaire uniquement pour importer des événements depuis des fichiers .ics.
-
-        La permission Contacts ne sert qu\'à importer l\'anniversaire de vos contacts.
-
-        Cette application est juste une pièce d\'une plus grosse série d\'applications. Vous pouvez trouver le reste de celles-ci à https://www.simplemobiletools.com</string>
 </resources>

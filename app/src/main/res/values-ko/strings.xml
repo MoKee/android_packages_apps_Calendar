@@ -155,15 +155,4 @@
     <string name="sample_title_5">커피타임</string>
     <string name="faq_1_title">\"휴일 추가\" 버튼을 눌러 생긴 휴일을 어떻게 지울 수 있나요?</string>
     <string name="faq_3_title">나는 시각적인 것은 남지만 듣는것은 남지 않습니다. 저는 어떻해야 하나요?</string>
-    <string name="app_long_description">Google 동기화가 있는 심플한 캘린더입니다. 쉽게 반복 이벤트와 알림을 설정할 수 있으며, 주 번호도 표시할 수 있습니다.
-
-        텍스트의 색상은 물론 배경의 투명도와 색상을 정할 수 있는, 크기 조절이 가능한 4x4 위젯이 포함되어 있습니다.
-
-        광고와 불필요한 권한이 없습니다. 이것은 완전히 오픈소스이며, 색상을 설정할 수 있습니다.
-
-        저장 권한은 .ics 파일에서 이벤트를 가져오는 경우에만 필요합니다.
-
-        The Contacts permission is used only at importing contact birthdays and anniversaries.
-
-        이 앱은 더 큰 시리즈의 앱들 중 하나입니다. 나머지는 https://www.simplemobiletools.com 에서 찾을 수 있습니다.</string>
 </resources>
