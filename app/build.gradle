@@ -16,8 +16,8 @@ android {
         applicationId "com.android.calendar"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 148
-        versionName "6.4.2"
+        versionCode 149
+        versionName "6.4.3"
         multiDexEnabled true
         android.applicationVariants.all { variant ->
             variant.outputs.all {
