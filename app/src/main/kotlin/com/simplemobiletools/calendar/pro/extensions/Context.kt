@@ -490,7 +490,7 @@ fun Context.handleEventDeleting(eventIds: List<Long>, timestamps: List<Long>, ac
 
 fun Context.fetchWorkdayAndHoliday() {
     if (3 * DateUtils.DAY_IN_MILLIS + config.lastUpdateTime < System.currentTimeMillis()) {
-        OkHttpRestClient.post("cnWorkdayAndHoliday",  object : Callback {
+        OkHttpRestClient.post("holidaySchedule",  object : Callback {
             override fun onFailure(call: Call, e: IOException) {
             }
 
@@ -519,7 +519,7 @@ fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: Str
     while (monthKeys.hasNext()) {
         var monthName = monthKeys.next()
         var dayInfo = monthInfo.getJSONArray(monthName);
-        for (i in 0.. (dayInfo.length() - 1)) {
+        for (i in 0 until (dayInfo.length() - 1)) {
             var date = yearName + "-" + monthName + "-" + dayInfo.getInt(i)
             var dayValues = ContentValues().apply {
                 put(Alarm.DATE, date)
