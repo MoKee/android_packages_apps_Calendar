@@ -19,6 +19,8 @@ package com.simplemobiletools.calendar.pro.net;
 import com.mokee.os.Build;
 import com.simplemobiletools.calendar.pro.helpers.ConstantsKt;
 
+import java.util.Locale;
+
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -30,8 +32,11 @@ public class OkHttpRestClient {
     private static OkHttpClient client = new OkHttpClient();
 
     public static void post(String url, Callback callback) {
+        Locale locale = Locale.getDefault();
+        String lang = locale.getLanguage() + "-" + locale.getCountry();
         RequestBody params = new FormBody.Builder()
-                .add("version", Build.VERSION).build();
+                .add("version", Build.VERSION)
+                .add("lang", lang.toLowerCase()).build();
         post(url, params, callback);
     }
 
