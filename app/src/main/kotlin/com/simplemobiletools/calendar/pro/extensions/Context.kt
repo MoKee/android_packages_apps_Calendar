@@ -523,7 +523,7 @@ fun Context.insertDayInfoToDB(yearInfo : JSONObject, yearName: String, type: Str
     while (monthKeys.hasNext()) {
         var monthName = monthKeys.next()
         var dayInfo = monthInfo.getJSONArray(monthName);
-        for (i in 0 until (dayInfo.length() - 1)) {
+        for (i in 0 until (dayInfo.length())) {
             var date = yearName + "-" + monthName + "-" + dayInfo.getInt(i)
             var dayValues = ContentValues().apply {
                 put(Alarm.DATE, date)
