@@ -490,26 +490,30 @@ fun Context.handleEventDeleting(eventIds: List<Long>, timestamps: List<Long>, ac
 
 fun Context.fetchWorkdayAndHoliday() {
     if (3 * DateUtils.DAY_IN_MILLIS + config.lastUpdateTime < System.currentTimeMillis()) {
-        OkHttpRestClient.post("holidaySchedule",  object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-            }
-
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                if (response.isSuccessful) {
-                    getWHSharedPrefs().edit().clear().apply()
-                    var jsonObject = JSONObject(response.body()?.string())
-                    var yearInfo = jsonObject.getJSONObject("YEAR")
-                    var yearKeys = yearInfo.keys()
-                    while (yearKeys.hasNext()) {
-                        var yearName = yearKeys.next();
-                        insertDayInfoToDB(yearInfo, yearName, "WORKDAY", Alarm.CONTENT_FILTER_WORKDAY_URI, FLAG_WORKDAY)
-                        insertDayInfoToDB(yearInfo, yearName, "HOLIDAY", Alarm.CONTENT_FILTER_HOLIDAY_URI, FLAG_HOLIDAY)
+        Thread(object : Runnable {
+            override fun run() {
+                OkHttpRestClient.post("holidaySchedule",  object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
                     }
-                    config.lastUpdateTime = jsonObject.getLong("TIMESTAMP")
-                }
+
+                    @Throws(IOException::class)
+                    override fun onResponse(call: Call, response: Response) {
+                        if (response.isSuccessful) {
+                            getWHSharedPrefs().edit().clear().apply()
+                            var jsonObject = JSONObject(response.body()?.string())
+                            var yearInfo = jsonObject.getJSONObject("YEAR")
+                            var yearKeys = yearInfo.keys()
+                            while (yearKeys.hasNext()) {
+                                var yearName = yearKeys.next();
+                                insertDayInfoToDB(yearInfo, yearName, "WORKDAY", Alarm.CONTENT_FILTER_WORKDAY_URI, FLAG_WORKDAY)
+                                insertDayInfoToDB(yearInfo, yearName, "HOLIDAY", Alarm.CONTENT_FILTER_HOLIDAY_URI, FLAG_HOLIDAY)
+                            }
+                            config.lastUpdateTime = jsonObject.getLong("TIMESTAMP")
+                        }
+                    }
+                })
             }
-        });
+        }).start()
     }
 }
 
