@@ -194,6 +194,7 @@
     <string name="faq_3_title">Látom a vizuális emlékeztetőket, de nem hallok hangot. Mit tegyek?</string>
     <string name="faq_3_text">A rendszer nem csak a tényleges emlékeztető-megjelenítésre, de a hangokra is óriási hatással van. Ha nem hall semmilyen hangot, próbáljon belépni az alkalmazás beállításaiba,
         nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
+    <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
     <string name="app_short_description">Egy offline naptár reklámok nélkül. Szervező és emlékeztetők találkozókra, eseményekre stb</string>
     <string name="app_long_description">        A Simple Calendar Pro egy teljes mértékben testreszabható offline naptár, amelyet úgy terveztek, hogy pontosan azt tegye, amit egy naptárnak tennie kell. <b>Nincsenek bonyolult funkciók, nem kellenek felesleges engedélyek és nincsenek reklámok!</b> 
 

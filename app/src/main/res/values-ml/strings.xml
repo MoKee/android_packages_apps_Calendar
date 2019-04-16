@@ -3,7 +3,7 @@
 <resources>
     <string name="app_launcher_name">കലണ്ടർ</string>
     <string name="title">തലക്കെട്ട്</string>
-    <string name="location">"ലൊക്കേഷൻ"</string>
+    <string name="location">ലൊക്കേഷൻ</string>
     <string name="description">വിവരണം</string>
     <string name="color">വർണ്ണം</string>
     <string name="no_ringtone_selected">ഒന്നുമില്ല</string>

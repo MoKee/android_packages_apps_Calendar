@@ -11,6 +11,8 @@
     <string name="simple_event_list">Liste simple d\'événements</string>
     <string name="no_upcoming_events">Il semblerait que vous n\'ayez aucun événement à venir.</string>
     <string name="go_to_today">Aller à aujourd\'hui</string>
+    <string name="go_to_date">Aller à la date</string>
+    <string name="upgraded_from_free">Hé,\n\n il semble comme vous mis à jour depuis l\'ancienne application gratuite. Vous devez migrer manuellement les événements stockés localement via un fichier .ics, puis \"importation\". Vous pouvez trouver les deux boutons d’import/export dans le menu de l’écran principal.\n\nVous pouvez alors désinstaller l’ancienne version, qui dispose d’un bouton « Mise à niveau à Pro » en haut de sa liste des paramètres. Ensuite, vous devrez seulement réinitialiser vos paramètres d’application.\n\nMerci !</string>
     <string name="widget_monthly">Calendrier mensuel</string>
     <string name="widget_list">Liste d\'événements du calendrier</string>
     <string name="event">Événement</string>
@@ -82,6 +84,12 @@
     <string name="before">avant</string>
     <string name="add_another_reminder">Ajouter un autre rappel</string>
     <string name="event_reminders">Rappels d\'événements</string>
+    <string name="add_another_attendee">Ajouter un autre participant</string>
+    <string name="my_status">Mon statut:</string>
+    <string name="going">En cours</string>
+    <string name="not_going">Pas en cours</string>
+    <string name="maybe_going">Peut-être en cours</string>
+    <string name="invited">Invité</string>
     <string name="import_events">Importer des événements</string>
     <string name="export_events">Exporter des événements</string>
     <string name="import_events_from_ics">Importer des événements depuis un fichier .ics</string>
@@ -138,11 +146,18 @@
     <string name="alarm_stream">Alarme</string>
     <string name="notification_stream">Notification</string>
     <string name="ring_stream">Sonnerie</string>
+    <string name="use_last_event_reminders">Utiliser les rappels des derniers événements comme valeur par défaut pour de nouveaux événements</string>
     <string name="default_reminder_1">Rappel par défaut 1</string>
     <string name="default_reminder_2">Rappel par défaut 2</string>
     <string name="default_reminder_3">Rappel par défaut 3</string>
     <string name="view_to_open_from_widget">Affichage à ouvrir à partir du widget de liste d\'événements</string>
     <string name="last_view">Dernière vue</string>
+    <string name="new_events">Nouveaux événements</string>
+    <string name="default_start_time">Heure de début par défaut</string>
+    <string name="next_full_hour">Prochain heure complète</string>
+    <string name="default_duration">Durée par défaut</string>
+    <string name="last_used_one">Dernier utilisé</string>
+    <string name="other_time">Autre moment</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seléctionner les calendriers à synchroniser</string>
     <string name="manage_synced_calendars">Gérer les calendriers synchronisés</string>
@@ -179,4 +194,46 @@
     <string name="faq_3_title">Je vois les rappels visuels, mais n\'entends aucun son. Que puis-je faire?</string>
     <string name="faq_3_text">Pas seulement l\'affichage du rappel, mais la lecture de l\'audio est également énormément affectée par le système. Si vous n’entendez aucun son, essayez d’entrer dans les paramètres de l’application,
         en appuyant sur l\'option \"Flux audio utilisé par les rappels\" et en la modifiant. Si cela ne fonctionne toujours pas, vérifiez vos paramètres audio, si le flux particulier n’est pas mis en sourdine.</string>
+    <string name="app_title">Simple Calendar Pro- Événements &amp; Rappels</string>
+    <string name="app_short_description">Calendrier hors ligne sans publicité. Organisateur &amp; rappels pour rendez-vous, événements etc</string>
+    <string name="app_long_description">Simple Calendar Pro est un calendrier hors ligne entièrement personnalisable conçu pour faire exactement ce que doit faire un calendrier. &lt;b&gt; Pas de fonctionnalités compliquées, d\'autorisations inutiles et pas de publicité! &lt;/ b&gt;
+
+Que vous organisiez des événements uniques ou récurrents, des anniversaires, des réunions professionnelles, des rendez-vous ou autre chose, Simple Calendar Pro vous permet &lt;b&gt; de rester organisé &lt;/ b&gt; facilement. Grâce à une incroyable variété &lt;b&gt; d\'options de personnalisation &lt;/ b&gt;, vous pouvez personnaliser les rappels d\'événements, les sons de notification, les widgets d\'agenda et l\'apparence de l\'application.
+
+Les vues quotidiennes, hebdomadaires et mensuelles permettent de vérifier vos événements à venir &amp; amp; rendez-vous un jeu d\'enfant. Vous pouvez même tout voir comme une simple liste d’événements plutôt que dans un calendrier. Ainsi, vous &lt;b&gt; savez exactement ce qui se passe dans votre vie et à quel moment. &lt;/ b&gt;
+
+        -------------------------------------------------- --------
+        &lt;b&gt; Simple Calendar Pro - Fonctionnalités &amp; amp; Avantages &lt;/ b&gt;
+        -------------------------------------------------- --------
+
+        ✔️ Pas de publicité ou de popups ennuyeux
+        ✔️ Pas d\'accès Internet nécessaire, vous donnant plus d\'intimité et amp; Sécurité
+        ✔️ Seules les autorisations minimales requises
+        ✔️ L\'accent est mis sur la simplicité - fait ce qu\'un calendrier doit faire!
+        ✔️ Open source
+        ✔️ thèmes entièrement personnalisables &amp; amp; widgets calendrier / événement
+        ✔️ Traduit en 29 langues
+        ✔️ Exporter les paramètres vers des fichiers .txt à importer sur un autre appareil
+        ✔️ La synchronisation du calendrier CalDAV est prise en charge pour la synchronisation des événements sur les appareils.
+        ✔️ Quotidien, hebdomadaire, mensuel, annuel &amp; amp; vues d\'événement sur le calendrier
+        ✔️ Prise en charge de l’exportation &amp; amp; importer des événements via des fichiers .ics
+        ✔️ Définir plusieurs rappels d\'événement, personnaliser le son et la vibration de rappel d\'événement
+        ✔️ Option Snooze pour les rappels
+        ✔️ facilement ajouter des vacances, anniversaires, anniversaires &amp; amp; rendez-vous
+        ✔️ Personnaliser les événements - heure de début, durée, rappels, etc.
+        ✔️ Ajouter des participants à chaque événement
+        ✔️ Utiliser comme calendrier personnel ou calendrier professionnel
+        ✔️ Choisissez entre rappels et amp; notifications par e-mail pour vous alerter d\'un événement
+
+        TÉLÉCHARGEZ SIMPLE CALENDAR PRO - LE CALENDRIER SIMPLE HORS LIGNE SANS PUBLICITÉ!
+
+  &lt;b&gt;Check out the full suite of Simple Tools here:&lt;/b&gt;
+        https://www.simplemobiletools.com
+
+        &lt;b&gt;Facebook:&lt;/b&gt;
+        https://www.facebook.com/simplemobiletools
+
+        &lt;b&gt;Reddit:&lt;/b&gt;
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

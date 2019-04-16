@@ -193,5 +193,6 @@
     <string name="faq_3_title">Vizuálně vidím připomínku, ale neslyším žádný zvuk. Co mám dělat?</string>
     <string name="faq_3_text">Nejenom zobrazování aktuální připomínky, ale i přehrávání zvuku je dost ovlivněno operačním systémem. Pokud neslyšíte žádný zvuk, zkuste jít do nastavení aplikace,
         vyberte: \"Zvuk upomínky\" a změňte na něco jiného. Pokud zvuk stále nefunguje, zkontrolujte zda není zvuk vypnut v nastavení vašeho systému.</string>
+    <string name="app_title">Simple Calendar Pro - Události &amp; připomenutí</string>
     <string name="app_short_description">Offline kalendář bez reklam. Organizace &amp; připomenutí schůzek, událostí atd</string>
 </resources>

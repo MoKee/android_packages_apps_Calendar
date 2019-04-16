@@ -12,6 +12,7 @@
     <string name="no_upcoming_events">يبدو أنه لا يوجد لديك أي أحداث قادمة.</string>
     <string name="go_to_today">الذهاب إلى اليوم الحالي</string>
     <string name="go_to_date">اذهب الى التاريخ</string>
+    <string name="upgraded_from_free">Hey,\n\nseems like you upgraded from the old free app. You have to migrate locally stored events manually via exporting in an .ics file, then importing. You can find both export/import buttons at the main screen menu.\n\nYou can then uninstall the old version, which has an \'Upgrade to Pro\' button at the top of the app settings. You will then only have to reset your app settings.\n\nThanks!</string>
     <string name="widget_monthly">تقويم شهري</string>
     <string name="widget_list">قائمة أحداث التقويم</string>
     <string name="event">الحدث</string>
@@ -193,5 +194,46 @@
     <string name="faq_3_title">أرى التذكيرات المرئية ، لكن لا أسمع صوتًا. ماذا افعل؟</string>
     <string name="faq_3_text">ليس فقط عرض التذكير الفعلي ، ولكن تشغيل الصوت يتأثر بشكل كبير بالنظام أيضًا. إذا لم تستطع سماع أي صوت ، فحاول الذهاب في إعدادات التطبيق ،
         الضغط على الخيار \"الصوت الذي يستخدمه التذكير\" وتغييره إلى قيمة مختلفة. إذا استمر عدم نجاح ذلك ، فتحقق من إعدادات الصوت ، إذا لم يتم كتم البث المحدد.</string>
+    <string name="app_title">التقويم - الأحداث والتذكيرات</string>
     <string name="app_short_description">تقويم غير متصل بدون إعلانات. منظم و مذكر بالمواعيد والأحداث وغيرها</string>
+    <string name="app_long_description">        Simple Calendar Pro is a fully customizable, offline calendar designed to do exactly what a calendar should do. <b>No complicated features, unnecessary permissions and no ads!</b>
+
+        Whether you’re organizing single or recurring events, birthdays, anniversaries, business meetings, appointments or anything else, Simple Calendar Pro makes it <b>easy to stay organized</b>. With an incredible variety of <b>customization options</b> you can customize event reminders, notification sounds, calendar widgets and how the app looks.
+
+        Daily, weekly and monthly views make checking your upcoming events &amp; appointments a breeze. You can even view everything as a simple list of events rather than in calendar view, so you <b>know exactly what’s coming up in your life and when. </b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Features &amp; Benefits</b>
+        ----------------------------------------------------------
+
+        ✔️ No ads or annoying popups
+        ✔️ No internet access needed, giving you more privacy &amp; security
+        ✔️ Only the bare minimum permissions required
+        ✔️ Emphasis on simplicity – does what a calendar needs to do!
+        ✔️ Open source
+        ✔️ Fully customizable themes &amp; calendar / event widgets
+        ✔️ Translated into 29 languages
+        ✔️ Export settings to .txt files to import to another device
+        ✔️ CalDAV calendar sync supported to sync events across devices
+        ✔️ Daily, weekly, monthly, yearly &amp; event views on the calendar
+        ✔️ Supports exporting &amp; importing events via .ics files
+        ✔️ Set multiple event reminders, customize event reminder sound and vibration
+        ✔️ Snooze option for reminders
+        ✔️ Easily add holidays, birthdays, anniversaries &amp; appointments
+        ✔️ Customize events – start time, duration, reminders etc
+        ✔️ Add event attendees to each event
+        ✔️ Use as a personal calendar or a business calendar
+        ✔️ Choose between reminders &amp; email notifications to alert you about an event
+
+        DOWNLOAD SIMPLE CALENDAR PRO – THE SIMPLE OFFLINE CALENDAR WITH NO ADS!
+
+        <b>Check out the full suite of Simple Tools here:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

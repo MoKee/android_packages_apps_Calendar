@@ -12,6 +12,7 @@
     <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
     <string name="go_to_today">Bugüne git</string>
     <string name="go_to_date">Tarihe git</string>
+    <string name="upgraded_from_free">Hey, \n\neski ücretsiz uygulamadan yükseltilmiş gibisin. Yerel olarak depolanan olayları bir .ics dosyasına dışa aktarıp ardından içe aktarma yoluyla el ile yapmanız gerekir. Her iki dışa aktarma / içe aktarma düğmesini ana ekran menüsünde bulabilirsiniz. \n\nUygulama ayarlarının üstündeki \'Pro\'ya Yükselt\' düğmesine sahip olan eski sürümü kaldırabilirsiniz. Daha sonra yalnızca uygulama ayarlarınızı sıfırlamanız gerekir. \n\nTeşekkürler!</string>
     <string name="widget_monthly">Aylık takvim</string>
     <string name="widget_list">Takvim etkinlik listesi</string>
     <string name="event">Durum</string>
@@ -192,5 +193,45 @@
     <string name="faq_3_title">Görsel hatırlatıcıları görüyorum ama ses duymuyorum. Ne yapabilirim?</string>
     <string name="faq_3_text">Sadece gerçek hatırlatmayı göstermekle kalmaz, aynı zamanda ses çalmak da sistemden çok etkilenir. Herhangi bir ses duyamıyorsanız, uygulama ayarlarına girmeyi deneyin.
         \"Hatırlatıcılar tarafından kullanılan ses akışı\" seçeneğine basmak ve bunu farklı bir değere değiştirmek. Eğer hala işe yaramazsa, ses akışı kapatılmamışsa ses ayarlarınızı kontrol edin.</string>
+    <string name="app_title">Simple Calendar Pro - Etkinlikler &amp; Hatırlatıcılar</string>
     <string name="app_short_description">Reklamsız çevrimdışı takvim. Düzenleyici ve &amp; randevular, etkinlikler için hatırlatıcılar vb</string>
+    <string name="app_long_description">        Simple Calendar Pro, bir takvimin yapması gerekenleri yapmak için tasarlanmış tamamen özelleştirilebilir, çevrimdışı bir takvimdir.<b> Karmaşık özellikler yok, gereksiz izinler ve reklam yok! </b>
+
+        İster tek ister tekrarlı etkinlikler, doğum günleri, yıldönümleri, iş toplantıları, randevular veya başka bir şey düzenliyor olsanız da, Simple Calendar Pro, <b> düzenli kalmanızı kolaylaştırır </b>. Çok çeşitli <b> kişiselleştirme seçenekleri </b> ile etkinlik hatırlatıcılarını, bildirim seslerini, takvim widget\'larını ve uygulamanın görünüşünü özelleştirebilirsiniz.
+
+        Günlük, haftalık ve aylık görünümlerde yaklaşan etkinliklerinizi kontrol etmenizi sağlar &amp; Randevular için hatırlatma. Her şeyi takvim görünümünden ziyade basit bir etkinlik listesi olarak da görüntüleyebilirsiniz, <b> böylece hayatınızda ne zaman ne olduğunu tam olarak bilebilirsiniz. </b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Özellikler &amp; Yararları </b>
+        ----------------------------------------------------------
+        ✔️ Reklam ve can sıkıcı pop-up\'lar yok
+        ✔️ İnternet erişimi gerekmez, size daha fazla güvenlik ve &amp; gizlilik sunar
+        ✔️ Sadece az ve açık izinler gerekli
+        ✔️ Basitlik vurgusu - bir takvimin yapması gereken şeyi yapar!
+        ✔️ Açık kaynak
+        ✔️ Tamamen özelleştirilebilir temalar &amp; takvim / etkinlik widget\'ları
+        ✔️ 29 dile çevrilmiş
+        ✔️ Ayarları başka bir cihaza aktarmak için .txt dosyası oluşturup aktarabilmesi
+        ✔️ CalDAV takvim senkronizasyonu, cihazlar arasındaki etkinlikleri senkronize etmek için desteklenir
+        ✔️ Günlük, haftalık, aylık, ve yıllık &amp; Takvimdeki etkinlik görünümleri
+        ✔️ Dışa aktarmayı destekler &amp;; .ics dosyaları yoluyla olayları içe aktarır
+       ✔️  Birden fazla etkinlik hatırlatması ayarlayın, etkinlik hatırlatıcı sesini ve titreşimi özelleştirin
+        ✔️ Hatırlatıcılar için erteleme seçeneği
+        ✔️ Kolayca tatiller, doğum günleri, yıldönümleri ve &amp; randevular ekleyin
+        ✔️ Etkinlikleri özelleştir - başlangıç zamanı, süre, hatırlatıcılar vb
+        ✔️ Her bir etkinliğe etkinlik katılımcıları ekleyin
+        ✔️ Kişisel bir takvim veya iş takvimi olarak kullanın
+        ✔️ Bir olay hakkında sizi uyarmak için &amp; hatırlatıcılar ve e-posta bildirimleri arasında bir seçim yapın
+
+        SİMPLE CALENDAR PRO\'YU İNDİRİN - REKLAMSIZ BASİT ÇEVRİMDIŞI TAKVİM!
+
+        <b>Buradan basit araçlar tam paketine göz atın:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>
