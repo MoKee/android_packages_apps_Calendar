@@ -802,10 +802,22 @@ class EventActivity : SimpleActivity() {
         }
     }
 
+    private fun resetTime() {
+        if (mEventEndDateTime.isBefore(mEventStartDateTime) &&
+                mEventStartDateTime.dayOfMonth() == mEventEndDateTime.dayOfMonth() &&
+                mEventStartDateTime.monthOfYear() == mEventEndDateTime.monthOfYear()) {
+
+            mEventEndDateTime = mEventEndDateTime.withTime(mEventStartDateTime.hourOfDay, mEventStartDateTime.minuteOfHour, mEventStartDateTime.secondOfMinute, 0)
+            updateEndTimeText()
+            checkStartEndValidity()
+        }
+    }
+
     private fun toggleAllDay(isChecked: Boolean) {
         hideKeyboard()
         event_start_time.beGoneIf(isChecked)
         event_end_time.beGoneIf(isChecked)
+        resetTime()
     }
 
     private fun shareEvent() {
