@@ -75,10 +75,12 @@
     <string name="birthdays">生日</string>
     <string name="add_birthdays">添加聯絡人生日</string>
     <string name="no_birthdays">未發現生日</string>
+    <string name="no_new_birthdays">未發現新的生日</string>
     <string name="birthdays_added">生日添加成功</string>
     <string name="anniversaries">紀念日</string>
     <string name="add_anniversaries">添加聯絡人紀念日</string>
     <string name="no_anniversaries">未發現紀念日</string>
+    <string name="no_new_anniversaries">未發現新的紀念日</string>
     <string name="anniversaries_added">紀念日添加成功</string>
     <string name="reminder">提醒</string>
     <string name="before">前</string>
@@ -158,6 +160,7 @@
     <string name="default_duration">預設期間</string>
     <string name="last_used_one">最後使用</string>
     <string name="other_time">其他時間</string>
+    <string name="highlight_weekends">突出週末</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">選擇行事曆來同步</string>
     <string name="manage_synced_calendars">管理同步的行事曆</string>
@@ -196,4 +199,44 @@
         按\"用於提醒的音源串流\"選項，然後更改成不同數值。如果還是沒有用，檢查你的音量設定，指定串流是不是靜音的。</string>
     <string name="app_title">簡單日曆專業版 - 事件 &amp; 提醒</string>
     <string name="app_short_description">沒有廣告的離線日曆。組織活動、提醒約會和活動等</string>
+    <string name="app_long_description">Simple Calendar Pro is a fully customizable, offline calendar designed to do exactly what a calendar should do. <b>No complicated features, unnecessary permissions and no ads!</b>
+
+        Whether you’re organizing single or recurring events, birthdays, anniversaries, business meetings, appointments or anything else, Simple Calendar Pro makes it <b>easy to stay organized</b>. With an incredible variety of <b>customization options</b> you can customize event reminders, notification sounds, calendar widgets and how the app looks.
+
+        Daily, weekly and monthly views make checking your upcoming events &amp; appointments a breeze. You can even view everything as a simple list of events rather than in calendar view, so you <b>know exactly what’s coming up in your life and when. </b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Features &amp; Benefits</b>
+        ----------------------------------------------------------
+
+        ✔️ No ads or annoying popups
+        ✔️ No internet access needed, giving you more privacy &amp; security
+        ✔️ Only the bare minimum permissions required
+        ✔️ Emphasis on simplicity – does what a calendar needs to do!
+        ✔️ Open source
+        ✔️ Fully customizable themes &amp; calendar / event widgets
+        ✔️ Translated into 29 languages
+        ✔️ Export settings to .txt files to import to another device
+        ✔️ CalDAV calendar sync supported to sync events across devices
+        ✔️ Daily, weekly, monthly, yearly &amp; event views on the calendar
+        ✔️ Supports exporting &amp; importing events via .ics files
+        ✔️ Set multiple event reminders, customize event reminder sound and vibration
+        ✔️ Snooze option for reminders
+        ✔️ Easily add holidays, birthdays, anniversaries &amp; appointments
+        ✔️ Customize events – start time, duration, reminders etc
+        ✔️ Add event attendees to each event
+        ✔️ Use as a personal calendar or a business calendar
+        ✔️ Choose between reminders &amp; email notifications to alert you about an event
+
+        DOWNLOAD SIMPLE CALENDAR PRO – THE SIMPLE OFFLINE CALENDAR WITH NO ADS!
+
+        <b>Check out the full suite of Simple Tools here:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

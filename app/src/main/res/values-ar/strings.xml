@@ -75,10 +75,12 @@
     <string name="birthdays">أعياد الميلاد</string>
     <string name="add_birthdays">أضف أعياد الميلاد</string>
     <string name="no_birthdays">لم يتم العثور على أعياد الميلاد</string>
+    <string name="no_new_birthdays">لم يتم العثور على أعياد ميلاد جديدة</string>
     <string name="birthdays_added">تمت إضافة أعياد الميلاد بنجاح</string>
     <string name="anniversaries">الذكريات السنوية</string>
     <string name="add_anniversaries">إضافة الذكرى السنوية من جهات الاتصال</string>
     <string name="no_anniversaries">لم يتم العثور على أي ذكرى سنوية</string>
+    <string name="no_new_anniversaries">لم يتم العثور على ذكرى سنوية جديدة</string>
     <string name="anniversaries_added">تمت إضافة الذكرى السنوية بنجاح</string>
     <string name="reminder">تذكير</string>
     <string name="before">قبل</string>
@@ -158,6 +160,7 @@
     <string name="default_duration">المدة الافتراضية</string>
     <string name="last_used_one">اخر واحد مستخدم</string>
     <string name="other_time">وقت آخر</string>
+    <string name="highlight_weekends">تسليط الضوء على بعض وجهات النظر في عطلة نهاية الأسبوع</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">حدد التقويمات للمزامنة</string>
     <string name="manage_synced_calendars">إدارة التقويمات المتزامنة</string>

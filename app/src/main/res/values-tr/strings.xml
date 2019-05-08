@@ -75,10 +75,12 @@
     <string name="birthdays">Doğum günleri</string>
     <string name="add_birthdays">Kişi doğum günlerini ekle</string>
     <string name="no_birthdays">Hiçbir doğum günü bulunamadı</string>
+    <string name="no_new_birthdays">Yeni doğum günü bulunamadı</string>
     <string name="birthdays_added">Doğum günleri başarıyla eklendi</string>
     <string name="anniversaries">Yıldönümleri</string>
     <string name="add_anniversaries">Kişi yıldönümlerini ekle</string>
     <string name="no_anniversaries">Yıldönümleri bulunamadı</string>
+    <string name="no_new_anniversaries">Yeni yıl dönümü bulunamadı</string>
     <string name="anniversaries_added">Yıldönümleri başarıyla eklendi</string>
     <string name="reminder">Hatırlatma</string>
     <string name="before">önce</string>
@@ -158,6 +160,7 @@
     <string name="default_duration">Varsayılan süre</string>
     <string name="last_used_one">Son kullanılan</string>
     <string name="other_time">Diğer zaman</string>
+    <string name="highlight_weekends">Bazı görünümlerde hafta sonlarını vurgula</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>
     <string name="manage_synced_calendars">Senkronize edilmiş takvimleri yönet</string>
