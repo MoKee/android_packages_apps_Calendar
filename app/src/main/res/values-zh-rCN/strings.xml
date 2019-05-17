@@ -75,10 +75,12 @@
     <string name="birthdays">生日</string>
     <string name="add_birthdays">添加联系人生日</string>
     <string name="no_birthdays">未找到生日</string>
+    <string name="no_new_birthdays">没有发现新的生日</string>
     <string name="birthdays_added">生日添加成功</string>
     <string name="anniversaries">纪念日</string>
     <string name="add_anniversaries">添加联系人周年纪念日</string>
     <string name="no_anniversaries">没有纪念日</string>
+    <string name="no_new_anniversaries">没有发现新的周年纪念</string>
     <string name="anniversaries_added">成功添加纪念日</string>
     <string name="reminder">提醒</string>
     <string name="before">前</string>
@@ -158,6 +160,7 @@
     <string name="default_duration">默认持续时间</string>
     <string name="last_used_one">上次使用</string>
     <string name="other_time">其他时间</string>
+    <string name="highlight_weekends">在一些视图上高亮周末</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">选择要同步的日历</string>
     <string name="manage_synced_calendars">管理已同步的日历</string>
