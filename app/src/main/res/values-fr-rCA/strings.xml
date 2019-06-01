@@ -75,10 +75,12 @@
     <string name="birthdays">Anniversaires</string>
     <string name="add_birthdays">Ajouter les anniversaires des contacts</string>
     <string name="no_birthdays">Aucun anniversaire n\'a été trouvé</string>
+    <string name="no_new_birthdays">Aucun nouvel anniversaire n\'a été trouvé</string>
     <string name="birthdays_added">Anniversaires ajoutés avec succès</string>
     <string name="anniversaries">Anniversaires d\'évènements</string>
     <string name="add_anniversaries">Ajouter des anniversaires d\'évènements de contact</string>
     <string name="no_anniversaries">Aucun anniversaire d\'évènements n\'a été trouvé</string>
+    <string name="no_new_anniversaries">Aucun nouvel anniversaire n\'a été trouvé</string>
     <string name="anniversaries_added">Anniversaires d\'évènements ajoutés avec succès</string>
     <string name="reminder">Rappel</string>
     <string name="before">avant</string>
@@ -158,6 +160,7 @@
     <string name="default_duration">Durée par défaut</string>
     <string name="last_used_one">Dernier utilisé</string>
     <string name="other_time">Autre moment</string>
+    <string name="highlight_weekends">Souligner les week-ends sur certaines vues</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seléctionner les calendriers à synchroniser</string>
     <string name="manage_synced_calendars">Gérer les calendriers synchronisés</string>

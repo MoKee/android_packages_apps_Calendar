@@ -11,6 +11,7 @@
     <string name="simple_event_list">Lista de eventos</string>
     <string name="no_upcoming_events">Parece que você não tem próximos eventos.</string>
     <string name="go_to_today">Ir para hoje</string>
+    <string name="go_to_date">Ir para data</string>
     <string name="widget_monthly">Calendário mensal</string>
     <string name="widget_list">Lista de eventos</string>
     <string name="event">Evento</string>
@@ -82,6 +83,9 @@
     <string name="before">antes</string>
     <string name="add_another_reminder">Adicionar outro lembrete</string>
     <string name="event_reminders">Lembretes de eventos</string>
+    <string name="add_another_attendee">Adicionar outro participante</string>
+    <string name="my_status">O meu estado:</string>
+    <string name="invited">Convidado</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="import_events_from_ics">Importar eventos de um arquivo .ics</string>
@@ -143,6 +147,8 @@
     <string name="default_reminder_3">Lembrete padrão 3</string>
     <string name="view_to_open_from_widget">Visualizar para abrir a partir do widget de lista de evento</string>
     <string name="last_view">Última exibição</string>
+    <string name="new_events">Novos eventos</string>
+    <string name="default_duration">Duração predefinida</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecione calendários para sincronizar</string>
     <string name="manage_synced_calendars">Gerenciar calendários sincronizados</string>
