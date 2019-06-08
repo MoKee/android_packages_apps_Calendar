@@ -11,6 +11,8 @@
     <string name="simple_event_list">Lihtne sündmuste loend</string>
     <string name="no_upcoming_events">Tundub, et teil pole tulevasi sündmusi.</string>
     <string name="go_to_today">Minge täna</string>
+    <string name="go_to_date">Mine kuupäevani</string>
+    <string name="upgraded_from_free">Hei,\n\ntundub, et te uuendasite vanast tasuta rakendusest. Peate kohapeal salvestatud sündmused käsitsi läbi viima .ics-failis ja seejärel importima. Nii ekspordi / impordi nupud leiate peaekraanimenüüst.\n\n Seejärel saate eemaldada vana versiooni, millel on rakenduse seadete ülaosas nupp „Uuenda Pro-le”. Seejärel peate oma rakenduse seaded lähtestama.\n\nTänan!</string>
     <string name="widget_monthly">Kuu kalender</string>
     <string name="widget_list">Kalendri sündmuste loend</string>
     <string name="event">Sündmus</string>
@@ -73,15 +75,22 @@
     <string name="birthdays">Sünnipäevad</string>
     <string name="add_birthdays">Lisage kontaktide sünnipäevad</string>
     <string name="no_birthdays">Sünnipäevi pole leitud</string>
+    <string name="no_new_birthdays">Uusi sünnipäevi pole leitud</string>
     <string name="birthdays_added">Sünnipäevad edukalt lisatud</string>
     <string name="anniversaries">Aastapäevad</string>
     <string name="add_anniversaries">Lisage kontaktide tähtpäevad</string>
     <string name="no_anniversaries">Tähtpäevi pole leitud</string>
+    <string name="no_new_anniversaries">Uusi tähtpäevi pole leitud</string>
     <string name="anniversaries_added">Tähtpäevad edukalt lisatud</string>
     <string name="reminder">Meeldetuletus</string>
     <string name="before">enne</string>
     <string name="add_another_reminder">Lisa veel üks meeldetuletus</string>
     <string name="event_reminders">Sündmuste meeldetuletused</string>
+    <string name="add_another_attendee">Lisa teine osaleja</string>
+    <string name="my_status">Minu olek:</string>
+    <string name="going">Minek</string>
+    <string name="not_going">Ei lähe</string>
+    <string name="maybe_going">Võib-olla läheb</string>
     <string name="invited">Kutse</string>
     <string name="import_events">Impordi sündmused</string>
     <string name="export_events">Ekspordi sündmused</string>
@@ -131,6 +140,7 @@
     <string name="delete_all_events">Kustuta sündmused</string>
     <string name="delete_all_events_confirmation">Kas soovite kindlasti kõik sündmused kustutada? See jätab teie sündmuste tüübid ja muud seaded puutumata.</string>
     <string name="show_a_grid">Kuva võrguna</string>
+    <string name="loop_reminders">Tsüklilised meeldetuletused kuni lahtiühendamiseni</string>
     <string name="dim_past_events">Möödunud sündmused tuhmid</string>
     <string name="events">Sündmused</string>
     <string name="reminder_stream">Meeldetuletusteks kasutatav heli</string>
@@ -138,13 +148,19 @@
     <string name="alarm_stream">Äratus</string>
     <string name="notification_stream">Teade</string>
     <string name="ring_stream">Helin</string>
+    <string name="use_last_event_reminders">Kasutage viimaste sündmuste meeldetuletusi uutes sündmustes vaikimisi</string>
     <string name="default_reminder_1">1 vaikimisi meeldetuletus</string>
     <string name="default_reminder_2">2 vaikimisi meeldetuletus</string>
     <string name="default_reminder_3">3 vaikimisi meeldetuletus</string>
     <string name="view_to_open_from_widget">Vaadake, et avada sündmuste loend vidinast</string>
     <string name="last_view">Viimane vaade</string>
     <string name="new_events">Uued sündmused</string>
+    <string name="default_start_time">Algusaeg vaikimisi</string>
+    <string name="next_full_hour">Järgmine täis tund</string>
     <string name="default_duration">Vaikekestust</string>
+    <string name="last_used_one">Viimati kasutatud</string>
+    <string name="other_time">Teine kord</string>
+    <string name="highlight_weekends">Tõstke nädalavahetustel esile mõned vaated</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Valige sünkroonitavad kalendrid</string>
     <string name="manage_synced_calendars">Hallake sünkroonitud kalendreid</string>
@@ -181,4 +197,45 @@
     <string name="faq_3_title">Näen visuaalseid meeldetuletusi, kuid ei kuule heli. Mida ma teha saan?</string>
     <string name="faq_3_text">Mitte ainult tegeliku meeldetuletuse kuvamine, vaid heli mängimine on süsteemi poolt väga mõjutatud. Kui te ei kuule ühtegi heli, proovige rakenduse seadetes minna,
         vajutades valikule „Meeldetuletuste poolt kasutatav helivoog” ja muutes selle teise väärtuse. Kui see ikka ei tööta, kontrollige oma heliseadeid, kas konkreetne voog ei ole vaigistatud.</string>
+    <string name="app_title">Lihtne kalender Pro - sündmused &amp; meeldetuletused</string>
+    <string name="app_short_description">Võrguühenduseta kalendri reklaamideta. Korraldaja &amp; meeldetuletused kohtumiste, sündmuste jms kohta</string>
+    <string name="app_long_description">        Simple Calendar Pro on täiesti kohandatav, võrguühenduseta kalender, mille eesmärk on teha täpselt seda, mida kalender peaks tegema. &lt;b&gt;Ei ole keerulisi funktsioone, tarbetuid õigusi ega reklaame!&lt;/b&gt;
+
+      Kas te korraldate üksikuid või korduvaid sündmusi, sünnipäevi, tähtpäevi, ärikohtumisi, kohtumisi või midagi muud, Simple Calendar Pro abil on &lt;b&gt;lihtne korraldada&lt;/b&gt;. Uskumatu hulga &lt;b&gt;kohandamisvõimaluste&lt;/b&gt; abil saate kohandada sündmuste meeldetuletusi, teavitussignaale, kalendri vidinaid ja rakenduse väljanägemist.
+        Igapäevased, iganädalased ja igakuised vaated muudavad tulevaste sündmuste &amp; ohtumiste kontrollimise imeliseks.  Kõike saate vaadata isegi lihtsalt sündmuste loendina, mitte kalendrivaates, nii et te &lt;b&gt;teate täpselt, mis teie elus ja millal on tulemas. &lt;/b&gt;
+
+        ----------------------------------------------------------
+        &lt;b&gt;Simple Calendar Pro – Funktsioonid &amp; Eelised&lt;/b&gt;
+        ----------------------------------------------------------
+
+        ✔️ Puuduvad reklaamid ja tüütud hüpikaknad
+        ✔️ Interneti-ühendus puudub, andes teile rohkem privaatsust &amp; turvalisust
+        ✔️  Vajalikud on ainult minimaalsed õigused
+        ✔️ Rõhk lihtsusele - teeb seda, mida kalender peab tegema!
+        ✔️ Avatud lähtekood
+        ✔️ Täielikult kohandatavad teemad &amp; kalendri / sündmuste vidinad
+        ✔️ Tõlgitud 29 keelde
+        ✔️ Ekspordi seaded .txt-failides teise seadmesse importimiseks
+        ✔️ CalDAV kalendri sündmuste sünkrooniseerimine seadmetes
+        ✔️ Iga päeva, nädala, kuu, aasta &amp; sündmuste vaated kalendris
+        ✔️ Toetab sündmuste eksportimist &amp; importimist .ics failide kaudu
+        ✔️ Määrake mitu sündmuse meeldetuletust, kohandage sündmuste meeldetuletuse heli ja vibratsiooni
+        ✔️ Meeldetuletuste suvandi valik
+        ✔️ Lihtne lisada pühasid, sünnipäevi, tähtpäevi &amp; kohtumisi
+        ✔️ Kohanda sündmusi - algusaeg, kestus, meeldetuletused jne
+        ✔️ Lisage igale üritusele osalejaid
+        ✔️ Kasutage isikliku kalendri või ärikalendrina
+        ✔️ Valige meeldetuletuste ja e-posti teated, et teavitada teid sündmustest
+&lt;/b&gt;
+        Lae alla simple KALENDER PRO - lihtne võrguühenduseta kalender ühegi reklaamita!
+
+        &lt;b&gt;Vaadake täielik Simple Tools komplekti siin:&lt;/b&gt;
+        https://www.simplemobiletools.com
+
+        &lt;b&gt;Facebook:&lt;/b&gt;
+        https://www.facebook.com/simplemobiletools
+
+        &lt;b&gt;Reddit:&lt;/b&gt;
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>
