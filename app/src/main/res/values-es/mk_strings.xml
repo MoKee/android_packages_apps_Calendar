@@ -16,6 +16,7 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">Algeria</string>
     <string name="holiday_argentina">Argentina</string>
     <string name="holiday_australia">Australia</string>
     <string name="holiday_belgium">Bélgica</string>
@@ -24,6 +25,7 @@
     <string name="holiday_canada">Canadá</string>
     <string name="holiday_china">China</string>
     <string name="holiday_colombia">Colombia</string>
+    <string name="holiday_czech">Checo</string>
     <string name="holiday_denmark">Dinamarca</string>
     <string name="holiday_germany">Alemania</string>
     <string name="holiday_estonia">Estonia</string>
@@ -41,4 +43,28 @@
     <string name="holiday_lithuania">Lituania</string>
     <string name="holiday_luxembourg">Luxemburgo</string>
     <string name="holiday_macedonia">Macedonia</string>
+    <string name="holiday_malaysia">Malasia</string>
+    <string name="holiday_hungary">Hungría</string>
+    <string name="holiday_mexico">México</string>
+    <string name="holiday_netherlands">Países Bajos</string>
+    <string name="holiday_japan">Japón</string>
+    <string name="holiday_norway">Noruega</string>
+    <string name="holiday_austria">Austria</string>
+    <string name="holiday_pakistan">Pakistán</string>
+    <string name="holiday_poland">Polonia</string>
+    <string name="holiday_portugal">Portugal</string>
+    <string name="holiday_russia">Rusia</string>
+    <string name="holiday_romania">Rumania</string>
+    <string name="holiday_switzerland">Suiza</string>
+    <string name="holiday_singapore">Singapur</string>
+    <string name="holiday_serbia">Serbia</string>
+    <string name="holiday_slovenia">Eslovenia</string>
+    <string name="holiday_slovakia">Eslovaquia</string>
+    <string name="holiday_southafrica">Sudáfrica</string>
+    <string name="holiday_finland">Finlandia</string>
+    <string name="holiday_sweden">Suecia</string>
+    <string name="holiday_ukraine">Ucrania</string>
+    <string name="holiday_unitedkingdom">Reino Unido</string>
+    <string name="holiday_unitedstates">Estados Unidos</string>
+    <string name="no_calendar_permission">Se requiere permiso para el calendario</string>
 </resources>
