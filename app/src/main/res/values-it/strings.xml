@@ -12,6 +12,7 @@
     <string name="no_upcoming_events">Sembra che tu non abbia nessun evento imminente.</string>
     <string name="go_to_today">Vai a oggi</string>
     <string name="go_to_date">Vai alla data</string>
+    <string name="upgraded_from_free">Hey,\n\nsembra che tu abbia fatto l\'upgrade dalla vecchia app gratuita. È necessario migrare manualmente gli eventi memorizzati localmente esportandoli in un file .ics, quindi importando. Puoi trovare entrambi i pulsanti di esportazione / importazione nel menu principale della schermata. \n\nÈ quindi possibile disinstallare la vecchia versione, che ha un pulsante \"Aggiorna a Pro\" nella parte superiore delle impostazioni dell\'app. Dovrai solo ripristinare le impostazioni dell\'app.\n\nGrazie!</string>
     <string name="widget_monthly">Calendario mensile</string>
     <string name="widget_list">Lista eventi calendario</string>
     <string name="event">Evento</string>
@@ -74,10 +75,12 @@
     <string name="birthdays">Compleanni</string>
     <string name="add_birthdays">Aggiungi compleanni contatti</string>
     <string name="no_birthdays">Nessun compleanno trovato</string>
+    <string name="no_new_birthdays">Non sono stati trovati nuovi compleanni</string>
     <string name="birthdays_added">Compleanni aggiunti con successo</string>
     <string name="anniversaries">Anniversari</string>
     <string name="add_anniversaries">Aggiungi anniversari contatti</string>
     <string name="no_anniversaries">Nessun anniversario trovato</string>
+    <string name="no_new_anniversaries">Nessun anniversario è stato trovato</string>
     <string name="anniversaries_added">Anniversari aggiunti con successo</string>
     <string name="reminder">Promemoria</string>
     <string name="before">prima</string>
@@ -85,6 +88,9 @@
     <string name="event_reminders">Promemoria eventi</string>
     <string name="add_another_attendee">Aggiungi un altro partecipante</string>
     <string name="my_status">Stato:</string>
+    <string name="going">Andando</string>
+    <string name="not_going">Non andare</string>
+    <string name="invited">Invitato</string>
     <string name="import_events">Importa eventi</string>
     <string name="export_events">Esporta eventi</string>
     <string name="import_events_from_ics">Importa eventi da un file .ics</string>
@@ -189,4 +195,46 @@
     <string name="faq_3_title">Visualizzo i promemoria, ma non sento l\'audio. Cosa posso fare?</string>
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
+    <string name="app_title">Semplice Calendario Pro - Eventi &amp; promemoria</string>
+    <string name="app_short_description">Calendario offline senza pubblicità. Organizzatore &amp; promemoria per appuntamenti, eventi ecc</string>
+    <string name="app_long_description">        Simple Calendar Pro è un calendario offline completamente personalizzabile progettato per fare esattamente ciò che un calendario dovrebbe fare. <b>Nessuna funzionalità complicata, autorizzazioni inutili e nessuna pubblicità!</b>
+
+        Che tu stia organizzando eventi singoli o ricorrenti, compleanni, anniversari, riunioni di lavoro, appuntamenti o qualsiasi altra cosa, Simple Calendar Pro lo rende <b>facile da organizzato</b>. Con una grande varietà di<b>opzioni di personalizzazione</b> puoi personalizzare i promemoria degli eventi, i suoni delle notifiche, i widget del calendario e l\'aspetto dell\'app.
+
+        Le visualizzazioni giornaliere, settimanali e mensili consentono di controllare i tuoi prossimi eventi &amp; appuntamenti come un gioco da ragazzi. Puoi persino visualizzare tutto come un semplice elenco di eventi piuttosto che in vista calendario, così tu <b>sai esattamente cosa sta succedendo nella tua vita e quando. </b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Caratteristiche &amp; Benefici</b>
+        ----------------------------------------------------------
+
+        ✔️ Nessuna pubblicità o noiosi pop-up
+        ✔️ Non è necessario l\'accesso a Internet, offrendoti maggiore privacy e &amp; sicurezza
+        ✔️ Sono richieste solo le autorizzazioni minime
+        ✔️ Enfasi sulla semplicità - fa ciò che un calendario deve fare!
+        ✔️ Open source
+        ✔️ Temi completamente personalizzabili &amp; widget calendario / eventi
+        ✔️ Tradotto in 29 lingue
+        ✔️ Esporta le impostazioni in file .txt per importarle su un altro dispositivo
+        ✔️ Sincronizzazione calendario CalDAV supportata per sincronizzare eventi su dispositivi
+        ✔️ settimanale, mensile, annuale &amp; viste di eventi sul calendario
+        ✔️ Supporta l\'esportazione &amp; importazione di eventi tramite file .ics
+        ✔️ Imposta più promemoria eventi, personalizza suono e vibrazione promemoria evento
+        ✔️ Opzione Snooze per i promemoria
+        ✔️ Aggiungi facilmente festività, compleanni, anniversari &amp; appuntamenti
+        ✔️ Personalizza eventi - ora di inizio, durata, promemoria, ecc
+        ✔️ Aggiungi i partecipanti all\'evento per ogni evento
+        ✔️ Si può utilizzare come calendario personale o calendario aziendale
+        ✔️ Scegli tra promemoria &amp; notifiche e-mail per avvisarti di un evento
+
+        SCARICA SIMPLE CALENDAR PRO – IL SEMPLICE CALENDARIO OFFLINE SENZA NESSUN ANNUNCIO!
+
+        <b>Controlla qui la suite completa dei semplici strumenti:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>
