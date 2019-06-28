@@ -11,6 +11,7 @@
     <string name="simple_event_list">Preprosti seznam dogodkov</string>
     <string name="no_upcoming_events">Izgleda, da nimate prihajajočih dogodkov.</string>
     <string name="go_to_today">Pojdi na danes</string>
+    <string name="go_to_date">Pojdi na datum</string>
     <string name="widget_monthly">Mesečni koledar</string>
     <string name="widget_list">Seznam dogodkov v koledarju</string>
     <string name="event">Dogodek</string>
