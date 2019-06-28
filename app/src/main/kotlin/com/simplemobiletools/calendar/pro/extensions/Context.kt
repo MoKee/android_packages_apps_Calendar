@@ -33,10 +33,7 @@ import com.simplemobiletools.calendar.pro.receivers.CalDAVSyncReceiver
 import com.simplemobiletools.calendar.pro.receivers.NotificationReceiver
 import com.simplemobiletools.calendar.pro.services.SnoozeService
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.SILENT
-import com.simplemobiletools.commons.helpers.WEEK_SECONDS
-import com.simplemobiletools.commons.helpers.YEAR_SECONDS
-import com.simplemobiletools.commons.helpers.isOreoPlus
+import com.simplemobiletools.commons.helpers.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
@@ -339,10 +336,10 @@ fun Context.getSyncedCalDAVCalendars() = calDAVHelper.getCalDAVCalendars(config.
 
 fun Context.recheckCalDAVCalendars(callback: () -> Unit) {
     if (config.caldavSync) {
-        Thread {
+        ensureBackgroundThread {
             calDAVHelper.refreshCalendars(false, callback)
             updateWidgets()
-        }.start()
+        }
     }
 }
 
