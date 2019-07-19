@@ -128,7 +128,7 @@
     <string name="start_day_at">每日開始於</string>
     <string name="end_day_at">每日結束於</string>
     <string name="week_numbers">顯示第幾週</string>
-    <string name="vibrate">提醒通知時震動</string>
+    <string name="vibrate">提醒通知時振動</string>
     <string name="reminder_sound">提醒音效</string>
     <string name="no_ringtone_picker">未發現能夠設置鈴聲的程式</string>
     <string name="no_ringtone_selected">無</string>
@@ -220,7 +220,7 @@
         ✔️ 支援 CalDAV 行事曆同步，來跨裝置同步活動
         ✔️ 在行事曆上有每日、每週、每月、每年及活動瀏覽的檢視方式
         ✔️ 支援透過 .ics 檔案來匯出和匯入活動
-        ✔️ 設置多個活動提醒，自訂活動提醒音效和震動
+        ✔️ 設置多個活動提醒，自訂活動提醒音效和振動
         ✔️ 提醒有延遲選項
         ✔️ 輕鬆添加假日、生日、紀念日和約會
         ✔️ 自訂活動 – 開始時間、持續時間、提醒…之類的

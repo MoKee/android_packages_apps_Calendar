@@ -12,6 +12,7 @@
     <string name="no_upcoming_events">Parece que você não tem próximos eventos.</string>
     <string name="go_to_today">Ir para hoje</string>
     <string name="go_to_date">Ir para data</string>
+    <string name="upgraded_from_free">Ei,\n\nparece que você atualizou do antigo aplicativo gratuito. Você precisa migrar os eventos armazenados localmente manualmente, exportando em um arquivo .ics e depois importando. Você pode encontrar os dois botões de exportação/importação no menu da tela principal.\n\nVocê pode então desinstalar a versão antiga, que tem um botão \'Atualizar para o Pro\' na parte superior das configurações do aplicativo. Você só precisará redefinir as configurações do seu aplicativo.\n\nObrigado!</string>
     <string name="widget_monthly">Calendário mensal</string>
     <string name="widget_list">Lista de eventos</string>
     <string name="event">Evento</string>
@@ -74,17 +75,22 @@
     <string name="birthdays">Aniversários</string>
     <string name="add_birthdays">Adicionar aniversários dos contatos</string>
     <string name="no_birthdays">Nenhum aniversário foi encontrado</string>
+    <string name="no_new_birthdays">Não foram encontrados novos aniversários</string>
     <string name="birthdays_added">Aniversários adicionados com sucesso</string>
     <string name="anniversaries">Aniversários</string>
     <string name="add_anniversaries">Adicionar aniversários dos contatos</string>
     <string name="no_anniversaries">Nenhum aniversário foi encontrado</string>
+    <string name="no_new_anniversaries">Não foram encontrados novos aniversários</string>
     <string name="anniversaries_added">Aniversários adicionados com sucesso</string>
     <string name="reminder">Lembrete</string>
     <string name="before">antes</string>
     <string name="add_another_reminder">Adicionar outro lembrete</string>
     <string name="event_reminders">Lembretes de eventos</string>
     <string name="add_another_attendee">Adicionar outro participante</string>
-    <string name="my_status">O meu estado:</string>
+    <string name="my_status">Meu status:</string>
+    <string name="going">Vou</string>
+    <string name="not_going">Não vou</string>
+    <string name="maybe_going">Talvez vou</string>
     <string name="invited">Convidado</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
@@ -142,13 +148,19 @@
     <string name="alarm_stream">Alarme</string>
     <string name="notification_stream">Notificação</string>
     <string name="ring_stream">Toque</string>
+    <string name="use_last_event_reminders">Use os lembretes dos últimos eventos como padrão para novos eventos</string>
     <string name="default_reminder_1">Lembrete padrão 1</string>
     <string name="default_reminder_2">Lembrete padrão 2</string>
     <string name="default_reminder_3">Lembrete padrão 3</string>
     <string name="view_to_open_from_widget">Visualizar para abrir a partir do widget de lista de evento</string>
     <string name="last_view">Última exibição</string>
     <string name="new_events">Novos eventos</string>
-    <string name="default_duration">Duração predefinida</string>
+    <string name="default_start_time">Hora de início padrão</string>
+    <string name="next_full_hour">Próxima hora completa</string>
+    <string name="default_duration">Duração padrão</string>
+    <string name="last_used_one">Usado por último</string>
+    <string name="other_time">Outra hora</string>
+    <string name="highlight_weekends">Destaque fins de semana em algumas visualizações</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecione calendários para sincronizar</string>
     <string name="manage_synced_calendars">Gerenciar calendários sincronizados</string>
@@ -185,4 +197,46 @@
     <string name="faq_3_title">Vejo os lembrete, mas não ouço áudio. O que posso fazer?</string>
     <string name="faq_3_text">A exibição do lembrete e o áudio são fortemente influenciados pelas configurações do sistema. Se você não consegue ouvir o som, verifique as configurações do aplicativo,
 selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o seu valor. Se isso não funcionar, verifique as configurações, especialmente se o som não está mudo.</string>
+    <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
+    <string name="app_short_description">Um lindo calendário sem anúncios ou permissões estranhas.</string>
+    <string name="app_long_description">        Simple Calendar Pro é um calendário totalmente personalizável, offline, projetado para fazer exatamente o que um calendário deve fazer. <b>Sem recursos complicados, permissões desnecessárias e sem anúncios!</b>
+
+        Se você está organizando eventos únicos ou recorrentes, aniversários, reuniões de negócios, compromissos ou qualquer outra coisa, Simple Calendar Pro torna <b>fácil de se manter organizado</b>. Com uma incrível variedade de <b>opções de personalização</b>, você pode personalizar lembretes de eventos, sons de notificação, widgets de calendário e aparência do aplicativo.
+
+        Visualizações diárias, semanais e mensais fazem a verificação de seus próximos eventos &amp; compromissos uma brisa. Você pode até ver tudo como uma simples lista de eventos, e não na visualização do calendário, para saber <b>exatamente o que está acontecendo em sua vida e quando.</b>
+
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro - Recursos &amp; Benefícios</b>
+        ----------------------------------------------------------
+
+        ✔️ Sem anúncios ou popups irritantes
+        ✔️ Não é necessário acesso à Internet, dando-lhe mais privacidade &amp; segurança
+        ✔️ Apenas as permissões mínimas necessárias
+        ✔️ Ênfase na simplicidade - faz o que um calendário precisa fazer!
+        ✔️ Código aberto
+        ✔️ Temas totalmente personalizáveis &amp; widgets de calendário/evento
+        ✔️ Traduzido em 29 idiomas
+        ✔️ Exportar configurações para arquivos .txt para importar para outro dispositivo
+        ✔️ Sincronização de calendário do CalDAV com suporte para sincronizar eventos entre dispositivos
+        ✔️ Diariamente, semanalmente, mensalmente, anualmente &amp; visualizações de eventos no calendário
+        ✔️ Suporta exportação &amp; importação de eventos via arquivos .ics
+        ✔️ Defina vários lembretes de eventos, personalize o som do lembrete do evento e a vibração
+        ✔️ Opção Snooze para lembretes
+        ✔️ Adicione facilmente feriados, data de nascimento, aniversários &amp; compromissos
+        ✔️ Personalizar eventos - hora de início, duração, lembretes, etc.
+        ✔️ Adicionar participantes do evento a cada evento
+        ✔️ Use como um calendário pessoal ou um calendário de negócios
+        ✔️ Escolha entre lembretes &amp; notificações por e-mail para alertá-lo sobre um evento
+
+        BAIXE O SIMPLE CALENDAR PRO - O CALENDÁRIO OFFLINE SIMPLES E SEM ANÚNCIOS!
+
+        <b>Confira o conjunto completo de ferramentas simples aqui:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>
