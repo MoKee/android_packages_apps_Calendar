@@ -6,4 +6,5 @@
     <string name="description">Apraksts</string>
     <string name="color">Krāsa</string>
     <string name="no_ringtone_selected">Nav</string>
+    <string name="notification_stream">Paziņojums</string>
 </resources>
