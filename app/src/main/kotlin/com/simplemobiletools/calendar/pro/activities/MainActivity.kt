@@ -543,7 +543,11 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             if (cursor?.moveToFirst() == true) {
                 val dateFormats = getDateFormats()
                 val existingEvents = if (birthdays) eventsDB.getBirthdays() else eventsDB.getAnniversaries()
-                val importIDs = existingEvents.map { it.importId }
+                val importIDs = HashMap<String, Long>()
+                existingEvents.forEach {
+                    importIDs[it.importId] = it.startTS
+                }
+
                 val eventTypeId = if (birthdays) getBirthdaysEventTypeId() else getAnniversariesEventTypeId()
 
                 do {
@@ -566,7 +570,21 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                                     reminder3Minutes = reminders[2], importId = contactId, flags = FLAG_ALL_DAY, repeatInterval = YEAR, repeatRule = REPEAT_SAME_DAY,
                                     eventType = eventTypeId, source = source, lastUpdated = lastUpdated)
 
-                            if (!importIDs.contains(contactId)) {
+                            val importIDsToDelete = ArrayList<String>()
+                            for ((key, value) in importIDs) {
+                                if (key == contactId && value != timestamp) {
+                                    val deleted = eventsDB.deleteBirthdayAnniversary(source, key)
+                                    if (deleted == 1) {
+                                        importIDsToDelete.add(key)
+                                    }
+                                }
+                            }
+
+                            importIDsToDelete.forEach {
+                                importIDs.remove(it)
+                            }
+
+                            if (!importIDs.containsKey(contactId)) {
                                 eventsHelper.insertEvent(event, false, false) {
                                     eventsAdded++
                                 }
@@ -924,6 +942,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             add(Release(119, R.string.release_119))
             add(Release(129, R.string.release_129))
             add(Release(143, R.string.release_143))
+            add(Release(155, R.string.release_155))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }

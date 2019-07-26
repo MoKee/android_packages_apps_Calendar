@@ -1,6 +1,19 @@
 Changelog
 ==========
 
+Version 6.5.6 *(2019-07-26)*
+----------------------------
+
+ * Properly handle birthday and anniversary updating
+ * Fixed a widget list related glitch
+
+Version 6.5.5 *(2019-07-25)*
+----------------------------
+
+ * Added some dark theme related improvements
+ * Allow customizing the bottom navigation bar color
+ * Added a Go To Today button at the event list widget
+
 Version 6.5.4 *(2019-07-01)*
 ----------------------------
 
