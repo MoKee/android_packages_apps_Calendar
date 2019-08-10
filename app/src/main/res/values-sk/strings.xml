@@ -11,6 +11,8 @@
     <string name="simple_event_list">Jednoduchý zoznam</string>
     <string name="no_upcoming_events">Nemáte žiadne naplánované udalosti.</string>
     <string name="go_to_today">Prejsť na dnešok</string>
+    <string name="go_to_date">Ísť na dátum</string>
+    <string name="upgraded_from_free">Ahoj. Vyzerá to, že si upgradoval z bezplatnej verzie. Lokálne uložené udalosti je potrebné migrovať manuálne exportom vo forme .ics súboru. Tlačidlo k danému úkonu je možné nájsť v menu na hlavnej obrazovke. Potom je možné odinštalovať starú verziu, ktorá má \'Upgrade to Pro\' tlačidlo v nastaveniach aplikácie. Potom už je potrebné iba resetovať nastavenia Pro aplikácie. Vďaka!</string>
     <string name="widget_monthly">Kalendár mesačný</string>
     <string name="widget_list">Kalendár so zoznamom</string>
     <string name="event">Udalosť</string>
@@ -73,15 +75,23 @@
     <string name="birthdays">Narodeniny</string>
     <string name="add_birthdays">Pridať narodeniny kontaktov</string>
     <string name="no_birthdays">Nenašli sa žiadne narodeniny</string>
+    <string name="no_new_birthdays">Nenašli sa žiadne narodeniny</string>
     <string name="birthdays_added">Narodeniny boli úspešne pridané</string>
     <string name="anniversaries">Výročia</string>
     <string name="add_anniversaries">Pridať výročia kontaktov</string>
     <string name="no_anniversaries">Nenašli sa žiadne výročia</string>
+    <string name="no_new_anniversaries">Nenašli sa žiadne výročia</string>
     <string name="anniversaries_added">Výročia boli úspešne pridané</string>
     <string name="reminder">Pripomenka</string>
     <string name="before">pred</string>
     <string name="add_another_reminder">Pridať ďalšiu pripomienku</string>
     <string name="event_reminders">Pripomienky udalostí</string>
+    <string name="add_another_attendee">Pridať ďalšiu pripomienku</string>
+    <string name="my_status">Môj status:</string>
+    <string name="going">Ísť</string>
+    <string name="not_going">Neísť</string>
+    <string name="maybe_going">Možno</string>
+    <string name="invited">Pozvaný</string>
     <string name="import_events">Importovať udalosti</string>
     <string name="export_events">Exportovať udalosti</string>
     <string name="import_events_from_ics">Importovať udalosti z .ics súboru</string>
@@ -138,11 +148,19 @@
     <string name="alarm_stream">Výstražný</string>
     <string name="notification_stream">Pripomienkový</string>
     <string name="ring_stream">Zvoniaci</string>
+    <string name="use_last_event_reminders">Použiť pripomienky poslednej udalosti ako predvolené pre novú udalosť</string>
     <string name="default_reminder_1">Predvolená pripomienka 1</string>
     <string name="default_reminder_2">Predvolená pripomienka 2</string>
     <string name="default_reminder_3">Predvolená pripomienka 3</string>
     <string name="view_to_open_from_widget">Otvoriť pohľad po kliknutí na widget so zoznamom udalostí</string>
     <string name="last_view">Posledný pohľad</string>
+    <string name="new_events">Nové udalosti</string>
+    <string name="default_start_time">Predvolený čas začatia</string>
+    <string name="next_full_hour">Najbližšia celá hodina</string>
+    <string name="default_duration">Predvolené trvanie</string>
+    <string name="last_used_one">Naposledy použité</string>
+    <string name="other_time">Iný čas</string>
+    <string name="highlight_weekends">Víkendové highlights</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Zvoľte kalendáre pre synchronizáciu</string>
     <string name="manage_synced_calendars">Spravovať synchronizované kalendáre</string>
@@ -179,4 +197,5 @@
     <string name="faq_3_title">Vidím vizuálnu pripomienku, ale nepočujem žiadny zvuk. Čo s tým viem spraviť?</string>
     <string name="faq_3_text">Nie len zobrazovanie pripomienok, ale aj prehrávanie zvuku je ovplyvnené systémom. Ak nepočujete zvuk, skúste ísť do nastavení apky, použiť možnosť \"Zvukový kanál používaný pripomienkami\" a
         zmeniť zvolenú hodnotu. Ak to ešte stále nebude fungovať, skúste sa pozrieť do zvukových nastavení vášho systému, či daný kanál nie je stlmený.</string>
+    <string name="app_title">Jednoduchý Kalendár Pro - Udalosti a pripomienky</string>
 </resources>

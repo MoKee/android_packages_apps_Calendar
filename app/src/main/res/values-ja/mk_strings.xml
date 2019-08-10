@@ -32,6 +32,22 @@
     <string name="holiday_spain">スペイン</string>
     <string name="holiday_ireland">アイルランド</string>
     <string name="holiday_france">フランス</string>
+    <string name="holiday_southkorea">韓国</string>
+    <string name="holiday_greece">ギリシャ</string>
+    <string name="holiday_croatia">クロアチア</string>
+    <string name="holiday_india">インド</string>
+    <string name="holiday_indonesia">インドネシア</string>
+    <string name="holiday_iceland">アイスランド</string>
+    <string name="holiday_italy">イタリア</string>
+    <string name="holiday_latvia">ラトビア</string>
+    <string name="holiday_lithuania">リトアニア</string>
+    <string name="holiday_luxembourg">ルクセンブルク</string>
+    <string name="holiday_macedonia">マケドニア</string>
+    <string name="holiday_malaysia">マレーシア</string>
+    <string name="holiday_hungary">ハンガリー</string>
+    <string name="holiday_mexico">メキシコ</string>
+    <string name="holiday_netherlands">オランダ</string>
+    <string name="holiday_japan">日本</string>
     <string name="holiday_norway">ノルウェー</string>
     <string name="holiday_austria">オーストリア</string>
     <string name="holiday_pakistan">パキスタン</string>
@@ -44,9 +60,11 @@
     <string name="holiday_serbia">セルビア</string>
     <string name="holiday_slovenia">スロベニア</string>
     <string name="holiday_slovakia">スロバキア</string>
+    <string name="holiday_southafrica">南アフリカ</string>
     <string name="holiday_finland">フィンランド</string>
     <string name="holiday_sweden">スウェーデン</string>
     <string name="holiday_ukraine">ウクライナ</string>
     <string name="holiday_unitedkingdom">英国</string>
     <string name="holiday_unitedstates">米国</string>
+    <string name="no_calendar_permission">カレンダーのアクセス許可が必要です</string>
 </resources>

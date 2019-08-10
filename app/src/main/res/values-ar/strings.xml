@@ -198,7 +198,6 @@
     <string name="faq_3_text">ليس فقط عرض التذكير الفعلي ، ولكن تشغيل الصوت يتأثر بشكل كبير بالنظام أيضًا. إذا لم تستطع سماع أي صوت ، فحاول الذهاب في إعدادات التطبيق ،
         الضغط على الخيار \"الصوت الذي يستخدمه التذكير\" وتغييره إلى قيمة مختلفة. إذا استمر عدم نجاح ذلك ، فتحقق من إعدادات الصوت ، إذا لم يتم كتم البث المحدد.</string>
     <string name="app_title">التقويم - الأحداث والتذكيرات</string>
-    <string name="app_short_description">تقويم جميل بدون إعلانات أو أذونات غريبة.</string>
     <string name="app_long_description">        Simple Calendar Pro is a fully customizable, offline calendar designed to do exactly what a calendar should do. <b>No complicated features, unnecessary permissions and no ads!</b>
 
         Whether you’re organizing single or recurring events, birthdays, anniversaries, business meetings, appointments or anything else, Simple Calendar Pro makes it <b>easy to stay organized</b>. With an incredible variety of <b>customization options</b> you can customize event reminders, notification sounds, calendar widgets and how the app looks.
