@@ -152,6 +152,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         search_holder.background = ColorDrawable(config.backgroundColor)
         checkSwipeRefreshAvailability()
         checkShortcuts()
+        invalidateOptionsMenu()
     }
 
     override fun onPause() {
@@ -181,6 +182,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         }
 
         setupSearch(menu)
+        updateMenuItemColors(menu)
         return true
     }
 

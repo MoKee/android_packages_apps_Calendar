@@ -44,11 +44,11 @@ class MyWidgetListProvider : AppWidgetProvider() {
             val todayText = Formatter.getLongestDate(getNowSeconds())
             views.setText(R.id.widget_event_list_today, todayText)
 
-            views.setImageViewBitmap(R.id.widget_event_new_event, context.resources.getColoredBitmap(R.drawable.ic_plus, textColor))
+            views.setImageViewBitmap(R.id.widget_event_new_event, context.resources.getColoredBitmap(R.drawable.ic_plus_vector, textColor))
             setupIntent(context, views, NEW_EVENT, R.id.widget_event_new_event)
             setupIntent(context, views, LAUNCH_CAL, R.id.widget_event_list_today)
 
-            views.setImageViewBitmap(R.id.widget_event_go_to_today, context.resources.getColoredBitmap(R.drawable.ic_today, textColor))
+            views.setImageViewBitmap(R.id.widget_event_go_to_today, context.resources.getColoredBitmap(R.drawable.ic_today_vector, textColor))
             setupIntent(context, views, GO_TO_TODAY, R.id.widget_event_go_to_today)
 
             Intent(context, WidgetService::class.java).apply {

@@ -13,7 +13,7 @@
         android:autoMirrored="true"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"
-        android:src="@drawable/ic_pointer_left"
+        android:src="@drawable/ic_chevron_left_vector"
         android:visibility="gone"/>
 
     <com.simplemobiletools.commons.views.MyTextView
@@ -40,7 +40,7 @@
         android:autoMirrored="true"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"
-        android:src="@drawable/ic_pointer_right"
+        android:src="@drawable/ic_chevron_right_vector"
         android:visibility="gone"/>
 
 </merge>
