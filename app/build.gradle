@@ -19,6 +19,7 @@ android {
         versionCode 157
         versionName "6.5.7"
         multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
         android.applicationVariants.all { variant ->
             variant.outputs.all {
                 outputFileName = "Calendar.apk"
