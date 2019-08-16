@@ -198,7 +198,6 @@
     <string name="faq_3_text">A exibição do lembrete e o áudio são fortemente influenciados pelas configurações do sistema. Se você não consegue ouvir o som, verifique as configurações do aplicativo,
 selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o seu valor. Se isso não funcionar, verifique as configurações, especialmente se o som não está mudo.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
-    <string name="app_short_description">Um lindo calendário sem anúncios ou permissões estranhas.</string>
     <string name="app_long_description">        Simple Calendar Pro é um calendário totalmente personalizável, offline, projetado para fazer exatamente o que um calendário deve fazer. <b>Sem recursos complicados, permissões desnecessárias e sem anúncios!</b>
 
         Se você está organizando eventos únicos ou recorrentes, aniversários, reuniões de negócios, compromissos ou qualquer outra coisa, Simple Calendar Pro torna <b>fácil de se manter organizado</b>. Com uma incrível variedade de <b>opções de personalização</b>, você pode personalizar lembretes de eventos, sons de notificação, widgets de calendário e aparência do aplicativo.
