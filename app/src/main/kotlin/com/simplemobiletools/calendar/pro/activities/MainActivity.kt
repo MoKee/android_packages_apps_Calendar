@@ -131,7 +131,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             val newShouldFilterBeVisible = it.size > 1 || config.displayEventTypes.isEmpty()
             if (newShouldFilterBeVisible != mShouldFilterBeVisible) {
                 mShouldFilterBeVisible = newShouldFilterBeVisible
-                invalidateOptionsMenu()
             }
         }
 
