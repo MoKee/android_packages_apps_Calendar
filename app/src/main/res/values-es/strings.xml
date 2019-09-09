@@ -11,6 +11,7 @@
     <string name="simple_event_list">Lista de eventos sencilla</string>
     <string name="no_upcoming_events">Parece que no tienes ningún evento próximo.</string>
     <string name="go_to_today">Ir al día de hoy</string>
+    <string name="go_to_date">Ir a la fecha</string>
     <string name="widget_monthly">Calendario mensual</string>
     <string name="widget_list">Lista de eventos del calendario</string>
     <string name="event">Evento</string>
@@ -82,6 +83,7 @@
     <string name="before">antes</string>
     <string name="add_another_reminder">Agregar otro recordatorio</string>
     <string name="event_reminders">Recordatorio de eventos</string>
+    <string name="invited">Invitado</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="import_events_from_ics">Importar eventos desde un archivo .ics</string>
@@ -143,6 +145,8 @@
     <string name="default_reminder_3">Recordatorio 3</string>
     <string name="view_to_open_from_widget">Vista por defecto al abrir desde el widget</string>
     <string name="last_view">Última vista</string>
+    <string name="new_events">Nuevos eventos</string>
+    <string name="other_time">Otra vez</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleccionar calendarios a sincronizar</string>
     <string name="manage_synced_calendars">Gestionar los calendarios sincronizados</string>
