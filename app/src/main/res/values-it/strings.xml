@@ -90,6 +90,7 @@
     <string name="my_status">Stato:</string>
     <string name="going">Andando</string>
     <string name="not_going">Non andare</string>
+    <string name="maybe_going">Forse andando</string>
     <string name="invited">Invitato</string>
     <string name="import_events">Importa eventi</string>
     <string name="export_events">Esporta eventi</string>
@@ -159,6 +160,7 @@
     <string name="default_duration">Durata predefinita</string>
     <string name="last_used_one">Usato l\'ultima volta</string>
     <string name="other_time">Altra volta</string>
+    <string name="highlight_weekends">Evidenziare i fine settimana su alcune viste</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleziona un calendario da sincronizzare</string>
     <string name="manage_synced_calendars">Gestisci i calendari sincronizzati</string>
@@ -196,6 +198,7 @@
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
     <string name="app_title">Semplice Calendario Pro - Eventi &amp; promemoria</string>
+    <string name="app_short_description">Un bel calendario senza annunci, garanzia di rimborso al 100%.</string>
     <string name="app_long_description">        Simple Calendar Pro è un calendario offline completamente personalizzabile progettato per fare esattamente ciò che un calendario dovrebbe fare. <b>Nessuna funzionalità complicata, autorizzazioni inutili e nessuna pubblicità!</b>
 
         Che tu stia organizzando eventi singoli o ricorrenti, compleanni, anniversari, riunioni di lavoro, appuntamenti o qualsiasi altra cosa, Simple Calendar Pro lo rende <b>facile da organizzato</b>. Con una grande varietà di<b>opzioni di personalizzazione</b> puoi personalizzare i promemoria degli eventi, i suoni delle notifiche, i widget del calendario e l\'aspetto dell\'app.
