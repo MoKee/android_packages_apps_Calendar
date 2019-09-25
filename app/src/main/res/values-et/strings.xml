@@ -173,6 +173,7 @@
     <string name="synchronization_completed">Sünkimine on lõpetatud</string>
     <string name="select_a_different_caldav_color">Valige muu värv (võib olla rakendatud ainult kohalikult)</string>
     <string name="insufficient_permissions">Teil ei ole lubatud valitud kalendrisse kirjutada</string>
+    <string name="caldav_event_not_found">Sündmust ei leitud. Lubage rakenduse seadetes vastava kalendri jaoks CalDAV-i sünkroonimine.</string>
     <string name="monday_alt">Esmaspäev</string>
     <string name="tuesday_alt">Teisipäev</string>
     <string name="wednesday_alt">Kolmapäev</string>

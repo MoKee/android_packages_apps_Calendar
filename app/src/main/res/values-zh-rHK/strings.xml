@@ -173,6 +173,7 @@
     <string name="synchronization_completed">同步完成</string>
     <string name="select_a_different_caldav_color">選擇其他顏色 (可能僅在本機端套用)</string>
     <string name="insufficient_permissions">你不被允許對選擇的行事曆寫入</string>
+    <string name="caldav_event_not_found">找不到事件。請在應用程式設定中為相應的日曆啟用 CalDav 同步。</string>
     <string name="monday_alt">星期一</string>
     <string name="tuesday_alt">星期二</string>
     <string name="wednesday_alt">星期三</string>
