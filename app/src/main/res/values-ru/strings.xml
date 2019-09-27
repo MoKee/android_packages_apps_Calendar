@@ -173,6 +173,7 @@
     <string name="synchronization_completed">Синхронизация завершена</string>
     <string name="select_a_different_caldav_color">Выберите другой цвет (может применяться только локально)</string>
     <string name="insufficient_permissions">У вас нет разрешения на запись в выбранном календаре</string>
+    <string name="caldav_event_not_found">Событие не найдено. Пожалуйста, включите синхронизацию CalDAV для соответствующего календаря в настройках приложения.</string>
     <string name="monday_alt">Понедельник</string>
     <string name="tuesday_alt">Вторник</string>
     <string name="wednesday_alt">Среда</string>

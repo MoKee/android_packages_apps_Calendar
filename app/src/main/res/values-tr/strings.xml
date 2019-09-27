@@ -173,6 +173,7 @@
     <string name="synchronization_completed">Senkronizasyon tamamlandı</string>
     <string name="select_a_different_caldav_color">Farklı bir renk seçin (yalnızca yerel olarak uygulanabilir)</string>
     <string name="insufficient_permissions">Seçilen takvime yazmanıza izin verilmez</string>
+    <string name="caldav_event_not_found">Etkinlik bulunamadı. Lütfen uygulama ayarlarında uygun takvim için CalDAV senkronizasyonunu etkinleştirin.</string>
     <string name="monday_alt">Pazartesi</string>
     <string name="tuesday_alt">Salı</string>
     <string name="wednesday_alt">Çarşamba</string>

@@ -173,6 +173,7 @@
     <string name="synchronization_completed">Синхронизација је завршена</string>
     <string name="select_a_different_caldav_color">Изабери другу боју ( може да се примени само локално)</string>
     <string name="insufficient_permissions">Немате приступ за упис у изабраном Календару</string>
+    <string name="caldav_event_not_found">Догађај није пронађен. Омогућите CalDAV синхронизацију за прикладан календар у подешавањима апликације.</string>
     <string name="monday_alt">Понедељак</string>
     <string name="tuesday_alt">Уторак</string>
     <string name="wednesday_alt">Среда</string>
