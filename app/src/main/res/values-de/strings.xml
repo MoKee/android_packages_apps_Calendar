@@ -12,6 +12,7 @@
     <string name="no_upcoming_events">Scheint so, als hättest du keine anstehenden Termine.</string>
     <string name="go_to_today">Springe zu Heute</string>
     <string name="go_to_date">Datum auswählen</string>
+    <string name="upgraded_from_free">Hallo,\n\n es scheint, Sie haben von der früher kostenlosen Version der App aktualisiert. Daher müssen Sie ihre lokal gespeicherten Ereignisse manuell importieren. Dir Funktionen für den Import und Export finden Sie im Hauptmenü\n\nSie können dann die alte Version deinstallieren, die über einen \'Upgrade auf Pro\' Button oben in den App-Einstellungen verfügt. Sie müssen dann nur Ihre App-Einstellungen zurücksetzen.\n\nDanke!</string>
     <string name="widget_monthly">Monatskalender</string>
     <string name="widget_list">Termin-Liste</string>
     <string name="event">Termin</string>
@@ -144,11 +145,16 @@
     <string name="alarm_stream">Wecker</string>
     <string name="notification_stream">Benachrichtigung</string>
     <string name="ring_stream">Klingelton</string>
+    <string name="use_last_event_reminders">Erinnerungen des letzten Termins als Vorgabe für neuen Termin verwenden</string>
     <string name="default_reminder_1">Standarderinnerung 1</string>
     <string name="default_reminder_2">Standarderinnerung 2</string>
     <string name="default_reminder_3">Standarderinnerung 3</string>
     <string name="view_to_open_from_widget">Ansicht beim Öffnen durch das Terminlisten-Widget</string>
     <string name="last_view">Letzte Ansicht</string>
+    <string name="default_start_time">Standard Startzeit</string>
+    <string name="next_full_hour">Zur nächsten vollen Stunde</string>
+    <string name="default_duration">Standarddauer</string>
+    <string name="last_used_one">Zuletzt verwendet</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Kalender zur Synchronisierung auswählen</string>
     <string name="manage_synced_calendars">Synchronisierte Kalender verwalten</string>
@@ -186,4 +192,5 @@
     <string name="faq_3_title">Ich sehe die Erinnerungen, aber ich höre keinen Ton. Was kann ich tun?</string>
     <string name="faq_3_text">Erinnerungen nicht nur anzeigen, sondern Töne dazu abspielen ist ebenfalls stark vom jeweiligen (Android) System abhängig. Wenn Du keine Töne hörst, versuche in den App Einstellungen,
         die Option \"Audio-Ausgabekanal für Erinnerungen\" anzuklicken und eine andere Option auszuwählen. Wenn das immer noch nichts ändert, prüfe Deine Lautstärkeeinstellungen. of der gewählte Kanal nicht auf lautlos steht.</string>
+    <string name="app_short_description">Ein schöner Kalender ohne Werbung, 100% Geld-Zurück-Garantie.</string>
 </resources>
