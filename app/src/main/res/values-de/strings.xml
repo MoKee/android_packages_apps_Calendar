@@ -151,6 +151,7 @@
     <string name="default_reminder_3">Standarderinnerung 3</string>
     <string name="view_to_open_from_widget">Ansicht beim Öffnen durch das Terminlisten-Widget</string>
     <string name="last_view">Letzte Ansicht</string>
+    <string name="new_events">Neue Ereignisse</string>
     <string name="default_start_time">Standard Startzeit</string>
     <string name="next_full_hour">Zur nächsten vollen Stunde</string>
     <string name="default_duration">Standarddauer</string>
