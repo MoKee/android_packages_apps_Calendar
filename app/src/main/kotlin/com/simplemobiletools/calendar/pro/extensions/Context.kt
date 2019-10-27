@@ -503,7 +503,7 @@ fun Context.fetchWorkdayAndHoliday() {
                     override fun onResponse(call: Call, response: Response) {
                         if (response.isSuccessful) {
                             getWHSharedPrefs().edit().clear().apply()
-                            var jsonObject = JSONObject(response.body()?.string())
+                            var jsonObject = JSONObject(response.body?.string())
                             var yearInfo = jsonObject.getJSONObject("YEAR")
                             var yearKeys = yearInfo.keys()
                             while (yearKeys.hasNext()) {

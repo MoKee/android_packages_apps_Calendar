@@ -74,7 +74,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
  
     compileOnly fileTree(include: ['*.jar'], dir: 'libs')
-    compileOnly files('../../../../vendor/mk-priv/build/tools/sdks/cloud/cloud.jar')
+    compileOnly files('../../../../vendor/mokee-priv/build/tools/sdks/cloud/cloud.jar')
     implementation 'com.squareup.okhttp3:okhttp:4.1.0'
 
     kapt 'androidx.room:room-compiler:2.2.1'
