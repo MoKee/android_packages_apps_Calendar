@@ -135,6 +135,7 @@
     <string name="events">ಕಾರ್ಯಕ್ರಮಗಳು</string>
     <string name="reminder_stream">ಮರುಜ್ಞಾಪನೆಗಳಿಂದ ಬಳಸಲ್ಪಟ್ಟ ಧ್ವನಿ ಸುರುಳಿಗಳು</string>
     <string name="system_stream">ವ್ಯವಸ್ಥೆ</string>
+    <string name="alarm_stream">ಎಚ್ಚರಿಕೆ ಧ್ಚನಿ</string>
     <string name="notification_stream">ಅಧಿಸೂಚನೆಗಳು</string>
     <string name="ring_stream">ರಿಂಗ್</string>
     <string name="default_reminder_1">ಪೂರ್ವನಿಯೋಜಿತ ಮರುಜ್ಞಾಪನೆ 1</string>
