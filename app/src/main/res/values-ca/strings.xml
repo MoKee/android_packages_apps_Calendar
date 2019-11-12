@@ -13,6 +13,10 @@
     <string name="notification_stream">Notificació</string>
     <string name="ring_stream">Timbre</string>
     <string name="monday_alt">Dilluns</string>
+    <string name="tuesday_alt">Dimarts</string>
+    <string name="wednesday_alt">Dimecres</string>
+    <string name="thursday_alt">Dijous</string>
+    <string name="friday_alt">Divendres</string>
     <string name="saturday_alt">Dissabte</string>
     <string name="sunday_alt">Diumenge</string>
 </resources>

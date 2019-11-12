@@ -14,6 +14,10 @@
     <string name="notification_stream">Ilmoitus</string>
     <string name="ring_stream">Soita</string>
     <string name="monday_alt">maanantai</string>
+    <string name="tuesday_alt">Tiistai</string>
+    <string name="wednesday_alt">Keskiviikko</string>
+    <string name="thursday_alt">Torstai</string>
+    <string name="friday_alt">Perjantai</string>
     <string name="saturday_alt">lauantai</string>
     <string name="sunday_alt">sunnuntai</string>
     <string name="sample_title_3">Kirjasto</string>

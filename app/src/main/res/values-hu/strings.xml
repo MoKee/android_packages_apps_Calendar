@@ -173,6 +173,7 @@
     <string name="synchronization_completed">A szinkronizálás befejeződött</string>
     <string name="select_a_different_caldav_color">Eltérő szín választása (lehetséges, hogy csak helyileg lehet alkalmazni)</string>
     <string name="insufficient_permissions">Nincs jogosultsága a kiválasztott naptárba bejegyzést írni</string>
+    <string name="caldav_event_not_found">Nem található esemény. Engedélyezze a CalDAV-szonkronizálást a megfelelő naptárhoz, az alkalmazás beállításaiban.</string>
     <string name="monday_alt">Hétfő</string>
     <string name="tuesday_alt">Kedd</string>
     <string name="wednesday_alt">Szerda</string>
@@ -198,7 +199,7 @@
     <string name="faq_3_text">A rendszer nem csak a tényleges emlékeztető-megjelenítésre, de a hangokra is óriási hatással van. Ha nem hall semmilyen hangot, próbáljon belépni az alkalmazás beállításaiba,
         nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
     <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
-    <string name="app_short_description">Egy klassz naptár reklámok nélkül, 100%-os pénzvisszafizetési garanciával.</string>
+    <string name="app_short_description">Hogy el ne felejtse az élete legfontosabb pillanatait.</string>
     <string name="app_long_description">        A Simple Calendar Pro egy teljes mértékben testreszabható offline naptár, amelyet úgy terveztek, hogy pontosan azt tegye, amit egy naptárnak tennie kell. <b>Nincsenek bonyolult funkciók, nem kellenek felesleges engedélyek és nincsenek reklámok!</b> 
 
         Akár egyszeri, akár ismétlődő eseményeket, akár születésnapokat, évfordulókat, üzleti találkozókat, találkozókat vagy bármi mást szervez, a Simple Calendar Pro <b>megkönnyíti a szervezést</b>. A <b>testreszabási lehetőségek</b> hihetetlen változatosságával szabhatja személyre az események emlékeztetőit, az értesítési hangokat, a naptár-widgeteket és az alkalmazás megjelenésének módját. 
