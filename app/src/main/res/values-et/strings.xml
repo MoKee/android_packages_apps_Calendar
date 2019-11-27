@@ -193,8 +193,6 @@
     <string name="faq_1_text">Sellisel viisil loodud pühad sisestatakse uude sündmuse tüüpi \"Puhkus\". Võite minna menüüsse Seaded -&gt; Halda sündmuste tüüpe,
        vajuta pikka aega antud sündmuse tüübile ja kustutad selle, kui valite prügikasti.</string>
     <string name="faq_2_title">Kas ma saan oma sündmusi sünkroonida Google\'i kalendri või mõne muu CalDAVi toetava teenuse kaudu?</string>
-    <string name="faq_2_text">Jah, lülitage rakenduse seadetes lihtsalt \"CalDAV sünkroonimine\" ja valige sünkroonitavad kalendrid. Siiski peate seadme ja serverite vahelist sünkroonimist käitlema mõne kolmanda osapoole rakendusega.
-        In case you waKui soovite Google\'i kalendrit sünkroonida, tehke seda nende ametliku kalendri rakendusega. Teiste kalendrite jaoks on vaja kolmanda osapoole sünkroonimisadapterit, näiteks DAVdroid.</string>
     <string name="faq_3_title">Näen visuaalseid meeldetuletusi, kuid ei kuule heli. Mida ma teha saan?</string>
     <string name="faq_3_text">Mitte ainult tegeliku meeldetuletuse kuvamine, vaid heli mängimine on süsteemi poolt väga mõjutatud. Kui te ei kuule ühtegi heli, proovige rakenduse seadetes minna,
         vajutades valikule „Meeldetuletuste poolt kasutatav helivoog” ja muutes selle teise väärtuse. Kui see ikka ei tööta, kontrollige oma heliseadeid, kas konkreetne voog ei ole vaigistatud.</string>

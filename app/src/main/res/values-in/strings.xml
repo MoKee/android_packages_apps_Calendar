@@ -187,8 +187,6 @@
     <string name="faq_1_text">Liburan yang dibuat dengan cara itu dimasukkan ke dalam jenis acara baru yang disebut \"Liburan\". Anda dapat masuk ke Pengaturan -&gt; Kelola Jenis Acara,
         tekan lama jenis acara yang diberikan dan hapus dengan memilih trashbin.</string>
     <string name="faq_2_title">Dapatkah saya menyinkronkan acara saya melalui Kalender Google, atau layanan lain yang mendukung CalDAV?</string>
-    <string name="faq_2_text">Ya, cukup aktifkan \"Sinkronisasi CalDAV\" di pengaturan aplikasi dan pilih kalender yang ingin Anda sinkronkan. Namun, Anda memerlukan beberapa aplikasi pihak ketiga yang menangani sinkronisasi antara perangkat dan server.
-         Jika Anda ingin menyinkronkan kalender Google, aplikasi Kalender resmi mereka akan melakukan pekerjaan itu. Untuk kalender lain Anda memerlukan adaptor sinkronisasi pihak ketiga, misalnya DAVdroid.</string>
     <string name="faq_3_title">Saya melihat pengingat visual, tetapi tidak mendengar audio. Apa yang dapat saya?</string>
     <string name="faq_3_text">Tidak hanya menampilkan pengingat yang sebenarnya, tetapi memutar audio juga sangat dipengaruhi oleh sistem. Jika Anda tidak dapat mendengar suara apa pun, cobalah masuk ke pengaturan aplikasi,
         menekan opsi \"putar audio digunakan oleh pengingat\" dan mengubahnya ke nilai yang berbeda. Jika masih tidak berfungsi, periksa pengaturan suara Anda, jika aliran tertentu tidak dibisukan.</string>

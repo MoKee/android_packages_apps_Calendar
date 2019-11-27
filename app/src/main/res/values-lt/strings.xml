@@ -152,6 +152,4 @@
     <string name="faq_1_text">Atostogos sukuriamos per naują įvykio tipą \"Atostogos\". Eikite į nustatymus -&gt; Tvarkyti įvykių tipus,
         ilgiau paspauskite ant duotojo įykio tipo ir ištrinkite jį pasirinkdami šiukšlinę.</string>
     <string name="faq_2_title">Ar galiu sinchronizuoti savo įvykius per Google Kalendorių, ar kitą paslaugą palaikančią CalDAV?</string>
-    <string name="faq_2_text">Taip, tiesiog pasirinkite \"CalDAV sinchronizavimas\" programėlės nustatymuose ir pasirinkite kalendorius kuriuos norite sinchronizuoti. Tačiau Jums reikės trečiosios šalies programėlės palaikančios sinchronizavimą tarp įrenginio ir serverių.
-        Jeigu norite sinchronizuoti Google kalendorių, jų oficiali kalendoriaus programėlė atliks šį darbą. Kitiems kalenoriams Jums reikės trečiosios šalies sinchronizavimo adapterio, pavyzdžiui DAVdroid.</string>
 </resources>
