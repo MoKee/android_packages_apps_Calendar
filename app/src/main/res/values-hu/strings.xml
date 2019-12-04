@@ -193,6 +193,8 @@
     <string name="faq_1_text">Az így létrehozott ünnepeket egy új típusba illeszti be, az úgynevezett \"Ünnepek\"-be. Bemehet a Beállításokba -&gt; Eseménytípusok kezelése menübe,
         hosszan nyomja meg az adott eseménytípust, és törölje azt a Lomtár kiválasztásával.</string>
     <string name="faq_2_title">Tudom szinkronizálni az eseményeimet a Google Naptár vagy másik szolgáltatás segítségével, CalDAV támogatással?</string>
+    <string name="faq_2_text">Igen, csak kapcsolja be a \"CalDAV-szinkronizálást\" az alkalmazás beállításaiban, és válassza ki a szinkronizálni kívánt naptárakat. Azonban szüksége lesz egy harmadik féltől származó alkalmazásra, amely kezeli a szinkronizálást a készülék és a szerverek között.
+        Ha Google-naptárat szeretne szinkronizálni, a hivatalos Naptáralkalmazás végrehajtja a feladatot. Más naptárakhoz szüksége lesz egy külső szinkronizálási adapterre, például a DAVx5-re.</string>
     <string name="faq_3_title">Látom a vizuális emlékeztetőket, de nem hallok hangot. Mit tegyek?</string>
     <string name="faq_3_text">A rendszer nem csak a tényleges emlékeztető-megjelenítésre, de a hangokra is óriási hatással van. Ha nem hall semmilyen hangot, próbáljon belépni az alkalmazás beállításaiba,
         nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
