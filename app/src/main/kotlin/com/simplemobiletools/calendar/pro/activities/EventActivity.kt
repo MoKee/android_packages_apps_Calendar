@@ -162,6 +162,7 @@ class EventActivity : SimpleActivity() {
         event_start_time.setOnClickListener { setupStartTime() }
         event_end_date.setOnClickListener { setupEndDate() }
         event_end_time.setOnClickListener { setupEndTime() }
+        event_timezone.setOnClickListener { setupTimezone() }
 
         event_all_day.setOnCheckedChangeListener { compoundButton, isChecked -> toggleAllDay(isChecked) }
         event_repetition.setOnClickListener { showRepeatIntervalDialog() }
@@ -312,6 +313,7 @@ class EventActivity : SimpleActivity() {
         checkReminderTexts()
         updateStartTexts()
         updateEndTexts()
+        updateTimeZoneText()
         updateAttendeesVisibility()
     }
 
@@ -1053,6 +1055,10 @@ class EventActivity : SimpleActivity() {
         checkStartEndValidity()
     }
 
+    private fun updateTimeZoneText() {
+        event_timezone.text = mEvent.getTimeZoneString()
+    }
+
     private fun checkStartEndValidity() {
         val textColor = if (mEventStartDateTime.isAfter(mEventEndDateTime)) resources.getColor(R.color.red_text) else config.textColor
         event_end_date.setTextColor(textColor)
@@ -1161,6 +1167,10 @@ class EventActivity : SimpleActivity() {
             timeSet(hours + 1, minutes, isStart)
             return
         }
+    }
+
+    private fun setupTimezone() {
+
     }
 
     private fun checkRepeatRule() {
@@ -1461,6 +1471,7 @@ class EventActivity : SimpleActivity() {
     private fun updateIconColors() {
         val textColor = config.textColor
         event_time_image.applyColorFilter(textColor)
+        event_timezone_image.applyColorFilter(textColor)
         event_repetition_image.applyColorFilter(textColor)
         event_reminder_image.applyColorFilter(textColor)
         event_type_image.applyColorFilter(textColor)
