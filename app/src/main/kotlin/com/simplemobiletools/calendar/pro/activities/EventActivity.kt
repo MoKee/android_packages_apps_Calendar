@@ -1,5 +1,6 @@
 package com.simplemobiletools.calendar.pro.activities
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -61,6 +62,7 @@ class EventActivity : SimpleActivity() {
     private val ATTENDEES = "ATTENDEES"
     private val EVENT_TYPE_ID = "EVENT_TYPE_ID"
     private val EVENT_CALENDAR_ID = "EVENT_CALENDAR_ID"
+    private val SELECT_TIME_ZONE_INTENT = 1
 
     private var mReminder1Minutes = REMINDER_OFF
     private var mReminder2Minutes = REMINDER_OFF
@@ -162,7 +164,7 @@ class EventActivity : SimpleActivity() {
         event_start_time.setOnClickListener { setupStartTime() }
         event_end_date.setOnClickListener { setupEndDate() }
         event_end_time.setOnClickListener { setupEndTime() }
-        event_timezone.setOnClickListener { setupTimezone() }
+        event_time_zone.setOnClickListener { setupTimeZone() }
 
         event_all_day.setOnCheckedChangeListener { compoundButton, isChecked -> toggleAllDay(isChecked) }
         event_repetition.setOnClickListener { showRepeatIntervalDialog() }
@@ -214,6 +216,8 @@ class EventActivity : SimpleActivity() {
 
         updateTextColors(event_scrollview)
         updateIconColors()
+        event_time_zone_image.beVisibleIf(config.allowChangingTimeZones)
+        event_time_zone.beVisibleIf(config.allowChangingTimeZones)
         mWasActivityInitialized = true
     }
 
@@ -306,6 +310,15 @@ class EventActivity : SimpleActivity() {
         updateEventType()
         updateCalDAVCalendar()
         checkAttendees()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        if (requestCode == SELECT_TIME_ZONE_INTENT && resultCode == Activity.RESULT_OK && resultData?.hasExtra(TIME_ZONE) == true) {
+            val timeZone = resultData.getSerializableExtra(TIME_ZONE) as MyTimeZone
+            mEvent.timeZone = timeZone.zoneName
+            updateTimeZoneText()
+        }
+        super.onActivityResult(requestCode, resultCode, resultData)
     }
 
     private fun updateTexts() {
@@ -1056,7 +1069,7 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun updateTimeZoneText() {
-        event_timezone.text = mEvent.getTimeZoneString()
+        event_time_zone.text = mEvent.getTimeZoneString()
     }
 
     private fun checkStartEndValidity() {
@@ -1169,8 +1182,10 @@ class EventActivity : SimpleActivity() {
         }
     }
 
-    private fun setupTimezone() {
-
+    private fun setupTimeZone() {
+        Intent(this, SelectTimeZoneActivity::class.java).apply {
+            startActivityForResult(this, SELECT_TIME_ZONE_INTENT)
+        }
     }
 
     private fun checkRepeatRule() {
@@ -1471,7 +1486,7 @@ class EventActivity : SimpleActivity() {
     private fun updateIconColors() {
         val textColor = config.textColor
         event_time_image.applyColorFilter(textColor)
-        event_timezone_image.applyColorFilter(textColor)
+        event_time_zone_image.applyColorFilter(textColor)
         event_repetition_image.applyColorFilter(textColor)
         event_reminder_image.applyColorFilter(textColor)
         event_type_image.applyColorFilter(textColor)

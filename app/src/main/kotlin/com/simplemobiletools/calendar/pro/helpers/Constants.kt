@@ -19,6 +19,7 @@ const val CALDAV = "Caldav"
 const val VIEW_TO_OPEN = "view_to_open"
 const val SHORTCUT_NEW_EVENT = "shortcut_new_event"
 const val REGULAR_EVENT_TYPE_ID = 1L
+const val TIME_ZONE = "time_zone"
 
 const val MONTHLY_VIEW = 1
 const val YEARLY_VIEW = 2
@@ -73,6 +74,7 @@ const val LAST_VIBRATE_ON_REMINDER = "last_vibrate_on_reminder"
 const val DEFAULT_START_TIME = "default_start_time"
 const val DEFAULT_DURATION = "default_duration"
 const val DEFAULT_EVENT_TYPE_ID = "default_event_type_id"
+const val ALLOW_CHANGING_TIME_ZONES = "allow_changing_time_zones"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val BASE_URL = "https://api.mokeedev.com/calendar/"
@@ -168,7 +170,7 @@ fun getNowSeconds() = System.currentTimeMillis() / 1000L
 
 // timezones fetched from https://www.joda.org/joda-time/timezones.html
 fun getAllTimeZones() = arrayListOf(
-        MyTimeZone(1, "GMT-11:00", "Pacific/Midway"),
-        MyTimeZone(2, "GMT-11:00", "Pacific/Niue"),
-        MyTimeZone(3, "GMT-11:00", "Pacific/Pago_Pago")
+        MyTimeZone(1, "GMT-11", "Pacific/Midway"),
+        MyTimeZone(2, "GMT-11", "Pacific/Niue"),
+        MyTimeZone(3, "GMT-11", "Pacific/Pago_Pago")
 )
