@@ -1,7 +1,5 @@
 package com.simplemobiletools.calendar.pro.helpers
 
-import com.simplemobiletools.calendar.pro.models.MyTimeZone
-
 const val LOW_ALPHA = .3f
 const val MEDIUM_ALPHA = .6f
 const val STORED_LOCALLY_ONLY = 0
@@ -20,6 +18,7 @@ const val VIEW_TO_OPEN = "view_to_open"
 const val SHORTCUT_NEW_EVENT = "shortcut_new_event"
 const val REGULAR_EVENT_TYPE_ID = 1L
 const val TIME_ZONE = "time_zone"
+const val CURRENT_TIME_ZONE = "current_time_zone"
 
 const val MONTHLY_VIEW = 1
 const val YEARLY_VIEW = 2
@@ -167,10 +166,3 @@ const val REMINDER_NOTIFICATION = 0
 const val REMINDER_EMAIL = 1
 
 fun getNowSeconds() = System.currentTimeMillis() / 1000L
-
-// timezones fetched from https://www.joda.org/joda-time/timezones.html
-fun getAllTimeZones() = arrayListOf(
-        MyTimeZone(1, "GMT-11", "Pacific/Midway"),
-        MyTimeZone(2, "GMT-11", "Pacific/Niue"),
-        MyTimeZone(3, "GMT-11", "Pacific/Pago_Pago")
-)
