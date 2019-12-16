@@ -83,6 +83,10 @@
     <string name="before">antes</string>
     <string name="add_another_reminder">Agregar otro recordatorio</string>
     <string name="event_reminders">Recordatorio de eventos</string>
+    <string name="my_status">Mi estado:</string>
+    <string name="going">Iré</string>
+    <string name="not_going">No iré</string>
+    <string name="maybe_going">Quizás</string>
     <string name="invited">Invitado</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
