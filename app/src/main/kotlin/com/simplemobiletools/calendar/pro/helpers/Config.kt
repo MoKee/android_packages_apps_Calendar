@@ -2,6 +2,7 @@ package com.simplemobiletools.calendar.pro.helpers
 
 import android.content.Context
 import android.media.AudioManager
+import com.simplemobiletools.calendar.pro.BuildConfig
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.scheduleCalDAVSync
@@ -169,6 +170,10 @@ class Config(context: Context) : BaseConfig(context) {
     var lastUpdateTime: Long
         get() = prefs.getLong(LAST_UPDATE_TIME, 0)
         set(lastUpdateTime) = prefs.edit().putLong(LAST_UPDATE_TIME, lastUpdateTime).apply()
+
+    var lastVersionCode: Int
+        get() = prefs.getInt(LAST_VERSION_CODE, 0)
+        set(lastVersionCode) = prefs.edit().putInt(LAST_VERSION_CODE, lastVersionCode).apply()
 
     var pullToRefresh: Boolean
         get() = prefs.getBoolean(PULL_TO_REFRESH, false)

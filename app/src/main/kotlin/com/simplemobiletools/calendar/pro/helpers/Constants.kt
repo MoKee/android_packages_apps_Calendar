@@ -76,10 +76,11 @@ const val DEFAULT_EVENT_TYPE_ID = "default_event_type_id"
 const val ALLOW_CHANGING_TIME_ZONES = "allow_changing_time_zones"
 
 const val LAST_UPDATE_TIME = "last_update_time"
+const val LAST_VERSION_CODE = "last_version_code"
 const val BASE_URL = "https://api.mokeedev.com/calendar/"
 const val FLAG_WORKDAY = 1
 const val FLAG_HOLIDAY = 2
-const val PREFS_WH_KEY = "WHPrefs"
+const val PREFS_WH_KEY = "Holidays"
 
 // repeat_rule for monthly and yearly repetition
 const val REPEAT_SAME_DAY = 1                           // i.e. 25th every month, or 3rd june (if yearly repetition)
