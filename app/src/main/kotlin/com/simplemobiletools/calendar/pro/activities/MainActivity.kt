@@ -36,13 +36,11 @@ import com.simplemobiletools.calendar.pro.jobs.CalDAVUpdateListener
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.EventType
 import com.simplemobiletools.calendar.pro.models.ListEvent
-import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
-import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import kotlinx.android.synthetic.main.activity_main.*
@@ -76,7 +74,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         setContentView(R.layout.activity_main)
 
         // fetch workday and holiday info
-        shouldRequestPermission()
+        shouldUpdateHolidays()
 
         appLaunched(BuildConfig.APPLICATION_ID)
 
@@ -466,20 +464,24 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         val items = getHolidayRadioItems()
         RadioGroupDialog(this, items) {
             toast(R.string.importing)
-            ensureBackgroundThread {
-                val holidays = getString(R.string.holidays)
-                var eventTypeId = eventsHelper.getEventTypeIdWithTitle(holidays)
-                if (eventTypeId == -1L) {
-                    val eventType = EventType(null, holidays, resources.getColor(R.color.default_holidays_color))
-                    eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
-                }
+            importHolidays(it)
+        }
+    }
 
-                val result = IcsImporter(this).importEvents(it as String, eventTypeId, 0, false)
-                handleParseResult(result)
-                if (result != IcsImporter.ImportResult.IMPORT_FAIL) {
-                    runOnUiThread {
-                        updateViewPager()
-                    }
+    private fun importHolidays(it: Any) {
+        ensureBackgroundThread {
+            val holidays = getString(R.string.holidays)
+            var eventTypeId = eventsHelper.getEventTypeIdWithTitle(holidays)
+            if (eventTypeId == -1L) {
+                val eventType = EventType(null, holidays, resources.getColor(R.color.default_holidays_color))
+                eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
+            }
+
+            val result = IcsImporter(this).importEvents(it as String, eventTypeId, 0, false)
+            handleParseResult(result)
+            if (result != IcsImporter.ImportResult.IMPORT_FAIL) {
+                runOnUiThread {
+                    updateViewPager()
                 }
             }
         }
@@ -976,6 +978,17 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                 }
             }
         }
+    }
+
+    private fun shouldUpdateHolidays() {
+        if (config.lastVersionCode != BuildConfig.VERSION_CODE) {
+            var locale = Locale.getDefault()
+            if (locale.country == "CN") {
+                importHolidays("china.ics")
+                config.lastVersionCode = BuildConfig.VERSION_CODE
+            }
+        }
+        shouldRequestPermission()
     }
 
 }
