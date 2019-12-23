@@ -168,7 +168,7 @@ class Config(context: Context) : BaseConfig(context) {
 
     var lastUpdateTime: Long
         get() = prefs.getLong(LAST_UPDATE_TIME, 0)
-        set(lastUpdateCheck) = prefs.edit().putLong(LAST_UPDATE_TIME, lastUpdateCheck).apply()
+        set(lastUpdateTime) = prefs.edit().putLong(LAST_UPDATE_TIME, lastUpdateTime).apply()
 
     var pullToRefresh: Boolean
         get() = prefs.getBoolean(PULL_TO_REFRESH, false)

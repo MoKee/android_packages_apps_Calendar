@@ -76,7 +76,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         setContentView(R.layout.activity_main)
 
         // fetch workday and holiday info
-        shouldRequestPermission();
+        shouldRequestPermission()
 
         appLaunched(BuildConfig.APPLICATION_ID)
 
@@ -970,7 +970,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         if (MoKeeUtils.isSupportLanguage(true) && MoKeeUtils.isOnline(this)) {
             handlePermission(arrayOf(PERMISSION_READ_CALENDAR, PERMISSION_WRITE_CALENDAR)) {
                 if (it) {
-                    fetchWorkdayAndHoliday();
+                    fetchWorkdayAndHoliday()
                 } else {
                     toast(R.string.no_calendar_permission)
                 }
