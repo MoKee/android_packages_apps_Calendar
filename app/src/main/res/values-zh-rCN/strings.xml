@@ -92,6 +92,7 @@
     <string name="not_going">未在进行</string>
     <string name="maybe_going">可能正在进行</string>
     <string name="invited">邀请</string>
+    <string name="enter_a_country">输入国家或时区</string>
     <string name="import_events">导入活动</string>
     <string name="export_events">导出活动</string>
     <string name="import_events_from_ics">从 .ics 文件导入活动</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">上次使用</string>
     <string name="other_time">其他时间</string>
     <string name="highlight_weekends">在一些视图上高亮周末</string>
+    <string name="allow_changing_time_zones">允许更改事件时区</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">选择要同步的日历</string>
     <string name="manage_synced_calendars">管理已同步的日历</string>
@@ -193,10 +195,16 @@
     <string name="faq_1_text">以这种方式创建的节假日活动会被添加到新事件类型中去。您可以进入设置-&gt; 管理活动类型，
         长按给定的活动类型并通过选择回收站删除它。</string>
     <string name="faq_2_title">我可以与 Google 日历或其他支持 CalDAV 的服务进行同步吗？</string>
+    <string name="faq_2_text">可以。只需要在应用设置中打开 \"CalDAV 同步\" 并选择你要同步的日历。但你需要一些第三方程序来处理设备和服务器间的同步。
+        如果你同步的是 Google 日历，则官方的日历应用便可完成。其它日历则需要第三方同步工具，比如 DAVx5。</string>
     <string name="faq_3_title">我可以看见提示，但没有听到声音。我应该做什么？</string>
     <string name="faq_3_text">不仅仅是显示实际的提醒， 而且播放提示音也受到系统的巨大影响。如果您听不到任何声音，请尝试使用应用程序设置，
         按 \"提示音\" 选项，并将其更改为其他值。如果仍然没有任何声音，检查您的声音设置，确认是否设置了静音。</string>
+    <string name="faq_4_title">应用程序支持时区吗？</string>
+    <string name="faq_4_text">是的。默认设置下，所有事件都是在您当前的时区中创建的。 如果您想要更改一个事件的时区，
+        您必须先在应用程序设置中启用时区选择器。 然后在事件详情页面上更改它。因为大多数人都不需要它，所以默认设置下它被禁用。</string>
     <string name="app_title">简单日历专业版 - 事件 &amp; 提醒</string>
+    <string name="app_short_description">记住你生命中重要的时刻。</string>
     <string name="app_long_description">        简单日历是一个完全可定制的, 离线日历设计, 以完全完成日历应该做的事情。 &lt;b&gt;没有复杂的功能, 不必要的权限和没有广告!&lt;/b&gt;
 
         无论您是组织单次或经常性活动、生日、周年纪念日、商务会议、约会还是其他任何内容, 简单日历 Pro 都使其 &lt;b&gt;易于保持, 有组织&lt;/b&gt;。通过令人难以置信的各种 &lt;b&gt;自定义选项&lt;/b&gt; , 您可以自定义事件提醒、通知声音、日历小部件以及应用程序的外观。

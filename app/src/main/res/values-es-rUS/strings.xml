@@ -83,7 +83,12 @@
     <string name="before">antes</string>
     <string name="add_another_reminder">Agregar otro recordatorio</string>
     <string name="event_reminders">Recordatorio de eventos</string>
+    <string name="my_status">Mi estado:</string>
+    <string name="going">Iré</string>
+    <string name="not_going">No iré</string>
+    <string name="maybe_going">Quizás</string>
     <string name="invited">Invitado</string>
+    <string name="enter_a_country">Introduzca un país o zona horaria</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="import_events_from_ics">Importar eventos desde un archivo .ics</string>
@@ -147,6 +152,7 @@
     <string name="last_view">Última vista</string>
     <string name="new_events">Nuevos eventos</string>
     <string name="other_time">Otra vez</string>
+    <string name="allow_changing_time_zones">Permitir cambiar las zonas horarias del evento</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecciona los calendarios a sincronizar</string>
     <string name="manage_synced_calendars">Gestionar los calendarios sincronizados</string>
@@ -181,4 +187,7 @@
     <string name="faq_3_title">I see the visual reminders, but hear no audio. What can I do?</string>
     <string name="faq_3_text">Not just displaying the actual reminder, but playing the audio is hugely affected by the system too. If you can\'t hear any sound, try going in the app settings,
         pressing the \"Audio stream used by reminders\" option and changing it to a different value. If it still won\'t work, check your sound settings, if the particular stream isn\'t muted.</string>
+    <string name="faq_4_title">¿Soporta la aplicación zonas horarias?</string>
+    <string name="faq_4_text">Sí, sí. Por defecto todos los eventos se crean en su zona horaria actual. Si quieres cambiar la zona horaria de un evento,
+        primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
 </resources>

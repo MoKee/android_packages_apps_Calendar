@@ -92,6 +92,7 @@
     <string name="not_going">Nem jön el</string>
     <string name="maybe_going">Talán eljön</string>
     <string name="invited">Meghívva</string>
+    <string name="enter_a_country">Adja meg a várost vagy az időzónát</string>
     <string name="import_events">Események importálása</string>
     <string name="export_events">Események exportálása</string>
     <string name="import_events_from_ics">Események importálása .ics fájlból</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">A legutóbb használt</string>
     <string name="other_time">Egyéb időtartam</string>
     <string name="highlight_weekends">Hétvégék kiemelése bármilyen nézetben</string>
+    <string name="allow_changing_time_zones">Az események időzónája legyen módosítható</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Válassza ki a szinkronizálandó naptárakat</string>
     <string name="manage_synced_calendars">Szinkronizált naptárak kezelése</string>
@@ -198,6 +200,9 @@
     <string name="faq_3_title">Látom a vizuális emlékeztetőket, de nem hallok hangot. Mit tegyek?</string>
     <string name="faq_3_text">A rendszer nem csak a tényleges emlékeztető-megjelenítésre, de a hangokra is óriási hatással van. Ha nem hall semmilyen hangot, próbáljon belépni az alkalmazás beállításaiba,
         nyomja meg az \"Emlékeztetők által használt hangadatfolyam\" lehetőséget és változtassa meg az értéket. Ha ezután sem működik, ellenőrizze a hangbeállításait, hátha az adott hangadatfolyam némítva van.</string>
+    <string name="faq_4_title">Az alkalmazás támogatja az időzónákat?</string>
+    <string name="faq_4_text">Igen, támogatja. Alapértelmezetten az események a rendszer időzónájához idomulnak. Ha meg szeretné változtatni egy esemény időzónáját,
+        előbb az alkalmazás beállításaiban kell engedélyeznie a zónakijelölőt, aztán változtathatja meg az Esemény részleteinél. Alapértelmezetten azért van letiltva, mert a legtöbb felhasználónak nincs szüksége erre.</string>
     <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
     <string name="app_short_description">Hogy el ne felejtse az élete legfontosabb pillanatait.</string>
     <string name="app_long_description">        A Simple Calendar Pro egy teljes mértékben testreszabható offline naptár, amelyet úgy terveztek, hogy pontosan azt tegye, amit egy naptárnak tennie kell. <b>Nincsenek bonyolult funkciók, nem kellenek felesleges engedélyek és nincsenek reklámok!</b> 

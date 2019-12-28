@@ -92,6 +92,7 @@
     <string name="not_going">不會參加</string>
     <string name="maybe_going">也許會參加</string>
     <string name="invited">已邀請</string>
+    <string name="enter_a_country">輸入國家或時區</string>
     <string name="import_events">匯入活動</string>
     <string name="export_events">匯出活動</string>
     <string name="import_events_from_ics">從.ics檔案匯入活動</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">最後使用</string>
     <string name="other_time">其他時間</string>
     <string name="highlight_weekends">突出週末</string>
+    <string name="allow_changing_time_zones">允許改變事件時區</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">選擇行事曆來同步</string>
     <string name="manage_synced_calendars">管理同步的行事曆</string>
@@ -198,6 +200,9 @@
     <string name="faq_3_title">我看到了視覺的提醒，但沒聽到音效。我能怎麼辦?</string>
     <string name="faq_3_text">不只是顯示實際的提醒，播放音效也受到系統極大的影響。如果你聽不到任何聲音，試著到應用程式設定，
         按\"用於提醒的音源串流\"選項，然後更改成不同數值。如果還是沒有用，檢查你的音量設定，指定串流是不是靜音的。</string>
+    <string name="faq_4_title">該應用程式是否支援時區?</string>
+    <string name="faq_4_text">是的，沒有錯。默認情況下，所有事件均在您當前的時區中建立。如果您想更改活動的時區，
+        您首先必須在應用程式設定中啟用時區選取器，然後在事件詳細資訊螢幕中更改它。預設情況下是禁用的，因為大多數人不需要它。</string>
     <string name="app_title">簡單日曆專業版 - 事件 &amp; 提醒</string>
     <string name="app_short_description">記住你生命中重要的時刻。</string>
     <string name="app_long_description">        簡易行事曆 Pro 是一個高度自訂化，完全旨在於行事曆應該做什麼的離線行事曆。 <b>沒有複雜的功能、非必要的權限和廣告!</b>

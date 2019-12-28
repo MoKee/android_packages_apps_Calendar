@@ -92,6 +92,7 @@
     <string name="not_going">Ei lähe</string>
     <string name="maybe_going">Võib-olla läheb</string>
     <string name="invited">Kutse</string>
+    <string name="enter_a_country">Sisestage riik või ajavöönd</string>
     <string name="import_events">Impordi sündmused</string>
     <string name="export_events">Ekspordi sündmused</string>
     <string name="import_events_from_ics">Impordi sündmusi .ics-failist</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">Viimati kasutatud</string>
     <string name="other_time">Teine kord</string>
     <string name="highlight_weekends">Tõstke nädalavahetustel esile mõned vaated</string>
+    <string name="allow_changing_time_zones">Luba sündmuste ajavööndite muutmist</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Valige sünkroonitavad kalendrid</string>
     <string name="manage_synced_calendars">Hallake sünkroonitud kalendreid</string>
@@ -198,6 +200,9 @@
     <string name="faq_3_title">Näen visuaalseid meeldetuletusi, kuid ei kuule heli. Mida ma teha saan?</string>
     <string name="faq_3_text">Mitte ainult tegeliku meeldetuletuse kuvamine, vaid heli mängimine on süsteemi poolt väga mõjutatud. Kui te ei kuule ühtegi heli, proovige rakenduse seadetes minna,
         vajutades valikule „Meeldetuletuste poolt kasutatav helivoog” ja muutes selle teise väärtuse. Kui see ikka ei tööta, kontrollige oma heliseadeid, kas konkreetne voog ei ole vaigistatud.</string>
+    <string name="faq_4_title">Kas rakendus toetab ajavööndeid?</string>
+    <string name="faq_4_text">Jah, küll. Vaikimisi luuakse kõik sündmused teie praeguses ajavööndis. Kui soovite muuta sündmuste ajavööndit,
+        peate esmalt ajavööndi valija rakenduse seadetes lubama, seejärel muutke seda sündmuse üksikasjade ekraanil. See on vaikimisi keelatud, kuna enamik inimesi ei vaja seda.</string>
     <string name="app_title">Lihtne kalender Pro - sündmused &amp; meeldetuletused</string>
     <string name="app_short_description">Olge kursis oluliste hetkedega oma elus.</string>
     <string name="app_long_description">        Simple Calendar Pro on täiesti kohandatav, võrguühenduseta kalender, mille eesmärk on teha täpselt seda, mida kalender peaks tegema. &lt;b&gt;Ei ole keerulisi funktsioone, tarbetuid õigusi ega reklaame!&lt;/b&gt;
