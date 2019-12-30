@@ -203,7 +203,9 @@ fun Context.notifyEvent(originalEvent: Event) {
         val notification = getNotification(pendingIntent, event, content)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         try {
-            notificationManager.notify(event.id!!.toInt(), notification)
+            if (notification != null) {
+                notificationManager.notify(event.id!!.toInt(), notification)
+            }
         } catch (e: Exception) {
             showErrorToast(e)
         }
@@ -211,7 +213,7 @@ fun Context.notifyEvent(originalEvent: Event) {
 }
 
 @SuppressLint("NewApi")
-fun Context.getNotification(pendingIntent: PendingIntent, event: Event, content: String, publicVersion: Boolean = false): Notification {
+fun Context.getNotification(pendingIntent: PendingIntent, event: Event, content: String, publicVersion: Boolean = false): Notification? {
     var soundUri = config.reminderSoundUri
     if (soundUri == SILENT) {
         soundUri = ""
@@ -250,7 +252,12 @@ fun Context.getNotification(pendingIntent: PendingIntent, event: Event, content:
             lightColor = event.color
             enableVibration(config.vibrateOnReminder)
             setSound(Uri.parse(soundUri), audioAttributes)
-            notificationManager.createNotificationChannel(this)
+            try {
+                notificationManager.createNotificationChannel(this)
+            } catch (e: Exception) {
+                showErrorToast(e)
+                return null
+            }
         }
     }
 
@@ -276,7 +283,10 @@ fun Context.getNotification(pendingIntent: PendingIntent, event: Event, content:
     }
 
     if (!publicVersion) {
-        builder.setPublicVersion(getNotification(pendingIntent, event, content, true))
+        val notification = getNotification(pendingIntent, event, content, true)
+        if (notification != null) {
+            builder.setPublicVersion(notification)
+        }
     }
 
     val notification = builder.build()
