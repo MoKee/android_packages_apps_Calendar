@@ -92,6 +92,7 @@
     <string name="not_going">Não vou</string>
     <string name="maybe_going">Talvez vou</string>
     <string name="invited">Convidado</string>
+    <string name="enter_a_country">Insira um país ou fuso horário</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="import_events_from_ics">Importar eventos de um arquivo .ics</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">Usado por último</string>
     <string name="other_time">Outra hora</string>
     <string name="highlight_weekends">Destaque fins de semana em algumas visualizações</string>
+    <string name="allow_changing_time_zones">Permitir alterar fuso horário do alerta</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecione calendários para sincronizar</string>
     <string name="manage_synced_calendars">Gerenciar calendários sincronizados</string>
@@ -173,6 +175,7 @@
     <string name="synchronization_completed">Sincronização completa</string>
     <string name="select_a_different_caldav_color">Selecione uma cor diferente (pode ser aplicado localmente apenas)</string>
     <string name="insufficient_permissions">Você não tem permissão para gravar no calendário selecionado</string>
+    <string name="caldav_event_not_found">Evento não encontrado. Ative a sincronização CalDAV para o calendário apropriado nas configurações do aplicativo.</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terça</string>
     <string name="wednesday_alt">Quarta</string>
@@ -192,10 +195,15 @@
     <string name="faq_1_text">Os feriados criados dessa maneira são inseridos em um novo tipo de evento chamado \ \"Feriados \". Você pode ir em Configurações -&gt; Gerenciar tipos de eventos,
          pressione e segure o tipo de evento fornecido e exclua-o selecionando a lixeira.</string>
     <string name="faq_2_title">Posso sincronizar meus eventos por meio do Google Agenda ou de outro serviço de suporte CalDAV?</string>
+    <string name="faq_2_text">Sim, basta alternar \"Sincronização CalDAV\" nas configurações do aplicativo e selecionar os calendários que deseja sincronizar. No entanto, você precisará de algum aplicativo de terceiros que lide com a sincronização entre o dispositivo e os servidores.
+Caso você queira sincronizar um calendário com o Google por exemplo, devera utilizar o aplicativo oficial o Google Agenda ele fará o trabalho. Para outros calendários, você precisará de um aplicativo de terceiro para sincronizar as informações o aplicativo, por exemplo o DAVx5.</string>
     <string name="faq_3_title">Vejo os lembrete, mas não ouço áudio. O que posso fazer?</string>
     <string name="faq_3_text">A exibição do lembrete e o áudio são fortemente influenciados pelas configurações do sistema. Se você não consegue ouvir o som, verifique as configurações do aplicativo,
 selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o seu valor. Se isso não funcionar, verifique as configurações, especialmente se o som não está mudo.</string>
+    <string name="faq_4_title">O aplicativo suporta fusos horários?</string>
+    <string name="faq_4_text">Sim, por padrão. Todos os eventos são criados no seu fuso horário atual. Se você deseja alterar o fuso horário de um evento,  primeiro sera necessário ativar o seletor de fuso horário nas configurações do aplicativo e depois alterá-lo na tela detalhes do evento. Ele está desativado por padrão, pois a maioria das pessoas não utiliza.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
+    <string name="app_short_description">Seja notificado dos momentos importantes de sua vida.</string>
     <string name="app_long_description">        Simple Calendar Pro é um calendário totalmente personalizável, offline, projetado para fazer exatamente o que um calendário deve fazer. <b>Sem recursos complicados, permissões desnecessárias e sem anúncios!</b>
 
         Se você está organizando eventos únicos ou recorrentes, aniversários, reuniões de negócios, compromissos ou qualquer outra coisa, Simple Calendar Pro torna <b>fácil de se manter organizado</b>. Com uma incrível variedade de <b>opções de personalização</b>, você pode personalizar lembretes de eventos, sons de notificação, widgets de calendário e aparência do aplicativo.

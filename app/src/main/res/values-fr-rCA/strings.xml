@@ -92,6 +92,7 @@
     <string name="not_going">Pas en cours</string>
     <string name="maybe_going">Peut-être en cours</string>
     <string name="invited">Invité</string>
+    <string name="enter_a_country">Entrez un pays ou un fuseau horaire</string>
     <string name="import_events">Importer des événements</string>
     <string name="export_events">Exporter des événements</string>
     <string name="import_events_from_ics">Importer des événements depuis un fichier .ics</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">Dernier utilisé</string>
     <string name="other_time">Autre moment</string>
     <string name="highlight_weekends">Souligner les week-ends sur certaines vues</string>
+    <string name="allow_changing_time_zones">Autoriser le changement du fuseau horaire</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seléctionner les calendriers à synchroniser</string>
     <string name="manage_synced_calendars">Gérer les calendriers synchronisés</string>
@@ -198,6 +200,9 @@ Dans le cas d\'un calendrier Google Agenda, l\'application officielle fera l\'af
     <string name="faq_3_title">Je vois les rappels visuels, mais n’entends aucun son. Que puis-je faire ?</string>
     <string name="faq_3_text">Pas seulement l\'affichage du rappel, mais la lecture de l\'audio est également énormément affectée par le système. Si vous n’entendez aucun son, essayez d’entrer dans les paramètres de l’application,
         en appuyant sur l\'option \"Flux audio utilisé par les rappels\" et en la modifiant. Si cela ne fonctionne toujours pas, vérifiez vos paramètres audio, si le flux particulier n’est pas mis en sourdine.</string>
+    <string name="faq_4_title">Est-ce que l\'application prend en charge les fuseaux horaires?</string>
+    <string name="faq_4_text">Oui. Par défaut tous les évènements sont créés dans votre fuseau horaire. Si vous voulez changer le fuseau horaire d\'un évènement,
+        vous devez d\'abord activer le sélectionneur de fuseau horaire dans les paramètre de l\'application, et le changer dans la section Détail de L\'évènement. Il est désactiver par défaut vu que la plupart des gens ne l\'utiliseront pas.</string>
     <string name="app_title">Simple Calendar Pro- Événements &amp; Rappels</string>
     <string name="app_short_description">Soyez informé des moments importants de votre vie.</string>
     <string name="app_long_description">Simple Calendar Pro est un calendrier hors ligne entièrement personnalisable conçu pour faire exactement ce que doit faire un calendrier. &lt;b&gt; Pas de fonctionnalités compliquées, d\'autorisations inutiles et pas de publicité! &lt;/ b&gt;

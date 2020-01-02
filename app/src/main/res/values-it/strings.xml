@@ -173,6 +173,7 @@
     <string name="synchronization_completed">Sincronizzazione completata</string>
     <string name="select_a_different_caldav_color">Seleziona un colore differente (potrebbe essere applicato solamente in locale)</string>
     <string name="insufficient_permissions">Non si hanno i permessi per scrivere nel calendario selezionato</string>
+    <string name="caldav_event_not_found">Evento non trovato. Abilita la sincronizzazione CalDAV per il calendario appropriato nelle impostazioni dell\'app.</string>
     <string name="monday_alt">Lunedì</string>
     <string name="tuesday_alt">Martedì</string>
     <string name="wednesday_alt">Mercoledì</string>
@@ -192,10 +193,13 @@
     <string name="faq_1_text">Le festività create in questo modo sono inseriti in eventi di tipo \"Festività\". Puoi andare in Impostazioni -&gt; Gestisci tipi di eventi,
         tenere premuto sul tipo desiderato ed eliminaro selezionando il cestino.</string>
     <string name="faq_2_title">Posso sincronizzare i miei eventi tramite Google Calendar, od altri servizi che supportano CalDAV?</string>
+    <string name="faq_2_text">Sì, basta attivare la \"Sincronizzazione CalDAV\" nelle impostazioni dell\'applicazione e selezionare i calendari che si desidera sincronizzare. Tuttavia, avrai bisogno di alcune app di terze parti che gestiscono la sincronizzazione tra il dispositivo e i server.
+        Se si desidera sincronizzare un calendario di Google, la loro app Calendario ufficiale sarà sufficiente. Per gli altri calendari sarà necessario un adattatore di sincronizzazione di terze parti, ad esempio DAVx5.</string>
     <string name="faq_3_title">Visualizzo i promemoria, ma non sento l\'audio. Cosa posso fare?</string>
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
     <string name="app_title">Semplice Calendario Pro - Eventi &amp; promemoria</string>
+    <string name="app_short_description">Ricevi notifiche riguardo i momenti importanti della tua vita.</string>
     <string name="app_long_description">        Simple Calendar Pro è un calendario offline completamente personalizzabile progettato per fare esattamente ciò che un calendario dovrebbe fare. <b>Nessuna funzionalità complicata, autorizzazioni inutili e nessuna pubblicità!</b>
 
         Che tu stia organizzando eventi singoli o ricorrenti, compleanni, anniversari, riunioni di lavoro, appuntamenti o qualsiasi altra cosa, Simple Calendar Pro lo rende <b>facile da organizzato</b>. Con una grande varietà di<b>opzioni di personalizzazione</b> puoi personalizzare i promemoria degli eventi, i suoni delle notifiche, i widget del calendario e l\'aspetto dell\'app.

@@ -92,7 +92,6 @@
     <string name="not_going">Не приду</string>
     <string name="maybe_going">Может быть приду</string>
     <string name="invited">Приглашен(-а)</string>
-    <string name="enter_a_country">Укажите страну или часовой пояс</string>
     <string name="import_events">Импорт событий</string>
     <string name="export_events">Экспорт событий</string>
     <string name="import_events_from_ics">Импорт событий из файла .ics</string>
@@ -162,7 +161,6 @@
     <string name="last_used_one">Последний использованный</string>
     <string name="other_time">Другое время</string>
     <string name="highlight_weekends">Выделите выходные в некоторых видах</string>
-    <string name="allow_changing_time_zones">Разрешить изменение часовых поясов событий</string>
     <string name="caldav">Синхронизация CalDAV</string>
     <string name="select_caldav_calendars">Выберите календари для синхронизации</string>
     <string name="manage_synced_calendars">Управление календарями для синхронизации</string>
@@ -200,8 +198,6 @@
     <string name="faq_3_title">Я вижу напоминания, но не слышу звука. Что можно сделать?</string>
     <string name="faq_3_text">Не только отображение напоминания, но и воспроизведение звука сильно зависит от системы. Если звук не слышен, откройти настройки приложения,
         выберите параметр \"Аудиопоток, используемый напоминаниями\" и измените его на другое значение. Если звук по-прежнему не будет слышен, проверьте в настройка устройства, что данный поток не отключён.</string>
-    <string name="faq_4_title">Приложение поддерживает часовые пояса?</string>
-    <string name="faq_4_text">Да, поддерживает. По умолчанию все события создаются в вашем текущем часовом поясе. Если вы хотите изменить часовой пояс событий, сначала вам нужно включить выбор часового пояса в настройках приложения, а затем изменить его на экране «Сведения о событии». По умолчанию он отключен, так как большинству людей это не нужно.</string>
     <string name="app_title">Simple Calendar Pro - События и напоминания</string>
     <string name="app_short_description">Получайте уведомления о важных моментах в вашей жизни.</string>
     <string name="app_long_description">        Simple Calendar Pro — это полностью настраиваемый автономный календарь, предназначенный для выполнения именно того, что должен делать календарь. <b>Нет сложных функций, ненужных разрешений и нет рекламы!</b>

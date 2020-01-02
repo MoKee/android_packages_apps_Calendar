@@ -92,7 +92,6 @@
     <string name="not_going">Не иде</string>
     <string name="maybe_going">Можда иде</string>
     <string name="invited">Позвани</string>
-    <string name="enter_a_country">Унесите земљу или временску зону</string>
     <string name="import_events">Увоз догађаја</string>
     <string name="export_events">Извоз Свх Догађаја</string>
     <string name="import_events_from_ics">Увоз догађаја из .ics датотеке</string>
@@ -162,7 +161,6 @@
     <string name="last_used_one">Задње корршћено</string>
     <string name="other_time">Друго време</string>
     <string name="highlight_weekends">Маркирај дане викенда у неким приказима</string>
-    <string name="allow_changing_time_zones">Дозволи промену догађаја временске зоне</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Изабери календаре за синхронизацију</string>
     <string name="manage_synced_calendars">Подесити синхронизоване календаре</string>
