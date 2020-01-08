@@ -88,7 +88,11 @@
     <string name="event_reminders">Termin-Erinnerungen</string>
     <string name="add_another_attendee">Anderen Teilnehmer hinzufügen</string>
     <string name="my_status">Mein Status:</string>
+    <string name="going">Teilnehmen?</string>
+    <string name="not_going">Nicht Teilnehmen?</string>
+    <string name="maybe_going">Vielleicht Teilnehmen?</string>
     <string name="invited">Eingeladen</string>
+    <string name="enter_a_country">Land oder Zeitzone eingeben</string>
     <string name="import_events">Termine importieren</string>
     <string name="export_events">Termine exportieren</string>
     <string name="import_events_from_ics">Termine aus .ics-Datei importieren</string>
@@ -156,6 +160,9 @@
     <string name="next_full_hour">Zur nächsten vollen Stunde</string>
     <string name="default_duration">Standarddauer</string>
     <string name="last_used_one">Zuletzt verwendet</string>
+    <string name="other_time">Sonstige Zeit</string>
+    <string name="highlight_weekends">Wochenenden bei einigen Ansichten hervorheben</string>
+    <string name="allow_changing_time_zones">Ändern der Zeitzonen für Ereignisse erlauben</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Kalender zur Synchronisierung auswählen</string>
     <string name="manage_synced_calendars">Synchronisierte Kalender verwalten</string>
@@ -168,6 +175,7 @@
     <string name="synchronization_completed">Synchronisation erfolgreich</string>
     <string name="select_a_different_caldav_color">Wähle eine andere Farbe (wird möglicherweise nur lokal angewendet)</string>
     <string name="insufficient_permissions">Du hast keine Erlaubnis den gewählten Kalender zu bearbeiten</string>
+    <string name="caldav_event_not_found">Ereignis nicht gefunden. Bitte aktivieren Sie die CalDAV-Synchronisation für den passenden Kalender in den App-Einstellungen.</string>
     <string name="monday_alt">Montag</string>
     <string name="tuesday_alt">Dienstag</string>
     <string name="wednesday_alt">Mittwoch</string>
@@ -187,7 +195,55 @@
     <string name="faq_1_text">Die über diesen Weg erstellten Feiertage sind als Termintyp \"Feiertage\" deklariert. 
         Du kannst in den Einstellungen -&gt; Termintypen verwalten auf den Termintyp gedrückt halten und über das Papierkorbsymbol löschen.</string>
     <string name="faq_2_title">Kann ich meine Termine über Google Kalender oder andere CalDAV unterstützende Dienste synchronisieren?</string>
+    <string name="faq_2_text">Ja, aktiviere \"CalDAV-Synchronisierung\" in den Einstellungen und wähle die Kalender aus, die du synchronisieren willst. 
+        Jedoch benötigst du eine separate App, die Synchronisierung zwischen Gerät und Servern handhabt. Falls du einen Google Kalender synchronisieren willst, kann die offizielle Kalender-App dies übernehmen.
+        Für andere Kalender benötigst du einen Synchronisierungsadapter, wie z. B. DAVx5.</string>
     <string name="faq_3_title">Ich sehe die Erinnerungen, aber ich höre keinen Ton. Was kann ich tun?</string>
     <string name="faq_3_text">Erinnerungen nicht nur anzeigen, sondern Töne dazu abspielen ist ebenfalls stark vom jeweiligen (Android) System abhängig. Wenn Du keine Töne hörst, versuche in den App Einstellungen,
         die Option \"Audio-Ausgabekanal für Erinnerungen\" anzuklicken und eine andere Option auszuwählen. Wenn das immer noch nichts ändert, prüfe Deine Lautstärkeeinstellungen. of der gewählte Kanal nicht auf lautlos steht.</string>
+    <string name="faq_4_title">Unterstützt die App Zeitzonen?</string>
+    <string name="faq_4_text">Ja, das tut es. Standardmäßig werden alle Ereignisse in Ihrer aktuellen Zeitzone erstellt. Wenn Sie die Zeitzone einer Veranstaltung ändern möchten
+        Sie müssen zuerst die Zeitzonen-Auswahl in den App-Einstellungen aktivieren, dann ändern Sie es auf dem Bildschirm Ereignisdetails. Es ist standardmäßig deaktiviert, da die meisten Leute es nicht brauchen.</string>
+    <string name="app_title">Simple Calendar Pro - Ereignisse &amp; Erinnerungen</string>
+    <string name="app_short_description">Werde über die wichtigen Momente in deinem Leben informiert.</string>
+    <string name="app_long_description">        Simple Calendar Pro ist vollständig anpassbar, Offline-Kalender, der genau das macht, was ein Kalender tun soll. <b>Keine komplizierten Funktionen, unnötige Berechtigungen und keine Werbung!</b>
+
+        Egal, ob Sie einzelne oder wiederkehrende Veranstaltungen, Geburtstage, Jubiläen, organisieren Business-Meetings, Termine oder alles andere macht den Simple Calendar Pro <b>einfach zu organisieren</b>. Mit einer unglaublichen Vielfalt an <b>Anpassungsoptionen</b> können Sie Ereignis-Erinnerungen, Benachrichtigungstöne, Kalender-Widgets und wie die App aussieht.
+
+        Tägliche, wöchentliche und monatliche Aufrufe machen das Überprüfen Ihrer bevorstehenden Termine &amp; zum Kinderspiel. Sie können alles sogar als eine einfache Liste von Veranstaltungen ansehen, anstatt in der Kalenderansicht damit Sie <b>genau wissen, was in Ihrem Leben kommt und wann.</b>
+
+        ------------------------------------------
+        <b>Simple Calendar Pro – Features &amp; Vorteile</b>
+        ----------------------------------------------------------
+
+        ✔ Keine Anzeigen oder lästige Popups
+        ✔ Kein Internet Zugang nötig, mehr Privatsphäre &amp; Sicherheit
+        ✔ Nur die absoluten minimalen Berechtigungen werden benötigt
+        ✔ Schwerpunkt auf Einfachheit – tut, was ein Kalender tun muss!
+        ✔ Open Source
+        ✔ Voll anpassbare Themes &amp; Kalender / Event Widgets
+        ✔ In 29 Sprachen übersetzt
+        ✔ Exportiere Einstellungen nach .xt-Dateien, die auf ein anderes Gerät importiert werden können
+        ✔ Unterstützt CalDAV-Kalender-Synchronisation, um Ereignisse zwischen Geräten zu synchronisieren
+        ✔ Täglich, Wöchentlich, Monatlich, Jährlich &amp; Ereignisaufrufe im Kalender
+        ✔ Unterstützt den Export von &amp; Events über .cs Dateien
+        ✔ Setze mehrere Ereignis-Erinnerungen, Anpassen von Ereigniserinnerung Ton und Vibration
+        ✔ Schlummerfunktion für Erinnerungen
+        ✔ Einfach Feiertage, Geburtstage, Jubiläen &amp; Termine hinzufügen
+        ✔ Ereignisse anpassen – Startzeit, Dauer, Erinnerungen etc.
+        ✔ Fügen Sie Teilnehmer jeder Veranstaltung hinzu
+        ✔ Verwenden als persönlicher Kalender oder als Geschäftskalender
+        ✔ Wählen Sie zwischen Erinnerungen &amp; E-Mail-Benachrichtigungen, um über ein Ereignis informiert zu werden
+
+        LADE DIR DIE SIMPLE CALENDAR PRO APP – DER SIMPLE OFFLINE KALENDER OHNE WERBUNG!
+
+        <b>Schau dir die komplette Suite der einfachen Tools hier an:</b>
+        https://www.implemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

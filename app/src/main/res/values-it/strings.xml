@@ -92,6 +92,7 @@
     <string name="not_going">Non andare</string>
     <string name="maybe_going">Forse andando</string>
     <string name="invited">Invitato</string>
+    <string name="enter_a_country">Immettere un paese o un fuso orario</string>
     <string name="import_events">Importa eventi</string>
     <string name="export_events">Esporta eventi</string>
     <string name="import_events_from_ics">Importa eventi da un file .ics</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">Usato l\'ultima volta</string>
     <string name="other_time">Altra volta</string>
     <string name="highlight_weekends">Evidenziare i fine settimana su alcune viste</string>
+    <string name="allow_changing_time_zones">Consenti la modifica del fuso orario degli eventi</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleziona un calendario da sincronizzare</string>
     <string name="manage_synced_calendars">Gestisci i calendari sincronizzati</string>
@@ -198,6 +200,8 @@
     <string name="faq_3_title">Visualizzo i promemoria, ma non sento l\'audio. Cosa posso fare?</string>
     <string name="faq_3_text">Non solo visualizzare l\'attuale promemoria, ma anche riprodurre l\'audio è un lavoro prettamente del sistema. Se non senti alcun suono, prova ad andare nelle impostazioni dell\'applicazione,
         premi l\'opzione \"Canale audio utilizzato per il promemoria\" e cambia il canale. Se ancora non funziona, controlla le tue impostazioni dell\'audio, in particolare se il canale è stato mutato.</string>
+    <string name="faq_4_title">L\'app supporta i fusi orari?</string>
+    <string name="faq_4_text">Sì, lo supporta. Per impostazione predefinita, tutti gli eventi vengono creati nel tuo fuso orario corrente. Se vuoi cambiare il fuso orario di un evento, dovrai prima abilitare il selettore del fuso orario nelle impostazioni dell\'app, quindi cambialo nella schermata Dettagli Eventi. L\'impostazione è disabilitata di default perché la maggior parte delle persone non ne ha bisogno.</string>
     <string name="app_title">Semplice Calendario Pro - Eventi &amp; promemoria</string>
     <string name="app_short_description">Ricevi notifiche riguardo i momenti importanti della tua vita.</string>
     <string name="app_long_description">        Simple Calendar Pro è un calendario offline completamente personalizzabile progettato per fare esattamente ciò che un calendario dovrebbe fare. <b>Nessuna funzionalità complicata, autorizzazioni inutili e nessuna pubblicità!</b>
