@@ -12,7 +12,7 @@
     <string name="no_upcoming_events">Sembra che tu non abbia nessun evento imminente.</string>
     <string name="go_to_today">Vai a oggi</string>
     <string name="go_to_date">Vai alla data</string>
-    <string name="upgraded_from_free">Hey,\n\nsembra che tu abbia fatto l\'upgrade dalla vecchia app gratuita. È necessario migrare manualmente gli eventi memorizzati localmente esportandoli in un file .ics, quindi importando. Puoi trovare entrambi i pulsanti di esportazione / importazione nel menu principale della schermata. \n\nÈ quindi possibile disinstallare la vecchia versione, che ha un pulsante \"Aggiorna a Pro\" nella parte superiore delle impostazioni dell\'app. Dovrai solo ripristinare le impostazioni dell\'app.\n\nGrazie!</string>
+    <string name="upgraded_from_free">Hey,\n\nsembra che tu abbia fatto l\'upgrade dalla vecchia app gratuita. È necessario migrare manualmente gli eventi memorizzati localmente esportandoli in un file .ics e successivamente importarlo. Puoi trovare entrambi i pulsanti di esportazione/importazione nel menu principale della schermata. \n\nÈ quindi possibile disinstallare la vecchia versione, che ha un pulsante \"Aggiorna a Pro\" nella parte superiore delle impostazioni dell\'app. Quindi dovrai solo ripristinare le impostazioni dell\'app.\n\nGrazie!</string>
     <string name="widget_monthly">Calendario mensile</string>
     <string name="widget_list">Lista eventi calendario</string>
     <string name="event">Evento</string>

@@ -162,7 +162,7 @@
     <string name="last_used_one">Usado por último</string>
     <string name="other_time">Outra hora</string>
     <string name="highlight_weekends">Destaque fins de semana em algumas visualizações</string>
-    <string name="allow_changing_time_zones">Permitir alterar fuso horário do alerta</string>
+    <string name="allow_changing_time_zones">Permitir alterar fuso horário do evento</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecione calendários para sincronizar</string>
     <string name="manage_synced_calendars">Gerenciar calendários sincronizados</string>
