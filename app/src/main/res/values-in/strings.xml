@@ -68,7 +68,7 @@
     <string name="repeat_every_f">Ulangi setiap</string>
     <string name="every_f">Setiap</string>
     <string name="first_f">pertama</string>
-    <string name="second_f">detik</string>
+    <string name="second_f">kedua</string>
     <string name="third_f">ketiga</string>
     <string name="fourth_f">keempat</string>
     <string name="last_f">terakhir</string>
@@ -101,7 +101,7 @@
     <string name="include_event_types">Sertakan jenis acara</string>
     <string name="filename_without_ics">Nama file (tanpa .ics)</string>
     <string name="override_event_types">Ganti jenis acara dalam file</string>
-    <string name="title">Judul</string>
+    <string name="title">Nama</string>
     <string name="location">Lokasi</string>
     <string name="description">Deskripsi</string>
     <string name="all_day">Sepanjang hari</string>

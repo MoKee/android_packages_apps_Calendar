@@ -29,7 +29,6 @@
     <string name="months_raw">meses</string>
     <string name="years_raw">anos</string>
     <string name="repeat_till">Repetir ata</string>
-    <string name="forever">Sempre</string>
     <string name="event_is_repeatable">O evento é repetible</string>
     <string name="selection_contains_repetition">A seleción contén eventos recurrentes</string>
     <string name="delete_one_only">Eliminar só o evento selecionado</string>
@@ -56,9 +55,9 @@
     <string name="last_m">último</string>
     <string name="repeat_every_f">Repetir cada</string>
     <string name="every_f">Cada</string>
-    <string name="first_f">primero</string>
+    <string name="first_f">primeiro</string>
     <string name="second_f">segundo</string>
-    <string name="third_f">tercero</string>
+    <string name="third_f">terceiro</string>
     <string name="fourth_f">cuarto</string>
     <string name="last_f">último</string>
     <string name="birthdays">Cumpleanos</string>

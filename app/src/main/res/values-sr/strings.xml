@@ -37,7 +37,7 @@
     <string name="months_raw">месеци</string>
     <string name="years_raw">годинe(а)</string>
     <string name="repeat_till">Понављај до</string>
-    <string name="forever">Стално понављај</string>
+    <string name="forever">Заувек</string>
     <string name="event_is_repeatable">Догађај може да се понавља</string>
     <string name="selection_contains_repetition">Ваш одабир подразумева понављање догађаја</string>
     <string name="delete_one_only">Обирсати само одабрану опцију</string>
@@ -132,7 +132,7 @@
     <string name="vibrate">Вибрирај код пријема обавештења подсетника</string>
     <string name="reminder_sound">Звук подсетника</string>
     <string name="no_ringtone_picker">Није пронађена ниједна апликација која може да постави мелодију звона</string>
-    <string name="no_ringtone_selected">Ниједно</string>
+    <string name="no_ringtone_selected">Ниједан</string>
     <string name="day_end_before_start">Дан се не може завршити раније него што започне</string>
     <string name="caldav_sync">CalDAV sync</string>
     <string name="event_lists">Списак догађаја</string>

@@ -37,7 +37,7 @@
     <string name="months_raw">mois</string>
     <string name="years_raw">années</string>
     <string name="repeat_till">Répéter jusqu\'à</string>
-    <string name="forever">Pour toujours</string>
+    <string name="forever">Tous le temps</string>
     <string name="event_is_repeatable">L\'événement est répétable</string>
     <string name="selection_contains_repetition">La sélection contient des événements avec répétition</string>
     <string name="delete_one_only">Supprimer seulement l\'occurrence sélectionnée</string>
@@ -103,7 +103,7 @@
     <string name="filename_without_ics">Nom de fichier (sans .ics)</string>
     <string name="override_event_types">Remplacer les types d\'événement dans le fichier</string>
     <string name="title">Titre</string>
-    <string name="location">Lieu</string>
+    <string name="location">Emplacement</string>
     <string name="description">Description</string>
     <string name="all_day">Journée</string>
     <string name="week">Semaine</string>
@@ -132,7 +132,7 @@
     <string name="vibrate">Vibrer à la notification de rappel</string>
     <string name="reminder_sound">Son de rappel</string>
     <string name="no_ringtone_picker">Aucune application capable de configurer la sonnerie trouvée</string>
-    <string name="no_ringtone_selected">Aucune</string>
+    <string name="no_ringtone_selected">Aucun</string>
     <string name="day_end_before_start">Le jour ne peut pas se terminer plus tôt qu\'il ne débute</string>
     <string name="caldav_sync">Synchronisation CalDAV</string>
     <string name="event_lists">Listes d\'événements</string>

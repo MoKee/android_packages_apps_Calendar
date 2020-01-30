@@ -102,7 +102,7 @@
     <string name="include_event_types">Az eseménytípusokat is tartalmazza</string>
     <string name="filename_without_ics">Fájlnév ( .ics nélkül )</string>
     <string name="override_event_types">Írja felül a fájlban az eseménytípusokat</string>
-    <string name="title">Név</string>
+    <string name="title">Cím</string>
     <string name="location">Hely</string>
     <string name="description">Leírás</string>
     <string name="all_day">Egész napos</string>

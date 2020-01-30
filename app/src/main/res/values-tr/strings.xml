@@ -37,7 +37,7 @@
     <string name="months_raw">ay</string>
     <string name="years_raw">yıl</string>
     <string name="repeat_till">Şu kadar tekrarla:</string>
-    <string name="forever">Sonsuza kadar</string>
+    <string name="forever">Süresiz</string>
     <string name="event_is_repeatable">Etkinlik tekrarlanabilir</string>
     <string name="selection_contains_repetition">Seçim tekrarlanan etkinlikleri içeriyor</string>
     <string name="delete_one_only">Yalnızca seçilen etkinlikleri sil</string>
@@ -131,7 +131,7 @@
     <string name="vibrate">Hatırlatma bildiriminde titre</string>
     <string name="reminder_sound">Hatırlatma sesi</string>
     <string name="no_ringtone_picker">Zil sesi ayarlayabilen uygulama yok</string>
-    <string name="no_ringtone_selected">Hiçbiri</string>
+    <string name="no_ringtone_selected">Yok</string>
     <string name="day_end_before_start">Gün başladığından daha erken bitemez</string>
     <string name="caldav_sync">CalDAV senkronizasyonu</string>
     <string name="event_lists">Etkinlik listeleri</string>

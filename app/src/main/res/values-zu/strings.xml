@@ -5,5 +5,5 @@
     <string name="location">Indawo</string>
     <string name="description">Incazelo</string>
     <string name="color">Umbala</string>
-    <string name="no_ringtone_selected">Akunalutho</string>
+    <string name="no_ringtone_selected">Lutho</string>
 </resources>

@@ -6,5 +6,5 @@
     <string name="location">ສະຖານທີ່</string>
     <string name="description">ຄຳອະທິບາຍ</string>
     <string name="color">ສີ</string>
-    <string name="no_ringtone_selected">ບໍ່ໃຊ້</string>
+    <string name="no_ringtone_selected">ບໍ່ມີ</string>
 </resources>

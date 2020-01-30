@@ -65,12 +65,12 @@
     <string name="third_m">třetí</string>
     <string name="fourth_m">čtvrtý</string>
     <string name="last_m">poslední</string>
-    <string name="repeat_every_f">Opakovat každou</string>
+    <string name="repeat_every_f">Opakovat každý</string>
     <string name="every_f">Každý</string>
     <string name="first_f">první</string>
-    <string name="second_f">druhou</string>
+    <string name="second_f">druhý</string>
     <string name="third_f">třetí</string>
-    <string name="fourth_f">čtvrtou</string>
+    <string name="fourth_f">čtvrtý</string>
     <string name="last_f">poslední</string>
     <string name="birthdays">Narozeniny</string>
     <string name="add_birthdays">Přidat narozeniny z kontaktů</string>
@@ -92,6 +92,7 @@
     <string name="not_going">Nepřijdu</string>
     <string name="maybe_going">Možná přijdu</string>
     <string name="invited">Pozván/a</string>
+    <string name="enter_a_country">Zadejte zemi nebo časové pásmo</string>
     <string name="import_events">Import událostí</string>
     <string name="export_events">Export událostí</string>
     <string name="import_events_from_ics">Importovat kalendář ze souboru .ics</string>
@@ -131,7 +132,7 @@
     <string name="vibrate">Vibrovat při připomínce</string>
     <string name="reminder_sound">Zvuk připomínky</string>
     <string name="no_ringtone_picker">Nebyla nalezena žádná aplikace, která by mohla nastavit vyzvánění</string>
-    <string name="no_ringtone_selected">Žádná</string>
+    <string name="no_ringtone_selected">Žádný</string>
     <string name="day_end_before_start">Den nemůže skončit dřív, než začne</string>
     <string name="caldav_sync">CalDAV synchronizace</string>
     <string name="event_lists">Seznamy událostí</string>
@@ -144,9 +145,9 @@
     <string name="dim_past_events">Ztlumit minulé události</string>
     <string name="events">Události</string>
     <string name="reminder_stream">Zvukový kanál používaný připomínkami</string>
-    <string name="system_stream">Systémový</string>
-    <string name="alarm_stream">Výstražný</string>
-    <string name="notification_stream">Oznamovací</string>
+    <string name="system_stream">Systém</string>
+    <string name="alarm_stream">Budík</string>
+    <string name="notification_stream">Oznámení</string>
     <string name="ring_stream">Vyzváněcí</string>
     <string name="use_last_event_reminders">Použijte poslední připomenuté události jako výchozí pro nové události</string>
     <string name="default_reminder_1">Výchozí připomenutí 1</string>
@@ -161,6 +162,7 @@
     <string name="last_used_one">Poslední použitá</string>
     <string name="other_time">Jiný čas</string>
     <string name="highlight_weekends">Zvýraznit víkendy na některých pohledech</string>
+    <string name="allow_changing_time_zones">Povolit změnu časových pásem událostí</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Vybrat kalendáře k synchronizaci</string>
     <string name="manage_synced_calendars">Správa synchronizovaných kalendářů</string>
@@ -193,10 +195,16 @@
     <string name="faq_1_text">Svátky vytvořené touto cestou jsou vloženy s novým typem události \"Svátky\". Odstranit jej můžete přes: Nastavení -&gt; Správa typů událostí -&gt;
         dlouze podržte daný typ události a stisknete tlačítko s ikonou koše pro odstranění.</string>
     <string name="faq_2_title">Můžu synchronizovat své události přes Google Kalendář nebo přes jinou službu podporující CalDAV?</string>
+    <string name="faq_2_text">Ano, zapnutím \"CalDAV sync\" v nastavení aplikace a vybráním kalendáře se kterým se chcete synchronizovat. Budete ovšem potřebovat nějakou aplikaci třetí strany pro samotné synchronizovaní mezi zařízením a servery.
+        Pokud chcete synchronizovat Google kalendář, tak oficiální aplikace Google toto zvládne. Pro jiné kalendáře potřebujete synchronizační adaptér třetí strany, například DAVx5.</string>
     <string name="faq_3_title">Vizuálně vidím připomínku, ale neslyším žádný zvuk. Co mám dělat?</string>
     <string name="faq_3_text">Nejenom zobrazování aktuální připomínky, ale i přehrávání zvuku je dost ovlivněno operačním systémem. Pokud neslyšíte žádný zvuk, zkuste jít do nastavení aplikace,
         vyberte: \"Zvuk upomínky\" a změňte na něco jiného. Pokud zvuk stále nefunguje, zkontrolujte zda není zvuk vypnut v nastavení vašeho systému.</string>
+    <string name="faq_4_title">Podporuje aplikace časová pásma?</string>
+    <string name="faq_4_text">Ano. Ve výchozím nastavení jsou všechny události vytvářeny v aktuálním časovém pásmu. Pokud chcete změnit časové pásmo událostí,
+        nejprve musíte povolit výběr časového pásma v nastavení aplikace a poté jej změnit na obrazovce Podrobnosti události. Ve výchozím nastavení je to zakázáno, protože to většina lidí nebude potřebovat.</string>
     <string name="app_title">Simple Calendar Pro - Události &amp; připomenutí</string>
+    <string name="app_short_description">Buďte upozorněni na důležité momenty ve vašem životě.</string>
     <string name="app_long_description">        Simple Calendar Pro je přizpůsobitelný offline kalendář vytvořen přesně na to, co by kalendáře měli zvládat. &lt;b&gt;Nenacházejí se zde žádné nepotřebné funkce, nepotřebná oprávnění, ani reklamy!&lt;/b&gt;
 
         Pokud pořádáte jednoduchou nebo opakující se událost, narozeniny, výročí, pracovní setkání, nebo cokoli jiného, Simple Calendar Pro vám &lt;b&gt;ulehčí práci&lt;/b&gt;. S velkou mírou &lt;b&gt;přizpůsobitelnosti&lt;/b&gt; můžete měnit připomínky událostí, zvuky připomínek, widgety kalendáře a celkový vzhled aplikace.

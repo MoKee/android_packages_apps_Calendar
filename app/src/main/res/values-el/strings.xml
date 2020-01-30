@@ -31,7 +31,6 @@
     <string name="monthly">Μηνιαία</string>
     <string name="yearly">Ετήσια</string>
     <string name="repeat_till">Επανάληψη μέχρι</string>
-    <string name="forever">Για πάντα</string>
     <string name="event_is_repeatable">Η εκδήλωση είναι επαναλαμβανόμενη</string>
     <string name="selection_contains_repetition">Η επιλογή περιέχει επαναλαμβανόμενες εκδηλώσεις</string>
     <string name="delete_one_only">Διαγράψτε μόνο το επιλεγμένο περιστατικό</string>
@@ -115,7 +114,7 @@
     <string name="vibrate">Δόνηση στην ειδοποίηση υπενθύμισης</string>
     <string name="reminder_sound">Ήχος υπενθύμισης</string>
     <string name="no_ringtone_picker">Δεν υπάρχει εφαρμογή που να μπορεί να βρει ήχους</string>
-    <string name="no_ringtone_selected">Χωρίς</string>
+    <string name="no_ringtone_selected">Κανένα</string>
     <string name="day_end_before_start">Η ημέρα δεν μπορεί να τελειώσει νωρίτερα από ότι ξεκινά</string>
     <string name="event_lists">Λίστες εκδηλώσεων</string>
     <string name="display_past_events">Εμφάνιση προηγούμενων συμβάντων</string>
@@ -128,8 +127,7 @@
     <string name="events">Εκδηλώσεις</string>
     <string name="reminder_stream">Ροή ήχου που χρησιμοποιείται από τις υπενθυμίσεις</string>
     <string name="system_stream">Σύστημα</string>
-    <string name="alarm_stream">Αφύπνιση</string>
-    <string name="notification_stream">Ειδοποίηση</string>
+    <string name="alarm_stream">Ξυπνητήρι</string>
     <string name="ring_stream">Κουδούνισμα</string>
     <string name="select_caldav_calendars">Επιλέξτε ημερολόγια για συγχρονισμό</string>
     <string name="manage_synced_calendars">Διαχείριση συγχρονισμένων ημερολογίων</string>

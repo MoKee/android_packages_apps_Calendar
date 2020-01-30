@@ -91,7 +91,7 @@
     <string name="include_event_types">Уключаць тыпы падзей</string>
     <string name="filename_without_ics">Імя файла (без .ics)</string>
     <string name="override_event_types">Перавызначаць тыпы падзей у файле</string>
-    <string name="title">Назва</string>
+    <string name="title">Па назве</string>
     <string name="location">Месцазнаходжанне</string>
     <string name="description">Апісанне</string>
     <string name="all_day">Увесь дзень</string>
@@ -115,7 +115,7 @@
     <string name="importing_some_holidays_failed">Не ўдалося імпартаваць некаторыя падзеі</string>
     <string name="importing_holidays_failed">Не ўдалося імпартаваць святы</string>
     <string name="manage_event_types">Кіраванне тыпамі падзей</string>
-    <string name="no_ringtone_selected">Нічога</string>
+    <string name="no_ringtone_selected">Няма</string>
     <string name="system_stream">Сістэма</string>
     <string name="alarm_stream">Будзільнік</string>
     <string name="notification_stream">Апавяшчэнне</string>

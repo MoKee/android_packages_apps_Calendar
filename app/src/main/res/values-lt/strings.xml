@@ -33,7 +33,6 @@
     <string name="months_raw">Mėnesiai</string>
     <string name="years_raw">Metai</string>
     <string name="repeat_till">Kartoti iki</string>
-    <string name="forever">Visada</string>
     <string name="event_is_repeatable">Įvykis pakartojamas</string>
     <string name="selection_contains_repetition">Pasirinkimas susideda iš pasikartojančių įvykių</string>
     <string name="delete_one_only">Ištrinti tik pasirinktą įvykį</string>
@@ -87,7 +86,7 @@
     <string name="filename_without_ics">Bylos pavadinimas (be .ics)</string>
     <string name="title">Pavadinimas</string>
     <string name="location">Vieta</string>
-    <string name="description">Apibūdinimas</string>
+    <string name="description">Aprašas</string>
     <string name="all_day">Visos dienos</string>
     <string name="week">Savaitė</string>
     <string name="event_types">Įvykių tipai</string>
@@ -133,13 +132,13 @@
     <string name="editing_calendar_failed">Kalendoriaus redagavimas nepavyko</string>
     <string name="syncing">Sinchronizuojama…</string>
     <string name="synchronization_completed">Sinchronizacija baigta</string>
-    <string name="monday_alt">Pirmadienį</string>
-    <string name="tuesday_alt">Antradienį</string>
-    <string name="wednesday_alt">Trečiadienį</string>
-    <string name="thursday_alt">Ketvirtadienį</string>
-    <string name="friday_alt">Penktadienį</string>
-    <string name="saturday_alt">Šeštadienį</string>
-    <string name="sunday_alt">Sekmadienį</string>
+    <string name="monday_alt">Pirmadienis</string>
+    <string name="tuesday_alt">Antradienis</string>
+    <string name="wednesday_alt">Trečiadienis</string>
+    <string name="thursday_alt">Ketvirtadienis</string>
+    <string name="friday_alt">Penktadienis</string>
+    <string name="saturday_alt">Šeštadienis</string>
+    <string name="sunday_alt">Sekmadienis</string>
     <string name="sample_title_1">Treniruotė</string>
     <string name="sample_description_1">Kojų diena</string>
     <string name="sample_title_2">Susitikimas su Jonu</string>

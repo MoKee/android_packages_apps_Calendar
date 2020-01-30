@@ -92,8 +92,8 @@
     <string name="include_event_types">Vključi vrste dogodkov</string>
     <string name="filename_without_ics">Ime datoteke (brez .ics)</string>
     <string name="override_event_types">Preglasi vrste dogodkov v datoteki</string>
-    <string name="title">Naslov</string>
-    <string name="location">Mesto</string>
+    <string name="title">Naziv</string>
+    <string name="location">Lokacija</string>
     <string name="description">Opis</string>
     <string name="all_day">Ves dan</string>
     <string name="week">Teden</string>

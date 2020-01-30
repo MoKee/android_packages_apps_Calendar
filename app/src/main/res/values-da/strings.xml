@@ -35,7 +35,6 @@
     <string name="months_raw">måneder</string>
     <string name="years_raw">år</string>
     <string name="repeat_till">Gentag indtil</string>
-    <string name="forever">Ingen slutdato</string>
     <string name="event_is_repeatable">Begivenheden kan gentages</string>
     <string name="selection_contains_repetition">Valget indeholder gentagne begivenheder</string>
     <string name="delete_one_only">Slet kun denne forekomst</string>
@@ -91,7 +90,7 @@
     <string name="filename_without_ics">Filnavn (uden .ics)</string>
     <string name="override_event_types">Overskriv begivenhedstyper i filen</string>
     <string name="title">Titel</string>
-    <string name="location">Sted</string>
+    <string name="location">Placering</string>
     <string name="description">Beskrivelse</string>
     <string name="all_day">Hele dagen</string>
     <string name="week">Uge</string>
@@ -132,7 +131,7 @@
     <string name="dim_past_events">Nedton gamle begivenheder</string>
     <string name="events">Begivenheder</string>
     <string name="reminder_stream">Audio stream anvendt af påmindelser</string>
-    <string name="notification_stream">Notifikation</string>
+    <string name="notification_stream">Underretning</string>
     <string name="default_reminder_1">Påmindelse 1</string>
     <string name="default_reminder_2">Påmindelse 2</string>
     <string name="default_reminder_3">Påmindelse 3</string>

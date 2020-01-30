@@ -104,7 +104,7 @@
     <string name="override_event_types">覆寫檔案內的活動類型</string>
     <string name="title">標題</string>
     <string name="location">位置</string>
-    <string name="description">描述</string>
+    <string name="description">說明</string>
     <string name="all_day">全天</string>
     <string name="week">週數</string>
     <string name="event_types">活動類型</string>
