@@ -3,7 +3,7 @@
 <resources>
     <string name="title">ចំណង​ជើង</string>
     <string name="location">ទីកន្លែង</string>
-    <string name="description">ពណ៌នា</string>
+    <string name="description">ការ​ពិពណ៌នា</string>
     <string name="color">ពណ៌</string>
     <string name="no_ringtone_selected">គ្មាន</string>
 </resources>

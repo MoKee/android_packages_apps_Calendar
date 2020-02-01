@@ -92,7 +92,7 @@
     <string name="filename_without_ics">ಕಡತದ ಹೆಸರು (.ics ಹೊರತುಪಡಿಸಿ)</string>
     <string name="override_event_types">ಕಡತದಲ್ಲಿಯ ಕಾರ್ಯಕ್ರಮಗಳ ಮಾದರಿಗಳನ್ನು ಅತಿಕ್ರಮಿಸು</string>
     <string name="title">ಶೀರ್ಷಿಕೆ</string>
-    <string name="location">ಸ್ಥಾನ</string>
+    <string name="location">ಸ್ಥಳ</string>
     <string name="description">ವಿವರಣೆ</string>
     <string name="all_day">ಪೂರ್ಣ-ದಿನ</string>
     <string name="week">ವಾರ</string>

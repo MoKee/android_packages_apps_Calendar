@@ -132,7 +132,7 @@
     <string name="vibrate">Vibreeri kui one meeldetuletuse teatis</string>
     <string name="reminder_sound">Meeldetuletuse heli</string>
     <string name="no_ringtone_picker">Ei leitud ühtegi rakendust, mis võimaldaks leida helinat</string>
-    <string name="no_ringtone_selected">Puudub</string>
+    <string name="no_ringtone_selected">Mitte ühtegi</string>
     <string name="day_end_before_start">Päev ei saa lõppeda varem kui see algab</string>
     <string name="caldav_sync">CalDAV sünkroonimine</string>
     <string name="event_lists">Sündmuste nimekirjad</string>

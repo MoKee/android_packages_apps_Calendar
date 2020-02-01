@@ -103,8 +103,8 @@
     <string name="filename_without_ics">文件名（不包含 .ics）</string>
     <string name="override_event_types">重写文件内的活动类型</string>
     <string name="title">标题</string>
-    <string name="location">位置</string>
-    <string name="description">说明</string>
+    <string name="location">地址</string>
+    <string name="description">描述</string>
     <string name="all_day">全天</string>
     <string name="week">周</string>
     <string name="event_types">活动类型</string>

@@ -33,6 +33,7 @@
     <string name="months_raw">aylar</string>
     <string name="years_raw">illər</string>
     <string name="repeat_till">Bu vaxta qədər təkrarla</string>
+    <string name="forever">Sonsuz</string>
     <string name="event_is_repeatable">Bu hadisə təkrarlanabilər</string>
     <string name="selection_contains_repetition">Seçim təkrarlanan hadisələr ehtiva edir</string>
     <string name="delete_one_only">Yalnız seçilmiş hadisəni sil</string>
@@ -89,7 +90,7 @@
     <string name="override_event_types">Faylın içərisində hadisə tiplərini üstünə yaz</string>
     <string name="title">Başlıq</string>
     <string name="location">Məkan</string>
-    <string name="description">Təsvir</string>
+    <string name="description">Əlavələr</string>
     <string name="all_day">Bütün-gün</string>
     <string name="week">Həftə</string>
     <string name="event_types">Hadisə tipləri</string>
@@ -117,7 +118,7 @@
     <string name="vibrate">Xatırladıcı bildirişində vibrasiya et</string>
     <string name="reminder_sound">Xatırladıcı səsi</string>
     <string name="no_ringtone_picker">Zəng səsi üçün heçbir tətbiq tapılmadı</string>
-    <string name="no_ringtone_selected">Heç biri</string>
+    <string name="no_ringtone_selected">Yoxdur</string>
     <string name="day_end_before_start">Gün başlamazdan əvvəl qurtara bilməz</string>
     <string name="caldav_sync">CalDAV sinxronizasiya</string>
     <string name="event_lists">Hadisə siyahıları</string>
@@ -130,6 +131,9 @@
     <string name="dim_past_events">Keçmiş hadisələri qaralt</string>
     <string name="events">Hadisələr</string>
     <string name="reminder_stream">Xatırladıcılar tərəfindən işlədilən səs axışı</string>
+    <string name="system_stream">Sistem</string>
+    <string name="alarm_stream">Zəng</string>
+    <string name="notification_stream">Bildiriş</string>
     <string name="ring_stream">Zəng səsi</string>
     <string name="select_caldav_calendars">Sinxronlaşdırmaq üçün təqvim seçin</string>
     <string name="manage_synced_calendars">Sinxronlaşdırılmış təqvimləri idarə et</string>
@@ -140,10 +144,10 @@
     <string name="editing_calendar_failed">Təqvimi dəyişmək alınmadı</string>
     <string name="syncing">Sinxronlaşdırılır…</string>
     <string name="synchronization_completed">Sinxronlaşma bitdi</string>
-    <string name="monday_alt">Bazar Ertəsi</string>
-    <string name="tuesday_alt">Çərşənbə Axşamı</string>
+    <string name="monday_alt">Bazar ertəsi</string>
+    <string name="tuesday_alt">Çərşənbə axşamı</string>
     <string name="wednesday_alt">Çərşənbə</string>
-    <string name="thursday_alt">Cümə Axşamı</string>
+    <string name="thursday_alt">Cümə axşamı</string>
     <string name="friday_alt">Cümə</string>
     <string name="saturday_alt">Şənbə</string>
     <string name="sunday_alt">Bazar</string>

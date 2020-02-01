@@ -3,8 +3,8 @@
 <resources>
     <string name="app_launcher_name">تقویم</string>
     <string name="title">عنوان</string>
-    <string name="location">موقعیت مکانی</string>
-    <string name="description">توضیح</string>
+    <string name="location">مکان</string>
+    <string name="description">توصیف</string>
     <string name="color">رنگ</string>
     <string name="no_ringtone_selected">هیچ‌کدام</string>
 </resources>

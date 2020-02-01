@@ -34,6 +34,7 @@
     <string name="months_raw">måneder</string>
     <string name="years_raw">år</string>
     <string name="repeat_till">Gjenta til</string>
+    <string name="forever">For alltid</string>
     <string name="event_is_repeatable">Hendelsen er repeterbar</string>
     <string name="selection_contains_repetition">Markeringen inneholder gjentagende hendelser</string>
     <string name="delete_one_only">Slett bare den merkede forekomsten</string>
@@ -90,7 +91,7 @@
     <string name="filename_without_ics">Filnavn (uten .ics)</string>
     <string name="override_event_types">Overstyr hendelsestyper i filen</string>
     <string name="title">Tittel</string>
-    <string name="location">Posisjon</string>
+    <string name="location">Sted</string>
     <string name="description">Beskrivelse</string>
     <string name="all_day">Hele dagen</string>
     <string name="week">Uke</string>
@@ -132,6 +133,7 @@
     <string name="dim_past_events">Dim tidligere hendelser</string>
     <string name="events">Hendelser</string>
     <string name="reminder_stream">Lydtype brukt for påminnelser</string>
+    <string name="notification_stream">Varsel</string>
     <string name="ring_stream">Ringetone</string>
     <string name="default_reminder_1">Standardpåminnelse 1</string>
     <string name="default_reminder_2">Standardpåminnelse 2</string>

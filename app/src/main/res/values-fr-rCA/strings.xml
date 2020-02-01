@@ -103,7 +103,7 @@
     <string name="filename_without_ics">Nom de fichier (sans .ics)</string>
     <string name="override_event_types">Remplacer les types d\'événement dans le fichier</string>
     <string name="title">Titre</string>
-    <string name="location">Position</string>
+    <string name="location">Lieu</string>
     <string name="description">Description</string>
     <string name="all_day">Journée</string>
     <string name="week">Semaine</string>

@@ -4,7 +4,7 @@
     <string name="app_launcher_name">Kalendar</string>
     <string name="title">Tajuk</string>
     <string name="location">Lokasi</string>
-    <string name="description">Huraian</string>
+    <string name="description">Perihalan</string>
     <string name="color">Warna</string>
     <string name="no_ringtone_selected">Tiada</string>
 </resources>

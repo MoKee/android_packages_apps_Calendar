@@ -65,12 +65,12 @@
     <string name="third_m">třetí</string>
     <string name="fourth_m">čtvrtý</string>
     <string name="last_m">poslední</string>
-    <string name="repeat_every_f">Opakovat každý</string>
+    <string name="repeat_every_f">Opakovat každou</string>
     <string name="every_f">Každý</string>
     <string name="first_f">první</string>
-    <string name="second_f">druhý</string>
+    <string name="second_f">druhou</string>
     <string name="third_f">třetí</string>
-    <string name="fourth_f">čtvrtý</string>
+    <string name="fourth_f">čtvrtou</string>
     <string name="last_f">poslední</string>
     <string name="birthdays">Narozeniny</string>
     <string name="add_birthdays">Přidat narozeniny z kontaktů</string>
@@ -132,7 +132,7 @@
     <string name="vibrate">Vibrovat při připomínce</string>
     <string name="reminder_sound">Zvuk připomínky</string>
     <string name="no_ringtone_picker">Nebyla nalezena žádná aplikace, která by mohla nastavit vyzvánění</string>
-    <string name="no_ringtone_selected">Žádný</string>
+    <string name="no_ringtone_selected">Žádná</string>
     <string name="day_end_before_start">Den nemůže skončit dřív, než začne</string>
     <string name="caldav_sync">CalDAV synchronizace</string>
     <string name="event_lists">Seznamy událostí</string>
@@ -145,9 +145,9 @@
     <string name="dim_past_events">Ztlumit minulé události</string>
     <string name="events">Události</string>
     <string name="reminder_stream">Zvukový kanál používaný připomínkami</string>
-    <string name="system_stream">Systém</string>
-    <string name="alarm_stream">Budík</string>
-    <string name="notification_stream">Oznámení</string>
+    <string name="system_stream">Systémový</string>
+    <string name="alarm_stream">Výstražný</string>
+    <string name="notification_stream">Oznamovací</string>
     <string name="ring_stream">Vyzváněcí</string>
     <string name="use_last_event_reminders">Použijte poslední připomenuté události jako výchozí pro nové události</string>
     <string name="default_reminder_1">Výchozí připomenutí 1</string>

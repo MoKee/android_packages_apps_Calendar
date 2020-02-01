@@ -37,7 +37,7 @@
     <string name="months_raw">Monate</string>
     <string name="years_raw">Jahre</string>
     <string name="repeat_till">Wiederholen bis</string>
-    <string name="forever">Immer</string>
+    <string name="forever">unendlich</string>
     <string name="event_is_repeatable">Termin ist wiederholbar</string>
     <string name="selection_contains_repetition">Die Auswahl enthält Termine mit Wiederholungen</string>
     <string name="delete_one_only">Nur die ausgewählte Wiederholung löschen</string>
@@ -132,7 +132,7 @@
     <string name="vibrate">Vibration bei Erinnerung</string>
     <string name="reminder_sound">Erinnerungston</string>
     <string name="no_ringtone_picker">Keine App zum Einstellen des Klingeltons gefunden</string>
-    <string name="no_ringtone_selected">Kein</string>
+    <string name="no_ringtone_selected">Kein Klingelton ausgewählt</string>
     <string name="day_end_before_start">Terminbeginn kann nicht vor Terminende liegen</string>
     <string name="caldav_sync">CalDAV-Synchronisierung</string>
     <string name="event_lists">Terminlisten</string>
@@ -145,9 +145,9 @@
     <string name="dim_past_events">Vergangene Termine ausgrauen</string>
     <string name="events">Termine</string>
     <string name="reminder_stream">Audio-Ausgabekanal für Erinnerungen</string>
-    <string name="system_stream">System</string>
+    <string name="system_stream">Medien</string>
     <string name="alarm_stream">Wecker</string>
-    <string name="notification_stream">Schalter für Benachrichtigungen</string>
+    <string name="notification_stream">Benachrichtigung</string>
     <string name="ring_stream">Klingelton</string>
     <string name="use_last_event_reminders">Erinnerungen des letzten Termins als Vorgabe für neuen Termin verwenden</string>
     <string name="default_reminder_1">Standarderinnerung 1</string>

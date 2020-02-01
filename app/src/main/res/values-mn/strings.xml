@@ -5,5 +5,5 @@
     <string name="location">Байршил</string>
     <string name="description">Тайлбар</string>
     <string name="color">Өнгө</string>
-    <string name="no_ringtone_selected">Хоосон</string>
+    <string name="no_ringtone_selected">Байхгүй</string>
 </resources>

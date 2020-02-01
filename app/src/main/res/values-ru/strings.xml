@@ -37,7 +37,7 @@
     <string name="months_raw">месяцев</string>
     <string name="years_raw">лет</string>
     <string name="repeat_till">Повторять до</string>
-    <string name="forever">Всегда</string>
+    <string name="forever">Бесконечно</string>
     <string name="event_is_repeatable">Это событие может повторяться</string>
     <string name="selection_contains_repetition">В выбранном есть повторяющиеся события</string>
     <string name="delete_one_only">Удалить только это событие</string>
@@ -102,7 +102,7 @@
     <string name="include_event_types">Включать типы событий</string>
     <string name="filename_without_ics">Имя файла (без .ics)</string>
     <string name="override_event_types">Переопределять типы событий в файле</string>
-    <string name="title">Название</string>
+    <string name="title">Заголовок</string>
     <string name="location">Место</string>
     <string name="description">Описание</string>
     <string name="all_day">Весь день</string>
@@ -132,7 +132,7 @@
     <string name="vibrate">Вибрация при напоминании</string>
     <string name="reminder_sound">Звук напоминания</string>
     <string name="no_ringtone_picker">Не найдено приложение для выбора рингтона</string>
-    <string name="no_ringtone_selected">Без эффекта</string>
+    <string name="no_ringtone_selected">Нет</string>
     <string name="day_end_before_start">Конец дня не может быть раньше начала</string>
     <string name="caldav_sync">Синхронизация по CalDAV</string>
     <string name="event_lists">Списки событий</string>
@@ -145,9 +145,9 @@
     <string name="dim_past_events">Прошедшие события отображать тусклыми</string>
     <string name="events">События</string>
     <string name="reminder_stream">Аудиопоток, используемый напоминаниями</string>
-    <string name="system_stream">Система</string>
+    <string name="system_stream">Cистема</string>
     <string name="alarm_stream">Будильник</string>
-    <string name="notification_stream">Уведомления</string>
+    <string name="notification_stream">Уведомление</string>
     <string name="ring_stream">Звонок</string>
     <string name="use_last_event_reminders">Использовать значения предыдущих напоминаний при создании нового</string>
     <string name="default_reminder_1">Напоминание по умолчанию 1</string>

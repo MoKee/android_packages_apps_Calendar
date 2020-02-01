@@ -120,7 +120,7 @@
     <string name="vibrate">Vibrirajte na obavijesti podsjetnika</string>
     <string name="reminder_sound">Zvuk podsjetnika</string>
     <string name="no_ringtone_picker">Nije pronađena nijedna aplikacija koja može postaviti zvuk zvona</string>
-    <string name="no_ringtone_selected">Ništa</string>
+    <string name="no_ringtone_selected">Nijedan</string>
     <string name="day_end_before_start">Dan ne može završiti prije nego što počne</string>
     <string name="caldav_sync">CalDAV sinkronizacija</string>
     <string name="event_lists">Popis događaja</string>
