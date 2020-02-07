@@ -564,3 +564,16 @@ fun Context.refreshCalDAVCalendars(ids: String, showToasts: Boolean) {
         }
     }
 }
+
+
+fun Context.getWidgetFontSize() = when (config.fontSize) {
+    FONT_SIZE_SMALL -> getWidgetSmallFontSize()
+    FONT_SIZE_MEDIUM -> getWidgetMediumFontSize()
+    FONT_SIZE_LARGE -> getWidgetLargeFontSize()
+    else -> getWidgetExtraLargeFontSize()
+}
+
+fun Context.getWidgetSmallFontSize() = getWidgetMediumFontSize() - 3f
+fun Context.getWidgetMediumFontSize() = resources.getDimension(R.dimen.day_text_size) / resources.displayMetrics.density
+fun Context.getWidgetLargeFontSize() = getWidgetMediumFontSize() + 3f
+fun Context.getWidgetExtraLargeFontSize() = getWidgetMediumFontSize() + 6f
