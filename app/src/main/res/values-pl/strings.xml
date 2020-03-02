@@ -91,6 +91,7 @@
     <string name="not_going">Nie wezmę udziału</string>
     <string name="maybe_going">Może wezmę udział</string>
     <string name="invited">Zaproszony</string>
+    <string name="enter_a_country">Wprowadź kraj lub strefę czasową</string>
     <string name="import_events">Importuj wydarzenia</string>
     <string name="export_events">Eksportuj wydarzenia</string>
     <string name="import_events_from_ics">Importuj wydarzenia z pliku .ics</string>
@@ -160,6 +161,7 @@
     <string name="last_used_one">Ostatnio użyte</string>
     <string name="other_time">Innym razem</string>
     <string name="highlight_weekends">Podkreśl weekendy w niektórych widokach</string>
+    <string name="allow_changing_time_zones">Zezwalaj na zmianę stref czasowych wydarzenia</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Wybierz kalendarze, które chcesz zsynchronizować</string>
     <string name="manage_synced_calendars">Zarządzaj zsynchronizowanymi kalendarzami</string>
@@ -172,6 +174,7 @@
     <string name="synchronization_completed">Synchronizacja zakończona</string>
     <string name="select_a_different_caldav_color">Wybierz inny kolor (może być zastosowany tylko lokalnie)</string>
     <string name="insufficient_permissions">Nie możesz pisać w wybranym kalendarzu</string>
+    <string name="caldav_event_not_found">Nie znaleziono zdarzenia. Proszę włączyć synchronizację CalDAV dla odpowiedniego kalendarza w ustawieniach aplikacji.</string>
     <string name="monday_alt">Poniedziałek</string>
     <string name="tuesday_alt">Wtorek</string>
     <string name="wednesday_alt">Środę</string>
@@ -190,10 +193,15 @@
     <string name="faq_1_title">Jak mogę usunąć święta zaimportowane przez przycisk \'Dodaj święta\'?</string>
     <string name="faq_1_text">Święta dodane w ten sposób są wprowadzane do nowego typu wydarzeń - \'Święta\'. Usunąć je możesz, przechodząc do ustawień aplikacji, a następnie w sekcji \'Zarządzaj typami wydarzeń\' usunąć ową kategorię, klikając ikonę kosza.</string>
     <string name="faq_2_title">Czy mogę zsychronizować moje wydarzenia z Kalendarzem Google lub inną usługą wspierającą CalDAV?</string>
+    <string name="faq_2_text">Tak. Wystarczy włączyć opcję \'Synchronizacja CalDAV\' w ustawieniach aplikacji i wybrać kalendarze do synchronizacji. Jeśli chcesz zsynchronizować wydarzenia z Kalendarzem Google, oficjalna aplikacja kalendarza powinna wystarczyć. W innych przypadkach potrzebna może być zewnętrzna aplikacja, np. DAVdroid.</string>
     <string name="faq_3_title">Widzę przypomnienia wizualne, ale nie słyszę dźwięku. Co mogę zrobić?</string>
     <string name="faq_3_text">Nie tylko wyświetlanie faktycznego przypomnienia, ale także odtwarzanie dźwięku ma duży wpływ na system. Jeśli nie słychać żadnego dźwięku, spróbuj przejść do ustawień aplikacji,
          naciskając opcję \"Strumień audio używany przez przypomnienia\" i zmieniając ją na inną wartość. Jeśli nadal nie będzie działać, sprawdź ustawienia dźwięku, jeśli dany strumień nie jest wyciszony.        </string>
+    <string name="faq_4_title">Czy aplikacja obsługuje strefy czasowe?</string>
+    <string name="faq_4_text">Tak, to robi. Domyślnie wszystkie wydarzenia są tworzone w bieżącej strefie czasowej. Jeśli chcesz zmienić strefę czasową wydarzeń,
+        najpierw musisz włączyć wybór strefy czasowej w ustawieniach aplikacji, następnie zmień go na ekranie Szczegóły Wydarzenia. Jest on domyślnie wyłączony, ponieważ większość osób tego nie potrzebuje.</string>
     <string name="app_title">Simple Calendar Pro - Wydarzenia i Przypomnienia</string>
+    <string name="app_short_description">Zostań powiadomiony o ważnych momentach w Twoim życiu.</string>
     <string name="app_long_description">Prosty Kalendarz Pro to w pełni konfigurowalny kalendarz offline zaprojektowany do robienia dokładnie tego, co powinien robić kalendarz. <b> Bez skomplikowanych funkcji, niepotrzebnych uprawnień i bez reklam! </b>
 
         Niezależnie od tego, czy organizujesz pojedyncze, czy cykliczne wydarzenia, urodziny, rocznice, spotkania biznesowe, spotkania lub cokolwiek innego, Simple Calendar Pro ułatwia <b> utrzymanie porządku </b>. Dzięki niesamowitej różnorodności <b> opcji dostosowywania </b> możesz dostosowywać przypomnienia o wydarzeniach, dźwięki powiadomień, widżety kalendarza i wygląd aplikacji.

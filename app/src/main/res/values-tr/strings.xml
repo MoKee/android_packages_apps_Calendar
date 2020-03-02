@@ -161,6 +161,7 @@
     <string name="last_used_one">Son kullanılan</string>
     <string name="other_time">Diğer zaman</string>
     <string name="highlight_weekends">Bazı görünümlerde hafta sonlarını vurgula</string>
+    <string name="allow_changing_time_zones">Zaman dilimlerini değiştirmeye izin ver</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>
     <string name="manage_synced_calendars">Senkronize edilmiş takvimleri yönet</string>
@@ -192,6 +193,8 @@
     <string name="faq_1_title">\"Tatil ekle\" düğmesiyle içe aktarılan tatilleri nasıl kaldırabilirim?</string>
     <string name="faq_1_text">Tatiller, \"Tatiller\" olarak adlandırılan yeni bir etkinlik türüne eklenir. Ayarlar -&gt; Etkinlik Türlerini Yönet\'e gidip, belirlenen etkinlik türüne uzun basıp çöp kutusunu seçerek silebilirsiniz.</string>
     <string name="faq_2_title">Etkinliklerimi Google Takvim\'le veya CalDAV\'ı destekleyen başka bir hizmetle senkronize edebilir miyim?</string>
+    <string name="faq_2_text">Evet, uygulama ayarlarından \"CalDAV senkronizasyonu\" seçeneğini işaretleyin ve senkronize etmek istediğiniz takvimleri seçin. Bununla birlikte, cihaz ve sunucular arasındaki senkronizasyonu ele alan bazı üçüncü taraf uygulamalarına ihtiyacınız olacaktır.
+        Bu durumda bir Google takvimini senkronize etmek istiyorsanız, resmi Takvim uygulaması işi yapar. Diğer takvimler için, DAVx5 gibi üçüncü taraf senkronizasyon adaptörüne ihtiyacınız olacaktır.</string>
     <string name="faq_3_title">Görsel hatırlatıcıları görüyorum ama ses duymuyorum. Ne yapabilirim?</string>
     <string name="faq_3_text">Sadece gerçek hatırlatmayı göstermekle kalmaz, aynı zamanda ses çalmak da sistemden çok etkilenir. Herhangi bir ses duyamıyorsanız, uygulama ayarlarına girmeyi deneyin.
         \"Hatırlatıcılar tarafından kullanılan ses akışı\" seçeneğine basmak ve bunu farklı bir değere değiştirmek. Eğer hala işe yaramazsa, ses akışı kapatılmamışsa ses ayarlarınızı kontrol edin.</string>
