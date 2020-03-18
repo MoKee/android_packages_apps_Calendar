@@ -1,6 +1,7 @@
 package com.simplemobiletools.calendar.pro.activities
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -47,11 +48,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import java.io.FileOutputStream
+import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
+    private val PICK_IMPORT_SOURCE_INTENT = 1
+    private val PICK_EXPORT_FILE_INTENT = 2
+
     private var showCalDAVRefreshToast = false
     private var mShouldFilterBeVisible = false
     private var mIsSearchOpen = false
@@ -60,6 +65,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private var shouldGoToTodayBeVisible = false
     private var goToTodayButton: MenuItem? = null
     private var currentFragments = ArrayList<MyFragmentHolder>()
+    private var eventTypesToExport = ArrayList<Long>()
 
     private var mStoredTextColor = 0
     private var mStoredBackgroundColor = 0
@@ -228,6 +234,16 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         setIntent(intent)
         checkIsOpenIntent()
         checkIsViewIntent()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        if (requestCode == PICK_IMPORT_SOURCE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            tryImportEventsFromFile(resultData.data!!)
+        } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            val outputStream = contentResolver.openOutputStream(resultData.data!!)
+            exportEventsTo(eventTypesToExport, outputStream)
+        }
     }
 
     private fun storeStateVariables() {
@@ -744,9 +760,17 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun tryImportEvents() {
-        handlePermission(PERMISSION_READ_STORAGE) {
-            if (it) {
-                importEvents()
+        if (isQPlus()) {
+            Intent(Intent.ACTION_GET_CONTENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "text/calendar"
+                startActivityForResult(this, PICK_IMPORT_SOURCE_INTENT)
+            }
+        } else {
+            handlePermission(PERMISSION_READ_STORAGE) {
+                if (it) {
+                    importEvents()
+                }
             }
         }
     }
@@ -787,31 +811,43 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun tryExportEvents() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                exportEvents()
+        if (isQPlus()) {
+            ExportEventsDialog(this, config.lastExportPath, true) { file, eventTypes ->
+                eventTypesToExport = eventTypes
+
+                Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    type = "text/calendar"
+                    putExtra(Intent.EXTRA_TITLE, file.name)
+                    addCategory(Intent.CATEGORY_OPENABLE)
+
+                    startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
+                }
+            }
+        } else {
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    ExportEventsDialog(this, config.lastExportPath, false) { file, eventTypes ->
+                        getFileOutputStream(file.toFileDirItem(this), true) {
+                            exportEventsTo(eventTypes, it)
+                        }
+                    }
+                }
             }
         }
     }
 
-    private fun exportEvents() {
-        FilePickerDialog(this, pickFile = false, showFAB = true) {
-            ExportEventsDialog(this, it, false) { exportPastEvents, file, eventTypes ->
-                ensureBackgroundThread {
-                    val events = eventsHelper.getEventsToExport(exportPastEvents, eventTypes)
-                    if (events.isEmpty()) {
-                        toast(R.string.no_entries_for_exporting)
-                    } else {
-                        getFileOutputStream(file.toFileDirItem(this), true) {
-                            IcsExporter().exportEvents(this, it, events, true) {
-                                toast(when (it) {
-                                    IcsExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
-                                    IcsExporter.ExportResult.EXPORT_PARTIAL -> R.string.exporting_some_entries_failed
-                                    else -> R.string.exporting_failed
-                                })
-                            }
-                        }
-                    }
+    private fun exportEventsTo(eventTypes: ArrayList<Long>, outputStream: OutputStream?) {
+        ensureBackgroundThread {
+            val events = eventsHelper.getEventsToExport(eventTypes)
+            if (events.isEmpty()) {
+                toast(R.string.no_entries_for_exporting)
+            } else {
+                IcsExporter().exportEvents(this, outputStream, events, true) {
+                    toast(when (it) {
+                        IcsExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
+                        IcsExporter.ExportResult.EXPORT_PARTIAL -> R.string.exporting_some_entries_failed
+                        else -> R.string.exporting_failed
+                    })
                 }
             }
         }
