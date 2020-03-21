@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">कॅलेंडर</string>
-    <string name="title">शीर्षक</string>
     <string name="location">स्थान</string>
     <string name="description">वर्णन</string>
     <string name="color">रंग</string>

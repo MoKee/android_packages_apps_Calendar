@@ -37,7 +37,6 @@
     <string name="repeat_on_the_same_day_monthly">Повтаряне на същия ден всеки месец</string>
     <string name="repeat_on_the_last_day_monthly">Повтарянена последния ден от месеца</string>
     <string name="filename_without_ics">Име на файла ( без .ics)</string>
-    <string name="title">Заглавие</string>
     <string name="location">Местоположение</string>
     <string name="description">Описание</string>
     <string name="all_day">Цял ден</string>

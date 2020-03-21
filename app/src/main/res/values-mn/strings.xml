@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title">Гарчиг</string>
     <string name="location">Байршил</string>
     <string name="description">Тайлбар</string>
     <string name="color">Өнгө</string>

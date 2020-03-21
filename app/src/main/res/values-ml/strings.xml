@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">കലണ്ടർ</string>
-    <string name="title">തലക്കെട്ട്</string>
     <string name="location">ലൊക്കേഷൻ</string>
     <string name="description">വിവരണം</string>
     <string name="color">വർണ്ണം</string>

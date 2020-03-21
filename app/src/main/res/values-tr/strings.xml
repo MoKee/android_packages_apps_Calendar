@@ -101,7 +101,6 @@
     <string name="include_event_types">Etkinlik türlerini ekle</string>
     <string name="filename_without_ics">Dosya adı (.ics olmadan)</string>
     <string name="override_event_types">Dosyadaki etkinlik türlerini geçersiz kıl</string>
-    <string name="title">Başlık</string>
     <string name="location">Konum</string>
     <string name="description">Açıklama</string>
     <string name="all_day">Tüm-gün</string>
@@ -200,44 +199,4 @@
         \"Hatırlatıcılar tarafından kullanılan ses akışı\" seçeneğine basmak ve bunu farklı bir değere değiştirmek. Eğer hala işe yaramazsa, ses akışı kapatılmamışsa ses ayarlarınızı kontrol edin.</string>
     <string name="faq_4_title">Uygulama saat dilimlerini destekliyor mu?</string>
     <string name="app_title">Simple Calendar Pro - Etkinlikler &amp; Hatırlatıcılar</string>
-    <string name="app_short_description">Hayatınızdaki önemli anlardan haberdar olun.</string>
-    <string name="app_long_description">        Simple Calendar Pro, bir takvimin yapması gerekenleri yapmak için tasarlanmış tamamen özelleştirilebilir, çevrimdışı bir takvimdir.<b> Karmaşık özellikler yok, gereksiz izinler ve reklam yok! </b>
-
-        İster tek ister tekrarlı etkinlikler, doğum günleri, yıldönümleri, iş toplantıları, randevular veya başka bir şey düzenliyor olsanız da, Simple Calendar Pro, <b> düzenli kalmanızı kolaylaştırır </b>. Çok çeşitli <b> kişiselleştirme seçenekleri </b> ile etkinlik hatırlatıcılarını, bildirim seslerini, takvim widget\'larını ve uygulamanın görünüşünü özelleştirebilirsiniz.
-
-        Günlük, haftalık ve aylık görünümlerde yaklaşan etkinliklerinizi kontrol etmenizi sağlar &amp; Randevular için hatırlatma. Her şeyi takvim görünümünden ziyade basit bir etkinlik listesi olarak da görüntüleyebilirsiniz, <b> böylece hayatınızda ne zaman ne olduğunu tam olarak bilebilirsiniz. </b>
-
-        ----------------------------------------------------------
-        <b>Simple Calendar Pro – Özellikler &amp; Yararları </b>
-        ----------------------------------------------------------
-        ✔️ Reklam ve can sıkıcı pop-up\'lar yok
-        ✔️ İnternet erişimi gerekmez, size daha fazla güvenlik ve &amp; gizlilik sunar
-        ✔️ Sadece az ve açık izinler gerekli
-        ✔️ Basitlik vurgusu - bir takvimin yapması gereken şeyi yapar!
-        ✔️ Açık kaynak
-        ✔️ Tamamen özelleştirilebilir temalar &amp; takvim / etkinlik widget\'ları
-        ✔️ 29 dile çevrilmiş
-        ✔️ Ayarları başka bir cihaza aktarmak için .txt dosyası oluşturup aktarabilmesi
-        ✔️ CalDAV takvim senkronizasyonu, cihazlar arasındaki etkinlikleri senkronize etmek için desteklenir
-        ✔️ Günlük, haftalık, aylık, ve yıllık &amp; Takvimdeki etkinlik görünümleri
-        ✔️ Dışa aktarmayı destekler &amp;; .ics dosyaları yoluyla olayları içe aktarır
-       ✔️  Birden fazla etkinlik hatırlatması ayarlayın, etkinlik hatırlatıcı sesini ve titreşimi özelleştirin
-        ✔️ Hatırlatıcılar için erteleme seçeneği
-        ✔️ Kolayca tatiller, doğum günleri, yıldönümleri ve &amp; randevular ekleyin
-        ✔️ Etkinlikleri özelleştir - başlangıç zamanı, süre, hatırlatıcılar vb
-        ✔️ Her bir etkinliğe etkinlik katılımcıları ekleyin
-        ✔️ Kişisel bir takvim veya iş takvimi olarak kullanın
-        ✔️ Bir olay hakkında sizi uyarmak için &amp; hatırlatıcılar ve e-posta bildirimleri arasında bir seçim yapın
-
-        SİMPLE CALENDAR PRO\'YU İNDİRİN - REKLAMSIZ BASİT ÇEVRİMDIŞI TAKVİM!
-
-        <b>Buradan basit araçlar tam paketine göz atın:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>

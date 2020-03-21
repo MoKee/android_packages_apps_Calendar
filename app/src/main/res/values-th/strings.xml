@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">ปฏิทิน</string>
-    <string name="title">ชื่อเรื่อง</string>
     <string name="location">ตำแหน่งที่ตั้ง</string>
     <string name="description">คำอธิบาย</string>
     <string name="color">สี</string>

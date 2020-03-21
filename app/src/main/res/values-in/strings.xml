@@ -100,7 +100,6 @@
     <string name="include_event_types">Sertakan jenis acara</string>
     <string name="filename_without_ics">Nama file (tanpa .ics)</string>
     <string name="override_event_types">Ganti jenis acara dalam file</string>
-    <string name="title">Judul</string>
     <string name="location">Lokasi</string>
     <string name="description">Deskripsi</string>
     <string name="all_day">Sepanjang hari</string>

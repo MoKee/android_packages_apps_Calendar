@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title">Isihloko</string>
     <string name="location">Indawo</string>
     <string name="description">Incazelo</string>
     <string name="color">Umbala</string>

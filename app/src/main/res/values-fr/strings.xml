@@ -101,7 +101,6 @@
     <string name="include_event_types">Inclure les types d\'événement</string>
     <string name="filename_without_ics">Nom de fichier (sans .ics)</string>
     <string name="override_event_types">Remplacer les types d\'événement dans le fichier</string>
-    <string name="title">Titre</string>
     <string name="location">Lieu</string>
     <string name="description">Description</string>
     <string name="all_day">Journée</string>
@@ -203,45 +202,5 @@ Dans le cas d\'un calendrier Google Agenda, l\'application officielle fera l\'af
     <string name="faq_4_text">Oui. Par défaut tous les évènements sont créés dans votre fuseau horaire. Si vous voulez changer le fuseau horaire d\'un évènement,
         vous devez d\'abord activer le sélectionneur de fuseau horaire dans les paramètre de l\'application, et le changer dans la section Détail de L\'évènement. Il est désactiver par défaut vu que la plupart des gens ne l\'utiliseront pas.</string>
     <string name="app_title">Simple Calendar Pro- Événements &amp; Rappels</string>
-    <string name="app_short_description">Soyez informé des moments importants de votre vie.</string>
-    <string name="app_long_description">Simple Calendar Pro est un calendrier hors ligne entièrement personnalisable conçu pour faire exactement ce que doit faire un calendrier. &lt;b&gt; Pas de fonctionnalités compliquées, d\'autorisations inutiles et pas de publicité! &lt;/ b&gt;
-
-Que vous organisiez des événements uniques ou récurrents, des anniversaires, des réunions professionnelles, des rendez-vous ou autre chose, Simple Calendar Pro vous permet &lt;b&gt; de rester organisé &lt;/ b&gt; facilement. Grâce à une incroyable variété &lt;b&gt; d\'options de personnalisation &lt;/ b&gt;, vous pouvez personnaliser les rappels d\'événements, les sons de notification, les widgets d\'agenda et l\'apparence de l\'application.
-
-Les vues quotidiennes, hebdomadaires et mensuelles permettent de vérifier vos événements à venir &amp; amp; rendez-vous un jeu d\'enfant. Vous pouvez même tout voir comme une simple liste d’événements plutôt que dans un calendrier. Ainsi, vous &lt;b&gt; savez exactement ce qui se passe dans votre vie et à quel moment. &lt;/ b&gt;
-
-        -------------------------------------------------- --------
-        &lt;b&gt; Simple Calendar Pro - Fonctionnalités &amp; amp; Avantages &lt;/ b&gt;
-        -------------------------------------------------- --------
-
-        ✔️ Pas de publicité ou de popups ennuyeux
-        ✔️ Pas d\'accès Internet nécessaire, vous donnant plus d\'intimité et amp; Sécurité
-        ✔️ Seules les autorisations minimales requises
-        ✔️ L\'accent est mis sur la simplicité - fait ce qu\'un calendrier doit faire!
-        ✔️ Open source
-        ✔️ thèmes entièrement personnalisables &amp; amp; widgets calendrier / événement
-        ✔️ Traduit en 29 langues
-        ✔️ Exporter les paramètres vers des fichiers .txt à importer sur un autre appareil
-        ✔️ La synchronisation du calendrier CalDAV est prise en charge pour la synchronisation des événements sur les appareils.
-        ✔️ Quotidien, hebdomadaire, mensuel, annuel &amp; amp; vues d\'événement sur le calendrier
-        ✔️ Prise en charge de l’exportation &amp; amp; importer des événements via des fichiers .ics
-        ✔️ Définir plusieurs rappels d\'événement, personnaliser le son et la vibration de rappel d\'événement
-        ✔️ Option Snooze pour les rappels
-        ✔️ facilement ajouter des vacances, anniversaires, anniversaires &amp; amp; rendez-vous
-        ✔️ Personnaliser les événements - heure de début, durée, rappels, etc.
-        ✔️ Ajouter des participants à chaque événement
-        ✔️ Utiliser comme calendrier personnel ou calendrier professionnel
-        ✔️ Choisissez entre rappels et amp; notifications par e-mail pour vous alerter d\'un événement
-
-        TÉLÉCHARGEZ SIMPLE CALENDAR PRO - LE CALENDRIER SIMPLE HORS LIGNE SANS PUBLICITÉ!
-
-  &lt;b&gt;Check out the full suite of Simple Tools here:&lt;/b&gt;
-        https://www.simplemobiletools.com
-
-        &lt;b&gt;Facebook:&lt;/b&gt;
-        https://www.facebook.com/simplemobiletools
-
-        &lt;b&gt;Reddit:&lt;/b&gt;
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_short_description">Calendrier 2020 mobile simple. Planifiez votre emploi du temps et vos rappels de rendez-vous pour n\'importe quel jour.</string>
 </resources>

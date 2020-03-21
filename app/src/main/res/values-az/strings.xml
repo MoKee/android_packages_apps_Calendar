@@ -87,7 +87,6 @@
     <string name="include_event_types">Hadisə tiplərini ehtiva et</string>
     <string name="filename_without_ics">Fayl adı (.ics\'sız)</string>
     <string name="override_event_types">Faylın içərisində hadisə tiplərini üstünə yaz</string>
-    <string name="title">Başlıq</string>
     <string name="location">Məkan</string>
     <string name="description">Əlavələr</string>
     <string name="all_day">Bütün-gün</string>

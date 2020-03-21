@@ -101,7 +101,6 @@
     <string name="include_event_types">Termintypen miteinbeziehen</string>
     <string name="filename_without_ics">Dateiname (ohne .ics)</string>
     <string name="override_event_types">Termintypen in der Datei überschreiben</string>
-    <string name="title">Titel</string>
     <string name="location">Ort</string>
     <string name="description">Beschreibung</string>
     <string name="all_day">Ganztags</string>
@@ -204,45 +203,4 @@
     <string name="faq_4_text">Ja, das tut es. Standardmäßig werden alle Ereignisse in Ihrer aktuellen Zeitzone erstellt. Wenn Sie die Zeitzone einer Veranstaltung ändern möchten
         Sie müssen zuerst die Zeitzonen-Auswahl in den App-Einstellungen aktivieren, dann ändern Sie es auf dem Bildschirm Ereignisdetails. Es ist standardmäßig deaktiviert, da die meisten Leute es nicht brauchen.</string>
     <string name="app_title">Simple Calendar Pro - Ereignisse &amp; Erinnerungen</string>
-    <string name="app_short_description">Werde über die wichtigen Momente in deinem Leben informiert.</string>
-    <string name="app_long_description">        Simple Calendar Pro ist vollständig anpassbar, Offline-Kalender, der genau das macht, was ein Kalender tun soll. <b>Keine komplizierten Funktionen, unnötige Berechtigungen und keine Werbung!</b>
-
-        Egal, ob Sie einzelne oder wiederkehrende Veranstaltungen, Geburtstage, Jubiläen, organisieren Business-Meetings, Termine oder alles andere macht den Simple Calendar Pro <b>einfach zu organisieren</b>. Mit einer unglaublichen Vielfalt an <b>Anpassungsoptionen</b> können Sie Ereignis-Erinnerungen, Benachrichtigungstöne, Kalender-Widgets und wie die App aussieht.
-
-        Tägliche, wöchentliche und monatliche Aufrufe machen das Überprüfen Ihrer bevorstehenden Termine &amp; zum Kinderspiel. Sie können alles sogar als eine einfache Liste von Veranstaltungen ansehen, anstatt in der Kalenderansicht damit Sie <b>genau wissen, was in Ihrem Leben kommt und wann.</b>
-
-        ------------------------------------------
-        <b>Simple Calendar Pro – Features &amp; Vorteile</b>
-        ----------------------------------------------------------
-
-        ✔ Keine Anzeigen oder lästige Popups
-        ✔ Kein Internet Zugang nötig, mehr Privatsphäre &amp; Sicherheit
-        ✔ Nur die absoluten minimalen Berechtigungen werden benötigt
-        ✔ Schwerpunkt auf Einfachheit – tut, was ein Kalender tun muss!
-        ✔ Open Source
-        ✔ Voll anpassbare Themes &amp; Kalender / Event Widgets
-        ✔ In 29 Sprachen übersetzt
-        ✔ Exportiere Einstellungen nach .xt-Dateien, die auf ein anderes Gerät importiert werden können
-        ✔ Unterstützt CalDAV-Kalender-Synchronisation, um Ereignisse zwischen Geräten zu synchronisieren
-        ✔ Täglich, Wöchentlich, Monatlich, Jährlich &amp; Ereignisaufrufe im Kalender
-        ✔ Unterstützt den Export von &amp; Events über .cs Dateien
-        ✔ Setze mehrere Ereignis-Erinnerungen, Anpassen von Ereigniserinnerung Ton und Vibration
-        ✔ Schlummerfunktion für Erinnerungen
-        ✔ Einfach Feiertage, Geburtstage, Jubiläen &amp; Termine hinzufügen
-        ✔ Ereignisse anpassen – Startzeit, Dauer, Erinnerungen etc.
-        ✔ Fügen Sie Teilnehmer jeder Veranstaltung hinzu
-        ✔ Verwenden als persönlicher Kalender oder als Geschäftskalender
-        ✔ Wählen Sie zwischen Erinnerungen &amp; E-Mail-Benachrichtigungen, um über ein Ereignis informiert zu werden
-
-        LADE DIR DIE SIMPLE CALENDAR PRO APP – DER SIMPLE OFFLINE KALENDER OHNE WERBUNG!
-
-        <b>Schau dir die komplette Suite der einfachen Tools hier an:</b>
-        https://www.implemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>

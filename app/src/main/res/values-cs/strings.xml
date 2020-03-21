@@ -101,7 +101,6 @@
     <string name="include_event_types">Zahrnout typy událostí</string>
     <string name="filename_without_ics">Název souboru (bez .ics)</string>
     <string name="override_event_types">Přepsat typ události v souboru</string>
-    <string name="title">Název</string>
     <string name="location">Poloha</string>
     <string name="description">Popis</string>
     <string name="all_day">Celý den</string>
@@ -203,45 +202,4 @@
     <string name="faq_4_text">Ano. Ve výchozím nastavení jsou všechny události vytvářeny v aktuálním časovém pásmu. Pokud chcete změnit časové pásmo událostí,
         nejprve musíte povolit výběr časového pásma v nastavení aplikace a poté jej změnit na obrazovce Podrobnosti události. Ve výchozím nastavení je to zakázáno, protože to většina lidí nebude potřebovat.</string>
     <string name="app_title">Simple Calendar Pro - Události &amp; připomenutí</string>
-    <string name="app_short_description">Buďte upozorněni na důležité momenty ve vašem životě.</string>
-    <string name="app_long_description">        Simple Calendar Pro je přizpůsobitelný offline kalendář vytvořen přesně na to, co by kalendáře měli zvládat. &lt;b&gt;Nenacházejí se zde žádné nepotřebné funkce, nepotřebná oprávnění, ani reklamy!&lt;/b&gt;
-
-        Pokud pořádáte jednoduchou nebo opakující se událost, narozeniny, výročí, pracovní setkání, nebo cokoli jiného, Simple Calendar Pro vám &lt;b&gt;ulehčí práci&lt;/b&gt;. S velkou mírou &lt;b&gt;přizpůsobitelnosti&lt;/b&gt; můžete měnit připomínky událostí, zvuky připomínek, widgety kalendáře a celkový vzhled aplikace.
-
-        Díky dennímu, týdennímu a měsíčnímu zobrazení si můžete velmi jednoduše prohlédnout následující události a setkání. Všechny události si můžete prohlédnout i v jednoduchém chronologickém seznamu událostí. &lt;b&gt;Díky tomu přesně víte, &lt;b&gt;co a kdy se blíží.&lt;/b&gt;
-
-        ----------------------------------------------------------
-        &lt;b&gt;Simple Calendar Pro – funkce &amp; benefity&lt;/b&gt;
-        ----------------------------------------------------------
-
-        ✔️ Žádné reklamy a otravné vyskakovací okna
-        ✔️ Není zapotřebí přístup na internet, díky čemuž budete mít maximální soukromí a bezpečí
-        ✔️ Obsahuje pouze nezbytně nutná oprávnění
-        ✔️ Přízvuk na jednoduchost - dělá přesně to, co se od kalendáře očekává!
-        ✔️ Otevřený zdrojový kód
-        ✔️ Plně přizpůsobitelné motuvy, náhledy a widgety
-        ✔️ Přeložen do 29 jazyků
-        ✔️ Jednoduše exportujte nastavení do .txt souboru a importujte je do jiného zařízení
-        ✔️ Obsahuje CalDAV synchronizaci na sdílení kalendářů mezi zařízeními
-        ✔️ Obsahuje denní, týdenní, měsíční, roční zobrazení kalendáře, jakož i jednoduchý seznam událostí
-        ✔️ Podporuje export a import událostí pomocí .ics souborů
-        ✔️ Možnost nastavit několik připomínek na události, nebo změnit jejich zvuky a vibrace
-        ✔️ Možnost odložení připomínek na později
-        ✔️ Jednoduché přidávání prázdnin, narozenin, výročí a setkání
-        ✔️ Nastavitelné události - začátek, trvání, připomínky atd.
-        ✔️ Možnost přidávání zúčastněných na události
-        ✔️ Možné použití jako soukromý i pracovní kalendář
-        ✔️ Zvolte si buď připomínku, či email na synchronizované události
-
-        STÁHNĚTE SU SIMPLE CALENDAR PRO – JEDNODUCHÝ OFFLINE KALENDÁŘ BEZ REKLAM!
-
-        &lt;b&gt;Podívejte se na celou sadu aplikací zde:&lt;/b&gt;
-        https://www.simplemobiletools.com
-
-        &lt;b&gt;Facebook:&lt;/b&gt;
-        https://www.facebook.com/simplemobiletools
-
-        &lt;b&gt;Reddit:&lt;/b&gt;
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>

@@ -89,7 +89,6 @@
     <string name="include_event_types">Inkluder hendelsestyper</string>
     <string name="filename_without_ics">Filnavn (uten .ics)</string>
     <string name="override_event_types">Overstyr hendelsestyper i filen</string>
-    <string name="title">Tittel</string>
     <string name="location">Sted</string>
     <string name="description">Beskrivelse</string>
     <string name="all_day">Hele dagen</string>

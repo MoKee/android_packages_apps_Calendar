@@ -101,7 +101,6 @@
     <string name="include_event_types">Az eseménytípusokat is tartalmazza</string>
     <string name="filename_without_ics">Fájlnév ( .ics nélkül )</string>
     <string name="override_event_types">Írja felül a fájlban az eseménytípusokat</string>
-    <string name="title">Név</string>
     <string name="location">Hely</string>
     <string name="description">Leírás</string>
     <string name="all_day">Egész napos</string>
@@ -203,40 +202,43 @@
     <string name="faq_4_text">Igen, támogatja. Alapértelmezetten az események a rendszer időzónájához idomulnak. Ha meg szeretné változtatni egy esemény időzónáját,
         előbb az alkalmazás beállításaiban kell engedélyeznie a zónakijelölőt, aztán változtathatja meg az Esemény részleteinél. Alapértelmezetten azért van letiltva, mert a legtöbb felhasználónak nincs szüksége erre.</string>
     <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
-    <string name="app_short_description">Hogy el ne felejtse az élete legfontosabb pillanatait.</string>
-    <string name="app_long_description">        A Simple Calendar Pro egy teljes mértékben testreszabható offline naptár, amelyet úgy terveztek, hogy pontosan azt tegye, amit egy naptárnak tennie kell. <b>Nincsenek bonyolult funkciók, nem kellenek felesleges engedélyek és nincsenek reklámok!</b> 
+    <string name="app_short_description">Egy egyszerű 2020-as naptár. Ütemezéstervező és találkozóemlékeztető minden napra</string>
+    <string name="app_long_description">        A Simple Calendar Pro egy teljesen személyreszabható, offline naptár felszerelve mindennel, amit egy naptárnak tudnia kell. <b>Könnyen érthető funkciók, értelmetlen reklámok és megadandó engedélyek nélkül!</b>
 
-        Akár egyszeri, akár ismétlődő eseményeket, akár születésnapokat, évfordulókat, üzleti találkozókat, találkozókat vagy bármi mást szervez, a Simple Calendar Pro <b>megkönnyíti a szervezést</b>. A <b>testreszabási lehetőségek</b> hihetetlen változatosságával szabhatja személyre az események emlékeztetőit, az értesítési hangokat, a naptár-widgeteket és az alkalmazás megjelenésének módját. 
+        Akár egyedi, akár ismétlődő eseményeket, születésnapokat, évfordulókat, üzleti találkozókat, megbeszéléseket vagy bármi mást szervez, a Simple Calendar Pro segít hogy, <b>könnyen jól szervezett maradjon</b>. A <b>testreszabható funkciók</b> sokaságával, Ön személyre szabhatja az eseményemlékztetőket, értesítési hangokat, naptár-kisalkalmazásokat és a felhasználói felületet.
 
-        A napi, heti és havi nézetek segítségével a közelgő események és találkozók ellenőrzése egyszerűvé válik. Mindent egyszerű eseménylistaként tekinthet meg, nem pedig naptárnézetben, így mindig pontosan tudni fogja, hogy <b>mi következik az életében és mikor.</b>
+        A Napi-, Heti- és Havinézettel könnyen átláthatja a közelgő eseményeket és találkozókat. A naptárnézet helyett mindent egyszerű eseménylistaként tekinthet meg, így Ön <b>mindig tudhatja mi fog következni az életében. </b>
 
         ----------------------------------------------------------
-        <b>Simple Calendar Pro – Tulajdonságok és előnyök</b>
+        <b>Simple Calendar Pro – Funkciók és Előnyök</b>
         ----------------------------------------------------------
 
-        ✔️ Nincsenek reklámok és zavaró felugró ablakok
-        ✔️ Nem szükséges internetkapcsolat, így biztonságosabb és védettebb
-        ✔️ Nagyon minimális a jogosultságigénye
-        ✔️ A hangsúly az egyszerűségen - annyit tud, amennyit egy naptárnak tudnia kell!
+        ✔️ Nincsenek reklámok és felugró ablakok
+        ✔️ Nem szükséges internet a teljes biztonsághoz és védelemhez
+        ✔️ Csak nagyon mininális engedélyek szükségesek
+        ✔️ Hangsúly az egyszerűségen - de közben tudjon mindent, amit egy naptárnak kell!
         ✔️ Nyílt forráskódú
-        ✔️ Teljes mértékben testreszabható témák, naptár- és eseménymodulok
-        ✔️ Jelenleg 29 nyelven használható
-        ✔️ A beállíások txt-fájlba menthetők, így könnyen átvihető másik készülékre
-        ✔️ A CalDAV-naptárszinkronizálás támogatja az események szinkronizálását a készülékek között
+        ✔️ Teljesen személyre szabható, témázható, naptár és esemény kisalkalmazással
+        ✔️ 29 nyelvre lefordítva
+        ✔️ A Beállítások txt-be exportálhatók és átvihetők másik készülékre
+        ✔️ A CalDAV-naptárszinkron támogatott a készülékek között
         ✔️ Napi, heti, havi, éves és eseménynézetek a naptárban
-        ✔️ Az események .ics fájlban importálhatók és exportálhatók
-        ✔️ Összetett eseményemlékeztető-beállítás, eseményemlékeztető-hang és rezgés testreszabása
-        ✔️ Az emlékeztetők elhalaszthatóak
-        ✔️ Születésnapok, ünnepek, évfordulók és találkozók is könnyen hozzáadhatók
-        ✔️ Események személyreszabása – kezdési idő, hossz, értesítések stb.
-        ✔️ Minden eseményhez személyeket is hozzáadhat
-        ✔️ Használhatja személyes vagy akár üzleti naptárként
-        ✔️ Választhat, hogy emlékeztető vagy e-mai értesítés figyelmeztesse Önt egy eseményre
+        ✔️ .ics fájlba exportálhatók és importálhatók az események
+        ✔️ Összetett eseményemlékeztető beállítása, testreszabható hangok és rezgések
+        ✔️ Szundi-funkciók az értesítésekhez
+        ✔️ Könnyen hozzáadható ünnepek, születésnapok, évfordulók és találkozók
+        ✔️ Testreszabható események – kezdés, hossz, emlékeztetők
+        ✔️ Az eseményekhez résztvevőket is hozzáadhat
+        ✔️ Személyes naptárnak és Üzleti naptárnak is alkalmas
+        ✔️ Választhat az emlékeztetők és e-mail értesítések között, eseményfigyelmeztetésként
 
-        TÖLTSE LE A SIMPLE CALENDAR PRO-T – A REKLÁMMENTES OFFLINE NAPTÁRAT!
+        TÖLTSE LE A SIMPLE CALENDAR PRO-t – EGY KÖNNYEN KEZELHETŐ OFFLINE NAPTÁRAT REKLÁMOK NÉLKÜL!
 
-        <b>Nézze meg a Simple teljes eszköztárát itt:</b>
+        <b>Itt találhatja meg az összes Simple terméket:</b>
         https://www.simplemobiletools.com
+
+        <b>Itt találja meg a Simple Calendar Pro-t:</b>
+        https://www.simplemobiletools.com/calendar
 
         <b>Facebook:</b>
         https://www.facebook.com/simplemobiletools

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">ປະຕິທິນ</string>
-    <string name="title">ຊື່</string>
     <string name="location">ສະຖານທີ່</string>
     <string name="description">ຄຳອະທິບາຍ</string>
     <string name="color">ສີ</string>

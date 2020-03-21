@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title">පටබැඳිනාමය</string>
     <string name="location">ස්ථානය</string>
     <string name="description">විස්තරය</string>
     <string name="color">වර්ණය</string>

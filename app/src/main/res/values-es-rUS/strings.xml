@@ -101,7 +101,6 @@
     <string name="include_event_types">Incluir tipos de evento</string>
     <string name="filename_without_ics">Nombre del archivo (sin .ics)</string>
     <string name="override_event_types">Sobreescribir tipos de evento en el archivo</string>
-    <string name="title">Título</string>
     <string name="location">Ubicación</string>
     <string name="description">Descripción</string>
     <string name="all_day">Todo el día</string>
@@ -203,42 +202,4 @@
     <string name="faq_4_text">Sí. Por defecto todos los eventos se crean en tu zona horaria actual. Si quieres cambiar la zona horaria de un evento,
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Recordatorios</string>
-    <string name="app_short_description">Sé notificado de los momentos importantes de tu vida.</string>
-    <string name="app_long_description">Simple Calendar Pro es un calendario offline totalmente personalizable destinado a hacer exactamente lo que un calendario debe hacer.<b>Sin opciones innecesarias, sin permisos innecesarios y sin anuncios!</b>
-
- Sean eventos únicos o recurrentes, cumpleaños, aniversarios, citas de negocios, o cualquier tipo de evento, Simple Calendar Pro hace posible<b> que se mantenga organizado</b>. Con nuestra gran variedad de<b>opciones de personalización</b>podrá editar las alertas de eventos, sonidos de notificación, widgets del calendario y el aspecto de la aplicación.
-
- Las vistas diariamente, semanalmente y mensualmente hacen de sus futuros eventos &amp; citas una tarea fácil. Puede incluso ver sus eventos en formato de lista en lugar de calendario, de forma que<b>pueda saber exactamente cual será el siguiente evento y cuando.</b>
-
-      ----------------------------------------------------------
-        <b>Simple Calendar Pro – Características &amp; Beneficios</b>
-        ----------------------------------------------------------
-
- ✔️ Sin anuncios o ventanas emergentes
-✔️ No se necesita acceso a internet, proporcionando mayor privacidad &amp; seguridad
-✔️ Solamente se necesitan los permisos mínimos
-✔️ Hace hincapié en la simplicidad - Hace lo que un calendario debe hacer!
-✔️ Es de código abierto
-✔️ Los widgets &amp; los temas del calendario son totalmente personalizables
-✔️ Traducida a 29 idiomas
-✔️ Es posible exportar los ajustes en  archivos .txt para utilizarlos en otro dispositivo
-✔️ Vista de eventos diarios, semanales &amp; mensuales
-✔️ Sincronización CalDAV soportada entre dispositivos
-✔️ Soporte para exportar &amp; importar eventos vía .ics
-✔️ Permite configurar varios recordatorios, personalizar su sonido y vibración
-✔️ Añadir vacaciones, cumpleaños, aniversarios &amp; citas de manera muy sencilla
-✔️ Añadir los asistentes para cada evento
-✔️ Utilizarlo como calendario personal o calendario de negocios
-✔️ Elegir entre diferentes recordatorios &amp; notificaciones de email para avisarle de un evento
-
- DESCARGA SIMPLE CALENDAR PRO - CALENDARIO OFFLINE SIMPLE Y SIN ANUNCIOS
-
-<b> Visita nuestro sitio web completo aquí:</b>
- https://www.simplemobiletools.com
-
-<b>Facebook:</b>
-https://www.facebook.com/simplemobiletools
-
-<b>Reddit:</b>
-https://www.reddit.com/r/SimpleMobileTools    </string>
 </resources>

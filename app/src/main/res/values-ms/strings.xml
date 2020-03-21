@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Kalendar</string>
-    <string name="title">Tajuk</string>
     <string name="location">Lokasi</string>
     <string name="description">Perihalan</string>
     <string name="color">Warna</string>

@@ -101,7 +101,6 @@
     <string name="include_event_types">包含事件类型</string>
     <string name="filename_without_ics">文件名 (不包含 .ics)</string>
     <string name="override_event_types">覆盖文件内的事件类型</string>
-    <string name="title">标题</string>
     <string name="location">地点</string>
     <string name="description">描述</string>
     <string name="all_day">全天</string>
@@ -203,15 +202,14 @@
     <string name="faq_4_text">是的。默认设置下，所有事件都是在您当前的时区中创建的。 如果您想要更改一个事件的时区，
         您必须先在应用程序设置中启用时区选择器，然后在事件详情页面上更改。因为大多数人不需要此功能，所以默认设置为禁用。</string>
     <string name="app_title">简约日历专业版 - 事件和提醒</string>
-    <string name="app_short_description">提醒您生命中的重要时刻。</string>
-    <string name="app_long_description">        简约日历 Pro 是一个可自由定制的离线日历，为做好日历该做的事而设计。<b>没有复杂的功能，没有多余的权限，没有广告！</b>
+    <string name="app_long_description">        简约日历专业版是一个可自由定制的离线日历，为做好日历该做的事而设计。<b>没有复杂的功能，没有多余的权限，没有广告！</b>
 
-        无论您是安排单次活动还是经常性活动、生日、周年纪念日、商务会议、约会还是其他任何内容，简约日历 Pro 都可以<b>轻松管理，井井有条</b>。通过极其丰富的<b>自定义选项</b>，您可以自定义事件提醒、提示音、日历小部件以及应用程序外观。
+        无论您是安排单次活动还是经常性活动、生日、周年纪念日、商务会议、约会还是其他任何内容，简约日历专业版都可以<b>轻松管理，井井有条</b>。通过极其丰富的<b>自定义选项</b>，您可以自定义事件提醒、提示音、日历小部件以及应用程序外观。
 
-        日视图、周视图和月视图，让您轻松检查即将到来的事件和预约。您还可以在一个简单的事件列表中查看一切，无需使用日历视图，这样您可以<b>准确知晓何事将至何时将至</b>。
+        日视图、周视图和月视图，让您轻松检查即将到来的事件和预约。您还可以在一个简单的事件列表中查看一切，无需使用日历视图，这样您可以<b>准确知晓何事将至、何时将至</b>。
 
         ----------------------------------------------------------
-	<b>简约日历 - 功能与特色</b>
+	<b>简单日历专业版 – 功能与特色</b>
 	----------------------------------------------------------
 
         ✔️没有广告和烦人的弹窗
@@ -233,14 +231,18 @@
         ✔️用作个人日历或业务日历
         ✔️事件提醒可选通知提醒和电子邮件提醒
 
-        下载简约日历 Pro - 简单的离线日历，没有广告!
+        下载简约日历专业版 – 简单的离线日历，没有广告!
 
         <b>在这里查看完整的 简约工具 套件：</b>
         https://www.simplemobiletools.com
+
+        <b>简约日历专业版的单独网站：</b>
+        https://www.simplemobiletools.com/calendar
 
         <b>Facebook:</b>
         https://www.facebook.com/simplemobiletools
 
         <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools    </string>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

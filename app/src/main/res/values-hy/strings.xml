@@ -2,7 +2,6 @@
 <resources>
     <string name="repeat">Կրկնել</string>
     <string name="every_day">Ամեն օր</string>
-    <string name="title">Վերնագիր</string>
     <string name="location">Տեղադրություն</string>
     <string name="description">Նկարագրություն</string>
     <string name="color">Գույն</string>

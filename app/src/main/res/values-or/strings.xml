@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">କ୍ୟାଲେଣ୍ଡର୍</string>
-    <string name="title">ଟାଇଟଲ୍</string>
     <string name="location">ଅବସ୍ଥାନ</string>
     <string name="description">ବର୍ଣ୍ଣନା</string>
     <string name="no_ringtone_selected">କିଛି ନୁହେଁ</string>

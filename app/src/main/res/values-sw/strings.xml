@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title">Mada</string>
     <string name="location">Eneo</string>
     <string name="description">Maelezo</string>
     <string name="color">Rangi</string>

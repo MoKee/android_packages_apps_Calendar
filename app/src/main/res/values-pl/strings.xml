@@ -101,7 +101,6 @@
     <string name="include_event_types">Dołącz typy wydarzeń</string>
     <string name="filename_without_ics">Nazwa pliku (bez końcówki \".ics\")</string>
     <string name="override_event_types">Nadpisz typy wydarzeń w pliku</string>
-    <string name="title">Tytuł</string>
     <string name="location">Lokalizacja</string>
     <string name="description">Opis</string>
     <string name="all_day">Całodniowe</string>
@@ -201,44 +200,47 @@
     <string name="faq_4_text">Tak, to robi. Domyślnie wszystkie wydarzenia są tworzone w bieżącej strefie czasowej. Jeśli chcesz zmienić strefę czasową wydarzeń,
         najpierw musisz włączyć wybór strefy czasowej w ustawieniach aplikacji, następnie zmień go na ekranie Szczegóły Wydarzenia. Jest on domyślnie wyłączony, ponieważ większość osób tego nie potrzebuje.</string>
     <string name="app_title">Simple Calendar Pro - Wydarzenia i Przypomnienia</string>
-    <string name="app_short_description">Zostań powiadomiony o ważnych momentach w Twoim życiu.</string>
-    <string name="app_long_description">Prosty Kalendarz Pro to w pełni konfigurowalny kalendarz offline zaprojektowany do robienia dokładnie tego, co powinien robić kalendarz. <b> Bez skomplikowanych funkcji, niepotrzebnych uprawnień i bez reklam! </b>
+    <string name="app_short_description">Prosty kalendarz mobilny 2020 r. Terminarz &amp; przypomnienia na dowolny dzień</string>
+    <string name="app_long_description">        Simple Calendar Pro jest wysoce konfigurowalnym, dostępnym w trybie offline kalendarze stworzonym dokładnie do tego do czego służy kalendarz. <b>Bez zbędnych funkcji, uprwanień i reklam!</b>
 
-        Niezależnie od tego, czy organizujesz pojedyncze, czy cykliczne wydarzenia, urodziny, rocznice, spotkania biznesowe, spotkania lub cokolwiek innego, Simple Calendar Pro ułatwia <b> utrzymanie porządku </b>. Dzięki niesamowitej różnorodności <b> opcji dostosowywania </b> możesz dostosowywać przypomnienia o wydarzeniach, dźwięki powiadomień, widżety kalendarza i wygląd aplikacji.
+        Niezależnie od tego, czy organizujesz pojedyncze lub cykliczne wydarzenia, urodziny, rocznice, spotkania biznesowe lub cokolwiek innego, Simple Calendar Pro <b>ułatwia utrzymanie porządku</b>. Dzięki niewiarygodnej różnorodności <b>opcji konfiguracji</b> możesz dostosowywać przypomnienia o wydarzeniach, dźwięki powiadomień, widżety kalendarza i wygląd aplikacji. Dzienne, tygodniowe i miesięczne widoki sprawiają, że sprawdzanie nadchodzących wydarzeń i spotkań jest dziecinnie proste. Możesz nawet wyświetlić wszystko jako prostą listę wydarzeń, a nie w widoku kalendarza, dzięki czemu <b>dokładnie wiesz, co i kiedy wydarzy się w twoim życiu.
+</b>
 
-        Widoki dzienne, tygodniowe i miesięczne sprawiają, że sprawdzanie nadchodzących wydarzeń i spotkań są dziecinnie proste. Możesz nawet wyświetlić wszystko jako prostą listę wydarzeń, a nie w widoku kalendarza, dzięki czemu <b> dokładnie wiesz, co i kiedy wydarzy się w twoim życiu. </b>
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Funkcje &amp; Korzyści</b>
+        ----------------------------------------------------------
 
-        -------------------------------------------------- --------
-        <b> Simple Calendar Pro - Funkcje i korzyści </b>
-        -------------------------------------------------- --------
+        ✔️ Brak reklam i wyskakujących okienek
+        ✔️ Nie wymaga dostępu do internetu zapewniając Ci większą prywatność i bezpieczeństwo
+        ✔️ Wymagane są tylko minimalne uprawnienia
+        ✔️ Nacisk na prostotę - robi to, co powinien zrobić kalendarz!
+        ✔️ Otwarto źródłowy
+        ✔️ W pełni konfigurowalne motywy i widżety kalendarza / wydarzeń
+        ✔️ Przetłumaczony na 29 języków
+        ✔️ Eksportuj ustawienia do plików .txt, aby zaimportować je na inne urządzenie
+        ✔️ Obsługuje synchronizacja kalendarza CalDAV w celu synchronizacji zdarzeń między urządzeniami
+        ✔️ Codzienne, tygodniowe, miesięczne, roczne i wydarzenia w kalendarzu
+        ✔️ Obsługuje eksportowanie i importowanie zdarzeń za pomocą plików .ics
+        ✔️ Ustaw wiele przypomnień o wydarzeniach, dostosuj dźwięk i wibracje przypomnienia o wydarzeniach
+        ✔️ Opcja drzemki dla przypomnień
+        ✔️ Łatwo dodawaj święta, urodziny, rocznice i terminy
+        ✔️ Dostosuj zdarzenia - czas rozpoczęcia, czas trwania, przypomnienia itp.
+        ✔️ Dodaj uczestników wydarzenia do każdego wydarzenia
+        ✔️ Użyj jako kalendarza osobistego lub biznesowego
+        ✔️ Wybierz pomiędzy przypomnieniami i powiadomienia e-mail z powiadomieniem o zdarzeniu
 
-        ✔️ Brak reklam i irytujących wyskakujących okienek
-        ✔️ Nie wymaga dostępu do Internetu, co zapewnia większą prywatność i bezpieczeństwo
-        ✔️ Wymagane minimalne uprawnienia
-        ✔️ Nacisk na prostotę - robi to, co powinien zrobić kalendarz!
-        ✔️ Kod otwartoźródłowy
-        ✔️ W pełni konfigurowalne motywy i widżety kalendarza / wydarzenia
-        ✔️ Przetłumaczony na 29 języków
-        ✔️ Eksportuj ustawienia do plików .txt, aby zaimportować na inne urządzenia
-        ✔️ Synchronizacja kalendarza CalDAV obsługiwana w celu synchronizacji zdarzeń między urządzeniami
-        ✔️ Codzienny, cotygodniowy, comiesięczny i coroczny widoki wydarzeń w kalendarzu
-        ✔️ Obsługuje eksportowanie i importowanie zdarzeń przez pliki .ics
-        ✔️ Ustawienie wielu przypomnień o wydarzeniach, dostosowywalne dźwięki przypomnień i wibracje
-        ✔️ Opcja drzemki dla przypomnień
-        ✔️ Łatwe dodawanie świąt, urodzin, rocznic i spotkań
-        ✔️ Dostosowywanie zdarzeń - czas rozpoczęcia, czas trwania, przypomnienia itp.
-        ✔️ Dodawanie uczestników wydarzeń
-        ✔️ Użyj jako kalendarza osobistego lub biznesowego
-        ✔️ Wybierz między przypomnieniami i powiadomienia e-mail z przypomnieniem o zdarzeniu
+        POBIERZ SIMPLE CALENDAR PRO - PROSTY KALENDARZ W TRYBIE OFFLINE BEZ REKLAM!
 
-        POBIERZ PROSTY KALENDARZ PRO - PROSTY KALENDARZ W TRYBIE OFFLINE BEZ REKLAM!
+        <b>Sprawdź pełny zestaw prostych narzędzi tutaj:</b>
+        https://www.simplemobiletools.com
 
-        <b> Sprawdź pełny zestaw Prostych Narzędzi tutaj: </b>
-        https://www.simplemobiletools.com
+        <b>Samodzielna strona internetowa Simple Calendar Pro:</b>
+        https://www.simplemobiletools.com/calendar
 
-        <b> Facebook: </b>
-        https://www.facebook.com/simplemobiletools
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
 
-        <b> Reddit: </b>
-        https://www.reddit.com/r/SimpleMobileTools    </string>
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

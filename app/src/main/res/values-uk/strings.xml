@@ -4,16 +4,244 @@
     <string name="app_launcher_name">Календар</string>
     <string name="change_view">Змінити вигляд</string>
     <string name="daily_view">Перегляд дня</string>
+    <string name="weekly_view">Щотижневий перегляд</string>
+    <string name="monthly_view">Щомісячний перегляд</string>
+    <string name="yearly_view">Річний перегляд</string>
+    <string name="simple_event_list">Простий список подій</string>
+    <string name="no_upcoming_events">Здається, у вас немає майбутніх подій.</string>
+    <string name="go_to_today">Сьогодні</string>
+    <string name="go_to_date">Перейти до дати</string>
+    <string name="upgraded_from_free">Схоже,\n\nВи оновили стару безкоштовну версію програми. Ви повинні перенести локально збережені події вручну через експорт у файл .ics, а потім імпортувати. Ви можете знайти обидві кнопки експорту / імпорту в головному меню екрану.\n\nПотім Ви можете видалити стару версію, натиснувши на кнопку \"Оновити до Pro\" у верхній частині налаштувань програми. Після цього вам потрібно буде тільки скинути налаштування Програми.\n\nСпасибо!</string>
+    <string name="widget_monthly">Календар на місяць</string>
+    <string name="widget_list">Список подій календаря</string>
+    <string name="event">Подія</string>
+    <string name="edit_event">Редагувати подію</string>
+    <string name="new_event">Нова подія</string>
+    <string name="create_new_event">Створити нову подію</string>
+    <string name="duplicate_event">Дублювати подію</string>
+    <string name="title_empty">Заголовок не може бути порожнім</string>
+    <string name="end_before_start">Подія не може закінчуватись раніше, ніж розпочнеться</string>
+    <string name="event_added">Подію додано успішно</string>
+    <string name="event_updated">Подію успішно оновлено</string>
+    <string name="filter_events_by_type">Фільтрувати події за типом</string>
+    <string name="please_fill_location">Будь ласка, заповніть місце перебування, яке буде показано на карті</string>
+    <string name="public_event_notification_text">Майбутня подія</string>
+    <string name="repetition">Повторювати</string>
+    <string name="no_repetition">Немає повторень</string>
+    <string name="daily">Щоденно</string>
+    <string name="weekly">Щотижня</string>
+    <string name="monthly">Щомісячно</string>
+    <string name="yearly">За рік</string>
+    <string name="weeks_raw">тижнів</string>
+    <string name="months_raw">місяців</string>
+    <string name="years_raw">років</string>
+    <string name="repeat_till">Повторювати до</string>
     <string name="forever">Назавжди</string>
+    <string name="event_is_repeatable">Ця подія може повторюватися</string>
+    <string name="selection_contains_repetition">У вибраному є повторювані події</string>
+    <string name="delete_one_only">Видалити тільки цю подію</string>
+    <string name="delete_future_occurrences">Видалити це і всі майбутні події</string>
+    <string name="delete_all_occurrences">Видалити всі пов\'язані події</string>
+    <string name="update_one_only">Оновити лише вибране</string>
+    <string name="update_all_occurrences">Оновити всі пов\'язані</string>
+    <string name="repeat_till_date">Повторювати до дати</string>
+    <string name="stop_repeating_after_x">Перестати повторювати після x разів</string>
+    <string name="repeat_forever">Повторювати нескінченно</string>
+    <string name="times">Час</string>
     <string name="repeat">Повторити</string>
-    <string name="title">Назва</string>
+    <string name="repeat_on">Повторювати по</string>
+    <string name="every_day">Щодня</string>
+    <string name="selected_days">У вибрані дні</string>
+    <string name="the_same_day">Того ж дня</string>
+    <string name="the_last_day">Останній день</string>
+    <string name="repeat_on_the_same_day_monthly">Повторювати в цей же день кожен місяць</string>
+    <string name="repeat_on_the_last_day_monthly">Повторювати в останній день місяця</string>
+    <string name="repeat_on_the_same_day_yearly">Повторювати в цей же день щороку</string>
+    <string name="repeat_every_m">Повторювати кожні</string>
+    <string name="every_m">Кожні</string>
+    <string name="first_m">Перша</string>
+    <string name="second_m">друге</string>
+    <string name="third_m">третій</string>
+    <string name="fourth_m">четвертий</string>
+    <string name="last_m">останній</string>
+    <string name="repeat_every_f">Повторювати кожні</string>
+    <string name="every_f">Кожні</string>
+    <string name="first_f">Перша</string>
+    <string name="second_f">друге</string>
+    <string name="third_f">третій</string>
+    <string name="fourth_f">четвертий</string>
+    <string name="last_f">останній</string>
+    <string name="birthdays">Дні народження</string>
+    <string name="add_birthdays">Додати дні народження контактів</string>
+    <string name="no_birthdays">Днів народження не знайдено</string>
+    <string name="no_new_birthdays">Нові дні народження не знайдені</string>
+    <string name="birthdays_added">Дні народження успішно додано</string>
+    <string name="anniversaries">Річниці</string>
+    <string name="add_anniversaries">Додати ювілей контакту</string>
+    <string name="no_anniversaries">Річниць не знайдено</string>
+    <string name="no_new_anniversaries">Нових річниць не знайдено</string>
+    <string name="anniversaries_added">Ювілеї успішно додано</string>
+    <string name="reminder">Нагадування</string>
+    <string name="before">Раніше</string>
+    <string name="add_another_reminder">Додати ще одне нагадування</string>
+    <string name="event_reminders">Нагадування про події</string>
+    <string name="add_another_attendee">Додати іншого учасника</string>
+    <string name="my_status">Мій статус:</string>
+    <string name="going">Прийду</string>
+    <string name="not_going">Не прийду</string>
+    <string name="maybe_going">Може прийду</string>
+    <string name="invited">Запрошений (- а)</string>
+    <string name="enter_a_country">Введіть країну або часовий пояс</string>
+    <string name="import_events">Імпорт подій</string>
+    <string name="export_events">Експорт подій</string>
+    <string name="import_events_from_ics">Імпортувати події з файлу .ics</string>
+    <string name="export_events_to_ics">Експортувати події в файл .ics</string>
+    <string name="default_event_type">Тип події за замовчуванням</string>
+    <string name="export_past_events_too">Експортувати минулі події</string>
+    <string name="include_event_types">Включити типи подій</string>
+    <string name="filename_without_ics">Ім\'я файлу (без .ics)</string>
+    <string name="override_event_types">Перевизначити типи подій у файлі</string>
     <string name="location">Розташування</string>
     <string name="description">Опис</string>
+    <string name="all_day">Увесь день</string>
+    <string name="week">Тиждень</string>
+    <string name="event_types">Типи подій</string>
+    <string name="add_new_type">Додати новий тип</string>
+    <string name="edit_type">Редагувати тип</string>
+    <string name="type_already_exists">Тип з таким заголовком вже існує</string>
     <string name="color">Колір</string>
+    <string name="regular_event">Звичайна подія</string>
+    <string name="cannot_delete_default_type">Тип події за замовчуванням не можна видалити</string>
+    <string name="select_event_type">Виберіть тип події</string>
+    <string name="move_events_into_default">Встановити вибраним подіям тип за замовчуванням</string>
+    <string name="remove_affected_events">Остаточно видаляти вибрані події</string>
+    <string name="unsync_caldav_calendar">Щоб видалити календар CalDAV, потрібно відключити синхронізацію з ним</string>
+    <string name="holidays">Свята</string>
+    <string name="add_holidays">Додати свята</string>
+    <string name="national_holidays">Національні свята</string>
+    <string name="religious_holidays">Релігійні свята</string>
+    <string name="holidays_imported_successfully">Свята були успішно імпортовані в тип події \"свята\"</string>
+    <string name="importing_some_holidays_failed">Не вдалося імпортувати деякі події</string>
+    <string name="importing_holidays_failed">Не вдалося імпортувати свята</string>
+    <string name="manage_event_types">Керування типами подій</string>
+    <string name="start_day_at">Початок дня (тиждень)</string>
+    <string name="end_day_at">Закінчення дня (тиждень)</string>
+    <string name="week_numbers">Показати номери тижня</string>
+    <string name="vibrate">Вібрація при нагадуванні</string>
+    <string name="reminder_sound">Звук нагадування</string>
+    <string name="no_ringtone_picker">Не знайдено додаток для вибору рингтона</string>
     <string name="no_ringtone_selected">Нічого</string>
+    <string name="day_end_before_start">Кінець дня не може бути раніше початку</string>
+    <string name="caldav_sync">Синхронізація по CalDAV</string>
+    <string name="event_lists">Списки подій</string>
+    <string name="display_past_events">Показувати минулі події</string>
+    <string name="replace_description_with_location">Замінити опис події місцерозташуванням</string>
+    <string name="delete_all_events">Видалити всі події</string>
+    <string name="delete_all_events_confirmation">Ви дійсно бажаєте видалити всі події? Це залишить ваші події та інші налаштування без змін.</string>
+    <string name="show_a_grid">Показати сітку</string>
+    <string name="loop_reminders">Циклічні нагадування до відключення</string>
+    <string name="dim_past_events">Минулі події відображати тьмяними</string>
+    <string name="events">Події</string>
+    <string name="reminder_stream">Аудіопотік, який використовується нагадуваннями</string>
     <string name="system_stream">Система</string>
     <string name="alarm_stream">Будильник</string>
     <string name="notification_stream">Нагадування</string>
     <string name="ring_stream">Дзвінок</string>
+    <string name="use_last_event_reminders">Використовувати значення попередніх нагадувань при створенні нового</string>
+    <string name="default_reminder_1">Нагадування за замовчуванням 1</string>
+    <string name="default_reminder_2">Нагадування за замовчуванням 2</string>
+    <string name="default_reminder_3">Нагадування за замовчуванням 3</string>
+    <string name="view_to_open_from_widget">Перегляд для відкриття списку подій віджетів</string>
+    <string name="last_view">Нещодавно переглянуте</string>
+    <string name="new_events">Нові події</string>
+    <string name="default_start_time">Час початку за замовчуванням</string>
+    <string name="next_full_hour">Наступну повну годину</string>
+    <string name="default_duration">Тривалість за замовчуванням</string>
+    <string name="last_used_one">Останнє використане</string>
+    <string name="other_time">Іншого разу</string>
+    <string name="highlight_weekends">Виділіть вихідні в деяких видах</string>
+    <string name="allow_changing_time_zones">Дозволити зміну часових поясів подій</string>
+    <string name="caldav">CalDAV</string>
+    <string name="select_caldav_calendars">Виберіть календарі для синхронізації</string>
+    <string name="manage_synced_calendars">Управління календарями для синхронізації</string>
+    <string name="store_locally_only">Зберігати лише локально</string>
+    <string name="refresh_caldav_calendars">Оновити календарі з CalDAV</string>
+    <string name="refreshing">Оновлення…</string>
+    <string name="refreshing_complete">Оновлення завершено</string>
+    <string name="editing_calendar_failed">Не вдалося змінити календар</string>
+    <string name="syncing">Синхронізація…</string>
+    <string name="synchronization_completed">Синхронізацію завершено</string>
+    <string name="select_a_different_caldav_color">Вибрати інший колір (може бути застосований тільки локально)</string>
+    <string name="insufficient_permissions">У вас немає дозволу на запис у вибраному календарі</string>
+    <string name="caldav_event_not_found">Подію не знайдено. Будь ласка, увімкніть синхронізацію CalDAV для відповідного календаря в налаштуваннях додатку.</string>
+    <string name="monday_alt">Понеділок</string>
+    <string name="tuesday_alt">Вівторок</string>
+    <string name="wednesday_alt">Середа</string>
+    <string name="thursday_alt">Четвер</string>
+    <string name="friday_alt">П\'ятниця</string>
+    <string name="saturday_alt">Субота</string>
+    <string name="sunday_alt">Неділя</string>
+    <string name="sample_title_1">Тренування</string>
+    <string name="sample_description_1">День ніг</string>
+    <string name="sample_title_2">Зустріч з Джоном</string>
+    <string name="sample_description_2">Біля метро \"Невський проспект\"</string>
     <string name="sample_title_3">Бібліотека</string>
+    <string name="sample_title_4">Обід з Мері</string>
+    <string name="sample_description_4">У Плазі</string>
+    <string name="sample_title_5">Час для кави</string>
+    <string name="faq_1_title">Як видалити свята, імпортовані за допомогою кнопки \"Додати свята\"?</string>
+    <string name="faq_1_text">Свята, створені таким чином, вставляються в новий тип події, званий \"Свята\". Можна перейти в \"Налаштування\" -&gt; \" Управління типами подій\",
+        потім тривале натискання на даному типі події і його видалення натисканням на \"кошик\".</string>
+    <string name="faq_2_title">Чи можна синхронізувати події за допомогою Календаря Google або інших служб, що підтримують CalDAV?</string>
+    <string name="faq_2_text">Так, просто включіть \"синхронізацію CalDAV\" в налаштуваннях програми і виберіть календарі, які хочете синхронізувати. Тим не менш, вам буде потрібно стороннє додаток, що обробляє синхронізацію між пристроєм і сервером.
+        Якщо Ви хочете синхронізувати календар Google, то їх офіційний додаток виконає дану роботу. Для інших календарів вам знадобиться сторонній інструмент синхронізації, наприклад DAVdroid.</string>
+    <string name="faq_3_title">Я бачу нагадування, але не чую звуку. Що можна зробити?</string>
+    <string name="faq_3_text">Не тільки відображення нагадування, але і відтворення звуку сильно залежить від системи. Якщо звук не чути, Відкрий налаштування Програми,
+        виберіть параметр \"аудіопотік, який використовується нагадуваннями\" і змініть його на інше значення. Якщо звук як і раніше не буде чути, перевірте в настройка пристрою, що даний потік не відключений.</string>
+    <string name="faq_4_title">Додаток підтримує часові пояси?</string>
+    <string name="faq_4_text">Так, підтримує. За замовчуванням всі події створюються у вашому поточному часовому поясі. Якщо Ви хочете змінити часовий пояс подій, спочатку потрібно включити вибір часового поясу в налаштуваннях Програми, а потім змінити його на екрані \"відомості про подію\". За замовчуванням він відключений, так як більшості людей це не потрібно.</string>
+    <string name="app_title">Simple Calendar Pro - події та нагадування</string>
+    <string name="app_short_description">Простий календар на 2020 рік. Планувальник &amp; зручний інструмент для нагадувань на будь-який день</string>
+    <string name="app_long_description">Simple Calendar Pro це повністю змінюваний, календар, який не вимагає доступу до Інтернету і робить все що від нього можуть вимагати. &lt;b&gt;Без зайвих функцій, непотрібних дозволів і звичайно ж без реклами!&lt;/b&gt;
+
+        Незалежно від того, організуєте Ви поодинокі або регулярні заходи, дні народження, ювілеї, ділові зустрічі, або що-небудь ще, Simple Calendar Pro зробить це &lt;b&gt;легко бути організованим. З величезною кількістю настроюються опцій&lt;/b&gt;. Ви можете налаштувати нагадування про заходи, звуки повідомлень, віджети, а також зовнішній вигляд додатків
+
+        Щоденні, щотижневі та щомісячні звіти роблять перевірку ваших майбутніх подій &amp; amp; зустрічей легше. Ви навіть можете переглядати все як простий список подій, а не у вигляді календаря так що Ви точно будете знати, що буде відбуватися у Вашому житті і коли. . &lt;/b&gt;
+
+        ----------------------------------------------------------
+        &lt;B&gt; Simple Calendar Pro-функції &amp; Премущесва&lt;/b&gt;
+        ----------------------------------------------------------
+
+        ✔️ Ніякої реклами або докучливих спливаючих вікон
+        ✔️ Інтернет не потрібен, це дає вам більше конфіденційності &amp; безпеки
+        ✔️ Тільки найнеобхідніші дозволи
+        ✔️ Акцент на простоту-робить те, що повинен робити календар!
+        ✔️ Відкритий вихідний код
+        ✔️ Повністю настроюються теми &amp; календаря / віджетів заходів
+        ✔ ️ Перекладено на 29 мов
+        ✔️ Експортуйте налаштування в .TXT файли для перенесення на інший пристрій
+        ✔️ CalDAV Синхронізація підтримує зв\'язок заходів на інших пристроях
+        ✔️ Щоденні, щотижневі, щомісячні, щорічні &amp; звіти про заходи в календарі
+        ✔️ Підтримує експорт &amp; імпорт заходів за допомогою .ics файлів
+        ✔ ️ Встановлюйте кілька нагадувань про подію, налаштовуйся звук і вібрація повідомлень по ним
+        ✔️ Опція повторів для подій
+        ✔️ Легко додавати свята, Дні народження, ювілеї &amp; зустрічі
+        ✔ ️ Налаштовуйте події – час початку, тривалість, нагадувань та ін.
+        ✔️ Додавайте учасників подій
+        ✔️ Використовуйте персональний або бізнес-календар
+        ✔ ️ Вибирайте між нагадуваннями &amp; і повідомленнями на пошту про заплановані події
+
+       ЗАЙГРУЗІТЕ SIMPLE CALENDAR PRO-ПРОСТИЙ ОФФЛАЙН КАЛЕНДАР БЕЗ РЕКЛАМИ!
+
+        &lt;b&gt;дивіться офіційний сайт Simple Tools тут:&lt;/b&gt;
+        https://www.simplemobiletools.com
+
+        &lt;b&gt;Окремий веб-сайт Simple Calendar Pro:&lt;/b&gt;
+        https://www.simplemobiletools.com/calendar
+
+        &lt;b&gt;Facebook:&lt;/b&gt;
+        https://www.facebook.com/simplemobiletools
+
+        &lt;b&gt;Reddit:&lt;/b&gt;
+        https://www.reddit.com/r/SimpleMobileTools</string>
 </resources>

@@ -80,7 +80,6 @@
     <string name="export_past_events_too">Exportar tamén eventos pasados</string>
     <string name="include_event_types">Incluír tipos de eventos</string>
     <string name="filename_without_ics">Nome de ficheiro (sin .ics)</string>
-    <string name="title">Título</string>
     <string name="location">Localización</string>
     <string name="description">Descrición</string>
     <string name="all_day">Todo o día</string>

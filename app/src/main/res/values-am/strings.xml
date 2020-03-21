@@ -2,7 +2,6 @@
 <resources>
     <string name="repeat">ድገም</string>
     <string name="every_day">በየቀኑ</string>
-    <string name="title">ርዕስ</string>
     <string name="location">አካባቢ</string>
     <string name="description">መግለጫ</string>
     <string name="color">ቀለም</string>

@@ -81,7 +81,6 @@
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
     <string name="default_event_type">Tipo de evento predefinido</string>
-    <string name="title">Título</string>
     <string name="location">Localização</string>
     <string name="description">Descrição</string>
     <string name="all_day">Dia inteiro</string>
