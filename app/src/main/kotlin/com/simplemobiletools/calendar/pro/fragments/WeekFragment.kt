@@ -5,10 +5,7 @@ import android.content.res.Resources
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Range
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -16,10 +13,7 @@ import androidx.collection.LongSparseArray
 import androidx.fragment.app.Fragment
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.EventActivity
-import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.eventsHelper
-import com.simplemobiletools.calendar.pro.extensions.seconds
-import com.simplemobiletools.calendar.pro.extensions.touch
+import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.interfaces.WeekFragmentListener
@@ -37,14 +31,14 @@ import org.joda.time.Days
 import java.util.*
 
 class WeekFragment : Fragment(), WeeklyCalendar {
-    private val CLICK_DURATION_THRESHOLD = 150
     private val PLUS_FADEOUT_DELAY = 5000L
+    private val MIN_ZOOM_FACTOR = 0.4f
+    private val MAX_ZOOM_FACTOR = 4f
 
     var listener: WeekFragmentListener? = null
     private var weekTimestamp = 0L
     private var rowHeight = 0f
     private var todayColumnIndex = -1
-    private var clickStartTime = 0L
     private var primaryColor = 0
     private var lastHash = 0
     private var mWasDestroyed = false
@@ -54,7 +48,6 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     private var dimPastEvents = true
     private var selectedGrid: View? = null
     private var currentTimeView: ImageView? = null
-    private var events = ArrayList<Event>()
     private var allDayHolders = ArrayList<RelativeLayout>()
     private var allDayRows = ArrayList<HashSet<Int>>()
     private var eventTypeColors = LongSparseArray<Int>()
@@ -63,7 +56,6 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     private lateinit var inflater: LayoutInflater
     private lateinit var mView: View
     private lateinit var scrollView: MyScrollView
-    private lateinit var calendar: WeeklyCalendarImpl
     private lateinit var res: Resources
     private lateinit var config: Config
 
@@ -71,18 +63,28 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         super.onCreate(savedInstanceState)
         res = context!!.resources
         config = context!!.config
-        rowHeight = res.getDimension(R.dimen.weekly_view_row_height)
+        rowHeight = context!!.getWeeklyViewItemHeight()
         weekTimestamp = arguments!!.getLong(WEEK_START_TIMESTAMP)
         dimPastEvents = config.dimPastEvents
         primaryColor = context!!.getAdjustedPrimaryColor()
         allDayRows.add(HashSet())
-        calendar = WeeklyCalendarImpl(this, context!!)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         this.inflater = inflater
 
-        mView = inflater.inflate(R.layout.fragment_week, container, false)
+        mView = inflater.inflate(R.layout.fragment_week, container, false).apply {
+            val fullHeight = context.getWeeklyViewItemHeight().toInt() * 24
+            week_horizontal_grid_holder.layoutParams.height = fullHeight
+            week_events_columns_holder.layoutParams.height = fullHeight
+
+            val scaleDetector = getViewScaleDetector()
+            week_events_scrollview.setOnTouchListener { view, motionEvent ->
+                scaleDetector.onTouchEvent(motionEvent)
+                false
+            }
+        }
+
         scrollView = mView.week_events_scrollview
         scrollView.setOnScrollviewListener(object : MyScrollView.ScrollViewListener {
             override fun onScrollChanged(scrollView: MyScrollView, x: Int, y: Int, oldx: Int, oldy: Int) {
@@ -131,7 +133,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     }
 
     fun updateCalendar() {
-        calendar.updateWeeklyCalendar(weekTimestamp)
+        WeeklyCalendarImpl(this, context!!).updateWeeklyCalendar(weekTimestamp)
     }
 
     private fun setupDayLabels() {
@@ -164,46 +166,67 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         (0..6).map { getColumnWithId(it) }
                 .forEachIndexed { index, layout ->
                     layout.removeAllViews()
+                    val gestureDetector = getViewGestureDetector(layout, index)
+
                     layout.setOnTouchListener { view, motionEvent ->
-                        checkGridClick(motionEvent, index, layout)
+                        gestureDetector.onTouchEvent(motionEvent)
                         true
                     }
                 }
     }
 
-    private fun checkGridClick(event: MotionEvent, index: Int, view: ViewGroup) {
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> clickStartTime = System.currentTimeMillis()
-            MotionEvent.ACTION_UP -> {
-                if (System.currentTimeMillis() - clickStartTime < CLICK_DURATION_THRESHOLD) {
-                    selectedGrid?.animation?.cancel()
-                    selectedGrid?.beGone()
+    private fun getViewGestureDetector(view: ViewGroup, index: Int): GestureDetector {
+        return GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onSingleTapUp(event: MotionEvent): Boolean {
+                selectedGrid?.animation?.cancel()
+                selectedGrid?.beGone()
 
-                    val hour = (event.y / rowHeight).toInt()
-                    selectedGrid = (inflater.inflate(R.layout.week_grid_item, null, false) as ImageView).apply {
-                        view.addView(this)
-                        background = ColorDrawable(primaryColor)
-                        layoutParams.width = view.width
-                        layoutParams.height = rowHeight.toInt()
-                        y = hour * rowHeight
-                        applyColorFilter(primaryColor.getContrastColor())
+                val hour = (event.y / rowHeight).toInt()
+                selectedGrid = (inflater.inflate(R.layout.week_grid_item, null, false) as ImageView).apply {
+                    view.addView(this)
+                    background = ColorDrawable(primaryColor)
+                    layoutParams.width = view.width
+                    layoutParams.height = rowHeight.toInt()
+                    y = hour * rowHeight
+                    applyColorFilter(primaryColor.getContrastColor())
 
-                        setOnClickListener {
-                            val timestamp = weekTimestamp + index * DAY_SECONDS + hour * 60 * 60
-                            Intent(context, EventActivity::class.java).apply {
-                                putExtra(NEW_EVENT_START_TS, timestamp)
-                                putExtra(NEW_EVENT_SET_HOUR_DURATION, true)
-                                startActivity(this)
-                            }
-                        }
-
-                        animate().setStartDelay(PLUS_FADEOUT_DELAY).alpha(0f).withEndAction {
-                            beGone()
+                    setOnClickListener {
+                        val timestamp = weekTimestamp + index * DAY_SECONDS + hour * 60 * 60
+                        Intent(context, EventActivity::class.java).apply {
+                            putExtra(NEW_EVENT_START_TS, timestamp)
+                            putExtra(NEW_EVENT_SET_HOUR_DURATION, true)
+                            startActivity(this)
                         }
                     }
+
+                    animate().setStartDelay(PLUS_FADEOUT_DELAY).alpha(0f).withEndAction {
+                        beGone()
+                    }
                 }
+                return super.onSingleTapUp(event)
             }
-        }
+        })
+    }
+
+    private fun getViewScaleDetector(): ScaleGestureDetector {
+        return ScaleGestureDetector(context, object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+            override fun onScale(detector: ScaleGestureDetector): Boolean {
+                return super.onScale(detector)
+            }
+
+            override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
+                mView.week_events_scrollview.isScrollable = false
+                return super.onScaleBegin(detector)
+            }
+
+            override fun onScaleEnd(detector: ScaleGestureDetector) {
+                val newFactor = Math.max(Math.min(config.weeklyViewItemHeightMultiplier * detector.scaleFactor, MAX_ZOOM_FACTOR), MIN_ZOOM_FACTOR)
+                config.weeklyViewItemHeightMultiplier = newFactor
+                listener?.updateRowHeight()
+                mView.week_events_scrollview.isScrollable = true
+                super.onScaleEnd(detector)
+            }
+        })
     }
 
     override fun updateWeeklyCalendar(events: ArrayList<Event>) {
@@ -213,16 +236,20 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         }
 
         lastHash = newHash
-        this.events = events
 
         activity!!.runOnUiThread {
             if (context != null && activity != null && isAdded) {
-                addEvents()
+                val replaceDescription = config.replaceDescription
+                val sorted = events.sortedWith(
+                        compareBy<Event> { it.startTS }.thenBy { it.endTS }.thenBy { it.title }.thenBy { if (replaceDescription) it.location else it.description }
+                ).toMutableList() as ArrayList<Event>
+
+                addEvents(sorted)
             }
         }
     }
 
-    private fun addEvents() {
+    private fun addEvents(events: ArrayList<Event>) {
         initGrid()
         allDayHolders.clear()
         allDayRows.clear()
@@ -232,18 +259,14 @@ class WeekFragment : Fragment(), WeeklyCalendar {
 
         addNewLine()
 
-        val fullHeight = res.getDimension(R.dimen.weekly_view_events_height)
+        val fullHeight = rowHeight * 24
         val minuteHeight = fullHeight / (24 * 60)
         val minimalHeight = res.getDimension(R.dimen.weekly_view_minimal_event_height).toInt()
-        val density = Math.round(context!!.resources.displayMetrics.density)
+        val density = Math.round(res.displayMetrics.density)
 
         var hadAllDayEvent = false
-        val replaceDescription = config.replaceDescription
-        val sorted = events.sortedWith(
-                compareBy<Event> { it.startTS }.thenBy { it.endTS }.thenBy { it.title }.thenBy { if (replaceDescription) it.location else it.description }
-        )
 
-        for (event in sorted) {
+        for (event in events) {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
             val endDateTime = Formatter.getDateTimeFromTS(event.endTS)
             if (!event.getIsAllDay() && Formatter.getDayCodeFromDateTime(startDateTime) == Formatter.getDayCodeFromDateTime(endDateTime)) {
@@ -261,7 +284,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             }
         }
 
-        for (event in sorted) {
+        for (event in events) {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
             val endDateTime = Formatter.getDateTimeFromTS(event.endTS)
             if (event.getIsAllDay() || Formatter.getDayCodeFromDateTime(startDateTime) != Formatter.getDayCodeFromDateTime(endDateTime)) {

@@ -2,7 +2,6 @@ package com.simplemobiletools.calendar.pro.helpers
 
 import android.content.Context
 import android.media.AudioManager
-import com.simplemobiletools.calendar.pro.BuildConfig
 import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.scheduleCalDAVSync
 import com.simplemobiletools.commons.extensions.getDefaultAlarmTitle
@@ -187,4 +186,8 @@ class Config(context: Context) : BaseConfig(context) {
     var exportPastEvents: Boolean
         get() = prefs.getBoolean(EXPORT_PAST_EVENTS, false)
         set(exportPastEvents) = prefs.edit().putBoolean(EXPORT_PAST_EVENTS, exportPastEvents).apply()
+
+    var weeklyViewItemHeightMultiplier: Float
+        get() = prefs.getFloat(WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER, 1f)
+        set(weeklyViewItemHeightMultiplier) = prefs.edit().putFloat(WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER, weeklyViewItemHeightMultiplier).apply()
 }
