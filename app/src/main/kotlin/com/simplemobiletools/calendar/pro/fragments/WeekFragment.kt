@@ -1,5 +1,6 @@
 package com.simplemobiletools.calendar.pro.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.drawable.ColorDrawable
@@ -41,6 +42,8 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     private var todayColumnIndex = -1
     private var primaryColor = 0
     private var lastHash = 0
+    private var scaleAtStart = 1f
+    private var defaultRowHeight = 0f
     private var mWasDestroyed = false
     private var isFragmentVisible = false
     private var wasFragmentInit = false
@@ -65,12 +68,14 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         res = context!!.resources
         config = context!!.config
         rowHeight = context!!.getWeeklyViewItemHeight()
+        defaultRowHeight = res.getDimension(R.dimen.weekly_view_row_height)
         weekTimestamp = arguments!!.getLong(WEEK_START_TIMESTAMP)
         dimPastEvents = config.dimPastEvents
         primaryColor = context!!.getAdjustedPrimaryColor()
         allDayRows.add(HashSet())
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         this.inflater = inflater
 
@@ -83,7 +88,12 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             val scaleDetector = getViewScaleDetector()
             scrollView.setOnTouchListener { view, motionEvent ->
                 scaleDetector.onTouchEvent(motionEvent)
-                false
+                if (motionEvent.action == MotionEvent.ACTION_UP) {
+                    scrollView.isScrollable = true
+                    true
+                } else {
+                    false
+                }
             }
         }
 
@@ -134,6 +144,14 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         if (isFragmentVisible && wasFragmentInit) {
             listener?.updateHoursTopMargin(mView.week_top_holder.height)
             checkScrollLimits(scrollView.scrollY)
+
+            // fix some glitches like at swiping from a fully zoomed out fragment will all-day events to an empty one
+            val fullFragmentHeight = (listener?.getFullFragmentHeight() ?: 0) - mView.week_top_holder.height
+            if (scrollView.height < fullFragmentHeight) {
+                config.weeklyViewItemHeightMultiplier = fullFragmentHeight / 24 / defaultRowHeight
+                updateViewScale()
+                listener?.updateRowHeight(rowHeight.toInt())
+            }
         }
     }
 
@@ -216,27 +234,23 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     private fun getViewScaleDetector(): ScaleGestureDetector {
         return ScaleGestureDetector(context, object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
             override fun onScale(detector: ScaleGestureDetector): Boolean {
-                return super.onScale(detector)
-            }
-
-            override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
-                scrollView.isScrollable = false
-                return super.onScaleBegin(detector)
-            }
-
-            override fun onScaleEnd(detector: ScaleGestureDetector) {
-                var newFactor = Math.max(Math.min(config.weeklyViewItemHeightMultiplier * detector.scaleFactor, MAX_ZOOM_FACTOR), MIN_ZOOM_FACTOR)
-                val defaultHeight = resources.getDimension(R.dimen.weekly_view_row_height)
-                if (scrollView.height > defaultHeight * newFactor * 24) {
-                    newFactor = scrollView.height / 24f / defaultHeight
+                val scaleDifference = detector.scaleFactor - scaleAtStart
+                scaleAtStart = detector.scaleFactor
+                var newFactor = Math.max(Math.min(config.weeklyViewItemHeightMultiplier + scaleDifference, MAX_ZOOM_FACTOR), MIN_ZOOM_FACTOR)
+                if (scrollView.height > defaultRowHeight * newFactor * 24) {
+                    newFactor = scrollView.height / 24f / defaultRowHeight
                 }
 
                 config.weeklyViewItemHeightMultiplier = newFactor
                 updateViewScale()
                 listener?.updateRowHeight(rowHeight.toInt())
+                return super.onScale(detector)
+            }
 
-                scrollView.isScrollable = true
-                super.onScaleEnd(detector)
+            override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
+                scrollView.isScrollable = false
+                scaleAtStart = detector.scaleFactor
+                return super.onScaleBegin(detector)
             }
         })
     }
@@ -263,10 +277,11 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     }
 
     private fun updateViewScale() {
-        rowHeight = context!!.getWeeklyViewItemHeight()
+        rowHeight = context?.getWeeklyViewItemHeight() ?: return
 
         val oneDp = context!!.resources.getDimension(R.dimen.one_dp).toInt()
         val fullHeight = Math.max(rowHeight.toInt() * 24, scrollView.height + oneDp)
+        scrollView.layoutParams.height = fullHeight - oneDp
         mView.week_horizontal_grid_holder.layoutParams.height = fullHeight
         mView.week_events_columns_holder.layoutParams.height = fullHeight
         addEvents(currEvents)
