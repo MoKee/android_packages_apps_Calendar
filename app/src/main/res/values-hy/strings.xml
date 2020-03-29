@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="forever">միշտ</string>
     <string name="repeat">Կրկնել</string>
     <string name="every_day">Ամեն օր</string>
     <string name="location">Տեղադրություն</string>
     <string name="description">Նկարագրություն</string>
     <string name="color">Գույն</string>
     <string name="no_ringtone_selected">Ոչ մեկը</string>
+    <string name="notification_stream">Ծանուցում</string>
     <string name="monday_alt">Երկուշաբթի</string>
     <string name="saturday_alt">Շաբաթ</string>
     <string name="sunday_alt">Կիրակի</string>
