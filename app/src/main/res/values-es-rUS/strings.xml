@@ -202,4 +202,5 @@
     <string name="faq_4_text">Sí. Por defecto todos los eventos se crean en tu zona horaria actual. Si quieres cambiar la zona horaria de un evento,
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Recordatorios</string>
+    <string name="app_short_description">Calendario móvil simple para 2020. Planificador de tareas &amp; recordatorio de citas para cualquier día</string>
 </resources>
