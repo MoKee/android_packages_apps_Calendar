@@ -174,6 +174,7 @@
     <string name="select_a_different_caldav_color">Chọn một màu khác (chỉ có thể được áp dụng cục bộ)</string>
     <string name="insufficient_permissions">Bạn không được phép viết vào lịch đã chọn</string>
     <string name="caldav_event_not_found">Sự kiện không được tìm thấy. Vui lòng bật đồng bộ hóa CalDAV cho lịch thích hợp trong cài đặt ứng dụng.</string>
+    <string name="no_synchronized_calendars">Không tìm thấy lịch đã đồng bộ</string>
     <string name="monday_alt">Thứ Hai</string>
     <string name="tuesday_alt">Thứ 3</string>
     <string name="wednesday_alt">Thứ 4</string>

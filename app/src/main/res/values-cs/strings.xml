@@ -174,6 +174,7 @@
     <string name="select_a_different_caldav_color">Zvolte jinou barvu (může být použita pouze lokálně)</string>
     <string name="insufficient_permissions">Nemáte povoleno psát ve vybraném kalendáři</string>
     <string name="caldav_event_not_found">Událost nebyla nalezena. Aktivujte prosím synchronizaci CalDAV pro příslušný kalendář v nastavení aplikace.</string>
+    <string name="no_synchronized_calendars">Nebyly nalezeny žádné synchronizovatelné kalendáře</string>
     <string name="monday_alt">Pondělí</string>
     <string name="tuesday_alt">Úterý</string>
     <string name="wednesday_alt">Středa</string>
