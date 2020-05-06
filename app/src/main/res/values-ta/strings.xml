@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">நாட்காட்டி</string>
+    <string name="forever">எப்பொழுதும்</string>
     <string name="location">இருப்பிடம்</string>
     <string name="description">விளக்கம்</string>
     <string name="color">நிறம்</string>
     <string name="no_ringtone_selected">ஏதுமில்லை</string>
     <string name="system_stream">முறைமை</string>
+    <string name="notification_stream">அறிவிப்பு</string>
     <string name="monday_alt">திங்கள்</string>
     <string name="tuesday_alt">செவ்வாய்</string>
     <string name="wednesday_alt">புதன்</string>
