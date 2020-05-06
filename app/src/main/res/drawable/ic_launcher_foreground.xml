@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018-2020 The MoKee Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1080">
+  <path
+      android:pathData="M737.5,444.83V658.1l-73.4,73.4H392.5c-27.5,0 -50,-21.43 -50,-47.62v-239Z"
+      android:strokeAlpha="0.3"
+      android:fillColor="#fff"
+      android:fillAlpha="0.3"/>
+  <path
+      android:pathData="M664.1,730.67V704.89c0,-26.19 22.5,-47.62 50,-47.62h23.4Z"
+      android:strokeAlpha="0.2"
+      android:fillColor="#fff"
+      android:fillAlpha="0.2"/>
+  <path
+      android:pathData="M452.79,648.56q-15.32,-10.6 -21.08,-30.88l28.57,-11.29q2.78,11.29 9.91,17.4t18,6.1a26.11,26.11 0,0 0,17.17 -6,19.78 19.78,0 0,0 -0.46,-31Q497.16,587 484,587h-13.6V559.61h12.45q10.14,0 17.17,-5.07t7,-14.75a16.45,16.45 0,0 0,-5.76 -12.91q-5.76,-5.05 -14.75,-5.07 -9.45,0 -15.2,5.07a26.82,26.82 0,0 0,-8.07 12.68l-27.42,-11.29q4.83,-13.83 17.86,-24t33.07,-10.14a60.68,60.68 0,0 1,26.38 5.53,44 44,0 0,1 18.09,15.09 37.67,37.67 0,0 1,6.45 21.55q0,12.67 -5.87,21.66a36.54,36.54 0,0 1,-14.17 13.14V573a41.62,41.62 0,0 1,18.66 14.52q7.14,9.91 7.15,24a44.39,44.39 0,0 1,-6.92 24.42,47.47 47.47,0 0,1 -19.47,17.06q-12.57,6.22 -28.92,6.22Q468.12,659.16 452.79,648.56Z"
+      android:fillColor="#f5f5f5"/>
+  <path
+      android:pathData="M601.09,537.25l-23.74,17.29 -15.21,-23.28 46.32,-33.41h22.82V655.47H601.09Z"
+      android:fillColor="#f5f5f5"/>
+  <path
+      android:pathData="M737.5,394.66v50.17h-395V394.66c0,-25.39 22.5,-46.16 50,-46.16h295C715,348.5 737.5,369.27 737.5,394.66Z"
+      android:strokeAlpha="0.2"
+      android:fillColor="#fff"
+      android:fillAlpha="0.2"/>
+</vector>
