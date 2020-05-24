@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hola,\n\nparece que has actualizado desde la antigua aplicación gratuita. Tienes que migrar manualmente los eventos almacenados localmente mediante la exportación en un .ics archivo, luego importar. Puedes encontrar ambos botones exportar/importar en el menú de pantalla principal.\n\nPuedes desinstalar la versión anterior, que tiene un botón \'Actualizar a Pro\' en la parte superior de la configuración de la aplicación. Solo tendrás que reiniciar la configuración de tu aplicación.\n\n¡Gracias!</string>
     <string name="widget_monthly">Calendario mensual</string>
     <string name="widget_list">Lista de eventos del calendario</string>
+    <string name="widget_todays_date">Calendario de hoy</string>
     <string name="event">Evento</string>
     <string name="edit_event">Editar evento</string>
     <string name="new_event">Nuevo evento</string>
@@ -174,6 +175,7 @@
     <string name="select_a_different_caldav_color">Seleccionar un color diferente (localmente)</string>
     <string name="insufficient_permissions">No tiene permiso para modificar el calendario</string>
     <string name="caldav_event_not_found">Evento no encontrado. Por favor habilita la sincronización CalDAV para el calendario apropiado en la configuración de la aplicación.</string>
+    <string name="no_synchronized_calendars">No se han encontrado calendarios sincronizables</string>
     <string name="monday_alt">Lunes</string>
     <string name="tuesday_alt">Martes</string>
     <string name="wednesday_alt">Miércoles</string>
@@ -203,4 +205,47 @@
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Recordatorios</string>
     <string name="app_short_description">Calendario móvil simple para 2020. Planificador de tareas &amp; recordatorio de citas para cualquier día</string>
+    <string name="app_long_description">        Calendario Simple Pro es un calendario fuera de línea, totalmente personalizable y diseñado para hacer exactamente lo que debe hacer un calendario. <b>¡Sin funcionalidades complicadas, permisos innecesarios y sin anuncios!</b>
+
+        Ya sea que estes organizando eventos individuales o recurrentes, cumpleaños, aniversarios, reuniones de negocios, citas o cualquier otra cosa, Simple Calendar Pro<b> hace que sea fácil mantenerse organizado</b>. Con una increíble variedad de <b>opciones de personalización</b>, puedes personalizar recordatorios de eventos, sonidos de notificación, widgets de calendario y el aspecto de la aplicación.
+
+        Las vistas diarias, semanales y mensuales permiten verificar tus próximos eventos y citas con facilidad. Incluso puedes ver todos los eventos como si se tratara de una lista en lugar de usar un calendario, <b>para que sepas exactamente lo que está sucediendo en tu vida y cuándo</b>.
+
+        ----------------------------------------------------------
+        <b>Calendario Simple Pro – Características y beneficios</b>
+        ----------------------------------------------------------
+
+        ✔️ Sin anuncios ni ventanas emergentes
+        ✔️ No requiere acceso a internet, dándote más privacidad y seguridad
+        ✔️ Solo se requieren los permisos mínimos para que funcione la aplicación
+        ✔️ Énfasis en la simplicidad – hace lo que un calendario debería hacer
+        ✔️ Código abierto (Open source)
+        ✔️ Totalmente personalizable: temas, calendario, eventos
+        ✔️ Traducido a 29 idiomas
+        ✔️ Exporta tu configuración a un fichero .txt para importarlo a otro dispositivo
+        ✔️ Soporte de CalDAV para sincronizar tus eventos entre múltiples dispositivos
+        ✔️ Vista diaria, semanal, mensual, anual y de eventos en el calendario
+        ✔️ Soporte a la exportación y importación de eventos a través de ficheros .ics
+        ✔️ Establece múltiples recordatorios de eventos, personalice el sonido y la vibración
+        ✔️ Opción para posponer recordatorios
+        ✔️ Añade fácilmente días festivos, cumpleaños, aniversarios y citas
+        ✔️ Personalización de eventos: hora de inicio, duración, recordatorios, etc.
+        ✔️ Añade asistentes para cada evento
+        ✔️ Utilizalo como un calendario personal o de trabajo
+        ✔️ Escoge entre recordatorios y notificaciones de correo para recordarte los eventos
+
+        DESCARGA CALENDARIO SIMPLE PRO - EL CALENDARIO SIMPLE, OFFLINE Y SIN ANUNCIOS!
+
+        <b>Consulta todas las aplicaciones de Simple Tools aquí:</b>
+        https://www.simplemobiletools.com
+
+        <b>Standalone website of Simple Calendar Pro:</b>
+        https://www.simplemobiletools.com/calendar
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>

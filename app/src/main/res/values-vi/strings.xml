@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Xin chào,\n\ncó vẻ như bạn đã nâng cấp từ ứng dụng miễn phí cũ. Bạn phải di chuyển thủ công các sự kiện được lưu trữ cục bộ thông qua xuất trong tệp .ics, sau đó nhập. Bạn có thể tìm thấy cả hai nút xuất/nhập ở menu màn hình chính.\n\nBạn có thể gỡ cài đặt phiên bản cũ có nút \'Nâng cấp lên Pro\' ở đầu cài đặt ứng dụng. Sau đó, bạn sẽ chỉ phải đặt lại cài đặt ứng dụng của mình.\n\nCảm ơn!</string>
     <string name="widget_monthly">Lịch hàng tháng</string>
     <string name="widget_list">Danh sách sự kiện lịch</string>
+    <string name="widget_todays_date">Lịch ngày hôm nay</string>
     <string name="event">Sự Kiện</string>
     <string name="edit_event">Chỉnh sửa Sự kiện</string>
     <string name="new_event">Sự kiện mới</string>

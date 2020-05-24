@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hej, \n\n wydaje się, że uaktualniłeś starą, bezpłatną aplikację. Musisz ręcznie migrować przechowywane lokalnie zdarzenia, eksportując je do pliku .ics, a następnie importując. Oba przyciski eksportu / importu można znaleźć w menu ekranu głównego. \n\n Następnie można odinstalować starą wersję, która ma przycisk „Uaktualnij do wersji Pro” u góry ustawień aplikacji. Będziesz wtedy musiał zresetować ustawienia aplikacji. \n\n Dziękujemy!</string>
     <string name="widget_monthly">Prosty kalendarz - widok miesięczny</string>
     <string name="widget_list">Prosty kalendarz - lista wydarzeń</string>
+    <string name="widget_todays_date">Dzisiejsza data kalendarza</string>
     <string name="event">Wydarzenie</string>
     <string name="edit_event">Edytuj wydarzenie</string>
     <string name="new_event">Nowe wydarzenie</string>
@@ -174,6 +175,7 @@
     <string name="select_a_different_caldav_color">Wybierz inny kolor (może być zastosowany tylko lokalnie)</string>
     <string name="insufficient_permissions">Nie możesz pisać w wybranym kalendarzu</string>
     <string name="caldav_event_not_found">Nie znaleziono zdarzenia. Proszę włączyć synchronizację CalDAV dla odpowiedniego kalendarza w ustawieniach aplikacji.</string>
+    <string name="no_synchronized_calendars">Nie znaleziono zsynchronizowanych kalendarzy</string>
     <string name="monday_alt">Poniedziałek</string>
     <string name="tuesday_alt">Wtorek</string>
     <string name="wednesday_alt">Środę</string>

@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Zdravím,\n\nvypadá to tak, že jste ze staré bezplatné aplikace přešli na novou, placenou. Lokálně uložené události musíte ručně přesunout pomocí exportu do .ics souboru a následně importovat. Tlačítka pro export a import najdete v menu hlavní obrazovky.\n\nStarou aplikaci, která má na vrchu nastavení tlačítko \'Upgradovat na Pro\', můžete potom odinstalovat. Následně si budete muset znovu nastavit položky v nastavení aplikace.\n\nDíky!</string>
     <string name="widget_monthly">Měsíční kalendář</string>
     <string name="widget_list">Seznam událostí kalendáře</string>
+    <string name="widget_todays_date">Kalendář dnešního data</string>
     <string name="event">Událost</string>
     <string name="edit_event">Upravit událost</string>
     <string name="new_event">Nová událost</string>

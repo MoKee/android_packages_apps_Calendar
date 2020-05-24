@@ -16,6 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="holiday_china">சீனா</string>
+    <string name="holiday_southkorea">தேன்கொரியா</string>
     <string name="holiday_india">இந்தியா</string>
+    <string name="holiday_indonesia">இந்தோனேசியா</string>
+    <string name="holiday_italy">இத்தாலி</string>
+    <string name="holiday_malaysia">மலேசியா</string>
     <string name="holiday_singapore">சிங்கப்பூர்</string>
+    <string name="holiday_sweden">சுவீடன்</string>
 </resources>

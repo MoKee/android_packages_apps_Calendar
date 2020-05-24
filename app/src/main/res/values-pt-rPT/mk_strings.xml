@@ -47,6 +47,7 @@
     <string name="holiday_mexico">México</string>
     <string name="holiday_netherlands">Holanda</string>
     <string name="holiday_japan">Japão</string>
+    <string name="holiday_nigeria">Nigéria</string>
     <string name="holiday_norway">Noruega</string>
     <string name="holiday_austria">Áustria</string>
     <string name="holiday_pakistan">Paquistão</string>
@@ -62,6 +63,7 @@
     <string name="holiday_southafrica">Southafrica</string>
     <string name="holiday_finland">Finlândia</string>
     <string name="holiday_sweden">Suécia</string>
+    <string name="holiday_taiwan">TaiPei (China)</string>
     <string name="holiday_ukraine">Ucrânia</string>
     <string name="holiday_unitedkingdom">Reino Unido</string>
     <string name="holiday_unitedstates">Estados Unidos</string>

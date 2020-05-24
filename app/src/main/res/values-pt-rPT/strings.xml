@@ -11,6 +11,7 @@
     <string name="no_upcoming_events">Parece que você não tem eventos futuros.</string>
     <string name="go_to_today">Ir para hoje</string>
     <string name="go_to_date">Ir para data</string>
+    <string name="upgraded_from_free">Ei,\n\nparece que você atualizou do antigo aplicativo gratuito. Você precisa migrar eventos armazenados localmente manualmente através da exportação em um . arquivo cs e depois importando. Você pode encontrar os botões de exportação/importação no menu principal.\n\nVocê pode desinstalar a versão antiga, que tem um botão \'Atualizar para Pro\' na parte superior das configurações do aplicativo. Você só terá que redefinir suas configurações de aplicativo.\n\nObrigado!</string>
     <string name="widget_monthly">Limpar Mensalmente</string>
     <string name="widget_list">Evento de calendário editado</string>
     <string name="event">Eventos</string>
@@ -55,6 +56,7 @@
     <string name="the_last_day">O último dia</string>
     <string name="repeat_on_the_same_day_monthly">no mesmo dia de cada mês</string>
     <string name="repeat_on_the_last_day_monthly">no mesmo dia de cada mês</string>
+    <string name="repeat_on_the_same_day_yearly">no mesmo dia de cada mês</string>
     <string name="repeat_every_m">Repetir a cada</string>
     <string name="every_m">A cada</string>
     <string name="first_m">primeiro</string>
@@ -70,17 +72,35 @@
     <string name="fourth_f">quarto</string>
     <string name="last_f">último</string>
     <string name="birthdays">Aniversários</string>
+    <string name="add_birthdays">Adicionar aniversários dos contatos</string>
+    <string name="no_birthdays">Não foram encontradas tags.</string>
+    <string name="no_new_birthdays">Não foram encontradas tags.</string>
+    <string name="birthdays_added">Ativo foi adicionado com êxito.</string>
     <string name="anniversaries">Aniversários</string>
+    <string name="add_anniversaries">Adicionar aniversários dos contatos</string>
+    <string name="no_anniversaries">Nenhum aniversário foi encontrado</string>
+    <string name="no_new_anniversaries">Nenhum aniversário foi encontrado</string>
+    <string name="anniversaries_added">Suas entradas adicionadas com sucesso.</string>
     <string name="reminder">Lembrete</string>
     <string name="before">antes</string>
     <string name="add_another_reminder">Adicionar outro lembrete</string>
     <string name="event_reminders">Lembretes de evento</string>
     <string name="add_another_attendee">Adicionar outro participante</string>
     <string name="my_status">O meu estado:</string>
+    <string name="going">Indo</string>
+    <string name="not_going">Não vai</string>
+    <string name="maybe_going">Talvez indo</string>
     <string name="invited">Convidado</string>
+    <string name="enter_a_country">Digite um país ou fuso horário</string>
     <string name="import_events">Importar eventos</string>
     <string name="export_events">Exportar eventos</string>
+    <string name="import_events_from_ics">Importar eventos de um arquivo .ics</string>
+    <string name="export_events_to_ics">Importar eventos de um arquivo .ics</string>
     <string name="default_event_type">Tipo de evento predefinido</string>
+    <string name="export_past_events_too">Exportar eventos passados também</string>
+    <string name="include_event_types">Incluir o registo de eventos</string>
+    <string name="filename_without_ics">Nome do arquivo (sem .ics)</string>
+    <string name="override_event_types">Substituir os tipos de eventos no arquivo</string>
     <string name="location">Localização</string>
     <string name="description">Descrição</string>
     <string name="all_day">Dia inteiro</string>
@@ -88,9 +108,14 @@
     <string name="event_types">Tipos de evento</string>
     <string name="add_new_type">Adicionar um novo tipo</string>
     <string name="edit_type">Editar tipo</string>
+    <string name="type_already_exists">Já existe um exame com esse título</string>
     <string name="color">Cor</string>
     <string name="regular_event">Evento regular</string>
+    <string name="cannot_delete_default_type">O Modelo de Endereço padrão não pode ser eliminado</string>
     <string name="select_event_type">Selecionar um tipo de evento</string>
+    <string name="move_events_into_default">Mover eventos afetados para o tipo de evento padrão</string>
+    <string name="remove_affected_events">Remover permanentemente os eventos afetados</string>
+    <string name="unsync_caldav_calendar">Para remover um calendário do CalDAV você precisa desativar a sincronização</string>
     <string name="holidays">Feriados</string>
     <string name="add_holidays">Adicionar feriados</string>
     <string name="national_holidays">Feriados nacionais</string>
@@ -122,13 +147,20 @@
     <string name="alarm_stream">Alarme</string>
     <string name="notification_stream">Notificação</string>
     <string name="ring_stream">Toque</string>
+    <string name="use_last_event_reminders">Usar os lembretes dos últimos eventos como o padrão para novo evento</string>
     <string name="default_reminder_1">Lembrete padrão 1</string>
     <string name="default_reminder_2">Lembrete padrão 2</string>
     <string name="default_reminder_3">Lembrete padrão 3</string>
     <string name="view_to_open_from_widget">Vista para abrir a partir do widget de lista de evento</string>
     <string name="last_view">Última exibição</string>
     <string name="new_events">Novos eventos</string>
+    <string name="default_start_time">Hora Predefinida de Início </string>
+    <string name="next_full_hour">Próxima hora completa</string>
     <string name="default_duration">Duração predefinida</string>
+    <string name="last_used_one">Usado pela última vez em</string>
+    <string name="other_time">Outra vez</string>
+    <string name="highlight_weekends">Destacar fins de semana em algumas visualizações</string>
+    <string name="allow_changing_time_zones">Permitir mudança de fuso horário do evento</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecione calendários para sincronizar</string>
     <string name="manage_synced_calendars">Gerenciar calendários sincronizados</string>
@@ -141,6 +173,7 @@
     <string name="synchronization_completed">Sincronização concluída</string>
     <string name="select_a_different_caldav_color">Selecione uma cor diferente (pode ser aplicado localmente apenas)</string>
     <string name="insufficient_permissions">Você não tem permissão para gravar no calendário selecionado</string>
+    <string name="caldav_event_not_found">Evento não encontrado. Por favor, ative a sincronização CalDAV para o calendário apropriado nas configurações do aplicativo.</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terça-feira</string>
     <string name="wednesday_alt">quarta-feira</string>
@@ -153,5 +186,20 @@
     <string name="sample_title_2">Reunião com John</string>
     <string name="sample_description_2">No jardim Rockstone</string>
     <string name="sample_title_3">Biblioteca</string>
+    <string name="sample_title_4">Almoço com Maria</string>
+    <string name="sample_description_4">Na Praça</string>
     <string name="sample_title_5">Hora de café</string>
+    <string name="faq_1_title">Como posso remover os feriados importados por meio do botão \"Adicionar feriados\"?</string>
+    <string name="faq_1_text">Os feriados criados dessa forma são inseridos em um novo tipo de evento chamado \"Feriados \". Você pode ir em Configurações -&gt; Gerenciar Tipos de Evento,
+        pressione e segure o tipo de evento e apague-o selecionando a lixeira.</string>
+    <string name="faq_2_title">Posso sincronizar meus eventos por meio do Google Agenda ou de outro serviço de suporte CalDAV?</string>
+    <string name="faq_2_text">Sim, basta ativar a \"CalDAV sync\" nas configurações do aplicativo e selecionar os calendários que você deseja sincronizar. No entanto, você precisará de algum aplicativo de terceiros manipulando a sincronização entre o dispositivo e os servidores.
+        Caso queira sincronizar um calendário do Google, o aplicativo oficial de Calendário fará o trabalho. Para outras agendas você vai precisar de um adaptador de sincronização de terceiros, por exemplo DAVx5.</string>
+    <string name="faq_3_title">Vejo os lembretes visuais, mas não ouço áudio. O que posso fazer?</string>
+    <string name="faq_3_text">Não só a exibição do lembrete mas a reprodução do áudio também é extremamente afectada pelo sistema. Se você não consegue ouvir nenhum som, tente ir nas configurações do aplicativo,
+        Pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-lo para um valor diferente. Se ainda não funcionar, verifique suas configurações de som, se a transmissão em particular não estiver silenciada.</string>
+    <string name="faq_4_title">O app suporta fusos horários?</string>
+    <string name="faq_4_text">Sim, sim. Por padrão, todos os eventos são criados em seu fuso horário atual. Se você deseja mudar o fuso horário de um evento,
+        Primeiro terá que ativar o selecionador de fuso horário nas configurações do aplicativo, em seguida, altere-o na tela Detalhes do evento. Isto é desativado por padrão, já que a maioria das pessoas não vai precisar dele.</string>
+    <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
 </resources>

@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hé!\n\núgy tűnik, mintha a régi ingyenes alkalmazásból frissített volna. A helyben tárolt eseményeit manuálisan kell exportálnia egy .ics fájlba, majd visszaimportálnia. Az exportálás / importálás gombok a főképernyő menüjében találhatók.\n\nEzután távolíthatja el a régi verziót, az \'Frissítés Pro verzióra\' gombja az alkalmazás beállításainak tetején található. Ezután csak az alkalmazás beállításait kell még visszaállítania.\n\nKöszönjük!</string>
     <string name="widget_monthly">Havi naptár</string>
     <string name="widget_list">Bejegyzésnaptár</string>
+    <string name="widget_todays_date">A Naptár napi dátuma</string>
     <string name="event">Bejegyzés</string>
     <string name="edit_event">Bejegyzés szerkesztése</string>
     <string name="new_event">Új bejegyzés</string>

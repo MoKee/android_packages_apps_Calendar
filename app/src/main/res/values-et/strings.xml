@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hei,\n\ntundub, et te uuendasite vanast tasuta rakendusest. Peate kohapeal salvestatud sündmused käsitsi läbi viima .ics-failis ja seejärel importima. Nii ekspordi / impordi nupud leiate peaekraanimenüüst.\n\n Seejärel saate eemaldada vana versiooni, millel on rakenduse seadete ülaosas nupp „Uuenda Pro-le”. Seejärel peate oma rakenduse seaded lähtestama.\n\nTänan!</string>
     <string name="widget_monthly">Kuu kalender</string>
     <string name="widget_list">Kalendri sündmuste loend</string>
+    <string name="widget_todays_date">Kalendri tänane kuupäev</string>
     <string name="event">Sündmus</string>
     <string name="edit_event">Redigeeri sündmust</string>
     <string name="new_event">Uus sündmus</string>
