@@ -190,4 +190,8 @@ class Config(context: Context) : BaseConfig(context) {
     var weeklyViewItemHeightMultiplier: Float
         get() = prefs.getFloat(WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER, 1f)
         set(weeklyViewItemHeightMultiplier) = prefs.edit().putFloat(WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER, weeklyViewItemHeightMultiplier).apply()
+
+    var weeklyViewDays: Int
+        get() = prefs.getInt(WEEKLY_VIEW_DAYS, 7)
+        set(weeklyViewDays) = prefs.edit().putInt(WEEKLY_VIEW_DAYS, weeklyViewDays).apply()
 }

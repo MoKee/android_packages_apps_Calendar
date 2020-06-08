@@ -75,6 +75,7 @@ const val ALLOW_CHANGING_TIME_ZONES = "allow_changing_time_zones"
 const val LAST_EXPORT_PATH = "last_export_path"
 const val EXPORT_PAST_EVENTS = "export_past_events"
 const val WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER = "weekly_view_item_height_multiplier"
+const val WEEKLY_VIEW_DAYS = "weekly_view_days"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val LAST_VERSION_CODE = "last_version_code"
