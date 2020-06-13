@@ -11,7 +11,7 @@
     <string name="no_upcoming_events">Parece que você não tem eventos futuros.</string>
     <string name="go_to_today">Ir para hoje</string>
     <string name="go_to_date">Ir para data</string>
-    <string name="upgraded_from_free">Ei,\n\nparece que você atualizou do antigo aplicativo gratuito. Você precisa migrar eventos armazenados localmente manualmente através da exportação em um . arquivo cs e depois importando. Você pode encontrar os botões de exportação/importação no menu principal.\n\nVocê pode desinstalar a versão antiga, que tem um botão \'Atualizar para Pro\' na parte superior das configurações do aplicativo. Você só terá que redefinir suas configurações de aplicativo.\n\nObrigado!</string>
+    <string name="upgraded_from_free">Olá,\n\nparece que acabou de atualizar a antiga aplicação gratuita. Precisa de migrar manualmente os eventos armazenados localmente através da exportação em um ficheiro .ics e importando-o de seguida. Pode encontrar os botões de exportação/importação no menu principal.\n\nPoderá então desinstalar a versão antiga, que tem um botão \'Atualizar para Pro\' na parte superior das definições da aplicação. Então, só terá de repor as definições da aplicação.\n\nObrigado!</string>
     <string name="widget_monthly">Limpar Mensalmente</string>
     <string name="widget_list">Evento de calendário editado</string>
     <string name="event">Eventos</string>
@@ -173,7 +173,7 @@
     <string name="synchronization_completed">Sincronização concluída</string>
     <string name="select_a_different_caldav_color">Selecione uma cor diferente (pode ser aplicado localmente apenas)</string>
     <string name="insufficient_permissions">Você não tem permissão para gravar no calendário selecionado</string>
-    <string name="caldav_event_not_found">Evento não encontrado. Por favor, ative a sincronização CalDAV para o calendário apropriado nas configurações do aplicativo.</string>
+    <string name="caldav_event_not_found">Evento não encontrado. Por favor, ative a sincronização CalDAV para o calendário apropriado nas definições da aplicação.</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terça-feira</string>
     <string name="wednesday_alt">quarta-feira</string>
@@ -193,13 +193,12 @@
     <string name="faq_1_text">Os feriados criados dessa forma são inseridos em um novo tipo de evento chamado \"Feriados \". Você pode ir em Configurações -&gt; Gerenciar Tipos de Evento,
         pressione e segure o tipo de evento e apague-o selecionando a lixeira.</string>
     <string name="faq_2_title">Posso sincronizar meus eventos por meio do Google Agenda ou de outro serviço de suporte CalDAV?</string>
-    <string name="faq_2_text">Sim, basta ativar a \"CalDAV sync\" nas configurações do aplicativo e selecionar os calendários que você deseja sincronizar. No entanto, você precisará de algum aplicativo de terceiros manipulando a sincronização entre o dispositivo e os servidores.
-        Caso queira sincronizar um calendário do Google, o aplicativo oficial de Calendário fará o trabalho. Para outras agendas você vai precisar de um adaptador de sincronização de terceiros, por exemplo DAVx5.</string>
+    <string name="faq_2_text">Sim, basta ativar a \"sincronização CalDAV\" nas definições da aplicação e selecionar os calendários que deseja sincronizar. No entanto, precisará de uma aplicação de terceiros que trate da sincronização entre o dispositivo e os servidores.
+Caso queira sincronizar um calendário da Google, a aplicação oficial do Calendário fará esse trabalho. Para outros calendários irá precisar de um adaptador de sincronização de terceiros, por exemplo o DAVx5.</string>
     <string name="faq_3_title">Vejo os lembretes visuais, mas não ouço áudio. O que posso fazer?</string>
-    <string name="faq_3_text">Não só a exibição do lembrete mas a reprodução do áudio também é extremamente afectada pelo sistema. Se você não consegue ouvir nenhum som, tente ir nas configurações do aplicativo,
-        Pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-lo para um valor diferente. Se ainda não funcionar, verifique suas configurações de som, se a transmissão em particular não estiver silenciada.</string>
+    <string name="faq_3_text">Não só a exibição do lembrete mas a reprodução do áudio é extremamente afetada pelo sistema. Se não consegue ouvir nenhum som, tente ir às definições da aplicação,
+pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-la para um valor diferente. Se ainda não funcionar, verifique nas suas definições de som se a transmissão em particular não está silenciada.</string>
     <string name="faq_4_title">O app suporta fusos horários?</string>
-    <string name="faq_4_text">Sim, sim. Por padrão, todos os eventos são criados em seu fuso horário atual. Se você deseja mudar o fuso horário de um evento,
-        Primeiro terá que ativar o selecionador de fuso horário nas configurações do aplicativo, em seguida, altere-o na tela Detalhes do evento. Isto é desativado por padrão, já que a maioria das pessoas não vai precisar dele.</string>
+    <string name="faq_4_text">Sim. Por padrão, todos os eventos são criados no seu fuso horário atual. Se deseja mudar o fuso horário de um evento, primeiro terá de ativar o selecionador de fuso horário nas definições da aplicação e, em seguida, alterá-lo no ecrã de Detalhes do Evento. Isto está desativado por padrão, já que a maioria das pessoas não vai necessitar disso.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
 </resources>
