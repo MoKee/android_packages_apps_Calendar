@@ -91,6 +91,7 @@
     <string name="not_going">Not going</string>
     <string name="maybe_going">Maybe going</string>
     <string name="invited">Invited</string>
+    <string name="enter_a_country">Masukkan negara atau zona waktu</string>
     <string name="import_events">Impor acara</string>
     <string name="export_events">Ekspor acara</string>
     <string name="import_events_from_ics">Impor acara dari berkas .ics</string>
@@ -154,6 +155,10 @@
     <string name="last_view">Terakhir Dilihat</string>
     <string name="new_events">New events</string>
     <string name="default_start_time">Default start time</string>
+    <string name="next_full_hour">Jam penuh berikutnya</string>
+    <string name="default_duration">Waktu default</string>
+    <string name="last_used_one">Terakhir digunakan</string>
+    <string name="other_time">Lain waktu</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Pilih kalender untuk disinkronkan</string>
     <string name="manage_synced_calendars">Kelola kalender yang disinkronkan</string>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="forever">ہمیشہ کے لئے</string>
     <string name="color">رنگ</string>
     <string name="no_ringtone_selected">کوئی نہیں</string>
+    <string name="notification_stream">پیغام</string>
 </resources>

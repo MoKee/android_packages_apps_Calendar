@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">嘿，\n\n您似乎是從舊版免費應用升級而來。您必須手動通過導出 .ics 文件來遷移本地存儲的事件，然後導入。您可以在主屏幕菜單中找到導出/導入按鈕。 \n\n您可以卸載舊版本，因為該版本在應用程序設置頂部有一個“升級到專業版”按鈕。您只需要重置您的應用程序設置。\n\n！</string>
     <string name="widget_monthly">月曆</string>
     <string name="widget_list">行事曆活動列表</string>
+    <string name="widget_todays_date">選擇今天的日期</string>
     <string name="event">活動</string>
     <string name="edit_event">編輯活動</string>
     <string name="new_event">新活動</string>
