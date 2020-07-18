@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_launcher_name">Deiziataer</string>
+    <string name="event">Darvoud</string>
+    <string name="new_event">Darvoud nevez</string>
+    <string name="daily">Bemdez</string>
+    <string name="weekly">Bep sizhun</string>
+    <string name="monthly">Bep miz</string>
+    <string name="yearly">Bep bloaz</string>
+    <string name="location">Lec\'hiadur</string>
+    <string name="description">Deskrivadur</string>
+    <string name="week">Sizhun</string>
+    <string name="color">Liv</string>
+    <string name="no_ringtone_selected">Hini ebet</string>
+    <string name="events">Darvoudoù</string>
+    <string name="system_stream">Reizhiad</string>
+    <string name="notification_stream">Rebuzadur</string>
+    <string name="monday_alt">Dilun</string>
+    <string name="tuesday_alt">Dimeurzh</string>
+    <string name="wednesday_alt">Dimerc\'her</string>
+    <string name="thursday_alt">Diryaou</string>
+    <string name="friday_alt">Digwener</string>
+    <string name="saturday_alt">Disadorn</string>
+    <string name="sunday_alt">Disul</string>
+</resources>
