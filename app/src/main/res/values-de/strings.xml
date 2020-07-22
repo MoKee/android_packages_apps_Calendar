@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hallo,\n\n es scheint, Sie haben von der früher kostenlosen Version der App aktualisiert. Daher müssen Sie ihre lokal gespeicherten Ereignisse manuell importieren. Dir Funktionen für den Import und Export finden Sie im Hauptmenü\n\nSie können dann die alte Version deinstallieren, die über einen \'Upgrade auf Pro\' Button oben in den App-Einstellungen verfügt. Sie müssen dann nur Ihre App-Einstellungen zurücksetzen.\n\nDanke!</string>
     <string name="widget_monthly">Monatskalender</string>
     <string name="widget_list">Termin-Liste</string>
+    <string name="widget_todays_date">Kalenderdatum heute</string>
     <string name="event">Termin</string>
     <string name="edit_event">Termin bearbeiten</string>
     <string name="new_event">Neuer Termin</string>
