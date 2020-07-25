@@ -175,6 +175,7 @@
     <string name="select_a_different_caldav_color">Wähle eine andere Farbe (wird möglicherweise nur lokal angewendet)</string>
     <string name="insufficient_permissions">Du hast keine Erlaubnis den gewählten Kalender zu bearbeiten</string>
     <string name="caldav_event_not_found">Ereignis nicht gefunden. Bitte aktivieren Sie die CalDAV-Synchronisation für den passenden Kalender in den App-Einstellungen.</string>
+    <string name="no_synchronized_calendars">Es wurden keine synchronisierbaren Kalender gefunden</string>
     <string name="monday_alt">Montag</string>
     <string name="tuesday_alt">Dienstag</string>
     <string name="wednesday_alt">Mittwoch</string>
@@ -204,4 +205,5 @@
     <string name="faq_4_text">Ja, das tut es. Standardmäßig werden alle Ereignisse in Ihrer aktuellen Zeitzone erstellt. Wenn Sie die Zeitzone einer Veranstaltung ändern möchten
         Sie müssen zuerst die Zeitzonen-Auswahl in den App-Einstellungen aktivieren, dann ändern Sie es auf dem Bildschirm Ereignisdetails. Es ist standardmäßig deaktiviert, da die meisten Leute es nicht brauchen.</string>
     <string name="app_title">Simple Calendar Pro - Ereignisse &amp; Erinnerungen</string>
+    <string name="app_short_description">Einfacher mobiler 2020-Kalender. Planer &amp; Termin-Erinnerung für jeden Tag</string>
 </resources>
