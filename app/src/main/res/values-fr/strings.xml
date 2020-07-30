@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hé,\n\n il semble comme vous mis à jour depuis l\'ancienne application gratuite. Vous devez migrer manuellement les événements stockés localement via un fichier .ics, puis \"importation\". Vous pouvez trouver les deux boutons d’import/export dans le menu de l’écran principal.\n\nVous pouvez alors désinstaller l’ancienne version, qui dispose d’un bouton « Mise à niveau à Pro » en haut de sa liste des paramètres. Ensuite, vous devrez seulement réinitialiser vos paramètres d’application.\n\nMerci !</string>
     <string name="widget_monthly">Calendrier mensuel</string>
     <string name="widget_list">Liste d\'événements du calendrier</string>
+    <string name="widget_todays_date">Date du calendrier du jour</string>
     <string name="event">Événement</string>
     <string name="edit_event">Éditer l\'événement</string>
     <string name="new_event">Nouvel événement</string>
@@ -174,6 +175,7 @@
     <string name="select_a_different_caldav_color">Sélectionnez une couleur différente (peut être appliqué localement uniquement)</string>
     <string name="insufficient_permissions">Vous n\'êtes pas autorisés à écrire dans le Calendrier sélectionné</string>
     <string name="caldav_event_not_found">Événement introuvable. Veuillez activer la synchronisation CalDAV pour le calendrier approprié dans les paramètres de l\'application.</string>
+    <string name="no_synchronized_calendars">Aucun calendrier synchronisable n\'a été trouvé</string>
     <string name="monday_alt">Lundi</string>
     <string name="tuesday_alt">Mardi</string>
     <string name="wednesday_alt">Mercredi</string>
