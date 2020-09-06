@@ -149,6 +149,7 @@
     <string name="view_to_open_from_widget">Vista por defecto al abrir desde el widget</string>
     <string name="last_view">Última vista</string>
     <string name="new_events">Nuevos eventos</string>
+    <string name="default_duration">Duración por defecto</string>
     <string name="other_time">Otra vez</string>
     <string name="allow_changing_time_zones">Permitir cambiar las zonas horarias del evento</string>
     <string name="caldav">CalDAV</string>
