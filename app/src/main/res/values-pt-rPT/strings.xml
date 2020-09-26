@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calendário partilhado</string>
+    <string name="app_name">Calendário Simples</string>
     <string name="app_launcher_name">Calendário</string>
     <string name="change_view">Mudar vista</string>
     <string name="daily_view">Vista diária</string>
-    <string name="weekly_view">Vitórias Semanais</string>
-    <string name="monthly_view">Taxa mensal</string>
-    <string name="yearly_view">Vista diária</string>
-    <string name="simple_event_list">Exibir lista de eventos</string>
+    <string name="weekly_view">Vista semanal</string>
+    <string name="monthly_view">Vista mensal</string>
+    <string name="yearly_view">Vista anual</string>
+    <string name="simple_event_list">Lista simples de eventos</string>
     <string name="no_upcoming_events">Parece que você não tem eventos futuros.</string>
     <string name="go_to_today">Ir para hoje</string>
     <string name="go_to_date">Ir para data</string>
     <string name="upgraded_from_free">Olá,\n\nparece que acabou de atualizar a antiga aplicação gratuita. Precisa de migrar manualmente os eventos armazenados localmente através da exportação em um ficheiro .ics e importando-o de seguida. Pode encontrar os botões de exportação/importação no menu principal.\n\nPoderá então desinstalar a versão antiga, que tem um botão \'Atualizar para Pro\' na parte superior das definições da aplicação. Então, só terá de repor as definições da aplicação.\n\nObrigado!</string>
     <string name="widget_monthly">Limpar Mensalmente</string>
     <string name="widget_list">Evento de calendário editado</string>
+    <string name="widget_todays_date">Calendário de hoje</string>
     <string name="event">Eventos</string>
     <string name="edit_event">Editar Evento</string>
     <string name="new_event">Novo evento</string>
@@ -134,7 +135,7 @@
     <string name="day_end_before_start">O dia não pode acabar mais cedo do que começa</string>
     <string name="caldav_sync">Sincronização CalDAV</string>
     <string name="event_lists">Lista de eventos</string>
-    <string name="display_past_events">Exibir eventos do passado</string>
+    <string name="display_past_events">Mostrar eventos passados</string>
     <string name="replace_description_with_location">Substituir a descrição do evento com localização</string>
     <string name="delete_all_events">Excluir todos os eventos</string>
     <string name="delete_all_events_confirmation">Tem certeza que deseja excluir todos os eventos? Isto deixará os tipos de eventos e outras configurações intactas.</string>
@@ -174,6 +175,7 @@
     <string name="select_a_different_caldav_color">Selecione uma cor diferente (pode ser aplicado localmente apenas)</string>
     <string name="insufficient_permissions">Você não tem permissão para gravar no calendário selecionado</string>
     <string name="caldav_event_not_found">Evento não encontrado. Por favor, ative a sincronização CalDAV para o calendário apropriado nas definições da aplicação.</string>
+    <string name="no_synchronized_calendars">Não foram encontrados calendários sincronizáveis</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terça-feira</string>
     <string name="wednesday_alt">quarta-feira</string>
@@ -201,4 +203,48 @@ pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-la para
     <string name="faq_4_title">O app suporta fusos horários?</string>
     <string name="faq_4_text">Sim. Por padrão, todos os eventos são criados no seu fuso horário atual. Se deseja mudar o fuso horário de um evento, primeiro terá de ativar o selecionador de fuso horário nas definições da aplicação e, em seguida, alterá-lo no ecrã de Detalhes do Evento. Isto está desativado por padrão, já que a maioria das pessoas não vai necessitar disso.</string>
     <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
+    <string name="app_short_description">Calendário móvel simples de 2020. Agenda &amp; lembrete de compromissos para qualquer dia</string>
+    <string name="app_long_description">        Calendário Simples Pro é um calendário offline, totalmente personalizável, desenhado para fazer exatamente o que um calendário deve fazer. &lt;b&gt;Sem ferramentas complicadas, permissões desnecessárias e anúncios!&lt;b&gt;
+
+        Quer esteja a organizar eventos simples ou recorrentes, aniversários, reuniões de negócios, compromissos ou qualquer outro evento, Calendário Simples Pro torna-o &lt;b&gt;fácil de manter-se organizado&lt;/b&gt;. Dotado de uma variedade incrível de &lt;b&gt;opções de personalização&lt;/b&gt; é possível personalizar lembretes de evento, sons de notificação, widgets de calendário e o aspeto da aplicação.
+
+        As vistas diária, semanal e mensal tornam a verificação dos próximo eventos &amp; numa lufada de ar fresco. É ainda possível ver tudo como uma lista simples de eventos em vez da vista de calendário, e desse modo &lt;b&gt;saber sempre o que se aproxima na vida e quando. &lt;/b&gt;
+
+        ----------------------------------------------------------
+        &lt;b&gt;Calendário Simples Pro – Características &amp; Benefícios&lt;/b&gt;
+        ----------------------------------------------------------
+
+        ✔️ Sem anúncios ou notificações irritantes!
+        ✔️ Sem necessidade de acesso à internet, oferecendo mais privacidade &amp; segurança
+        ✔️ Exige apenas o mínimo de permissões
+        ✔️ Ênfase na simplicidade – faz o que qualquer calendário necessita de fazer!
+        ✔️ Software de código aberto
+        ✔️ Temas totalmente personalizáveis &amp; widgets de calendário / evento
+        ✔️ Traduzido para 29 idiomas
+        ✔️ Exporte configurações para ficheiros .txt para importar para outros dispositivos
+        ✔️ Suporte CalDAV para sincronização de calendário / eventos entre dispositivos
+        ✔️ Vistas diária, semanal, mensal, anual &amp; dos eventos no calendário
+        ✔️ Suporta exportação &amp; importação de eventos através de ficheiros .ics
+        ✔️ Defina múltiplos lembretes de evento, personalize o som e vibração de aviso
+        ✔️ Opções de suspensão para lembretes
+        ✔️ Adicione feriados, aniversários &amp; compromissos com facilidade
+        ✔️ Personalize eventos – início, duração, lembretes,...
+        ✔️ Adicione participantes a cada evento
+        ✔️ Apto tanto para calendário pessoal ou de negócios
+        ✔️ Escolha entre lembretes &amp; notificações por email para ser alertado ao evento
+
+        Transfira o CALENDÁRIO SIMPLES PRO – O CALENDÁRIO OFFLINE SIMPLES SEM ANÚNCIOS! 
+
+        &lt;b&gt;Verifique todo o leque de Ferramentas Simples aqui:&lt;/b&gt;
+        https://www.simplemobiletools.com
+
+        &lt;b&gt;Página Web do Calendário Simples Pro:&lt;/b&gt;
+        https://www.simplemobiletools.com/calendar
+
+        &lt;b&gt;Facebook:&lt;/b&gt;
+        https://www.facebook.com/simplemobiletools
+
+        &lt;b&gt;Reddit:&lt;/b&gt;
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
 </resources>
