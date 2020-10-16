@@ -10,6 +10,7 @@
     <string name="simple_event_list">Jednostavan popis događaja</string>
     <string name="no_upcoming_events">Izgleda da nemate nadolazećih događaja.</string>
     <string name="go_to_today">Idi na danas</string>
+    <string name="go_to_date">Idite na datum</string>
     <string name="widget_monthly">Mjesečni raspored</string>
     <string name="widget_list">Popis događaja kalendara</string>
     <string name="event">Događaj</string>

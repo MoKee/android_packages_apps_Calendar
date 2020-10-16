@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 The MoKee Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">Alžir</string>
+    <string name="holiday_argentina">Argentina</string>
+    <string name="holiday_australia">Australija</string>
+    <string name="holiday_belgium">Belgija</string>
+    <string name="holiday_bolivia">Bolivija</string>
+    <string name="holiday_brazil">Brazil</string>
+    <string name="holiday_canada">Kanada</string>
+    <string name="holiday_china">KIna</string>
+    <string name="holiday_colombia">Kolumbija</string>
+    <string name="holiday_czech">Češka</string>
+    <string name="holiday_denmark">Danska</string>
+    <string name="holiday_germany">Njemačka</string>
+    <string name="holiday_estonia">Estonija</string>
+    <string name="holiday_spain">Španjolska</string>
+    <string name="holiday_ireland">Irska</string>
+    <string name="holiday_france">Francuska</string>
+    <string name="holiday_southkorea">Južna Koreja</string>
+    <string name="holiday_greece">Grčka</string>
+    <string name="holiday_croatia">Hrvatska</string>
+    <string name="holiday_india">Indija</string>
+    <string name="holiday_indonesia">Indonezija</string>
+    <string name="holiday_iceland">Island</string>
+    <string name="holiday_italy">Italija</string>
+    <string name="holiday_latvia">Letonija</string>
+    <string name="holiday_lithuania">Litvanija</string>
+    <string name="holiday_luxembourg">Luksemburg</string>
+    <string name="holiday_macedonia">Makedonija</string>
+    <string name="holiday_malaysia">Malezija</string>
+    <string name="holiday_hungary">Mađarska</string>
+    <string name="holiday_mexico">Meksiko</string>
+    <string name="holiday_netherlands">Nizozemska</string>
+    <string name="holiday_japan">Japan</string>
+    <string name="holiday_nigeria">Nigerija</string>
+    <string name="holiday_norway">Norveška</string>
+    <string name="holiday_austria">Austrija</string>
+    <string name="holiday_pakistan">Pakistan</string>
+    <string name="holiday_poland">Poljska</string>
+    <string name="holiday_portugal">Portugal</string>
+    <string name="holiday_russia">Rusija</string>
+    <string name="holiday_romania">Rumunjska</string>
+    <string name="holiday_switzerland">Švicarska</string>
+    <string name="holiday_singapore">Singapur</string>
+    <string name="holiday_serbia">Srbija</string>
+    <string name="holiday_slovenia">Slovenija</string>
+    <string name="holiday_slovakia">Slovačka</string>
+    <string name="holiday_southafrica">Južna Afrika</string>
+    <string name="holiday_finland">Finska</string>
+    <string name="holiday_sweden">Švedska</string>
+    <string name="holiday_taiwan">Tajvan</string>
+    <string name="holiday_ukraine">Ukrajina</string>
+    <string name="holiday_unitedkingdom">Ujedinjeno Kraljevstvo</string>
+    <string name="holiday_unitedstates">Sjedinjene Američke Države</string>
+    <string name="no_calendar_permission">Potrebno je dopuštenje za Kalendar</string>
+</resources>
