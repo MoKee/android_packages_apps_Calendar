@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.pro.fragments
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -210,4 +211,17 @@ class EventListFragment : MyFragmentHolder(), RefreshRecyclerViewListener {
     }
 
     override fun getNewEventDayCode() = Formatter.getTodayCode()
+
+    override fun printView() {
+        mView.apply {
+            (calendar_events_list.adapter as? EventListAdapter)?.togglePrintMode()
+            Handler().postDelayed({
+                context!!.printBitmap(calendar_events_list.getViewBitmap())
+
+                Handler().postDelayed({
+                    (calendar_events_list.adapter as? EventListAdapter)?.togglePrintMode()
+                }, 1000)
+            }, 1000)
+        }
+    }
 }
