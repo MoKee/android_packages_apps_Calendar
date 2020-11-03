@@ -140,6 +140,10 @@ class WeekFragment : Fragment(), WeeklyCalendar {
 
         setupDayLabels()
         updateCalendar()
+
+        if (rowHeight != 0f && mView.width != 0) {
+            addCurrentTimeIndicator()
+        }
     }
 
     override fun onPause() {
@@ -197,14 +201,14 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         mView.week_events_columns_holder.removeAllViews()
         (0 until config.weeklyViewDays).forEach {
             val column = inflater.inflate(R.layout.weekly_view_day_column, mView.week_events_columns_holder, false) as RelativeLayout
-            column.tag = Formatter.getDayCodeFromTS(weekTimestamp + it * DAY_SECONDS)
+            column.tag = Formatter.getUTCDayCodeFromTS(weekTimestamp + it * DAY_SECONDS)
             mView.week_events_columns_holder.addView(column)
             dayColumns.add(column)
         }
     }
 
     private fun setupDayLabels() {
-        var curDay = Formatter.getDateTimeFromTS(weekTimestamp)
+        var curDay = Formatter.getUTCDateTimeFromTS(weekTimestamp)
         val textColor = if (isPrintVersion) resources.getColor(R.color.theme_light_text_color) else config.textColor
         val todayCode = Formatter.getDayCodeFromDateTime(DateTime())
         val screenWidth = context?.usableScreenSize?.x ?: return
@@ -270,7 +274,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                     applyColorFilter(primaryColor.getContrastColor())
 
                     setOnClickListener {
-                        val timestamp = weekTimestamp + index * DAY_SECONDS + hour * 60 * 60
+                        val timestamp = Formatter.getDateTimeFromTS(weekTimestamp + index * DAY_SECONDS).withTime(hour, 0, 0, 0).seconds()
                         Intent(context, EventActivity::class.java).apply {
                             putExtra(NEW_EVENT_START_TS, timestamp)
                             putExtra(NEW_EVENT_SET_HOUR_DURATION, true)
@@ -379,8 +383,6 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         val minimalHeight = res.getDimension(R.dimen.weekly_view_minimal_event_height).toInt()
         val density = Math.round(res.displayMetrics.density)
 
-        var hadAllDayEvent = false
-
         for (event in events) {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
             val endDateTime = Formatter.getDateTimeFromTS(event.endTS)
@@ -403,7 +405,6 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
             val endDateTime = Formatter.getDateTimeFromTS(event.endTS)
             if (event.getIsAllDay() || Formatter.getDayCodeFromDateTime(startDateTime) != Formatter.getDayCodeFromDateTime(endDateTime)) {
-                hadAllDayEvent = true
                 addAllDayEvent(event)
             } else {
                 val dayCode = Formatter.getDayCodeFromDateTime(startDateTime)
@@ -484,7 +485,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         }
 
         checkTopHolderHeight()
-        addCurrentTimeIndicator(minuteHeight)
+        addCurrentTimeIndicator()
     }
 
     private fun addNewLine() {
@@ -493,9 +494,10 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         allDayHolders.add(allDaysLine)
     }
 
-    private fun addCurrentTimeIndicator(minuteHeight: Float) {
+    private fun addCurrentTimeIndicator() {
         if (todayColumnIndex != -1) {
-            val minutes = DateTime().minuteOfDay
+            val calendar = Calendar.getInstance()
+            val minutes = calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE)
             if (todayColumnIndex >= dayColumns.size) {
                 currentTimeView?.alpha = 0f
                 return
@@ -515,6 +517,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                 mView.week_events_holder.addView(this, 0)
                 val extraWidth = res.getDimension(R.dimen.activity_margin).toInt()
                 val markerHeight = res.getDimension(R.dimen.weekly_view_now_height).toInt()
+                val minuteHeight = rowHeight / 60
                 (layoutParams as RelativeLayout.LayoutParams).apply {
                     width = (mView.width / weeklyViewDays) + extraWidth
                     height = markerHeight
