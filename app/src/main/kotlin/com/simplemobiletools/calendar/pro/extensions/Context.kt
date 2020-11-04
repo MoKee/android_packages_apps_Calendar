@@ -40,8 +40,6 @@ import com.simplemobiletools.commons.helpers.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
-import org.joda.time.DateTime
-import org.joda.time.DateTimeZone
 import org.joda.time.LocalDate
 import org.json.JSONObject
 import java.io.IOException
@@ -347,8 +345,9 @@ fun Context.launchNewEventIntent(dayCode: String = Formatter.getTodayCode()) {
 }
 
 fun Context.getNewEventTimestampFromCode(dayCode: String): Long {
+    val calendar = Calendar.getInstance()
     val defaultStartTime = config.defaultStartTime
-    val currHour = DateTime(System.currentTimeMillis(), DateTimeZone.getDefault()).hourOfDay
+    val currHour = calendar.get(Calendar.HOUR_OF_DAY)
     var dateTime = Formatter.getLocalDateTimeFromCode(dayCode).withHourOfDay(currHour)
     var newDateTime = dateTime.plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)
 

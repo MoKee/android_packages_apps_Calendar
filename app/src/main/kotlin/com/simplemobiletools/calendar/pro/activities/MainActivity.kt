@@ -430,7 +430,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         currentFragments.last().showGoToDateDialog()
     }
 
-    fun printView() {
+    private fun printView() {
         currentFragments.last().printView()
     }
 
