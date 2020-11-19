@@ -159,6 +159,7 @@
     <string name="default_duration">Waktu default</string>
     <string name="last_used_one">Terakhir digunakan</string>
     <string name="other_time">Lain waktu</string>
+    <string name="highlight_weekends">Highlight weekends on some views</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Pilih kalender untuk disinkronkan</string>
     <string name="manage_synced_calendars">Kelola kalender yang disinkronkan</string>
