@@ -127,6 +127,7 @@
     <string name="manage_event_types">Eseménytípusok kezelése</string>
     <string name="start_day_at">A kezdés napja:</string>
     <string name="end_day_at">A befejezés napja:</string>
+    <string name="allow_customizing_day_count">A napszámláló testreszabásának engedélyezése</string>
     <string name="week_numbers">Hetek sorszámának mutatása</string>
     <string name="vibrate">Emlékeztetőnél rezgés</string>
     <string name="reminder_sound">Az Emlékeztető dallama</string>

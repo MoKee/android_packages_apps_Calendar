@@ -127,6 +127,7 @@
     <string name="manage_event_types">Správa typů událostí</string>
     <string name="start_day_at">Počátek dne v</string>
     <string name="end_day_at">Konec dne v</string>
+    <string name="allow_customizing_day_count">Povolit přizpůsobení počtu dnů</string>
     <string name="week_numbers">Zobrazovat číslo týdne</string>
     <string name="vibrate">Vibrovat při připomínce</string>
     <string name="reminder_sound">Zvuk připomínky</string>

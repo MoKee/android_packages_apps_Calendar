@@ -127,6 +127,7 @@
     <string name="manage_event_types">管理事件类型</string>
     <string name="start_day_at">每日开始于</string>
     <string name="end_day_at">每日结束于</string>
+    <string name="allow_customizing_day_count">允许自定义天数</string>
     <string name="week_numbers">显示第几周</string>
     <string name="vibrate">在提醒时振动</string>
     <string name="reminder_sound">提示音</string>
