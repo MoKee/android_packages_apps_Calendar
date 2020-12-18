@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Kalendari</string>
+    <string name="event">Ngjarjet</string>
+    <string name="edit_event">Përpuno ngjarjen</string>
+    <string name="new_event">Ngjarje e re</string>
+    <string name="title_empty">Titulli nuk mund të jetë i zbrazët</string>
+    <string name="daily">Çdo ditë</string>
+    <string name="weekly">Javore</string>
+    <string name="monthly">Mujor</string>
+    <string name="yearly">Vjetor</string>
+    <string name="weeks_raw">javë</string>
+    <string name="months_raw">Muaj</string>
+    <string name="years_raw">vit</string>
     <string name="forever">Gjithmonë</string>
     <string name="repeat">Përsërit</string>
     <string name="every_day">Çdo ditë</string>
     <string name="location">Vendndodhja</string>
     <string name="description">Përshkrimi</string>
     <string name="color">Ngjyra</string>
+    <string name="week_numbers">Trego numrat e javës</string>
     <string name="no_ringtone_selected">Asnjë</string>
     <string name="system_stream">Sistemi</string>
     <string name="alarm_stream">Alarmi</string>

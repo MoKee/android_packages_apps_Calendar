@@ -15,6 +15,7 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="holiday_algeria">Algjeri</string>
     <string name="holiday_argentina">Argjentinë</string>
     <string name="holiday_australia">Australi</string>
     <string name="holiday_belgium">Belgjikë</string>
@@ -25,6 +26,11 @@
     <string name="holiday_colombia">Kolumbi</string>
     <string name="holiday_czech">Çeki</string>
     <string name="holiday_denmark">Danimarkë</string>
+    <string name="holiday_germany">Gjermani</string>
+    <string name="holiday_estonia">Estoni</string>
+    <string name="holiday_spain">Spanjë</string>
+    <string name="holiday_ireland">Irlandë</string>
+    <string name="holiday_france">Francë</string>
     <string name="holiday_greece">Greqi</string>
     <string name="holiday_croatia">Kroaci</string>
     <string name="holiday_india">Indi</string>
@@ -45,4 +51,14 @@
     <string name="holiday_austria">Austri</string>
     <string name="holiday_pakistan">Pakistan</string>
     <string name="holiday_poland">Poloni</string>
+    <string name="holiday_portugal">Portugali</string>
+    <string name="holiday_russia">Rusi</string>
+    <string name="holiday_romania">Rumani</string>
+    <string name="holiday_switzerland">Zvicër</string>
+    <string name="holiday_singapore">Singapor</string>
+    <string name="holiday_serbia">Serbi</string>
+    <string name="holiday_slovenia">Slloveni</string>
+    <string name="holiday_slovakia">Sllovaki</string>
+    <string name="holiday_finland">Finlandë</string>
+    <string name="no_calendar_permission">Kërkohet leja e kalendarit</string>
 </resources>
