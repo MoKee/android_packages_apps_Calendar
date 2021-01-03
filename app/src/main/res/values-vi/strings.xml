@@ -127,6 +127,7 @@
     <string name="manage_event_types">Quản lý các loại sự kiện</string>
     <string name="start_day_at">Ngày bắt đầu vào</string>
     <string name="end_day_at">Ngày kết thúc ở</string>
+    <string name="allow_customizing_day_count">Cho phép tùy chỉnh số ngày</string>
     <string name="week_numbers">Hiển thị số tuần</string>
     <string name="vibrate">Rung khi thông báo nhắc nhở</string>
     <string name="reminder_sound">Âm báo</string>
