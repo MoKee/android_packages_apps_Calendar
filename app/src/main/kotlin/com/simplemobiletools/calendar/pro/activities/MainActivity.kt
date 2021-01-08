@@ -974,6 +974,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         updateViewPager(dayCode)
     }
 
+    // events fetched from Thunderbird, https://www.thunderbird.net/en-US/calendar/holidays and
+    // https://holidays.kayaposoft.com/public_holidays.php?year=2021
     private fun getHolidayRadioItems(): ArrayList<RadioItem> {
         val items = ArrayList<RadioItem>()
 
@@ -984,6 +986,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_belgium), "belgium.ics")
             put(getString(R.string.holiday_bolivia), "bolivia.ics")
             put(getString(R.string.holiday_brazil), "brazil.ics")
+            put(getString(R.string.holiday_bulgaria), "bulgaria.ics")
             put(getString(R.string.holiday_canada), "canada.ics")
             put(getString(R.string.holiday_china), "china.ics")
             put(getString(R.string.holiday_colombia), "colombia.ics")
@@ -994,13 +997,15 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_spain), "spain.ics")
             put(getString(R.string.holiday_ireland), "ireland.ics")
             put(getString(R.string.holiday_france), "france.ics")
-            put(getString(R.string.holiday_southkorea), "southkorea.ics")
+            put(getString(R.string.holiday_liechtenstein), "liechtenstein.ics")
             put(getString(R.string.holiday_greece), "greece.ics")
             put(getString(R.string.holiday_croatia), "croatia.ics")
             put(getString(R.string.holiday_india), "india.ics")
             put(getString(R.string.holiday_indonesia), "indonesia.ics")
             put(getString(R.string.holiday_iceland), "iceland.ics")
             put(getString(R.string.holiday_italy), "italy.ics")
+            put(getString(R.string.holiday_kazakhstan), "kazakhstan.ics")
+            put(getString(R.string.holiday_morocco), "morocco.ics")
             put(getString(R.string.holiday_latvia), "latvia.ics")
             put(getString(R.string.holiday_lithuania), "lithuania.ics")
             put(getString(R.string.holiday_luxembourg), "luxembourg.ics")
@@ -1009,6 +1014,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_hungary), "hungary.ics")
             put(getString(R.string.holiday_mexico), "mexico.ics")
             put(getString(R.string.holiday_netherlands), "netherlands.ics")
+            put(getString(R.string.holiday_nicaragua), "nicaragua.ics")
             put(getString(R.string.holiday_japan), "japan.ics")
             put(getString(R.string.holiday_nigeria), "nigeria.ics")
             put(getString(R.string.holiday_norway), "norway.ics")
@@ -1017,9 +1023,13 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_poland), "poland.ics")
             put(getString(R.string.holiday_portugal), "portugal.ics")
             put(getString(R.string.holiday_russia), "russia.ics")
+            put(getString(R.string.holiday_costarica), "costarica.ics")
+            put(getString(R.string.holiday_uruguay), "uruguay.ics")
+            put(getString(R.string.holiday_haiti), "haiti.ics")
             put(getString(R.string.holiday_romania), "romania.ics")
             put(getString(R.string.holiday_switzerland), "switzerland.ics")
             put(getString(R.string.holiday_singapore), "singapore.ics")
+            put(getString(R.string.holiday_southkorea), "southkorea.ics")
             put(getString(R.string.holiday_serbia), "serbia.ics")
             put(getString(R.string.holiday_slovenia), "slovenia.ics")
             put(getString(R.string.holiday_slovakia), "slovakia.ics")

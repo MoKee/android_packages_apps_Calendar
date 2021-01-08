@@ -294,6 +294,14 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="holiday_bulgaria">Bulgaria</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Kazakhstan</string>
+    <string name="holiday_morocco">Morocco</string>
+    <string name="holiday_nicaragua">Nicaragua</string>
+    <string name="holiday_costarica">Costa Rica</string>
+    <string name="holiday_uruguay">Uruguay</string>
+    <string name="holiday_haiti">Haiti</string>
 
     <!--
         Haven't found some strings? There's more at

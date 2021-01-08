@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2018 The MoKee Open Source Project
+    Copyright (C) 2018-2020 The MoKee Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@
     <string name="holiday_spain">Spain</string>
     <string name="holiday_ireland">Ireland</string>
     <string name="holiday_france">France</string>
-    <string name="holiday_southkorea">Southkorea</string>
+    <string name="holiday_southkorea">South Korea</string>
     <string name="holiday_greece">Greece</string>
     <string name="holiday_croatia">Croatia</string>
     <string name="holiday_india">India</string>
@@ -61,12 +61,12 @@
     <string name="holiday_serbia">Serbia</string>
     <string name="holiday_slovenia">Slovenia</string>
     <string name="holiday_slovakia">Slovakia</string>
-    <string name="holiday_southafrica">Southafrica</string>
+    <string name="holiday_southafrica">South Africa</string>
     <string name="holiday_finland">Finland</string>
     <string name="holiday_sweden">Sweden</string>
     <string name="holiday_taiwan">TaiPei (China)</string>
     <string name="holiday_ukraine">Ukraine</string>
-    <string name="holiday_unitedkingdom">United kingdom</string>
+    <string name="holiday_unitedkingdom">United Kingdom</string>
     <string name="holiday_unitedstates">United States</string>
     <string name="no_calendar_permission">Calendar permission is required</string>
 
