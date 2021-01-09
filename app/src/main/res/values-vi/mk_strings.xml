@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2018 The MoKee Open Source Project
+    Copyright (C) 2018-2020 The MoKee Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="holiday_spain">Tây Ban Nha</string>
     <string name="holiday_ireland">Ai Len</string>
     <string name="holiday_france">Pháp</string>
-    <string name="holiday_southkorea">Triều Tiên</string>
     <string name="holiday_greece">Hy Lạp</string>
     <string name="holiday_croatia">Croatia</string>
     <string name="holiday_india">Ấn Độ</string>
@@ -60,12 +59,10 @@
     <string name="holiday_serbia">Serbia</string>
     <string name="holiday_slovenia">Slovenia</string>
     <string name="holiday_slovakia">Slovakia</string>
-    <string name="holiday_southafrica">Nam Phi</string>
     <string name="holiday_finland">Phần Lan</string>
     <string name="holiday_sweden">Thụy Điển</string>
     <string name="holiday_taiwan">TaiPei (Trung Quốc)</string>
     <string name="holiday_ukraine">Ukraina</string>
-    <string name="holiday_unitedkingdom">Anh Quốc</string>
     <string name="holiday_unitedstates">Hoa Kỳ</string>
     <string name="no_calendar_permission">Cần có sự cho phép của lịch</string>
 </resources>

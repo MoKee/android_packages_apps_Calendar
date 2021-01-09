@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2018 The MoKee Open Source Project
+    Copyright (C) 2018-2020 The MoKee Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -26,8 +26,6 @@
     <string name="holiday_ireland">Iwerzhon</string>
     <string name="holiday_france">Bro-C\'hall</string>
     <string name="holiday_japan">Japan</string>
-    <string name="holiday_southafrica">Suafrika</string>
     <string name="holiday_sweden">Sveden</string>
-    <string name="holiday_unitedkingdom">Rouantelezh Unanet</string>
     <string name="holiday_unitedstates">Stadoù-Unanet</string>
 </resources>

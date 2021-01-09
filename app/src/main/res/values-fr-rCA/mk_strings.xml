@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2018 The MoKee Open Source Project
+    Copyright (C) 2018-2020 The MoKee Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="holiday_spain">Espagne</string>
     <string name="holiday_ireland">Irlande</string>
     <string name="holiday_france">France</string>
-    <string name="holiday_southkorea">Corée du Sud</string>
     <string name="holiday_greece">Grèce</string>
     <string name="holiday_croatia">Croatie</string>
     <string name="holiday_india">India</string>
@@ -60,12 +59,10 @@
     <string name="holiday_serbia">Serbie</string>
     <string name="holiday_slovenia">Slovénie</string>
     <string name="holiday_slovakia">Slovaquie</string>
-    <string name="holiday_southafrica">Afrique du Sud</string>
     <string name="holiday_finland">Finlande</string>
     <string name="holiday_sweden">Suède</string>
     <string name="holiday_taiwan">TaiPei (Chine)</string>
     <string name="holiday_ukraine">Ukraine</string>
-    <string name="holiday_unitedkingdom">Royaume-Uni</string>
     <string name="holiday_unitedstates">États-Unis</string>
     <string name="no_calendar_permission">Autorisation d\'accès au Calendrier requise</string>
 </resources>

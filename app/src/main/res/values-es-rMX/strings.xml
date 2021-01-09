@@ -11,6 +11,7 @@
     <string name="no_upcoming_events">Parece que no tienes ningún evento próximo.</string>
     <string name="go_to_today">Ir al día de hoy</string>
     <string name="go_to_date">Ir a la fecha</string>
+    <string name="upgraded_from_free">Oye,\n\nParece que actualizaste de la aplicación gratuita vieja. Ahora puedes desinstalar la versión vieja, que tiene un botón \'Actualizar a Pro\' en la parte superior de los ajustes de la app.\n\nSólo tendrás los elementos de la Papelera de Reciclaje eliminados, favoritos desmarcados y también tendrás que reiniciar los ajustes de la app.\n\n¡Gracias!</string>
     <string name="widget_monthly">Calendario mensual</string>
     <string name="widget_list">Lista de eventos del calendario</string>
     <string name="event">Evento</string>
@@ -73,15 +74,18 @@
     <string name="birthdays">Cumpleaños</string>
     <string name="add_birthdays">Añadir cumpleaños de contactos</string>
     <string name="no_birthdays">No se han encontrado cumpleaños</string>
+    <string name="no_new_birthdays">No se han encontrado cumpleaños nuevos</string>
     <string name="birthdays_added">Los cumpleaños se han añadido correctamente</string>
     <string name="anniversaries">Aniversarios</string>
     <string name="add_anniversaries">Añadir aniversarios de contactos</string>
     <string name="no_anniversaries">No se han encontrado aniversarios</string>
+    <string name="no_new_anniversaries">No se han encontrado aniversarios nuevos</string>
     <string name="anniversaries_added">Los aniversarios se han añadido correctamente</string>
     <string name="reminder">Recordatorio</string>
     <string name="before">antes</string>
     <string name="add_another_reminder">Agregar otro recordatorio</string>
     <string name="event_reminders">Recordatorio de eventos</string>
+    <string name="add_another_attendee">Añadir otro recordatorio</string>
     <string name="my_status">Mi estado:</string>
     <string name="going">Iré</string>
     <string name="not_going">No iré</string>

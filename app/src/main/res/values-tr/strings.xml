@@ -14,6 +14,7 @@
     <string name="upgraded_from_free">Hey, \n\neski ücretsiz uygulamadan yükseltilmiş gibisin. Yerel olarak depolanan olayları bir .ics dosyasına dışa aktarıp ardından içe aktarma yoluyla el ile yapmanız gerekir. Her iki dışa aktarma / içe aktarma düğmesini ana ekran menüsünde bulabilirsiniz. \n\nUygulama ayarlarının üstündeki \'Pro\'ya Yükselt\' düğmesine sahip olan eski sürümü kaldırabilirsiniz. Daha sonra yalnızca uygulama ayarlarınızı sıfırlamanız gerekir. \n\nTeşekkürler!</string>
     <string name="widget_monthly">Aylık takvim</string>
     <string name="widget_list">Takvim etkinlik listesi</string>
+    <string name="widget_todays_date">Takvim bugünün tarihi</string>
     <string name="event">Durum</string>
     <string name="edit_event">Etkinliği Düzenle</string>
     <string name="new_event">Yeni Etkinlik</string>
@@ -126,6 +127,7 @@
     <string name="manage_event_types">Etkinlik türlerini yönet</string>
     <string name="start_day_at">Gün başlangıcı</string>
     <string name="end_day_at">Gün bitişi</string>
+    <string name="allow_customizing_day_count">Gün sayısının özelleştirilmesine izin ver</string>
     <string name="week_numbers">Hafta sayılarını göster</string>
     <string name="vibrate">Hatırlatma bildiriminde titre</string>
     <string name="reminder_sound">Hatırlatma sesi</string>
@@ -174,6 +176,7 @@
     <string name="select_a_different_caldav_color">Farklı bir renk seçin (yalnızca yerel olarak uygulanabilir)</string>
     <string name="insufficient_permissions">Seçilen takvime yazmanıza izin verilmez</string>
     <string name="caldav_event_not_found">Etkinlik bulunamadı. Lütfen uygulama ayarlarında uygun takvim için CalDAV senkronizasyonunu etkinleştirin.</string>
+    <string name="no_synchronized_calendars">Senkronize edilebilir takvim bulunamadı</string>
     <string name="monday_alt">Pazartesi</string>
     <string name="tuesday_alt">Salı</string>
     <string name="wednesday_alt">Çarşamba</string>
