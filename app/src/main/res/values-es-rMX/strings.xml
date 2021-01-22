@@ -147,14 +147,19 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Notificaciones</string>
     <string name="ring_stream">Timbre</string>
+    <string name="use_last_event_reminders">Reusar el último recordatorio para nuevos eventos</string>
     <string name="default_reminder_1">Recordatorio 1</string>
     <string name="default_reminder_2">Recordatorio 2</string>
     <string name="default_reminder_3">Recordatorio 3</string>
     <string name="view_to_open_from_widget">Vista por defecto al abrir desde el widget</string>
     <string name="last_view">Última vista</string>
     <string name="new_events">Nuevos eventos</string>
-    <string name="default_duration">Duración por defecto</string>
+    <string name="default_start_time">Hora de inicio predeterminada</string>
+    <string name="next_full_hour">Próxima hora</string>
+    <string name="default_duration">Duración predeterminada</string>
+    <string name="last_used_one">El último usado</string>
     <string name="other_time">Otra vez</string>
+    <string name="highlight_weekends">Destacar los fines de semana en algunas vistas</string>
     <string name="allow_changing_time_zones">Permitir cambiar las zonas horarias del evento</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Selecciona los calendarios a sincronizar</string>
@@ -168,6 +173,7 @@
     <string name="synchronization_completed">Sincronización completa</string>
     <string name="select_a_different_caldav_color">Seleccionar un color diferente (localmente)</string>
     <string name="insufficient_permissions">No tiene permiso para modificar el calendario</string>
+    <string name="caldav_event_not_found">Evento no encontrado. Habilite la sincronización de CalDAV para los calendarios en la configuración.</string>
     <string name="monday_alt">Lunes</string>
     <string name="tuesday_alt">Martes</string>
     <string name="wednesday_alt">Miércoles</string>
@@ -187,10 +193,13 @@
     <string name="faq_1_text">Los eventos creados de esa manera tienen un tipo de evento llamado \"Días Festivos\". Puede seleccionarlos todos desde Ajustes-&gt;Gestionar tipos de eventos,
         y usar una pulsación larga para eliminar el tipo de evento y todos sus eventos pulsando en la papelera.</string>
     <string name="faq_2_title">Can I sync my events via Google Calendar, or other service supporting CalDAV?</string>
+    <string name="faq_2_text">Sí, Solamente activa \"Sincronizar CalDAV\" en los ajustes de la aplicación y selecciona los calendarios que quieras sincronizar. Sin embargo, vas a necesitar alguna aplicación externa para manejar la sincronización entre el dispositivo y los servidores.
+        En caso de que quieras sincronizar un calendario de Google, su aplicación oficial de Calendario hará el trabajo. Para otros calendarios, necesitarás un sincronizador externo, por ejemplo DAVx5.</string>
     <string name="faq_3_title">I see the visual reminders, but hear no audio. What can I do?</string>
     <string name="faq_3_text">Not just displaying the actual reminder, but playing the audio is hugely affected by the system too. If you can\'t hear any sound, try going in the app settings,
         pressing the \"Audio stream used by reminders\" option and changing it to a different value. If it still won\'t work, check your sound settings, if the particular stream isn\'t muted.</string>
     <string name="faq_4_title">¿Soporta la aplicación zonas horarias?</string>
     <string name="faq_4_text">Sí, sí. Por defecto todos los eventos se crean en su zona horaria actual. Si quieres cambiar la zona horaria de un evento,
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
+    <string name="app_title">Calendario Simple Pro - Eventos y Recordatorios</string>
 </resources>

@@ -127,6 +127,7 @@
     <string name="manage_event_types">管理活動類型</string>
     <string name="start_day_at">每日開始於</string>
     <string name="end_day_at">每日結束於</string>
+    <string name="allow_customizing_day_count">允許自訂天數</string>
     <string name="week_numbers">顯示第幾週</string>
     <string name="vibrate">提醒通知時振動</string>
     <string name="reminder_sound">提醒音效</string>
@@ -247,4 +248,12 @@
 
         &lt;b&gt; reddit：&lt;/b&gt;
         https://www.reddit.com/r/SimpleMobileTools</string>
+    <string name="holiday_bulgaria">保加利亞</string>
+    <string name="holiday_liechtenstein">列支敦斯登親王國</string>
+    <string name="holiday_kazakhstan">哈薩克斯坦</string>
+    <string name="holiday_morocco">摩洛哥王國</string>
+    <string name="holiday_nicaragua">尼加拉瓜</string>
+    <string name="holiday_costarica">哥斯大黎加</string>
+    <string name="holiday_uruguay">烏拉圭</string>
+    <string name="holiday_haiti">海地</string>
 </resources>

@@ -31,6 +31,7 @@
     <string name="holiday_spain">Hiszpania</string>
     <string name="holiday_ireland">Irlandia</string>
     <string name="holiday_france">Francja</string>
+    <string name="holiday_southkorea">Korea Południowa</string>
     <string name="holiday_greece">Grecja</string>
     <string name="holiday_croatia">Chorwacja</string>
     <string name="holiday_india">Indie</string>
@@ -59,10 +60,12 @@
     <string name="holiday_serbia">Serbia</string>
     <string name="holiday_slovenia">Słowenia</string>
     <string name="holiday_slovakia">Słowacja</string>
+    <string name="holiday_southafrica">Republika Południowej Afryki</string>
     <string name="holiday_finland">Finlandia</string>
     <string name="holiday_sweden">Szwecja</string>
     <string name="holiday_taiwan">TaiPei (Chiny)</string>
     <string name="holiday_ukraine">Ukraina</string>
+    <string name="holiday_unitedkingdom">Wielka Brytania</string>
     <string name="holiday_unitedstates">Stany Zjednoczone</string>
     <string name="no_calendar_permission">Wymagane jest uprawnienie \'Kalendarz\'</string>
 </resources>

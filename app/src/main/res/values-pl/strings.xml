@@ -127,6 +127,7 @@
     <string name="manage_event_types">Zarządzaj typami wydarzeń</string>
     <string name="start_day_at">Początek dnia</string>
     <string name="end_day_at">Koniec dnia</string>
+    <string name="allow_customizing_day_count">Zezwalaj na dostosowywanie liczby dni</string>
     <string name="week_numbers">Pokazuj numery tygodnia</string>
     <string name="vibrate">Powiadamiaj wibracjami o wydarzeniu</string>
     <string name="reminder_sound">Dźwięk powiadomień</string>
@@ -245,4 +246,12 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="holiday_bulgaria">Bułgaria</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Kazachstan</string>
+    <string name="holiday_morocco">Maroko</string>
+    <string name="holiday_nicaragua">Nikaragua</string>
+    <string name="holiday_costarica">Kostaryka</string>
+    <string name="holiday_uruguay">Urugwaj</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>

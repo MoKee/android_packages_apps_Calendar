@@ -31,6 +31,7 @@
     <string name="holiday_spain">İspanya</string>
     <string name="holiday_ireland">İrlanda</string>
     <string name="holiday_france">Fransa</string>
+    <string name="holiday_southkorea">Güney Kore</string>
     <string name="holiday_greece">Yunanistan</string>
     <string name="holiday_croatia">Hırvatistan</string>
     <string name="holiday_india">Hindistan</string>
@@ -59,10 +60,12 @@
     <string name="holiday_serbia">Sırbistan</string>
     <string name="holiday_slovenia">Slovenya</string>
     <string name="holiday_slovakia">Slovakya</string>
+    <string name="holiday_southafrica">Güney Afrika</string>
     <string name="holiday_finland">Finlandiya</string>
     <string name="holiday_sweden">İsveç</string>
     <string name="holiday_taiwan">TaiPei (Çin)</string>
     <string name="holiday_ukraine">Ukrayna</string>
+    <string name="holiday_unitedkingdom">Birleşik Krallık</string>
     <string name="holiday_unitedstates">Birleşik devletler</string>
     <string name="no_calendar_permission">Takvim izni gerekiyor</string>
 </resources>

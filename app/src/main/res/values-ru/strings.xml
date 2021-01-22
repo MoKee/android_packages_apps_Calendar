@@ -248,4 +248,12 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="holiday_bulgaria">Болгария</string>
+    <string name="holiday_liechtenstein">Лихтенштейн</string>
+    <string name="holiday_kazakhstan">Казахстан</string>
+    <string name="holiday_morocco">Морокко</string>
+    <string name="holiday_nicaragua">Никарагуа</string>
+    <string name="holiday_costarica">Коста-Рика</string>
+    <string name="holiday_uruguay">Уругвай</string>
+    <string name="holiday_haiti">Гаити</string>
 </resources>
