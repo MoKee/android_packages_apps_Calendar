@@ -18,8 +18,8 @@ android {
         applicationId "com.android.calendar"
         minSdkVersion 26
         targetSdkVersion 29
-        versionCode 189
-        versionName "6.11.4"
+        versionCode 190
+        versionName "6.11.5"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         android.applicationVariants.all { variant ->

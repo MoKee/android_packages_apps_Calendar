@@ -75,6 +75,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private var mStoredIsSundayFirst = false
     private var mStoredUse24HourFormat = false
     private var mStoredDimPastEvents = true
+    private var mStoredHighlightWeekends = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -126,7 +127,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     override fun onResume() {
         super.onResume()
         if (mStoredTextColor != config.textColor || mStoredBackgroundColor != config.backgroundColor || mStoredPrimaryColor != config.primaryColor
-            || mStoredDayCode != Formatter.getTodayCode() || mStoredDimPastEvents != config.dimPastEvents) {
+            || mStoredDayCode != Formatter.getTodayCode() || mStoredDimPastEvents != config.dimPastEvents || mStoredHighlightWeekends != config.highlightWeekends) {
             updateViewPager()
         }
 
@@ -248,6 +249,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             mStoredBackgroundColor = backgroundColor
             mStoredUse24HourFormat = use24HourFormat
             mStoredDimPastEvents = dimPastEvents
+            mStoredHighlightWeekends = highlightWeekends
         }
         mStoredDayCode = Formatter.getTodayCode()
     }
@@ -1038,6 +1040,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_sweden), "sweden.ics")
             put(getString(R.string.holiday_taiwan), "taiwan.ics")
             put(getString(R.string.holiday_thailand), "thailand.ics")
+            put(getString(R.string.holiday_turkey),"turkey.ics")
             put(getString(R.string.holiday_ukraine), "ukraine.ics")
             put(getString(R.string.holiday_unitedkingdom), "unitedkingdom.ics")
             put(getString(R.string.holiday_unitedstates), "unitedstates.ics")

@@ -76,6 +76,7 @@ const val LAST_EXPORT_PATH = "last_export_path"
 const val EXPORT_PAST_EVENTS = "export_past_events"
 const val WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER = "weekly_view_item_height_multiplier"
 const val WEEKLY_VIEW_DAYS = "weekly_view_days"
+const val HIGHLIGHT_WEEKENDS = "highlight_weekends"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val LAST_VERSION_CODE = "last_version_code"
@@ -164,3 +165,11 @@ const val REMINDER_NOTIFICATION = 0
 const val REMINDER_EMAIL = 1
 
 fun getNowSeconds() = System.currentTimeMillis() / 1000L
+
+fun isWeekend(i: Int, isSundayFirst: Boolean): Boolean {
+    return if (isSundayFirst) {
+        i == 0 || i == 6
+    } else {
+        i == 5 || i == 6
+    }
+}
