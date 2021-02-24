@@ -163,8 +163,13 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                     val dayNumber = day.value.toString()
                     var xPosLeft = xPosCenter - dayWidth / 3
                     var xPosRight = xPosCenter - dayWidth / 16
+
+		    val textPaint = getTextPaint(day)
                     if (selectedDayCoords.x != -1 && x == selectedDayCoords.x && y == selectedDayCoords.y) {
                         canvas.drawCircle(xPosCenter, yPos + textPaint.textSize * 0.7f, textPaint.textSize * 0.8f, circleStrokePaint)
+                        if (day.isToday) {
+                            textPaint.color = textColor
+                        }
                     } else if (day.isToday && !isPrintVersion) {
                         var xPosCircle = 0f
                         if (day.value.toString().length > 1) {
@@ -181,7 +186,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                         canvas.drawCircle(xPosCenter, yPos + height + textPaint.textSize / 2, textPaint.textSize * 0.15f, getDayEventColor(day.dayEvents.first()))
                     }
                     if (isCN) {
-                        canvas.drawText(dayNumber, xPosLeft, yPos + textPaint.textSize, getTextPaint(day))
+                        canvas.drawText(dayNumber, xPosLeft, yPos + textPaint.textSize, textPaint)
                         var dateTime = Formatter.getDateTimeFromCode(day.code)
                         var cal = Calendar.getInstance();
                         cal.set(dateTime.year, dateTime.monthOfYear - 1, dateTime.dayOfMonth)
@@ -202,7 +207,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                             canvas.drawPath(whPath, getColoredPaint(ContextCompat.getColor(context, android.R.color.darker_gray)))
                         }
                     } else {
-                        canvas.drawText(dayNumber, xPosCenter, yPos + textPaint.textSize, getTextPaint(day))
+                        canvas.drawText(dayNumber, xPosCenter, yPos + textPaint.textSize, textPaint)
                     }
                     dayVerticalOffsets.put(day.indexOnMonthView, (verticalOffset + textPaint.textSize * 2).toInt())
                 }
@@ -281,7 +286,9 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         val xPosCenter = xPos + dayWidth / 2
 
         if (verticalOffset - eventTitleHeight * 2 > dayHeight) {
-            canvas.drawText("...", xPosCenter, yPos + verticalOffset - eventTitleHeight / 2, getTextPaint(days[event.startDayIndex]))
+            val paint = getTextPaint(days[event.startDayIndex])
+            paint.color = textColor
+            canvas.drawText("...", xPosCenter, yPos + verticalOffset - eventTitleHeight / 2, paint)
             return
         }
 

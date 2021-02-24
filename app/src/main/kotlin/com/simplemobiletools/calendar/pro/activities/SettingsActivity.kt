@@ -43,6 +43,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupSettingItems() {
 //        setupCustomizeColors()
+        setupCustomizeNotifications()
         setupUseEnglish()
         setupManageEventTypes()
         setupHourFormat()
@@ -138,6 +139,13 @@ class SettingsActivity : SimpleActivity() {
 //            startCustomizationActivity()
 //        }
 //    }
+
+    private fun setupCustomizeNotifications() {
+        settings_customize_notifications_holder.beVisibleIf(isOreoPlus())
+        settings_customize_notifications_holder.setOnClickListener {
+            launchCustomizeNotificationsIntent()
+        }
+    }
 
     private fun setupUseEnglish() {
         settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
@@ -340,11 +348,11 @@ class SettingsActivity : SimpleActivity() {
                         updateReminderSound(it)
                     }
                 }, onAlarmSoundDeleted = {
-                    if (it.uri == config.reminderSoundUri) {
-                        val defaultAlarm = getDefaultAlarmSound(RingtoneManager.TYPE_NOTIFICATION)
-                        updateReminderSound(defaultAlarm)
-                    }
-                })
+                if (it.uri == config.reminderSoundUri) {
+                    val defaultAlarm = getDefaultAlarmSound(RingtoneManager.TYPE_NOTIFICATION)
+                    updateReminderSound(defaultAlarm)
+                }
+            })
         }
     }
 
