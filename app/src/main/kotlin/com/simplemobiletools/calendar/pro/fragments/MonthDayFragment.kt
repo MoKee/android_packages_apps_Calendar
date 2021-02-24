@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.simplemobiletools.calendar.pro.R
+import com.simplemobiletools.calendar.pro.activities.MainActivity
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.adapters.EventListAdapter
 import com.simplemobiletools.calendar.pro.extensions.*
@@ -22,12 +23,13 @@ import com.simplemobiletools.calendar.pro.interfaces.NavigationListener
 import com.simplemobiletools.calendar.pro.models.DayMonthly
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.ListEvent
+import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import kotlinx.android.synthetic.main.fragment_month_day.*
 import kotlinx.android.synthetic.main.fragment_month_day.view.*
 import org.joda.time.DateTime
 
-class MonthDayFragment : Fragment(), MonthlyCalendar {
-    private var mTextColor = 0
+class MonthDayFragment : Fragment(), MonthlyCalendar, RefreshRecyclerViewListener {
     private var mSundayFirst = false
     private var mShowWeekNumbers = false
     private var mDayCode = ""
@@ -51,7 +53,12 @@ class MonthDayFragment : Fragment(), MonthlyCalendar {
         mDayCode = arguments!!.getString(DAY_CODE)!!
 
         val shownMonthDateTime = Formatter.getDateTimeFromCode(mDayCode)
-        mHolder.month_day_selected_day_label.text = getMonthLabel(shownMonthDateTime)
+        mHolder.month_day_selected_day_label.apply {
+            text = getMonthLabel(shownMonthDateTime)
+            setOnClickListener {
+                (activity as MainActivity).showGoToDateDialog()
+            }
+        }
 
         mConfig = context!!.config
         storeStateVariables()
@@ -106,14 +113,7 @@ class MonthDayFragment : Fragment(), MonthlyCalendar {
             }
         }
 
-        val startDateTime = Formatter.getLocalDateTimeFromCode(mDayCode).minusWeeks(1)
-        val endDateTime = startDateTime.plusWeeks(6)
-        context.eventsHelper.getEvents(startDateTime.seconds(), endDateTime.seconds()) { events ->
-            mListEvents = events
-            activity?.runOnUiThread {
-                updateVisibleEvents()
-            }
-        }
+        refreshItems()
     }
 
     private fun updateVisibleEvents() {
@@ -138,19 +138,30 @@ class MonthDayFragment : Fragment(), MonthlyCalendar {
 
         activity?.runOnUiThread {
             if (activity != null) {
-                EventListAdapter(activity as SimpleActivity, listItems, true, null, month_day_events_list, false) {
-                    if (it is ListEvent) {
-                        activity?.editEvent(it)
+                mHolder.month_day_no_events_placeholder.beVisibleIf(listItems.isEmpty())
+
+                val currAdapter = mHolder.month_day_events_list.adapter
+                if (currAdapter == null) {
+                    EventListAdapter(activity as SimpleActivity, listItems, true, this, month_day_events_list, false) {
+                        if (it is ListEvent) {
+                            activity?.editEvent(it)
+                        }
+                    }.apply {
+                        month_day_events_list.adapter = this
                     }
-                }.apply {
-                    month_day_events_list.adapter = this
+                } else {
+                    (currAdapter as EventListAdapter).updateListItems(listItems)
                 }
             }
         }
     }
 
     private fun setupButtons() {
-        mTextColor = mConfig.textColor
+        val textColor = mConfig.textColor
+        mHolder.apply {
+            month_day_selected_day_label.setTextColor(textColor)
+            month_day_no_events_placeholder.setTextColor(textColor)
+        }
     }
 
     fun printCurrentView() {}
@@ -164,5 +175,16 @@ class MonthDayFragment : Fragment(), MonthlyCalendar {
             month += " $targetYear"
         }
         return month
+    }
+
+    override fun refreshItems() {
+        val startDateTime = Formatter.getLocalDateTimeFromCode(mDayCode).minusWeeks(1)
+        val endDateTime = startDateTime.plusWeeks(6)
+        activity?.eventsHelper?.getEvents(startDateTime.seconds(), endDateTime.seconds()) { events ->
+            mListEvents = events
+            activity?.runOnUiThread {
+                updateVisibleEvents()
+            }
+        }
     }
 }
