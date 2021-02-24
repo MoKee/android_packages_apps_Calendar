@@ -164,26 +164,28 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                     var xPosLeft = xPosCenter - dayWidth / 3
                     var xPosRight = xPosCenter - dayWidth / 16
 
-		    val textPaint = getTextPaint(day)
+                    var xPosCircle = 0f
+                    if (dayNumber.length > 1) {
+                        xPosCircle = xPosLeft + textPaint.textSize / 1.75f
+                    } else {
+                        xPosCircle = xPosLeft + textPaint.textSize / 3.5f
+                    }
+
+                    val textPaint = getTextPaint(day)
                     if (selectedDayCoords.x != -1 && x == selectedDayCoords.x && y == selectedDayCoords.y) {
-                        canvas.drawCircle(xPosCenter, yPos + textPaint.textSize * 0.7f, textPaint.textSize * 0.8f, circleStrokePaint)
+                        canvas.drawCircle(if (isCN) xPosCircle else xPosCenter, yPos + textPaint.textSize * 0.7f, textPaint.textSize * 0.8f, circleStrokePaint)
                         if (day.isToday) {
                             textPaint.color = textColor
                         }
                     } else if (day.isToday && !isPrintVersion) {
-                        var xPosCircle = 0f
-                        if (day.value.toString().length > 1) {
-                            xPosCircle = xPosLeft + textPaint.textSize / 1.75f
-                        } else {
-                            xPosCircle = xPosLeft + textPaint.textSize / 3.5f
-                        }
                         canvas.drawCircle(if (isCN) xPosCircle else xPosCenter, yPos + textPaint.textSize * 0.65f, textPaint.textSize * 0.65f, getCirclePaint(day))
                     }
+
                     // mark days with events with a dot
                     if (isMonthDayView && day.dayEvents.isNotEmpty()) {
                         getCirclePaint(day).getTextBounds(dayNumber, 0, dayNumber.length, dayTextRect)
-                        val height = dayTextRect.height() * 1.15f
-                        canvas.drawCircle(xPosCenter, yPos + height + textPaint.textSize / 2, textPaint.textSize * 0.15f, getDayEventColor(day.dayEvents.first()))
+                        val height = dayTextRect.height() * 1.25f
+                        canvas.drawCircle(xPosCenter, yPos + height + textPaint.textSize / 2, textPaint.textSize * 0.2f, getDayEventColor(day.dayEvents.first()))
                     }
                     if (isCN) {
                         canvas.drawText(dayNumber, xPosLeft, yPos + textPaint.textSize, textPaint)
