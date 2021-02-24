@@ -119,9 +119,9 @@ class EventListFragment : MyFragmentHolder(), RefreshRecyclerViewListener {
 
             val currAdapter = mView.calendar_events_list.adapter
             if (currAdapter == null || forceRecreation) {
-                EventListAdapter(activity as SimpleActivity, listItems, true, this, mView.calendar_events_list) {
+                EventListAdapter(activity as SimpleActivity, listItems, true, this, mView.calendar_events_list, true) {
                     if (it is ListEvent) {
-                        editEvent(it)
+                        context?.editEvent(it)
                     }
                 }.apply {
                     mView.calendar_events_list.adapter = this
@@ -167,14 +167,6 @@ class EventListFragment : MyFragmentHolder(), RefreshRecyclerViewListener {
         mView.calendar_events_list.beGoneIf(mEvents.isEmpty())
         if (activity != null)
             mView.calendar_empty_list_placeholder.setTextColor(activity!!.config.textColor)
-    }
-
-    private fun editEvent(event: ListEvent) {
-        Intent(context, EventActivity::class.java).apply {
-            putExtra(EVENT_ID, event.id)
-            putExtra(EVENT_OCCURRENCE_TS, event.startTS)
-            startActivity(this)
-        }
     }
 
     private fun fetchPreviousPeriod() {

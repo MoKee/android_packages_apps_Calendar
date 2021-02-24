@@ -70,7 +70,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private var mStoredTextColor = 0
     private var mStoredBackgroundColor = 0
-    private var mStoredPrimaryColor = 0
+    private var mStoredAdjustedPrimaryColor = 0
     private var mStoredDayCode = ""
     private var mStoredIsSundayFirst = false
     private var mStoredUse24HourFormat = false
@@ -126,7 +126,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     override fun onResume() {
         super.onResume()
-        if (mStoredTextColor != config.textColor || mStoredBackgroundColor != config.backgroundColor || mStoredPrimaryColor != config.primaryColor
+        if (mStoredTextColor != config.textColor || mStoredBackgroundColor != config.backgroundColor || mStoredAdjustedPrimaryColor != getAdjustedPrimaryColor()
             || mStoredDayCode != Formatter.getTodayCode() || mStoredDimPastEvents != config.dimPastEvents || mStoredHighlightWeekends != config.highlightWeekends) {
             updateViewPager()
         }
@@ -245,12 +245,12 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         config.apply {
             mStoredIsSundayFirst = isSundayFirst
             mStoredTextColor = textColor
-            mStoredPrimaryColor = primaryColor
             mStoredBackgroundColor = backgroundColor
             mStoredUse24HourFormat = use24HourFormat
             mStoredDimPastEvents = dimPastEvents
             mStoredHighlightWeekends = highlightWeekends
         }
+        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
         mStoredDayCode = Formatter.getTodayCode()
     }
 
@@ -412,6 +412,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             RadioItem(DAILY_VIEW, getString(R.string.daily_view)),
             RadioItem(WEEKLY_VIEW, getString(R.string.weekly_view)),
             RadioItem(MONTHLY_VIEW, getString(R.string.monthly_view)),
+            RadioItem(MONTHLY_DAILY_VIEW, getString(R.string.monthly_daily_view)),
             RadioItem(YEARLY_VIEW, getString(R.string.yearly_view)),
             RadioItem(EVENTS_LIST_VIEW, getString(R.string.simple_event_list)))
 
@@ -755,7 +756,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         val bundle = Bundle()
 
         when (config.storedView) {
-            DAILY_VIEW, MONTHLY_VIEW -> bundle.putString(DAY_CODE, dayCode)
+            DAILY_VIEW, MONTHLY_VIEW, MONTHLY_DAILY_VIEW -> bundle.putString(DAY_CODE, dayCode)
             WEEKLY_VIEW -> bundle.putString(WEEK_START_DATE_TIME, getThisWeekDateTime())
         }
 
@@ -797,7 +798,11 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun getThisWeekDateTime(): String {
-        var thisweek = DateTime().withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(12).minusDays(if (config.isSundayFirst) 1 else 0)
+        val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
+
+        // not great, not terrible
+        val useHours = if (currentOffsetHours >= 10) 8 else 12
+        var thisweek = DateTime().withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(useHours).minusDays(if (config.isSundayFirst) 1 else 0)
         if (DateTime().minusDays(7).seconds() > thisweek.seconds()) {
             thisweek = thisweek.plusDays(7)
         }
@@ -807,6 +812,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun getFragmentsHolder() = when (config.storedView) {
         DAILY_VIEW -> DayFragmentsHolder()
         MONTHLY_VIEW -> MonthFragmentsHolder()
+        MONTHLY_DAILY_VIEW -> MonthDayFragmentsHolder()
         YEARLY_VIEW -> YearFragmentsHolder()
         EVENTS_LIST_VIEW -> EventListFragment()
         else -> WeekFragmentsHolder()
@@ -938,7 +944,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                     search_results_list.beVisibleIf(events.isNotEmpty())
                     search_placeholder.beVisibleIf(events.isEmpty())
                     val listItems = getEventListItems(events)
-                    val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list) {
+                    val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list, true) {
                         if (it is ListEvent) {
                             Intent(applicationContext, EventActivity::class.java).apply {
                                 putExtra(EVENT_ID, it.id)

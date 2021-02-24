@@ -17,6 +17,7 @@ class MonthViewWrapper(context: Context, attrs: AttributeSet, defStyle: Int) : F
     private var weekDaysLetterHeight = 0
     private var horizontalOffset = 0
     private var wereViewsAdded = false
+    private var isMonthDayView = true
     private var days = ArrayList<DayMonthly>()
     private var inflater: LayoutInflater
     private var monthView: MonthView
@@ -35,21 +36,23 @@ class MonthViewWrapper(context: Context, attrs: AttributeSet, defStyle: Int) : F
         onGlobalLayout {
             if (!wereViewsAdded && days.isNotEmpty()) {
                 measureSizes()
-                addViews()
-                monthView.updateDays(days)
+                addClickableBackgrounds()
+                monthView.updateDays(days, isMonthDayView)
             }
         }
     }
 
-    fun updateDays(newDays: ArrayList<DayMonthly>, callback: ((DayMonthly) -> Unit)? = null) {
+    fun updateDays(newDays: ArrayList<DayMonthly>, addEvents: Boolean, callback: ((DayMonthly) -> Unit)? = null) {
         setupHorizontalOffset()
         measureSizes()
         dayClickCallback = callback
         days = newDays
         if (dayWidth != 0f && dayHeight != 0f) {
-            addViews()
+            addClickableBackgrounds()
         }
-        monthView.updateDays(days)
+
+        isMonthDayView = !addEvents
+        monthView.updateDays(days, isMonthDayView)
     }
 
     private fun setupHorizontalOffset() {
@@ -66,7 +69,7 @@ class MonthViewWrapper(context: Context, attrs: AttributeSet, defStyle: Int) : F
         }
     }
 
-    private fun addViews() {
+    private fun addClickableBackgrounds() {
         removeAllViews()
         monthView = inflater.inflate(R.layout.month_view, this).month_view
         wereViewsAdded = true
@@ -86,6 +89,10 @@ class MonthViewWrapper(context: Context, attrs: AttributeSet, defStyle: Int) : F
 
     private fun addViewBackground(xPos: Float, yPos: Float, day: DayMonthly) {
         inflater.inflate(R.layout.month_view_background, this, false).apply {
+            if (isMonthDayView) {
+                background = null
+            }
+
             layoutParams.width = dayWidth.toInt()
             layoutParams.height = dayHeight.toInt()
             x = xPos

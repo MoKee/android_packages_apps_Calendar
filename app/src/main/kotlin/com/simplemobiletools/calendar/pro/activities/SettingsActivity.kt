@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.media.AudioManager
+import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.calendar.pro.R
@@ -27,12 +28,12 @@ class SettingsActivity : SimpleActivity() {
     private val GET_RINGTONE_URI = 1
     private val PICK_IMPORT_SOURCE_INTENT = 2
 
-    private var mStoredPrimaryColor = 0
+    private var mStoredAdjustedPrimaryColor = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        mStoredPrimaryColor = config.primaryColor
+        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
     }
 
     override fun onResume() {
@@ -84,7 +85,7 @@ class SettingsActivity : SimpleActivity() {
 
     override fun onPause() {
         super.onPause()
-        mStoredPrimaryColor = config.primaryColor
+        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
     }
 
     override fun onStop() {
@@ -112,12 +113,12 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun checkPrimaryColor() {
-        if (config.primaryColor != mStoredPrimaryColor) {
+        if (getAdjustedPrimaryColor() != mStoredAdjustedPrimaryColor) {
             ensureBackgroundThread {
                 val eventTypes = eventsHelper.getEventTypesSync()
                 if (eventTypes.filter { it.caldavCalendarId == 0 }.size == 1) {
                     val eventType = eventTypes.first { it.caldavCalendarId == 0 }
-                    eventType.color = config.primaryColor
+                    eventType.color = getAdjustedPrimaryColor()
                     eventsHelper.insertOrUpdateEventTypeSync(eventType)
                 }
             }
@@ -333,14 +334,14 @@ class SettingsActivity : SimpleActivity() {
         settings_reminder_sound.text = config.reminderSoundTitle
 
         settings_reminder_sound_holder.setOnClickListener {
-            SelectAlarmSoundDialog(this, config.reminderSoundUri, config.reminderAudioStream, GET_RINGTONE_URI, ALARM_SOUND_TYPE_NOTIFICATION, false,
+            SelectAlarmSoundDialog(this, config.reminderSoundUri, config.reminderAudioStream, GET_RINGTONE_URI, RingtoneManager.TYPE_NOTIFICATION, false,
                 onAlarmPicked = {
                     if (it != null) {
                         updateReminderSound(it)
                     }
                 }, onAlarmSoundDeleted = {
                     if (it.uri == config.reminderSoundUri) {
-                        val defaultAlarm = getDefaultAlarmSound(ALARM_SOUND_TYPE_NOTIFICATION)
+                        val defaultAlarm = getDefaultAlarmSound(RingtoneManager.TYPE_NOTIFICATION)
                         updateReminderSound(defaultAlarm)
                     }
                 })
