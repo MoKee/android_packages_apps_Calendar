@@ -15,6 +15,7 @@ import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.getWHSharedPrefs
 import com.simplemobiletools.calendar.pro.extensions.seconds
 import com.simplemobiletools.calendar.pro.helpers.*
+import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.models.DayMonthly
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.MonthViewEvent
@@ -164,7 +165,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
                     var xPosLeft = xPosCenter - dayWidth / 3
                     var xPosRight = xPosCenter - dayWidth / 16
 
-                    var xPosCircle = 0f
+                    var xPosCircle: Float
                     if (dayNumber.length > 1) {
                         xPosCircle = xPosLeft + textPaint.textSize / 1.75f
                     } else {
@@ -173,7 +174,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
 
                     val textPaint = getTextPaint(day)
                     if (selectedDayCoords.x != -1 && x == selectedDayCoords.x && y == selectedDayCoords.y) {
-                        canvas.drawCircle(if (isCN) xPosCircle else xPosCenter, yPos + textPaint.textSize * 0.7f, textPaint.textSize * 0.8f, circleStrokePaint)
+                        canvas.drawCircle(if (isCN) xPosCircle else xPosCenter, yPos + textPaint.textSize * 0.65f, textPaint.textSize * 0.65f, circleStrokePaint)
                         if (day.isToday) {
                             textPaint.color = textColor
                         }
