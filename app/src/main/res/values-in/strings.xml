@@ -160,6 +160,7 @@
     <string name="last_used_one">Terakhir digunakan</string>
     <string name="other_time">Lain waktu</string>
     <string name="highlight_weekends">Highlight weekends on some views</string>
+    <string name="allow_changing_time_zones">Izinkan mengubah zona waktu acara</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Pilih kalender untuk disinkronkan</string>
     <string name="manage_synced_calendars">Kelola kalender yang disinkronkan</string>
@@ -172,6 +173,7 @@
     <string name="synchronization_completed">Sinkronisasi selesai</string>
     <string name="select_a_different_caldav_color">Pilih warna yang berbeda (mungkin hanya diterapkan secara lokal)</string>
     <string name="insufficient_permissions">Anda tidak diijinlan menulis di kalender yang dipilih</string>
+    <string name="caldav_event_not_found">Acara tidak ditemukan. Harap aktifkan sinkronisasi CalDAV untuk kalender di pengaturan aplikasi.</string>
     <string name="monday_alt">Senin</string>
     <string name="tuesday_alt">Selasa</string>
     <string name="wednesday_alt">Rabu</string>
@@ -191,7 +193,13 @@
     <string name="faq_1_text">Liburan yang dibuat dengan cara itu dimasukkan ke dalam jenis acara baru yang disebut \"Liburan\". Anda dapat masuk ke Pengaturan -&gt; Kelola Jenis Acara,
         tekan lama jenis acara yang diberikan dan hapus dengan memilih trashbin.</string>
     <string name="faq_2_title">Dapatkah saya menyinkronkan acara saya melalui Kalender Google, atau layanan lain yang mendukung CalDAV?</string>
+    <string name="faq_2_text">Ya, cukup alihkan \"Sinkronisasi CalDAV\" di setelan aplikasi dan pilih kalender yang ingin Anda sinkronkan.  Namun, Anda memerlukan beberapa aplikasi pihak ketiga yang menangani sinkronisasi antara perangkat dan server.
+        Jika Anda ingin menyinkronkan kalender Google, aplikasi Kalender resmi mereka akan melakukan peerjaan itu.  Untuk kalender lain, Anda memerlukan adaptor sinkronisasi pihak ketiga, misalnya DAVx5.</string>
     <string name="faq_3_title">Saya melihat pengingat visual, tetapi tidak mendengar audio. Apa yang dapat saya?</string>
     <string name="faq_3_text">Tidak hanya menampilkan pengingat yang sebenarnya, tetapi memutar audio juga sangat dipengaruhi oleh sistem. Jika Anda tidak dapat mendengar suara apa pun, cobalah masuk ke pengaturan aplikasi,
         menekan opsi \"putar audio digunakan oleh pengingat\" dan mengubahnya ke nilai yang berbeda. Jika masih tidak berfungsi, periksa pengaturan suara Anda, jika aliran tertentu tidak dibisukan.</string>
+    <string name="faq_4_title">Apakah aplikasi ini mendukung zona waktu?</string>
+    <string name="faq_4_text">Ya, tentu.  Secara default, semua acara dibuat dalam zona waktu Anda saat ini.  Jika Anda ingin mengubah zona waktu acara,
+         Anda harus terlebih dahulu mengaktifkan pemilih zona waktu di pengaturan aplikasi, lalu mengubahnya di layar Detail Acara. Ini dinonaktifkan secara default karena kebanyakan orang tidak membutuhkannya.</string>
+    <string name="app_title">Simple Calendar Pro - Acara &amp; Pengingat</string>
 </resources>
