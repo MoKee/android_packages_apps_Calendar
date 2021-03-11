@@ -1,7 +1,5 @@
 package com.simplemobiletools.calendar.pro.helpers
 
-const val LOW_ALPHA = .3f
-const val MEDIUM_ALPHA = .6f
 const val STORED_LOCALLY_ONLY = 0
 const val ROW_COUNT = 6
 const val COLUMN_COUNT = 7
@@ -172,8 +170,8 @@ fun getNowSeconds() = System.currentTimeMillis() / 1000L
 
 fun isWeekend(i: Int, isSundayFirst: Boolean): Boolean {
     return if (isSundayFirst) {
-        i == 0 || i == 6
+        i == 0 || i == 6 || i == 7 || i == 13
     } else {
-        i == 5 || i == 6
+        i == 5 || i == 6 || i == 12 || i == 13
     }
 }

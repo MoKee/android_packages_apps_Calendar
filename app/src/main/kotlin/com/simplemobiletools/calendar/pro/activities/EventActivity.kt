@@ -256,7 +256,8 @@ class EventActivity : SimpleActivity() {
             0
         } else {
             val original = if (mOriginalTimeZone.isEmpty()) DateTimeZone.getDefault().id else mOriginalTimeZone
-            (DateTimeZone.forID(mEvent.getTimeZoneString()).getOffset(System.currentTimeMillis()) - DateTimeZone.forID(original).getOffset(System.currentTimeMillis())) / 1000L
+            val millis = System.currentTimeMillis()
+            (DateTimeZone.forID(mEvent.getTimeZoneString()).getOffset(millis) - DateTimeZone.forID(original).getOffset(millis)) / 1000L
         }
 
         val newStartTS = mEventStartDateTime.withSecondOfMinute(0).withMillisOfSecond(0).seconds() - offset
@@ -289,9 +290,9 @@ class EventActivity : SimpleActivity() {
         }
 
         val reminders = getReminders()
-        if (event_title.value != mEvent.title ||
-            event_location.value != mEvent.location ||
-            event_description.value != mEvent.description ||
+        if (event_title.text.toString() != mEvent.title ||
+            event_location.text.toString() != mEvent.location ||
+            event_description.text.toString() != mEvent.description ||
             event_time_zone.text != mEvent.getTimeZoneString() ||
             reminders != mEvent.getReminders() ||
             mRepeatInterval != mEvent.repeatInterval ||
