@@ -350,7 +350,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun getLunarTextPaint(startDay: DayMonthly): Paint {
         var paintColor = textColor
         if (!startDay.isThisMonth) {
-            paintColor = paintColor.adjustAlpha(LOW_ALPHA)
+            paintColor = paintColor.adjustAlpha(LOWER_ALPHA)
         }
 
         return getColoredPaint(paintColor)
