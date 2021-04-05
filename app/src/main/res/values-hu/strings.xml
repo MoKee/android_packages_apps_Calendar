@@ -6,6 +6,7 @@
     <string name="daily_view">Napi nézet</string>
     <string name="weekly_view">Heti nézet</string>
     <string name="monthly_view">Havi nézet</string>
+    <string name="monthly_daily_view">Havi + napinézet</string>
     <string name="yearly_view">Éves nézet</string>
     <string name="simple_event_list">Egyszerű bejegyzéslista</string>
     <string name="no_upcoming_events">Úgy tűnik, nincs közelgő esemény.</string>
@@ -64,6 +65,7 @@
     <string name="second_m">második</string>
     <string name="third_m">harmadik</string>
     <string name="fourth_m">negyedik</string>
+    <string name="fifth_m">ötödik</string>
     <string name="last_m">utolsó</string>
     <string name="repeat_every_f">Ismétlés minden</string>
     <string name="every_f">Minden</string>
@@ -71,6 +73,7 @@
     <string name="second_f">második</string>
     <string name="third_f">harmadik</string>
     <string name="fourth_f">negyedik</string>
+    <string name="fifth_f">ötödik</string>
     <string name="last_f">utolsó</string>
     <string name="birthdays">Születésnapok</string>
     <string name="add_birthdays">Születésnap hozzáadása a névjegyekből</string>
@@ -158,6 +161,7 @@
     <string name="new_events">Új események</string>
     <string name="default_start_time">Alapértelmezett kezdőidőpont</string>
     <string name="next_full_hour">A következő teljes óra</string>
+    <string name="current_time">Aktuális idő</string>
     <string name="default_duration">Alapértelmezett hossz</string>
     <string name="last_used_one">A legutóbb használt</string>
     <string name="other_time">Egyéb időtartam</string>

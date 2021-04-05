@@ -24,6 +24,7 @@
     <string name="alarm_stream">Alarmi</string>
     <string name="notification_stream">Njoftimet</string>
     <string name="ring_stream">Zilet</string>
+    <string name="current_time">Ora</string>
     <string name="monday_alt">E hënë</string>
     <string name="saturday_alt">E shtunë</string>
     <string name="sunday_alt">E diel</string>

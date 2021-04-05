@@ -6,6 +6,7 @@
     <string name="daily_view">Denný</string>
     <string name="weekly_view">Týždenný</string>
     <string name="monthly_view">Mesačný</string>
+    <string name="monthly_daily_view">Mesačné + denné zobrazenie</string>
     <string name="yearly_view">Ročný</string>
     <string name="simple_event_list">Jednoduchý zoznam</string>
     <string name="no_upcoming_events">Nemáte žiadne naplánované udalosti.</string>
@@ -14,6 +15,7 @@
     <string name="upgraded_from_free">Ahoj. Vyzerá to, že si upgradoval z bezplatnej verzie. Lokálne uložené udalosti je potrebné migrovať manuálne exportom vo forme .ics súboru. Tlačidlo k danému úkonu je možné nájsť v menu na hlavnej obrazovke. Potom je možné odinštalovať starú verziu, ktorá má \'Upgrade to Pro\' tlačidlo v nastaveniach aplikácie. Potom už je potrebné iba resetovať nastavenia Pro aplikácie. Vďaka!</string>
     <string name="widget_monthly">Kalendár mesačný</string>
     <string name="widget_list">Kalendár so zoznamom</string>
+    <string name="widget_todays_date">Kalendár dnešného dátumu</string>
     <string name="event">Udalosť</string>
     <string name="edit_event">Upraviť udalosť</string>
     <string name="new_event">Nová udalosť</string>
@@ -63,6 +65,7 @@
     <string name="second_m">druhý</string>
     <string name="third_m">tretí</string>
     <string name="fourth_m">štvrtý</string>
+    <string name="fifth_m">piaty</string>
     <string name="last_m">posledný</string>
     <string name="repeat_every_f">Opakovať každú</string>
     <string name="every_f">Každú</string>
@@ -70,6 +73,7 @@
     <string name="second_f">druhú</string>
     <string name="third_f">tretiu</string>
     <string name="fourth_f">štvrtú</string>
+    <string name="fifth_f">piaty</string>
     <string name="last_f">poslednú</string>
     <string name="birthdays">Narodeniny</string>
     <string name="add_birthdays">Pridať narodeniny kontaktov</string>
@@ -91,6 +95,7 @@
     <string name="not_going">Neísť</string>
     <string name="maybe_going">Možno</string>
     <string name="invited">Pozvaný</string>
+    <string name="enter_a_country">Zadajte krajinu alebo časové pásmo</string>
     <string name="import_events">Importovať udalosti</string>
     <string name="export_events">Exportovať udalosti</string>
     <string name="import_events_from_ics">Importovať udalosti z .ics súboru</string>
@@ -125,6 +130,7 @@
     <string name="manage_event_types">Spravovať typy udalostí</string>
     <string name="start_day_at">Začať deň o</string>
     <string name="end_day_at">Ukončiť deň o</string>
+    <string name="allow_customizing_day_count">Povoliť prispôsobenie počtu dní</string>
     <string name="week_numbers">Zobraziť čísla týždňov</string>
     <string name="vibrate">Vibrovať pri pripomienke</string>
     <string name="reminder_sound">Zvučka pripomienky</string>
@@ -155,10 +161,12 @@
     <string name="new_events">Nové udalosti</string>
     <string name="default_start_time">Predvolený čas začatia</string>
     <string name="next_full_hour">Najbližšia celá hodina</string>
+    <string name="current_time">Aktuálny čas</string>
     <string name="default_duration">Predvolené trvanie</string>
     <string name="last_used_one">Naposledy použité</string>
     <string name="other_time">Iný čas</string>
     <string name="highlight_weekends">Víkendové highlights</string>
+    <string name="allow_changing_time_zones">Povoliť zmenu časových pásiem udalostí</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Zvoľte kalendáre pre synchronizáciu</string>
     <string name="manage_synced_calendars">Spravovať synchronizované kalendáre</string>
@@ -171,6 +179,8 @@
     <string name="synchronization_completed">Synchronizácia ukončená</string>
     <string name="select_a_different_caldav_color">Zvoliť inú farbu (možno bude aplikovaná iba lokálne)</string>
     <string name="insufficient_permissions">Nemáte dostatočné oprávnenie na písanie do zvoleného kalendára</string>
+    <string name="caldav_event_not_found">Udalosť nebola nájdená. Aktivujte prosím synchronizáciu CalDAV pre príslušný kalendár v nastavení aplikácie.</string>
+    <string name="no_synchronized_calendars">Neboli nájdené žiadne synchronizovateľné kalendáre</string>
     <string name="monday_alt">pondelok</string>
     <string name="tuesday_alt">utorok</string>
     <string name="wednesday_alt">stredu</string>
@@ -190,8 +200,61 @@
     <string name="faq_1_text">Sviatky vytvorené daným spôsobom sú pridané do typu udalosti \"Sviatky\". Môžete teda ísť do Nastavenia -&gt; Spravovať typy udalostí,
         podržať daný typ a vymazať ho pomocou smetného koša.</string>
     <string name="faq_2_title">Viem si zosynchronizovať udalosti pomocou Google Kalendára, alebo inej služby podporujúcej CalDAV?</string>
+    <string name="faq_2_text">Áno, stačí aktivovať funkciu \"CalDAV synchronizácia\" v nastaveniach a zvoliť si správne kalendáre. Pre synchronizáciu medzi zariadením a serverom ale budete potrebovať synchronizačný adaptér od tretej strany.
+        Ak chcete synchronizovať Google kalendár, ich oficiálna aplikácia Kalendár to spraví. Pre iné kalendáre budete potrebovať inú synchronizačnú aplikáciu, napr. DAVx5.</string>
     <string name="faq_3_title">Vidím vizuálnu pripomienku, ale nepočujem žiadny zvuk. Čo s tým viem spraviť?</string>
     <string name="faq_3_text">Nie len zobrazovanie pripomienok, ale aj prehrávanie zvuku je ovplyvnené systémom. Ak nepočujete zvuk, skúste ísť do nastavení apky, použiť možnosť \"Zvukový kanál používaný pripomienkami\" a
         zmeniť zvolenú hodnotu. Ak to ešte stále nebude fungovať, skúste sa pozrieť do zvukových nastavení vášho systému, či daný kanál nie je stlmený.</string>
+    <string name="faq_4_title">Podporuje aplikácie časové pásma?</string>
+    <string name="faq_4_text">Áno. V predvolenom nastavení sú všetky udalosti vytvárané v aktuálnom časovom pásme. Ak chcete zmeniť časové pásmo udalostí,
+        najprv musíte povoliť výber časového pásma v nastavení aplikácie a potom ho zmeniť na obrazovke Podrobnosti udalosti. V predvolenom nastavení je to zakázané, pretože to väčšina ľudí nebude potrebovať.</string>
     <string name="app_title">Jednoduchý Kalendár Pro - Udalosti a pripomienky</string>
+    <string name="app_short_description">Jednoduchý mobilný kalendár 2020. Plánovanie pripomenutie schôdzok na ktorýkoľvek deň</string>
+    <string name="app_long_description">        Simple Calendar Pro je plne prispôsobiteľný offline kalendár navrhnutý tak, aby robil presne to, čo by kalendár mal robiť. <b>Žiadne komplikované funkcie, zbytočné povolenia a žiadne reklamy!</b>
+
+        Či už organizujete jednotlivé alebo opakujúce sa udalosti, narodeniny, výročia, obchodné stretnutia, schôdzky alebo čokoľvek iné, Simple Calendar Pro to zvládne <b>s ľahkosťou</b>. S neuveriteľnou rozmanitými <b>možnosťami prispôsobení</b> môžete meniť pripomenutia udalostí, zvuky upozornení, miniaplikácie kalendára a vzhľad aplikácie.
+
+        Vďaka dennému, týždennému a mesačnému zobrazeniu si môžete veľmi jednoducho prehliadnuť nasledujúce udalosti a stretnutia. Všetky udalosti si môžete prezrieť aj v jednoduchom chronologickom zozname udalostí. Vďaka tomu presne viete, čo a kedy sa blíži.
+        ----------------------------------------------------------
+        <b>Simple Calendar Pro – Funkcie</b>
+        ----------------------------------------------------------
+
+        ✔️ Žiadne reklamy a otravné vyskakovacie okná
+        ✔️ Nie je potrebný prístup na internet, vďaka čomu budete mať maximálne súkromie a bezpečie
+        ✔️ Vyžaduje iba nevyhnutne potrebné oprávnenia
+        ✔️ Dôraz na jednoduchosť - robí to, čo musí kalendár!
+        ✔️ Otvorený zdrojový kód
+        ✔️ Plne prispôsobiteľné motívy, náhľady a widgety
+        ✔️ Preložený do 29 jazykov
+        ✔️ Jednoducho exportujte nastavenia do .txt súboru a importujte ich do iného zariadenia
+        ✔️ Podporovaná synchronizácia kalendára CalDAV na synchronizáciu udalostí medzi zariadeniami
+        ✔️ Obsahuje denné, týždenné, mesačné, ročné zobrazenie kalendára, aj jednoduchý zoznam udalostí
+        ✔️ Podporuje export a import udalostí pomocou .ics súborov
+        ✔️ Možnosť nastaviť niekoľko pripomienok na udalosti, alebo zmeniť ich zvuky a vibrácie
+        ✔️ Možnosť odloženia pripomienok na neskôr
+        ✔️ Jednoduché pridávanie prázdnin, narodenín, výročí a stretnutia
+        ✔️ Nastaviteľné udalosti - začiatok, trvanie, pripomienky atď.
+        ✔️ Možnosť pridávania zúčastnených na udalosti
+        ✔️ Možné použitie ako súkromný aj pracovný kalendár
+        ✔️ Zvoľte si buď pripomienku alebo email na synchronizované udalosti
+
+        STIAHNITE SI SIMPLE CALENDAR PRO - JEDNODUCHÝ OFFLINE KALENDÁR BEZ REKLÁM!
+
+        <b>CPozrite sa na celú sadu aplikácií tu:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+    <string name="holiday_bulgaria">Bulharsko</string>
+    <string name="holiday_liechtenstein">Lichtenštajnsko</string>
+    <string name="holiday_kazakhstan">Kazachstan</string>
+    <string name="holiday_morocco">Maroko</string>
+    <string name="holiday_nicaragua">Nikaragua</string>
+    <string name="holiday_costarica">Kostarika</string>
+    <string name="holiday_uruguay">Uruguaj</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>

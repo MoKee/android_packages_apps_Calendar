@@ -157,6 +157,7 @@
     <string name="new_events">Novos eventos</string>
     <string name="default_start_time">Hora Predefinida de Início </string>
     <string name="next_full_hour">Próxima hora completa</string>
+    <string name="current_time">Hora atual</string>
     <string name="default_duration">Duração predefinida</string>
     <string name="last_used_one">Usado pela última vez em</string>
     <string name="other_time">Outra vez</string>

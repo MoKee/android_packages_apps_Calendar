@@ -130,11 +130,13 @@
     <string name="dim_past_events">Nedton gamle begivenheder</string>
     <string name="events">Begivenheder</string>
     <string name="reminder_stream">Audio stream anvendt af påmindelser</string>
+    <string name="system_stream">System</string>
     <string name="notification_stream">Notifikation</string>
     <string name="default_reminder_1">Påmindelse 1</string>
     <string name="default_reminder_2">Påmindelse 2</string>
     <string name="default_reminder_3">Påmindelse 3</string>
     <string name="view_to_open_from_widget">Visning til brug i widget\'en</string>
+    <string name="current_time">Aktuel tid</string>
     <string name="select_caldav_calendars">Vælg kalendere til sync</string>
     <string name="manage_synced_calendars">Håndter synkronisering af kalendere</string>
     <string name="store_locally_only">Gem kun lokalt</string>

@@ -123,6 +123,7 @@
     <string name="default_reminder_1">デフォルト通知設定</string>
     <string name="default_reminder_2">デフォルト通知設定</string>
     <string name="default_reminder_3">デフォルト通知設定</string>
+    <string name="current_time">現在の時刻</string>
     <string name="select_caldav_calendars">同期するカレンダーを選択</string>
     <string name="manage_synced_calendars">同期したカレンダーの管理</string>
     <string name="store_locally_only">端末内にのみ保存</string>

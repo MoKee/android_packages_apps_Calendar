@@ -156,6 +156,7 @@
     <string name="new_events">حدث جديد</string>
     <string name="default_start_time">وقت البدء الافتراضي</string>
     <string name="next_full_hour">الساعة الكاملة التالية</string>
+    <string name="current_time">الوقت الحالي</string>
     <string name="default_duration">المدة الافتراضية</string>
     <string name="last_used_one">اخر واحد مستخدم</string>
     <string name="other_time">وقت آخر</string>

@@ -6,6 +6,7 @@
     <string name="daily_view">Xem hàng ngày</string>
     <string name="weekly_view">Xem hàng tuần</string>
     <string name="monthly_view">Chế độ xem hàng tháng</string>
+    <string name="monthly_daily_view">Xem hàng tháng + hàng ngày</string>
     <string name="yearly_view">Chế độ xem hàng năm</string>
     <string name="simple_event_list">Danh sách sự kiện đơn giản</string>
     <string name="no_upcoming_events">Có vẻ như bạn không có bất kỳ sự kiện sắp tới.</string>
@@ -158,6 +159,7 @@
     <string name="new_events">Sự kiện mới</string>
     <string name="default_start_time">Thời gian bắt đầu mặc định</string>
     <string name="next_full_hour">Toàn bộ giờ tiếp theo</string>
+    <string name="current_time">Thời gian hiện tại</string>
     <string name="default_duration">Thời lượng mặc định</string>
     <string name="last_used_one">Lần sử dụng cuối cùng</string>
     <string name="other_time">Lúc khác</string>
@@ -248,4 +250,12 @@
 
          <b>Reddit:</b>
          https://www.reddit.com/r/SimpleMobileTools</string>
+    <string name="holiday_bulgaria">Bun Ga Ri</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Kazakhstan</string>
+    <string name="holiday_morocco">Ma Rốc</string>
+    <string name="holiday_nicaragua">Nicaragua</string>
+    <string name="holiday_costarica">Costa Rica</string>
+    <string name="holiday_uruguay">Uruguay</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>

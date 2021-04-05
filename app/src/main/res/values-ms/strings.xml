@@ -5,4 +5,5 @@
     <string name="description">Perihalan</string>
     <string name="color">Warna</string>
     <string name="no_ringtone_selected">Tiada</string>
+    <string name="current_time">Masa sekarang</string>
 </resources>

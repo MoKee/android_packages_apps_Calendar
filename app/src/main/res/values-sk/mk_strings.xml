@@ -31,6 +31,7 @@
     <string name="holiday_spain">Španielsko</string>
     <string name="holiday_ireland">Írsko</string>
     <string name="holiday_france">Francúzsko</string>
+    <string name="holiday_southkorea">Južná Kórea</string>
     <string name="holiday_greece">Grécko</string>
     <string name="holiday_croatia">Chorvátsko</string>
     <string name="holiday_india">India</string>
@@ -46,6 +47,7 @@
     <string name="holiday_mexico">Mexiko</string>
     <string name="holiday_netherlands">Holandsko</string>
     <string name="holiday_japan">Japonsko</string>
+    <string name="holiday_nigeria">Nigéria</string>
     <string name="holiday_norway">Nórsko</string>
     <string name="holiday_austria">Rakúsko</string>
     <string name="holiday_pakistan">Pakistan</string>
@@ -58,10 +60,14 @@
     <string name="holiday_serbia">Srbsko</string>
     <string name="holiday_slovenia">Slovinsko</string>
     <string name="holiday_slovakia">Slovensko</string>
+    <string name="holiday_southafrica">Južná Afrika</string>
     <string name="holiday_finland">Fínsko</string>
     <string name="holiday_sweden">Švédsko</string>
     <string name="holiday_taiwan">TaiPei (Čína)</string>
+    <string name="holiday_thailand">Thajsko</string>
+    <string name="holiday_turkey">Turecko</string>
     <string name="holiday_ukraine">Ukrajina</string>
+    <string name="holiday_unitedkingdom">Veľká Británia</string>
     <string name="holiday_unitedstates">Spojené štáty</string>
     <string name="no_calendar_permission">Je potrebné povolenie pre prístup ku kalendáru</string>
 </resources>

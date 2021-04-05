@@ -6,6 +6,7 @@
     <string name="daily_view">Günlük görünüm</string>
     <string name="weekly_view">Haftalık görünüm</string>
     <string name="monthly_view">Aylık görünüm</string>
+    <string name="monthly_daily_view">Aylık + günlük görünüm</string>
     <string name="yearly_view">Yıllık görünüm</string>
     <string name="simple_event_list">Basit etkinlik listesi</string>
     <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
@@ -64,6 +65,7 @@
     <string name="second_m">ikinci</string>
     <string name="third_m">üçüncü</string>
     <string name="fourth_m">dördüncü</string>
+    <string name="fifth_m">beşinci</string>
     <string name="last_m">son</string>
     <string name="repeat_every_f">Her tekrar</string>
     <string name="every_f">Her</string>
@@ -71,6 +73,7 @@
     <string name="second_f">ikinci</string>
     <string name="third_f">üçüncü</string>
     <string name="fourth_f">dördüncü</string>
+    <string name="fifth_f">beşinci</string>
     <string name="last_f">son</string>
     <string name="birthdays">Doğum günleri</string>
     <string name="add_birthdays">Kişi doğum günlerini ekle</string>
@@ -158,6 +161,7 @@
     <string name="new_events">Yeni etkinlikler</string>
     <string name="default_start_time">Varsayılan başlangıç ​​zamanı</string>
     <string name="next_full_hour">Gelecek tam saat</string>
+    <string name="current_time">Şimdiki saat</string>
     <string name="default_duration">Varsayılan süre</string>
     <string name="last_used_one">Son kullanılan</string>
     <string name="other_time">Diğer zaman</string>

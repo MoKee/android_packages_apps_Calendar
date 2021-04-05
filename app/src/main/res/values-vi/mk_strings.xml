@@ -31,6 +31,7 @@
     <string name="holiday_spain">Tây Ban Nha</string>
     <string name="holiday_ireland">Ai Len</string>
     <string name="holiday_france">Pháp</string>
+    <string name="holiday_southkorea">Hàn Quốc</string>
     <string name="holiday_greece">Hy Lạp</string>
     <string name="holiday_croatia">Croatia</string>
     <string name="holiday_india">Ấn Độ</string>
@@ -59,10 +60,14 @@
     <string name="holiday_serbia">Serbia</string>
     <string name="holiday_slovenia">Slovenia</string>
     <string name="holiday_slovakia">Slovakia</string>
+    <string name="holiday_southafrica">Nam Phi</string>
     <string name="holiday_finland">Phần Lan</string>
     <string name="holiday_sweden">Thụy Điển</string>
     <string name="holiday_taiwan">TaiPei (Trung Quốc)</string>
+    <string name="holiday_thailand">Thái Lan</string>
+    <string name="holiday_turkey">Thổ Nhĩ Kỳ</string>
     <string name="holiday_ukraine">Ukraina</string>
+    <string name="holiday_unitedkingdom">Vương quốc Anh</string>
     <string name="holiday_unitedstates">Hoa Kỳ</string>
     <string name="no_calendar_permission">Cần có sự cho phép của lịch</string>
 </resources>

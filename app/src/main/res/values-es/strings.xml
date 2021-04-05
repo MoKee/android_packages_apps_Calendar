@@ -11,6 +11,7 @@
     <string name="no_upcoming_events">Parece que no tienes ningún evento próximo.</string>
     <string name="go_to_today">Ir al día de hoy</string>
     <string name="go_to_date">Ir a la fecha</string>
+    <string name="upgraded_from_free">Hola,\n\nparece que has mejorado desde la aplicación gratuita anterior. Tienes que migrar manualmente los eventos almacenados localmente a través de la exportación en un archivo .ics y luego importación. Puede encontrar ambos botones de exportación/importación en el menú de la pantalla principal.\n\nLuego puede desinstalar la versión anterior, que tiene un botón \'Actualizar a Pro\' en la parte superior de los ajustes de la aplicación. Sólo tendrás que restablecer los ajustes de tu aplicación.\n\nGracias!</string>
     <string name="widget_monthly">Calendario mensual</string>
     <string name="widget_list">Lista de eventos del calendario</string>
     <string name="event">Evento</string>
@@ -73,15 +74,18 @@
     <string name="birthdays">Cumpleaños</string>
     <string name="add_birthdays">Añadir cumpleaños de contactos</string>
     <string name="no_birthdays">No se han encontrado cumpleaños</string>
+    <string name="no_new_birthdays">No se han encontrado nuevos cumpleaños</string>
     <string name="birthdays_added">Los cumpleaños se han añadido correctamente</string>
     <string name="anniversaries">Aniversarios</string>
     <string name="add_anniversaries">Añadir aniversarios de contactos</string>
     <string name="no_anniversaries">No se han encontrado aniversarios</string>
+    <string name="no_new_anniversaries">No se encontraron nuevos aniversarios</string>
     <string name="anniversaries_added">Los aniversarios se han añadido correctamente</string>
     <string name="reminder">Recordatorio</string>
     <string name="before">antes</string>
     <string name="add_another_reminder">Agregar otro recordatorio</string>
     <string name="event_reminders">Recordatorio de eventos</string>
+    <string name="add_another_attendee">Añadir otro asistente</string>
     <string name="my_status">Mi estado:</string>
     <string name="going">Iré</string>
     <string name="not_going">No iré</string>
@@ -143,14 +147,20 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Notificación</string>
     <string name="ring_stream">Ring</string>
+    <string name="use_last_event_reminders">Usar los recordatorios de los últimos eventos como predeterminado para los nuevos eventos</string>
     <string name="default_reminder_1">Recordatorio 1</string>
     <string name="default_reminder_2">Recordatorio 2</string>
     <string name="default_reminder_3">Recordatorio 3</string>
     <string name="view_to_open_from_widget">Vista por defecto al abrir desde el widget</string>
     <string name="last_view">Última vista</string>
     <string name="new_events">Nuevos eventos</string>
+    <string name="default_start_time">Hora de inicio por defecto</string>
+    <string name="next_full_hour">Próxima hora completa</string>
+    <string name="current_time">Hora actual</string>
     <string name="default_duration">Duración por defecto</string>
+    <string name="last_used_one">Último usado</string>
     <string name="other_time">Otra vez</string>
+    <string name="highlight_weekends">Destacar los fines de semana en algunas vistas</string>
     <string name="allow_changing_time_zones">Permitir cambiar las zonas horarias del evento</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleccionar calendarios a sincronizar</string>
@@ -164,6 +174,7 @@
     <string name="synchronization_completed">Sincronización completa</string>
     <string name="select_a_different_caldav_color">Seleccionar un color diferente (localmente)</string>
     <string name="insufficient_permissions">No tiene permiso para modificar el calendario</string>
+    <string name="caldav_event_not_found">Evento no encontrado. Por favor, habilite la sincronización de CalDAV para el calendario apropiado en la configuración de la aplicación.</string>
     <string name="monday_alt">Lunes</string>
     <string name="tuesday_alt">Martes</string>
     <string name="wednesday_alt">Miércoles</string>
@@ -183,10 +194,13 @@
     <string name="faq_1_text">Los eventos creados de esa manera tienen un tipo de evento llamado \"Días Festivos\". Puede seleccionarlos todos desde Ajustes-&gt;Gestionar tipos de eventos,
         y usar una pulsación larga para eliminar el tipo de evento y todos sus eventos pulsando en la papelera.</string>
     <string name="faq_2_title">Can I sync my events via Google Calendar, or other service supporting CalDAV?</string>
+    <string name="faq_2_text">Sí, simplemente active \"CalDAV\" en los ajustes de la aplicación y seleccione los calendarios que desea sincronizar. Sin embargo, necesitará alguna aplicación de terceros que gestione la sincronización entre el dispositivo y los servidores.
+        En caso de que desee sincronizar un calendario de Google, su aplicación oficial de calendario hará el trabajo. Para otros calendarios necesitará un adaptador de sincronización de terceros, por ejemplo DAVx5.</string>
     <string name="faq_3_title">I see the visual reminders, but hear no audio. What can I do?</string>
     <string name="faq_3_text">Not just displaying the actual reminder, but playing the audio is hugely affected by the system too. If you can\'t hear any sound, try going in the app settings,
         pressing the \"Audio stream used by reminders\" option and changing it to a different value. If it still won\'t work, check your sound settings, if the particular stream isn\'t muted.</string>
     <string name="faq_4_title">¿Soporta la aplicación zonas horarias?</string>
     <string name="faq_4_text">Sí, sí. Por defecto todos los eventos se crean en su zona horaria actual. Si quieres cambiar la zona horaria de un evento,
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
+    <string name="app_title">Simple Calendar Pro - Eventos &amp; Recordatorios</string>
 </resources>

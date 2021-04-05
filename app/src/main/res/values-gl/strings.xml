@@ -116,6 +116,7 @@
     <string name="system_stream">Sistema</string>
     <string name="alarm_stream">Alarma</string>
     <string name="ring_stream">Soar</string>
+    <string name="current_time">Hora actual</string>
     <string name="select_caldav_calendars">Escolla calendarios a sincronizar</string>
     <string name="manage_synced_calendars">Xestionar calendarios sincronizados</string>
     <string name="store_locally_only">Gardar só localmente</string>

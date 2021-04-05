@@ -129,6 +129,7 @@
     <string name="default_reminder_2">기본 알림 2</string>
     <string name="default_reminder_3">기본 알림 3</string>
     <string name="last_view">마지막 견해</string>
+    <string name="current_time">현재 시간</string>
     <string name="select_caldav_calendars">동기화 할 캘린더 선택</string>
     <string name="manage_synced_calendars">동기화된 캘린더 관리</string>
     <string name="store_locally_only">로컬에만 저장</string>

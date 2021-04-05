@@ -136,6 +136,7 @@
     <string name="alarm_stream">Alarm</string>
     <string name="notification_stream">Obavijest</string>
     <string name="ring_stream">Zvono</string>
+    <string name="current_time">Trenutno vrijeme</string>
     <string name="select_caldav_calendars">Odaberi kalendare za sinkronizaciju</string>
     <string name="manage_synced_calendars">Upravljanje sinkroniziranim kalendarima</string>
     <string name="store_locally_only">Pohrani samo lokalno</string>

@@ -10,6 +10,7 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Notificació</string>
     <string name="ring_stream">Timbre</string>
+    <string name="current_time">Hora actual</string>
     <string name="monday_alt">Dilluns</string>
     <string name="tuesday_alt">Dimarts</string>
     <string name="wednesday_alt">Dimecres</string>

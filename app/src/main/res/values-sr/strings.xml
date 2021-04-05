@@ -156,6 +156,7 @@
     <string name="new_events">Нови догађаји</string>
     <string name="default_start_time">Подразумевано време почетка</string>
     <string name="next_full_hour">Следећи пун сат</string>
+    <string name="current_time">Тренутно време</string>
     <string name="default_duration">Подразумевано трајање</string>
     <string name="last_used_one">Задње корршћено</string>
     <string name="other_time">Друго време</string>

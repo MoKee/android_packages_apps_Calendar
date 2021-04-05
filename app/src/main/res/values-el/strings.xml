@@ -129,6 +129,7 @@
     <string name="alarm_stream">Αφύπνιση</string>
     <string name="notification_stream">Ειδοποίηση</string>
     <string name="ring_stream">Κουδούνισμα</string>
+    <string name="current_time">Τρέχουσα ώρα</string>
     <string name="select_caldav_calendars">Επιλέξτε ημερολόγια για συγχρονισμό</string>
     <string name="manage_synced_calendars">Διαχείριση συγχρονισμένων ημερολογίων</string>
     <string name="store_locally_only">Αποθήκευση μόνο τοπικά</string>

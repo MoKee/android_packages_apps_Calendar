@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="no_ringtone_selected">Dim</string>
+    <string name="system_stream">System</string>
     <string name="ring_stream">Canu</string>
+    <string name="current_time">Amser nawr</string>
 </resources>

@@ -133,6 +133,7 @@
     <string name="alarm_stream">Zəng</string>
     <string name="notification_stream">Bildiriş</string>
     <string name="ring_stream">Zəng səsi</string>
+    <string name="current_time">Hazırki vaxt</string>
     <string name="select_caldav_calendars">Sinxronlaşdırmaq üçün təqvim seçin</string>
     <string name="manage_synced_calendars">Sinxronlaşdırılmış təqvimləri idarə et</string>
     <string name="store_locally_only">Yalnız yerli saxla</string>

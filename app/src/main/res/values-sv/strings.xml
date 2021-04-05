@@ -139,6 +139,7 @@
     <string name="default_reminder_3">Standardpåminnelse 3</string>
     <string name="view_to_open_from_widget">Vy som öppnas från händelselistwidgeten</string>
     <string name="last_view">Senaste vy</string>
+    <string name="current_time">Aktuell tid</string>
     <string name="select_caldav_calendars">Välj de kalendrar som du vill synkronisera</string>
     <string name="manage_synced_calendars">Hantera synkroniserade kalendrar</string>
     <string name="store_locally_only">Spara bara lokalt</string>

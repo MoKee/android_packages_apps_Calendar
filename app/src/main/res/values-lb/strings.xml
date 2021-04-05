@@ -5,4 +5,5 @@
     <string name="description">Beschreiwung</string>
     <string name="color">Faarf</string>
     <string name="no_ringtone_selected">Keen</string>
+    <string name="current_time">Aktuell Zäit</string>
 </resources>

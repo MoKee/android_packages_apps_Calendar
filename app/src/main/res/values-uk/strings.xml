@@ -156,6 +156,7 @@
     <string name="new_events">Нові події</string>
     <string name="default_start_time">Час початку за замовчуванням</string>
     <string name="next_full_hour">Наступну повну годину</string>
+    <string name="current_time">Поточний час</string>
     <string name="default_duration">Тривалість за замовчуванням</string>
     <string name="last_used_one">Останнє використане</string>
     <string name="other_time">Іншого разу</string>

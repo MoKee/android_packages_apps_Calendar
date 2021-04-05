@@ -12,6 +12,7 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Notipikasyon</string>
     <string name="ring_stream">Ring</string>
+    <string name="current_time">Kasalukuyang oras</string>
     <string name="monday_alt">Lunes</string>
     <string name="saturday_alt">Sabado</string>
     <string name="sunday_alt">Linggo</string>

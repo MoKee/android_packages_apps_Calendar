@@ -139,6 +139,7 @@
     <string name="default_reminder_2">Standaardherinnering 2</string>
     <string name="default_reminder_3">Standaardherinnering 3</string>
     <string name="view_to_open_from_widget">Weergave bij openen vanuit widget met afsprakenlijst</string>
+    <string name="current_time">Huidige tijd</string>
     <string name="select_caldav_calendars">Selecteer te synchroniseren agenda\'s</string>
     <string name="manage_synced_calendars">Gesynchroniseerde agenda\'s beheren</string>
     <string name="store_locally_only">Alleen lokaal opslaan</string>

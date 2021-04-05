@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">تقویم</string>
+    <string name="forever">برای همیشه</string>
     <string name="location">مکان</string>
     <string name="description">توصیف</string>
     <string name="color">رنگ</string>
     <string name="no_ringtone_selected">هیچ‌کدام</string>
+    <string name="system_stream">سيستم</string>
+    <string name="notification_stream">اعلانات</string>
+    <string name="current_time">زمان کنونی</string>
 </resources>

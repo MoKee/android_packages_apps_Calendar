@@ -64,6 +64,7 @@
     <string name="second_m">drugi(ą)</string>
     <string name="third_m">trzeci(ą)</string>
     <string name="fourth_m">czwarty(ą)</string>
+    <string name="fifth_m">5.</string>
     <string name="last_m">ostatni(ą)</string>
     <string name="repeat_every_f">Powtarzaj w każdy(ą)</string>
     <string name="every_f">Każdy(ą)</string>
@@ -71,6 +72,7 @@
     <string name="second_f">drugi(ą)</string>
     <string name="third_f">trzeci(ą)</string>
     <string name="fourth_f">czwarty(ą)</string>
+    <string name="fifth_f">5.</string>
     <string name="last_f">ostatni(ą)</string>
     <string name="birthdays">Urodziny</string>
     <string name="add_birthdays">Dodaj urodziny kontaktów</string>
@@ -158,6 +160,7 @@
     <string name="new_events">Nowe wydarzenia</string>
     <string name="default_start_time">Domyślna godzina rozpoczęcia</string>
     <string name="next_full_hour">Przy następnej pełnej godzinie</string>
+    <string name="current_time">Aktualny czas</string>
     <string name="default_duration">Domyślny czas trwania</string>
     <string name="last_used_one">Ostatnio użyte</string>
     <string name="other_time">Innym razem</string>

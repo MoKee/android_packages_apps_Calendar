@@ -131,11 +131,13 @@
     <string name="dim_past_events">Dim tidligere hendelser</string>
     <string name="events">Hendelser</string>
     <string name="reminder_stream">Lydtype brukt for påminnelser</string>
+    <string name="system_stream">System</string>
     <string name="notification_stream">Varsel</string>
     <string name="ring_stream">Ringetone</string>
     <string name="default_reminder_1">Standardpåminnelse 1</string>
     <string name="default_reminder_2">Standardpåminnelse 2</string>
     <string name="default_reminder_3">Standardpåminnelse 3</string>
+    <string name="current_time">Gjeldende klokkeslett</string>
     <string name="select_caldav_calendars">Velg kalendere å synkronisere</string>
     <string name="manage_synced_calendars">Behandle synkroniserte kalendere</string>
     <string name="store_locally_only">Lagre bare lokalt</string>

@@ -54,6 +54,7 @@
     <string name="notification_stream">Известия</string>
     <string name="ring_stream">Звук</string>
     <string name="last_view">Последен изглед</string>
+    <string name="current_time">Актуално време</string>
     <string name="monday_alt">понеделник</string>
     <string name="saturday_alt">събота</string>
     <string name="sunday_alt">неделя</string>

@@ -5,4 +5,5 @@
     <string name="description">വിവരണം</string>
     <string name="color">വർണ്ണം</string>
     <string name="no_ringtone_selected">ഒന്നുമില്ല</string>
+    <string name="current_time">നിലവിലെ സമയം</string>
 </resources>

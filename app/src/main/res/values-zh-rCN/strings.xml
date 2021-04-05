@@ -6,6 +6,7 @@
     <string name="daily_view">天</string>
     <string name="weekly_view">周</string>
     <string name="monthly_view">月</string>
+    <string name="monthly_daily_view">月份+每日视图</string>
     <string name="yearly_view">年</string>
     <string name="simple_event_list">简易事件列表</string>
     <string name="no_upcoming_events">好像您没有任何即将发生的事件。</string>
@@ -64,6 +65,7 @@
     <string name="second_m">第二个</string>
     <string name="third_m">第三个</string>
     <string name="fourth_m">第四个</string>
+    <string name="fifth_m">第五个</string>
     <string name="last_m">最后一个</string>
     <string name="repeat_every_f">重复于每月</string>
     <string name="every_f">每月</string>
@@ -71,6 +73,7 @@
     <string name="second_f">第二个</string>
     <string name="third_f">第三个</string>
     <string name="fourth_f">第四个</string>
+    <string name="fifth_f">第五个</string>
     <string name="last_f">最后一个</string>
     <string name="birthdays">生日</string>
     <string name="add_birthdays">添加联系人生日</string>
@@ -158,6 +161,7 @@
     <string name="new_events">新事件</string>
     <string name="default_start_time">默认开始时间</string>
     <string name="next_full_hour">下一个整点</string>
+    <string name="current_time">当前时间</string>
     <string name="default_duration">默认持续时间</string>
     <string name="last_used_one">上次使用</string>
     <string name="other_time">其他时间</string>

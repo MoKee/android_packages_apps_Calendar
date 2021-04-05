@@ -79,6 +79,7 @@
     <string name="new_events">புதிய நிகழ்வுகள்</string>
     <string name="default_start_time">இயல்புநிலை தொடக்க நேரம்</string>
     <string name="next_full_hour">அடுத்த முழு மணிநேரம்</string>
+    <string name="current_time">நடப்பு நேரம்</string>
     <string name="other_time">மற்ற நேரம்</string>
     <string name="caldav">CalDAV</string>
     <string name="monday_alt">திங்கள்</string>

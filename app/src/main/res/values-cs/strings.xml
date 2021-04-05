@@ -6,6 +6,7 @@
     <string name="daily_view">Denní přehled</string>
     <string name="weekly_view">Týdenní přehled</string>
     <string name="monthly_view">Měsíční přehled</string>
+    <string name="monthly_daily_view">Měsíční + denní zobrazení</string>
     <string name="yearly_view">Roční přehled</string>
     <string name="simple_event_list">Jednoduchý seznam událostí</string>
     <string name="no_upcoming_events">Nemáte žádné nadcházející události.</string>
@@ -64,6 +65,7 @@
     <string name="second_m">druhý</string>
     <string name="third_m">třetí</string>
     <string name="fourth_m">čtvrtý</string>
+    <string name="fifth_m">pátý</string>
     <string name="last_m">poslední</string>
     <string name="repeat_every_f">Opakovat každou</string>
     <string name="every_f">Každý</string>
@@ -71,6 +73,7 @@
     <string name="second_f">druhou</string>
     <string name="third_f">třetí</string>
     <string name="fourth_f">čtvrtou</string>
+    <string name="fifth_f">pátý</string>
     <string name="last_f">poslední</string>
     <string name="birthdays">Narozeniny</string>
     <string name="add_birthdays">Přidat narozeniny z kontaktů</string>
@@ -158,6 +161,7 @@
     <string name="new_events">Nové události</string>
     <string name="default_start_time">Výchozí počátek</string>
     <string name="next_full_hour">Další celá hodina</string>
+    <string name="current_time">Aktuální čas</string>
     <string name="default_duration">Výchozí doba trvání</string>
     <string name="last_used_one">Poslední použitá</string>
     <string name="other_time">Jiný čas</string>

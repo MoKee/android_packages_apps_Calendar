@@ -141,6 +141,7 @@
     <string name="default_reminder_3">ಪೂರ್ವನಿಯೋಜಿತ ಮರುಜ್ಞಾಪನೆ 3</string>
     <string name="view_to_open_from_widget">ಕಾರ್ಯಕ್ರಮದ ಪಟ್ಟಿ ಸಾಧನದಿಂದ ವೀಕ್ಷಿಸಲು ತೆರೆ</string>
     <string name="last_view">ಕೊನೆ ನೋಟ</string>
+    <string name="current_time">ಪ್ರಸ್ತುತ ಸಮಯ</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">ಕ್ಯಾಲೆಂಡರ್ ಗಳನ್ನು ಸಿಂಕ್ ಮಾಡಲು ಆಯ್ಕೆಮಾಡು</string>
     <string name="manage_synced_calendars">ಏಕೀಕೃತ ಕ್ಯಾಲೆಂಡರ್ ಗಳನ್ನು ನಿರ್ವಹಿಸು</string>

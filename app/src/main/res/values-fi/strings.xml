@@ -11,6 +11,7 @@
     <string name="alarm_stream">Hälytys</string>
     <string name="notification_stream">Ilmoitus</string>
     <string name="ring_stream">Soita</string>
+    <string name="current_time">Nykyinen aika</string>
     <string name="monday_alt">maanantai</string>
     <string name="tuesday_alt">Tiistai</string>
     <string name="wednesday_alt">Keskiviikko</string>

@@ -6,4 +6,5 @@
     <string name="color">สี</string>
     <string name="no_ringtone_selected">ไม่มี</string>
     <string name="system_stream">ระบบ</string>
+    <string name="current_time">เวลาปัจจุบัน</string>
 </resources>

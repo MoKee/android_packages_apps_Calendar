@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_launcher_name">Calendar</string>
     <string name="color">Colour</string>
+    <string name="no_ringtone_selected">None</string>
+    <string name="system_stream">System</string>
+    <string name="current_time">Current time</string>
 </resources>

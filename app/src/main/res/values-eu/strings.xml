@@ -11,6 +11,7 @@
     <string name="alarm_stream">Alarma</string>
     <string name="notification_stream">Jakinarazpena</string>
     <string name="ring_stream">Dei-doinua</string>
+    <string name="current_time">Uneko ordua</string>
     <string name="monday_alt">Astelehena</string>
     <string name="saturday_alt">Larunbata</string>
     <string name="sunday_alt">Igandea</string>

@@ -6,6 +6,7 @@
     <string name="daily_view">Päevavaade</string>
     <string name="weekly_view">Nädala vaade</string>
     <string name="monthly_view">Kuu vaade</string>
+    <string name="monthly_daily_view">Kuu + päeva vaade</string>
     <string name="yearly_view">Aasta vaade</string>
     <string name="simple_event_list">Lihtne sündmuste loend</string>
     <string name="no_upcoming_events">Tundub, et teil pole tulevasi sündmusi.</string>
@@ -64,6 +65,7 @@
     <string name="second_m">sekund</string>
     <string name="third_m">kolmas</string>
     <string name="fourth_m">neljas</string>
+    <string name="fifth_m">viies</string>
     <string name="last_m">viimane</string>
     <string name="repeat_every_f">Korda iga</string>
     <string name="every_f">Iga</string>
@@ -71,6 +73,7 @@
     <string name="second_f">sekund</string>
     <string name="third_f">kolmas</string>
     <string name="fourth_f">neljas</string>
+    <string name="fifth_f">viies</string>
     <string name="last_f">viimane</string>
     <string name="birthdays">Sünnipäevad</string>
     <string name="add_birthdays">Lisage kontaktide sünnipäevad</string>
@@ -158,6 +161,7 @@
     <string name="new_events">Uued sündmused</string>
     <string name="default_start_time">Algusaeg vaikimisi</string>
     <string name="next_full_hour">Järgmine täis tund</string>
+    <string name="current_time">Praegune kellaaeg</string>
     <string name="default_duration">Vaikekestust</string>
     <string name="last_used_one">Viimati kasutatud</string>
     <string name="other_time">Teine kord</string>

@@ -2,6 +2,8 @@
 <resources>
     <string name="app_launcher_name">Calendariu</string>
     <string name="location">Allugamientu</string>
+    <string name="no_ringtone_selected">Nengún</string>
     <string name="system_stream">Sistema</string>
     <string name="ring_stream">Timbre</string>
+    <string name="current_time">Hora actual</string>
 </resources>

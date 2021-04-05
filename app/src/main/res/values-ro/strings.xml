@@ -29,6 +29,7 @@
     <string name="alarm_stream">Alarmă</string>
     <string name="notification_stream">Notificare</string>
     <string name="ring_stream">Sonerie</string>
+    <string name="current_time">Ora curentă</string>
     <string name="monday_alt">Luni</string>
     <string name="tuesday_alt">Marţi</string>
     <string name="wednesday_alt">Miercuri</string>

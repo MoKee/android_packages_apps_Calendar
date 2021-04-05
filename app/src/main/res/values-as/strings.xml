@@ -4,4 +4,5 @@
     <string name="location">অৱস্থান</string>
     <string name="description">বৰ্ণনা</string>
     <string name="no_ringtone_selected">হাল্লা</string>
+    <string name="current_time">চলিত সময়</string>
 </resources>

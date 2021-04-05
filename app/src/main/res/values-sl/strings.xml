@@ -144,6 +144,7 @@
     <string name="last_view">Zadnji pogled</string>
     <string name="new_events">Novi dogodki</string>
     <string name="default_start_time">Privzeti čas začetka</string>
+    <string name="current_time">Trenutni čas</string>
     <string name="default_duration">Privzeto trajanje</string>
     <string name="other_time">Drugi čas</string>
     <string name="caldav">CalDAV</string>

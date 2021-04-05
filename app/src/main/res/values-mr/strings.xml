@@ -5,4 +5,5 @@
     <string name="description">वर्णन</string>
     <string name="color">रंग</string>
     <string name="no_ringtone_selected">काहीही नाही</string>
+    <string name="current_time">चालू वेळ</string>
 </resources>
