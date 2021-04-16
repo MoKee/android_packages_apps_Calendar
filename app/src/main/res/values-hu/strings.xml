@@ -45,6 +45,7 @@
     <string name="delete_future_occurrences">Ezt és a jövőbéli eseményeket törölje</string>
     <string name="delete_all_occurrences">Az összes eseményt törölje</string>
     <string name="update_one_only">Csak a kiválasztott eseményt frissítse</string>
+    <string name="update_this_and_future_occurrences">Ezt és a jövőbéli eseményeket frissítse</string>
     <string name="update_all_occurrences">Az összes eseményt frissítse</string>
     <string name="repeat_till_date">Ismétlés egy időpontig</string>
     <string name="stop_repeating_after_x">Állítsa le az ismétlést x esemény után</string>
