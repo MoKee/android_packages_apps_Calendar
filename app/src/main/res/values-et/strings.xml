@@ -45,6 +45,7 @@
     <string name="delete_future_occurrences">Kustutage see ja kõik tulevased sündmused</string>
     <string name="delete_all_occurrences">Kustuta kõik sündmused</string>
     <string name="update_one_only">Uuenda ainult valitud sündmust</string>
+    <string name="update_this_and_future_occurrences">Värskendage see ja kõik tulevased sündmused</string>
     <string name="update_all_occurrences">Uuenda kõik sündmused</string>
     <string name="repeat_till_date">Korrake kuni kuupäevani</string>
     <string name="stop_repeating_after_x">Lõpetage kordus pärast x esinemist</string>

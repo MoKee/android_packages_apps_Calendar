@@ -73,7 +73,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:342424b1f5'
+    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:9ced0fdd5f'
     implementation 'joda-time:joda-time:2.10.3'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'

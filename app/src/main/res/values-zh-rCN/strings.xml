@@ -45,6 +45,7 @@
     <string name="delete_future_occurrences">删除当前和将来的所有事件</string>
     <string name="delete_all_occurrences">删除所有事件</string>
     <string name="update_one_only">仅更新所选事件</string>
+    <string name="update_this_and_future_occurrences">更新此事件和将来的所有事件</string>
     <string name="update_all_occurrences">更新所有事件</string>
     <string name="repeat_till_date">在此日期前重复</string>
     <string name="stop_repeating_after_x">在 x 次重复后停止</string>
