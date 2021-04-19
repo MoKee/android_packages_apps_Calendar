@@ -17,8 +17,8 @@ android {
         applicationId "com.android.calendar"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 197
-        versionName "6.13.4"
+        versionCode 198
+        versionName "6.13.5"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         android.applicationVariants.all { variant ->
@@ -73,7 +73,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:9ced0fdd5f'
+    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:5e13e3ebbe'
     implementation 'joda-time:joda-time:2.10.3'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
