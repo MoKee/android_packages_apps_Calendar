@@ -131,6 +131,7 @@
     <string name="manage_event_types">Halda sündmuste tüüpe</string>
     <string name="start_day_at">Alustage päeva</string>
     <string name="end_day_at">Lõpetage päev</string>
+    <string name="midnight_spanning">Näidake ülemises ribas üle südaöö ulatuvaid sündmusi </string>
     <string name="allow_customizing_day_count">Luba päevade loenduse kohandamine</string>
     <string name="week_numbers">Kuva nädala number</string>
     <string name="vibrate">Vibreeri kui one meeldetuletuse teatis</string>
