@@ -993,8 +993,17 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun saveCurrentEvent() {
-        ensureBackgroundThread {
-            saveEvent()
+        if (config.wasAlarmWarningShown || (mReminder1Minutes == REMINDER_OFF && mReminder2Minutes == REMINDER_OFF && mReminder3Minutes == REMINDER_OFF)) {
+            ensureBackgroundThread {
+                saveEvent()
+            }
+        } else {
+            ConfirmationDialog(this, messageId = R.string.reminder_warning, positive = R.string.ok, negative = 0) {
+                config.wasAlarmWarningShown = true
+                ensureBackgroundThread {
+                    saveEvent()
+                }
+            }
         }
     }
 

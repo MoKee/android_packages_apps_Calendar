@@ -1,6 +1,17 @@
 Changelog
 ==========
 
+Version 6.13.7 *(2021-05-02)*
+----------------------------
+
+ * Fixing a crash at saving events
+
+Version 6.13.6 *(2021-05-01)*
+----------------------------
+
+ * Fixed a glitch related to exporting events in .ics file
+ * Some stability and translation improvements
+
 Version 6.13.5 *(2021-04-17)*
 ----------------------------
 
