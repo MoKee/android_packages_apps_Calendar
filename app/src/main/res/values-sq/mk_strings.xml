@@ -59,6 +59,11 @@
     <string name="holiday_serbia">Serbi</string>
     <string name="holiday_slovenia">Slloveni</string>
     <string name="holiday_slovakia">Sllovaki</string>
+    <string name="holiday_southafrica">Afrikë e Jugut</string>
     <string name="holiday_finland">Finlandë</string>
+    <string name="holiday_sweden">Suedi</string>
+    <string name="holiday_thailand">Tailandë</string>
+    <string name="holiday_turkey">Turqi</string>
+    <string name="holiday_ukraine">Ukrainë</string>
     <string name="no_calendar_permission">Kërkohet leja e kalendarit</string>
 </resources>
