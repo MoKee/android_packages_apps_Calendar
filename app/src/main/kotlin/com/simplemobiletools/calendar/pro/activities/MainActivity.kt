@@ -1018,6 +1018,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_india), "india.ics")
             put(getString(R.string.holiday_indonesia), "indonesia.ics")
             put(getString(R.string.holiday_iceland), "iceland.ics")
+            put(getString(R.string.holiday_israel), "israel.ics")
             put(getString(R.string.holiday_italy), "italy.ics")
             put(getString(R.string.holiday_kazakhstan), "kazakhstan.ics")
             put(getString(R.string.holiday_morocco), "morocco.ics")
