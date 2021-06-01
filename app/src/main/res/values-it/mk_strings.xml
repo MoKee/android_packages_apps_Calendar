@@ -31,11 +31,13 @@
     <string name="holiday_spain">Spagna</string>
     <string name="holiday_ireland">Irlanda</string>
     <string name="holiday_france">Francia</string>
+    <string name="holiday_southkorea">Corea del Sud</string>
     <string name="holiday_greece">Grecia</string>
     <string name="holiday_croatia">Croazia</string>
     <string name="holiday_india">India</string>
     <string name="holiday_indonesia">Indonesia</string>
     <string name="holiday_iceland">Islansa</string>
+    <string name="holiday_israel">Israele</string>
     <string name="holiday_italy">Italia</string>
     <string name="holiday_latvia">Lettonia</string>
     <string name="holiday_lithuania">Lituania</string>
@@ -59,10 +61,14 @@
     <string name="holiday_serbia">Serbia</string>
     <string name="holiday_slovenia">Slovenia</string>
     <string name="holiday_slovakia">Slovacchia</string>
+    <string name="holiday_southafrica">Sudafrica</string>
     <string name="holiday_finland">Finlandia</string>
     <string name="holiday_sweden">Svezia</string>
     <string name="holiday_taiwan">Taipei (Cina)</string>
+    <string name="holiday_thailand">Tailandia</string>
+    <string name="holiday_turkey">Turchia</string>
     <string name="holiday_ukraine">Ucraina</string>
+    <string name="holiday_unitedkingdom">Regno Unito</string>
     <string name="holiday_unitedstates">Stati uniti</string>
     <string name="no_calendar_permission">L\'autorizzazione al Calendario è necessaria</string>
 </resources>

@@ -6,6 +6,7 @@
     <string name="daily_view">Vista giornaliera</string>
     <string name="weekly_view">Vista settimanale</string>
     <string name="monthly_view">Vista mensile</string>
+    <string name="monthly_daily_view">Vista mensile + giornaliera</string>
     <string name="yearly_view">Vista annuale</string>
     <string name="simple_event_list">Lista eventi semplice</string>
     <string name="no_upcoming_events">Sembra che tu non abbia nessun evento imminente.</string>
@@ -202,4 +203,12 @@
     <string name="faq_4_title">L\'app supporta i fusi orari?</string>
     <string name="faq_4_text">Sì, lo supporta. Per impostazione predefinita, tutti gli eventi vengono creati nel tuo fuso orario corrente. Se vuoi cambiare il fuso orario di un evento, dovrai prima abilitare il selettore del fuso orario nelle impostazioni dell\'app, quindi cambialo nella schermata Dettagli Eventi. L\'impostazione è disabilitata di default perché la maggior parte delle persone non ne ha bisogno.</string>
     <string name="app_title">Semplice Calendario Pro - Eventi &amp; promemoria</string>
+    <string name="holiday_bulgaria">Bulgaria</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Kazakistan</string>
+    <string name="holiday_morocco">Marocco</string>
+    <string name="holiday_nicaragua">Nicaragua</string>
+    <string name="holiday_costarica">Costa Rica</string>
+    <string name="holiday_uruguay">Uruguay</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>
