@@ -6,6 +6,7 @@
     <string name="daily_view">Vista diária</string>
     <string name="weekly_view">Vista semanal</string>
     <string name="monthly_view">Vista mensal</string>
+    <string name="monthly_daily_view">Vista mensal + diária</string>
     <string name="yearly_view">Vista anual</string>
     <string name="simple_event_list">Lista simples de eventos</string>
     <string name="no_upcoming_events">Parece que você não tem eventos futuros.</string>
@@ -44,6 +45,7 @@
     <string name="delete_future_occurrences">Excluir esta e todas as ocorrências futuras</string>
     <string name="delete_all_occurrences">Remover todas as ocurrências</string>
     <string name="update_one_only">Excluir apenas a ocorrência selecionada</string>
+    <string name="update_this_and_future_occurrences">Atualizar esta e todas as ocorrências futuras</string>
     <string name="update_all_occurrences">Remover todas as ocurrências</string>
     <string name="repeat_till_date">Repetir até uma data</string>
     <string name="stop_repeating_after_x">Parar de repetir após x ocorrências</string>
@@ -64,6 +66,7 @@
     <string name="second_m">segundo</string>
     <string name="third_m">terceiro</string>
     <string name="fourth_m">quarto</string>
+    <string name="fifth_m">quinto</string>
     <string name="last_m">último</string>
     <string name="repeat_every_f">Repetir a cada</string>
     <string name="every_f">A cada</string>
@@ -71,6 +74,7 @@
     <string name="second_f">segundo</string>
     <string name="third_f">terceiro</string>
     <string name="fourth_f">quarto</string>
+    <string name="fifth_f">quinta</string>
     <string name="last_f">último</string>
     <string name="birthdays">Aniversários</string>
     <string name="add_birthdays">Adicionar aniversários dos contatos</string>
@@ -127,6 +131,8 @@
     <string name="manage_event_types">Gerenciar os tipos de eventos</string>
     <string name="start_day_at">Comece o dia com</string>
     <string name="end_day_at">Fim de dia na</string>
+    <string name="midnight_spanning">Mostrar eventos que se espalham pela meia-noite na barra superior</string>
+    <string name="allow_customizing_day_count">Permitir personalizar contagem de dias</string>
     <string name="week_numbers">Mostrar os números da semana</string>
     <string name="vibrate">Vibrar na notificação de lembrete</string>
     <string name="reminder_sound">Som do lembrete</string>
@@ -248,4 +254,12 @@ pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-la para
         &lt;b&gt;Reddit:&lt;/b&gt;
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="holiday_bulgaria">Bulgária</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Cazaquistão</string>
+    <string name="holiday_morocco">Marrocos</string>
+    <string name="holiday_nicaragua">Nicarágua</string>
+    <string name="holiday_costarica">Costa Rica</string>
+    <string name="holiday_uruguay">Uruguai</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>
