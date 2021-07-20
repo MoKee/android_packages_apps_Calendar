@@ -22,6 +22,7 @@ import androidx.core.view.MenuItemCompat
 import com.simplemobiletools.calendar.pro.BuildConfig
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.adapters.EventListAdapter
+import com.simplemobiletools.calendar.pro.adapters.QuickFilterEventTypeAdapter
 import com.simplemobiletools.calendar.pro.databases.EventsDatabase
 import com.simplemobiletools.calendar.pro.dialogs.ExportEventsDialog
 import com.simplemobiletools.calendar.pro.dialogs.FilterEventTypesDialog
@@ -73,6 +74,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private var mStoredAdjustedPrimaryColor = 0
     private var mStoredDayCode = ""
     private var mStoredIsSundayFirst = false
+    private var mStoredMidnightSpan = true
     private var mStoredUse24HourFormat = false
     private var mStoredDimPastEvents = true
     private var mStoredHighlightWeekends = false
@@ -141,7 +143,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         }
 
         if (config.storedView == WEEKLY_VIEW) {
-            if (mStoredIsSundayFirst != config.isSundayFirst || mStoredUse24HourFormat != config.use24HourFormat) {
+            if (mStoredIsSundayFirst != config.isSundayFirst || mStoredUse24HourFormat != config.use24HourFormat || mStoredMidnightSpan != config.showMidnightSpanningEventsAtTop) {
                 updateViewPager()
             }
         }
@@ -157,6 +159,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         if (!mIsSearchOpen) {
             invalidateOptionsMenu()
         }
+
+        setupQuickFilter()
     }
 
     override fun onPause() {
@@ -191,6 +195,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         menu.apply {
             findItem(R.id.refresh_caldav_calendars).isVisible = config.caldavSync
+            findItem(R.id.filter).isVisible = mShouldFilterBeVisible
         }
 
         return true
@@ -252,6 +257,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             mStoredUse24HourFormat = use24HourFormat
             mStoredDimPastEvents = dimPastEvents
             mStoredHighlightWeekends = highlightWeekends
+            mStoredMidnightSpan = showMidnightSpanningEventsAtTop
         }
         mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
         mStoredDayCode = Formatter.getTodayCode()
@@ -293,6 +299,16 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                 return true
             }
         })
+    }
+
+    private fun setupQuickFilter() {
+        eventsHelper.getEventTypes(this, false) {
+            val quickFilterEventTypes = config.quickFilterEventTypes
+            quick_event_type_filter.adapter = QuickFilterEventTypeAdapter(this, it, quickFilterEventTypes) {
+                refreshViewPager()
+                updateWidgets()
+            }
+        }
     }
 
     private fun closeSearch() {
@@ -448,6 +464,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun showFilterDialog() {
         FilterEventTypesDialog(this) {
             refreshViewPager()
+            setupQuickFilter()
             updateWidgets()
         }
     }

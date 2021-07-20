@@ -10,6 +10,7 @@ import android.view.Menu
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.dialogs.SelectCalendarsDialog
 import com.simplemobiletools.calendar.pro.dialogs.SelectEventTypeDialog
+import com.simplemobiletools.calendar.pro.dialogs.SelectQuickFilterEventTypesDialog
 import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.models.EventType
@@ -46,6 +47,7 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeNotifications()
         setupUseEnglish()
         setupManageEventTypes()
+        setupManageQuickFilterEventTypes()
         setupHourFormat()
         setupSundayFirst()
         setupHighlightWeekends()
@@ -54,6 +56,7 @@ class SettingsActivity : SimpleActivity() {
         setupWeekNumbers()
         setupShowGrid()
         setupWeeklyStart()
+        setupMidnightSpanEvents()
         setupVibrate()
         setupReminderSound()
         setupReminderAudioStream()
@@ -160,6 +163,18 @@ class SettingsActivity : SimpleActivity() {
     private fun setupManageEventTypes() {
         settings_manage_event_types_holder.setOnClickListener {
             startActivity(Intent(this, ManageEventTypesActivity::class.java))
+        }
+    }
+
+    private fun setupManageQuickFilterEventTypes() {
+        settings_manage_quick_filter_event_types_holder.setOnClickListener {
+            showQuickFilterPicker()
+        }
+
+        eventsHelper.getEventTypes(this, false) {
+            if (it.size < 2) {
+                settings_manage_quick_filter_event_types_holder.beGone()
+            }
         }
     }
 
@@ -277,6 +292,10 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
+    private fun showQuickFilterPicker() {
+        SelectQuickFilterEventTypesDialog(this)
+    }
+
     private fun setupSundayFirst() {
         settings_sunday_first.isChecked = config.isSundayFirst
         settings_sunday_first_holder.setOnClickListener {
@@ -319,6 +338,14 @@ class SettingsActivity : SimpleActivity() {
                 config.startWeeklyAt = it as Int
                 settings_start_weekly_at.text = getHoursString(it)
             }
+        }
+    }
+
+    private fun setupMidnightSpanEvents() {
+        settings_midnight_span_event.isChecked = config.showMidnightSpanningEventsAtTop
+        settings_midnight_span_events_holder.setOnClickListener {
+            settings_midnight_span_event.toggle()
+            config.showMidnightSpanningEventsAtTop = settings_midnight_span_event.isChecked
         }
     }
 

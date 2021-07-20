@@ -23,6 +23,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getInt(START_WEEKLY_AT, 7)
         set(startWeeklyAt) = prefs.edit().putInt(START_WEEKLY_AT, startWeeklyAt).apply()
 
+    var showMidnightSpanningEventsAtTop: Boolean
+        get() = prefs.getBoolean(SHOW_MIDNIGHT_SPANNING_EVENTS_AT_TOP, true)
+        set(midnightSpanning) = prefs.edit().putBoolean(SHOW_MIDNIGHT_SPANNING_EVENTS_AT_TOP, midnightSpanning).apply()
+
     var vibrateOnReminder: Boolean
         get() = prefs.getBoolean(VIBRATE, false)
         set(vibrate) = prefs.edit().putBoolean(VIBRATE, vibrate).apply()
@@ -66,6 +70,10 @@ class Config(context: Context) : BaseConfig(context) {
     var displayEventTypes: Set<String>
         get() = prefs.getStringSet(DISPLAY_EVENT_TYPES, HashSet<String>())!!
         set(displayEventTypes) = prefs.edit().remove(DISPLAY_EVENT_TYPES).putStringSet(DISPLAY_EVENT_TYPES, displayEventTypes).apply()
+
+    var quickFilterEventTypes: Set<String>
+        get() = prefs.getStringSet(QUICK_FILTER_EVENT_TYPES, HashSet<String>())!!
+        set(quickFilterEventTypes) = prefs.edit().remove(QUICK_FILTER_EVENT_TYPES).putStringSet(QUICK_FILTER_EVENT_TYPES, quickFilterEventTypes).apply()
 
     var listWidgetViewToOpen: Int
         get() = prefs.getInt(LIST_WIDGET_VIEW_TO_OPEN, DAILY_VIEW)

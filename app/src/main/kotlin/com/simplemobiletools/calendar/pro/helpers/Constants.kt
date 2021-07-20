@@ -45,6 +45,7 @@ const val YEAR = 31536000
 // Shared Preferences
 const val WEEK_NUMBERS = "week_numbers"
 const val START_WEEKLY_AT = "start_weekly_at"
+const val SHOW_MIDNIGHT_SPANNING_EVENTS_AT_TOP = "show_midnight_spanning_events_at_top"
 const val VIBRATE = "vibrate"
 const val REMINDER_SOUND_URI = "reminder_sound_uri"
 const val REMINDER_SOUND_TITLE = "reminder_sound_title"
@@ -53,6 +54,7 @@ const val LAST_EVENT_REMINDER_MINUTES = "reminder_minutes"
 const val LAST_EVENT_REMINDER_MINUTES_2 = "reminder_minutes_2"
 const val LAST_EVENT_REMINDER_MINUTES_3 = "reminder_minutes_3"
 const val DISPLAY_EVENT_TYPES = "display_event_types"
+const val QUICK_FILTER_EVENT_TYPES = "quick_filter_event_types"
 const val LIST_WIDGET_VIEW_TO_OPEN = "list_widget_view_to_open"
 const val CALDAV_SYNC = "caldav_sync"
 const val CALDAV_SYNCED_CALENDAR_IDS = "caldav_synced_calendar_ids"
@@ -132,7 +134,8 @@ const val RECURRENCE_ID = "RECURRENCE-ID"
 const val SEQUENCE = "SEQUENCE"
 
 // this tag isn't a standard ICS tag, but there's no official way of adding a category color in an ics file
-const val CATEGORY_COLOR = "CATEGORY_COLOR:"
+const val CATEGORY_COLOR = "X-SMT-CATEGORY-COLOR:"
+const val CATEGORY_COLOR_LEGACY = "CATEGORY_COLOR:"
 
 const val DISPLAY = "DISPLAY"
 const val EMAIL = "EMAIL"
