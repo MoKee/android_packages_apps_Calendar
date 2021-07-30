@@ -55,6 +55,17 @@ class EventsHelper(val context: Context) {
         val newId = eventTypesDB.insertOrUpdate(eventType)
         if (eventType.id == null) {
             config.addDisplayEventType(newId.toString())
+
+            if (config.quickFilterEventTypes.isNotEmpty()) {
+                config.addQuickFilterEventType(newId.toString())
+            } else {
+                val eventTypes = getEventTypesSync()
+                if (eventTypes.size == 2) {
+                    eventTypes.forEach {
+                        config.addQuickFilterEventType(it.id.toString())
+                    }
+                }
+            }
         }
         return newId
     }
@@ -82,6 +93,10 @@ class EventsHelper(val context: Context) {
         }
 
         eventTypesDB.deleteEventTypes(typesToDelete)
+
+        if (getEventTypesSync().size == 1) {
+            config.quickFilterEventTypes = HashSet()
+        }
     }
 
     fun insertEvent(event: Event, addToCalDAV: Boolean, showToasts: Boolean, callback: ((id: Long) -> Unit)? = null) {
@@ -267,10 +282,10 @@ class EventsHelper(val context: Context) {
         events.addAll(getRepeatableEventsFor(fromTS, toTS, eventId, applyTypeFilter))
 
         events = events
-                .asSequence()
-                .distinct()
-                .filterNot { it.repetitionExceptions.contains(Formatter.getDayCodeFromTS(it.startTS)) }
-                .toMutableList() as ArrayList<Event>
+            .asSequence()
+            .distinct()
+            .filterNot { it.repetitionExceptions.contains(Formatter.getDayCodeFromTS(it.startTS)) }
+            .toMutableList() as ArrayList<Event>
 
         val eventTypeColors = LongSparseArray<Int>()
         context.eventTypesDB.getEventTypes().forEach {
