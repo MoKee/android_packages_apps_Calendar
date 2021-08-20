@@ -59,12 +59,49 @@ class WeekFragmentsHolder : MyFragmentHolder(), WeekFragmentListener {
         return weekHolder
     }
 
+    override fun onResume() {
+        super.onResume()
+        context?.config?.allowCustomizeDayCount?.let { allow ->
+            weekHolder!!.week_view_days_count.beVisibleIf(allow)
+            weekHolder!!.week_view_seekbar.beVisibleIf(allow)
+        }
+    }
+
     private fun setupFragment() {
+        addHours()
+        setupWeeklyViewPager()
+
+        weekHolder!!.week_view_hours_scrollview.setOnTouchListener { view, motionEvent -> true }
+
+        weekHolder!!.week_view_seekbar.apply {
+            progress = context?.config?.weeklyViewDays ?: 7
+            max = MAX_SEEKBAR_VALUE
+
+            onSeekBarChangeListener {
+                if (it == 0) {
+                    progress = 1
+                }
+
+                updateWeeklyViewDays(progress)
+            }
+        }
+
+        // avoid seekbar width changing if the days count changes to 1, 10 etc
+        weekHolder!!.week_view_days_count.onGlobalLayout {
+            weekHolder!!.week_view_seekbar.layoutParams.width = weekHolder!!.week_view_seekbar.width
+            (weekHolder!!.week_view_seekbar.layoutParams as RelativeLayout.LayoutParams).removeRule(RelativeLayout.START_OF)
+        }
+
+        updateDaysCount(context?.config?.weeklyViewDays ?: 7)
+        updateActionBarTitle()
+    }
+
+    private fun setupWeeklyViewPager(){
         val weekTSs = getWeekTimestamps(currentWeekTS)
         val weeklyAdapter = MyWeekPagerAdapter(activity!!.supportFragmentManager, weekTSs, this)
-        addHours()
 
         defaultWeeklyPage = weekTSs.size / 2
+
         viewPager!!.apply {
             adapter = weeklyAdapter
             addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
@@ -92,29 +129,6 @@ class WeekFragmentsHolder : MyFragmentHolder(), WeekFragmentListener {
                 weeklyAdapter.updateScrollY(viewPager!!.currentItem, y)
             }
         })
-        weekHolder!!.week_view_hours_scrollview.setOnTouchListener { view, motionEvent -> true }
-
-        weekHolder!!.week_view_seekbar.apply {
-            progress = context?.config?.weeklyViewDays ?: 7
-            max = MAX_SEEKBAR_VALUE
-
-            onSeekBarChangeListener {
-                if (it == 0) {
-                    progress = 1
-                }
-
-                updateWeeklyViewDays(progress)
-            }
-        }
-
-        // avoid seekbar width changing if the days count changes to 1, 10 etc
-        weekHolder!!.week_view_days_count.onGlobalLayout {
-            weekHolder!!.week_view_seekbar.layoutParams.width = weekHolder!!.week_view_seekbar.width
-            (weekHolder!!.week_view_seekbar.layoutParams as RelativeLayout.LayoutParams).removeRule(RelativeLayout.START_OF)
-        }
-
-        updateDaysCount(context?.config?.weeklyViewDays ?: 7)
-        updateActionBarTitle()
     }
 
     private fun addHours(textColor: Int = context!!.config.textColor) {
@@ -205,6 +219,7 @@ class WeekFragmentsHolder : MyFragmentHolder(), WeekFragmentListener {
     private fun updateWeeklyViewDays(days: Int) {
         context!!.config.weeklyViewDays = days
         updateDaysCount(days)
+        setupWeeklyViewPager()
     }
 
     private fun updateDaysCount(cnt: Int) {
