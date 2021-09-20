@@ -9,4 +9,5 @@
     <string name="system_stream">سيستم</string>
     <string name="notification_stream">اعلانات</string>
     <string name="current_time">زمان کنونی</string>
+    <string name="status_free">هیچ‌کدام</string>
 </resources>

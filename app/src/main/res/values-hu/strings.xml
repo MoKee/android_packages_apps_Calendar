@@ -6,7 +6,6 @@
     <string name="daily_view">Napi nézet</string>
     <string name="weekly_view">Heti nézet</string>
     <string name="monthly_view">Havi nézet</string>
-    <string name="monthly_daily_view">Havi + napinézet</string>
     <string name="yearly_view">Éves nézet</string>
     <string name="simple_event_list">Egyszerű bejegyzéslista</string>
     <string name="no_upcoming_events">Úgy tűnik, nincs közelgő esemény.</string>
@@ -183,6 +182,7 @@
     <string name="insufficient_permissions">Nincs jogosultsága a kiválasztott naptárba bejegyzést írni</string>
     <string name="caldav_event_not_found">Nem található esemény. Engedélyezze a CalDAV-szonkronizálást a megfelelő naptárhoz, az alkalmazás beállításaiban.</string>
     <string name="no_synchronized_calendars">Nem található szinkronizálható naptár</string>
+    <string name="status_free">Kötetlen</string>
     <string name="monday_alt">Hétfő</string>
     <string name="tuesday_alt">Kedd</string>
     <string name="wednesday_alt">Szerda</string>

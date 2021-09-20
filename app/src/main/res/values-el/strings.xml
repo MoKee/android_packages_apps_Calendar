@@ -139,6 +139,7 @@
     <string name="editing_calendar_failed">Η επεξεργασία του ημερολογίου απέτυχε</string>
     <string name="syncing">Συγχρονισμός…</string>
     <string name="synchronization_completed">Ο συγχρονισμός ολοκληρώθηκε</string>
+    <string name="status_free">Ελεύθερο</string>
     <string name="monday_alt">Δευτέρα</string>
     <string name="tuesday_alt">Τρίτη</string>
     <string name="wednesday_alt">Τετάρτη</string>

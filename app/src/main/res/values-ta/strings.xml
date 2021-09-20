@@ -82,6 +82,7 @@
     <string name="current_time">நடப்பு நேரம்</string>
     <string name="other_time">மற்ற நேரம்</string>
     <string name="caldav">CalDAV</string>
+    <string name="status_free">ஏதுமில்லை</string>
     <string name="monday_alt">திங்கள்</string>
     <string name="tuesday_alt">செவ்வாய்</string>
     <string name="wednesday_alt">புதன்</string>

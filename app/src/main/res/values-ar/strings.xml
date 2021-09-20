@@ -175,6 +175,7 @@
     <string name="select_a_different_caldav_color">تحديد لون مختلف (يمكن تطبيقها محلياً فقط)</string>
     <string name="insufficient_permissions">غير مسموح لك بالكتابة في التقويم المحدد</string>
     <string name="caldav_event_not_found">لم يتم العثور على الحدث. يرجى تمكين CalDAV لمزامنة التقويم المناسب في إعدادات التطبيق.</string>
+    <string name="status_free">لا شيء</string>
     <string name="monday_alt">الاثنين</string>
     <string name="tuesday_alt">الثلاثاء</string>
     <string name="wednesday_alt">الأربعاء</string>

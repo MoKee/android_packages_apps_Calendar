@@ -5,4 +5,5 @@
     <string name="color">වර්ණය</string>
     <string name="no_ringtone_selected">කිසිවක් නැත</string>
     <string name="system_stream">පද්ධතිය</string>
+    <string name="status_free">කිසිවක් නැත</string>
 </resources>

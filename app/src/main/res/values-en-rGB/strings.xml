@@ -7,4 +7,5 @@
     <string name="system_stream">System</string>
     <string name="notification_stream">Notification</string>
     <string name="current_time">Current time</string>
+    <string name="status_free">None</string>
 </resources>

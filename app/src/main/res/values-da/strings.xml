@@ -148,6 +148,7 @@
     <string name="synchronization_completed">Synkronisering gennemført</string>
     <string name="select_a_different_caldav_color">Vælg en anden farve (den kan være tilføjet lokalt)</string>
     <string name="insufficient_permissions">Du har ikke tilladelse til at skrive i den valgte kalender</string>
+    <string name="status_free">Free</string>
     <string name="monday_alt">Mandag</string>
     <string name="tuesday_alt">Tirsdag</string>
     <string name="wednesday_alt">Onsdag</string>

@@ -177,6 +177,7 @@
     <string name="insufficient_permissions">No tiene permiso para modificar el calendario</string>
     <string name="caldav_event_not_found">Evento no encontrado. Por favor habilita la sincronización CalDAV para el calendario apropiado en la configuración de la aplicación.</string>
     <string name="no_synchronized_calendars">No se han encontrado calendarios sincronizables</string>
+    <string name="status_free">Ninguno</string>
     <string name="monday_alt">Lunes</string>
     <string name="tuesday_alt">Martes</string>
     <string name="wednesday_alt">Miércoles</string>

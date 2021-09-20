@@ -147,6 +147,7 @@
     <string name="editing_calendar_failed">Redigering av kalender feilet</string>
     <string name="syncing">Synkroniserer…</string>
     <string name="synchronization_completed">Synkronisering fullført</string>
+    <string name="status_free">Fri</string>
     <string name="monday_alt">Mandag</string>
     <string name="tuesday_alt">Tirsdag</string>
     <string name="wednesday_alt">Onsdag</string>

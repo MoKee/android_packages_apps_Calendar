@@ -6,4 +6,5 @@
     <string name="color">Warna</string>
     <string name="no_ringtone_selected">Tiada</string>
     <string name="current_time">Masa sekarang</string>
+    <string name="status_free">Tiada</string>
 </resources>

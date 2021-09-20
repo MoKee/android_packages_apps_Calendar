@@ -175,6 +175,7 @@
     <string name="select_a_different_caldav_color">Seleccionar un color diferente (localmente)</string>
     <string name="insufficient_permissions">No tiene permiso para modificar el calendario</string>
     <string name="caldav_event_not_found">Evento no encontrado. Por favor, habilite la sincronización de CalDAV para el calendario apropiado en la configuración de la aplicación.</string>
+    <string name="status_free">Ninguno</string>
     <string name="monday_alt">Lunes</string>
     <string name="tuesday_alt">Martes</string>
     <string name="wednesday_alt">Miércoles</string>

@@ -143,6 +143,7 @@
     <string name="editing_calendar_failed">Təqvimi dəyişmək alınmadı</string>
     <string name="syncing">Sinxronlaşdırılır…</string>
     <string name="synchronization_completed">Sinxronlaşma bitdi</string>
+    <string name="status_free">Heç biri</string>
     <string name="monday_alt">Bazar ertəsi</string>
     <string name="tuesday_alt">Çərşənbə axşamı</string>
     <string name="wednesday_alt">Çərşənbə</string>

@@ -4,4 +4,5 @@
     <string name="color">رنگ</string>
     <string name="no_ringtone_selected">کوئی نہیں</string>
     <string name="notification_stream">پیغام</string>
+    <string name="status_free">کوئی نہیں</string>
 </resources>

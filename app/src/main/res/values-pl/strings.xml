@@ -180,6 +180,7 @@
     <string name="insufficient_permissions">Nie możesz pisać w wybranym kalendarzu</string>
     <string name="caldav_event_not_found">Nie znaleziono zdarzenia. Proszę włączyć synchronizację CalDAV dla odpowiedniego kalendarza w ustawieniach aplikacji.</string>
     <string name="no_synchronized_calendars">Nie znaleziono zsynchronizowanych kalendarzy</string>
+    <string name="status_free">Wolne</string>
     <string name="monday_alt">Poniedziałek</string>
     <string name="tuesday_alt">Wtorek</string>
     <string name="wednesday_alt">Środę</string>

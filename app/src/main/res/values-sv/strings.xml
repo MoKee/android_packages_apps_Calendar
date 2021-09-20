@@ -150,6 +150,7 @@
     <string name="syncing">Synkroniserar…</string>
     <string name="synchronization_completed">Synkroniseringen är klar</string>
     <string name="select_a_different_caldav_color">Välj en annan färg (tillämpas kanske bara lokalt)</string>
+    <string name="status_free">Fritt</string>
     <string name="monday_alt">måndag</string>
     <string name="tuesday_alt">tisdag</string>
     <string name="wednesday_alt">onsdag</string>

@@ -6,4 +6,5 @@
     <string name="no_ringtone_selected">Nav</string>
     <string name="notification_stream">Paziņojums</string>
     <string name="current_time">Pašreizējais laiks</string>
+    <string name="status_free">Nav</string>
 </resources>

@@ -6,7 +6,6 @@
     <string name="daily_view">Denní přehled</string>
     <string name="weekly_view">Týdenní přehled</string>
     <string name="monthly_view">Měsíční přehled</string>
-    <string name="monthly_daily_view">Měsíční + denní zobrazení</string>
     <string name="yearly_view">Roční přehled</string>
     <string name="simple_event_list">Jednoduchý seznam událostí</string>
     <string name="no_upcoming_events">Nemáte žádné nadcházející události.</string>
@@ -183,6 +182,7 @@
     <string name="insufficient_permissions">Nemáte povoleno psát ve vybraném kalendáři</string>
     <string name="caldav_event_not_found">Událost nebyla nalezena. Aktivujte prosím synchronizaci CalDAV pro příslušný kalendář v nastavení aplikace.</string>
     <string name="no_synchronized_calendars">Nebyly nalezeny žádné synchronizovatelné kalendáře</string>
+    <string name="status_free">Volné</string>
     <string name="monday_alt">Pondělí</string>
     <string name="tuesday_alt">Úterý</string>
     <string name="wednesday_alt">Středa</string>

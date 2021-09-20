@@ -146,6 +146,7 @@
     <string name="editing_calendar_failed">Uređivanje kalendara nije uspjelo</string>
     <string name="syncing">Sinkronizacija…</string>
     <string name="synchronization_completed">Sinkronizacija završena</string>
+    <string name="status_free">Slobodan odabir</string>
     <string name="monday_alt">Ponedjeljak</string>
     <string name="tuesday_alt">Utorak</string>
     <string name="wednesday_alt">Srijeda</string>

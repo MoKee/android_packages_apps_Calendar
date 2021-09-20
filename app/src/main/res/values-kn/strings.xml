@@ -154,6 +154,7 @@
     <string name="synchronization_completed">ಏಕೀಕರಣ ಸಂಪೂರ್ಣಗೊಂಡಿದೆ</string>
     <string name="select_a_different_caldav_color">ಬೇರೆ ಬಣ್ಣವನ್ನು ಆಯ್ಕೆಮಾಡು (ಕೇವಲ ಸ್ಥಳೀಯವಾಗಿ ಮಾತ್ರ ಅನ್ವಯಿಸುತ್ತದೆ)</string>
     <string name="insufficient_permissions">ಆಯ್ಕೆಮಾಡಿದ ಕ್ಯಾಲೆಂಡರ್ ನಲ್ಲಿ ನಿಮಗೆ ಬರೆಯಲು ಅವಕಾಶವಿಲ್ಲ</string>
+    <string name="status_free">ಯಾವುದೂ ಇಲ್ಲ</string>
     <string name="monday_alt">ಸೋಮವಾರ</string>
     <string name="tuesday_alt">ಮಂಗಳವಾರ</string>
     <string name="wednesday_alt">ಬುಧವಾರ</string>

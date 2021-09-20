@@ -4,4 +4,5 @@
     <string name="description">Тайлбар</string>
     <string name="color">Өнгө</string>
     <string name="no_ringtone_selected">Байхгүй</string>
+    <string name="status_free">Байхгүй</string>
 </resources>

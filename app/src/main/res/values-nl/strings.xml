@@ -151,6 +151,7 @@
     <string name="synchronization_completed">Synchroniseren voltooid</string>
     <string name="select_a_different_caldav_color">Kies een andere kleur (mogelijk alleen voor dit apparaat)</string>
     <string name="insufficient_permissions">Kan geen wijzigingen aanbrengen in deze agenda</string>
+    <string name="status_free">Vrij</string>
     <string name="monday_alt">maandag</string>
     <string name="tuesday_alt">dinsdag</string>
     <string name="wednesday_alt">woensdag</string>

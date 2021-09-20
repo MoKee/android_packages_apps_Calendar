@@ -6,7 +6,6 @@
     <string name="daily_view">На день</string>
     <string name="weekly_view">На неделю</string>
     <string name="monthly_view">На месяц</string>
-    <string name="monthly_daily_view">Ежемесячный + ежедневный просмотр</string>
     <string name="yearly_view">На год</string>
     <string name="simple_event_list">Простой список событий</string>
     <string name="no_upcoming_events">Похоже, у вас нет предстоящих событий.</string>
@@ -179,6 +178,7 @@
     <string name="insufficient_permissions">У вас нет разрешения на запись в выбранном календаре</string>
     <string name="caldav_event_not_found">Событие не найдено. Пожалуйста, включите синхронизацию CalDAV для соответствующего календаря в настройках приложения.</string>
     <string name="no_synchronized_calendars">Синхронизируемые календари не найдены</string>
+    <string name="status_free">Вручную</string>
     <string name="monday_alt">Понедельник</string>
     <string name="tuesday_alt">Вторник</string>
     <string name="wednesday_alt">Среда</string>

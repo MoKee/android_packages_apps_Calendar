@@ -5,4 +5,5 @@
     <string name="description">ຄຳອະທິບາຍ</string>
     <string name="color">ສີ</string>
     <string name="no_ringtone_selected">ບໍ່ໃຊ້</string>
+    <string name="status_free">ບໍ່ໃຊ້</string>
 </resources>

@@ -139,6 +139,7 @@
     <string name="editing_calendar_failed">변경 실패</string>
     <string name="syncing">동기화중…</string>
     <string name="synchronization_completed">동기화 완료</string>
+    <string name="status_free">선택 안함</string>
     <string name="monday_alt">월요일</string>
     <string name="tuesday_alt">화요일</string>
     <string name="wednesday_alt">수요일</string>

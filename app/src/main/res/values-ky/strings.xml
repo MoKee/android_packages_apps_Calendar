@@ -2,4 +2,5 @@
 <resources>
     <string name="color">Түс</string>
     <string name="no_ringtone_selected">Эч нерсе жок</string>
+    <string name="status_free">Эч нерсе жок</string>
 </resources>

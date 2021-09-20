@@ -6,7 +6,6 @@
     <string name="daily_view">Günlük görünüm</string>
     <string name="weekly_view">Haftalık görünüm</string>
     <string name="monthly_view">Aylık görünüm</string>
-    <string name="monthly_daily_view">Aylık + günlük görünüm</string>
     <string name="yearly_view">Yıllık görünüm</string>
     <string name="simple_event_list">Basit etkinlik listesi</string>
     <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
@@ -183,6 +182,7 @@
     <string name="insufficient_permissions">Seçilen takvime yazmanıza izin verilmez</string>
     <string name="caldav_event_not_found">Etkinlik bulunamadı. Lütfen uygulama ayarlarında uygun takvim için CalDAV senkronizasyonunu etkinleştirin.</string>
     <string name="no_synchronized_calendars">Senkronize edilebilir takvim bulunamadı</string>
+    <string name="status_free">Hiçbiri</string>
     <string name="monday_alt">Pazartesi</string>
     <string name="tuesday_alt">Salı</string>
     <string name="wednesday_alt">Çarşamba</string>

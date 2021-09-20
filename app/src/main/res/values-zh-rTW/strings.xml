@@ -6,7 +6,6 @@
     <string name="daily_view">日曆</string>
     <string name="weekly_view">週曆</string>
     <string name="monthly_view">月曆</string>
-    <string name="monthly_daily_view">每月 + 每日觀看</string>
     <string name="yearly_view">年曆</string>
     <string name="simple_event_list">簡易活動列表</string>
     <string name="no_upcoming_events">你近期似乎沒有任何活動。</string>
@@ -183,6 +182,7 @@
     <string name="insufficient_permissions">您不被允許對選擇的行事曆寫入</string>
     <string name="caldav_event_not_found">找不到事件。請在應用程式設定中為相應的日曆啟用 CalDav 同步。</string>
     <string name="no_synchronized_calendars">找不到可同步的日曆</string>
+    <string name="status_free">無</string>
     <string name="monday_alt">星期一</string>
     <string name="tuesday_alt">星期二</string>
     <string name="wednesday_alt">星期三</string>

@@ -4,4 +4,5 @@
     <string name="description">Maelezo</string>
     <string name="color">Rangi</string>
     <string name="no_ringtone_selected">Umekamilisha</string>
+    <string name="status_free">Bila</string>
 </resources>

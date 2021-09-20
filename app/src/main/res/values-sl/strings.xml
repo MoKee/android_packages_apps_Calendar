@@ -159,6 +159,7 @@
     <string name="synchronization_completed">Sinhronizacija dokončana</string>
     <string name="select_a_different_caldav_color">Izberite drugačno barvo (lahko se uporablja samo lokalno)</string>
     <string name="insufficient_permissions">V izbranem koledarju ni dovoljeno pisati</string>
+    <string name="status_free">Prosto</string>
     <string name="monday_alt">Ponedeljek</string>
     <string name="tuesday_alt">Torek</string>
     <string name="wednesday_alt">Sreda</string>

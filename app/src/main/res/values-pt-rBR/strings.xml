@@ -44,6 +44,7 @@
     <string name="delete_future_occurrences">Exclua essa e todas as ocorrências futuras</string>
     <string name="delete_all_occurrences">Apagar todas as ocorrências</string>
     <string name="update_one_only">Atualizar a ocorrência selecionada</string>
+    <string name="update_this_and_future_occurrences">Atualizar esta e todas as ocorrências futuras</string>
     <string name="update_all_occurrences">Atualizar todas as ocorrências</string>
     <string name="repeat_till_date">Repetir até uma data</string>
     <string name="stop_repeating_after_x">Pare de repetir após x ocorrências</string>
@@ -64,6 +65,7 @@
     <string name="second_m">segundo</string>
     <string name="third_m">terceiro</string>
     <string name="fourth_m">quarto</string>
+    <string name="fifth_m">quinto</string>
     <string name="last_m">último</string>
     <string name="repeat_every_f">Repita todos</string>
     <string name="every_f">todo</string>
@@ -71,6 +73,7 @@
     <string name="second_f">segundo</string>
     <string name="third_f">terceiro</string>
     <string name="fourth_f">quarto</string>
+    <string name="fifth_f">quinto</string>
     <string name="last_f">ultimo</string>
     <string name="birthdays">Aniversários</string>
     <string name="add_birthdays">Adicionar aniversários dos contatos</string>
@@ -127,6 +130,8 @@
     <string name="manage_event_types">Gerenciar tipos de eventos</string>
     <string name="start_day_at">Iniciar vista semanal em</string>
     <string name="end_day_at">Terminar vista semanal em</string>
+    <string name="midnight_spanning">Mostrar eventos que se espalham pela meia-noite na barra superior</string>
+    <string name="allow_customizing_day_count">Permitir personalizar contagem de dias</string>
     <string name="week_numbers">Mostrar número das semanas</string>
     <string name="vibrate">Vibrar ao notificar sobre o lembrete</string>
     <string name="reminder_sound">Som do lembrete</string>
@@ -177,6 +182,7 @@
     <string name="insufficient_permissions">Você não tem permissão para gravar no calendário selecionado</string>
     <string name="caldav_event_not_found">Evento não encontrado. Ative a sincronização CalDAV para o calendário apropriado nas configurações do aplicativo.</string>
     <string name="no_synchronized_calendars">Não foram encontrados calendários sincronizáveis</string>
+    <string name="status_free">Livre</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terça</string>
     <string name="wednesday_alt">Quarta</string>
@@ -248,4 +254,12 @@ selecionando a opção \"Fonte de áudio usada pelos lembretes\" e modificando o
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="holiday_bulgaria">Bulgária</string>
+    <string name="holiday_liechtenstein">Liechtenstein</string>
+    <string name="holiday_kazakhstan">Cazaquistão</string>
+    <string name="holiday_morocco">Marrocos</string>
+    <string name="holiday_nicaragua">Nicarágua</string>
+    <string name="holiday_costarica">Costa Rica</string>
+    <string name="holiday_uruguay">Uruguai</string>
+    <string name="holiday_haiti">Haiti</string>
 </resources>

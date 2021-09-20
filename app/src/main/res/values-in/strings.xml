@@ -175,6 +175,7 @@
     <string name="select_a_different_caldav_color">Pilih warna yang berbeda (mungkin hanya diterapkan secara lokal)</string>
     <string name="insufficient_permissions">Anda tidak diijinlan menulis di kalender yang dipilih</string>
     <string name="caldav_event_not_found">Acara tidak ditemukan. Harap aktifkan sinkronisasi CalDAV untuk kalender di pengaturan aplikasi.</string>
+    <string name="status_free">Tidak ada</string>
     <string name="monday_alt">Senin</string>
     <string name="tuesday_alt">Selasa</string>
     <string name="wednesday_alt">Rabu</string>

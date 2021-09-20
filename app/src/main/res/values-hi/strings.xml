@@ -11,6 +11,7 @@
     <string name="alarm_stream">अलार्म</string>
     <string name="notification_stream">अधिसूचना</string>
     <string name="current_time">वर्तमान समय</string>
+    <string name="status_free">कुछ नहीं</string>
     <string name="monday_alt">सोमवार</string>
     <string name="saturday_alt">शनिवार</string>
     <string name="sunday_alt">रविवार</string>

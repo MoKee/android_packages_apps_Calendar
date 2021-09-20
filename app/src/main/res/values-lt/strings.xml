@@ -132,6 +132,7 @@
     <string name="editing_calendar_failed">Kalendoriaus redagavimas nepavyko</string>
     <string name="syncing">Sinchronizuojama…</string>
     <string name="synchronization_completed">Sinchronizacija baigta</string>
+    <string name="status_free">Nėra</string>
     <string name="monday_alt">Pirmadienį</string>
     <string name="tuesday_alt">Antradienį</string>
     <string name="wednesday_alt">Trečiadienį</string>

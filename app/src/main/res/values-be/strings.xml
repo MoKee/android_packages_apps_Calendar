@@ -121,6 +121,7 @@
     <string name="current_time">Бягучы час</string>
     <string name="syncing">Сінхранізацыя...</string>
     <string name="synchronization_completed">Сінхранізацыя завершана</string>
+    <string name="status_free">Вольна</string>
     <string name="monday_alt">Панядзелак</string>
     <string name="tuesday_alt">Аўторак</string>
     <string name="wednesday_alt">Серада</string>

@@ -42,6 +42,7 @@
     <string name="alarm_stream">שעון מעורר</string>
     <string name="ring_stream">צלצול</string>
     <string name="current_time">השעה הנוכחית</string>
+    <string name="status_free">ללא</string>
     <string name="monday_alt">שני</string>
     <string name="saturday_alt">שבת</string>
     <string name="sunday_alt">ראשון</string>

@@ -46,6 +46,7 @@
     <string name="holiday_mexico">メキシコ</string>
     <string name="holiday_netherlands">オランダ</string>
     <string name="holiday_japan">日本</string>
+    <string name="holiday_nigeria">ナイジェリア</string>
     <string name="holiday_norway">ノルウェー</string>
     <string name="holiday_austria">オーストリア</string>
     <string name="holiday_pakistan">パキスタン</string>
@@ -60,6 +61,7 @@
     <string name="holiday_slovakia">スロバキア</string>
     <string name="holiday_finland">フィンランド</string>
     <string name="holiday_sweden">スウェーデン</string>
+    <string name="holiday_taiwan">台北（中国）</string>
     <string name="holiday_ukraine">ウクライナ</string>
     <string name="holiday_unitedstates">米国</string>
     <string name="no_calendar_permission">カレンダーのアクセス許可が必要です</string>

@@ -13,6 +13,7 @@
     <string name="notification_stream">Kennisgewing</string>
     <string name="ring_stream">Lui</string>
     <string name="current_time">Huidige tyd</string>
+    <string name="status_free">Geen</string>
     <string name="monday_alt">Maandag</string>
     <string name="saturday_alt">Saterdag</string>
     <string name="sunday_alt">Sondag</string>

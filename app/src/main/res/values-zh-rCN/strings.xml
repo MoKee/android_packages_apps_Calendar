@@ -6,7 +6,6 @@
     <string name="daily_view">天</string>
     <string name="weekly_view">周</string>
     <string name="monthly_view">月</string>
-    <string name="monthly_daily_view">月份+每日视图</string>
     <string name="yearly_view">年</string>
     <string name="simple_event_list">简易事件列表</string>
     <string name="no_upcoming_events">好像您没有任何即将发生的事件。</string>
@@ -182,6 +181,7 @@
     <string name="insufficient_permissions">您无权在选定的日历中写入</string>
     <string name="caldav_event_not_found">事件未找到。请在应用设置中启用相应日历的 CalDAV 同步。</string>
     <string name="no_synchronized_calendars">未找到可同步的日历</string>
+    <string name="status_free">自由</string>
     <string name="monday_alt">周一</string>
     <string name="tuesday_alt">周二</string>
     <string name="wednesday_alt">周三</string>

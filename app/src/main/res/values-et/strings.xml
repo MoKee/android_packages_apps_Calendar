@@ -6,7 +6,6 @@
     <string name="daily_view">Päevavaade</string>
     <string name="weekly_view">Nädala vaade</string>
     <string name="monthly_view">Kuu vaade</string>
-    <string name="monthly_daily_view">Kuu + päeva vaade</string>
     <string name="yearly_view">Aasta vaade</string>
     <string name="simple_event_list">Lihtne sündmuste loend</string>
     <string name="no_upcoming_events">Tundub, et teil pole tulevasi sündmusi.</string>
@@ -183,6 +182,7 @@
     <string name="insufficient_permissions">Teil ei ole lubatud valitud kalendrisse kirjutada</string>
     <string name="caldav_event_not_found">Sündmust ei leitud. Lubage rakenduse seadetes vastava kalendri jaoks CalDAV-i sünkroonimine.</string>
     <string name="no_synchronized_calendars">Ühtegi sünkroonitavat kalendrit pole leitud.</string>
+    <string name="status_free">Mitte ühtegi</string>
     <string name="monday_alt">Esmaspäev</string>
     <string name="tuesday_alt">Teisipäev</string>
     <string name="wednesday_alt">Kolmapäev</string>

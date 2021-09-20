@@ -2,4 +2,5 @@
 <resources>
     <string name="color">ਰੰਗ</string>
     <string name="no_ringtone_selected">ਕੋਈ ਨਹੀਂ</string>
+    <string name="status_free">ਕੋਈ ਨਹੀਂ</string>
 </resources>

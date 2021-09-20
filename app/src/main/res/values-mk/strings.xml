@@ -5,4 +5,5 @@
     <string name="system_stream">Систем</string>
     <string name="alarm_stream">Аларм</string>
     <string name="ring_stream">Ѕвони</string>
+    <string name="status_free">Нема</string>
 </resources>

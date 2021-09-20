@@ -126,6 +126,7 @@
     <string name="editing_calendar_failed">Fallou a edición do calendario</string>
     <string name="syncing">Sincronizando…</string>
     <string name="synchronization_completed">Sincronización completa</string>
+    <string name="status_free">Ningún</string>
     <string name="monday_alt">Segunda</string>
     <string name="tuesday_alt">Terceira</string>
     <string name="wednesday_alt">Cuarta</string>
