@@ -43,7 +43,6 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupSettingItems() {
-//        setupCustomizeColors()
         setupCustomizeNotifications()
         setupUseEnglish()
         setupManageEventTypes()
@@ -139,12 +138,6 @@ class SettingsActivity : SimpleActivity() {
             it.setTextColor(adjustedPrimaryColor)
         }
     }
-
-//    private fun setupCustomizeColors() {
-//        settings_customize_colors_holder.setOnClickListener {
-//            startCustomizationActivity()
-//        }
-//    }
 
     private fun setupCustomizeNotifications() {
         settings_customize_notifications_holder.beVisibleIf(isOreoPlus())

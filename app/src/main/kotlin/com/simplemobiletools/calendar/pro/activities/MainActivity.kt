@@ -13,7 +13,9 @@ import android.graphics.drawable.LayerDrawable
 import android.mokee.utils.MoKeeUtils
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract.*
+import android.provider.ContactsContract.CommonDataKinds
+import android.provider.ContactsContract.Contacts
+import android.provider.ContactsContract.Data
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -46,14 +48,14 @@ import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.models.SimpleContact
-import kotlinx.android.synthetic.main.activity_main.*
-import org.joda.time.DateTime
-import org.joda.time.DateTimeZone
 import java.io.FileOutputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlinx.android.synthetic.main.activity_main.*
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
 
 class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private val PICK_IMPORT_SOURCE_INTENT = 1
@@ -122,10 +124,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             checkCalDAVUpdateListener()
         }
 
-//        if (!config.wasUpgradedFromFreeShown && isPackageInstalled("com.simplemobiletools.calendar")) {
-//            ConfirmationDialog(this, "", R.string.upgraded_from_free, R.string.ok, 0) {}
-//            config.wasUpgradedFromFreeShown = true
-//        }
     }
 
     override fun onResume() {
@@ -216,7 +214,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             R.id.import_events -> tryImportEvents()
             R.id.export_events -> tryExportEvents()
             R.id.settings -> launchSettings()
-//            R.id.about -> launchAbout()
             android.R.id.home -> onBackPressed()
             else -> return super.onOptionsItemSelected(item)
         }
@@ -503,13 +500,16 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private fun addHolidays() {
         val items = getHolidayRadioItems()
-        RadioGroupDialog(this, items) {
-            toast(R.string.importing)
-            importHolidays(it)
+        RadioGroupDialog(this, items) { selectedHoliday ->
+            SetRemindersDialog(this) {
+                val reminders = it
+                toast(R.string.importing)
+                importHolidays(selectedHoliday, reminders)
+            }
         }
     }
 
-    private fun importHolidays(it: Any) {
+    private fun importHolidays(selectedHoliday: Any, reminders: ArrayList<Int>?) {
         ensureBackgroundThread {
             val holidays = getString(R.string.holidays)
             var eventTypeId = eventsHelper.getEventTypeIdWithTitle(holidays)
@@ -517,10 +517,9 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                 val eventType = EventType(null, holidays, resources.getColor(R.color.default_holidays_color))
                 eventTypeId = eventsHelper.insertOrUpdateEventTypeSync(eventType)
             }
-
-            val result = IcsImporter(this).importEvents(it as String, eventTypeId, 0, false)
+            val result = IcsImporter(this).importEvents(selectedHoliday as String, eventTypeId, 0, false, reminders)
             handleParseResult(result)
-                if (result != ImportResult.IMPORT_FAIL) {
+            if (result != ImportResult.IMPORT_FAIL) {
                 runOnUiThread {
                     updateViewPager()
                     setupQuickFilter()
@@ -1142,7 +1141,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         if (config.lastVersionCode != BuildConfig.VERSION_CODE) {
             var locale = Locale.getDefault()
             if (locale.country == "CN") {
-                importHolidays("china.ics")
+                importHolidays("china.ics", null)
                 config.lastVersionCode = BuildConfig.VERSION_CODE
             }
         }
