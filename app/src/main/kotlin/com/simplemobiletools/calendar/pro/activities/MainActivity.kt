@@ -80,6 +80,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private var mStoredUse24HourFormat = false
     private var mStoredDimPastEvents = true
     private var mStoredHighlightWeekends = false
+    private var mStoredStartWeekWithCurrentDay = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,7 +143,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         }
 
         if (config.storedView == WEEKLY_VIEW) {
-            if (mStoredIsSundayFirst != config.isSundayFirst || mStoredUse24HourFormat != config.use24HourFormat || mStoredMidnightSpan != config.showMidnightSpanningEventsAtTop) {
+            if (mStoredIsSundayFirst != config.isSundayFirst || mStoredUse24HourFormat != config.use24HourFormat
+                || mStoredMidnightSpan != config.showMidnightSpanningEventsAtTop || mStoredStartWeekWithCurrentDay != config.startWeekWithCurrentDay) {
                 updateViewPager()
             }
         }
@@ -256,6 +258,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             mStoredDimPastEvents = dimPastEvents
             mStoredHighlightWeekends = highlightWeekends
             mStoredMidnightSpan = showMidnightSpanningEventsAtTop
+            mStoredStartWeekWithCurrentDay = startWeekWithCurrentDay
         }
         mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
         mStoredDayCode = Formatter.getTodayCode()
@@ -818,15 +821,19 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun getThisWeekDateTime(): String {
-        val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
+        return if(! config.startWeekWithCurrentDay) {
+            val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
 
-        // not great, not terrible
-        val useHours = if (currentOffsetHours >= 10) 8 else 12
-        var thisweek = DateTime().withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(useHours).minusDays(if (config.isSundayFirst) 1 else 0)
-        if (DateTime().minusDays(7).seconds() > thisweek.seconds()) {
-            thisweek = thisweek.plusDays(7)
+            // not great, not terrible
+            val useHours = if (currentOffsetHours >= 10) 8 else 12
+            var thisweek = DateTime().withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(useHours).minusDays(if (config.isSundayFirst) 1 else 0)
+            if (DateTime().minusDays(7).seconds() > thisweek.seconds()) {
+                thisweek = thisweek.plusDays(7)
+            }
+            thisweek.toString()
+        } else {
+            DateTime().withZone(DateTimeZone.UTC).toString()
         }
-        return thisweek.toString()
     }
 
     private fun getFragmentsHolder() = when (config.storedView) {

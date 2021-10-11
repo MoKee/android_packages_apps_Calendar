@@ -73,10 +73,10 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:0dd2a4bd74'
+    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:17265cdfdb'
     implementation 'joda-time:joda-time:2.10.3'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation "androidx.print:print:1.0.0"
 
