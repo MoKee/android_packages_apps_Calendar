@@ -66,7 +66,6 @@
     <string name="second_m">第二個</string>
     <string name="third_m">第三個</string>
     <string name="fourth_m">第四個</string>
-    <string name="fifth_m">第五</string>
     <string name="last_m">最後的</string>
     <string name="repeat_every_f">重複每個</string>
     <string name="every_f">每月</string>
@@ -74,7 +73,6 @@
     <string name="second_f">第二個</string>
     <string name="third_f">第三個</string>
     <string name="fourth_f">第四個</string>
-    <string name="fifth_f">第五</string>
     <string name="last_f">最後的</string>
     <string name="birthdays">生日</string>
     <string name="add_birthdays">添加聯絡人生日</string>

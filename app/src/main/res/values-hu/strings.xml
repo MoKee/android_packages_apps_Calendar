@@ -6,6 +6,7 @@
     <string name="daily_view">Napi nézet</string>
     <string name="weekly_view">Heti nézet</string>
     <string name="monthly_view">Havi nézet</string>
+    <string name="monthly_daily_view">Havi- és napinézet</string>
     <string name="yearly_view">Éves nézet</string>
     <string name="simple_event_list">Egyszerű bejegyzéslista</string>
     <string name="no_upcoming_events">Úgy tűnik, nincs közelgő esemény.</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">A már elmúlt eseményeket is exportálja</string>
     <string name="include_event_types">Az eseménytípusokat is tartalmazza</string>
     <string name="filename_without_ics">Fájlnév ( .ics nélkül )</string>
-    <string name="override_event_types">Írja felül a fájlban az eseménytípusokat</string>
     <string name="location">Hely</string>
     <string name="description">Leírás</string>
     <string name="all_day">Egész napos</string>
@@ -168,6 +168,7 @@
     <string name="other_time">Egyéb időtartam</string>
     <string name="highlight_weekends">Hétvégék kiemelése bármilyen nézetben</string>
     <string name="allow_changing_time_zones">Az események időzónája legyen módosítható</string>
+    <string name="manage_quick_filter_event_types">A gyorsszűrő eseménytípusainak kezelése</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Válassza ki a szinkronizálandó naptárakat</string>
     <string name="manage_synced_calendars">Szinkronizált naptárak kezelése</string>
@@ -183,6 +184,7 @@
     <string name="caldav_event_not_found">Nem található esemény. Engedélyezze a CalDAV-szonkronizálást a megfelelő naptárhoz, az alkalmazás beállításaiban.</string>
     <string name="no_synchronized_calendars">Nem található szinkronizálható naptár</string>
     <string name="status_free">Kötetlen</string>
+    <string name="status_busy">Foglalt</string>
     <string name="monday_alt">Hétfő</string>
     <string name="tuesday_alt">Kedd</string>
     <string name="wednesday_alt">Szerda</string>
@@ -255,12 +257,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulgária</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Kazahsztán</string>
-    <string name="holiday_morocco">Marokkó</string>
-    <string name="holiday_nicaragua">Nicaragua</string>
-    <string name="holiday_costarica">Costa Rica</string>
-    <string name="holiday_uruguay">Uruguay</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

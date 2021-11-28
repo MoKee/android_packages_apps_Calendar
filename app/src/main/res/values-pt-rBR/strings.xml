@@ -65,7 +65,6 @@
     <string name="second_m">segundo</string>
     <string name="third_m">terceiro</string>
     <string name="fourth_m">quarto</string>
-    <string name="fifth_m">quinto</string>
     <string name="last_m">último</string>
     <string name="repeat_every_f">Repita todos</string>
     <string name="every_f">todo</string>
@@ -73,7 +72,6 @@
     <string name="second_f">segundo</string>
     <string name="third_f">terceiro</string>
     <string name="fourth_f">quarto</string>
-    <string name="fifth_f">quinto</string>
     <string name="last_f">ultimo</string>
     <string name="birthdays">Aniversários</string>
     <string name="add_birthdays">Adicionar aniversários dos contatos</string>
