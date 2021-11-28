@@ -20,6 +20,7 @@ import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.AlarmSound
 import com.simplemobiletools.commons.models.RadioItem
 import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.dialog_event_type.view.*
 import org.joda.time.DateTime
 import java.io.File
 import java.io.InputStream
@@ -50,7 +51,9 @@ class SettingsActivity : SimpleActivity() {
         setupHourFormat()
         setupSundayFirst()
         setupHighlightWeekends()
+        setupHighlightWeekendsColor()
         setupDeleteAllEvents()
+        setupDisplayDescription()
         setupReplaceDescription()
         setupWeekNumbers()
         setupShowGrid()
@@ -76,16 +79,45 @@ class SettingsActivity : SimpleActivity() {
         setupDefaultReminder3()
         setupDisplayPastEvents()
         setupFontSize()
-        setupCustomizeWidgetColors()
         setupViewToOpenFromListWidget()
         setupDimEvents()
         setupAllowChangingTimeZones()
         updateTextColors(settings_holder)
         checkPrimaryColor()
-        setupSectionColors()
         setupExportSettings()
         setupImportSettings()
         invalidateOptionsMenu()
+
+        arrayOf(
+            settings_color_customization_label,
+            settings_general_settings_label,
+            settings_reminders_label,
+            settings_caldav_label,
+            settings_new_events_label,
+            settings_weekly_view_label,
+            settings_monthly_view_label,
+            settings_event_lists_label,
+            settings_widgets_label,
+            settings_events_label,
+            settings_migrating_label
+        ).forEach {
+            it.setTextColor(getAdjustedPrimaryColor())
+        }
+
+        arrayOf(
+            settings_general_settings_holder,
+            settings_reminders_holder,
+            settings_caldav_holder,
+            settings_new_events_holder,
+            settings_weekly_view_holder,
+            settings_monthly_view_holder,
+            settings_event_lists_holder,
+            settings_widgets_holder,
+            settings_events_holder,
+            settings_migrating_holder
+        ).forEach {
+            it.background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+        }
     }
 
     override fun onPause() {
@@ -130,18 +162,13 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupSectionColors() {
-        val adjustedPrimaryColor = getAdjustedPrimaryColor()
-        arrayListOf(
-            reminders_label, caldav_label, weekly_view_label, monthly_view_label, simple_event_list_label, widgets_label, events_label,
-            new_events_label, migrating_label
-        ).forEach {
-            it.setTextColor(adjustedPrimaryColor)
-        }
-    }
-
     private fun setupCustomizeNotifications() {
         settings_customize_notifications_holder.beVisibleIf(isOreoPlus())
+
+        if (settings_customize_notifications_holder.isGone()) {
+            settings_reminder_sound_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
+        }
+
         settings_customize_notifications_holder.setOnClickListener {
             launchCustomizeNotificationsIntent()
         }
@@ -150,6 +177,11 @@ class SettingsActivity : SimpleActivity() {
     private fun setupUseEnglish() {
         settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
         settings_use_english.isChecked = config.useEnglish
+
+        if (settings_use_english_holder.isGone()) {
+            settings_manage_event_types_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
+        }
+
         settings_use_english_holder.setOnClickListener {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
@@ -183,6 +215,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupCaldavSync() {
         settings_caldav_sync.isChecked = config.caldavSync
+        checkCalDAVBackgrounds()
         settings_caldav_sync_holder.setOnClickListener {
             if (config.caldavSync) {
                 toggleCaldavSync(false)
@@ -203,9 +236,19 @@ class SettingsActivity : SimpleActivity() {
     private fun setupPullToRefresh() {
         settings_caldav_pull_to_refresh_holder.beVisibleIf(config.caldavSync)
         settings_caldav_pull_to_refresh.isChecked = config.pullToRefresh
+        checkCalDAVBackgrounds()
         settings_caldav_pull_to_refresh_holder.setOnClickListener {
             settings_caldav_pull_to_refresh.toggle()
             config.pullToRefresh = settings_caldav_pull_to_refresh.isChecked
+        }
+    }
+
+    private fun checkCalDAVBackgrounds() {
+        if (config.caldavSync) {
+            settings_caldav_sync_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
+            settings_manage_synced_calendars_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
+        } else {
+            settings_caldav_sync_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
         }
     }
 
@@ -233,6 +276,7 @@ class SettingsActivity : SimpleActivity() {
                 updateDefaultEventTypeText()
             }
         }
+        checkCalDAVBackgrounds()
     }
 
     private fun showCalendarPicker() {
@@ -301,9 +345,33 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupHighlightWeekends() {
         settings_highlight_weekends.isChecked = config.highlightWeekends
+        settings_highlight_weekends_color_holder.beVisibleIf(config.highlightWeekends)
+        setupHighlightWeekendColorBackground()
         settings_highlight_weekends_holder.setOnClickListener {
             settings_highlight_weekends.toggle()
             config.highlightWeekends = settings_highlight_weekends.isChecked
+            settings_highlight_weekends_color_holder.beVisibleIf(config.highlightWeekends)
+            setupHighlightWeekendColorBackground()
+        }
+    }
+
+    private fun setupHighlightWeekendsColor() {
+        settings_highlight_weekends_color.setFillWithStroke(config.highlightWeekendsColor, config.backgroundColor)
+        settings_highlight_weekends_color_holder.setOnClickListener {
+            ColorPickerDialog(this, config.highlightWeekendsColor) { wasPositivePressed, color ->
+                if (wasPositivePressed) {
+                    config.highlightWeekendsColor = color
+                    settings_highlight_weekends_color.setFillWithStroke(color, config.backgroundColor)
+                }
+            }
+        }
+    }
+
+    private fun setupHighlightWeekendColorBackground() {
+        if (settings_highlight_weekends_color_holder.isVisible()) {
+            settings_highlight_weekends_holder.background = resources.getDrawable(R.drawable.ripple_background, theme)
+        } else {
+            settings_highlight_weekends_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
         }
     }
 
@@ -312,6 +380,25 @@ class SettingsActivity : SimpleActivity() {
             ConfirmationDialog(this, messageId = R.string.delete_all_events_confirmation) {
                 eventsHelper.deleteAllEvents()
             }
+        }
+    }
+
+    private fun setupDisplayDescription() {
+        settings_display_description.isChecked = config.displayDescription
+        setupDescriptionVisibility()
+        settings_display_description_holder.setOnClickListener {
+            settings_display_description.toggle()
+            config.displayDescription = settings_display_description.isChecked
+            setupDescriptionVisibility()
+        }
+    }
+
+    private fun setupDescriptionVisibility() {
+        settings_replace_description_holder.beVisibleIf(config.displayDescription)
+        if (settings_replace_description_holder.isVisible()) {
+            settings_display_description_holder.background = resources.getDrawable(R.drawable.ripple_background, theme)
+        } else {
+            settings_display_description_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
         }
     }
 
@@ -446,10 +533,20 @@ class SettingsActivity : SimpleActivity() {
     private fun setupUseSameSnooze() {
         settings_snooze_time_holder.beVisibleIf(config.useSameSnooze)
         settings_use_same_snooze.isChecked = config.useSameSnooze
+        setupSnoozeBackgrounds()
         settings_use_same_snooze_holder.setOnClickListener {
             settings_use_same_snooze.toggle()
             config.useSameSnooze = settings_use_same_snooze.isChecked
             settings_snooze_time_holder.beVisibleIf(config.useSameSnooze)
+            setupSnoozeBackgrounds()
+        }
+    }
+
+    private fun setupSnoozeBackgrounds() {
+        if (config.useSameSnooze) {
+            settings_use_same_snooze_holder.background = resources.getDrawable(R.drawable.ripple_background, theme)
+        } else {
+            settings_use_same_snooze_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
         }
     }
 
@@ -511,6 +608,12 @@ class SettingsActivity : SimpleActivity() {
         arrayOf(settings_default_reminder_1_holder, settings_default_reminder_2_holder, settings_default_reminder_3_holder).forEach {
             it.beVisibleIf(show)
         }
+
+        if (show) {
+            settings_use_last_event_reminders_holder.background = resources.getDrawable(R.drawable.ripple_background, theme)
+        } else {
+            settings_use_last_event_reminders_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
+        }
     }
 
     private fun getHoursString(hours: Int) = String.format("%02d:00", hours)
@@ -554,15 +657,6 @@ class SettingsActivity : SimpleActivity() {
                 config.fontSize = it as Int
                 settings_font_size.text = getFontSizeText()
                 updateWidgets()
-            }
-        }
-    }
-
-    private fun setupCustomizeWidgetColors() {
-        settings_customize_widget_colors_holder.setOnClickListener {
-            Intent(this, WidgetListConfigureActivity::class.java).apply {
-                putExtra(IS_CUSTOMIZING_COLORS, true)
-                startActivity(this)
             }
         }
     }
@@ -739,6 +833,7 @@ class SettingsActivity : SimpleActivity() {
                 put(FONT_SIZE, config.fontSize)
                 put(LIST_WIDGET_VIEW_TO_OPEN, config.listWidgetViewToOpen)
                 put(REMINDER_AUDIO_STREAM, config.reminderAudioStream)
+                put(DISPLAY_DESCRIPTION, config.displayDescription)
                 put(REPLACE_DESCRIPTION, config.replaceDescription)
                 put(SHOW_GRID, config.showGrid)
                 put(LOOP_REMINDERS, config.loopReminders)
@@ -756,6 +851,7 @@ class SettingsActivity : SimpleActivity() {
                 put(USE_24_HOUR_FORMAT, config.use24HourFormat)
                 put(SUNDAY_FIRST, config.isSundayFirst)
                 put(HIGHLIGHT_WEEKENDS, config.highlightWeekends)
+                put(HIGHLIGHT_WEEKENDS_COLOR, config.highlightWeekendsColor)
             }
 
             exportSettings(configItems)
@@ -834,6 +930,7 @@ class SettingsActivity : SimpleActivity() {
                 FONT_SIZE -> config.fontSize = value.toInt()
                 LIST_WIDGET_VIEW_TO_OPEN -> config.listWidgetViewToOpen = value.toInt()
                 REMINDER_AUDIO_STREAM -> config.reminderAudioStream = value.toInt()
+                DISPLAY_DESCRIPTION -> config.displayDescription = value.toBoolean()
                 REPLACE_DESCRIPTION -> config.replaceDescription = value.toBoolean()
                 SHOW_GRID -> config.showGrid = value.toBoolean()
                 LOOP_REMINDERS -> config.loopReminders = value.toBoolean()
@@ -851,6 +948,7 @@ class SettingsActivity : SimpleActivity() {
                 USE_24_HOUR_FORMAT -> config.use24HourFormat = value.toBoolean()
                 SUNDAY_FIRST -> config.isSundayFirst = value.toBoolean()
                 HIGHLIGHT_WEEKENDS -> config.highlightWeekends = value.toBoolean()
+                HIGHLIGHT_WEEKENDS_COLOR -> config.highlightWeekendsColor = value.toInt()
             }
         }
 

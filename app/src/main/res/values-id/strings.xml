@@ -92,6 +92,7 @@
     <string name="no_birthdays">Tidak ada ulang tahun yang ditemukan</string>
     <string name="no_new_birthdays">Tidak ada ulang tahun baru yang ditemukan</string>
     <string name="birthdays_added">Ulang tahun berhasil ditambahkan</string>
+    <string name="add_birthdays_automatically">Add new birthdays automatically</string>
 
     <!-- Anniversaries -->
     <string name="anniversaries">Hari Jadi</string>
@@ -99,6 +100,7 @@
     <string name="no_anniversaries">Tidak ada hari jadi yang ditemukan</string>
     <string name="no_new_anniversaries">Tidak ada hari jadi baru yang ditemukan</string>
     <string name="anniversaries_added">Hari jadi berhasil ditambahkan</string>
+    <string name="add_anniversaries_automatically">Add new anniversaries automatically</string>
 
     <!-- Event Reminders -->
     <string name="reminder">Pengingat</string>
@@ -175,6 +177,7 @@
     <string name="event_lists">Daftar acara</string>
     <string name="display_past_events">Tampilkan acara yang sudah lewat</string>
     <string name="replace_description_with_location">Ganti deskripsi acara dengan lokasi</string>
+    <string name="display_description_or_location">Display description or location</string>
     <string name="delete_all_events">Hapus semua acara</string>
     <string name="delete_all_events_confirmation">Apakah anda yakin ingin menghapus semua acara? Tindakan ini tidak akan menghapus kategori dan pengaturan lainnya.</string>
     <string name="show_a_grid">Tampilkan grid</string>
@@ -200,6 +203,7 @@
     <string name="last_used_one">Terakhir digunakan</string>
     <string name="other_time">Waktu lainnya</string>
     <string name="highlight_weekends">Sorot akhir pekan pada beberapa tampilan</string>
+    <string name="highlight_weekends_color">Color of highlighted weekends</string>
     <string name="allow_changing_time_zones">Izinkan mengubah zona waktu acara</string>
     <string name="manage_quick_filter_event_types">Manage quick filter event types</string>
 

@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.pro.helpers
 import android.content.Context
 import android.media.AudioManager
 import android.media.RingtoneManager
+import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.scheduleCalDAVSync
 import com.simplemobiletools.commons.extensions.getDefaultAlarmTitle
@@ -120,6 +121,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(REPLACE_DESCRIPTION, false)
         set(replaceDescription) = prefs.edit().putBoolean(REPLACE_DESCRIPTION, replaceDescription).apply()
 
+    var displayDescription: Boolean
+        get() = prefs.getBoolean(DISPLAY_DESCRIPTION, true)
+        set(displayDescription) = prefs.edit().putBoolean(DISPLAY_DESCRIPTION, displayDescription).apply()
+
     var showGrid: Boolean
         get() = prefs.getBoolean(SHOW_GRID, true)
         set(showGrid) = prefs.edit().putBoolean(SHOW_GRID, showGrid).apply()
@@ -201,6 +206,22 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(ALLOW_CHANGING_TIME_ZONES, false)
         set(allowChangingTimeZones) = prefs.edit().putBoolean(ALLOW_CHANGING_TIME_ZONES, allowChangingTimeZones).apply()
 
+    var addBirthdaysAutomatically: Boolean
+        get() = prefs.getBoolean(ADD_BIRTHDAYS_AUTOMATICALLY, false)
+        set(addBirthdaysAutomatically) = prefs.edit().putBoolean(ADD_BIRTHDAYS_AUTOMATICALLY, addBirthdaysAutomatically).apply()
+
+    var addAnniversariesAutomatically: Boolean
+        get() = prefs.getBoolean(ADD_ANNIVERSARIES_AUTOMATICALLY, false)
+        set(addAnniversariesAutomatically) = prefs.edit().putBoolean(ADD_ANNIVERSARIES_AUTOMATICALLY, addAnniversariesAutomatically).apply()
+
+    var birthdayReminders: ArrayList<Int>
+        get() = prefs.getString(BIRTHDAY_REMINDERS, REMINDER_DEFAULT_VALUE)!!.split(",").map { it.toInt() }.toMutableList() as ArrayList<Int>
+        set(birthdayReminders) = prefs.edit().putString(BIRTHDAY_REMINDERS, birthdayReminders.joinToString(",")).apply()
+
+    var anniversaryReminders: ArrayList<Int>
+        get() = prefs.getString(ANNIVERSARY_REMINDERS, REMINDER_DEFAULT_VALUE)!!.split(",").map { it.toInt() }.toMutableList() as ArrayList<Int>
+        set(anniversaryReminders) = prefs.edit().putString(ANNIVERSARY_REMINDERS, anniversaryReminders.joinToString(",")).apply()
+
     var lastExportPath: String
         get() = prefs.getString(LAST_EXPORT_PATH, "")!!
         set(lastExportPath) = prefs.edit().putString(LAST_EXPORT_PATH, lastExportPath).apply()
@@ -220,4 +241,8 @@ class Config(context: Context) : BaseConfig(context) {
     var highlightWeekends: Boolean
         get() = prefs.getBoolean(HIGHLIGHT_WEEKENDS, true)
         set(highlightWeekends) = prefs.edit().putBoolean(HIGHLIGHT_WEEKENDS, highlightWeekends).apply()
+
+    var highlightWeekendsColor: Int
+        get() = prefs.getInt(HIGHLIGHT_WEEKENDS_COLOR, context.resources.getColor(R.color.red_text))
+        set(highlightWeekendsColor) = prefs.edit().putInt(HIGHLIGHT_WEEKENDS_COLOR, highlightWeekendsColor).apply()
 }

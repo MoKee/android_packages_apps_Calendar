@@ -57,6 +57,7 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_cog_vector"
         android:title="@string/settings"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom" />
 </menu>

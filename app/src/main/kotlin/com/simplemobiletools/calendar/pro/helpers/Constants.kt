@@ -29,10 +29,15 @@ const val LAST_VIEW = 6
 const val MONTHLY_DAILY_VIEW = 7
 
 const val REMINDER_OFF = -1
+const val REMINDER_DEFAULT_VALUE = "${REMINDER_OFF},${REMINDER_OFF},${REMINDER_OFF}"
+
+const val OTHER_EVENT = 0
+const val BIRTHDAY_EVENT = 1
+const val ANNIVERSARY_EVENT = 2
 
 const val ITEM_EVENT = 0
-const val ITEM_EVENT_SIMPLE = 1
-const val ITEM_HEADER = 2
+const val ITEM_SECTION_DAY = 1
+const val ITEM_SECTION_MONTH = 2
 
 const val DEFAULT_START_TIME_NEXT_FULL_HOUR = -1
 const val DEFAULT_START_TIME_CURRENT_TIME = -2
@@ -63,6 +68,7 @@ const val CALDAV_SYNCED_CALENDAR_IDS = "caldav_synced_calendar_ids"
 const val LAST_USED_CALDAV_CALENDAR = "last_used_caldav_calendar"
 const val LAST_USED_LOCAL_EVENT_TYPE_ID = "last_used_local_event_type_id"
 const val DISPLAY_PAST_EVENTS = "display_past_events"
+const val DISPLAY_DESCRIPTION = "display_description"
 const val REPLACE_DESCRIPTION = "replace_description"
 const val SHOW_GRID = "show_grid"
 const val LOOP_REMINDERS = "loop_reminders"
@@ -80,11 +86,16 @@ const val DEFAULT_START_TIME = "default_start_time"
 const val DEFAULT_DURATION = "default_duration"
 const val DEFAULT_EVENT_TYPE_ID = "default_event_type_id"
 const val ALLOW_CHANGING_TIME_ZONES = "allow_changing_time_zones"
+const val ADD_BIRTHDAYS_AUTOMATICALLY = "add_birthdays_automatically"
+const val ADD_ANNIVERSARIES_AUTOMATICALLY = "add_anniversaries_automatically"
+const val BIRTHDAY_REMINDERS = "birthday_reminders"
+const val ANNIVERSARY_REMINDERS = "anniversary_reminders"
 const val LAST_EXPORT_PATH = "last_export_path"
 const val EXPORT_PAST_EVENTS = "export_past_events"
 const val WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER = "weekly_view_item_height_multiplier"
 const val WEEKLY_VIEW_DAYS = "weekly_view_days"
 const val HIGHLIGHT_WEEKENDS = "highlight_weekends"
+const val HIGHLIGHT_WEEKENDS_COLOR = "highlight_weekends_color"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val LAST_VERSION_CODE = "last_version_code"

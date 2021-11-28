@@ -92,6 +92,7 @@
     <string name="no_birthdays">No birthdays have been found</string>
     <string name="no_new_birthdays">No new birthdays have been found</string>
     <string name="birthdays_added">Birthdays added successfully</string>
+    <string name="add_birthdays_automatically">Add new birthdays automatically</string>
 
     <!-- Anniversaries -->
     <string name="anniversaries">Anniversaries</string>
@@ -99,6 +100,7 @@
     <string name="no_anniversaries">No anniversaries have been found</string>
     <string name="no_new_anniversaries">No new anniversaries have been found</string>
     <string name="anniversaries_added">Anniversaries added successfully</string>
+    <string name="add_anniversaries_automatically">Add new anniversaries automatically</string>
 
     <!-- Event Reminders -->
     <string name="reminder">रिमाइंडर</string>
@@ -175,6 +177,7 @@
     <string name="event_lists">Event lists</string>
     <string name="display_past_events">Display events from the past</string>
     <string name="replace_description_with_location">Replace event description with location</string>
+    <string name="display_description_or_location">Display description or location</string>
     <string name="delete_all_events">Delete all events</string>
     <string name="delete_all_events_confirmation">Are you sure you want to delete all events? This will leave your event types and other settings intact.</string>
     <string name="show_a_grid">Show a grid</string>
@@ -200,6 +203,7 @@
     <string name="last_used_one">Last used one</string>
     <string name="other_time">Other time</string>
     <string name="highlight_weekends">Highlight weekends on some views</string>
+    <string name="highlight_weekends_color">Color of highlighted weekends</string>
     <string name="allow_changing_time_zones">Allow changing event time zones</string>
     <string name="manage_quick_filter_event_types">Manage quick filter event types</string>
 

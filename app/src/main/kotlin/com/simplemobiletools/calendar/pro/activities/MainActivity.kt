@@ -81,6 +81,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private var mStoredDimPastEvents = true
     private var mStoredHighlightWeekends = false
     private var mStoredStartWeekWithCurrentDay = false
+    private var mStoredHighlightWeekendsColor = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -125,12 +126,15 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             checkCalDAVUpdateListener()
         }
 
+        addBirthdaysAnniversariesAtStart()
+
     }
 
     override fun onResume() {
         super.onResume()
         if (mStoredTextColor != config.textColor || mStoredBackgroundColor != config.backgroundColor || mStoredAdjustedPrimaryColor != getAdjustedPrimaryColor()
             || mStoredDayCode != Formatter.getTodayCode() || mStoredDimPastEvents != config.dimPastEvents || mStoredHighlightWeekends != config.highlightWeekends
+            || mStoredHighlightWeekendsColor != config.highlightWeekendsColor
         ) {
             updateViewPager()
         }
@@ -144,7 +148,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
         if (config.storedView == WEEKLY_VIEW) {
             if (mStoredIsSundayFirst != config.isSundayFirst || mStoredUse24HourFormat != config.use24HourFormat
-                || mStoredMidnightSpan != config.showMidnightSpanningEventsAtTop || mStoredStartWeekWithCurrentDay != config.startWeekWithCurrentDay) {
+                || mStoredMidnightSpan != config.showMidnightSpanningEventsAtTop || mStoredStartWeekWithCurrentDay != config.startWeekWithCurrentDay
+            ) {
                 updateViewPager()
             }
         }
@@ -257,6 +262,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             mStoredUse24HourFormat = use24HourFormat
             mStoredDimPastEvents = dimPastEvents
             mStoredHighlightWeekends = highlightWeekends
+            mStoredHighlightWeekendsColor = highlightWeekendsColor
             mStoredMidnightSpan = showMidnightSpanningEventsAtTop
             mStoredStartWeekWithCurrentDay = startWeekWithCurrentDay
         }
@@ -504,7 +510,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun addHolidays() {
         val items = getHolidayRadioItems()
         RadioGroupDialog(this, items) { selectedHoliday ->
-            SetRemindersDialog(this) {
+            SetRemindersDialog(this, OTHER_EVENT) {
                 val reminders = it
                 toast(R.string.importing)
                 importHolidays(selectedHoliday, reminders)
@@ -534,7 +540,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun tryAddBirthdays() {
         handlePermission(PERMISSION_READ_CONTACTS) {
             if (it) {
-                SetRemindersDialog(this) {
+                SetRemindersDialog(this, BIRTHDAY_EVENT) {
                     val reminders = it
                     val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
 
@@ -564,7 +570,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun tryAddAnniversaries() {
         handlePermission(PERMISSION_READ_CONTACTS) {
             if (it) {
-                SetRemindersDialog(this) {
+                SetRemindersDialog(this, ANNIVERSARY_EVENT) {
                     val reminders = it
                     val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
 
@@ -587,6 +593,41 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                 }
             } else {
                 toast(R.string.no_contacts_permission)
+            }
+        }
+    }
+
+    private fun addBirthdaysAnniversariesAtStart() {
+        if ((!config.addBirthdaysAutomatically && !config.addAnniversariesAutomatically) || !hasPermission(PERMISSION_READ_CONTACTS)) {
+            return
+        }
+
+        val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
+
+        ensureBackgroundThread {
+            val privateContacts = MyContactsContentProvider.getSimpleContacts(this, privateCursor)
+            if (config.addBirthdaysAutomatically) {
+                addPrivateEvents(true, privateContacts, config.birthdayReminders) { eventsFound, eventsAdded ->
+                    addContactEvents(true, config.birthdayReminders, eventsFound, eventsAdded) {
+                        if (it > 0) {
+                            toast(R.string.birthdays_added)
+                            updateViewPager()
+                            setupQuickFilter()
+                        }
+                    }
+                }
+            }
+
+            if (config.addAnniversariesAutomatically) {
+                addPrivateEvents(false, privateContacts, config.anniversaryReminders) { eventsFound, eventsAdded ->
+                    addContactEvents(false, config.anniversaryReminders, eventsFound, eventsAdded) {
+                        if (it > 0) {
+                            toast(R.string.anniversaries_added)
+                            updateViewPager()
+                            setupQuickFilter()
+                        }
+                    }
+                }
             }
         }
     }
@@ -821,7 +862,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun getThisWeekDateTime(): String {
-        return if(! config.startWeekWithCurrentDay) {
+        return if (!config.startWeekWithCurrentDay) {
             val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
 
             // not great, not terrible
@@ -1077,6 +1118,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             put(getString(R.string.holiday_slovenia), "slovenia.ics")
             put(getString(R.string.holiday_slovakia), "slovakia.ics")
             put(getString(R.string.holiday_southafrica), "southafrica.ics")
+            put(getString(R.string.holiday_srilanka), "srilanka.ics")
             put(getString(R.string.holiday_finland), "finland.ics")
             put(getString(R.string.holiday_sweden), "sweden.ics")
             put(getString(R.string.holiday_taiwan), "taiwan.ics")

@@ -1,6 +1,22 @@
 Changelog
 ==========
 
+Version 6.16.1 *(2021-11-27)*
+----------------------------
+
+ * Tweaked the Event List widget, make it more compact
+ * Allow disabling the display of description and location at event list views
+ * Make the list view widget refreshing more reliable
+ * Added some translation improvements
+
+Version 6.16.0 *(2021-11-23)*
+----------------------------
+
+ * Redesigned some screens and the list view, added Auto theme
+ * Allow customizing the highlighted weekends color
+ * Allow adding new contact birthdays and anniversaries automatically
+ * Added some other stability, translation and UX improvements
+
 Version 6.15.4 *(2021-10-14)*
 ----------------------------
 
