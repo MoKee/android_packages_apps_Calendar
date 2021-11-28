@@ -88,7 +88,6 @@
     <string name="export_past_events_too">Exportera även tidigare händelser</string>
     <string name="include_event_types">Inkludera händelsetyper</string>
     <string name="filename_without_ics">Filnamn (utan .ics)</string>
-    <string name="override_event_types">Ignorera händelsetyper i filen</string>
     <string name="location">Plats</string>
     <string name="description">Beskrivning</string>
     <string name="all_day">Heldag</string>

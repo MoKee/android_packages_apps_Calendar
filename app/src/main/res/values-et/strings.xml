@@ -6,6 +6,7 @@
     <string name="daily_view">Päevavaade</string>
     <string name="weekly_view">Nädala vaade</string>
     <string name="monthly_view">Kuu vaade</string>
+    <string name="monthly_daily_view">Kuu ja päeva vaade</string>
     <string name="yearly_view">Aasta vaade</string>
     <string name="simple_event_list">Lihtne sündmuste loend</string>
     <string name="no_upcoming_events">Tundub, et teil pole tulevasi sündmusi.</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">Ekspordi ka mineviku sündmusi</string>
     <string name="include_event_types">Kaasa sündmuste liigid</string>
     <string name="filename_without_ics">Failinimi (ilma .ics)</string>
-    <string name="override_event_types">Alistage faili sündmuste tüübid</string>
     <string name="location">Asukoht</string>
     <string name="description">Kirjeldus</string>
     <string name="all_day">Kogu päev</string>
@@ -168,6 +168,7 @@
     <string name="other_time">Teine kord</string>
     <string name="highlight_weekends">Tõstke nädalavahetustel esile mõned vaated</string>
     <string name="allow_changing_time_zones">Luba sündmuste ajavööndite muutmist</string>
+    <string name="manage_quick_filter_event_types">Kiirfiltri sündmustüüpide haldamine</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Valige sünkroonitavad kalendrid</string>
     <string name="manage_synced_calendars">Hallake sünkroonitud kalendreid</string>
@@ -183,6 +184,7 @@
     <string name="caldav_event_not_found">Sündmust ei leitud. Lubage rakenduse seadetes vastava kalendri jaoks CalDAV-i sünkroonimine.</string>
     <string name="no_synchronized_calendars">Ühtegi sünkroonitavat kalendrit pole leitud.</string>
     <string name="status_free">Mitte ühtegi</string>
+    <string name="status_busy">Hõivatud</string>
     <string name="monday_alt">Esmaspäev</string>
     <string name="tuesday_alt">Teisipäev</string>
     <string name="wednesday_alt">Kolmapäev</string>
@@ -255,12 +257,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulgaaria</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Kasahstan</string>
-    <string name="holiday_morocco">Maroko</string>
-    <string name="holiday_nicaragua">Nikaraagua</string>
-    <string name="holiday_costarica">Costa Rica</string>
-    <string name="holiday_uruguay">Uruguai</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

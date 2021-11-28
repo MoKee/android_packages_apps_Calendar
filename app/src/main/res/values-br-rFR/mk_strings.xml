@@ -22,10 +22,10 @@
     <string name="holiday_bolivia">Bolivia</string>
     <string name="holiday_canada">Kanada</string>
     <string name="holiday_china">Sina</string>
-    <string name="holiday_spain">Spagn</string>
-    <string name="holiday_ireland">Iwerzhon</string>
     <string name="holiday_france">Bro-C\'hall</string>
+    <string name="holiday_ireland">Iwerzhon</string>
     <string name="holiday_japan">Japan</string>
+    <string name="holiday_spain">Spagn</string>
     <string name="holiday_sweden">Sveden</string>
     <string name="holiday_unitedstates">Stadoù-Unanet</string>
 </resources>

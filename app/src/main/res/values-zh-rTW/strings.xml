@@ -6,6 +6,7 @@
     <string name="daily_view">日曆</string>
     <string name="weekly_view">週曆</string>
     <string name="monthly_view">月曆</string>
+    <string name="monthly_daily_view">每月檢視和每日檢視</string>
     <string name="yearly_view">年曆</string>
     <string name="simple_event_list">簡易活動列表</string>
     <string name="no_upcoming_events">你近期似乎沒有任何活動。</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">也匯出過去的活動</string>
     <string name="include_event_types">包含活動類型</string>
     <string name="filename_without_ics">檔案名稱 (不含.ics)</string>
-    <string name="override_event_types">覆寫檔案內的活動類型</string>
     <string name="location">地點</string>
     <string name="description">描述</string>
     <string name="all_day">全天</string>
@@ -183,6 +183,7 @@
     <string name="caldav_event_not_found">找不到事件。請在應用程式設定中為相應的日曆啟用 CalDav 同步。</string>
     <string name="no_synchronized_calendars">找不到可同步的日曆</string>
     <string name="status_free">無</string>
+    <string name="status_busy">忙碌</string>
     <string name="monday_alt">星期一</string>
     <string name="tuesday_alt">星期二</string>
     <string name="wednesday_alt">星期三</string>
@@ -254,12 +255,4 @@
 
         &lt;b&gt; reddit：&lt;/b&gt;
         https://www.reddit.com/r/SimpleMobileTools</string>
-    <string name="holiday_bulgaria">保加利亞</string>
-    <string name="holiday_liechtenstein">列支敦斯登親王國</string>
-    <string name="holiday_kazakhstan">哈薩克斯坦</string>
-    <string name="holiday_morocco">摩洛哥王國</string>
-    <string name="holiday_nicaragua">尼加拉瓜</string>
-    <string name="holiday_costarica">哥斯大黎加</string>
-    <string name="holiday_uruguay">烏拉圭</string>
-    <string name="holiday_haiti">海地</string>
 </resources>

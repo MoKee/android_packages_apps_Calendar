@@ -103,7 +103,6 @@
     <string name="export_past_events_too">Eksportuj także wydarzenia z przeszłości</string>
     <string name="include_event_types">Dołącz typy wydarzeń</string>
     <string name="filename_without_ics">Nazwa pliku (bez końcówki \".ics\")</string>
-    <string name="override_event_types">Nadpisz typy wydarzeń w pliku</string>
     <string name="location">Lokalizacja</string>
     <string name="description">Opis</string>
     <string name="all_day">Całodniowe</string>
@@ -250,12 +249,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bułgaria</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Kazachstan</string>
-    <string name="holiday_morocco">Maroko</string>
-    <string name="holiday_nicaragua">Nikaragua</string>
-    <string name="holiday_costarica">Kostaryka</string>
-    <string name="holiday_uruguay">Urugwaj</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

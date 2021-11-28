@@ -104,7 +104,6 @@
     <string name="export_past_events_too">也导出过去的事件</string>
     <string name="include_event_types">包含事件类型</string>
     <string name="filename_without_ics">文件名 (不包含 .ics)</string>
-    <string name="override_event_types">覆盖文件内的事件类型</string>
     <string name="location">地点</string>
     <string name="description">描述</string>
     <string name="all_day">全天</string>
@@ -254,12 +253,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">保加利亚</string>
-    <string name="holiday_liechtenstein">列支敦士登</string>
-    <string name="holiday_kazakhstan">哈萨克斯坦</string>
-    <string name="holiday_morocco">摩洛哥</string>
-    <string name="holiday_nicaragua">尼加拉瓜</string>
-    <string name="holiday_costarica">哥斯达黎加</string>
-    <string name="holiday_uruguay">乌拉圭</string>
-    <string name="holiday_haiti">海地</string>
 </resources>

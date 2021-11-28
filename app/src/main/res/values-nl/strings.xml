@@ -89,7 +89,6 @@
     <string name="export_past_events_too">Afspraken uit verleden ook exporteren</string>
     <string name="include_event_types">Afspraaktypes weergeven</string>
     <string name="filename_without_ics">Bestandsnaam (zonder .ics)</string>
-    <string name="override_event_types">Afspraaktypes uit het bestand negeren</string>
     <string name="location">Locatie</string>
     <string name="description">Beschrijving</string>
     <string name="all_day">Hele dag</string>

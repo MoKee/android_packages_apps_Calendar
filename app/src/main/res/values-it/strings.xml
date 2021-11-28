@@ -6,6 +6,7 @@
     <string name="daily_view">Vista giornaliera</string>
     <string name="weekly_view">Vista settimanale</string>
     <string name="monthly_view">Vista mensile</string>
+    <string name="monthly_daily_view">Vista mensile e giornaliera</string>
     <string name="yearly_view">Vista annuale</string>
     <string name="simple_event_list">Semplice elenco di eventi</string>
     <string name="no_upcoming_events">Sembra che tu non abbia alcun evento imminente.</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">Esporta anche eventi passati</string>
     <string name="include_event_types">Includi tipi di evento</string>
     <string name="filename_without_ics">Nome del file (senza .ics)</string>
-    <string name="override_event_types">Sovrascrivi i tipi di evento nel file</string>
     <string name="location">Posizione</string>
     <string name="description">Descrizione</string>
     <string name="all_day">Tutto il giorno</string>
@@ -168,6 +168,7 @@
     <string name="other_time">Altra volta</string>
     <string name="highlight_weekends">Evidenzia i fine settimana su alcune viste</string>
     <string name="allow_changing_time_zones">Consenti la modifica dei fusi orari dell\'evento</string>
+    <string name="manage_quick_filter_event_types">Gestisci i tipi d\'evento del filtro rapido</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seleziona i calendari da sincronizzare</string>
     <string name="manage_synced_calendars">Gestisci i calendari sincronizzati</string>
@@ -183,6 +184,7 @@
     <string name="caldav_event_not_found">Evento non trovato. Sei pregato di abilitare la sincronizzazione CalDAV per il calendario appropriato nelle impostazioni dell\'app.</string>
     <string name="no_synchronized_calendars">Nessun calendario sincronizzabile trovato</string>
     <string name="status_free">Libero</string>
+    <string name="status_busy">Occupato</string>
     <string name="monday_alt">Lunedì</string>
     <string name="tuesday_alt">Martedì</string>
     <string name="wednesday_alt">Mercoledì</string>
@@ -255,12 +257,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulgaria</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Kazakistan</string>
-    <string name="holiday_morocco">Marocco</string>
-    <string name="holiday_nicaragua">Nicaragua</string>
-    <string name="holiday_costarica">Costa Rica</string>
-    <string name="holiday_uruguay">Uruguay</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

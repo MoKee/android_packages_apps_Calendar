@@ -104,7 +104,6 @@
     <string name="export_past_events_too">Xuất các sự kiện trong quá khứ</string>
     <string name="include_event_types">Bao gồm các loại sự kiện</string>
     <string name="filename_without_ics">Tên tệp (không có .ics)</string>
-    <string name="override_event_types">Ghi đè các loại sự kiện trong tệp</string>
     <string name="location">Vị trí</string>
     <string name="description">Mô tả</string>
     <string name="all_day">Cả ngày</string>
@@ -254,12 +253,4 @@
 
          <b>Reddit:</b>
          https://www.reddit.com/r/SimpleMobileTools</string>
-    <string name="holiday_bulgaria">Bun Ga Ri</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Kazakhstan</string>
-    <string name="holiday_morocco">Ma Rốc</string>
-    <string name="holiday_nicaragua">Nicaragua</string>
-    <string name="holiday_costarica">Costa Rica</string>
-    <string name="holiday_uruguay">Uruguay</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

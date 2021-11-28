@@ -83,7 +83,6 @@
     <string name="export_past_events_too">Εξαγωγή προηγούμενων εκδηλώσεων επίσης</string>
     <string name="include_event_types">Συμπερίληψη τύπων εκδηλώσεων</string>
     <string name="filename_without_ics">Όνομα αρχείου (χωρίς .ics)</string>
-    <string name="override_event_types">Κατάργηση τύπων εκδηλώσεων στο αρχείο</string>
     <string name="location">Τοποθεσία</string>
     <string name="description">Περιγραφή</string>
     <string name="all_day">Ημερήσια</string>

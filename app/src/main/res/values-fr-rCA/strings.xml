@@ -101,7 +101,6 @@
     <string name="export_past_events_too">Exporter aussi les événements passés</string>
     <string name="include_event_types">Inclure les types d\'événement</string>
     <string name="filename_without_ics">Nom de fichier (sans .ics)</string>
-    <string name="override_event_types">Remplacer les types d\'événement dans le fichier</string>
     <string name="location">Lieu</string>
     <string name="description">Description</string>
     <string name="all_day">Journée</string>

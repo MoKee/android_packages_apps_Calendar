@@ -6,6 +6,7 @@
     <string name="daily_view">Denní přehled</string>
     <string name="weekly_view">Týdenní přehled</string>
     <string name="monthly_view">Měsíční přehled</string>
+    <string name="monthly_daily_view">Měsíční a denní zobrazení</string>
     <string name="yearly_view">Roční přehled</string>
     <string name="simple_event_list">Jednoduchý seznam událostí</string>
     <string name="no_upcoming_events">Nemáte žádné nadcházející události.</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">Export i minulých událostí</string>
     <string name="include_event_types">Zahrnout typy událostí</string>
     <string name="filename_without_ics">Název souboru (bez .ics)</string>
-    <string name="override_event_types">Přepsat typ události v souboru</string>
     <string name="location">Poloha</string>
     <string name="description">Popis</string>
     <string name="all_day">Celý den</string>
@@ -168,6 +168,7 @@
     <string name="other_time">Jiný čas</string>
     <string name="highlight_weekends">Zvýraznit víkendy na některých pohledech</string>
     <string name="allow_changing_time_zones">Povolit změnu časových pásem událostí</string>
+    <string name="manage_quick_filter_event_types">Správa typů událostí rychlého filtru</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Vybrat kalendáře k synchronizaci</string>
     <string name="manage_synced_calendars">Správa synchronizovaných kalendářů</string>
@@ -183,6 +184,7 @@
     <string name="caldav_event_not_found">Událost nebyla nalezena. Aktivujte prosím synchronizaci CalDAV pro příslušný kalendář v nastavení aplikace.</string>
     <string name="no_synchronized_calendars">Nebyly nalezeny žádné synchronizovatelné kalendáře</string>
     <string name="status_free">Volné</string>
+    <string name="status_busy">Zaneprázdněný</string>
     <string name="monday_alt">Pondělí</string>
     <string name="tuesday_alt">Úterý</string>
     <string name="wednesday_alt">Středa</string>
@@ -255,12 +257,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulharsko</string>
-    <string name="holiday_liechtenstein">Lichtenštejnsko</string>
-    <string name="holiday_kazakhstan">Kazachstán</string>
-    <string name="holiday_morocco">Maroko</string>
-    <string name="holiday_nicaragua">Nikaragua</string>
-    <string name="holiday_costarica">Kostarika</string>
-    <string name="holiday_uruguay">Uruguay</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

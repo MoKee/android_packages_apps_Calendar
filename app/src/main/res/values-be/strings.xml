@@ -89,7 +89,6 @@
     <string name="export_past_events_too">Экспартаваць мінулыя падзеі</string>
     <string name="include_event_types">Уключаць тыпы падзей</string>
     <string name="filename_without_ics">Імя файла (без .ics)</string>
-    <string name="override_event_types">Перавызначаць тыпы падзей у файле</string>
     <string name="location">Месцазнаходжанне</string>
     <string name="description">Апісанне</string>
     <string name="all_day">Увесь дзень</string>

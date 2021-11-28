@@ -89,7 +89,6 @@
     <string name="export_past_events_too">ಭೂತ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಕೂಡ ರಫ್ತು ಮಾಡು</string>
     <string name="include_event_types">ಕಾರ್ಯಕ್ರಮಗಳ ಮಾದರಿಗಳನ್ನು ಸೇರಿಸು</string>
     <string name="filename_without_ics">ಕಡತದ ಹೆಸರು (.ics ಹೊರತುಪಡಿಸಿ)</string>
-    <string name="override_event_types">ಕಡತದಲ್ಲಿಯ ಕಾರ್ಯಕ್ರಮಗಳ ಮಾದರಿಗಳನ್ನು ಅತಿಕ್ರಮಿಸು</string>
     <string name="location">ಸ್ಥಳ</string>
     <string name="description">ವಿವರಣೆ</string>
     <string name="all_day">ಪೂರ್ಣ-ದಿನ</string>

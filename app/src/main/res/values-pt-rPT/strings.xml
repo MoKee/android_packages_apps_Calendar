@@ -104,7 +104,6 @@
     <string name="export_past_events_too">Exportar eventos passados também</string>
     <string name="include_event_types">Incluir o registo de eventos</string>
     <string name="filename_without_ics">Nome do arquivo (sem .ics)</string>
-    <string name="override_event_types">Substituir os tipos de eventos no arquivo</string>
     <string name="location">Localização</string>
     <string name="description">Descrição</string>
     <string name="all_day">Dia inteiro</string>
@@ -254,12 +253,4 @@ pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-la para
         &lt;b&gt;Reddit:&lt;/b&gt;
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulgária</string>
-    <string name="holiday_liechtenstein">Liechtenstein</string>
-    <string name="holiday_kazakhstan">Cazaquistão</string>
-    <string name="holiday_morocco">Marrocos</string>
-    <string name="holiday_nicaragua">Nicarágua</string>
-    <string name="holiday_costarica">Costa Rica</string>
-    <string name="holiday_uruguay">Uruguai</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

@@ -101,7 +101,6 @@
     <string name="export_past_events_too">Vergangene Termine auch exportieren</string>
     <string name="include_event_types">Termintypen miteinbeziehen</string>
     <string name="filename_without_ics">Dateiname (ohne .ics)</string>
-    <string name="override_event_types">Termintypen in der Datei überschreiben</string>
     <string name="location">Ort</string>
     <string name="description">Beschreibung</string>
     <string name="all_day">Ganztags</string>
@@ -208,8 +207,4 @@
         Sie müssen zuerst die Zeitzonen-Auswahl in den App-Einstellungen aktivieren, dann ändern Sie es auf dem Bildschirm Ereignisdetails. Es ist standardmäßig deaktiviert, da die meisten Leute es nicht brauchen.</string>
     <string name="app_title">Simple Calendar Pro - Ereignisse &amp; Erinnerungen</string>
     <string name="app_short_description">Einfacher mobiler 2020-Kalender. Planer &amp; Termin-Erinnerung für jeden Tag</string>
-    <string name="holiday_bulgaria">Bulgarien</string>
-    <string name="holiday_kazakhstan">Kasachstan</string>
-    <string name="holiday_morocco">Marokko</string>
-    <string name="holiday_costarica">Costa Rica</string>
 </resources>

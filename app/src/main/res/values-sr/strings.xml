@@ -100,7 +100,6 @@
     <string name="export_past_events_too">Извоз прошлих догађаја такође</string>
     <string name="include_event_types">Укључи тип догађаја</string>
     <string name="filename_without_ics">Име датотеке ( без .ics екстензије )</string>
-    <string name="override_event_types">Заобиђи тип догађаја у датотеки</string>
     <string name="location">Локација</string>
     <string name="description">Опис</string>
     <string name="all_day">Цео дан</string>

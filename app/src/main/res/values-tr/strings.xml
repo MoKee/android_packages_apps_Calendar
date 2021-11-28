@@ -6,6 +6,7 @@
     <string name="daily_view">Günlük görünüm</string>
     <string name="weekly_view">Haftalık görünüm</string>
     <string name="monthly_view">Aylık görünüm</string>
+    <string name="monthly_daily_view">Aylık ve günlük görünüm</string>
     <string name="yearly_view">Yıllık görünüm</string>
     <string name="simple_event_list">Basit etkinlik listesi</string>
     <string name="no_upcoming_events">Yaklaşan etkinlikleriniz yok gibi görünüyor.</string>
@@ -104,7 +105,6 @@
     <string name="export_past_events_too">Geçmiş etkinlikleri de dışa aktar</string>
     <string name="include_event_types">Etkinlik türlerini ekle</string>
     <string name="filename_without_ics">Dosya adı (.ics olmadan)</string>
-    <string name="override_event_types">Dosyadaki etkinlik türlerini geçersiz kıl</string>
     <string name="location">Konum</string>
     <string name="description">Açıklama</string>
     <string name="all_day">Tüm-gün</string>
@@ -168,6 +168,7 @@
     <string name="other_time">Diğer zaman</string>
     <string name="highlight_weekends">Bazı görünümlerde hafta sonlarını vurgula</string>
     <string name="allow_changing_time_zones">Zaman dilimlerini değiştirmeye izin ver</string>
+    <string name="manage_quick_filter_event_types">Hızlı filtre olay türlerini yönetin</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>
     <string name="manage_synced_calendars">Senkronize edilmiş takvimleri yönet</string>
@@ -183,6 +184,7 @@
     <string name="caldav_event_not_found">Etkinlik bulunamadı. Lütfen uygulama ayarlarında uygun takvim için CalDAV senkronizasyonunu etkinleştirin.</string>
     <string name="no_synchronized_calendars">Senkronize edilebilir takvim bulunamadı</string>
     <string name="status_free">Hiçbiri</string>
+    <string name="status_busy">Meşgul</string>
     <string name="monday_alt">Pazartesi</string>
     <string name="tuesday_alt">Salı</string>
     <string name="wednesday_alt">Çarşamba</string>
@@ -254,12 +256,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Bulgaristan</string>
-    <string name="holiday_liechtenstein">Lihtenştayn</string>
-    <string name="holiday_kazakhstan">Kazakistan</string>
-    <string name="holiday_morocco">Fas</string>
-    <string name="holiday_nicaragua">Nikaragua</string>
-    <string name="holiday_costarica">Kosta Rika</string>
-    <string name="holiday_uruguay">Uruguay</string>
-    <string name="holiday_haiti">Haiti</string>
 </resources>

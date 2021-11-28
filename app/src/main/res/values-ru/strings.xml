@@ -101,7 +101,6 @@
     <string name="export_past_events_too">Экспортировать прошедшие события</string>
     <string name="include_event_types">Включать типы событий</string>
     <string name="filename_without_ics">Имя файла (без .ics)</string>
-    <string name="override_event_types">Переопределять типы событий в файле</string>
     <string name="location">Место</string>
     <string name="description">Описание</string>
     <string name="all_day">Весь день</string>
@@ -250,12 +249,4 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="holiday_bulgaria">Болгария</string>
-    <string name="holiday_liechtenstein">Лихтенштейн</string>
-    <string name="holiday_kazakhstan">Казахстан</string>
-    <string name="holiday_morocco">Морокко</string>
-    <string name="holiday_nicaragua">Никарагуа</string>
-    <string name="holiday_costarica">Коста-Рика</string>
-    <string name="holiday_uruguay">Уругвай</string>
-    <string name="holiday_haiti">Гаити</string>
 </resources>
