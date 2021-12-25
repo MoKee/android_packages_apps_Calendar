@@ -41,6 +41,8 @@ import com.simplemobiletools.commons.helpers.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
 import org.joda.time.LocalDate
 import org.json.JSONObject
 import java.io.IOException
@@ -652,5 +654,21 @@ fun Context.editEvent(event: ListEvent) {
         putExtra(EVENT_ID, event.id)
         putExtra(EVENT_OCCURRENCE_TS, event.startTS)
         startActivity(this)
+    }
+}
+
+fun Context.getDatesWeekDateTime(date: DateTime): String {
+    return if (!config.startWeekWithCurrentDay) {
+        val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
+
+        // not great, not terrible
+        val useHours = if (currentOffsetHours >= 10) 8 else 12
+        var thisweek = date.withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(useHours).minusDays(if (config.isSundayFirst) 1 else 0)
+        if (date.minusDays(7).seconds() > thisweek.seconds()) {
+            thisweek = thisweek.plusDays(7)
+        }
+        thisweek.toString()
+    } else {
+        date.withZone(DateTimeZone.UTC).toString()
     }
 }

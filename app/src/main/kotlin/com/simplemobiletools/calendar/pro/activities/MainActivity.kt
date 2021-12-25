@@ -48,14 +48,14 @@ import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.models.SimpleContact
+import kotlinx.android.synthetic.main.activity_main.*
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
 import java.io.FileOutputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlinx.android.synthetic.main.activity_main.*
-import org.joda.time.DateTime
-import org.joda.time.DateTimeZone
 
 class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private val PICK_IMPORT_SOURCE_INTENT = 1
@@ -350,7 +350,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         if (isNougatMR1Plus() && config.lastHandledShortcutColor != appIconColor) {
             val newEvent = getString(R.string.new_event)
             val manager = getSystemService(ShortcutManager::class.java)
-            val drawable = resources.getDrawable(R.drawable.shortcut_plus)
+            val drawable = resources.getDrawable(R.drawable.shortcut_plus, theme)
             (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
             val bmp = drawable.convertToBitmap()
 
@@ -801,16 +801,44 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private fun updateView(view: Int) {
         calendar_fab.beVisibleIf(view != YEARLY_VIEW && view != WEEKLY_VIEW)
+        val dateCode = getDateCodeToDisplay(view)
         config.storedView = view
         checkSwipeRefreshAvailability()
-        updateViewPager()
+        updateViewPager(dateCode)
         if (goToTodayButton?.isVisible == true) {
             shouldGoToTodayBeVisible = false
             invalidateOptionsMenu()
         }
     }
 
-    private fun updateViewPager(dayCode: String? = Formatter.getTodayCode()) {
+    private fun getDateCodeToDisplay(newView: Int): String? {
+        val fragment = currentFragments.last()
+        val currentView = fragment.viewType
+        if (newView == EVENTS_LIST_VIEW || currentView == EVENTS_LIST_VIEW) {
+            return null
+        }
+
+        val fragmentDate = fragment.getCurrentDate()
+        val viewOrder = arrayListOf(DAILY_VIEW, WEEKLY_VIEW, MONTHLY_VIEW, YEARLY_VIEW)
+        val currentViewIndex = viewOrder.indexOf(if (currentView == MONTHLY_DAILY_VIEW) MONTHLY_VIEW else currentView)
+        val newViewIndex = viewOrder.indexOf(if (newView == MONTHLY_DAILY_VIEW) MONTHLY_VIEW else newView)
+
+        return if (fragmentDate != null && currentViewIndex <= newViewIndex) {
+            getDateCodeFormatForView(newView, fragmentDate)
+        } else {
+            getDateCodeFormatForView(newView, DateTime())
+        }
+    }
+
+    private fun getDateCodeFormatForView(view: Int, date: DateTime): String {
+        return when (view) {
+            WEEKLY_VIEW -> getDatesWeekDateTime(date)
+            YEARLY_VIEW -> date.toString()
+            else -> Formatter.getDayCodeFromDateTime(date)
+        }
+    }
+
+    private fun updateViewPager(dayCode: String? = null) {
         val fragment = getFragmentsHolder()
         currentFragments.forEach {
             try {
@@ -825,12 +853,15 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         val bundle = Bundle()
 
         when (config.storedView) {
-            DAILY_VIEW, MONTHLY_VIEW, MONTHLY_DAILY_VIEW -> bundle.putString(DAY_CODE, dayCode)
-            WEEKLY_VIEW -> bundle.putString(WEEK_START_DATE_TIME, getThisWeekDateTime())
+            DAILY_VIEW -> bundle.putString(DAY_CODE, dayCode ?: Formatter.getTodayCode())
+            WEEKLY_VIEW -> bundle.putString(WEEK_START_DATE_TIME, dayCode ?: getDatesWeekDateTime(DateTime()))
+            MONTHLY_VIEW, MONTHLY_DAILY_VIEW -> bundle.putString(DAY_CODE, dayCode ?: Formatter.getTodayCode())
+            YEARLY_VIEW -> bundle.putString(YEAR_TO_OPEN, dayCode)
         }
 
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
     fun openMonthFromYearly(dateTime: DateTime) {
@@ -863,22 +894,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         try {
             supportFragmentManager.beginTransaction().add(R.id.fragments_holder, fragment).commitNow()
         } catch (e: Exception) {
-        }
-    }
-
-    private fun getThisWeekDateTime(): String {
-        return if (!config.startWeekWithCurrentDay) {
-            val currentOffsetHours = TimeZone.getDefault().rawOffset / 1000 / 60 / 60
-
-            // not great, not terrible
-            val useHours = if (currentOffsetHours >= 10) 8 else 12
-            var thisweek = DateTime().withZone(DateTimeZone.UTC).withDayOfWeek(1).withHourOfDay(useHours).minusDays(if (config.isSundayFirst) 1 else 0)
-            if (DateTime().minusDays(7).seconds() > thisweek.seconds()) {
-                thisweek = thisweek.plusDays(7)
-            }
-            thisweek.toString()
-        } else {
-            DateTime().withZone(DateTimeZone.UTC).toString()
         }
     }
 
