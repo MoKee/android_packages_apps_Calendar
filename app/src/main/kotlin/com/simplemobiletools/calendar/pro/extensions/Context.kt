@@ -31,6 +31,7 @@ import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.interfaces.EventTypesDao
 import com.simplemobiletools.calendar.pro.interfaces.EventsDao
+import com.simplemobiletools.calendar.pro.interfaces.WidgetsDao
 import com.simplemobiletools.calendar.pro.models.*
 import com.simplemobiletools.calendar.pro.net.OkHttpRestClient
 import com.simplemobiletools.calendar.pro.receivers.CalDAVSyncReceiver
@@ -51,6 +52,7 @@ import java.util.*
 val Context.config: Config get() = Config.newInstance(applicationContext)
 val Context.eventsDB: EventsDao get() = EventsDatabase.getInstance(applicationContext).EventsDao()
 val Context.eventTypesDB: EventTypesDao get() = EventsDatabase.getInstance(applicationContext).EventTypesDao()
+val Context.widgetsDB: WidgetsDao get() = EventsDatabase.getInstance(applicationContext).WidgetsDao()
 val Context.eventsHelper: EventsHelper get() = EventsHelper(this)
 val Context.calDAVHelper: CalDAVHelper get() = CalDAVHelper(this)
 
@@ -303,6 +305,7 @@ fun Context.getNotification(pendingIntent: PendingIntent, event: Event, content:
         .setContentTitle(contentTitle)
         .setContentText(contentText)
         .setSmallIcon(R.drawable.ic_calendar_vector)
+        .setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
         .setContentIntent(pendingIntent)
         .setPriority(NotificationCompat.PRIORITY_MAX)
         .setDefaults(Notification.DEFAULT_LIGHTS)
@@ -398,10 +401,10 @@ fun Context.getNewEventTimestampFromCode(dayCode: String, allowChangingDay: Bool
 
 fun Context.getSyncedCalDAVCalendars() = calDAVHelper.getCalDAVCalendars(config.caldavSyncedCalendarIds, false)
 
-fun Context.recheckCalDAVCalendars(callback: () -> Unit) {
+fun Context.recheckCalDAVCalendars(scheduleNextCalDAVSync: Boolean, callback: () -> Unit) {
     if (config.caldavSync) {
         ensureBackgroundThread {
-            calDAVHelper.refreshCalendars(false, callback)
+            calDAVHelper.refreshCalendars(false, scheduleNextCalDAVSync, callback)
             updateWidgets()
         }
     }
@@ -409,8 +412,9 @@ fun Context.recheckCalDAVCalendars(callback: () -> Unit) {
 
 fun Context.scheduleCalDAVSync(activate: Boolean) {
     val syncIntent = Intent(applicationContext, CalDAVSyncReceiver::class.java)
-    val pendingIntent = PendingIntent.getBroadcast(applicationContext, 0, syncIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+    val pendingIntent = PendingIntent.getBroadcast(applicationContext, SCHEDULE_CALDAV_REQUEST_CODE, syncIntent, PendingIntent.FLAG_UPDATE_CURRENT)
     val alarm = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    alarm.cancel(pendingIntent)
 
     if (activate) {
         val syncCheckInterval = 2 * AlarmManager.INTERVAL_HOUR
@@ -418,8 +422,6 @@ fun Context.scheduleCalDAVSync(activate: Boolean) {
             alarm.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + syncCheckInterval, syncCheckInterval, pendingIntent)
         } catch (ignored: Exception) {
         }
-    } else {
-        alarm.cancel(pendingIntent)
     }
 }
 

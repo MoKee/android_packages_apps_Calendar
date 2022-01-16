@@ -6,7 +6,7 @@
     <string name="daily_view">Dagvisning</string>
     <string name="weekly_view">Ukevisning</string>
     <string name="monthly_view">Månedsvisning</string>
-    <string name="monthly_daily_view">Monthly + daily view</string>
+    <string name="monthly_daily_view">Måneds og dagvisning</string>
     <string name="yearly_view">Årsvisning</string>
     <string name="simple_event_list">Enkel hendelsesliste</string>
     <string name="no_upcoming_events">Ser ut som du ikke har noen kommende hendelser.</string>
@@ -119,7 +119,7 @@
     <string name="export_past_events_too">Eksporter fortidige hendelser også</string>
     <string name="include_event_types">Inkluder hendelsestyper</string>
     <string name="filename_without_ics">Filnavn (uten .ics)</string>
-    <string name="ignore_event_types">Ignore event types in the file, always use the default one</string>
+    <string name="ignore_event_types">Ignorer hendelsestyper i filen, bruk alltid standardtypen</string>
     <!-- Event details -->
     <string name="location">Sted</string>
     <string name="description">Beskrivelse</string>
@@ -227,6 +227,23 @@
     <string name="sample_title_4">Lunsj med Mari</string>
     <string name="sample_description_4">På torget</string>
     <string name="sample_title_5">Kaffepause</string>
+    <!-- List widget config -->
+    <string name="show_events_happening">Vis hendelser som skjer:</string>
+    <string name="within_the_next_one_year">Innen det neste året</string>
+    <string name="today_only">Bare i dag</string>
+    <string name="within_the_next">Innen neste…</string>
+    <plurals name="within_the_next_days">
+        <item quantity="one">Innen neste %d dag</item>
+        <item quantity="other">Innen de neste %d dagene</item>
+    </plurals>
+    <plurals name="within_the_next_weeks">
+        <item quantity="one">Innen neste %d uke</item>
+        <item quantity="other">Innen de neste %d ukene</item>
+    </plurals>
+    <plurals name="within_the_next_months">
+        <item quantity="one">Innen neste %d måned</item>
+        <item quantity="other">Innen de neste %d månedene</item>
+    </plurals>
     <!-- FAQ -->
     <string name="faq_1_title">Hvordan kan jeg fjerne off. fridager importert via  meny - \"Legg til off. fridager\"?</string>
     <string name="faq_1_text">Off. fridager opprettet på denne måten settes inn i en ny hendelsestype kalt \"Off. fridager\". Gå til Innstillinger -&gt; Behandle hendelsestyper,

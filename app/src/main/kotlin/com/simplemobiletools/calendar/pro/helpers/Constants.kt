@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.pro.helpers
 const val STORED_LOCALLY_ONLY = 0
 const val ROW_COUNT = 6
 const val COLUMN_COUNT = 7
+const val SCHEDULE_CALDAV_REQUEST_CODE = 10000
 
 const val DAY_CODE = "day_code"
 const val YEAR_LABEL = "year"
@@ -47,6 +48,11 @@ const val DAY = 86400
 const val WEEK = 604800
 const val MONTH = 2592001    // exact value not taken into account, Joda is used for adding months and years
 const val YEAR = 31536000
+
+const val EVENT_PERIOD_TODAY = -1
+const val EVENT_PERIOD_CUSTOM = -2
+
+const val EVENT_LIST_PERIOD = "event_list_period"
 
 // Shared Preferences
 const val WEEK_NUMBERS = "week_numbers"
@@ -97,6 +103,7 @@ const val WEEKLY_VIEW_ITEM_HEIGHT_MULTIPLIER = "weekly_view_item_height_multipli
 const val WEEKLY_VIEW_DAYS = "weekly_view_days"
 const val HIGHLIGHT_WEEKENDS = "highlight_weekends"
 const val HIGHLIGHT_WEEKENDS_COLOR = "highlight_weekends_color"
+const val LAST_USED_EVENT_SPAN = "last_used_event_span"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val LAST_VERSION_CODE = "last_version_code"

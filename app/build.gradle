@@ -17,8 +17,8 @@ android {
         applicationId "com.android.calendar"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 211
-        versionName "6.16.2"
+        versionCode 212
+        versionName "6.17.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         android.applicationVariants.all { variant ->
@@ -52,6 +52,12 @@ android {
         }
     }
 
+    flavorDimensions "variants"
+    productFlavors {
+        basic {}
+        fdroid {}
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -73,8 +79,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:80caff3410'
-    implementation 'joda-time:joda-time:2.10.3'
+    implementation 'com.github.MoKee:android_packages_apps_SimpleCommons:41b781ed56'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
