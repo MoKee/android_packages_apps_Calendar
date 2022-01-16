@@ -81,11 +81,13 @@
     <string name="no_birthdays">Sünnipäevi pole leitud</string>
     <string name="no_new_birthdays">Uusi sünnipäevi pole leitud</string>
     <string name="birthdays_added">Sünnipäevad edukalt lisatud</string>
+    <string name="add_birthdays_automatically">Lisage uued sünnipäevad automaatselt</string>
     <string name="anniversaries">Aastapäevad</string>
     <string name="add_anniversaries">Lisage kontaktide tähtpäevad</string>
     <string name="no_anniversaries">Tähtpäevi pole leitud</string>
     <string name="no_new_anniversaries">Uusi tähtpäevi pole leitud</string>
     <string name="anniversaries_added">Tähtpäevad edukalt lisatud</string>
+    <string name="add_anniversaries_automatically">Lisage uued tähtpäevad automaatselt</string>
     <string name="reminder">Meeldetuletus</string>
     <string name="before">enne</string>
     <string name="add_another_reminder">Lisa veel üks meeldetuletus</string>
@@ -105,10 +107,12 @@
     <string name="export_past_events_too">Ekspordi ka mineviku sündmusi</string>
     <string name="include_event_types">Kaasa sündmuste liigid</string>
     <string name="filename_without_ics">Failinimi (ilma .ics)</string>
+    <string name="ignore_event_types">Ignoreeri failis olevaid sündmuste tüüpe, kasuta alati vaiketüüpi </string>
     <string name="location">Asukoht</string>
     <string name="description">Kirjeldus</string>
     <string name="all_day">Kogu päev</string>
     <string name="week">Nädal</string>
+    <string name="start_week_with_current_day">Alusta nädalat jooksva päevaga</string>
     <string name="event_types">Ürituse liigid</string>
     <string name="add_new_type">Lisa uus tüüp</string>
     <string name="edit_type">Muuda tüüpi</string>
@@ -142,6 +146,7 @@
     <string name="event_lists">Sündmuste nimekirjad</string>
     <string name="display_past_events">Näita mineviku sündmusi</string>
     <string name="replace_description_with_location">Asenda sündmuse kirjeldus asukohaga</string>
+    <string name="display_description_or_location">Kuva kirjeldus või asukoht</string>
     <string name="delete_all_events">Kustuta sündmused</string>
     <string name="delete_all_events_confirmation">Kas soovite kindlasti kõik sündmused kustutada? See jätab teie sündmuste tüübid ja muud seaded puutumata.</string>
     <string name="show_a_grid">Kuva võrguna</string>
@@ -167,6 +172,7 @@
     <string name="last_used_one">Viimati kasutatud</string>
     <string name="other_time">Teine kord</string>
     <string name="highlight_weekends">Tõstke nädalavahetustel esile mõned vaated</string>
+    <string name="highlight_weekends_color">Esiletõstetud nädalavahetuste värv</string>
     <string name="allow_changing_time_zones">Luba sündmuste ajavööndite muutmist</string>
     <string name="manage_quick_filter_event_types">Kiirfiltri sündmustüüpide haldamine</string>
     <string name="caldav">CalDAV</string>

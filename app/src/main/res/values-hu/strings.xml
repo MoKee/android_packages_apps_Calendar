@@ -28,6 +28,7 @@
     <string name="filter_events_by_type">Az események szűrése típus szerint</string>
     <string name="please_fill_location">Kérjük, adja meg a térképen megjelenítendő helyet</string>
     <string name="public_event_notification_text">Van egy közelgő esemény</string>
+    <string name="saving_filtered_out">Mentve....de a kiválasztott eseménytípus kiszűrésre van jelölve a Főmenü - Szűrés almenüjében</string>
     <string name="repetition">Ismétlés</string>
     <string name="no_repetition">Nincs ismétlés</string>
     <string name="daily">Naponta</string>
@@ -81,11 +82,13 @@
     <string name="no_birthdays">Nem található semmilyen születésnap</string>
     <string name="no_new_birthdays">Nem található semmilyen új születésnap</string>
     <string name="birthdays_added">Születésnapok sikeresen hozzáadva</string>
+    <string name="add_birthdays_automatically">Új szülinap hozzáadása automatikusan</string>
     <string name="anniversaries">Évfordulók</string>
     <string name="add_anniversaries">Évforduló hozzáadása a névjegyekből</string>
     <string name="no_anniversaries">Nem található egyetlen évforduló sem</string>
     <string name="no_new_anniversaries">Nem található egyetlen új évforduló sem</string>
     <string name="anniversaries_added">Évforduló sikeresen hozzáadásra került</string>
+    <string name="add_anniversaries_automatically">Új évforduló hozzáadása automatikusan</string>
     <string name="reminder">Emlékeztető</string>
     <string name="before">korábban</string>
     <string name="add_another_reminder">Másik emlékeztető hozzáadása</string>
@@ -105,10 +108,12 @@
     <string name="export_past_events_too">A már elmúlt eseményeket is exportálja</string>
     <string name="include_event_types">Az eseménytípusokat is tartalmazza</string>
     <string name="filename_without_ics">Fájlnév ( .ics nélkül )</string>
+    <string name="ignore_event_types">Figyelmen kívül hagyja a fájlban szereplő eseménytípusokat, mindig az alapértelmezettet használja</string>
     <string name="location">Hely</string>
     <string name="description">Leírás</string>
     <string name="all_day">Egész napos</string>
     <string name="week">Heti</string>
+    <string name="start_week_with_current_day">Az aktuális nappal kezdődik a hét</string>
     <string name="event_types">Eseménytípusok</string>
     <string name="add_new_type">Új típus hozzáadása</string>
     <string name="edit_type">A típus szerkesztése</string>
@@ -142,6 +147,7 @@
     <string name="event_lists">Eseménylista</string>
     <string name="display_past_events">Múltbéli események megjelenítése</string>
     <string name="replace_description_with_location">Az esemény leírásának felülírása a tartózkodási-helyadatokkal</string>
+    <string name="display_description_or_location">Megjelenik a leírás vagy a hely</string>
     <string name="delete_all_events">Az összes esemény törlése</string>
     <string name="delete_all_events_confirmation">Bizonyos benne, hogy az összes eseményt törli? Az eseménytípusok és egyéb beállítások érintetlenek maradnak.</string>
     <string name="show_a_grid">A rács megjelenítése</string>
@@ -167,6 +173,7 @@
     <string name="last_used_one">A legutóbb használt</string>
     <string name="other_time">Egyéb időtartam</string>
     <string name="highlight_weekends">Hétvégék kiemelése bármilyen nézetben</string>
+    <string name="highlight_weekends_color">A kiemelt hétvégék színe</string>
     <string name="allow_changing_time_zones">Az események időzónája legyen módosítható</string>
     <string name="manage_quick_filter_event_types">A gyorsszűrő eseménytípusainak kezelése</string>
     <string name="caldav">CalDAV</string>

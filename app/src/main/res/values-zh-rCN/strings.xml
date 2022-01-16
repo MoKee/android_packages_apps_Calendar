@@ -6,6 +6,7 @@
     <string name="daily_view">天</string>
     <string name="weekly_view">周</string>
     <string name="monthly_view">月</string>
+    <string name="monthly_daily_view">月份+每日视图</string>
     <string name="yearly_view">年</string>
     <string name="simple_event_list">简易事件列表</string>
     <string name="no_upcoming_events">好像您没有任何即将发生的事件。</string>
@@ -27,6 +28,7 @@
     <string name="filter_events_by_type">按类型筛选事件</string>
     <string name="please_fill_location">请输入要在地图上显示的地点</string>
     <string name="public_event_notification_text">一个事件即将到来</string>
+    <string name="saving_filtered_out">保存… 但选中的事件类型已在顶部 菜单—过滤器 被过滤</string>
     <string name="repetition">重复</string>
     <string name="no_repetition">不重复</string>
     <string name="daily">每日</string>
@@ -80,11 +82,13 @@
     <string name="no_birthdays">未找到生日</string>
     <string name="no_new_birthdays">未找到新的生日</string>
     <string name="birthdays_added">生日添加成功</string>
+    <string name="add_birthdays_automatically">自动添加新的生日</string>
     <string name="anniversaries">纪念日</string>
     <string name="add_anniversaries">添加联系人周年纪念日</string>
     <string name="no_anniversaries">未找到纪念日</string>
     <string name="no_new_anniversaries">未找到新的纪念日</string>
     <string name="anniversaries_added">成功添加纪念日</string>
+    <string name="add_anniversaries_automatically">自动添加新的纪念日</string>
     <string name="reminder">提醒</string>
     <string name="before">前</string>
     <string name="add_another_reminder">增加另一个提醒</string>
@@ -104,10 +108,12 @@
     <string name="export_past_events_too">也导出过去的事件</string>
     <string name="include_event_types">包含事件类型</string>
     <string name="filename_without_ics">文件名 (不包含 .ics)</string>
+    <string name="ignore_event_types">忽略文件中的事件类型，总是使用默认事件类型</string>
     <string name="location">地点</string>
     <string name="description">描述</string>
     <string name="all_day">全天</string>
     <string name="week">周视图</string>
+    <string name="start_week_with_current_day">以当前日期为一周的开始</string>
     <string name="event_types">事件类型</string>
     <string name="add_new_type">添加新的类型</string>
     <string name="edit_type">编辑类型</string>
@@ -141,6 +147,7 @@
     <string name="event_lists">事件列表</string>
     <string name="display_past_events">显示已结束的事件</string>
     <string name="replace_description_with_location">显示地点而不是事件描述</string>
+    <string name="display_description_or_location">显示描述或位置</string>
     <string name="delete_all_events">删除所有事件</string>
     <string name="delete_all_events_confirmation">确定删除所有事件吗？这不会影响您的事件类型和其他设置。</string>
     <string name="show_a_grid">显示网格</string>
@@ -166,7 +173,9 @@
     <string name="last_used_one">上次使用</string>
     <string name="other_time">其他时间</string>
     <string name="highlight_weekends">在一些视图上高亮周末</string>
+    <string name="highlight_weekends_color">突出显示周末的颜色</string>
     <string name="allow_changing_time_zones">允许更改事件时区</string>
+    <string name="manage_quick_filter_event_types">管理快速过滤器事件类型</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">选择要同步的日历</string>
     <string name="manage_synced_calendars">管理已同步的日历</string>
@@ -182,6 +191,7 @@
     <string name="caldav_event_not_found">事件未找到。请在应用设置中启用相应日历的 CalDAV 同步。</string>
     <string name="no_synchronized_calendars">未找到可同步的日历</string>
     <string name="status_free">自由</string>
+    <string name="status_busy">忙碌</string>
     <string name="monday_alt">周一</string>
     <string name="tuesday_alt">周二</string>
     <string name="wednesday_alt">周三</string>

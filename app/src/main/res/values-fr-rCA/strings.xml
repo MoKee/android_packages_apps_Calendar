@@ -178,6 +178,7 @@
     <string name="caldav_event_not_found">Événement introuvable. Veuillez activer la synchronisation CalDAV pour le calendrier approprié dans les paramètres de l\'application.</string>
     <string name="no_synchronized_calendars">Aucun calendrier synchronisable n\'a été trouvé</string>
     <string name="status_free">Aucun</string>
+    <string name="status_busy">Occupé</string>
     <string name="monday_alt">Lundi</string>
     <string name="tuesday_alt">Mardi</string>
     <string name="wednesday_alt">Mercredi</string>

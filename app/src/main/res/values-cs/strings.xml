@@ -28,6 +28,7 @@
     <string name="filter_events_by_type">Filtrovat události podle typu</string>
     <string name="please_fill_location">Vyplňte prosím místo, které se zobrazí na mapě</string>
     <string name="public_event_notification_text">Událost právě nastává</string>
+    <string name="saving_filtered_out">Ukládám… Ale vybraný typ události je filtrován v horní nabídce - filtr</string>
     <string name="repetition">Opakování</string>
     <string name="no_repetition">Neopakuje se</string>
     <string name="daily">Denně</string>
@@ -81,11 +82,13 @@
     <string name="no_birthdays">Žádné narozeniny nebyly nalezeny</string>
     <string name="no_new_birthdays">Žádné nové narozeniny nebyly nalezeny</string>
     <string name="birthdays_added">Narozeniny byly úspěšně přidány</string>
+    <string name="add_birthdays_automatically">Automaticky přidat nové narozeniny</string>
     <string name="anniversaries">Výročí</string>
     <string name="add_anniversaries">Přidat výročí kontaktu</string>
     <string name="no_anniversaries">Žádné výročí nebylo nalezeno</string>
     <string name="no_new_anniversaries">Žádné nové výročí nebylo nalezeno</string>
     <string name="anniversaries_added">Výročí bylo úspěšně přidáno</string>
+    <string name="add_anniversaries_automatically">Automaticky přidat nová výročí</string>
     <string name="reminder">Připomínka</string>
     <string name="before">před</string>
     <string name="add_another_reminder">Přidat další připomenutí</string>
@@ -105,10 +108,12 @@
     <string name="export_past_events_too">Export i minulých událostí</string>
     <string name="include_event_types">Zahrnout typy událostí</string>
     <string name="filename_without_ics">Název souboru (bez .ics)</string>
+    <string name="ignore_event_types">Ignorovat typy událostí v souboru, vždy použít výchozí</string>
     <string name="location">Poloha</string>
     <string name="description">Popis</string>
     <string name="all_day">Celý den</string>
     <string name="week">Týden</string>
+    <string name="start_week_with_current_day">Začátek týdne s aktuálním dnem</string>
     <string name="event_types">Typ události</string>
     <string name="add_new_type">Přidat nový typ</string>
     <string name="edit_type">Upravit typ</string>
@@ -142,6 +147,7 @@
     <string name="event_lists">Seznamy událostí</string>
     <string name="display_past_events">Zobrazit minulé události</string>
     <string name="replace_description_with_location">Nahradit popis události s polohou</string>
+    <string name="display_description_or_location">Zobrazit popis nebo polohu</string>
     <string name="delete_all_events">Vymazat všechny události</string>
     <string name="delete_all_events_confirmation">Opravdu chcete smazat všechny události? Typy událostí a ostatní nastavení zůstanou neporušené.</string>
     <string name="show_a_grid">Zobrazit mřížku</string>
@@ -167,6 +173,7 @@
     <string name="last_used_one">Poslední použitá</string>
     <string name="other_time">Jiný čas</string>
     <string name="highlight_weekends">Zvýraznit víkendy na některých pohledech</string>
+    <string name="highlight_weekends_color">Barva zvýrazněných víkendů</string>
     <string name="allow_changing_time_zones">Povolit změnu časových pásem událostí</string>
     <string name="manage_quick_filter_event_types">Správa typů událostí rychlého filtru</string>
     <string name="caldav">CalDAV</string>
