@@ -200,13 +200,29 @@
     <string name="saturday_alt">Szombat</string>
     <string name="sunday_alt">Vasárnap</string>
     <string name="sample_title_1">Edzés</string>
-    <string name="sample_description_1">Láberősítő-nap</string>
+    <string name="sample_description_1">Lazítás napja</string>
     <string name="sample_title_2">Találkozó a haverokkal</string>
     <string name="sample_description_2">a Dürer-kertben</string>
     <string name="sample_title_3">Könyvtár</string>
     <string name="sample_title_4">Ebéd a keresztanyámmal</string>
-    <string name="sample_description_4">a Plázában</string>
-    <string name="sample_title_5">Kávézás</string>
+    <string name="sample_description_4">a Bevásárólközpontban</string>
+    <string name="sample_title_5">Kávé idő</string>
+    <string name="show_events_happening">Események megjelenítése:</string>
+    <string name="within_the_next_one_year">A következő 1 éven belül</string>
+    <string name="today_only">Csak a  mai napon</string>
+    <string name="within_the_next">A következőn belül…</string>
+    <plurals name="within_the_next_days">
+        <item quantity="one">A következő %d napon belül</item>
+        <item quantity="other">A következő %d napon belül</item>
+    </plurals>
+    <plurals name="within_the_next_weeks">
+        <item quantity="one">A következő %d héten belül</item>
+        <item quantity="other">A következő %d héten belül</item>
+    </plurals>
+    <plurals name="within_the_next_months">
+        <item quantity="one">A következő %d hónapon belül</item>
+        <item quantity="other">A következő %d hónapon belül</item>
+    </plurals>
     <string name="faq_1_title">Hogyan lehet eltávolítani azokat az ünnepeket, amelyeket az \"Ünnepek hozzáadása\" gomb segítségével importált?</string>
     <string name="faq_1_text">Az így létrehozott ünnepeket egy új típusba illeszti be, az úgynevezett \"Ünnepek\"-be. Bemehet a Beállításokba -&gt; Eseménytípusok kezelése menübe,
         hosszan nyomja meg az adott eseménytípust, és törölje azt a Lomtár kiválasztásával.</string>

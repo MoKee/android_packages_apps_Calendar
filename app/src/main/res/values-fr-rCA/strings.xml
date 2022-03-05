@@ -6,6 +6,7 @@
     <string name="daily_view">Vue quotidienne</string>
     <string name="weekly_view">Vue hebdomadaire</string>
     <string name="monthly_view">Vue mensuelle</string>
+    <string name="monthly_daily_view">Vue mensuelle et quotidienne</string>
     <string name="yearly_view">Vue annuelle</string>
     <string name="simple_event_list">Liste simple d\'événements</string>
     <string name="no_upcoming_events">Il semblerait que vous n\'ayez aucun événement à venir.</string>
@@ -64,6 +65,7 @@
     <string name="second_m">deuxième</string>
     <string name="third_m">troisième</string>
     <string name="fourth_m">quatrième</string>
+    <string name="fifth_m">cinquième</string>
     <string name="last_m">dernier</string>
     <string name="repeat_every_f">Répéter chaque</string>
     <string name="every_f">Chaque</string>
@@ -71,12 +73,14 @@
     <string name="second_f">deuxième</string>
     <string name="third_f">troisième</string>
     <string name="fourth_f">quatrième</string>
+    <string name="fifth_f">cinquième</string>
     <string name="last_f">dernier</string>
     <string name="birthdays">Anniversaires</string>
     <string name="add_birthdays">Ajouter les anniversaires des contacts</string>
     <string name="no_birthdays">Aucun anniversaire n\'a été trouvé</string>
     <string name="no_new_birthdays">Aucun nouvel anniversaire n\'a été trouvé</string>
     <string name="birthdays_added">Anniversaires ajoutés avec succès</string>
+    <string name="add_birthdays_automatically">Ajouter automatiquement les nouveaux anniversaires</string>
     <string name="anniversaries">Anniversaires d\'évènements</string>
     <string name="add_anniversaries">Ajouter des anniversaires d\'évènements de contact</string>
     <string name="no_anniversaries">Aucun anniversaire d\'évènements n\'a été trouvé</string>
@@ -105,6 +109,7 @@
     <string name="description">Description</string>
     <string name="all_day">Journée</string>
     <string name="week">Semaine</string>
+    <string name="start_week_with_current_day">Commencer la semaine avec le jour actuel</string>
     <string name="event_types">Type d\'événement</string>
     <string name="add_new_type">Ajouter un nouveau type</string>
     <string name="edit_type">Éditer le type</string>
@@ -137,6 +142,7 @@
     <string name="event_lists">Listes d\'événements</string>
     <string name="display_past_events">Afficher les événements du passé</string>
     <string name="replace_description_with_location">Remplacer la description de l\'événement par l\'emplacement</string>
+    <string name="display_description_or_location">Afficher la description ou l\'emplacement</string>
     <string name="delete_all_events">Supprimer tous les événements</string>
     <string name="delete_all_events_confirmation">Êtes-vous sûr de vouloir supprimer tous les événements ? Cela laissera vos types d\'événements et autres paramètres intacts.</string>
     <string name="show_a_grid">Afficher une grille</string>
@@ -162,6 +168,7 @@
     <string name="last_used_one">Dernier utilisé</string>
     <string name="other_time">Autre moment</string>
     <string name="highlight_weekends">Souligner les week-ends sur certaines vues</string>
+    <string name="highlight_weekends_color">Couleur des week-ends surlignés</string>
     <string name="allow_changing_time_zones">Autoriser le changement du fuseau horaire</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Seléctionner les calendriers à synchroniser</string>
@@ -194,6 +201,9 @@
     <string name="sample_title_4">Déjeuner avec Mary</string>
     <string name="sample_description_4">Dans la Place</string>
     <string name="sample_title_5">Heure du café</string>
+    <string name="within_the_next_one_year">Dans l\'année</string>
+    <string name="today_only">Aujourd\'hui seulement</string>
+    <string name="within_the_next">Dans la prochaine…</string>
     <string name="faq_1_title">Comment supprimer les congés importés par le bouton « Ajouter des jours fériés » ?</string>
     <string name="faq_1_text">Les jours fériés ajoutés de cette manière sont du type « Jours fériés ». Vous pouvez aller dans « Paramètres » puis « Gestion des types d\'événements », 
 		faire un appui long sur « Jours fériés » et les supprimer en appuyant sur la corbeille.</string>

@@ -66,11 +66,18 @@
     <string name="holiday_singapore">Singapour</string>
     <string name="holiday_slovakia">Slovaquie</string>
     <string name="holiday_slovenia">Slovénie</string>
+    <string name="holiday_southafrica">Afrique du Sud</string>
+    <string name="holiday_southkorea">Corée du Sud</string>
     <string name="holiday_spain">Espagne</string>
+    <string name="holiday_srilanka">Sri Lanka</string>
     <string name="holiday_sweden">Suède</string>
     <string name="holiday_switzerland">Suisse</string>
     <string name="holiday_taiwan">TaiPei (Chine)</string>
+    <string name="holiday_thailand">Thaïlande</string>
+    <string name="holiday_turkey">Turquie</string>
     <string name="holiday_ukraine">Ukraine</string>
+    <string name="holiday_unitedkingdom">Royaume-Uni</string>
     <string name="holiday_unitedstates">États-Unis</string>
+    <string name="holiday_uruguay">Uruguay</string>
     <string name="no_calendar_permission">Autorisation d\'accès au Calendrier requise</string>
 </resources>

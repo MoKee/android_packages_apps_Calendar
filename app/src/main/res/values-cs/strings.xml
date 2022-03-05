@@ -207,6 +207,28 @@
     <string name="sample_title_4">Oběd s Marií</string>
     <string name="sample_description_4">Ve městě</string>
     <string name="sample_title_5">Káva</string>
+    <string name="show_events_happening">Zobrazit události, které se konají:</string>
+    <string name="within_the_next_one_year">V průběhu příštího 1 roku</string>
+    <string name="today_only">Pouze dnes</string>
+    <string name="within_the_next">V průběhu příštího…</string>
+    <plurals name="within_the_next_days">
+        <item quantity="one">V průběhu příštího %d dne</item>
+        <item quantity="few">V průběhu příštích %d dnů</item>
+        <item quantity="many">V průběhu příštích %d dnů</item>
+        <item quantity="other">V průběhu příštích %d dnů</item>
+    </plurals>
+    <plurals name="within_the_next_weeks">
+        <item quantity="one">V průběhu příštího %d měsíce</item>
+        <item quantity="few">V průběhu příštích %d měsíců</item>
+        <item quantity="many">V průběhu příštích %d měsíců</item>
+        <item quantity="other">V průběhu příštích %d měsíců</item>
+    </plurals>
+    <plurals name="within_the_next_months">
+        <item quantity="one">V průběhu příštího %d roku</item>
+        <item quantity="few">V průběhu příštích %d let</item>
+        <item quantity="many">V průběhu příštích %d let</item>
+        <item quantity="other">V průběhu příštích %d let</item>
+    </plurals>
     <string name="faq_1_title">Jak mohu odstranit svátky importované přes tlačítko \"Přidat svátek\"?</string>
     <string name="faq_1_text">Svátky vytvořené touto cestou jsou vloženy s novým typem události \"Svátky\". Odstranit jej můžete přes: Nastavení -&gt; Správa typů událostí -&gt;
         dlouze podržte daný typ události a stisknete tlačítko s ikonou koše pro odstranění.</string>
