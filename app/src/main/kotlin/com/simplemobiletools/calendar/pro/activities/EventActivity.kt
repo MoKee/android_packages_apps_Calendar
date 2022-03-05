@@ -50,22 +50,6 @@ import kotlin.collections.ArrayList
 
 class EventActivity : SimpleActivity() {
     private val LAT_LON_PATTERN = "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)([,;])\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)\$"
-    private val EVENT = "EVENT"
-    private val START_TS = "START_TS"
-    private val END_TS = "END_TS"
-    private val REMINDER_1_MINUTES = "REMINDER_1_MINUTES"
-    private val REMINDER_2_MINUTES = "REMINDER_2_MINUTES"
-    private val REMINDER_3_MINUTES = "REMINDER_3_MINUTES"
-    private val REMINDER_1_TYPE = "REMINDER_1_TYPE"
-    private val REMINDER_2_TYPE = "REMINDER_2_TYPE"
-    private val REMINDER_3_TYPE = "REMINDER_3_TYPE"
-    private val REPEAT_INTERVAL = "REPEAT_INTERVAL"
-    private val REPEAT_LIMIT = "REPEAT_LIMIT"
-    private val REPEAT_RULE = "REPEAT_RULE"
-    private val ATTENDEES = "ATTENDEES"
-    private val AVAILABILITY = "AVAILABILITY"
-    private val EVENT_TYPE_ID = "EVENT_TYPE_ID"
-    private val EVENT_CALENDAR_ID = "EVENT_CALENDAR_ID"
     private val SELECT_TIME_ZONE_INTENT = 1
 
     private var mIsAllDayEvent = false
@@ -108,7 +92,6 @@ class EventActivity : SimpleActivity() {
             return
         }
 
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_cross_vector)
         val intent = intent ?: return
         mDialogTheme = getDialogTheme()
         mWasContactsPermissionChecked = hasPermission(PERMISSION_READ_CONTACTS)
@@ -118,6 +101,7 @@ class EventActivity : SimpleActivity() {
             mStoredEventTypes = eventTypesDB.getEventTypes().toMutableList() as ArrayList<EventType>
             val event = eventsDB.getEventWithId(eventId)
             if (eventId != 0L && event == null) {
+                hideKeyboard()
                 finish()
                 return@ensureBackgroundThread
             }
@@ -187,7 +171,7 @@ class EventActivity : SimpleActivity() {
                 if (config.wasAlarmWarningShown) {
                     showReminder1Dialog()
                 } else {
-                    ConfirmationDialog(this, messageId = R.string.reminder_warning, positive = R.string.ok, negative = 0) {
+                    ReminderWarningDialog(this) {
                         config.wasAlarmWarningShown = true
                         showReminder1Dialog()
                     }
@@ -252,7 +236,7 @@ class EventActivity : SimpleActivity() {
             menu.findItem(R.id.duplicate).isVisible = mEvent.id != null
         }
 
-        updateMenuItemColors(menu)
+        updateMenuItemColors(menu, true)
         return true
     }
 
@@ -378,6 +362,7 @@ class EventActivity : SimpleActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         if (!savedInstanceState.containsKey(START_TS)) {
+            hideKeyboard()
             finish()
             return
         }
@@ -564,7 +549,7 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun handleNotificationAvailability(callback: () -> Unit) {
-        if (NotificationManagerCompat.from(applicationContext).areNotificationsEnabled()) {
+        if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
             callback()
         } else {
             ConfirmationDialog(this, messageId = R.string.notifications_disabled, positive = R.string.ok, negative = 0) {
@@ -641,7 +626,7 @@ class EventActivity : SimpleActivity() {
             mRepeatLimit > 0 -> {
                 event_repetition_limit_label.text = getString(R.string.repeat_till)
                 val repeatLimitDateTime = Formatter.getDateTimeFromTS(mRepeatLimit)
-                Formatter.getFullDate(applicationContext, repeatLimitDateTime)
+                Formatter.getFullDate(this, repeatLimitDateTime)
             }
             else -> {
                 event_repetition_limit_label.text = getString(R.string.repeat)
@@ -1035,6 +1020,7 @@ class EventActivity : SimpleActivity() {
                 }
 
                 runOnUiThread {
+                    hideKeyboard()
                     finish()
                 }
             }
@@ -1043,6 +1029,7 @@ class EventActivity : SimpleActivity() {
 
     private fun duplicateEvent() {
         // the activity has the singleTask launchMode to avoid some glitches, so finish it before relaunching
+        hideKeyboard()
         finish()
         Intent(this, EventActivity::class.java).apply {
             putExtra(EVENT_ID, mEvent.id)
@@ -1058,7 +1045,7 @@ class EventActivity : SimpleActivity() {
                 saveEvent()
             }
         } else {
-            ConfirmationDialog(this, messageId = R.string.reminder_warning, positive = R.string.ok, negative = 0) {
+            ReminderWarningDialog(this) {
                 config.wasAlarmWarningShown = true
                 ensureBackgroundThread {
                     saveEvent()
@@ -1192,6 +1179,7 @@ class EventActivity : SimpleActivity() {
                     }
                 }
 
+                hideKeyboard()
                 finish()
             }
         } else {
@@ -1200,6 +1188,7 @@ class EventActivity : SimpleActivity() {
                     showEditRepeatingEventDialog()
                 }
             } else {
+                hideKeyboard()
                 eventsHelper.updateEvent(mEvent, true, true) {
                     finish()
                 }
@@ -1209,6 +1198,7 @@ class EventActivity : SimpleActivity() {
 
     private fun showEditRepeatingEventDialog() {
         EditRepeatingEventDialog(this) {
+            hideKeyboard()
             when (it) {
                 0 -> {
                     ensureBackgroundThread {
@@ -1232,6 +1222,7 @@ class EventActivity : SimpleActivity() {
                         mEvent.apply {
                             id = null
                         }
+
                         eventsHelper.insertEvent(mEvent, true, true) {
                             finish()
                         }
@@ -1256,7 +1247,7 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun updateStartDateText() {
-        event_start_date.text = Formatter.getDate(applicationContext, mEventStartDateTime)
+        event_start_date.text = Formatter.getDate(this, mEventStartDateTime)
         checkStartEndValidity()
     }
 
@@ -1271,7 +1262,7 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun updateEndDateText() {
-        event_end_date.text = Formatter.getDate(applicationContext, mEventEndDateTime)
+        event_end_date.text = Formatter.getDate(this, mEventEndDateTime)
         checkStartEndValidity()
     }
 
@@ -1315,7 +1306,6 @@ class EventActivity : SimpleActivity() {
 
     private fun setupStartDate() {
         hideKeyboard()
-        config.backgroundColor.getContrastColor()
         val datepicker = DatePickerDialog(
             this, mDialogTheme, startDateSetListener, mEventStartDateTime.year, mEventStartDateTime.monthOfYear - 1,
             mEventStartDateTime.dayOfMonth
@@ -1402,6 +1392,7 @@ class EventActivity : SimpleActivity() {
     }
 
     private fun setupTimeZone() {
+        hideKeyboard()
         Intent(this, SelectTimeZoneActivity::class.java).apply {
             putExtra(CURRENT_TIME_ZONE, mEvent.getTimeZoneString())
             startActivityForResult(this, SELECT_TIME_ZONE_INTENT)
@@ -1546,7 +1537,7 @@ class EventActivity : SimpleActivity() {
 
             val placeholder = BitmapDrawable(resources, SimpleContactsHelper(context).getContactLetterIcon(event_contact_name.value))
             event_contact_image.apply {
-                attendee.updateImage(applicationContext, this, placeholder)
+                attendee.updateImage(this@EventActivity, this, placeholder)
                 beVisible()
             }
 

@@ -39,7 +39,8 @@ data class Event(
     @ColumnInfo(name = "last_updated") var lastUpdated: Long = 0L,
     @ColumnInfo(name = "source") var source: String = SOURCE_SIMPLE_CALENDAR,
     @ColumnInfo(name = "availability") var availability: Int = 0,
-    var color: Int = 0,
+    @ColumnInfo(name = "color") var color: Int = 0,
+    @ColumnInfo(name = "type") var type: Int = TYPE_EVENT
 ) : Serializable {
 
     companion object {
@@ -48,8 +49,7 @@ data class Event(
 
     fun addIntervalTime(original: Event) {
         val oldStart = Formatter.getDateTimeFromTS(startTS)
-        val newStart: DateTime
-        newStart = when (repeatInterval) {
+        val newStart = when (repeatInterval) {
             DAY -> oldStart.plusDays(1)
             else -> {
                 when {
@@ -141,6 +141,8 @@ data class Event(
 
     fun getIsAllDay() = flags and FLAG_ALL_DAY != 0
     fun hasMissingYear() = flags and FLAG_MISSING_YEAR != 0
+    fun isTask() = type == TYPE_TASK
+    fun isTaskCompleted() = isTask() && flags and FLAG_TASK_COMPLETED != 0
 
     fun getReminders() = listOf(
         Reminder(reminder1Minutes, reminder1Type),
@@ -192,9 +194,9 @@ data class Event(
     }
 
     var isPastEvent: Boolean
-        get() = flags and FLAG_IS_PAST_EVENT != 0
+        get() = flags and FLAG_IS_IN_PAST != 0
         set(isPastEvent) {
-            flags = flags.addBitIf(isPastEvent, FLAG_IS_PAST_EVENT)
+            flags = flags.addBitIf(isPastEvent, FLAG_IS_IN_PAST)
         }
 
     fun getTimeZoneString(): String {

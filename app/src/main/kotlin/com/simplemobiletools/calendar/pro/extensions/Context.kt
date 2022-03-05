@@ -18,14 +18,17 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.app.NotificationCompat
 import androidx.print.PrintHelper
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.EventActivity
 import com.simplemobiletools.calendar.pro.activities.SnoozeReminderActivity
+import com.simplemobiletools.calendar.pro.activities.TaskActivity
 import com.simplemobiletools.calendar.pro.databases.EventsDatabase
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
@@ -39,6 +42,8 @@ import com.simplemobiletools.calendar.pro.receivers.NotificationReceiver
 import com.simplemobiletools.calendar.pro.services.SnoozeService
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
+import kotlinx.android.synthetic.main.day_monthly_event_view.view.*
+import kotlinx.android.synthetic.main.day_monthly_number_view.view.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
@@ -149,7 +154,7 @@ fun Context.scheduleEventIn(notifTS: Long, event: Event, showToasts: Boolean) {
     if (showToasts) {
         if (config.displayEventTypes.contains(event.eventType.toString())) {
             val secondsTillNotification = (newNotifTS - System.currentTimeMillis()) / 1000
-            val msg = String.format(getString(R.string.reminder_triggers_in), formatSecondsToTimeString(secondsTillNotification.toInt()))
+            val msg = String.format(getString(R.string.time_remaining), formatSecondsToTimeString(secondsTillNotification.toInt()))
             toast(msg)
         } else {
             toast(R.string.saving_filtered_out, Toast.LENGTH_LONG)
@@ -371,6 +376,15 @@ fun Context.launchNewEventIntent(dayCode: String = Formatter.getTodayCode(), all
     }
 }
 
+// if the default start time is set to "Next full hour" and the task is created before midnight, it could change the day
+fun Context.launchNewTaskIntent(dayCode: String = Formatter.getTodayCode(), allowChangingDay: Boolean = false) {
+    Intent(applicationContext, TaskActivity::class.java).apply {
+        putExtra(NEW_EVENT_START_TS, getNewEventTimestampFromCode(dayCode, allowChangingDay))
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(this)
+    }
+}
+
 fun Context.getNewEventTimestampFromCode(dayCode: String, allowChangingDay: Boolean = false): Long {
     val calendar = Calendar.getInstance()
     val defaultStartTime = config.defaultStartTime
@@ -430,26 +444,29 @@ fun Context.addDayNumber(rawTextColor: Int, day: DayMonthly, linearLayout: Linea
     if (!day.isThisMonth)
         textColor = textColor.adjustAlpha(LOWER_ALPHA)
 
-    (View.inflate(applicationContext, R.layout.day_monthly_number_view, null) as TextView).apply {
-        setTextColor(textColor)
-        text = day.value.toString()
-        gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
+    (View.inflate(applicationContext, R.layout.day_monthly_number_view, null) as RelativeLayout).apply {
         layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         linearLayout.addView(this)
 
-        if (day.isToday) {
-            val primaryColor = getAdjustedPrimaryColor()
-            setTextColor(primaryColor.getContrastColor())
-            if (dayLabelHeight == 0) {
-                onGlobalLayout {
-                    val height = this@apply.height
-                    if (height > 0) {
-                        callback(height)
-                        addTodaysBackground(this, resources, height, primaryColor)
+        day_monthly_number_id.apply {
+            setTextColor(textColor)
+            text = day.value.toString()
+            gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
+
+            if (day.isToday) {
+                val primaryColor = getAdjustedPrimaryColor()
+                setTextColor(primaryColor.getContrastColor())
+                if (dayLabelHeight == 0) {
+                    onGlobalLayout {
+                        val height = this@apply.height
+                        if (height > 0) {
+                            callback(height)
+                            addTodaysBackground(this, resources, height, primaryColor)
+                        }
                     }
+                } else {
+                    addTodaysBackground(this, resources, dayLabelHeight, primaryColor)
                 }
-            } else {
-                addTodaysBackground(this, resources, dayLabelHeight, primaryColor)
             }
         }
     }
@@ -484,13 +501,22 @@ fun Context.addDayEvents(day: DayMonthly, linearLayout: LinearLayout, res: Resou
             textColor = textColor.adjustAlpha(0.25f)
         }
 
-        (View.inflate(applicationContext, R.layout.day_monthly_event_view, null) as TextView).apply {
-            setTextColor(textColor)
-            text = it.title.replace(" ", "\u00A0")  // allow word break by char
+        (View.inflate(applicationContext, R.layout.day_monthly_event_view, null) as ConstraintLayout).apply {
             background = backgroundDrawable
             layoutParams = eventLayoutParams
-            contentDescription = it.title
             linearLayout.addView(this)
+
+            day_monthly_event_id.apply {
+                setTextColor(textColor)
+                text = it.title.replace(" ", "\u00A0")  // allow word break by char
+                checkViewStrikeThrough(it.isTaskCompleted())
+                contentDescription = it.title
+            }
+
+            day_monthly_task_image.beVisibleIf(it.isTask())
+            if (it.isTask()) {
+                day_monthly_task_image.applyColorFilter(textColor)
+            }
         }
     }
 }
@@ -539,7 +565,20 @@ fun Context.getEventListItems(events: List<Event>, addSectionDays: Boolean = tru
         }
 
         val listEvent =
-            ListEvent(it.id!!, it.startTS, it.endTS, it.title, it.description, it.getIsAllDay(), it.color, it.location, it.isPastEvent, it.repeatInterval > 0)
+            ListEvent(
+                it.id!!,
+                it.startTS,
+                it.endTS,
+                it.title,
+                it.description,
+                it.getIsAllDay(),
+                it.color,
+                it.location,
+                it.isPastEvent,
+                it.repeatInterval > 0,
+                it.isTask(),
+                it.isTaskCompleted()
+            )
         listItems.add(listEvent)
     }
     return listItems
@@ -652,7 +691,7 @@ fun Context.printBitmap(bitmap: Bitmap) {
 }
 
 fun Context.editEvent(event: ListEvent) {
-    Intent(this, EventActivity::class.java).apply {
+    Intent(this, getActivityToOpen(event.isTask)).apply {
         putExtra(EVENT_ID, event.id)
         putExtra(EVENT_OCCURRENCE_TS, event.startTS)
         startActivity(this)

@@ -3,13 +3,11 @@ package com.simplemobiletools.calendar.pro.adapters
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.dialogs.DeleteEventDialog
-import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.eventsHelper
-import com.simplemobiletools.calendar.pro.extensions.handleEventDeleting
-import com.simplemobiletools.calendar.pro.extensions.shareEvents
+import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.models.ListEvent
@@ -41,6 +39,7 @@ class EventListAdapter(
     private var use24HourFormat = activity.config.use24HourFormat
     private var currentItemsHash = listItems.hashCode()
     private var isPrintVersion = false
+    private val mediumMargin = activity.resources.getDimension(R.dimen.medium_margin).toInt()
 
     init {
         setupDragListener(true)
@@ -134,6 +133,7 @@ class EventListAdapter(
             event_item_holder.isSelected = selectedKeys.contains(listEvent.hashCode())
             event_item_holder.background.applyColorFilter(textColor)
             event_item_title.text = listEvent.title
+            event_item_title.checkViewStrikeThrough(listEvent.isTaskCompleted)
             event_item_time.text = if (listEvent.isAllDay) allDayString else Formatter.getTimeFromTS(context, listEvent.startTS)
             if (listEvent.startTS != listEvent.endTS) {
                 if (!listEvent.isAllDay) {
@@ -167,6 +167,15 @@ class EventListAdapter(
             event_item_time.setTextColor(newTextColor)
             event_item_title.setTextColor(newTextColor)
             event_item_description.setTextColor(newTextColor)
+            event_item_task_image.applyColorFilter(newTextColor)
+            event_item_task_image.beVisibleIf(listEvent.isTask)
+
+            val startMargin = if (listEvent.isTask) {
+                0
+            } else {
+                mediumMargin
+            }
+            (event_item_title.layoutParams as ConstraintLayout.LayoutParams).marginStart = startMargin
         }
     }
 

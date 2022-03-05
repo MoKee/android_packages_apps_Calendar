@@ -19,7 +19,7 @@ import com.simplemobiletools.calendar.pro.models.EventType
 import com.simplemobiletools.calendar.pro.models.Widget
 import java.util.concurrent.Executors
 
-@Database(entities = [Event::class, EventType::class, Widget::class], version = 5)
+@Database(entities = [Event::class, EventType::class, Widget::class], version = 6)
 @TypeConverters(Converters::class)
 abstract class EventsDatabase : RoomDatabase() {
 
@@ -47,6 +47,7 @@ abstract class EventsDatabase : RoomDatabase() {
                             .addMigrations(MIGRATION_2_3)
                             .addMigrations(MIGRATION_3_4)
                             .addMigrations(MIGRATION_4_5)
+                            .addMigrations(MIGRATION_5_6)
                             .build()
                         db!!.openHelper.setWriteAheadLoggingEnabled(true)
                     }
@@ -100,6 +101,14 @@ abstract class EventsDatabase : RoomDatabase() {
                 database.apply {
                     execSQL("CREATE TABLE IF NOT EXISTS `widgets` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `widget_id` INTEGER NOT NULL, `period` INTEGER NOT NULL)")
                     execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_widgets_widget_id` ON `widgets` (`widget_id`)")
+                }
+            }
+        }
+
+        private val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.apply {
+                    execSQL("ALTER TABLE events ADD COLUMN type INTEGER NOT NULL DEFAULT 0")
                 }
             }
         }

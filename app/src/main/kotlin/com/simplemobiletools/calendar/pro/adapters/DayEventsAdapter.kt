@@ -3,13 +3,11 @@ package com.simplemobiletools.calendar.pro.adapters
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.dialogs.DeleteEventDialog
-import com.simplemobiletools.calendar.pro.extensions.config
-import com.simplemobiletools.calendar.pro.extensions.eventsHelper
-import com.simplemobiletools.calendar.pro.extensions.handleEventDeleting
-import com.simplemobiletools.calendar.pro.extensions.shareEvents
+import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
@@ -29,6 +27,7 @@ class DayEventsAdapter(activity: SimpleActivity, val events: ArrayList<Event>, r
     private val replaceDescriptionWithLocation = activity.config.replaceDescription
     private val dimPastEvents = activity.config.dimPastEvents
     private var isPrintVersion = false
+    private val mediumMargin = activity.resources.getDimension(R.dimen.medium_margin).toInt()
 
     init {
         setupDragListener(true)
@@ -84,6 +83,7 @@ class DayEventsAdapter(activity: SimpleActivity, val events: ArrayList<Event>, r
             event_item_holder.isSelected = selectedKeys.contains(event.id?.toInt())
             event_item_holder.background.applyColorFilter(textColor)
             event_item_title.text = event.title
+            event_item_title.checkViewStrikeThrough(event.isTaskCompleted())
             event_item_time.text = if (event.getIsAllDay()) allDayString else Formatter.getTimeFromTS(context, event.startTS)
             if (event.startTS != event.endTS && !event.getIsAllDay()) {
                 event_item_time.text = "${event_item_time.text} - ${Formatter.getTimeFromTS(context, event.endTS)}"
@@ -101,6 +101,15 @@ class DayEventsAdapter(activity: SimpleActivity, val events: ArrayList<Event>, r
             event_item_time.setTextColor(newTextColor)
             event_item_title.setTextColor(newTextColor)
             event_item_description?.setTextColor(newTextColor)
+            event_item_task_image.applyColorFilter(newTextColor)
+            event_item_task_image.beVisibleIf(event.isTask())
+
+            val startMargin = if (event.isTask()) {
+                0
+            } else {
+                mediumMargin
+            }
+            (event_item_title.layoutParams as ConstraintLayout.LayoutParams).marginStart = startMargin
         }
     }
 

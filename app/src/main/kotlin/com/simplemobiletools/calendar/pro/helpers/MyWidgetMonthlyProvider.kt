@@ -7,6 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
+import android.graphics.Paint
 import android.view.View
 import android.widget.RemoteViews
 import com.simplemobiletools.calendar.pro.R
@@ -144,11 +145,19 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
                     backgroundColor = backgroundColor.adjustAlpha(MEDIUM_ALPHA)
                 }
 
-                val newRemoteView = RemoteViews(packageName, R.layout.day_monthly_event_view).apply {
+                val newRemoteView = RemoteViews(packageName, R.layout.day_monthly_event_view_widget).apply {
                     setText(R.id.day_monthly_event_id, it.title.replace(" ", "\u00A0"))
                     setTextColor(R.id.day_monthly_event_id, eventTextColor)
                     setTextSize(R.id.day_monthly_event_id, smallerFontSize - 3f)
-                    setBackgroundColor(R.id.day_monthly_event_id, backgroundColor)
+                    setVisibleIf(R.id.day_monthly_task_image, it.isTask())
+                    applyColorFilter(R.id.day_monthly_task_image, eventTextColor)
+                    setInt(R.id.day_monthly_event_background, "setColorFilter", it.color)
+
+                    if (it.isTaskCompleted()) {
+                        setInt(R.id.day_monthly_event_id, "setPaintFlags", Paint.ANTI_ALIAS_FLAG or Paint.STRIKE_THRU_TEXT_FLAG)
+                    } else {
+                        setInt(R.id.day_monthly_event_id, "setPaintFlags", Paint.ANTI_ALIAS_FLAG)
+                    }
                 }
                 views.addView(id, newRemoteView)
             }
@@ -161,10 +170,12 @@ class MyWidgetMonthlyProvider : AppWidgetProvider() {
             setTextSize(R.id.day_monthly_number_id, context.getWidgetFontSize() - 3f)
 
             if (day.isToday) {
-                setBackgroundColor(R.id.day_monthly_number_id, textColor)
                 setTextColor(R.id.day_monthly_number_id, textColor.getContrastColor())
+                setViewVisibility(R.id.day_monthly_number_background, View.VISIBLE)
+                setInt(R.id.day_monthly_number_background, "setColorFilter", textColor)
             } else {
                 setTextColor(R.id.day_monthly_number_id, textColor)
+                setViewVisibility(R.id.day_monthly_number_background, View.GONE)
             }
         }
         views.addView(id, newRemoteView)

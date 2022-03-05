@@ -1,5 +1,8 @@
 package com.simplemobiletools.calendar.pro.helpers
 
+import com.simplemobiletools.calendar.pro.activities.EventActivity
+import com.simplemobiletools.calendar.pro.activities.TaskActivity
+
 const val STORED_LOCALLY_ONLY = 0
 const val ROW_COUNT = 6
 const val COLUMN_COUNT = 7
@@ -18,6 +21,7 @@ const val YEAR_TO_OPEN = "year_to_open"
 const val CALDAV = "Caldav"
 const val VIEW_TO_OPEN = "view_to_open"
 const val SHORTCUT_NEW_EVENT = "shortcut_new_event"
+const val SHORTCUT_NEW_TASK = "shortcut_new_task"
 const val REGULAR_EVENT_TYPE_ID = 1L
 const val TIME_ZONE = "time_zone"
 const val CURRENT_TIME_ZONE = "current_time_zone"
@@ -43,6 +47,9 @@ const val ITEM_SECTION_MONTH = 2
 
 const val DEFAULT_START_TIME_NEXT_FULL_HOUR = -1
 const val DEFAULT_START_TIME_CURRENT_TIME = -2
+
+const val TYPE_EVENT = 0
+const val TYPE_TASK = 1
 
 const val DAY = 86400
 const val WEEK = 604800
@@ -104,6 +111,7 @@ const val WEEKLY_VIEW_DAYS = "weekly_view_days"
 const val HIGHLIGHT_WEEKENDS = "highlight_weekends"
 const val HIGHLIGHT_WEEKENDS_COLOR = "highlight_weekends_color"
 const val LAST_USED_EVENT_SPAN = "last_used_event_span"
+const val ALLOW_CREATING_TASKS = "allow_creating_tasks"
 
 const val LAST_UPDATE_TIME = "last_update_time"
 const val LAST_VERSION_CODE = "last_version_code"
@@ -118,10 +126,11 @@ const val REPEAT_ORDER_WEEKDAY_USE_LAST = 2             // i.e. every last sunda
 const val REPEAT_LAST_DAY = 3                           // i.e. every last day of the month
 const val REPEAT_ORDER_WEEKDAY = 4                      // i.e. every 4th sunday, even if a month has 4 sundays only (will stay 4th even at months with 5)
 
-// special event flags
+// special event and task flags
 const val FLAG_ALL_DAY = 1
-const val FLAG_IS_PAST_EVENT = 2
+const val FLAG_IS_IN_PAST = 2
 const val FLAG_MISSING_YEAR = 4
+const val FLAG_TASK_COMPLETED = 8
 
 // constants related to ICS file exporting / importing
 const val BEGIN_CALENDAR = "BEGIN:VCALENDAR"
@@ -199,6 +208,24 @@ const val DELETE_ALL_OCCURRENCES = 2
 const val REMINDER_NOTIFICATION = 0
 const val REMINDER_EMAIL = 1
 
+const val EVENT = "EVENT"
+const val TASK = "TASK"
+const val START_TS = "START_TS"
+const val END_TS = "END_TS"
+const val REMINDER_1_MINUTES = "REMINDER_1_MINUTES"
+const val REMINDER_2_MINUTES = "REMINDER_2_MINUTES"
+const val REMINDER_3_MINUTES = "REMINDER_3_MINUTES"
+const val REMINDER_1_TYPE = "REMINDER_1_TYPE"
+const val REMINDER_2_TYPE = "REMINDER_2_TYPE"
+const val REMINDER_3_TYPE = "REMINDER_3_TYPE"
+const val REPEAT_INTERVAL = "REPEAT_INTERVAL"
+const val REPEAT_LIMIT = "REPEAT_LIMIT"
+const val REPEAT_RULE = "REPEAT_RULE"
+const val ATTENDEES = "ATTENDEES"
+const val AVAILABILITY = "AVAILABILITY"
+const val EVENT_TYPE_ID = "EVENT_TYPE_ID"
+const val EVENT_CALENDAR_ID = "EVENT_CALENDAR_ID"
+
 fun getNowSeconds() = System.currentTimeMillis() / 1000L
 
 fun isWeekend(i: Int, isSundayFirst: Boolean): Boolean {
@@ -207,4 +234,10 @@ fun isWeekend(i: Int, isSundayFirst: Boolean): Boolean {
     } else {
         i == 5 || i == 6 || i == 12 || i == 13
     }
+}
+
+fun getActivityToOpen(isTask: Boolean) = if (isTask) {
+    TaskActivity::class.java
+} else {
+    EventActivity::class.java
 }

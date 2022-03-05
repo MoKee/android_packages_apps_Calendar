@@ -6,13 +6,13 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
-import android.content.pm.ShortcutManager
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Icon
 import android.graphics.drawable.LayerDrawable
 import android.mokee.utils.MoKeeUtils
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.provider.ContactsContract.CommonDataKinds
 import android.provider.ContactsContract.Contacts
 import android.provider.ContactsContract.Data
@@ -95,9 +95,31 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         checkWhatsNewDialog()
         calendar_fab.beVisibleIf(config.storedView != YEARLY_VIEW && config.storedView != WEEKLY_VIEW)
         calendar_fab.setOnClickListener {
-            val lastFragment = currentFragments.last()
-            val allowChangingDay = lastFragment !is DayFragmentsHolder && lastFragment !is MonthDayFragmentsHolder
-            launchNewEventIntent(lastFragment.getNewEventDayCode(), allowChangingDay)
+            if (config.allowCreatingTasks) {
+                if (fab_extended_overlay.isVisible()) {
+                    openNewEvent()
+
+                    Handler().postDelayed({
+                        hideExtendedFab()
+                    }, 300)
+                } else {
+                    showExtendedFab()
+                }
+            } else {
+                openNewEvent()
+            }
+        }
+
+        fab_extended_overlay.setOnClickListener {
+            hideExtendedFab()
+        }
+
+        fab_task_icon.setOnClickListener {
+            openNewTask()
+
+            Handler().postDelayed({
+                hideExtendedFab()
+            }, 300)
         }
 
         storeStateVariables()
@@ -157,6 +179,12 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         storeStateVariables()
         updateWidgets()
         updateTextColors(calendar_coordinator)
+        fab_extended_overlay.background = ColorDrawable(config.backgroundColor.adjustAlpha(0.8f))
+        fab_event_label.setTextColor(config.textColor)
+        fab_task_label.setTextColor(config.textColor)
+
+        fab_task_icon.drawable.applyColorFilter(mStoredAdjustedPrimaryColor.getContrastColor())
+        fab_task_icon.background.applyColorFilter(mStoredAdjustedPrimaryColor)
 
         search_holder.background = ColorDrawable(config.backgroundColor)
         checkSwipeRefreshAvailability()
@@ -199,6 +227,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        if (fab_extended_overlay.isVisible()) {
+            hideExtendedFab()
+        }
+
         menu.apply {
             findItem(R.id.refresh_caldav_calendars).isVisible = config.caldavSync
             findItem(R.id.filter).isVisible = mShouldFilterBeVisible
@@ -208,6 +240,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (fab_extended_overlay.isVisible()) {
+            hideExtendedFab()
+        }
+
         when (item.itemId) {
             R.id.change_view -> showViewDialog()
             R.id.go_to_today -> goToToday()
@@ -230,10 +266,10 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     override fun onBackPressed() {
         swipe_refresh_layout.isRefreshing = false
         checkSwipeRefreshAvailability()
-        if (currentFragments.size > 1) {
-            removeTopFragment()
-        } else {
-            super.onBackPressed()
+        when {
+            fab_extended_overlay.isVisible() -> hideExtendedFab()
+            currentFragments.size > 1 -> removeTopFragment()
+            else -> super.onBackPressed()
         }
     }
 
@@ -348,27 +384,52 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun checkShortcuts() {
         val appIconColor = config.appIconColor
         if (isNougatMR1Plus() && config.lastHandledShortcutColor != appIconColor) {
-            val newEvent = getString(R.string.new_event)
-            val manager = getSystemService(ShortcutManager::class.java)
-            val drawable = resources.getDrawable(R.drawable.shortcut_plus, theme)
-            (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
-            val bmp = drawable.convertToBitmap()
+            val newEvent = getNewEventShortcut(appIconColor)
+            val shortcuts = arrayListOf(newEvent)
 
-            val intent = Intent(this, SplashActivity::class.java)
-            intent.action = SHORTCUT_NEW_EVENT
-            val shortcut = ShortcutInfo.Builder(this, "new_event")
-                .setShortLabel(newEvent)
-                .setLongLabel(newEvent)
-                .setIcon(Icon.createWithBitmap(bmp))
-                .setIntent(intent)
-                .build()
+            if (config.allowCreatingTasks) {
+                shortcuts.add(getNewTaskShortcut(appIconColor))
+            }
 
             try {
-                manager.dynamicShortcuts = Arrays.asList(shortcut)
+                shortcutManager.dynamicShortcuts = shortcuts
                 config.lastHandledShortcutColor = appIconColor
             } catch (ignored: Exception) {
             }
         }
+    }
+
+    @SuppressLint("NewApi")
+    private fun getNewEventShortcut(appIconColor: Int): ShortcutInfo {
+        val newEvent = getString(R.string.new_event)
+        val newEventDrawable = resources.getDrawable(R.drawable.shortcut_event, theme)
+        (newEventDrawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_event_background).applyColorFilter(appIconColor)
+        val newEventBitmap = newEventDrawable.convertToBitmap()
+
+        val newEventIntent = Intent(this, SplashActivity::class.java)
+        newEventIntent.action = SHORTCUT_NEW_EVENT
+        return ShortcutInfo.Builder(this, "new_event")
+            .setShortLabel(newEvent)
+            .setLongLabel(newEvent)
+            .setIcon(Icon.createWithBitmap(newEventBitmap))
+            .setIntent(newEventIntent)
+            .build()
+    }
+
+    @SuppressLint("NewApi")
+    private fun getNewTaskShortcut(appIconColor: Int): ShortcutInfo {
+        val newTask = getString(R.string.new_task)
+        val newTaskDrawable = resources.getDrawable(R.drawable.shortcut_task, theme)
+        (newTaskDrawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_task_background).applyColorFilter(appIconColor)
+        val newTaskBitmap = newTaskDrawable.convertToBitmap()
+        val newTaskIntent = Intent(this, SplashActivity::class.java)
+        newTaskIntent.action = SHORTCUT_NEW_TASK
+        return ShortcutInfo.Builder(this, "new_task")
+            .setShortLabel(newTask)
+            .setLongLabel(newTask)
+            .setIcon(Icon.createWithBitmap(newTaskBitmap))
+            .setIntent(newTaskIntent)
+            .build()
     }
 
     private fun checkIsOpenIntent(): Boolean {
@@ -390,6 +451,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         intent.removeExtra(EVENT_ID)
         intent.removeExtra(EVENT_OCCURRENCE_TS)
         if (eventIdToOpen != 0L && eventOccurrenceToOpen != 0L) {
+            hideKeyboard()
             Intent(this, EventActivity::class.java).apply {
                 putExtra(EVENT_ID, eventIdToOpen)
                 putExtra(EVENT_OCCURRENCE_TS, eventOccurrenceToOpen)
@@ -410,6 +472,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                         val eventId = uri.lastPathSegment
                         val id = eventsDB.getEventIdWithLastImportId("%-$eventId")
                         if (id != null) {
+                            hideKeyboard()
                             Intent(this, EventActivity::class.java).apply {
                                 putExtra(EVENT_ID, id)
                                 startActivity(this)
@@ -542,7 +605,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             if (it) {
                 SetRemindersDialog(this, BIRTHDAY_EVENT) {
                     val reminders = it
-                    val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
+                    val privateCursor = getMyContactsCursor(false, false)
 
                     ensureBackgroundThread {
                         val privateContacts = MyContactsContentProvider.getSimpleContacts(this, privateCursor)
@@ -572,7 +635,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             if (it) {
                 SetRemindersDialog(this, ANNIVERSARY_EVENT) {
                     val reminders = it
-                    val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
+                    val privateCursor = getMyContactsCursor(false, false)
 
                     ensureBackgroundThread {
                         val privateContacts = MyContactsContentProvider.getSimpleContacts(this, privateCursor)
@@ -602,7 +665,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             return
         }
 
-        val privateCursor = getMyContactsCursor(false, false)?.loadInBackground()
+        val privateCursor = getMyContactsCursor(false, false)
 
         ensureBackgroundThread {
             val privateContacts = MyContactsContentProvider.getSimpleContacts(this, privateCursor)
@@ -871,6 +934,63 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         else -> dayCode
     }
 
+    private fun showExtendedFab() {
+        animateFabIcon(false)
+        arrayOf(fab_event_label, fab_extended_overlay, fab_task_icon, fab_task_label).forEach {
+            it.fadeIn()
+        }
+    }
+
+    private fun hideExtendedFab() {
+        animateFabIcon(true)
+        arrayOf(fab_event_label, fab_extended_overlay, fab_task_icon, fab_task_label).forEach {
+            it.fadeOut()
+        }
+    }
+
+    private fun animateFabIcon(showPlus: Boolean) {
+        val newDrawableId = if (showPlus) {
+            R.drawable.ic_plus_vector
+        } else {
+            R.drawable.ic_today_vector
+        }
+        val newDrawable = resources.getColoredDrawableWithColor(newDrawableId, getAdjustedPrimaryColor())
+
+        val duration = 75L
+        var rotation = 90f
+        if (showPlus) {
+            rotation *= -1
+        }
+
+        calendar_fab.animate()
+            .rotationBy(rotation)
+            .setDuration(duration)
+            .withEndAction {
+                calendar_fab.rotation = -rotation
+                calendar_fab.setImageDrawable(newDrawable)
+
+                calendar_fab.animate()
+                    .rotationBy(rotation)
+                    .setDuration(duration)
+                    .start()
+            }
+            .start()
+    }
+
+    private fun openNewEvent() {
+        hideKeyboard()
+        val lastFragment = currentFragments.last()
+        val allowChangingDay = lastFragment !is DayFragmentsHolder && lastFragment !is MonthDayFragmentsHolder
+        launchNewEventIntent(lastFragment.getNewEventDayCode(), allowChangingDay)
+    }
+
+    private fun openNewTask() {
+        hideKeyboard()
+        val lastFragment = currentFragments.last()
+        val allowChangingDay = lastFragment !is DayFragmentsHolder && lastFragment !is MonthDayFragmentsHolder
+        launchNewTaskIntent(lastFragment.getNewEventDayCode(), allowChangingDay)
+    }
+
     fun openMonthFromYearly(dateTime: DateTime) {
         if (currentFragments.last() is MonthFragmentsHolder) {
             return
@@ -934,6 +1054,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private fun tryImportEvents() {
         if (isQPlus()) {
+            hideKeyboard()
             Intent(Intent.ACTION_GET_CONTENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "text/calendar"
@@ -992,6 +1113,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         if (isQPlus()) {
             ExportEventsDialog(this, config.lastExportPath, true) { file, eventTypes ->
                 eventTypesToExport = eventTypes
+                hideKeyboard()
 
                 Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     type = "text/calendar"
@@ -1034,6 +1156,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun launchSettings() {
+        hideKeyboard()
         startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
@@ -1048,7 +1171,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                     val listItems = getEventListItems(events)
                     val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list) {
                         if (it is ListEvent) {
-                            Intent(applicationContext, EventActivity::class.java).apply {
+                            Intent(applicationContext, getActivityToOpen(it.isTask)).apply {
                                 putExtra(EVENT_ID, it.id)
                                 startActivity(this)
                             }

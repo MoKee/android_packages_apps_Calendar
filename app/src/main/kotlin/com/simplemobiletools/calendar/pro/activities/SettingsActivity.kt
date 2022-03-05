@@ -49,6 +49,7 @@ class SettingsActivity : SimpleActivity() {
         setupManageEventTypes()
         setupManageQuickFilterEventTypes()
         setupHourFormat()
+        setupAllowCreatingTasks()
         setupSundayFirst()
         setupHighlightWeekends()
         setupHighlightWeekendsColor()
@@ -210,6 +211,14 @@ class SettingsActivity : SimpleActivity() {
         settings_hour_format_holder.setOnClickListener {
             settings_hour_format.toggle()
             config.use24HourFormat = settings_hour_format.isChecked
+        }
+    }
+
+    private fun setupAllowCreatingTasks() {
+        settings_allow_creating_tasks.isChecked = config.allowCreatingTasks
+        settings_allow_creating_tasks_holder.setOnClickListener {
+            settings_allow_creating_tasks.toggle()
+            config.allowCreatingTasks = settings_allow_creating_tasks.isChecked
         }
     }
 
@@ -854,6 +863,7 @@ class SettingsActivity : SimpleActivity() {
                 put(SUNDAY_FIRST, config.isSundayFirst)
                 put(HIGHLIGHT_WEEKENDS, config.highlightWeekends)
                 put(HIGHLIGHT_WEEKENDS_COLOR, config.highlightWeekendsColor)
+                put(ALLOW_CREATING_TASKS, config.allowCreatingTasks)
             }
 
             exportSettings(configItems)
@@ -951,6 +961,7 @@ class SettingsActivity : SimpleActivity() {
                 SUNDAY_FIRST -> config.isSundayFirst = value.toBoolean()
                 HIGHLIGHT_WEEKENDS -> config.highlightWeekends = value.toBoolean()
                 HIGHLIGHT_WEEKENDS_COLOR -> config.highlightWeekendsColor = value.toInt()
+                ALLOW_CREATING_TASKS -> config.allowCreatingTasks = value.toBoolean()
             }
         }
 
