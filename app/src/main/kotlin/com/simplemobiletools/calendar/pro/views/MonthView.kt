@@ -14,10 +14,8 @@ import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.extensions.config
 import com.simplemobiletools.calendar.pro.extensions.getWHSharedPrefs
 import com.simplemobiletools.calendar.pro.extensions.seconds
-import com.simplemobiletools.calendar.pro.helpers.COLUMN_COUNT
+import com.simplemobiletools.calendar.pro.helpers.*
 import com.simplemobiletools.calendar.pro.helpers.Formatter
-import com.simplemobiletools.calendar.pro.helpers.ROW_COUNT
-import com.simplemobiletools.calendar.pro.helpers.isWeekend
 import com.simplemobiletools.calendar.pro.models.DayMonthly
 import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.calendar.pro.models.MonthViewEvent
@@ -67,8 +65,8 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
 
     init {
-        primaryColor = context.getAdjustedPrimaryColor()
-        textColor = config.textColor
+        primaryColor = context.getProperPrimaryColor()
+        textColor = context.getProperTextColor()
         weekendsTextColor = config.highlightWeekendsColor
         showWeekNumbers = config.showWeekNumbers
         dimPastEvents = config.dimPastEvents
@@ -470,7 +468,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         textColor = if (isPrintVersion) {
             resources.getColor(R.color.theme_light_text_color)
         } else {
-            config.textColor
+            context.getProperTextColor()
         }
 
         textPaint.color = textColor

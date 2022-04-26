@@ -18,17 +18,11 @@ import com.simplemobiletools.calendar.pro.models.Event
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_task.*
-import kotlinx.android.synthetic.main.activity_task.event_type
-import kotlinx.android.synthetic.main.activity_task.event_type_color
-import kotlinx.android.synthetic.main.activity_task.event_type_holder
-import kotlinx.android.synthetic.main.activity_task.event_type_image
 import org.joda.time.DateTime
 import java.util.*
 
 class TaskActivity : SimpleActivity() {
-    private var mDialogTheme = 0
     private var mEventTypeId = REGULAR_EVENT_TYPE_ID
     private lateinit var mTaskDateTime: DateTime
     private lateinit var mTask: Event
@@ -42,7 +36,6 @@ class TaskActivity : SimpleActivity() {
         }
 
         val intent = intent ?: return
-        mDialogTheme = getDialogTheme()
         updateColors()
         val taskId = intent.getLongExtra(EVENT_ID, 0L)
         ensureBackgroundThread {
@@ -231,7 +224,7 @@ class TaskActivity : SimpleActivity() {
     private fun setupDate() {
         hideKeyboard()
         val datepicker = DatePickerDialog(
-            this, mDialogTheme, dateSetListener, mTaskDateTime.year, mTaskDateTime.monthOfYear - 1, mTaskDateTime.dayOfMonth
+            this, getDatePickerDialogTheme(), dateSetListener, mTaskDateTime.year, mTaskDateTime.monthOfYear - 1, mTaskDateTime.dayOfMonth
         )
 
         datepicker.datePicker.firstDayOfWeek = if (config.isSundayFirst) Calendar.SUNDAY else Calendar.MONDAY
@@ -241,7 +234,7 @@ class TaskActivity : SimpleActivity() {
     private fun setupTime() {
         hideKeyboard()
         TimePickerDialog(
-            this, mDialogTheme, timeSetListener, mTaskDateTime.hourOfDay, mTaskDateTime.minuteOfHour, config.use24HourFormat
+            this, getTimePickerDialogTheme(), timeSetListener, mTaskDateTime.hourOfDay, mTaskDateTime.minuteOfHour, config.use24HourFormat
         ).show()
     }
 
@@ -282,12 +275,12 @@ class TaskActivity : SimpleActivity() {
         if (mTask.isTaskCompleted()) {
             toggle_mark_complete.background = ContextCompat.getDrawable(this, R.drawable.button_background_stroke)
             toggle_mark_complete.setText(R.string.mark_incomplete)
-            toggle_mark_complete.setTextColor(config.textColor)
+            toggle_mark_complete.setTextColor(getProperTextColor())
         } else {
             val markCompleteBgColor = if (isWhiteTheme()) {
                 Color.WHITE
             } else {
-                getAdjustedPrimaryColor()
+                getProperPrimaryColor()
             }
             toggle_mark_complete.setTextColor(markCompleteBgColor.getContrastColor())
         }
@@ -321,7 +314,7 @@ class TaskActivity : SimpleActivity() {
             if (eventType != null) {
                 runOnUiThread {
                     event_type.text = eventType.title
-                    event_type_color.setFillWithStroke(eventType.color, config.backgroundColor)
+                    event_type_color.setFillWithStroke(eventType.color, getProperBackgroundColor())
                 }
             }
         }
@@ -329,7 +322,7 @@ class TaskActivity : SimpleActivity() {
 
     private fun updateColors() {
         updateTextColors(task_scrollview)
-        task_time_image.applyColorFilter(config.textColor)
-        event_type_image.applyColorFilter(config.textColor)
+        task_time_image.applyColorFilter(getProperTextColor())
+        event_type_image.applyColorFilter(getProperTextColor())
     }
 }

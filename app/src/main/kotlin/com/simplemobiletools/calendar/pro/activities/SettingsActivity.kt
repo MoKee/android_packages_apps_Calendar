@@ -2,11 +2,13 @@ package com.simplemobiletools.calendar.pro.activities
 
 import android.app.Activity
 import android.app.TimePickerDialog
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.media.AudioManager
 import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import com.simplemobiletools.calendar.pro.R
 import com.simplemobiletools.calendar.pro.dialogs.SelectCalendarsDialog
 import com.simplemobiletools.calendar.pro.dialogs.SelectEventTypeDialog
@@ -20,7 +22,6 @@ import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.AlarmSound
 import com.simplemobiletools.commons.models.RadioItem
 import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.dialog_event_type.view.*
 import org.joda.time.DateTime
 import java.io.File
 import java.io.InputStream
@@ -30,12 +31,12 @@ class SettingsActivity : SimpleActivity() {
     private val GET_RINGTONE_URI = 1
     private val PICK_IMPORT_SOURCE_INTENT = 2
 
-    private var mStoredAdjustedPrimaryColor = 0
+    private var mStoredPrimaryColor = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
+        mStoredPrimaryColor = getProperPrimaryColor()
     }
 
     override fun onResume() {
@@ -90,7 +91,6 @@ class SettingsActivity : SimpleActivity() {
         invalidateOptionsMenu()
 
         arrayOf(
-            settings_color_customization_label,
             settings_general_settings_label,
             settings_reminders_label,
             settings_caldav_label,
@@ -102,7 +102,7 @@ class SettingsActivity : SimpleActivity() {
             settings_events_label,
             settings_migrating_label
         ).forEach {
-            it.setTextColor(getAdjustedPrimaryColor())
+            it.setTextColor(getProperPrimaryColor())
         }
 
         arrayOf(
@@ -117,13 +117,13 @@ class SettingsActivity : SimpleActivity() {
             settings_events_holder,
             settings_migrating_holder
         ).forEach {
-            it.background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+            it.background.applyColorFilter(getProperBackgroundColor().getContrastColor())
         }
     }
 
     override fun onPause() {
         super.onPause()
-        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
+        mStoredPrimaryColor = getProperPrimaryColor()
     }
 
     override fun onStop() {
@@ -151,12 +151,12 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun checkPrimaryColor() {
-        if (getAdjustedPrimaryColor() != mStoredAdjustedPrimaryColor) {
+        if (getProperPrimaryColor() != mStoredPrimaryColor) {
             ensureBackgroundThread {
                 val eventTypes = eventsHelper.getEventTypesSync()
                 if (eventTypes.filter { it.caldavCalendarId == 0 }.size == 1) {
                     val eventType = eventTypes.first { it.caldavCalendarId == 0 }
-                    eventType.color = getAdjustedPrimaryColor()
+                    eventType.color = getProperPrimaryColor()
                     eventsHelper.insertOrUpdateEventTypeSync(eventType)
                 }
             }
@@ -365,12 +365,12 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupHighlightWeekendsColor() {
-        settings_highlight_weekends_color.setFillWithStroke(config.highlightWeekendsColor, config.backgroundColor)
+        settings_highlight_weekends_color.setFillWithStroke(config.highlightWeekendsColor, getProperBackgroundColor())
         settings_highlight_weekends_color_holder.setOnClickListener {
             ColorPickerDialog(this, config.highlightWeekendsColor) { wasPositivePressed, color ->
                 if (wasPositivePressed) {
                     config.highlightWeekendsColor = color
-                    settings_highlight_weekends_color.setFillWithStroke(color, config.backgroundColor)
+                    settings_highlight_weekends_color.setFillWithStroke(color, getProperBackgroundColor())
                 }
             }
         }
@@ -746,7 +746,7 @@ class SettingsActivity : SimpleActivity() {
                     val currentDateTime = DateTime.now()
                     TimePickerDialog(
                         this,
-                        getDialogTheme(),
+                        getTimePickerDialogTheme(),
                         timeListener,
                         currentDateTime.hourOfDay,
                         currentDateTime.minuteOfHour,
@@ -876,7 +876,14 @@ class SettingsActivity : SimpleActivity() {
                 Intent(Intent.ACTION_GET_CONTENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = "text/plain"
-                    startActivityForResult(this, PICK_IMPORT_SOURCE_INTENT)
+
+                    try {
+                        startActivityForResult(this, PICK_IMPORT_SOURCE_INTENT)
+                    } catch (e: ActivityNotFoundException) {
+                        toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                    } catch (e: Exception) {
+                        showErrorToast(e)
+                    }
                 }
             } else {
                 handlePermission(PERMISSION_READ_STORAGE) {

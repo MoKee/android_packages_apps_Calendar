@@ -3,6 +3,7 @@ package com.simplemobiletools.calendar.pro.activities
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.SearchManager
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
@@ -72,7 +73,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     private var mStoredTextColor = 0
     private var mStoredBackgroundColor = 0
-    private var mStoredAdjustedPrimaryColor = 0
+    private var mStoredPrimaryColor = 0
     private var mStoredDayCode = ""
     private var mStoredIsSundayFirst = false
     private var mStoredMidnightSpan = true
@@ -153,7 +154,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
 
     override fun onResume() {
         super.onResume()
-        if (mStoredTextColor != config.textColor || mStoredBackgroundColor != config.backgroundColor || mStoredAdjustedPrimaryColor != getAdjustedPrimaryColor()
+        if (mStoredTextColor != getProperTextColor() || mStoredBackgroundColor != getProperBackgroundColor() || mStoredPrimaryColor != getProperPrimaryColor()
             || mStoredDayCode != Formatter.getTodayCode() || mStoredDimPastEvents != config.dimPastEvents || mStoredHighlightWeekends != config.highlightWeekends
             || mStoredHighlightWeekendsColor != config.highlightWeekendsColor
         ) {
@@ -178,14 +179,14 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         storeStateVariables()
         updateWidgets()
         updateTextColors(calendar_coordinator)
-        fab_extended_overlay.background = ColorDrawable(config.backgroundColor.adjustAlpha(0.8f))
-        fab_event_label.setTextColor(config.textColor)
-        fab_task_label.setTextColor(config.textColor)
+        fab_extended_overlay.background = ColorDrawable(getProperBackgroundColor().adjustAlpha(0.8f))
+        fab_event_label.setTextColor(getProperTextColor())
+        fab_task_label.setTextColor(getProperTextColor())
 
-        fab_task_icon.drawable.applyColorFilter(mStoredAdjustedPrimaryColor.getContrastColor())
-        fab_task_icon.background.applyColorFilter(mStoredAdjustedPrimaryColor)
+        fab_task_icon.drawable.applyColorFilter(mStoredPrimaryColor.getContrastColor())
+        fab_task_icon.background.applyColorFilter(mStoredPrimaryColor)
 
-        search_holder.background = ColorDrawable(config.backgroundColor)
+        search_holder.background = ColorDrawable(getProperBackgroundColor())
         checkSwipeRefreshAvailability()
         checkShortcuts()
 
@@ -290,10 +291,11 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun storeStateVariables() {
+        mStoredTextColor = getProperTextColor()
+        mStoredPrimaryColor = getProperPrimaryColor()
+        mStoredBackgroundColor = getProperBackgroundColor()
         config.apply {
             mStoredIsSundayFirst = isSundayFirst
-            mStoredTextColor = textColor
-            mStoredBackgroundColor = backgroundColor
             mStoredUse24HourFormat = use24HourFormat
             mStoredDimPastEvents = dimPastEvents
             mStoredHighlightWeekends = highlightWeekends
@@ -301,7 +303,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             mStoredMidnightSpan = showMidnightSpanningEventsAtTop
             mStoredStartWeekWithCurrentDay = startWeekWithCurrentDay
         }
-        mStoredAdjustedPrimaryColor = getAdjustedPrimaryColor()
         mStoredDayCode = Formatter.getTodayCode()
     }
 
@@ -953,7 +954,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         } else {
             R.drawable.ic_today_vector
         }
-        val newDrawable = resources.getColoredDrawableWithColor(newDrawableId, getAdjustedPrimaryColor())
+        val newDrawable = resources.getColoredDrawableWithColor(newDrawableId, getProperPrimaryColor())
 
         val duration = 75L
         var rotation = 90f
@@ -1057,7 +1058,14 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             Intent(Intent.ACTION_GET_CONTENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "text/calendar"
-                startActivityForResult(this, PICK_IMPORT_SOURCE_INTENT)
+
+                try {
+                    startActivityForResult(this, PICK_IMPORT_SOURCE_INTENT)
+                } catch (e: ActivityNotFoundException) {
+                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                } catch (e: Exception) {
+                    showErrorToast(e)
+                }
             }
         } else {
             handlePermission(PERMISSION_READ_STORAGE) {
@@ -1119,7 +1127,13 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                     putExtra(Intent.EXTRA_TITLE, file.name)
                     addCategory(Intent.CATEGORY_OPENABLE)
 
-                    startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
+                    try {
+                        startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
+                    } catch (e: ActivityNotFoundException) {
+                        toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                    } catch (e: Exception) {
+                        showErrorToast(e)
+                    }
                 }
             }
         } else {
@@ -1169,6 +1183,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
                     search_placeholder.beVisibleIf(events.isEmpty())
                     val listItems = getEventListItems(events)
                     val eventsAdapter = EventListAdapter(this, listItems, true, this, search_results_list) {
+                        hideKeyboard()
                         if (it is ListEvent) {
                             Intent(applicationContext, getActivityToOpen(it.isTask)).apply {
                                 putExtra(EVENT_ID, it.id)

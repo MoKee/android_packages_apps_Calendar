@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -33,6 +34,7 @@
     <application
         android:name=".App"
         android:allowBackup="true"
+        android:appCategory="productivity"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_launcher_name"
         android:supportsRtl="true"
@@ -45,7 +47,9 @@
 
         <activity
             android:name=".activities.MainActivity"
+            android:exported="true"
             android:launchMode="singleTask">
+
             <meta-data
                 android:name="android.app.default_searchable"
                 android:resource="@xml/searchable" />
@@ -83,8 +87,10 @@
 
         <activity
             android:name=".activities.WidgetMonthlyConfigureActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MyWidgetConfigTheme">
+
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
@@ -92,6 +98,7 @@
 
         <activity
             android:name=".activities.WidgetListConfigureActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MyWidgetConfigTheme">
             <intent-filter>
@@ -101,6 +108,7 @@
 
         <activity
             android:name=".activities.WidgetDateConfigureActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MyWidgetConfigTheme">
             <intent-filter>
@@ -110,18 +118,21 @@
 
         <activity
             android:name="com.simplemobiletools.commons.activities.AboutActivity"
+            android:exported="false"
             android:label="@string/about"
             android:parentActivityName=".activities.MainActivity" />
 
         <activity
             android:name="com.simplemobiletools.commons.activities.CustomizationActivity"
+            android:exported="false"
             android:label="@string/customize_colors"
             android:parentActivityName=".activities.SettingsActivity" />
 
         <activity
             android:name=".activities.EventActivity"
-            android:launchMode="singleTask"
+            android:exported="true"
             android:label="@string/new_event"
+            android:launchMode="singleTask"
             android:parentActivityName=".activities.MainActivity">
 
             <intent-filter>
@@ -143,12 +154,14 @@
 
         <activity
             android:name=".activities.TaskActivity"
+            android:exported="false"
             android:label="@string/new_task"
             android:launchMode="singleTask"
             android:parentActivityName=".activities.MainActivity" />
 
         <activity
             android:name=".activities.SelectTimeZoneActivity"
+            android:exported="false"
             android:parentActivityName=".activities.EventActivity">
             <meta-data
                 android:name="android.app.default_searchable"
@@ -161,20 +174,30 @@
 
         <activity
             android:name=".activities.SettingsActivity"
+            android:exported="true"
             android:label="@string/settings"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName=".activities.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activities.ManageEventTypesActivity"
+            android:exported="false"
             android:label="@string/event_types"
             android:parentActivityName=".activities.SettingsActivity" />
 
         <activity
             android:name=".activities.SnoozeReminderActivity"
+            android:exported="false"
             android:theme="@style/Theme.Transparent" />
 
         <receiver
             android:name=".helpers.MyWidgetMonthlyProvider"
+            android:exported="true"
             android:icon="@drawable/img_widget_monthly_preview"
             android:label="@string/widget_monthly">
             <intent-filter>
@@ -188,6 +211,7 @@
 
         <receiver
             android:name=".helpers.MyWidgetListProvider"
+            android:exported="true"
             android:icon="@drawable/img_widget_list_preview"
             android:label="@string/widget_list">
             <intent-filter>
@@ -201,6 +225,7 @@
 
         <receiver
             android:name=".helpers.MyWidgetDateProvider"
+            android:exported="true"
             android:icon="@drawable/img_widget_date_preview"
             android:label="@string/widget_todays_date">
             <intent-filter>
@@ -214,10 +239,12 @@
 
         <service
             android:name=".services.WidgetService"
+            android:exported="true"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <service
             android:name=".services.WidgetServiceEmpty"
+            android:exported="true"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <service android:name=".services.SnoozeService" />
@@ -227,11 +254,18 @@
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <receiver android:name=".receivers.NotificationReceiver" />
+        <receiver
+            android:name=".receivers.NotificationReceiver"
+            android:exported="false" />
 
-        <receiver android:name=".receivers.CalDAVSyncReceiver" />
+        <receiver
+            android:name=".receivers.CalDAVSyncReceiver"
+            android:exported="false" />
 
-        <receiver android:name=".receivers.BootCompletedReceiver">
+        <receiver
+            android:name=".receivers.BootCompletedReceiver"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -252,6 +286,7 @@
         <activity-alias
             android:name=".activities.SplashActivity.Primary"
             android:enabled="true"
+            android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:targetActivity=".activities.SplashActivity">
 

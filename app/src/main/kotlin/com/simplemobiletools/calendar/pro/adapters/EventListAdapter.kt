@@ -9,7 +9,6 @@ import com.simplemobiletools.calendar.pro.activities.SimpleActivity
 import com.simplemobiletools.calendar.pro.dialogs.DeleteEventDialog
 import com.simplemobiletools.calendar.pro.extensions.*
 import com.simplemobiletools.calendar.pro.helpers.*
-import com.simplemobiletools.calendar.pro.helpers.Formatter
 import com.simplemobiletools.calendar.pro.models.ListEvent
 import com.simplemobiletools.calendar.pro.models.ListItem
 import com.simplemobiletools.calendar.pro.models.ListSectionDay
@@ -18,13 +17,13 @@ import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.adjustAlpha
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.getProperTextColor
 import com.simplemobiletools.commons.helpers.MEDIUM_ALPHA
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.commons.views.MyRecyclerView
 import kotlinx.android.synthetic.main.event_list_item.view.*
 import kotlinx.android.synthetic.main.event_list_section_day.view.*
-import java.util.*
 
 class EventListAdapter(
     activity: SimpleActivity, var listItems: ArrayList<ListItem>, val allowLongClick: Boolean, val listener: RefreshRecyclerViewListener?,
@@ -123,7 +122,7 @@ class EventListAdapter(
         textColor = if (isPrintVersion) {
             resources.getColor(R.color.theme_light_text_color)
         } else {
-            baseConfig.textColor
+            activity.getProperTextColor()
         }
         notifyDataSetChanged()
     }
@@ -154,14 +153,14 @@ class EventListAdapter(
             var newTextColor = textColor
             if (listEvent.isAllDay || listEvent.startTS <= now && listEvent.endTS <= now) {
                 if (listEvent.isAllDay && Formatter.getDayCodeFromTS(listEvent.startTS) == Formatter.getDayCodeFromTS(now) && !isPrintVersion) {
-                    newTextColor = adjustedPrimaryColor
+                    newTextColor = properPrimaryColor
                 }
 
                 if (dimPastEvents && listEvent.isPastEvent && !isPrintVersion) {
                     newTextColor = newTextColor.adjustAlpha(MEDIUM_ALPHA)
                 }
             } else if (listEvent.startTS <= now && listEvent.endTS >= now && !isPrintVersion) {
-                newTextColor = adjustedPrimaryColor
+                newTextColor = properPrimaryColor
             }
 
             event_item_time.setTextColor(newTextColor)
@@ -182,7 +181,7 @@ class EventListAdapter(
     private fun setupListSectionDay(view: View, listSectionDay: ListSectionDay) {
         view.event_section_title.apply {
             text = listSectionDay.title
-            val dayColor = if (listSectionDay.isToday) adjustedPrimaryColor else textColor
+            val dayColor = if (listSectionDay.isToday) properPrimaryColor else textColor
             setTextColor(dayColor)
         }
     }
@@ -190,7 +189,7 @@ class EventListAdapter(
     private fun setupListSectionMonth(view: View, listSectionMonth: ListSectionMonth) {
         view.event_section_title.apply {
             text = listSectionMonth.title
-            setTextColor(adjustedPrimaryColor)
+            setTextColor(properPrimaryColor)
         }
     }
 

@@ -14,12 +14,9 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.CalendarContract.Alarm
 import android.text.format.DateUtils
-import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.AlarmManagerCompat
@@ -43,7 +40,6 @@ import com.simplemobiletools.calendar.pro.services.SnoozeService
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import kotlinx.android.synthetic.main.day_monthly_event_view.view.*
-import kotlinx.android.synthetic.main.day_monthly_number_view.view.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
@@ -179,12 +175,12 @@ fun Context.getNotificationIntent(event: Event): PendingIntent {
     val intent = Intent(this, NotificationReceiver::class.java)
     intent.putExtra(EVENT_ID, event.id)
     intent.putExtra(EVENT_OCCURRENCE_TS, event.startTS)
-    return PendingIntent.getBroadcast(this, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    return PendingIntent.getBroadcast(this, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 }
 
 fun Context.cancelPendingIntent(id: Long) {
     val intent = Intent(this, NotificationReceiver::class.java)
-    PendingIntent.getBroadcast(this, id.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT).cancel()
+    PendingIntent.getBroadcast(this, id.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE).cancel()
 }
 
 fun Context.getRepetitionText(seconds: Int) = when (seconds) {
@@ -345,7 +341,7 @@ private fun getPendingIntent(context: Context, event: Event): PendingIntent {
     val intent = Intent(context, EventActivity::class.java)
     intent.putExtra(EVENT_ID, event.id)
     intent.putExtra(EVENT_OCCURRENCE_TS, event.startTS)
-    return PendingIntent.getActivity(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    return PendingIntent.getActivity(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 }
 
 private fun getSnoozePendingIntent(context: Context, event: Event): PendingIntent {
@@ -353,9 +349,9 @@ private fun getSnoozePendingIntent(context: Context, event: Event): PendingInten
     val intent = Intent(context, snoozeClass).setAction("Snooze")
     intent.putExtra(EVENT_ID, event.id)
     return if (context.config.useSameSnooze) {
-        PendingIntent.getService(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        PendingIntent.getService(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
     } else {
-        PendingIntent.getActivity(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        PendingIntent.getActivity(context, event.id!!.toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
     }
 }
 
@@ -426,7 +422,12 @@ fun Context.recheckCalDAVCalendars(scheduleNextCalDAVSync: Boolean, callback: ()
 
 fun Context.scheduleCalDAVSync(activate: Boolean) {
     val syncIntent = Intent(applicationContext, CalDAVSyncReceiver::class.java)
-    val pendingIntent = PendingIntent.getBroadcast(applicationContext, SCHEDULE_CALDAV_REQUEST_CODE, syncIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+    val pendingIntent = PendingIntent.getBroadcast(
+        applicationContext,
+        SCHEDULE_CALDAV_REQUEST_CODE,
+        syncIntent,
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+    )
     val alarm = getSystemService(Context.ALARM_SERVICE) as AlarmManager
     alarm.cancel(pendingIntent)
 
@@ -438,42 +439,6 @@ fun Context.scheduleCalDAVSync(activate: Boolean) {
         }
     }
 }
-
-fun Context.addDayNumber(rawTextColor: Int, day: DayMonthly, linearLayout: LinearLayout, dayLabelHeight: Int, callback: (Int) -> Unit) {
-    var textColor = rawTextColor
-    if (!day.isThisMonth)
-        textColor = textColor.adjustAlpha(LOWER_ALPHA)
-
-    (View.inflate(applicationContext, R.layout.day_monthly_number_view, null) as RelativeLayout).apply {
-        layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        linearLayout.addView(this)
-
-        day_monthly_number_id.apply {
-            setTextColor(textColor)
-            text = day.value.toString()
-            gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
-
-            if (day.isToday) {
-                val primaryColor = getAdjustedPrimaryColor()
-                setTextColor(primaryColor.getContrastColor())
-                if (dayLabelHeight == 0) {
-                    onGlobalLayout {
-                        val height = this@apply.height
-                        if (height > 0) {
-                            callback(height)
-                            addTodaysBackground(this, resources, height, primaryColor)
-                        }
-                    }
-                } else {
-                    addTodaysBackground(this, resources, dayLabelHeight, primaryColor)
-                }
-            }
-        }
-    }
-}
-
-private fun addTodaysBackground(textView: TextView, res: Resources, dayLabelHeight: Int, primaryColor: Int) =
-    textView.addResizedBackgroundDrawable(res, dayLabelHeight, primaryColor, R.drawable.ic_circle_vector)
 
 fun Context.addDayEvents(day: DayMonthly, linearLayout: LinearLayout, res: Resources, dividerMargin: Int) {
     val eventLayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
