@@ -35,8 +35,9 @@ import kotlinx.android.synthetic.main.week_event_marker.view.*
 import org.joda.time.DateTime
 import org.joda.time.Days
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.LinkedHashMap
+import kotlin.math.max
+import kotlin.math.min
+import kotlin.math.roundToInt
 
 class WeekFragment : Fragment(), WeeklyCalendar {
     private val WEEKLY_EVENT_ID_LABEL = "event_id_label"
@@ -63,6 +64,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     private var wasFragmentInit = false
     private var wasExtraHeightAdded = false
     private var dimPastEvents = true
+    private var dimCompletedTasks = true
     private var highlightWeekends = false
     private var wasScaled = false
     private var isPrintVersion = false
@@ -91,6 +93,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         defaultRowHeight = res.getDimension(R.dimen.weekly_view_row_height)
         weekTimestamp = requireArguments().getLong(WEEK_START_TIMESTAMP)
         dimPastEvents = config.dimPastEvents
+        dimCompletedTasks = config.dimCompletedTasks
         highlightWeekends = config.highlightWeekends
         primaryColor = requireContext().getProperPrimaryColor()
         allDayRows.add(HashSet())
@@ -132,7 +135,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             }
 
             val initialScrollY = (rowHeight * config.startWeeklyAt).toInt()
-            updateScrollY(Math.max(listener?.getCurrScrollY() ?: 0, initialScrollY))
+            updateScrollY(max(listener?.getCurrScrollY() ?: 0, initialScrollY))
         }
 
         wasFragmentInit = true
@@ -142,8 +145,8 @@ class WeekFragment : Fragment(), WeeklyCalendar {
     override fun onResume() {
         super.onResume()
         requireContext().eventsHelper.getEventTypes(requireActivity(), false) {
-            it.map {
-                eventTypeColors.put(it.id!!, it.color)
+            it.map { eventType ->
+                eventTypeColors.put(eventType.id!!, eventType.color)
             }
         }
 
@@ -268,7 +271,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                                 val eventId = dragEvent.clipData.getItemAt(0).text.toString().toLong()
                                 val startHour = (dragEvent.y / rowHeight).toInt()
                                 ensureBackgroundThread {
-                                    val event = context?.eventsDB?.getEventWithId(eventId)
+                                    val event = context?.eventsDB?.getEventOrTaskWithId(eventId)
                                     event?.let {
                                         val currentStartTime = Formatter.getDateTimeFromTS(it.startTS)
                                         val startTime = Formatter.getDateTimeFromTS(weekTimestamp + index * DAY_SECONDS)
@@ -361,7 +364,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                 prevScaleSpanY = detector.currentSpanY
 
                 val wantedFactor = config.weeklyViewItemHeightMultiplier - (SCALE_RANGE * percent)
-                var newFactor = Math.max(Math.min(wantedFactor, MAX_SCALE_FACTOR), MIN_SCALE_FACTOR)
+                var newFactor = max(min(wantedFactor, MAX_SCALE_FACTOR), MIN_SCALE_FACTOR)
                 if (scrollView.height > defaultRowHeight * newFactor * 24) {
                     newFactor = scrollView.height / 24f / defaultRowHeight
                 }
@@ -422,7 +425,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         rowHeight = context?.getWeeklyViewItemHeight() ?: return
 
         val oneDp = res.getDimension(R.dimen.one_dp).toInt()
-        val fullHeight = Math.max(rowHeight.toInt() * 24, scrollView.height + oneDp)
+        val fullHeight = max(rowHeight.toInt() * 24, scrollView.height + oneDp)
         scrollView.layoutParams.height = fullHeight - oneDp
         mView.week_horizontal_grid_holder.layoutParams.height = fullHeight
         mView.week_events_columns_holder.layoutParams.height = fullHeight
@@ -440,7 +443,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
 
         val minuteHeight = rowHeight / 60
         val minimalHeight = res.getDimension(R.dimen.weekly_view_minimal_event_height).toInt()
-        val density = Math.round(res.displayMetrics.density)
+        val density = res.displayMetrics.density.roundToInt()
 
         for (event in events) {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
@@ -491,9 +494,9 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                 }
 
                 eventsCollisionChecked.add(eventId)
-                val eventWeeklyViewsToCheck = eventDayList.filter { !eventsCollisionChecked.contains(it.key) }
+                val eventWeeklyViewsToCheck = eventDayList.filterNot { eventsCollisionChecked.contains(it.key) }
                 for ((toCheckId, eventWeeklyViewToCheck) in eventWeeklyViewsToCheck) {
-                    val areTouching = eventWeeklyView.range.touch(eventWeeklyViewToCheck.range)
+                    val areTouching = eventWeeklyView.range.intersects(eventWeeklyViewToCheck.range)
                     val doHaveCommonMinutes = if (areTouching) {
                         eventWeeklyView.range.upper > eventWeeklyViewToCheck.range.lower || (eventWeeklyView.range.lower == eventWeeklyView.range.upper &&
                             eventWeeklyView.range.upper == eventWeeklyViewToCheck.range.lower)
@@ -507,7 +510,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                             val slotRange = Array(eventWeeklyView.slot_max) { it + 1 }
                             val collisionEventWeeklyViews = eventDayList.filter { eventWeeklyView.collisions.contains(it.key) }
                             for ((_, collisionEventWeeklyView) in collisionEventWeeklyViews) {
-                                if (collisionEventWeeklyView.range.touch(eventWeeklyViewToCheck.range)) {
+                                if (collisionEventWeeklyView.range.intersects(eventWeeklyViewToCheck.range)) {
                                     slotRange[collisionEventWeeklyView.slot - 1] = nextSlot
                                 }
                             }
@@ -552,7 +555,14 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                         var backgroundColor = eventTypeColors.get(event.eventType, primaryColor)
                         var textColor = backgroundColor.getContrastColor()
                         val currentEventWeeklyView = eventTimeRanges[currentDayCode]!!.get(event.id)
-                        if (dimPastEvents && event.isPastEvent && !isPrintVersion) {
+
+                        val adjustAlpha = if (event.isTask()) {
+                            dimCompletedTasks && event.isTaskCompleted()
+                        } else {
+                            dimPastEvents && event.isPastEvent && !isPrintVersion
+                        }
+
+                        if (adjustAlpha) {
                             backgroundColor = backgroundColor.adjustAlpha(MEDIUM_ALPHA)
                             textColor = textColor.adjustAlpha(HIGHER_ALPHA)
                         }
@@ -686,10 +696,18 @@ class WeekFragment : Fragment(), WeeklyCalendar {
         (inflater.inflate(R.layout.week_all_day_event_marker, null, false) as ConstraintLayout).apply {
             var backgroundColor = eventTypeColors.get(event.eventType, primaryColor)
             var textColor = backgroundColor.getContrastColor()
-            if (dimPastEvents && event.isPastEvent && !isPrintVersion) {
+
+            val adjustAlpha = if (event.isTask()) {
+                dimCompletedTasks && event.isTaskCompleted()
+            } else {
+                dimPastEvents && event.isPastEvent && !isPrintVersion
+            }
+
+            if (adjustAlpha) {
                 backgroundColor = backgroundColor.adjustAlpha(LOWER_ALPHA)
                 textColor = textColor.adjustAlpha(HIGHER_ALPHA)
             }
+
             background = ColorDrawable(backgroundColor)
 
             week_event_label.apply {
@@ -708,8 +726,8 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             val startDateTime = Formatter.getDateTimeFromTS(event.startTS)
             val endDateTime = Formatter.getDateTimeFromTS(event.endTS)
 
-            val minTS = Math.max(startDateTime.seconds(), weekTimestamp)
-            val maxTS = Math.min(endDateTime.seconds(), weekTimestamp + 2 * WEEK_SECONDS)
+            val minTS = max(startDateTime.seconds(), weekTimestamp)
+            val maxTS = min(endDateTime.seconds(), weekTimestamp + 2 * WEEK_SECONDS)
 
             // fix a visual glitch with all-day events or events lasting multiple days starting at midnight on monday, being shown the previous week too
             if (minTS == maxTS && (minTS - weekTimestamp == WEEK_SECONDS.toLong())) {
@@ -720,34 +738,35 @@ class WeekFragment : Fragment(), WeeklyCalendar {
             val numDays = Days.daysBetween(Formatter.getDateTimeFromTS(minTS).toLocalDate(), Formatter.getDateTimeFromTS(maxTS).toLocalDate()).days
             val daysCnt = if (numDays == 1 && isStartTimeDay) 0 else numDays
             val startDateTimeInWeek = Formatter.getDateTimeFromTS(minTS)
-            val firstDayIndex = (startDateTimeInWeek.dayOfWeek - if (config.isSundayFirst) 0 else 1) % 7
+            val firstDayIndex = startDateTimeInWeek.dayOfMonth // indices must be unique for the visible range (2 weeks)
+            val lastDayIndex = firstDayIndex + daysCnt
+            val dayIndices = firstDayIndex..lastDayIndex
+            val isSameDayEvent = firstDayIndex == lastDayIndex
 
             var doesEventFit: Boolean
-            val cnt = allDayRows.size - 1
             var wasEventHandled = false
             var drawAtLine = 0
-            for (index in 0..cnt) {
-                doesEventFit = true
-                drawAtLine = index
-                val row = allDayRows[index]
-                for (i in firstDayIndex..firstDayIndex + daysCnt) {
-                    if (row.contains(i)) {
-                        doesEventFit = false
-                    }
-                }
 
-                for (dayIndex in firstDayIndex..firstDayIndex + daysCnt) {
-                    if (doesEventFit) {
-                        row.add(dayIndex)
-                        wasEventHandled = true
-                    } else if (index == cnt) {
-                        if (allDayRows.size == index + 1) {
+            for (index in allDayRows.indices) {
+                drawAtLine = index
+
+                val row = allDayRows[index]
+
+                doesEventFit = dayIndices.all { !row.contains(it) }
+
+                if (doesEventFit && isSameDayEvent) {
+                    row.add(firstDayIndex)
+                    wasEventHandled = true
+                } else {
+                    // handle events spanning midnight
+                    for (dayIndex in dayIndices) {
+                        if (index == allDayRows.lastIndex) {
                             allDayRows.add(HashSet())
                             addNewLine()
                             drawAtLine++
                             wasEventHandled = true
+                            allDayRows.last().add(dayIndex)
                         }
-                        allDayRows.last().add(dayIndex)
                     }
                 }
 
@@ -758,7 +777,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
 
             val dayCodeStart = Formatter.getDayCodeFromDateTime(startDateTime).toInt()
             val dayCodeEnd = Formatter.getDayCodeFromDateTime(endDateTime).toInt()
-            val dayOfWeek = dayColumns.indexOfFirst { it.tag.toInt() == dayCodeStart || (it.tag.toInt() > dayCodeStart && it.tag.toInt() <= dayCodeEnd) }
+            val dayOfWeek = dayColumns.indexOfFirst { it.tag.toInt() == dayCodeStart || it.tag.toInt() in (dayCodeStart + 1)..dayCodeEnd }
             if (dayOfWeek == -1) {
                 return
             }

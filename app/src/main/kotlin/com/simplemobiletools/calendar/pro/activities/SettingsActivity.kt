@@ -83,6 +83,7 @@ class SettingsActivity : SimpleActivity() {
         setupFontSize()
         setupViewToOpenFromListWidget()
         setupDimEvents()
+        setupDimCompletedTasks()
         setupAllowChangingTimeZones()
         updateTextColors(settings_holder)
         checkPrimaryColor()
@@ -100,6 +101,7 @@ class SettingsActivity : SimpleActivity() {
             settings_event_lists_label,
             settings_widgets_label,
             settings_events_label,
+            settings_tasks_label,
             settings_migrating_label
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
@@ -115,6 +117,7 @@ class SettingsActivity : SimpleActivity() {
             settings_event_lists_holder,
             settings_widgets_holder,
             settings_events_holder,
+            settings_tasks_holder,
             settings_migrating_holder
         ).forEach {
             it.background.applyColorFilter(getProperBackgroundColor().getContrastColor())
@@ -307,12 +310,12 @@ class SettingsActivity : SimpleActivity() {
 
             ensureBackgroundThread {
                 if (newCalendarIds.isNotEmpty()) {
-                    val existingEventTypeNames = eventsHelper.getEventTypesSync().map { it.getDisplayTitle().toLowerCase() } as ArrayList<String>
+                    val existingEventTypeNames = eventsHelper.getEventTypesSync().map { it.getDisplayTitle().lowercase(Locale.getDefault()) } as ArrayList<String>
                     getSyncedCalDAVCalendars().forEach {
                         val calendarTitle = it.getFullTitle()
-                        if (!existingEventTypeNames.contains(calendarTitle.toLowerCase())) {
+                        if (!existingEventTypeNames.contains(calendarTitle.lowercase(Locale.getDefault()))) {
                             val eventType = EventType(null, it.displayName, it.color, it.id, it.displayName, it.accountName)
-                            existingEventTypeNames.add(calendarTitle.toLowerCase())
+                            existingEventTypeNames.add(calendarTitle.lowercase(Locale.getDefault()))
                             eventsHelper.insertOrUpdateEventType(this, eventType)
                         }
                     }
@@ -711,6 +714,14 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
+    private fun setupDimCompletedTasks() {
+        settings_dim_completed_tasks.isChecked = config.dimCompletedTasks
+        settings_dim_completed_tasks_holder.setOnClickListener {
+            settings_dim_completed_tasks.toggle()
+            config.dimCompletedTasks = settings_dim_completed_tasks.isChecked
+        }
+    }
+
     private fun setupAllowChangingTimeZones() {
         settings_allow_changing_time_zones.isChecked = config.allowChangingTimeZones
         settings_allow_changing_time_zones_holder.setOnClickListener {
@@ -849,6 +860,7 @@ class SettingsActivity : SimpleActivity() {
                 put(SHOW_GRID, config.showGrid)
                 put(LOOP_REMINDERS, config.loopReminders)
                 put(DIM_PAST_EVENTS, config.dimPastEvents)
+                put(DIM_COMPLETED_TASKS, config.dimCompletedTasks)
                 put(ALLOW_CHANGING_TIME_ZONES, config.allowChangingTimeZones)
                 put(USE_PREVIOUS_EVENT_REMINDERS, config.usePreviousEventReminders)
                 put(DEFAULT_REMINDER_1, config.defaultReminder1)
@@ -954,6 +966,7 @@ class SettingsActivity : SimpleActivity() {
                 SHOW_GRID -> config.showGrid = value.toBoolean()
                 LOOP_REMINDERS -> config.loopReminders = value.toBoolean()
                 DIM_PAST_EVENTS -> config.dimPastEvents = value.toBoolean()
+                DIM_COMPLETED_TASKS -> config.dimCompletedTasks = value.toBoolean()
                 ALLOW_CHANGING_TIME_ZONES -> config.allowChangingTimeZones = value.toBoolean()
                 USE_PREVIOUS_EVENT_REMINDERS -> config.usePreviousEventReminders = value.toBoolean()
                 DEFAULT_REMINDER_1 -> config.defaultReminder1 = value.toInt()
