@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="repeat">გამეორება</string>
-    <string name="every_day">ყოველ დღე</string>
     <string name="location">მდებარეობა</string>
     <string name="description">აღწერა</string>
     <string name="color">ფერი</string>

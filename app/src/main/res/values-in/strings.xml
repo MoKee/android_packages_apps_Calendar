@@ -6,6 +6,7 @@
     <string name="daily_view">Tampilan hari</string>
     <string name="weekly_view">Tampilan minggu</string>
     <string name="monthly_view">Tampilan bulan</string>
+    <string name="monthly_daily_view">Tampilan bulanan dan harian</string>
     <string name="yearly_view">Tampilan Tahun</string>
     <string name="simple_event_list">Daftar acara sederhana</string>
     <string name="no_upcoming_events">Sepertinya Anda tidak memiliki acara yang akan datang.</string>
@@ -14,6 +15,7 @@
     <string name="upgraded_from_free">Hey,\n\nseems like you upgraded from the old free app. You have to migrate locally stored events manually via exporting in an .ics file, then importing. You can find both export/import buttons at the main screen menu.\n\nYou can then uninstall the old version, which has an \'Upgrade to Pro\' button at the top of the app settings. You will then only have to reset your app settings.\n\nThanks!</string>
     <string name="widget_monthly">Kalender bulanan</string>
     <string name="widget_list">Daftar acara kalender</string>
+    <string name="widget_todays_date">Tanggal kalender hari ini</string>
     <string name="event">Acara</string>
     <string name="edit_event">Edit Acara</string>
     <string name="new_event">Acara Baru</string>
@@ -26,6 +28,15 @@
     <string name="filter_events_by_type">Saring acara berdasarkan jenis</string>
     <string name="please_fill_location">Silahkan masukan lokasi yang akan ditampilkan di peta</string>
     <string name="public_event_notification_text">Sebuah acara akan datang</string>
+    <string name="saving_filtered_out">Menyimpan… Tetapi jenis acara yang dipilih disaring di Menu atas - Saring</string>
+    <string name="task">Tugas</string>
+    <string name="tasks">Tugas</string>
+    <string name="edit_task">Edit Tugas</string>
+    <string name="new_task">Tugas Baru</string>
+    <string name="create_new_task">Buat tugas baru</string>
+    <string name="duplicate_task">Gandakan Tugas</string>
+    <string name="mark_completed">Tandai selesai</string>
+    <string name="mark_incomplete">Tandai belum selesai</string>
     <string name="repetition">Pengulangan</string>
     <string name="no_repetition">Tidak ada pengulangan</string>
     <string name="daily">Harian</string>
@@ -50,7 +61,6 @@
     <string name="times">kali</string>
     <string name="repeat">Ulangi</string>
     <string name="repeat_on">Ulangi</string>
-    <string name="every_day">Setiap hari</string>
     <string name="selected_days">Pada hari yang dipilih</string>
     <string name="the_same_day">Hari yang sama</string>
     <string name="the_last_day">Hari terakhir</string>
@@ -63,6 +73,7 @@
     <string name="second_m">kedua</string>
     <string name="third_m">ketiga</string>
     <string name="fourth_m">keempat</string>
+    <string name="fifth_m">kelima</string>
     <string name="last_m">terakhir</string>
     <string name="repeat_every_f">Ulangi setiap</string>
     <string name="every_f">Setiap</string>
@@ -70,6 +81,7 @@
     <string name="second_f">detik</string>
     <string name="third_f">ketiga</string>
     <string name="fourth_f">keempat</string>
+    <string name="fifth_f">kelima</string>
     <string name="last_f">terakhir</string>
     <string name="birthdays">Ulang tahun</string>
     <string name="add_birthdays">Tambahkan ulang tahun kontak</string>

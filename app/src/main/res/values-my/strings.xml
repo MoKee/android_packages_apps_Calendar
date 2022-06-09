@@ -2,7 +2,6 @@
 <resources>
     <string name="app_launcher_name">ပြက္ခဒိန်</string>
     <string name="repeat">ထပ်လုပ်ရန်</string>
-    <string name="every_day">နေ့တိုင်း</string>
     <string name="color">ရောင်စုံ</string>
     <string name="no_ringtone_selected">တစ်ခုမှမဟုတ်ပါ</string>
     <string name="status_free">တစ်ခုမှမဟုတ်ပါ</string>

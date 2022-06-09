@@ -2,7 +2,6 @@
 <resources>
     <string name="app_launcher_name">Egutegia</string>
     <string name="repeat">Errepikatu</string>
-    <string name="every_day">Egunero</string>
     <string name="location">Kokalekua</string>
     <string name="description">Deskribapena</string>
     <string name="color">Kolorea</string>

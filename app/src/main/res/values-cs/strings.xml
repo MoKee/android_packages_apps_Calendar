@@ -29,6 +29,14 @@
     <string name="please_fill_location">Vyplňte prosím místo, které se zobrazí na mapě</string>
     <string name="public_event_notification_text">Událost právě nastává</string>
     <string name="saving_filtered_out">Ukládám… Ale vybraný typ události je filtrován v horní nabídce - filtr</string>
+    <string name="task">Úloha</string>
+    <string name="tasks">Úlohy</string>
+    <string name="edit_task">Upravit úlohu</string>
+    <string name="new_task">Nová úloha</string>
+    <string name="create_new_task">Vytvořit novou úlohu</string>
+    <string name="duplicate_task">Duplicitní úloha</string>
+    <string name="mark_completed">Označení dokončeno</string>
+    <string name="mark_incomplete">Označení nedokončeno</string>
     <string name="repetition">Opakování</string>
     <string name="no_repetition">Neopakuje se</string>
     <string name="daily">Denně</string>
@@ -54,7 +62,6 @@
     <string name="times">krát</string>
     <string name="repeat">Opakovat</string>
     <string name="repeat_on">Opakovat v</string>
-    <string name="every_day">Každý den</string>
     <string name="selected_days">Ve vybraných dnech</string>
     <string name="the_same_day">Ve stejný den</string>
     <string name="the_last_day">Poslední den</string>
@@ -176,6 +183,7 @@
     <string name="highlight_weekends_color">Barva zvýrazněných víkendů</string>
     <string name="allow_changing_time_zones">Povolit změnu časových pásem událostí</string>
     <string name="manage_quick_filter_event_types">Správa typů událostí rychlého filtru</string>
+    <string name="allow_creating_tasks">Povolit vytváření úloh</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Vybrat kalendáře k synchronizaci</string>
     <string name="manage_synced_calendars">Správa synchronizovaných kalendářů</string>
@@ -241,6 +249,10 @@
     <string name="faq_4_title">Podporuje aplikace časová pásma?</string>
     <string name="faq_4_text">Ano. Ve výchozím nastavení jsou všechny události vytvářeny v aktuálním časovém pásmu. Pokud chcete změnit časové pásmo událostí,
         nejprve musíte povolit výběr časového pásma v nastavení aplikace a poté jej změnit na obrazovce Podrobnosti události. Ve výchozím nastavení je to zakázáno, protože to většina lidí nebude potřebovat.</string>
+    <string name="faq_5_title">Aplikace nezobrazuje žádná oznámení, proč tomu tak je?</string>
+    <string name="faq_5_text">Zkontrolujte nastavení baterie zařízení a oznámení, zda nic neblokuje připomenutí nebo zda se aplikace na pozadí neukončuje. Můžete se také podívat na &lt;a href=https://dontkillmyapp.com&gt;https://dontkillmyapp.com&lt;/a&gt;, kde najdete několik užitečných tipů.</string>
+    <string name="faq_6_title">Jak mohu upravit nebo odstranit existující typ události?</string>
+    <string name="faq_6_text">Obojí můžete provést v aplikaci Nastavení - Správa typů událostí. Pro změnu popisku a barvy stačí kliknout na požadovanou položku nebo ji vybrat dlouhým stisknutím a odstranit pomocí koše v horní nabídce.</string>
     <string name="app_title">Simple Calendar Pro - Události &amp; připomenutí</string>
     <string name="app_short_description">Jednoduchý mobilní kalendář 2020. Plánování připomenutí schůzek na kterýkoli den</string>
     <string name="app_long_description">        Simple Calendar Pro je plně přizpůsobitelný offline kalendář vytvořený přesně pro to, co by kalendáře měly dělat. <b>Žádné zbytečné funkce, nepotřebná oprávnění, ani reklamy!</b>

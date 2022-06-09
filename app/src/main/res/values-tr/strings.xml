@@ -28,6 +28,14 @@
     <string name="filter_events_by_type">Etkinlikleri türe göre filtrele</string>
     <string name="please_fill_location">Lütfen haritada gösterilecek bir yeri doldurun</string>
     <string name="public_event_notification_text">Bir etkinlik yaklaşıyor</string>
+    <string name="task">Görev</string>
+    <string name="tasks">Görevler</string>
+    <string name="edit_task">Görevi Düzenle</string>
+    <string name="new_task">Yeni Görev</string>
+    <string name="create_new_task">Yeni bir görev oluştur</string>
+    <string name="duplicate_task">Görevi Çoğalt</string>
+    <string name="mark_completed">Tamamlandı olarak işaretle</string>
+    <string name="mark_incomplete">Tamamlanmamış olarak işaretle</string>
     <string name="repetition">Tekrarla</string>
     <string name="no_repetition">Tekrarlama yok</string>
     <string name="daily">Günlük</string>
@@ -53,7 +61,6 @@
     <string name="times">kere</string>
     <string name="repeat">Tekrarla</string>
     <string name="repeat_on">Tekrarlama açık</string>
-    <string name="every_day">Her gün</string>
     <string name="selected_days">Seçilen günlerde</string>
     <string name="the_same_day">Aynı gün</string>
     <string name="the_last_day">Son gün</string>
@@ -175,6 +182,7 @@
     <string name="highlight_weekends_color">Vurgulanan hafta sonlarının rengi</string>
     <string name="allow_changing_time_zones">Zaman dilimlerini değiştirmeye izin ver</string>
     <string name="manage_quick_filter_event_types">Hızlı filtre olay türlerini yönetin</string>
+    <string name="allow_creating_tasks">Görev oluşturmaya izin ver</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Senkronize edilecek takvimleri seç</string>
     <string name="manage_synced_calendars">Senkronize edilmiş takvimleri yönet</string>
@@ -206,6 +214,7 @@
     <string name="sample_title_4">Merve ile öğle yemeği</string>
     <string name="sample_description_4">Şehir meydanında</string>
     <string name="sample_title_5">Kahve zamanı</string>
+    <string name="today_only">Sadece bugün</string>
     <string name="faq_1_title">\"Tatil ekle\" düğmesiyle içe aktarılan tatilleri nasıl kaldırabilirim?</string>
     <string name="faq_1_text">Tatiller, \"Tatiller\" olarak adlandırılan yeni bir etkinlik türüne eklenir. Ayarlar -&gt; Etkinlik Türlerini Yönet\'e gidip, belirlenen etkinlik türüne uzun basıp çöp kutusunu seçerek silebilirsiniz.</string>
     <string name="faq_2_title">Etkinliklerimi Google Takvim\'le veya CalDAV\'ı destekleyen başka bir hizmetle senkronize edebilir miyim?</string>

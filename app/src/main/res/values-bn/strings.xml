@@ -2,7 +2,6 @@
 <resources>
     <string name="app_launcher_name">ক্যালেন্ডার</string>
     <string name="repeat">পুনরাবৃত্তি করুন</string>
-    <string name="every_day">প্রতিদিন</string>
     <string name="color">রঙ</string>
     <string name="no_ringtone_selected">কোনো কিছুই নয়</string>
     <string name="status_free">কোনো কিছুই নয়</string>

@@ -29,6 +29,12 @@
     <string name="please_fill_location">请输入要在地图上显示的地点</string>
     <string name="public_event_notification_text">一个事件即将到来</string>
     <string name="saving_filtered_out">保存… 但选中的事件类型已在顶部 菜单—过滤器 被过滤</string>
+    <string name="edit_task">编辑任务</string>
+    <string name="new_task">新任务</string>
+    <string name="create_new_task">创建一个新任务</string>
+    <string name="duplicate_task">重复任务</string>
+    <string name="mark_completed">标记为已完成</string>
+    <string name="mark_incomplete">标记为未完成</string>
     <string name="repetition">重复</string>
     <string name="no_repetition">不重复</string>
     <string name="daily">每日</string>
@@ -54,7 +60,6 @@
     <string name="times">次</string>
     <string name="repeat">重复</string>
     <string name="repeat_on">重复于</string>
-    <string name="every_day">每天</string>
     <string name="selected_days">在选定的日期</string>
     <string name="the_same_day">同一天</string>
     <string name="the_last_day">最后一天</string>
@@ -176,6 +181,7 @@
     <string name="highlight_weekends_color">突出显示周末的颜色</string>
     <string name="allow_changing_time_zones">允许更改事件时区</string>
     <string name="manage_quick_filter_event_types">管理快速过滤器事件类型</string>
+    <string name="allow_creating_tasks">允许创建任务</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">选择要同步的日历</string>
     <string name="manage_synced_calendars">管理已同步的日历</string>
@@ -207,6 +213,7 @@
     <string name="sample_title_4">与玛丽共进午餐</string>
     <string name="sample_description_4">在 Plaza 餐馆</string>
     <string name="sample_title_5">咖啡时间</string>
+    <string name="today_only">仅限今天</string>
     <string name="faq_1_title">如何删除通过“添加节假日”按钮导入的节假日？</string>
     <string name="faq_1_text">这样创建的节假日事件会被添加到“节假日”这个新事件类型中去。您可以进入 设置 -&gt; 管理活动类型，
         长按相应的事件类型，点按垃圾桶图标来删除它。</string>

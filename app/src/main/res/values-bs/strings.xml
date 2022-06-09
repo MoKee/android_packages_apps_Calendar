@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="repeat">Ponovi</string>
-    <string name="every_day">Svakog dana</string>
     <string name="system_stream">Sistem</string>
     <string name="monday_alt">ponedjeljak</string>
     <string name="saturday_alt">subota</string>

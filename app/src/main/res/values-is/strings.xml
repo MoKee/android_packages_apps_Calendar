@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="repeat">Endurtaka</string>
-    <string name="every_day">Alla daga</string>
     <string name="color">Litur</string>
     <string name="no_ringtone_selected">Engin</string>
     <string name="status_free">Ekkert</string>

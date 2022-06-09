@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">କ୍ୟାଲେଣ୍ଡର୍</string>
+    <string name="title_empty">ଆଖ୍ୟା ଖାଲି ଛଡ଼ା ଯାଇପାରିବ ନାହିଁ</string>
+    <string name="repetition">ପୁନରାବୃତ୍ତି</string>
+    <string name="daily">ଦୈନିକ</string>
+    <string name="weekly">ସାପ୍ତାହିକ</string>
+    <string name="monthly">ମାସିକ</string>
+    <string name="yearly">ବାର୍ଷିକ</string>
+    <string name="weeks_raw">ସପ୍ତାହ</string>
+    <string name="months_raw">ମାସ</string>
+    <string name="years_raw">ବର୍ଷ</string>
+    <string name="repeat_on_the_last_day_monthly">ମାସର ଶେଷ ଦିନରେ ପୁନରାବୃତ୍ତି କରନ୍ତୁ</string>
+    <string name="first_m">ପ୍ରଥମ</string>
+    <string name="second_m">ଦ୍ୱିତୀୟ</string>
+    <string name="third_m">ତୃତୀୟ</string>
+    <string name="fourth_m">ଚତୁର୍ଥ</string>
+    <string name="last_m">ଶେଷ</string>
+    <string name="first_f">ପ୍ରଥମ</string>
+    <string name="second_f">ଦ୍ୱିତୀୟ</string>
+    <string name="third_f">ତୃତୀୟ</string>
+    <string name="fourth_f">ଚତୁର୍ଥ</string>
+    <string name="last_f">ଶେଷ</string>
+    <string name="reminder">ସ୍ମାରକ</string>
+    <string name="add_another_reminder">ଆଉ ଗୋଟିଏ ସ୍ମାରକ ଯୋଡ଼ନ୍ତୁ</string>
+    <string name="enter_a_country">ଏକ ଦେଶ କିମ୍ୱା ସମୟ ମଣ୍ଡଳ ପ୍ରବେଶ କରନ୍ତୁ</string>
     <string name="location">ଅବସ୍ଥାନ</string>
     <string name="description">ବର୍ଣ୍ଣନା</string>
+    <string name="color">ରଙ୍ଗ</string>
     <string name="no_ringtone_selected">କିଛି ନୁହେଁ</string>
+    <string name="system_stream">ସିଷ୍ଟମ୍</string>
+    <string name="notification_stream">ବିଜ୍ଞପ୍ତି</string>
     <string name="current_time">ସମ୍ପ୍ରତି ସମୟ</string>
+    <string name="allow_changing_time_zones">ଇଭେଣ୍ଟ ସମୟ ମଣ୍ଡଳ ପରିବର୍ତ୍ତନ କରିବାକୁ ଅନୁମତି ଦେବା</string>
+    <string name="monday_alt">ସୋମବାର</string>
+    <string name="tuesday_alt">ମଙ୍ଗଳବାର</string>
+    <string name="wednesday_alt">ବୁଧବାର</string>
+    <string name="thursday_alt">ଗୁରୁବାର</string>
+    <string name="friday_alt">ଶୁକ୍ରବାର</string>
+    <string name="saturday_alt">ଶନିବାର</string>
+    <string name="sunday_alt">ରବିବାର</string>
+    <string name="faq_4_title">ଆପ୍ ସମୟ ମଣ୍ଡଳଗୁଡ଼ିକୁ ସମର୍ଥନ କରେ କି?</string>
 </resources>

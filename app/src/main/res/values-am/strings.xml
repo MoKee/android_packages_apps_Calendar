@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="repeat">ድገም</string>
-    <string name="every_day">በየቀኑ</string>
     <string name="location">አካባቢ</string>
     <string name="description">መግለጫ</string>
     <string name="color">ቀለም</string>

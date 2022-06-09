@@ -27,6 +27,9 @@
     <string name="filter_events_by_type">Termine nach Typ filtern</string>
     <string name="please_fill_location">Bitte trage einen Ort ein, der auf einer Karte angezeigt werden soll</string>
     <string name="public_event_notification_text">Ein Termin steht an</string>
+    <string name="task">Aufgabe</string>
+    <string name="tasks">Aufgaben</string>
+    <string name="new_task">Neue Aufgabe</string>
     <string name="repetition">Wiederholung</string>
     <string name="no_repetition">Keine Wiederholung</string>
     <string name="daily">Täglich</string>
@@ -51,7 +54,6 @@
     <string name="times">Mal</string>
     <string name="repeat">Wiederholung</string>
     <string name="repeat_on">Wiederholen</string>
-    <string name="every_day">Täglich</string>
     <string name="selected_days">An ausgewählten Tagen</string>
     <string name="the_same_day">Der gleiche Tag</string>
     <string name="the_last_day">Der letzte Tag</string>
@@ -177,6 +179,7 @@
     <string name="caldav_event_not_found">Ereignis nicht gefunden. Bitte aktivieren Sie die CalDAV-Synchronisation für den passenden Kalender in den App-Einstellungen.</string>
     <string name="no_synchronized_calendars">Es wurden keine synchronisierbaren Kalender gefunden</string>
     <string name="status_free">Beliebiges</string>
+    <string name="status_busy">Belebt</string>
     <string name="monday_alt">Montag</string>
     <string name="tuesday_alt">Dienstag</string>
     <string name="wednesday_alt">Mittwoch</string>
@@ -192,6 +195,7 @@
     <string name="sample_title_4">Essen mit Marie</string>
     <string name="sample_description_4">Im Einkaufszentrum</string>
     <string name="sample_title_5">Kaffeepause</string>
+    <string name="today_only">Nur heute</string>
     <string name="faq_1_title">Wie kann ich Feiertage löschen, die über \"Feiertage hinzufügen\" importiert wurden?</string>
     <string name="faq_1_text">Die über diesen Weg erstellten Feiertage sind als Termintyp \"Feiertage\" deklariert. 
         Du kannst in den Einstellungen -&gt; Termintypen verwalten auf den Termintyp gedrückt halten und über das Papierkorbsymbol löschen.</string>

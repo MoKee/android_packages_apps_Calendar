@@ -2,7 +2,6 @@
 <resources>
     <string name="forever">सदा के लिए</string>
     <string name="repeat">दोहराएं</string>
-    <string name="every_day">प्रत्येक दिन</string>
     <string name="location">स्थान</string>
     <string name="description">विवरण</string>
     <string name="color">रंग</string>

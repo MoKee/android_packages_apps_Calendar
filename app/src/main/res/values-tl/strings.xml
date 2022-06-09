@@ -2,7 +2,6 @@
 <resources>
     <string name="app_launcher_name">Kalendaryo</string>
     <string name="repeat">Ulitin</string>
-    <string name="every_day">Bawat araw</string>
     <string name="location">Lokasyon</string>
     <string name="description">Paglalarawan</string>
     <string name="color">Kulay</string>

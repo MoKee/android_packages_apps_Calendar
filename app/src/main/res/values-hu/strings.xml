@@ -29,6 +29,14 @@
     <string name="please_fill_location">Kérjük, adja meg a térképen megjelenítendő helyet</string>
     <string name="public_event_notification_text">Van egy közelgő esemény</string>
     <string name="saving_filtered_out">Mentve....de a kiválasztott eseménytípus kiszűrésre van jelölve a Főmenü - Szűrés almenüjében</string>
+    <string name="task">Feladat</string>
+    <string name="tasks">Feladatok</string>
+    <string name="edit_task">Feladatszerkesztés</string>
+    <string name="new_task">Új feladat</string>
+    <string name="create_new_task">Új feladat létrehozása</string>
+    <string name="duplicate_task">Feladat lemásolása</string>
+    <string name="mark_completed">Teljesítettnek jelölés</string>
+    <string name="mark_incomplete">Befejezetlennek jelölés</string>
     <string name="repetition">Ismétlés</string>
     <string name="no_repetition">Nincs ismétlés</string>
     <string name="daily">Naponta</string>
@@ -54,7 +62,6 @@
     <string name="times">alkalommal</string>
     <string name="repeat">Ismétlődés</string>
     <string name="repeat_on">Ismétlés</string>
-    <string name="every_day">Minden nap</string>
     <string name="selected_days">A kijelölt napokon</string>
     <string name="the_same_day">Ugyanazon a napon</string>
     <string name="the_last_day">Az elmúlt napon</string>
@@ -176,6 +183,7 @@
     <string name="highlight_weekends_color">A kiemelt hétvégék színe</string>
     <string name="allow_changing_time_zones">Az események időzónája legyen módosítható</string>
     <string name="manage_quick_filter_event_types">A gyorsszűrő eseménytípusainak kezelése</string>
+    <string name="allow_creating_tasks">Feladatlétrehozás engedélyezése</string>
     <string name="caldav">CalDAV</string>
     <string name="select_caldav_calendars">Válassza ki a szinkronizálandó naptárakat</string>
     <string name="manage_synced_calendars">Szinkronizált naptárak kezelése</string>
@@ -235,6 +243,10 @@
     <string name="faq_4_title">Az alkalmazás támogatja az időzónákat?</string>
     <string name="faq_4_text">Igen, támogatja. Alapértelmezetten az események a rendszer időzónájához idomulnak. Ha meg szeretné változtatni egy esemény időzónáját,
         előbb az alkalmazás beállításaiban kell engedélyeznie a zónakijelölőt, aztán változtathatja meg az Esemény részleteinél. Alapértelmezetten azért van letiltva, mert a legtöbb felhasználónak nincs szüksége erre.</string>
+    <string name="faq_5_title">Egy alkalmazás nem adja ki az értesítéseket, miért van ez?</string>
+    <string name="faq_5_text">Ellenőrizze az akkumulátor és az értesítések beállításait, ha semmi nem blokkolja az emlékeztetőket, vagy nem lövi ki az alkalmazást a háttérben. Iééetve vessen egy pillantást a következőre: &lt;a href=https://dontkillmyapp.com&gt;https://dontkillmyapp.com&lt;/a&gt; ahol megoldást találhat.</string>
+    <string name="faq_6_title">Hogyan módosíthatok vagy törölhetek egy létező eseménytípust?</string>
+    <string name="faq_6_text">Mindkettőt az alkalmazás Beállítások - Eseménytípusok kezelése menüpontjában teheti meg. Kattintson a felirat és a szín megváltoztatásához, vagy hosszan lenyomva érheti el a kukát a felső menüben a törléshez.</string>
     <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
     <string name="app_short_description">Egy egyszerű 2020-as naptár. Ütemezéstervező és találkozóemlékeztető minden napra</string>
     <string name="app_long_description">        A Simple Calendar Pro egy teljesen személyreszabható, offline naptár felszerelve mindennel, amit egy naptárnak tudnia kell. <b>Könnyen érthető funkciók, értelmetlen reklámok és megadandó engedélyek nélkül!</b>

@@ -2,7 +2,6 @@
 <resources>
     <string name="app_launcher_name">Kalenteri</string>
     <string name="repeat">Toisto</string>
-    <string name="every_day">Joka päivä</string>
     <string name="location">Sijainti</string>
     <string name="description">Kuvaus</string>
     <string name="color">Väri</string>

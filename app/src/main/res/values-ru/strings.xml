@@ -6,6 +6,7 @@
     <string name="daily_view">На день</string>
     <string name="weekly_view">На неделю</string>
     <string name="monthly_view">На месяц</string>
+    <string name="monthly_daily_view">Ежемесячный + ежедневный просмотр</string>
     <string name="yearly_view">На год</string>
     <string name="simple_event_list">Простой список событий</string>
     <string name="no_upcoming_events">Похоже, у вас нет предстоящих событий.</string>
@@ -51,7 +52,6 @@
     <string name="times">раз</string>
     <string name="repeat">Повторять</string>
     <string name="repeat_on">Повторять по</string>
-    <string name="every_day">Каждый день</string>
     <string name="selected_days">В выбранные дни</string>
     <string name="the_same_day">Этот же день</string>
     <string name="the_last_day">Последний день</string>
