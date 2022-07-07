@@ -214,5 +214,4 @@
     <string name="faq_4_title">Apakah aplikasi ini mendukung zona waktu?</string>
     <string name="faq_4_text">Ya, tentu.  Secara default, semua acara dibuat dalam zona waktu Anda saat ini.  Jika Anda ingin mengubah zona waktu acara,
          Anda harus terlebih dahulu mengaktifkan pemilih zona waktu di pengaturan aplikasi, lalu mengubahnya di layar Detail Acara. Ini dinonaktifkan secara default karena kebanyakan orang tidak membutuhkannya.</string>
-    <string name="app_title">Simple Calendar Pro - Acara &amp; Pengingat</string>
 </resources>

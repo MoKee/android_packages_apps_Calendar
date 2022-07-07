@@ -201,5 +201,4 @@
     <string name="faq_4_title">該應用程式是否支援時區?</string>
     <string name="faq_4_text">是的，沒有錯。默認情況下，所有事件均在您當前的時區中建立。如果您想更改活動的時區，
         您首先必須在應用程式設定中啟用時區選取器，然後在事件詳細資訊螢幕中更改它。預設情況下是禁用的，因為大多數人不需要它。</string>
-    <string name="app_title">簡單日曆專業版 - 事件 &amp; 提醒</string>
 </resources>

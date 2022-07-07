@@ -207,49 +207,4 @@ Caso queira sincronizar um calendário da Google, a aplicação oficial do Calen
 pressionar a opção \"Fonte de áudio usada pelos lembretes\" e alterá-la para um valor diferente. Se ainda não funcionar, verifique nas suas definições de som se a transmissão em particular não está silenciada.</string>
     <string name="faq_4_title">O app suporta fusos horários?</string>
     <string name="faq_4_text">Sim. Por padrão, todos os eventos são criados no seu fuso horário atual. Se deseja mudar o fuso horário de um evento, primeiro terá de ativar o selecionador de fuso horário nas definições da aplicação e, em seguida, alterá-lo no ecrã de Detalhes do Evento. Isto está desativado por padrão, já que a maioria das pessoas não vai necessitar disso.</string>
-    <string name="app_title">Simple Calendar Pro - Eventos &amp; Lembretes</string>
-    <string name="app_short_description">Calendário móvel simples de 2020. Agenda &amp; lembrete de compromissos para qualquer dia</string>
-    <string name="app_long_description">        Calendário Simples Pro é um calendário offline, totalmente personalizável, desenhado para fazer exatamente o que um calendário deve fazer. &lt;b&gt;Sem ferramentas complicadas, permissões desnecessárias e anúncios!&lt;b&gt;
-
-        Quer esteja a organizar eventos simples ou recorrentes, aniversários, reuniões de negócios, compromissos ou qualquer outro evento, Calendário Simples Pro torna-o &lt;b&gt;fácil de manter-se organizado&lt;/b&gt;. Dotado de uma variedade incrível de &lt;b&gt;opções de personalização&lt;/b&gt; é possível personalizar lembretes de evento, sons de notificação, widgets de calendário e o aspeto da aplicação.
-
-        As vistas diária, semanal e mensal tornam a verificação dos próximo eventos &amp; numa lufada de ar fresco. É ainda possível ver tudo como uma lista simples de eventos em vez da vista de calendário, e desse modo &lt;b&gt;saber sempre o que se aproxima na vida e quando. &lt;/b&gt;
-
-        ----------------------------------------------------------
-        &lt;b&gt;Calendário Simples Pro – Características &amp; Benefícios&lt;/b&gt;
-        ----------------------------------------------------------
-
-        ✔️ Sem anúncios ou notificações irritantes!
-        ✔️ Sem necessidade de acesso à internet, oferecendo mais privacidade &amp; segurança
-        ✔️ Exige apenas o mínimo de permissões
-        ✔️ Ênfase na simplicidade – faz o que qualquer calendário necessita de fazer!
-        ✔️ Software de código aberto
-        ✔️ Temas totalmente personalizáveis &amp; widgets de calendário / evento
-        ✔️ Traduzido para 29 idiomas
-        ✔️ Exporte configurações para ficheiros .txt para importar para outros dispositivos
-        ✔️ Suporte CalDAV para sincronização de calendário / eventos entre dispositivos
-        ✔️ Vistas diária, semanal, mensal, anual &amp; dos eventos no calendário
-        ✔️ Suporta exportação &amp; importação de eventos através de ficheiros .ics
-        ✔️ Defina múltiplos lembretes de evento, personalize o som e vibração de aviso
-        ✔️ Opções de suspensão para lembretes
-        ✔️ Adicione feriados, aniversários &amp; compromissos com facilidade
-        ✔️ Personalize eventos – início, duração, lembretes,...
-        ✔️ Adicione participantes a cada evento
-        ✔️ Apto tanto para calendário pessoal ou de negócios
-        ✔️ Escolha entre lembretes &amp; notificações por email para ser alertado ao evento
-
-        Transfira o CALENDÁRIO SIMPLES PRO – O CALENDÁRIO OFFLINE SIMPLES SEM ANÚNCIOS! 
-
-        &lt;b&gt;Verifique todo o leque de Ferramentas Simples aqui:&lt;/b&gt;
-        https://www.simplemobiletools.com
-
-        &lt;b&gt;Página Web do Calendário Simples Pro:&lt;/b&gt;
-        https://www.simplemobiletools.com/calendar
-
-        &lt;b&gt;Facebook:&lt;/b&gt;
-        https://www.facebook.com/simplemobiletools
-
-        &lt;b&gt;Reddit:&lt;/b&gt;
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>

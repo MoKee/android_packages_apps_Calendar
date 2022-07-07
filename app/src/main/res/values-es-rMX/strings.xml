@@ -201,5 +201,4 @@
     <string name="faq_4_title">¿Soporta la aplicación zonas horarias?</string>
     <string name="faq_4_text">Sí, sí. Por defecto todos los eventos se crean en su zona horaria actual. Si quieres cambiar la zona horaria de un evento,
         primero tendrás que activar el selector de zona horaria en los ajustes de la aplicación, y cambiarlo en la pantalla Detalles del evento. Está desactivado por defecto ya que la mayoría de la gente no lo necesitará.</string>
-    <string name="app_title">Calendario Simple Pro - Eventos y Recordatorios</string>
 </resources>

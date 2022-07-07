@@ -215,6 +215,4 @@ Dans le cas d\'un calendrier Google Agenda, l\'application officielle fera l\'af
     <string name="faq_4_title">Est-ce que l\'application prend en charge les fuseaux horaires?</string>
     <string name="faq_4_text">Oui. Par défaut tous les évènements sont créés dans votre fuseau horaire. Si vous voulez changer le fuseau horaire d\'un évènement,
         vous devez d\'abord activer le sélectionneur de fuseau horaire dans les paramètre de l\'application, et le changer dans la section Détail de L\'évènement. Il est désactiver par défaut vu que la plupart des gens ne l\'utiliseront pas.</string>
-    <string name="app_title">Simple Calendar Pro- Événements &amp; Rappels</string>
-    <string name="app_short_description">Calendrier 2020 mobile simple. Planifiez votre emploi du temps et vos rappels de rendez-vous pour n\'importe quel jour.</string>
 </resources>

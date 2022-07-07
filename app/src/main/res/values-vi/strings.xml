@@ -208,48 +208,4 @@
     <string name="faq_4_title">Ứng dụng có hỗ trợ múi giờ không?</string>
     <string name="faq_4_text">Vâng, nó làm. Theo mặc định, tất cả các sự kiện được tạo trong múi giờ hiện tại của bạn. Nếu bạn muốn thay đổi múi giờ của sự kiện,
          trước tiên bạn sẽ phải bật công cụ chọn múi giờ ở cài đặt ứng dụng, sau đó thay đổi nó ở màn hình Chi tiết sự kiện. Nó bị tắt theo mặc định vì hầu hết mọi người sẽ không cần nó.</string>
-    <string name="app_title">Simple Calendar Pro - Sự kiện &amp; Nhắc nhở</string>
-    <string name="app_short_description">Lịch di động đơn giản 2020. Lập kế hoạch và nhắc nhở cuộc hẹn cho bất cứ ngày nào</string>
-    <string name="app_long_description">Simple Calendar Pro là một lịch ngoại tuyến hoàn toàn có thể tùy chỉnh được thiết kế để thực hiện chính xác những gì một lịch nên làm. <b>Không có tính năng phức tạp, quyền không cần thiết và không có quảng cáo!</b>
-
-         Cho dù bạn có tổ chức các sự kiện đơn lẻ hay định kỳ, sinh nhật, ngày kỷ niệm, các cuộc họp kinh doanh, các cuộc hẹn hay bất cứ điều gì khác, Simple Calendar Pro giúp bạn <b>dễ dàng tổ chức</b>. Với nhiều tùy chọn <b>tùy chỉnh</b> đáng kinh ngạc, bạn có thể tùy chỉnh lời nhắc sự kiện, âm thanh thông báo, tiện ích lịch và giao diện của ứng dụng.
-
-         Lượt xem hàng ngày, hàng tuần và hàng tháng làm cho việc kiểm tra các sự kiện và cuộc hẹn sắp tới của bạn trở nên dễ dàng. Bạn thậm chí có thể xem mọi thứ như một danh sách các sự kiện đơn giản thay vì trong chế độ xem lịch, vì vậy bạn <b>biết chính xác những gì sắp xảy ra trong cuộc sống của bạn và khi nào. </b>
-
-         --------------------------------------------------  --------
-         <b>Lịch đơn giản Pro - Tính năng &amp; Lợi ích</b>
-         --------------------------------------------------  --------
-
-         ✔️ Không có quảng cáo hoặc quảng cáo gây phiền nhiễu
-         ✔️ Không cần truy cập internet, mang lại cho bạn sự riêng tư và bảo mật hơn
-         ✔️ Chỉ yêu cầu quyền tối thiểu
-         ✔️ Nhấn mạnh vào sự đơn giản - làm những gì một lịch cần làm!
-         ✔️ Nguồn mở
-         ✔️ Các chủ đề lịch và sự kiện tùy chỉnh hoàn toàn
-         ✔️ Được dịch sang 29 ngôn ngữ
-         ✔️ Xuất cài đặt sang tệp .txt để nhập sang thiết bị khác
-         ✔️ Đồng bộ hóa lịch CalDAV được hỗ trợ để đồng bộ hóa các sự kiện trên các thiết bị
-         ✔️ Lượt xem hàng ngày, hàng tuần, hàng tháng, hàng năm và sự kiện trên lịch
-         ✔️ Hỗ trợ xuất và nhập sự kiện qua tệp .ics
-         ✔️ Đặt nhiều lời nhắc sự kiện, tùy chỉnh âm thanh và rung nhắc nhở sự kiện
-         ✔️ Tùy chọn báo lại cho lời nhắc
-         ✔️ Dễ dàng thêm ngày lễ, sinh nhật, ngày kỷ niệm và cuộc hẹn
-         ✔️ Tùy chỉnh các sự kiện - thời gian bắt đầu, thời lượng, lời nhắc vv
-         ✔️ Thêm người tham dự sự kiện vào mỗi sự kiện
-         ✔️ Sử dụng làm lịch cá nhân hoặc lịch kinh doanh
-         ✔️ Chọn giữa lời nhắc và thông báo email để thông báo cho bạn về một sự kiện
-
-         TẢI XUỐNG SIMPLE CALENDAR PRO - LỊCH BIỂU TƯỢNG ĐƠN GIẢN KHÔNG CÓ QUẢNG CÁO!
-
-         <b>Kiểm tra bộ công cụ đơn giản đầy đủ tại đây:</b>
-         https://www.simplemobiletools.com
-
-         <b>Trang web độc lập của Lịch đơn giản Pro:</b>
-         https://www.simplemobiletools.com/calWiki
-
-         <b>Facebook:</b>
-         https://www.facebook.com/simplemobiletools
-
-         <b>Reddit:</b>
-         https://www.reddit.com/r/SimpleMobileTools</string>
 </resources>

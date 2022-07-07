@@ -217,49 +217,4 @@
     <string name="faq_4_title">Kas rakendus toetab ajavööndeid?</string>
     <string name="faq_4_text">Jah, küll. Vaikimisi luuakse kõik sündmused teie praeguses ajavööndis. Kui soovite muuta sündmuste ajavööndit,
         peate esmalt ajavööndi valija rakenduse seadetes lubama, seejärel muutke seda sündmuse üksikasjade ekraanil. See on vaikimisi keelatud, kuna enamik inimesi ei vaja seda.</string>
-    <string name="app_title">Lihtne kalender Pro - sündmused &amp; meeldetuletused</string>
-    <string name="app_short_description">Lihtne mobiilne 2020. aasta kalender. Planeerige ajakava &amp; kohtumiste meeldetuletus igaks päevaks</string>
-    <string name="app_long_description">       Simple Calendar Pro on täielikult kohandatav võrguühenduseta kalender, mis on loodud tegema täpselt seda, mida kalender peaks tegema. <b>Pole keerulisi funktsioone, tarbetuid õigusi ega reklaame!</b>
-
-        Ükskõik, kas korraldate üksikuid või korduvaid üritusi, sünnipäevi, tähtpäevi, ärikohtumisi, kohtumisi või midagi muud, Simple Calendar Pro abil on <b>organiseerimine lihtne</b>. Uskumatult paljude <b>kohandamisvalikute</b> abil saate kohandada sündmuste meeldetuletusi, teavitusheli, kalendri vidinaid ja rakenduse väljanägemist.
-
-        Päeva-, nädala- ja kuuvaated muudavad eelseisvate sündmuste &amp; kohtumiste kontrollimise imelihtsaks. Võite vaadata kõike isegi lihtsa sündmuste loendina, mitte kalendrivaates, nii et teate <b>täpselt, mis ja millal teie elus toimub. </b>
-
-        ----------------------------------------------------------
-        <b>Simple Calendar Pro – Omadused &amp; eelised</b>
-        ----------------------------------------------------------
-
-        ✔️ Pole reklaame ega tüütuid hüpikaknaid
-        ✔️ Interneti-ühendust pole vaja, mis annab teile rohkem privaatsust &amp; turvalisust
-        ✔️ Vaja on ainult minimaalseid õigusi
-        ✔️ Rõhk lihtsusel - teeb seda, mida kalender tegema peab!
-        ✔️ Avatud lähtekoodiga
-        ✔️ Täielikult kohandatavad teemad &amp; kalendri / sündmuste vidinad
-        ✔️ Tõlgitud 29 keelde
-        ✔️ Ekspordi sätted .txt-failidesse, et neid teise seadmesse importida
-        ✔️ Toetatakse CalDAV-i kalendri sünkroonimist sündmuste sünkroonimiseks seadmetes
-        ✔️ Päeva-, nädala-, kuu-, aasta- &amp; sündmusevaated kalendris
-        ✔️ Toetab sündmuste eksportimist &amp; importimist .ics-failide kaudu
-        ✔️ Seadke mitu sündmuse meeldetuletust, kohandage sündmuse meeldetuletuse heli ja vibratsiooni
-        ✔️ Meeldetuletuste edasilükkamise võimalus
-        ✔️ Lisage hõlpsalt pühad, sünnipäevad, tähtpäevad &amp; kohtumised
-        ✔️ Kohandage sündmusi - algusaeg, kestus, meeldetuletused jne
-        ✔️ Lisage igale sündmusele osalejad
-        ✔️ Kasutage isikliku või ettevõtte kalendrina
-        ✔️ Valige meeldetuletuste &amp; e-posti teel saadetavate teatiste vahel, et teid sündmuse kohta hoiatada
-
-        LAE ALLA SIMPLE CALENDAR PRO – LIHTNE VÕRGUÜHENDUSETA KALENDER ÜHEGI REKLAAMITA!
-
-        <b>Vaadake täieliku Simple Tools komplekti siin:</b>
-        https://www.simplemobiletools.com
-
-        <b>Simple Calendar Pro eraldiseisev veebisait:</b>
-        https://www.simplemobiletools.com/calendar
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>

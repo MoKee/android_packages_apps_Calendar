@@ -247,49 +247,4 @@
     <string name="faq_5_text">Ellenőrizze az akkumulátor és az értesítések beállításait, ha semmi nem blokkolja az emlékeztetőket, vagy nem lövi ki az alkalmazást a háttérben. Iééetve vessen egy pillantást a következőre: &lt;a href=https://dontkillmyapp.com&gt;https://dontkillmyapp.com&lt;/a&gt; ahol megoldást találhat.</string>
     <string name="faq_6_title">Hogyan módosíthatok vagy törölhetek egy létező eseménytípust?</string>
     <string name="faq_6_text">Mindkettőt az alkalmazás Beállítások - Eseménytípusok kezelése menüpontjában teheti meg. Kattintson a felirat és a szín megváltoztatásához, vagy hosszan lenyomva érheti el a kukát a felső menüben a törléshez.</string>
-    <string name="app_title">Simple Naptár Pro - Események és Emlékeztetők</string>
-    <string name="app_short_description">Egy egyszerű 2020-as naptár. Ütemezéstervező és találkozóemlékeztető minden napra</string>
-    <string name="app_long_description">        A Simple Calendar Pro egy teljesen személyreszabható, offline naptár felszerelve mindennel, amit egy naptárnak tudnia kell. <b>Könnyen érthető funkciók, értelmetlen reklámok és megadandó engedélyek nélkül!</b>
-
-        Akár egyedi, akár ismétlődő eseményeket, születésnapokat, évfordulókat, üzleti találkozókat, megbeszéléseket vagy bármi mást szervez, a Simple Calendar Pro segít hogy, <b>könnyen jól szervezett maradjon</b>. A <b>testreszabható funkciók</b> sokaságával, Ön személyre szabhatja az eseményemlékztetőket, értesítési hangokat, naptár-kisalkalmazásokat és a felhasználói felületet.
-
-        A Napi-, Heti- és Havinézettel könnyen átláthatja a közelgő eseményeket és találkozókat. A naptárnézet helyett mindent egyszerű eseménylistaként tekinthet meg, így Ön <b>mindig tudhatja mi fog következni az életében. </b>
-
-        ----------------------------------------------------------
-        <b>Simple Calendar Pro – Funkciók és Előnyök</b>
-        ----------------------------------------------------------
-
-        ✔️ Nincsenek reklámok és felugró ablakok
-        ✔️ Nem szükséges internet a teljes biztonsághoz és védelemhez
-        ✔️ Csak nagyon mininális engedélyek szükségesek
-        ✔️ Hangsúly az egyszerűségen - de közben tudjon mindent, amit egy naptárnak kell!
-        ✔️ Nyílt forráskódú
-        ✔️ Teljesen személyre szabható, témázható, naptár és esemény kisalkalmazással
-        ✔️ 29 nyelvre lefordítva
-        ✔️ A Beállítások txt-be exportálhatók és átvihetők másik készülékre
-        ✔️ A CalDAV-naptárszinkron támogatott a készülékek között
-        ✔️ Napi, heti, havi, éves és eseménynézetek a naptárban
-        ✔️ .ics fájlba exportálhatók és importálhatók az események
-        ✔️ Összetett eseményemlékeztető beállítása, testreszabható hangok és rezgések
-        ✔️ Szundi-funkciók az értesítésekhez
-        ✔️ Könnyen hozzáadható ünnepek, születésnapok, évfordulók és találkozók
-        ✔️ Testreszabható események – kezdés, hossz, emlékeztetők
-        ✔️ Az eseményekhez résztvevőket is hozzáadhat
-        ✔️ Személyes naptárnak és Üzleti naptárnak is alkalmas
-        ✔️ Választhat az emlékeztetők és e-mail értesítések között, eseményfigyelmeztetésként
-
-        TÖLTSE LE A SIMPLE CALENDAR PRO-t – EGY KÖNNYEN KEZELHETŐ OFFLINE NAPTÁRAT REKLÁMOK NÉLKÜL!
-
-        <b>Itt találhatja meg az összes Simple terméket:</b>
-        https://www.simplemobiletools.com
-
-        <b>Itt találja meg a Simple Calendar Pro-t:</b>
-        https://www.simplemobiletools.com/calendar
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
 </resources>
