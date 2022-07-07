@@ -192,6 +192,7 @@
 
         <activity
             android:name=".activities.SnoozeReminderActivity"
+            android:excludeFromRecents="true"
             android:exported="false"
             android:theme="@style/Theme.Transparent" />
 
@@ -253,6 +254,7 @@
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <service android:name=".services.SnoozeService" />
+        <service android:name=".services.MarkCompletedService" />
 
         <service
             android:name=".jobs.CalDAVUpdateListener"
